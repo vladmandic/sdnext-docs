@@ -16,7 +16,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: jobs
+        working-directory: /
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
