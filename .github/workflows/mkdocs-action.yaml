@@ -20,7 +20,7 @@ jobs:
         python-version: '3.11'
     - name: run-script
       working-directory: /
-      run: bash build.sh
+      run: /build.sh
     - name: git-commit
       uses: stefanzweifel/git-auto-commit-action@v4
       env:
