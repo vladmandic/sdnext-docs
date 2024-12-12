@@ -11,16 +11,19 @@ permissions:
   contents: write
 
 jobs:
-  update-extensions-list-job:
+  mkdcos-jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
+    - name: where-am-i
+      run: pwd
+    - name: ls-job
+      run: ls
     - name: run-script
-      working-directory: /
-      run: /build.sh
+      run: ./build.sh
     - name: git-commit
       uses: stefanzweifel/git-auto-commit-action@v4
       env:
