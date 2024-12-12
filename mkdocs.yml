@@ -1,0 +1,122 @@
+site_name: SD.Next Documentation
+site_description: SD.Next Documentation
+copyright: ©SD.Next org
+repo_url: https://github.com/vladmandic/automatic
+repo_name: SD.Next
+edit_uri: wiki/
+docs_dir: wiki
+site_dir: site
+plugins:
+  - search
+  - social
+  - tags
+  - gh-admonitions
+markdown_extensions:
+  - abbr
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+theme:
+  name: material
+  logo: favicon.ico
+  favicon: favicon.ico
+  language: en 
+  features:
+    - navigation.footer
+    - navigation.indexes 
+    - navigation.instant
+    - navigation.instant.preview
+    - navigation.path
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      primary: white
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+extra:
+  generator: false
+exclude_docs: |
+  _*
+  Home.md
+nav:
+  - Home: index.md
+  - Install:
+    - Installation: Installation.md
+    - Advanced Install: Advanced-Install.md
+    - CLI Arguments: CLI-Arguments.md
+  - Troubleshoot:
+    - Frequently Asked Questions: FAQ.md
+    - Troubleshooting: Troubleshooting.md
+    - Debugging: Debug.md
+  - Tune:
+    - Performance Tuning: Performance-Tuning.md
+    - Memory Offloading: Offload.md
+    - Memory Allocation: Malloc.md
+    - Model Quantization: Quantization.md
+    - Model Compression: NNCF-Compression.md
+    - Benchmark Results: Benchmark.md
+  - Models:
+    - List of Models: Models.md
+    - Gated Access: Gated.md
+    - StableDiffusion XL: SD-XL.md
+    - StableDiffusion 3.x: SD3.md
+    - StableCascade: Stable-Cascade.md
+    - FLUX.1: FLUX.md
+    - LCM: Using-LCM.md
+    - Networks: Networks.md
+  - Platforms:
+    - WSL: WSL.md
+    - Intel-ARC: Intel-ARC.md
+    - DirectML: DirectML.md
+    - OpenVINO: OpenVINO.md
+    - ONNX & Olive: ONNX-Runtime.md
+    - ZLUDA: ZLUDA.md
+    - AMD-ROCm: AMD-ROCm.md
+    - MacOS-Python: MacOS-Python.md
+    - nVidia-CUDA: nVidia.md
+    - Docker: Docker.md
+  - Guides:
+    - Getting Started: Getting-Started.md
+    - Features Overview: Features.md
+    - Working with Models: Models-Tab.md
+    - Prompting Guide: Prompting.md
+    - Networks Interface: Networks.md
+    - Networks Search: Extra-networks-search.md
+    - LoRA Guide: LoRA.md
+    - Control Guide: Control-Guide.md
+    - Control Overview: Control.md
+    - Image Processing: Process.md
+    - Using Styles: Styles.md
+    - Using Wildcards: Wildcards.md
+    - IP Adapters: IPAdapter.md
+    - XYZ Grid: XYZ-Grid.md
+    - Built-in Scripts: Scripts.md
+  - User Interface:
+    - Themes: Themes.md
+    - Shortcuts: Hotkeys.md
+  - Behind-the-Scenes:
+    - How Does It Work?: SD-Pipeline-How-it-Works.md
+    - Training Methods: SD-Training-Methods.md
+    - Hints and Tooltips: Hints.md
+    - CLI and API Examples: CLI-Tools.md
+    - Custom Extensions: Extensions.md
+    - User Themes: Theme-User.md
