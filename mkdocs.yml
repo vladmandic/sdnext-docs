@@ -6,6 +6,7 @@ repo_name: SD.Next
 edit_uri: wiki/
 docs_dir: wiki
 site_dir: docs
+site_url: https://vladmandic.github.io/sdnext-docs/ 
 plugins:
   - search
   - social
