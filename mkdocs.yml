@@ -5,7 +5,7 @@ repo_url: https://github.com/vladmandic/automatic
 repo_name: SD.Next
 edit_uri: wiki/
 docs_dir: wiki
-site_dir: site
+site_dir: docs
 plugins:
   - search
   - social
