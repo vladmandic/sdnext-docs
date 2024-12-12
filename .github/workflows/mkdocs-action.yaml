@@ -13,10 +13,6 @@ permissions:
 jobs:
   update-extensions-list-job:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: /
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
