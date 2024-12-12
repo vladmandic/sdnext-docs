@@ -1,0 +1,37 @@
+name: build-mkdocs
+run-name: build-mkdocs
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+  - cron: '0 */4 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update-extensions-list-job:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: jobs
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: run-script
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: bash build.sh
+    - name: git-commit
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: 'update docs'
+        commit_options: '--no-verify'
+        file_pattern: '*'
+        status_options: '--untracked-files=no'
+        skip_fetch: true
+        skip_checkout: true
