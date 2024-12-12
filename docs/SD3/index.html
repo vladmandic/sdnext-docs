@@ -2372,11 +2372,13 @@
 
 
 <h1 id="stable-diffusion-3x"><a href="https://stability.ai/news/stable-diffusion-3-medium">Stable Diffusion 3.x</a></h1>
-<p>StabilityAI's Stable Diffusion 3 family consists of:
-- <a href="https://huggingface.co/stabilityai/stable-diffusion-3-medium-diffusers">Stable Diffusion 3.0 Medium</a>
-- <a href="https://huggingface.co/stabilityai/stable-diffusion-3.5-medium-diffusers">Stable Diffusion 3.5 Medium</a>
-- <a href="https://huggingface.co/stabilityai/stable-diffusion-3.5-large">Stable Diffusion 3.5 Large</a>
-- <a href="https://huggingface.co/stabilityai/stable-diffusion-3.5-large-turbo">Stable Diffusion 3.5 Large Turbo</a></p>
+<p>StabilityAI's Stable Diffusion 3 family consists of:</p>
+<ul>
+<li><a href="https://huggingface.co/stabilityai/stable-diffusion-3-medium-diffusers">Stable Diffusion 3.0 Medium</a></li>
+<li><a href="https://huggingface.co/stabilityai/stable-diffusion-3.5-medium-diffusers">Stable Diffusion 3.5 Medium</a></li>
+<li><a href="https://huggingface.co/stabilityai/stable-diffusion-3.5-large">Stable Diffusion 3.5 Large</a></li>
+<li><a href="https://huggingface.co/stabilityai/stable-diffusion-3.5-large-turbo">Stable Diffusion 3.5 Large Turbo</a></li>
+</ul>
 <p><img alt="screenshot-modernui-sd3" src="https://github.com/user-attachments/assets/1ed02ecc-23e4-4fda-8ae5-2d7393dc530c" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -2403,12 +2405,14 @@ Simply select it from <em>Networks -&gt; Models -&gt; Reference</em><br />
   and model will be auto-downloaded on first use  </p>
 </blockquote>
 <h2 id="components">Components</h2>
-<p><strong>SD3.x</strong> model consists of:
-- Unet/Transformer: MMDiT<br />
-- Text encoder 1: <a href="https://huggingface.co/openai/clip-vit-large-patch14">CLIP-ViT/L</a>,
-- Text encoder 2: <a href="https://huggingface.co/laion/CLIP-ViT-bigG-14-laion2B-39B-b160k">OpenCLIP-ViT/G</a>,
-- Text encoder 3: <a href="https://huggingface.co/google/t5-v1_1-xxl">T5-XXL Version 1.1</a><br />
-- VAE</p>
+<p><strong>SD3.x</strong> model consists of:</p>
+<ul>
+<li>Unet/Transformer: MMDiT  </li>
+<li>Text encoder 1: <a href="https://huggingface.co/openai/clip-vit-large-patch14">CLIP-ViT/L</a>,</li>
+<li>Text encoder 2: <a href="https://huggingface.co/laion/CLIP-ViT-bigG-14-laion2B-39B-b160k">OpenCLIP-ViT/G</a>,</li>
+<li>Text encoder 3: <a href="https://huggingface.co/google/t5-v1_1-xxl">T5-XXL Version 1.1</a>  </li>
+<li>VAE</li>
+</ul>
 <p>When using reference models, all components will be loaded as needed.<br />
 If using manually downloaded model, you need to ensure that all components are correctly configured and available.<br />
 Note that majority of available downloads are not actually all-in-one models and are instead just a part of the full model with individual components.</p>
@@ -2442,11 +2446,13 @@ If you have issues loading LoRA, try switching your FLUX.1 base model to differe
 <p>Since text encoders and VAE are same between all FLUX.1 models, <em>using all-in-one safetensors is not recommended</em> due to large duplication of data  </p>
 <h3 id="unettransformer">Unet/Transformer</h3>
 <p>Unet/Transformer component is a typical model fine-tune and is around 11GB in size  </p>
-<p>To load a Unet/Transformer safetensors file:<br />
-1. Download <code>safetensors</code> or <code>gguf</code> file from desired source and place it in <code>models/UNET</code> folder<br />
-2. Load model as usual and then<br />
-3. Replace transformer with one in desired safetensors file using:<br />
-<em>Settings -&gt; Execution &amp; Models -&gt; UNet</em>  </p>
+<p>To load a Unet/Transformer safetensors file:  </p>
+<ol>
+<li>Download <code>safetensors</code> or <code>gguf</code> file from desired source and place it in <code>models/UNET</code> folder  </li>
+<li>Load model as usual and then  </li>
+<li>Replace transformer with one in desired safetensors file using:<br />
+<em>Settings -&gt; Execution &amp; Models -&gt; UNet</em>  </li>
+</ol>
 <h3 id="text-encoder">Text Encoder</h3>
 <p>SD.Next allows changing optional text encoder on-the-fly  </p>
 <p>Go to <em>Settings -&gt; Models -&gt; Text encoder</em> and select the desired text encoder<br />
