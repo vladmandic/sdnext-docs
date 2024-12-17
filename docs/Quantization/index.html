@@ -962,6 +962,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#torchao" class="md-nav__link">
+    <span class="md-ellipsis">
+      TorchAO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gguf" class="md-nav__link">
     <span class="md-ellipsis">
       GGUF
@@ -2392,6 +2401,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#torchao" class="md-nav__link">
+    <span class="md-ellipsis">
+      TorchAO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gguf" class="md-nav__link">
     <span class="md-ellipsis">
       GGUF
@@ -2450,10 +2468,12 @@
 <p>For storage-only quantization, the model is quantized to lower precision but the operations are still performed in the original precision which means that each operation needs to be upcasted to the original precision before execution resulting in a performance overhead.</p>
 <h2 id="using-quantized-models">Using Quantized Models</h2>
 <p>Quantization can be done in multiple ways:
-on-the-fly- by quantizing on-the-fly during model load<br />
+- on-the-fly by quantizing on-the-fly during model load<br />
   available by selecting <em>settings -&gt; quantization</em> for some quantization types<br />
+  sometimes referred to as <code>pre</code> mode
 - by quantizing immediately after model load<br />
   available by selecting <em>settings -&gt; quantization</em> for all quantization types<br />
+  sometimes referred to as <code>post</code> mode
 - by simply loading a pre-quantized model<br />
   quantization type will be auto-determined at the start of the load<br />
 - during model training itself<br />
@@ -2464,6 +2484,11 @@ on-the-fly- by quantizing on-the-fly during model load<br />
 <p>If you're on Windows with a compatible GPU, you may try WSL2 for broader feature compatibiliy<br />
  See <a href="https://github.com/vladmandic/automatic/wiki/WSL">WSL Wiki</a> for more details</p>
 </div>
+<p>SD.Next supports multiple quantization engines, each with multiple quantization schemes:
+- <code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes<br />
+- <code>BitsAndBytes</code> 3 float-based quantization schemes<br />
+- <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantizations schemes<br />
+- <code>GGUF</code> with pre-quantized weights  </p>
 <h3 id="bitsandbytes">BitsAndBytes</h3>
 <p>Typical models pre-quantized with <code>bitsandbytes</code> would have look like <code>*nf4.safetensors</code> or <code>*fp8.safetensors</code></p>
 <div class="admonition note">
@@ -2489,6 +2514,10 @@ on-the-fly- by quantizing on-the-fly during model load<br />
 - not compatible with balanced offload<br />
 - not supported on Intel Arc/IPEX since IPEX is still based on Torch 2.3<br />
 - not supported with Zluda since Zluda does not support torch 2.4  </p>
+<h3 id="torchao">TorchAO</h3>
+<p>TorchAO is available for quantization on-the-fly during model load as well as post-load quantization<br />
+Limitations:<br />
+- Requires <code>torch==2.5.0</code>  </p>
 <h3 id="gguf">GGUF</h3>
 <p><strong>GGUF</strong> is a binary file format used to package pre-quantized models.  </p>
 <p><strong>GGUF</strong> is originally desiged by <code>llama.cpp</code> project and intended to be used with its <strong>GGML</strong> execution runtime.<br />
