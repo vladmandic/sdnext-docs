@@ -38,25 +38,28 @@ theme:
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/brightness-auto
+        icon: material/arrange-bring-forward
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default 
       primary: teal
       accent: teal
       toggle:
-        icon: material/weather-night
+        icon: material/white-balance-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
       accent: teal
       toggle:
-        icon: material/weather-sunny
+        icon: material/weather-night
         name: Switch to system preference
 extra:
   generator: false
   social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/vladmandic/automatic/
+      name: GitHub
     - icon: fontawesome/brands/discord
       link: https://discord.gg/VjvR2tabEX
       name: Discord
@@ -84,7 +87,8 @@ nav:
     - Model Compression: NNCF-Compression.md
     - Benchmark Results: Benchmark.md
   - Models:
-    - List of Models: Models.md
+    - Supported Models: Model-Support.md
+    - Model Specs: Models.md
     - Gated Access: Gated.md
     - StableDiffusion XL: SD-XL.md
     - StableDiffusion 3.x: SD3.md
@@ -115,7 +119,8 @@ nav:
     - Control Overview: Control.md
     - Image Processing: Process.md
     - Using Styles: Styles.md
-    - Using Wildcards: Wildcards.md
+    - Using Wildcards: Wildcards.md  
+    - Reprocess Latents: Reprocess.md
     - IP Adapters: IPAdapter.md
     - XYZ Grid: XYZ-Grid.md
     - Built-in Scripts: Scripts.md
