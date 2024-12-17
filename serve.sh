@@ -33,14 +33,18 @@ fi
 export UV_INDEX_STRATEGY=unsafe-any-match
 uv pip install -r requirements.txt
 
-# update wiki
+# get wiki
 if [[ ! -d "${WIKI}" ]]; then
   git clone https://github.com/vladmandic/automatic.wiki "${WIKI}"
-else
-  cd "${WIKI}"
-  git pull
-  cd ..
 fi
+
+# update wiki
+cd "${WIKI}"
+rm CHANGELOG.md >/dev/null 2>&1
+git pull
+wget https://raw.githubusercontent.com/vladmandic/automatic/refs/heads/dev/CHANGELOG.md
+cd ..
+
 if [[ ! -f "${WIKI}"/index.md ]]; then
   ln -s "${WIKI}"/HOME.md "${WIKI}"/index.md
 fi
