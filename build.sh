@@ -40,13 +40,12 @@ fi
 
 # update wiki
 cd "${WIKI}"
+rm index.md >/dev/null 2>&1
 rm CHANGELOG.md >/dev/null 2>&1
 git pull
 wget https://raw.githubusercontent.com/vladmandic/automatic/refs/heads/dev/CHANGELOG.md
+cp Home.md index.md
 cd ..
-if [[ ! -f "${WIKI}"/index.md ]]; then
-  ln -s "${WIKI}"/HOME.md "${WIKI}"/index.md
-fi
 
 # build docs
 echo "Build"
