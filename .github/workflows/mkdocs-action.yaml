@@ -11,16 +11,16 @@ permissions:
   contents: write
 
 jobs:
-  mkdcos-jobs:
+  mkdocs-jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-    - name: run-script
+    - name: job-built
       run: ./build.sh
-    - name: git-commit
+    - name: job-commit
       uses: stefanzweifel/git-auto-commit-action@v4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
