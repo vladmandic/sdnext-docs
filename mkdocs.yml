@@ -11,6 +11,7 @@ plugins:
   - search
   - social
   - tags
+  - ezlinks
   - gh-admonitions
 markdown_extensions:
   - abbr

@@ -2,3 +2,4 @@ mkdocs
 mkdocs-material
 mkdocs-material[imaging]
 mkdocs-github-admonitions-plugin
+mkdocs-ezlinks-plugin
