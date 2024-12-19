@@ -2278,6 +2278,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-models-and-integrations" class="md-nav__link">
     <span class="md-ellipsis">
       New models and integrations
@@ -3392,6 +3401,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-models-and-integrations" class="md-nav__link">
     <span class="md-ellipsis">
       New models and integrations
@@ -4481,6 +4499,24 @@
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2024-12-18">Update for 2024-12-18</h2>
+<h3 id="highlights">Highlights</h3>
+<p><em>What's new?</em></p>
+<p>While we have several new supported models, workflows and tools, this release is primarily about <em>quality-of-life improvements</em>:<br />
+- New memory management engine: list of changes that went into this one is too long for here,<br />
+  but main goal is enabling modern large models to run on standard consumer GPUs<br />
+  without performance hits typically associated with aggressive memory swapping and needs for constant manual tweaks<br />
+- New <a href="https://vladmandic.github.io/sdnext-docs/">documentation website</a><br />
+  with full search and tons of new documentation<br />
+- New settings panel with simplified and streamlined configuration  </p>
+<p>We've also added support for several new models (see <a href="https://vladmandic.github.io/sdnext-docs/Model-Support/">supported models</a> for full list):<br />
+- <a href="https://huggingface.co/Efficient-Large-Model/Sana_1600M_1024px">NVLabs Sana</a><br />
+- <a href="https://huggingface.co/Lightricks/LTX-Video">Lightricks LTX-Video</a>  </p>
+<p>And a lot of Control goodies and related goodies<br />
+- for SDXL there is new <a href="https://huggingface.co/xinsir/controlnet-union-sdxl-1.0">ProMax</a>, improved <em>Union</em> and <em>Tiling</em><br />
+- for FLUX.1 there are <a href="https://blackforestlabs.ai/flux-1-tools/">Flux Tools</a> as well as official <em>Canny</em> and <em>Depth</em> models and a cool <a href="https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev">Redux</a> model<br />
+- for SD 3.5 there are official <em>Canny</em>, <em>Blur</em> and <em>Depth</em> in addition to existing 3rd party models  </p>
+<p>Plus couple of new integrated workflows such as <a href="https://github.com/ali-vilab/FreeScale">FreeScale</a> and <a href="https://style-aligned-gen.github.io/">Style Aligned Image Generation</a>  </p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">README</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">CHANGELOG</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
 <h3 id="new-models-and-integrations">New models and integrations</h3>
 <ul>
 <li><a href="https://huggingface.co/Efficient-Large-Model/Sana_1600M_1024px">NVLabs Sana</a>
@@ -4492,6 +4528,13 @@
 <em>reference values</em>: sampler: default (or any flow-match variant), width/height: 1024, guidance scale: 4.5<br />
 <em>note</em> like other LLM-based text-encoders, sana prefers long and descriptive prompts<br />
   any short prompt below 300 characters will be auto-expanded using built in Gemma LLM before encoding while long prompts will be passed as-is  </li>
+<li><strong>ControlNet</strong></li>
+<li>improved support for <strong>Union</strong> controlnets with granular control mode type</li>
+<li>added support for latest <a href="https://huggingface.co/xinsir/controlnet-union-sdxl-1.0">Xinsir ProMax</a> all-in-one controlnet  </li>
+<li>added support for multiple <strong>Tiling</strong> controlnets, for example <a href="https://huggingface.co/xinsir/controlnet-tile-sdxl-1.0">Xinsir Tile</a><br />
+<em>note</em>: when selecting tiles in control settings, you can also specify non-square ratios<br />
+    in which case it will use context-aware image resize to maintain overall composition<br />
+<em>note</em>: available tiling options can be set in settings -&gt; control  </li>
 <li><a href="https://blackforestlabs.ai/flux-1-tools/">Flux Tools</a><br />
 <strong>Redux</strong> is actually a tool, <strong>Fill</strong> is inpaint/outpaint optimized version of <em>Flux-dev</em><br />
 <strong>Canny</strong> &amp; <strong>Depth</strong> are optimized versions of <em>Flux-dev</em> for their respective tasks: they are <em>not</em> ControlNets that work on top of a model<br />
@@ -4515,6 +4558,11 @@
   both <strong>Depth</strong> and <strong>Canny</strong> LoRAs are available in standard control menus  </li>
 <li><a href="https://huggingface.co/stabilityai/stable-diffusion-3.5-controlnets">StabilityAI SD35 ControlNets</a></li>
 <li>In addition to previously released <code>InstantX</code> and <code>Alimama</code>, we now have <em>official</em> ones from StabilityAI  </li>
+<li><a href="https://huggingface.co/Lightricks/LTX-Video">Lightricks LTX-Video</a>
+  basic support for LTX-Video for text-to-video and image-to-video<br />
+  to use, select in <em>scripts -&gt; ltx-video</em><br />
+<em>note</em> you may need to enable sequential offload for maximum gpu memory savings<br />
+<em>note</em> ltx-video requires very long and descriptive prompt, see original link for examples  </li>
 <li><a href="https://style-aligned-gen.github.io/">Style Aligned Image Generation</a><br />
   enable in scripts, compatible with sd-xl<br />
   enter multiple prompts in prompt field separated by new line<br />
@@ -4526,13 +4574,6 @@
   run iterative generation of images at different scales to achieve better results<br />
   can render 4k sdxl images<br />
 <em>note</em>: disable live preview to avoid memory issues when generating large images  </li>
-<li><strong>ControlNet</strong></li>
-<li>improved support for <strong>Union</strong> controlnets with granular control mode type</li>
-<li>added support for latest <a href="https://huggingface.co/xinsir/controlnet-union-sdxl-1.0">Xinsir ProMax</a> all-in-one controlnet  </li>
-<li>added support for multiple <strong>Tiling</strong> controlnets, for example <a href="https://huggingface.co/xinsir/controlnet-tile-sdxl-1.0">Xinsir Tile</a><br />
-<em>note</em>: when selecting tiles in control settings, you can also specify non-square ratios<br />
-    in which case it will use context-aware image resize to maintain overall composition<br />
-<em>note</em>: available tiling options can be set in settings -&gt; control  </li>
 </ul>
 <h3 id="ui-and-workflow-improvements">UI and workflow improvements</h3>
 <ul>
