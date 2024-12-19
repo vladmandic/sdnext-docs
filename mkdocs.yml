@@ -97,6 +97,7 @@ nav:
     - FLUX.1: FLUX.md
     - LCM: Using-LCM.md
     - Networks: Networks.md
+    - Video: Video.md
   - Platforms:
     - WSL: WSL.md
     - Intel-ARC: Intel-ARC.md
