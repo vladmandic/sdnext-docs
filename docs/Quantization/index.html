@@ -925,6 +925,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-quantized-models" class="md-nav__link">
     <span class="md-ellipsis">
       Using Quantized Models
@@ -2434,6 +2443,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-quantized-models" class="md-nav__link">
     <span class="md-ellipsis">
       Using Quantized Models
@@ -2560,6 +2578,44 @@
 - compute-optimization<br />
   speed up the inference process by providing optimized kernels for native execution in quantized precision  </p>
 <p>For storage-only quantization, the model is quantized to lower precision but the operations are still performed in the original precision which means that each operation needs to be upcasted to the original precision before execution resulting in a performance overhead.</p>
+<h2 id="example">Example</h2>
+<p><em>Why use quantization?</em><br />
+Compare total memory requirements and end-to-end performance for <strong>SD-3.5-Large</strong> model in <code>BF16</code> precision without and with <code>BitsAndBytes</code> on-the-fly quantization!  </p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Quantization</th>
+<th>Performance</th>
+<th>Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SD3.5-Large</td>
+<td>BnB = None</td>
+<td>0.18 it/s</td>
+<td>48.10 GB</td>
+</tr>
+<tr>
+<td>SD3.5-Large</td>
+<td>BnB = Transformer</td>
+<td>0.28 it/s</td>
+<td>30.48 GB</td>
+</tr>
+<tr>
+<td>SD3.5-Large</td>
+<td>BnB = Transformer &amp; Text-Encoder</td>
+<td>0.47 it/s</td>
+<td>18.22 GB</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Offloading reduces runtime requirements by moving parts of the model between GPU and CPU, but total memory requirements are always there<br />
+ Performance gains are there simply because there is less shuffling of weights  </p>
+</div>
 <h2 id="using-quantized-models">Using Quantized Models</h2>
 <p>Quantization can be done in multiple ways:
 - on-the-fly by quantizing on-the-fly during model load<br />
@@ -2600,13 +2656,12 @@
 <p>Typical models pre-quantized with <code>optimum.quanto</code> would have look like <code>*qint.safetensors</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>OQ is highly efficient with its qint8/qint4 quantization types, but its usage is limited to specific platforms and cannot be used with broad offloading methods</p>
+<p>OQ is highly efficient with its qint8/qint4 quantization types, but it cannot be used with broad offloading methods</p>
 </div>
 <p>Limitations:
-- requires <code>torch==2.4.0</code><br />
+- requires <code>torch&gt;=2.4.0</code><br />
   if you're running older torch, you can try upgrading it or running sdnext with <code>--reinstall</code> flag<br />
 - not compatible with balanced offload<br />
-- not supported on Intel Arc/IPEX since IPEX is still based on Torch 2.3<br />
 - not supported with Zluda since Zluda does not support torch 2.4  </p>
 <h3 id="torchao">TorchAO</h3>
 <p>TorchAO is available for quantization on-the-fly during model load as well as post-load quantization<br />
