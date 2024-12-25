@@ -2613,11 +2613,12 @@ then<br />
 <br /><br /></p>
 <p><em>Note: ZLUDA functions best in Diffusers Backend, where certain Diffusers-only options are available.</em>  </p>
 <h3 id="compilation-settings-and-first-generation">Compilation, Settings, and First Generation</h3>
-<p>After the UI starts, head on over to System Tab &gt; Compute Settings<br />
+<p>After the UI starts, head on over to the System Tab (Standard UI) or the Settings Tab (Modern UI), then the Compute Settings category.<br />
 Set "Attention optimization method" to "Dynamic Attention BMM", then click Apply settings.<br />
 Now, try to generate something.<br />
-This should take a fair while (10-15mins, or even longer; some reports state over an hour) to compile, but this compilation should only need to be done once.<br />
-Note: There will be no progress bar, as this is done by ZLUDA and not SD.Next. Eventually your image will start generating.</p>
+This should take a fair while to compile (10-15mins, or even longer; some reports state over an hour), but this compilation should only need to be done once.<br />
+Note: The text <code>Compiling in progress. Please wait...</code> will repeatedly appear, just be patient. Eventually your image will start generating.<br />
+Subsequent generations will be significantly quicker.  </p>
 <hr />
 <h2 id="comparison-directml">Comparison (DirectML)</h2>
 <table>
