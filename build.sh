@@ -45,6 +45,7 @@ rm CHANGELOG.md >/dev/null 2>&1
 git pull
 wget https://raw.githubusercontent.com/vladmandic/automatic/refs/heads/dev/CHANGELOG.md
 cp Home.md index.md
+cp ../sdnext.css .
 cd ..
 
 # build docs

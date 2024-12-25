@@ -67,6 +67,8 @@ extra:
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/@SDNext
       name: Youtube
+extra_css:
+  - sdnext.css
 exclude_docs: |
   _*
   Home.md
