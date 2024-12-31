@@ -1846,15 +1846,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#animatediff" class="md-nav__link">
-    <span class="md-ellipsis">
-      AnimateDiff
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ip-adapter" class="md-nav__link">
     <span class="md-ellipsis">
       IP-Adapter
@@ -2530,15 +2521,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#animatediff" class="md-nav__link">
-    <span class="md-ellipsis">
-      AnimateDiff
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ip-adapter" class="md-nav__link">
     <span class="md-ellipsis">
       IP-Adapter
@@ -2606,12 +2588,10 @@
 <h1 id="control-guide">Control Guide</h1>
 <p><img alt="screenshot-control" src="https://github.com/user-attachments/assets/cdad2722-ae7c-4c9c-94d6-5ea35a4b1356" /></p>
 <h2 id="introduction-to-control">Introduction to Control</h2>
-<p>SDNext's Control tab is our long awaited effort to bring ControlNet, IP-Adapters, T2I Adapter, ControlNet XS, and ControlNet LLLite to our users.  </p>
-<p>After doing that, we decided that we would add everything else under the sun that we could squeeze in there, and place it directly into your hands with greater options and flexibility than ever before, to allow you to <strong>Control</strong> your image and video generation with as little effort, as as much power, as possible.</p>
+<p>SDNext's Control tab is our effort to bring ControlNet, IP-Adapters, T2I Adapter, ControlNet XS, and ControlNet LLLite to our users.  </p>
 <p><strong>Note that this document is a work in progress, it's all quite complex and will take some time to write up a bit more as well as smooth out the rough edges and correct any issues and bugs that pop up, expect frequent updates!</strong>  </p>
 <p>This guide will attempt to explain how to use it so that anyone can understand it and put it to work for themselves.  </p>
-<p>Be sure to also check out <a href="https://github.com/vladmandic/automatic/wiki/Control">the Control resource page</a> which has more technical information as well as some general tips and suggestions. Its usage information will be merged into this page soon™️.</p>
-<p>We'll start with the... Control Controls!</p>
+<p>Be sure to also check out <a href="https://github.com/vladmandic/automatic/wiki/Control">Control overview</a> which has more technical information as well as some general tips and suggestions. Its usage information will be merged into this page soon™️.</p>
 <h2 id="controls">Controls</h2>
 <h3 id="input">Input</h3>
 <p>The Input control is exactly what it sounds like, it controls what input images (or videos) are contributing to your image generation, by default that is just the image in <a href="https://github.com/vladmandic/automatic/wiki/control-guide#control-input">Control input pane</a>, however if you select <code>Separate init image</code>, another image pane will appear below, allowing you to use that as well.  </p>
@@ -2620,15 +2600,9 @@
 <p><code>Show Preview</code> is simple, it controls the visibility of the preview window in the far right of the middle row. You'll want this on if you're doing any kind of masking or manipulations that you would want to preview before generating.</p>
 <p>There are 3 different Input types:</p>
 <ul>
-<li>
-<p><code>Control only</code>: This uses only the Control input below as a source for any ControlNet or IP Adapter type tasks based on any of our various options.  </p>
-</li>
-<li>
-<p><code>Init image same as control</code>: This option will additionally treat any image placed into the <code>Control input</code> pane as a source for img2img type tasks, an image to modify for example.  </p>
-</li>
-<li>
-<p><code>Separate init image</code>: This option creates an additional window next to <code>Control input</code> labeled <code>Init input</code>, so you can have a separate image for both Control operations and an init source.</p>
-</li>
+<li><code>Control only</code>: This uses only the Control input below as a source for any ControlNet or IP Adapter type tasks based on any of our various options.  </li>
+<li><code>Init image same as control</code>: This option will additionally treat any image placed into the <code>Control input</code> pane as a source for img2img type tasks, an image to modify for example.  </li>
+<li><code>Separate init image</code>: This option creates an additional window next to <code>Control input</code> labeled <code>Init input</code>, so you can have a separate image for both Control operations and an init source.</li>
 </ul>
 <p><code>Denoising strength</code> is the same as if you were doing any img2img operation. The higher the value, the more denoising that will take place, and the greater any source image will be modified.</p>
 <h3 id="size">Size</h3>
@@ -2710,10 +2684,6 @@ Some video output methods provide more controls, try them all.</p>
 <p>When you're using interpolation, the software also detects scene changes. If the scene changes significantly, it will insert pad frames instead of interpolating between two unrelated frames. This ensures a seamless transition between scenes and maintains the overall quality of the video output.</p>
 <h2 id="extensions">Extensions</h2>
 <p>These are some nice goodies that we have cooked up so that no actual installed extensions are necessary, you may even find that our version works better!</p>
-<h3 id="animatediff">AnimateDiff</h3>
-<p>This is the new home of our Vlad-created implementation of the AnimateDiff extension. Now with <strong>FREE</strong> FreeInit!  </p>
-<p><strong><em>I honestly don't know how to use this, so I'll update this when I do. My apologies! But if you already do, enjoy!</em></strong></p>
-<p><img alt="AnimateDiff controls" src="https://github.com/vladmandic/automatic/assets/108482020/233bc583-2449-4b6c-8ee5-9d4a8f1316c3" /></p>
 <h3 id="ip-adapter">IP-Adapter</h3>
 <p>This is our IP Adapter implementation, with 10 available models for your image or face cloning needs!</p>
 <p><img alt="IP-Adapter controls" src="https://github.com/vladmandic/automatic/assets/108482020/fa473529-228b-441b-811d-d5c4c8cda6a1" /></p>

@@ -2293,9 +2293,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2024-12-30" class="md-nav__link">
+  <a href="#update-for-2024-12-31" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2024-12-30
+      Update for 2024-12-31
     </span>
   </a>
   
@@ -3458,9 +3458,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2024-12-30" class="md-nav__link">
+  <a href="#update-for-2024-12-31" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2024-12-30
+      Update for 2024-12-31
     </span>
   </a>
   
@@ -4607,43 +4607,56 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2024-12-30">Update for 2024-12-30</h2>
+<h2 id="update-for-2024-12-31">Update for 2024-12-31</h2>
+<p>NYE refresh release with quite a few optimizatios and bug fixes...</p>
 <ul>
-<li><strong>LoRA</strong>:</li>
+<li><strong>LoRA</strong>:  </li>
 <li><strong>Sana</strong> support  </li>
 <li>quantized models support  </li>
 <li>fuse support with on-demand apply/unapply  </li>
 <li>add legacy option in <em>settings -&gt; networks</em>  </li>
-<li><strong>HunyuanVideo</strong></li>
+<li><strong>HunyuanVideo</strong>:  </li>
 <li>optimizations: full offload, quantization and tiling support  </li>
-<li><strong>LTXVideo</strong></li>
+<li><strong>LTXVideo</strong>:  </li>
 <li>optimizations: full offload, quantization and tiling support  </li>
 <li><a href="https://github.com/ali-vilab/TeaCache/blob/main/TeaCache4LTX-Video/README.md">TeaCache</a> integration  </li>
-<li><strong>VAE</strong>:</li>
+<li><strong>VAE</strong>:  </li>
 <li>tiling granular options in <em>settings -&gt; variable auto encoder</em>  </li>
-<li><strong>UI</strong>:</li>
+<li><strong>UI</strong>:  </li>
 <li>live preview optimizations and error handling  </li>
 <li>live preview high quality output, thanks @Disty0  </li>
 <li>CSS optimizations when log view is disabled  </li>
-<li><strong>Samplers</strong>:</li>
+<li><strong>Samplers</strong>:  </li>
 <li>add flow shift options and separate dynamic thresholding from dynamic shifting  </li>
 <li>autodetect matching sigma capabilities  </li>
-<li><strong>API</strong></li>
+<li><strong>API</strong>:  </li>
 <li>better default values for generate  </li>
-<li><strong>Refactor</strong>:</li>
+<li><strong>Refactor</strong>:  </li>
 <li>remove all LDM imports if running in native mode  </li>
-<li><strong>Fixes</strong>  </li>
+<li>startup optimizatios  </li>
+<li><strong>Torch</strong>:  </li>
+<li>support for <code>torch==2.6.0</code>  </li>
+<li><strong>OpenVINO</strong>:  </li>
+<li>disable re-compile on resolution change  </li>
+<li>fix shape mismatch on resolution change  </li>
+<li><strong>Fixes</strong>:  </li>
 <li>flux pipeline switches: txt/img/inpaint  </li>
 <li>flux custom unet loader for bnb  </li>
+<li>flux do not requantize already quantized model</li>
 <li>interrogate caption with T5  </li>
 <li>on-the-fly quantization using TorchAO  </li>
 <li>remove concurrent preview requests  </li>
 <li>xyz grid recover on error  </li>
 <li>hires batch  </li>
 <li>sdxl refiner  </li>
+<li>increase progress timeout</li>
 <li>kandinsky matmul  </li>
 <li>do not show disabled networks  </li>
+<li>enable debug logging by default</li>
 <li>image width/height calculation when doing img2img  </li>
+<li>corrections with batch processing  </li>
+<li>hires with refiner prompt and batch processing  </li>
+<li>processing with nested calls  </li>
 </ul>
 <h2 id="update-for-2024-12-24">Update for 2024-12-24</h2>
 <h3 id="highlights-for-2024-12-24">Highlights for 2024-12-24</h3>

@@ -1829,9 +1829,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#alternative-loader" class="md-nav__link">
+  <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
-      Alternative loader
+      Troubleshooting
     </span>
   </a>
   
@@ -1839,6 +1839,15 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lora-loader" class="md-nav__link">
+    <span class="md-ellipsis">
+      LoRA Loader
+    </span>
+  </a>
   
 </li>
         
@@ -2501,9 +2510,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#alternative-loader" class="md-nav__link">
+  <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
-      Alternative loader
+      Troubleshooting
     </span>
   </a>
   
@@ -2511,6 +2520,15 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lora-loader" class="md-nav__link">
+    <span class="md-ellipsis">
+      LoRA Loader
+    </span>
+  </a>
   
 </li>
         
@@ -2606,11 +2624,32 @@ Example <code>&lt;lora:test_lora:1.0:in=0:mid=1:out=0&gt;</code>  </p>
 <p>LoRA can also be applied will full per-step control by adding step-specific instuctions to the LoRA tag.<br />
 Example: <code>&lt;lora:test_lora:te=0.1@1,0.6@6&gt;</code><br />
 Would mean apply LoRA to text-encoder with strength 0.1 on step 1 and then switch to strength 0.6 on step 6.  </p>
-<h4 id="alternative-loader">Alternative loader</h4>
-<p>SD.Next actually contains two separate implementations for LORA:
-- native implementation: used for most LoRAs
-- <code>diffuser</code> implementation: used as a fallback for models where native implementation does not exist</p>
-<p>Usage of <code>diffusers</code> implementation can be forced in <em>"Settings -&gt; Networks"</em></p>
+<h4 id="troubleshooting">Troubleshooting</h4>
+<p>For any LoRA related issues, please follow the below procedure:
+- set environment variable <code>SD_LORA_DEBUG=true</code>
+- start SD.Next as usual and run it until problem occurs
+- create <a href="https://github.com/vladmandic/automatic/issues">GitHub issue</a>
+- upload full <code>sdnext.log</code> as well as any console exception messages  </p>
+<h3 id="lora-loader">LoRA Loader</h3>
+<p>SD.Next has multiple ways that address how LoRA is loaded and applied, all available in <em>"Settings -&gt; Networks"</em>:<br />
+You must pick only one of the below methods:<br />
+- <strong>LoRA fuse directly to model</strong>: <em>enabled</em> (default)
+  - Apply LoRA first time its needed without maintaining model weights as backup<br />
+  - Unapply works by subtracting LoRA from model weights<br />
+  - This can result in numerical instabilities and/or model degradation when switching LoRAs<br />
+    if LoRA numerical range is not normalized or badly trained,<br />
+    but saves 2x memory compared to older load/apply/unapply methods<br />
+- <strong>LoRA load using legacy method</strong>: <em>disabled</em>
+  - Apply LoRA first time its needed and create model backup weights in system memory<br />
+  - Unapply works by restoring model weights<br />
+  - Most stable method, but can use up to 2x sysem memory<br />
+- <strong>LoRA load using legacy method</strong>: <em>enabled</em>
+  - Apply LoRA on-the-fly during model execution and create model backup weights in system memory
+  - Unapply works by restoring model weights<br />
+  - This was default method prior to 12/2024 release<br />
+- <strong>LoRA load using Diffusers method</strong>: <em>enabled</em><br />
+  - Do not use SD.Next native LoRA processing and rely on underlying <code>diffusers</code> library for all LoRA actions<br />
+  - Does not support all LoRA types  </p>
 
 
 
