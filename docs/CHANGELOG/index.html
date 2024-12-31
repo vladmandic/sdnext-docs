@@ -4608,12 +4608,15 @@
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2024-12-31">Update for 2024-12-31</h2>
-<p>NYE refresh release with quite a few optimizatios and bug fixes...</p>
+<p>NYE refresh release with quite a few optimizatios and bug fixes...<br />
+Commit hash: <code>master: #dcfc9f3</code> <code>dev: #935cac6</code>  </p>
 <ul>
 <li><strong>LoRA</strong>:  </li>
+<li>LoRA load/apply/unapply methods have been changed in 12/2024 Xmass release and further tuned in this release</li>
+<li>for details on available methods, see <a href="https://github.com/vladmandic/automatic/wiki/Lora#lora-loader">https://github.com/vladmandic/automatic/wiki/Lora#lora-loader</a>  </li>
 <li><strong>Sana</strong> support  </li>
 <li>quantized models support  </li>
-<li>fuse support with on-demand apply/unapply  </li>
+<li>add fuse support with on-demand apply/unapply (new default)  </li>
 <li>add legacy option in <em>settings -&gt; networks</em>  </li>
 <li><strong>HunyuanVideo</strong>:  </li>
 <li>optimizations: full offload, quantization and tiling support  </li>
@@ -4657,6 +4660,8 @@
 <li>corrections with batch processing  </li>
 <li>hires with refiner prompt and batch processing  </li>
 <li>processing with nested calls  </li>
+<li>ui networks initial sort  </li>
+<li>esrgan on cpu devices  </li>
 </ul>
 <h2 id="update-for-2024-12-24">Update for 2024-12-24</h2>
 <h3 id="highlights-for-2024-12-24">Highlights for 2024-12-24</h3>
