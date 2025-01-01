@@ -4627,6 +4627,11 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-01-01">Update for 2025-01-01</h2>
 <ul>
+<li><a href="https://huggingface.co/rhymes-ai/Allegro">Allegro Video</a>  </li>
+<li>optimizations: full offload and quantization support  </li>
+<li><em>reference values</em>: width 1280 height 720 frames 88 steps 100 guidance 7.5  </li>
+<li><em>note</em>: allegro model is really sensitive to input width/height/frames/steps<br />
+    and may result in completely corrupt output if those are not within expected range  </li>
 <li><strong>Logging</strong>:</li>
 <li>reverted enable debug by default  </li>
 <li>updated <a href="https://github.com/vladmandic/automatic/wiki/debug">debug wiki</a>  </li>
