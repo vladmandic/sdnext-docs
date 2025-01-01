@@ -810,9 +810,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#extra-networks" class="md-nav__link">
+  <a href="#networks" class="md-nav__link">
     <span class="md-ellipsis">
-      Extra networks
+      networks
     </span>
   </a>
   
@@ -2422,9 +2422,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#extra-networks" class="md-nav__link">
+  <a href="#networks" class="md-nav__link">
     <span class="md-ellipsis">
-      Extra networks
+      networks
     </span>
   </a>
   
@@ -2489,15 +2489,21 @@ webui.sh --debug  </p>
 <li><code>SD_MOVE_DEBUG</code>: trace all model moves from and to cpu/gpu  </li>
 <li><code>SD_EXT_DEBUG</code>: trace extensions load/install/update operations  </li>
 <li><code>SD_LOAD_DEBUG</code>: report all model loading operations as they happen</li>
+<li><code>SD_PIP_DEBUG</code>: report details about all pip operations</li>
+<li><code>SD_CONFIG_DEBUG</code>: report all configuration processing requests</li>
 </ul>
 <h3 id="core-processing">Core processing</h3>
 <ul>
 <li><code>SD_PROCESS_DEBUG</code>: print detailed processing information</li>
-<li><code>SD_DIFFUSER_DEBUG</code>: increase verbosity of diffusers processing</li>
+<li><code>SD_DIFFUSERS_DEBUG</code>: increase verbosity of diffusers processing</li>
 <li><code>SD_LDM_DEBUG</code>: increase verbosity of LDM processing</li>
 <li><code>SD_CONTROL_DEBUG</code>: report all debug information related to control module</li>
+<li><code>SD_PROMPT_DEBUG</code>: print all prompt parsing and encoding information</li>
+<li><code>SD_SAMPLER_DEBUG</code>: report all possible sampler settings for selected sampler</li>
+<li><code>SD_STEPS_DEBUG</code>: report calculations done to scheduler steps</li>
+<li><code>SD_VAE_DEBUG</code>: report details on all VAE operations</li>
 </ul>
-<h3 id="extra-networks">Extra networks</h3>
+<h3 id="networks">networks</h3>
 <ul>
 <li><code>SD_EN_DEBUG</code>: report all extra networks operations as they happen</li>
 <li><code>SD_LORA_DEBUG</code>: increase verbosity of LoRA loading and execution</li>
@@ -2506,15 +2512,13 @@ webui.sh --debug  </p>
 <ul>
 <li><code>SD_PASTE_DEBUG</code>: report all params paste and parse operations as they happen</li>
 <li><code>SD_HDR_DEBUG</code>: print HDR processing information</li>
-<li><code>SD_PROMPT_DEBUG</code>: print all prompt parsing and encoding information</li>
-<li><code>SD_SAMPLER_DEBUG</code>: report all possible sampler settings for selected sampler</li>
-<li><code>SD_STEPS_DEBUG</code>: report calculations done to scheduler steps</li>
-<li><code>SD_VAE_DEBUG</code>: report details on all VAE operations</li>
 <li><code>SD_MASK_DEBUG</code>: reported detailed information on image masking operations as they happen  </li>
 <li><code>SD_DOWNLOAD_DEBUG</code>: report detailed information on model download operations as they happen</li>
 <li><code>SD_CALLBACK_DEBUG</code>: report each step as it executes with full details  </li>
 <li><code>SD_BROWSER_DEBUG</code>: report all gallery operations as they happen</li>
 <li><code>SD_NAMEGEN_DEBUG</code>: report all filename generation operations as they happen</li>
+<li><code>SD_PULID_DEBUG</code>: debug logging for pulid operations</li>
+<li><code>SD_PREVIEW_DEBUG</code>: debug logging for live preview operations</li>
 </ul>
 <p>Example <em>Windows</em>:</p>
 <blockquote>
