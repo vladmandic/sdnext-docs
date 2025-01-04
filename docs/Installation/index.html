@@ -2606,9 +2606,16 @@
 <h2 id="clone-sdnext">Clone SD.Next</h2>
 <p><strong>Start terminal</strong><br />
 Launch your preferred system terminal and navigate to the directory where you want to install SD.Next.
-- This should be a directory which your user account has read/write/execute access to.<br />
-- Installing SD.Next in a directory which requires admin permissions may cause it to not launch properly.<br />
-- Installing SD.Next with superuser/admin permissions is not recommended.  </p>
+- This should be a directory which your user account has read/write/execute access to.  </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Following scenarios are not recommended and can lead to SDNext not launching properly:<br />
+<em>Note</em>: this includes all folders leading up-to <code>sdnext</code> folder, not just final folder name!
+ - Installing SDNext as <em>superuser/administrator/root</em>: use user account<br />
+ - Using folder with admin/superuser/root permissions: use folder owned by user account<br />
+ - Using hidden/readonly folders or folders starting with <code>.</code>, e.g.: <code>.sdnext</code><br />
+ - Using special folders such as <em>Windows</em> or <em>OneDrive</em>  </p>
+</div>
 <p><strong>Clone SD.Next</strong><br />
 Clone the repository by running following command in your desired location and then navigate into the cloned directory.</p>
 <blockquote>
