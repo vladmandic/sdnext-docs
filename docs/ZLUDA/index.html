@@ -1833,7 +1833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Extra-networks-search/" class="md-nav__link">
+      <a href="../Extra-networks-search.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1875,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Control-Guide/" class="md-nav__link">
+      <a href="../Control-Guide.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1896,7 +1896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Control/" class="md-nav__link">
+      <a href="../Control.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2569,19 +2569,19 @@ Please don't create issues regarding ZLUDA on GitHub. Feel free to reach out via
 <h2 id="installing-zluda-for-amd-gpus-in-windows">Installing ZLUDA for AMD GPUs in Windows.</h2>
 <h3 id="note">Note</h3>
 <p><em>This guide assumes you have <a href="https://github.com/vladmandic/automatic/wiki/Installation#install-python-and-git">Git and Python</a> installed, and are comfortable using the command prompt, navigating Windows Explorer, renaming files and folders, and working with zip files.</em></p>
-<p>If you have an integrated AMD GPU (iGPU), you may need to disable it, or use the <code>HIP_VISIBLE_DEVICES</code> environment variable. Learn more <a href="https://github.com/vosen/ZLUDA?tab=readme-ov-file#hardware">here</a>.</p>
+<p>If you have an integrated AMD GPU (iGPU), you may need to disable it, or use the <code>HIP_VISIBLE_DEVICES</code> environment variable.</p>
 <h3 id="install-visual-c-runtime">Install Visual C++ Runtime</h3>
 <p><em>Note: Most everyone would have this anyway, since it comes with a lot of games, but there's no harm in trying to install it.</em>  </p>
-<p>Grab the latest version of Visual C++ Runtime from https://aka.ms/vs/17/release/vc_redist.x64.exe (this is a direct download link) and then run it.<br />
+<p>Grab the latest version of Visual C++ Runtime from <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">https://aka.ms/vs/17/release/vc_redist.x64.exe</a> (this is a direct download link) and then run it.<br />
 If you get the options to Repair or Uninstall, then you already have it installed and can click Close. Otherwise, install it.  </p>
 <h3 id="install-zluda">Install ZLUDA</h3>
 <p>ZLUDA is now auto-installed, and automatically added to PATH, when starting webui.bat with <code>--use-zluda</code>.</p>
 <h3 id="install-hip-sdk">Install HIP SDK</h3>
-<p>Install HIP SDK 5.7.1 from https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html<br />
+<p>Install HIP SDK 5.7.1 from <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html</a><br />
 So long as your regular AMD GPU driver is up to date, you don't need to install the PRO driver HIP SDK suggests.</p>
 <p><em>Note: SD.Next supports HIP SDK 6.1.x, but the stability and functionality are not validated yet.</em></p>
 <h3 id="replace-hip-sdk-library-files-for-unsupported-gpu-architectures">Replace HIP SDK library files for unsupported GPU architectures</h3>
-<p>Go to https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html and find your GPU model.<br />
+<p>Go to <a href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html">https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html</a> and find your GPU model.<br />
 If your GPU model has a ✅ in both columns then skip to <a href="https://github.com/vladmandic/automatic/wiki/ZLUDA#install-sdnext">Install SD.Next</a>.  <br />
 If your GPU model has an ❌ in the HIP SDK column, or if your GPU isn't listed, follow the instructions below;  </p>
 <ol>
