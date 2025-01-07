@@ -2633,7 +2633,7 @@ Compare total memory requirements and end-to-end performance for <strong>SD-3.5-
 <h2 id="quantization-engines">Quantization Engines</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you're on Windows with a compatible GPU, you may try WSL2 for broader feature compatibiliy<br />
+<p>If you're on Windows with a compatible GPU, you may try <strong>WSL2</strong> for broader feature compatibiliy<br />
  See <a href="https://github.com/vladmandic/automatic/wiki/WSL">WSL Wiki</a> for more details</p>
 </div>
 <p>SD.Next supports multiple quantization engines, each with multiple quantization schemes:
@@ -2641,17 +2641,24 @@ Compare total memory requirements and end-to-end performance for <strong>SD-3.5-
 - <code>BitsAndBytes</code> 3 float-based quantization schemes<br />
 - <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantizations schemes<br />
 - <code>GGUF</code> with pre-quantized weights  </p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Not all quantization engines are available on all platforms, see notes below for details!<br />
+ Using any quantization engine for the first time may result in failure as required libraries are downloaded and installed<br />
+ Restart SD.Next and try again if you encounter any issues  </p>
+</div>
 <h3 id="bitsandbytes">BitsAndBytes</h3>
 <p>Typical models pre-quantized with <code>bitsandbytes</code> would have look like <code>*nf4.safetensors</code> or <code>*fp8.safetensors</code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>BnB is the only quantization method that allows for usage of balanced offload as well as quantization on-the-fly during load, thus it is considered most versatile choice, but it is not available on all platforms.</p>
+<p>BnB is allows for usage of balanced offload as well as fast quantization on-the-fly during load, thus it is considered most versatile choice, but it is not available on all platforms.</p>
 </div>
 <p>Limitations:
 - default <code>bitsandbytes</code> package only supports nVidia GPUs<br />
   some quantization types require newer GPU with supported CUDA ops: e.g. <em>nVidia Turing</em> GPUs or newer<br />
 - <code>bitsandbytes</code> relies on <code>triton</code> packages which are not available on windows unless manually compiled/installed<br />
   without them, performance is significantly reduced<br />
+- for nVidia: automatically installed as needed<br />
 - for AMD/ROCm: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=AMD+ROCm#amd-gpu">link</a> 
 - for Intel/IPEX: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=Intel+CPU+%2B+GPU#multi-backend">link</a>  </p>
 <h3 id="optimum-quanto">Optimum-Quanto</h3>
