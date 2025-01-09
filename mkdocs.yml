@@ -98,7 +98,6 @@ nav:
     - StableCascade: Stable-Cascade.md
     - FLUX.1: FLUX.md
     - LCM: Using-LCM.md
-    - Networks: Networks.md
     - Video: Video.md
   - Platforms:
     - WSL: WSL.md
@@ -117,10 +116,12 @@ nav:
     - Working with Models: Models-Tab.md
     - Prompting Guide: Prompting.md
     - Networks Interface: Networks.md
-    - Networks Search: Extra-networks-search.md
+    - Networks Search: Networks-Search.md
+    - Detailer Guide: Detailer.md
     - LoRA Guide: LoRA.md
-    - Control Guide: Control-Guide.md
-    - Control Overview: Control.md
+    - Control Guide: Control-HowTo.md
+    - Control Settings: Control-Settings.md
+    - Control Technicals: Control-Technical.md
     - Image Processing: Process.md
     - Using Styles: Styles.md
     - Using Wildcards: Wildcards.md  
