@@ -2443,8 +2443,8 @@ webui.ps1 --update # windows with powershell  </p>
 </blockquote>
 <p>Update under-the-hood uses standard git operations with some extras:
 - verifies status of core repo and performs auto-repair as needed<br />
-- updates core SD.next repo
-- updates all built-in submodules
+- updates core SD.next repo<br />
+- updates all built-in submodules<br />
 - synchronizes levels of all submodules  </p>
 <h2 id="manual-update">Manual Update</h2>
 <p>Instead of using automatic update using <code>--update</code> flag, you can update SD.Next manually using GIT:</p>
@@ -2455,8 +2455,8 @@ webui.ps1 --update # windows with powershell  </p>
 <p class="admonition-title">Note</p>
 <p>In case you have any git conflicts, you must resolve then <em>before</em> running git pull or otherwise it will fail</p>
 </div>
-<p>Note that in this case, you're updating only core repo
-Additionally, check status of submodules:</p>
+<p>Note that in this case, you're updating only core repo<br />
+Additionally, check status of submodules:  </p>
 <blockquote>
 <p>git submodule status<br />
 git submodule update  </p>
@@ -2469,19 +2469,19 @@ git submodule update  </p>
   Updated regularly (e.g. daily) with latest features, fixes and changes<br />
   This branch always contains latest patches, but it is not fully tested<br />
   Once we decide on release schedule and consider it as sufficiently stable and tested,<br />
-  code from <code>dev</code> is merged into <code>master</code>
+  code from <code>dev</code> is merged into <code>master</code><br />
 - Feature branches:<br />
   For larger features we create additional branches as needed<br />
   Once feature work has completed, feature branch is merged to <code>dev</code> and removed  </p>
-<p>You can switch which branch of the SD.Next you are using at any point in time.<br />
-You do not need a separate installation of SD.Next.  </p>
+<p>You can switch which branch of the SD.Next you are using at any point in time<br />
+You do not need a separate installation of SD.Next  </p>
 <blockquote>
 <p>git checkout master # to switch to master branch<br />
 git checkout dev # to switch to dev branch  </p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Before switching branches, it is recommended to perform update</p>
+<p>Before switching branches, it is recommended to perform update  </p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>

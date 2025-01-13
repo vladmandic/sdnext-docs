@@ -2646,55 +2646,55 @@
 <h1 id="installing-sdnext">Installing SD.Next</h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>These instructions assume that you already have <strong>Git</strong> and <strong>Python</strong> installed and available in your user <code>PATH</code>.<br />
- If you do not have both Git and Python installed, follow the instructions in <a href="./#install-python-and-git">Install Python and Git</a> to set those up <strong>first</strong>.</p>
+<p>These instructions assume that you already have <strong>Git</strong> and <strong>Python</strong> installed and available in your user <code>PATH</code><br />
+ If you do not have both Git and Python installed, follow the instructions in <a href="./#install-python-and-git">Install Python and Git</a> to set those up <strong>first</strong>  </p>
 </div>
 <h2 id="clone-sdnext">Clone SD.Next</h2>
 <p><strong>Start terminal</strong><br />
-Launch your preferred system terminal and navigate to the directory where you want to install SD.Next.
-- This should be a directory which your user account has read/write/execute access to.  </p>
+Launch your preferred system terminal and navigate to the directory where you want to install SD.Next<br />
+- This should be a directory which your user account has read/write/execute access to  </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Following scenarios are not recommended and can lead to SDNext not launching properly:<br />
-<em>Note</em>: this includes all folders leading up-to <code>sdnext</code> folder, not just final folder name!
+<em>Note</em>: this includes all folders leading up-to <code>sdnext</code> folder, not just final folder name!<br />
  - Installing SDNext as <em>superuser/administrator/root</em>: use user account<br />
  - Using folder with admin/superuser/root permissions: use folder owned by user account<br />
  - Using hidden/readonly folders or folders starting with <code>.</code>, e.g.: <code>.sdnext</code><br />
  - Using special folders such as <em>Windows</em> or <em>OneDrive</em>  </p>
 </div>
 <p><strong>Clone SD.Next</strong><br />
-Clone the repository by running following command in your desired location and then navigate into the cloned directory.</p>
+Clone the repository by running following command in your desired location and then navigate into the cloned directory  </p>
 <blockquote>
 <p><code>git clone https://github.com/vladmandic/automatic &lt;optional directory name&gt;</code>  </p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you already have SD.Next installed and want to update to latest version, see <a href="../Update/">Update</a> guide</p>
+<p>If you already have SD.Next installed and want to update to latest version, see <a href="../Update/">Update</a> guide  </p>
 </div>
 <h2 id="initial-installation">Initial Installation</h2>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>Decide on appropriate compute backend for your system ahead of time as that will determine which libraries are installed on your system</p>
-<p>--use-cuda       Use nVidia CUDA backend (autodetected by default)
---use-rocm       Use AMD ROCm backend (autodetected by default)
---use-ipex       Use Intel OneAPI XPU backend (autodetected by default)
---use-openvino   Use Intel OpenVINO backend
---use-zluda      Use ZLUDA
---use-directml   Use DirectML</p>
+<p>Decide on appropriate compute backend for your system ahead of time as that will determine which libraries are installed on your system  </p>
+<p>--use-cuda       Use nVidia CUDA backend (autodetected by default)<br />
+--use-rocm       Use AMD ROCm backend (autodetected by default)<br />
+--use-ipex       Use Intel OneAPI XPU backend (autodetected by default)<br />
+--use-openvino   Use Intel OpenVINO backend<br />
+--use-zluda      Use ZLUDA<br />
+--use-directml   Use DirectML  </p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>nVidia CUIDA, AMD ROCm and Intel OneAPI XPU are autodetected when available<br />
  all other compute backends require explicit selection on first startup<br />
  For platform specific information, check out<br />
-<a href="../WSL/">WSL</a> | <a href="../Intel-ARC/">Intel Arc</a> | <a href="../DirectML/">DirectML</a> | <a href="../OpenVINO/">OpenVINO</a> | <a href="../ONNX-Runtime/">ONNX &amp; Olive</a> | <a href="../ZLUDA/">ZLUDA</a> | <a href="../AMD-ROCm/">AMD ROCm</a> | <a href="../MacOS-Python/">MacOS</a> | <a href="../nVidia/">nVidia</a></p>
+<a href="../WSL/">WSL</a> | <a href="../Intel-ARC/">Intel Arc</a> | <a href="../DirectML/">DirectML</a> | <a href="../OpenVINO/">OpenVINO</a> | <a href="../ONNX-Runtime/">ONNX &amp; Olive</a> | <a href="../ZLUDA/">ZLUDA</a> | <a href="../AMD-ROCm/">AMD ROCm</a> | <a href="../MacOS-Python/">MacOS</a> | <a href="../nVidia/">nVidia</a>  </p>
 </div>
 <h3 id="launch-sdnext">Launch SD.Next</h3>
-<p>Run the appropriate launcher for your OS to start the web interface:
-- Windows: <code>webui.bat --debug --use-xxx</code> or <code>.\webui.ps1 --debug --use-xxx</code>
-- Linux &amp; Mac: <code>./webui.sh --debug --use-xxx</code></p>
-<p>Now wait for few minutes to let the server install all required libraries.<br />
-The server is finished launching when the console shows an entry for <strong>"Startup time"</strong>.</p>
+<p>Run the appropriate launcher for your OS to start the web interface:<br />
+- Windows: <code>webui.bat --debug --use-xxx</code> or <code>.\webui.ps1 --debug --use-xxx</code><br />
+- Linux &amp; Mac: <code>./webui.sh --debug --use-xxx</code>  </p>
+<p>Now wait for few minutes to let the server install all required libraries<br />
+The server is finished launching when the console shows an entry for <strong>"Startup time"</strong>  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
@@ -2706,14 +2706,16 @@ The server is finished launching when the console shows an entry for <strong>"St
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>If you don't want to use built-in <code>venv</code> support and prefer to run SD.Next in your own environment such as <em>Docker</em> container, <em>Conda</em> environment or any other virtual environment, you can skip <code>venv</code> create/activate and launch SD.Next directly (command line flags noted above still apply):<br />
+<li>If you don't want to use built-in <code>venv</code> support and prefer to run SD.Next in your own environment<br />
+   such as <em>Docker</em> container, <em>Conda</em> environment or any other virtual environment,<br />
+   you can skip <code>venv</code> create/activate and launch SD.Next directly (command line flags noted above still apply):<br />
 <code>python launch.py --debug</code></li>
 </ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>For improved memory utilization on Linux, see <a href="../Malloc/">Malloc</a></li>
+<li>For improved memory utilization on Linux, see <a href="../Malloc/">Malloc</a>  </li>
 </ul>
 </div>
 <div class="admonition tip">
@@ -2725,19 +2727,19 @@ The server is finished launching when the console shows an entry for <strong>"St
 <h3 id="first-time-setup">First-Time Setup</h3>
 <ul>
 <li>Start the web interface<br />
-  Once the web interface starts running, you can access it by opening your web browser and navigating to the address listed in the console next to "Local URL." For most users, this should be <code>http://localhost:7860/</code>.<br />
-  You will see a brief loading screen, then you should be taken to the <code>Text</code> tab.</li>
+  Once the web interface starts running, you can access it by opening your web browser and navigating to the address listed in the console next to "Local URL." For most users, this should be <code>http://localhost:7860/</code><br />
+  You will see a brief loading screen, then you should be taken to the <code>Text</code> tab  </li>
 <li>Adjust paths<br />
-  You may want to adjust these settings in the <code>System</code>:<code>Settings</code> tab:</li>
-<li>If you already have models, LoRAs, Embeddings, LyCORIS, etc. set your paths in the <code>System Paths</code> page now</li>
-<li>Pay special attention to the <code>Folder with Huggingface models</code> and <code>Folder for Huggingface Cache</code> as they can grow to significant size</li>
+  You may want to adjust these settings in the <code>System</code>:<code>Settings</code> tab:  </li>
+<li>If you already have models, LoRAs, Embeddings, LyCORIS, etc. set your paths in the <code>System Paths</code> page now  </li>
+<li>Pay special attention to the <code>Folder with Huggingface models</code> and <code>Folder for Huggingface Cache</code> as they can grow to significant size  </li>
 <li>You can use <code>Base path</code> to set a common root for all paths  </li>
 <li>Set your desired look &amp; feel<br />
-  You can change the theme in the <code>User Interface</code> section.</li>
+  You can change the theme in the <code>User Interface</code> section  </li>
 <li>Save your settings<br />
-  If you changed any settings in the previous step, click <code>Apply settings</code> to save those settings to your config file. This will also apply some defaults from built-in extensions.  </li>
-<li>Restart server
-  Click <code>Restart server</code> to re-launch the SD.Next server with the updated settings.  </li>
+  If you changed any settings in the previous step, click <code>Apply settings</code> to save those settings to your config file. This will also apply some defaults from built-in extensions  </li>
+<li>Restart server<br />
+  Click <code>Restart server</code> to re-launch the SD.Next server with the updated settings  </li>
 </ul>
 <h2 id="install-python-and-git">Install Python and Git</h2>
 <div class="admonition note">
@@ -2750,31 +2752,31 @@ The server is finished launching when the console shows an entry for <strong>"St
 <h3 id="windows">Windows</h3>
 <h4 id="git-for-windows">Git-for-Windows</h4>
 <ol>
-<li>Download Git for Windows from the following link: <a href="https://github.com/git-for-windows/git/releases/download/v2.47.1.windows.1/Git-2.47.1-64-bit.exe">Git for Windows</a></li>
-<li>Run the downloaded <code>.exe</code> file and follow the installation wizard.</li>
+<li>Download Git for Windows from the following link: <a href="https://github.com/git-for-windows/git/releases/download/v2.47.1.windows.1/Git-2.47.1-64-bit.exe">Git for Windows</a>  </li>
+<li>Run the downloaded <code>.exe</code> file and follow the installation wizard  </li>
 <li>During the installation process, make sure to check the box for<br />
-   "Use Git from the Windows Command line and also from 3rd-party-software" to add Git to your system's PATH.  </li>
-<li>Complete the installation by following the on-screen instructions.</li>
+   "Use Git from the Windows Command line and also from 3rd-party-software" to add Git to your system's PATH  </li>
+<li>Complete the installation by following the on-screen instructions  </li>
 </ol>
 <h4 id="python-for-windows">Python-for-Windows</h4>
 <ol>
-<li>Download Python for Windows from the following link: <a href="https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe">Python for Windows</a></li>
-<li>Run the downloaded <code>.exe</code> file and follow the installation wizard.</li>
-<li>On the "Customize Python" screen, make sure to check the box for "Add Python to PATH."</li>
-<li>Continue the installation by following the prompts.</li>
+<li>Download Python for Windows from the following link: <a href="https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe">Python for Windows</a>  </li>
+<li>Run the downloaded <code>.exe</code> file and follow the installation wizard  </li>
+<li>On the "Customize Python" screen, make sure to check the box for "Add Python to PATH"  </li>
+<li>Continue the installation by following the prompts  </li>
 <li>Once the installation is complete, you can open the command prompt and verify that Python is installed<br />
-   by executing <code>python --version</code> and <code>pip --version</code> to check the Python and Pip versions respectively.</li>
+   by executing <code>python --version</code> and <code>pip --version</code> to check the Python and Pip versions respectively  </li>
 </ol>
 <h3 id="macos">MacOS</h3>
 <h4 id="git-for-macos">Git-for-MacOS</h4>
 <ol>
-<li>Download Git for macOS from the following link: <a href="https://git-scm.com/download/mac">Git for macOS</a></li>
-<li>Open the downloaded <code>.pkg</code> file and follow the installation instructions.</li>
-<li>During the installation process, make sure to check the box for "Install Git Bash" to have a command-line Git interface.</li>
-<li>Complete the installation by following the prompts.</li>
+<li>Download Git for macOS from the following link: <a href="https://git-scm.com/download/mac">Git for macOS</a>  </li>
+<li>Open the downloaded <code>.pkg</code> file and follow the installation instructions  </li>
+<li>During the installation process, make sure to check the box for "Install Git Bash" to have a command-line Git interface  </li>
+<li>Complete the installation by following the prompts  </li>
 </ol>
 <h4 id="python-for-macos">Python-for-MacOS</h4>
-<p><a href="https://github.com/vladmandic/automatic/wiki/MacOS-Python">See these instructions for Python on MacOS (and an explanation why it's unique).</a></p>
+<p><a href="https://github.com/vladmandic/automatic/wiki/MacOS-Python">See these instructions for Python on MacOS (and an explanation why it's unique).</a>  </p>
 
 
 

@@ -4693,7 +4693,8 @@
 <li>refactored progress monitoring, job updates and live preview  </li>
 <li>improved metadata save and restore  </li>
 <li>startup tracing and optimizations  </li>
-<li>threading load locks on model loads</li>
+<li>threading load locks on model loads  </li>
+<li>refactor native vs legacy model loader  </li>
 <li><strong>Schedulers</strong>:</li>
 <li><a href="https://github.com/RedAIGC/Target-Driven-Distillation">TDD</a> new super-fast scheduler that can generate images in 4-8 steps<br />
     recommended to use with <a href="https://huggingface.co/RED-AIGC/TDD/tree/main">TDD LoRA</a>  </li>
@@ -4711,7 +4712,7 @@
 <li><strong>XYZ Grid</strong>: add prompt search&amp;replace options: <em>primary, refine, detailer, all</em></li>
 <li><strong>SysInfo</strong>: update to collected data and benchmarks  </li>
 <li><a href="https://vladmandic.github.io/sdnext-docs/">Wiki/Docs</a>:</li>
-<li>updated: Detailer, Install, Debug, Control-HowTo, ZLUDA  </li>
+<li>updated: Detailer, Install, Update, Debug, Control-HowTo, ZLUDA  </li>
 <li><strong>Fixes</strong>:</li>
 <li>explict clear caches on model load  </li>
 <li>lock adetailer commit: <code>#a89c01d</code>  </li>
@@ -4732,6 +4733,10 @@
 <li>restore args after batch run  </li>
 <li>flux controlnet  </li>
 <li>zluda installer  </li>
+<li>control inherit parent pipe settings  </li>
+<li>control logging  </li>
+<li>hf cache folder settings  </li>
+<li>fluxfill should not require base model</li>
 </ul>
 <h2 id="update-for-2024-12-31">Update for 2024-12-31</h2>
 <p>NYE refresh release with quite a few optimizatios and bug fixes...<br />
