@@ -75,7 +75,8 @@ exclude_docs: |
 nav:
   - Home: index.md
   - Install:
-    - Installation: Installation.md
+    - Install: Installation.md
+    - Update: Update.md
     - Advanced Install: Advanced-Install.md
     - CLI Arguments: CLI-Arguments.md
   - Troubleshoot:
