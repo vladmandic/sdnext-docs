@@ -16,7 +16,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../Advanced-Install/">
+        <link rel="next" href="../Update/">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Installation - SD.Next Documentation</title>
+        <title>Install - SD.Next Documentation</title>
       
     
     
@@ -61,7 +61,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Installation - SD.Next Documentation" >
+        <meta  property="og:title"  content="Install - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
@@ -77,7 +77,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Installation - SD.Next Documentation" >
+        <meta  name="twitter:title"  content="Install - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
@@ -137,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation
+              Install
             
           </span>
         </div>
@@ -533,6 +533,8 @@
       
         
       
+        
+      
     
     
       
@@ -589,7 +591,7 @@
           
   
   <span class="md-ellipsis">
-    Installation
+    Install
   </span>
   
 
@@ -600,7 +602,7 @@
         
   
   <span class="md-ellipsis">
-    Installation
+    Install
   </span>
   
 
@@ -748,6 +750,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2644,6 +2667,10 @@ Clone the repository by running following command in your desired location and t
 <blockquote>
 <p><code>git clone https://github.com/vladmandic/automatic &lt;optional directory name&gt;</code>  </p>
 </blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you already have SD.Next installed and want to update to latest version, see <a href="../Update/">Update</a> guide</p>
+</div>
 <h2 id="initial-installation">Initial Installation</h2>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -2670,21 +2697,30 @@ Clone the repository by running following command in your desired location and t
 The server is finished launching when the console shows an entry for <strong>"Startup time"</strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you don't want to use built-in <code>venv</code> support and prefer to run SD.Next in your own environment such as <em>Docker</em> container, <em>Conda</em> environment or any other virtual environment, you can skip <code>venv</code> create/activate and launch SD.Next directly (command line flags noted above still apply):<br />
-<code>python launch.py --debug</code></p>
+<ul>
+<li>For the initial setup and future tech support, it is advisable to include the <code>--debug</code> option which provides more detailed logging information  </li>
+<li>All command line options can also be set via env variable<br />
+   For example <code>--debug</code> is same as <code>set SD_DEBUG=true</code>  </li>
+</ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For the initial setup and future tech support, it is advisable to include the <code>--debug</code> option which provides more detailed logging information.</p>
+<ul>
+<li>If you don't want to use built-in <code>venv</code> support and prefer to run SD.Next in your own environment such as <em>Docker</em> container, <em>Conda</em> environment or any other virtual environment, you can skip <code>venv</code> create/activate and launch SD.Next directly (command line flags noted above still apply):<br />
+<code>python launch.py --debug</code></li>
+</ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>All command line options can also be set via env variable
- For example <code>--debug</code> is same as <code>set SD_DEBUG=true</code>  </p>
+<ul>
+<li>For improved memory utilization on Linux, see <a href="../Malloc/">Malloc</a></li>
+</ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For improved memory utilization on Linux, see <a href="../Malloc/">Malloc</a></p>
+<ul>
+<li>If you want to use <code>dev</code> version instead of main release <code>master</code>, see <a href="../Update/">Update</a> guide  </li>
+</ul>
 </div>
 <h3 id="first-time-setup">First-Time Setup</h3>
 <ul>
@@ -2794,13 +2830,13 @@ The server is finished launching when the console shows an entry for <strong>"St
         
         
           
-          <a href="../Advanced-Install/" class="md-footer__link md-footer__link--next" aria-label="Next: Advanced Install">
+          <a href="../Update/" class="md-footer__link md-footer__link--next" aria-label="Next: Update">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Advanced Install
+                Update
               </div>
             </div>
             <div class="md-footer__button md-icon">

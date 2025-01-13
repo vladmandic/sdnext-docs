@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/nVidia/">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Update/">
       
       
-        <link rel="prev" href="../MacOS-Python/">
+        <link rel="prev" href="../Installation/">
       
       
-        <link rel="next" href="../Docker/">
+        <link rel="next" href="../Advanced-Install/">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -24,7 +24,7 @@
     
     
       
-        <title>nVidia-CUDA - SD.Next Documentation</title>
+        <title>Update - SD.Next Documentation</title>
       
     
     
@@ -61,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="nVidia-CUDA - SD.Next Documentation" >
+        <meta  property="og:title"  content="Update - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/nVidia.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Update.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -73,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/nVidia/" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/Update/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="nVidia-CUDA - SD.Next Documentation" >
+        <meta  name="twitter:title"  content="Update - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/nVidia.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Update.png" >
       
     
     
@@ -104,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nvidia-graphics-card-note" class="md-skip">
+        <a href="#updating-sdnext" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              nVidia-CUDA
+              Update
             
           </span>
         </div>
@@ -276,10 +276,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../Installation/" class="md-tabs__link">
           
   
@@ -356,12 +358,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../WSL/" class="md-tabs__link">
           
   
@@ -520,8 +520,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -536,19 +538,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -559,7 +564,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Install
@@ -591,10 +596,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Update/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Update
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -603,6 +628,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manual-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Update
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching Branch
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1222,10 +1285,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1252,22 +1313,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1278,7 +1336,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Platforms
@@ -1457,19 +1515,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../nVidia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1478,7 +1527,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2343,6 +2391,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manual-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Update
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching Branch
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2359,8 +2433,60 @@
   
 
 
-<h1 id="nvidia-graphics-card-note">Nvidia Graphics Card Note</h1>
-<p>You will likely want to follow <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5490">Nvidia's instructions to disable System Memory Fallback for Stable Diffusion</a> on the newest drivers, which you should be using.</p>
+<h1 id="updating-sdnext">Updating SD.Next</h1>
+<p>Recommended procedure to update SD.Next to latest release is to simply<br />
+add command line arg: <code>--update</code> or <code>--upgrade</code> (they are aliases)  </p>
+<blockquote>
+<p>./webui.sh --update # linux/macos<br />
+webui.bat --update # windows<br />
+webui.ps1 --update # windows with powershell  </p>
+</blockquote>
+<p>Update under-the-hood uses standard git operations with some extras:
+- verifies status of core repo and performs auto-repair as needed<br />
+- updates core SD.next repo
+- updates all built-in submodules
+- synchronizes levels of all submodules  </p>
+<h2 id="manual-update">Manual Update</h2>
+<p>Instead of using automatic update using <code>--update</code> flag, you can update SD.Next manually using GIT:</p>
+<blockquote>
+<p>git pull  </p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case you have any git conflicts, you must resolve then <em>before</em> running git pull or otherwise it will fail</p>
+</div>
+<p>Note that in this case, you're updating only core repo
+Additionally, check status of submodules:</p>
+<blockquote>
+<p>git submodule status<br />
+git submodule update  </p>
+</blockquote>
+<h2 id="switching-branch">Switching Branch</h2>
+<p>SD.Next development is done in multiple branches on GitHub:<br />
+- Stable branch: <a href="https://github.com/vladmandic/automatic">master</a><br />
+  Typically updated every several weeks after latest features have been tested<br />
+- Development branch: <a href="https://github.com/vladmandic/automatic/tree/dev">dev</a><br />
+  Updated regularly (e.g. daily) with latest features, fixes and changes<br />
+  This branch always contains latest patches, but it is not fully tested<br />
+  Once we decide on release schedule and consider it as sufficiently stable and tested,<br />
+  code from <code>dev</code> is merged into <code>master</code>
+- Feature branches:<br />
+  For larger features we create additional branches as needed<br />
+  Once feature work has completed, feature branch is merged to <code>dev</code> and removed  </p>
+<p>You can switch which branch of the SD.Next you are using at any point in time.<br />
+You do not need a separate installation of SD.Next.  </p>
+<blockquote>
+<p>git checkout master # to switch to master branch<br />
+git checkout dev # to switch to dev branch  </p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Before switching branches, it is recommended to perform update</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If differences between branches are significant, it may trigger installation of new requirements  </p>
+</div>
 
 
 
@@ -2399,7 +2525,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../MacOS-Python/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MacOS-Python">
+          <a href="../Installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2409,20 +2535,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                MacOS-Python
+                Install
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Docker/" class="md-footer__link md-footer__link--next" aria-label="Next: Docker">
+          <a href="../Advanced-Install/" class="md-footer__link md-footer__link--next" aria-label="Next: Advanced Install">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Docker
+                Advanced Install
               </div>
             </div>
             <div class="md-footer__button md-icon">
