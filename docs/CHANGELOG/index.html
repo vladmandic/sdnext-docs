@@ -4683,6 +4683,18 @@
 <li>select from <em>scripts -&gt; pixelsmith</em>  </li>
 <li><a href="https://github.com/Tencent/HunyuanVideo">Hunyuan Video</a> LoRA support</li>
 <li>example: <a href="https://huggingface.co/Cseti/HunyuanVideo-LoRA-Arcane_Jinx-v1">https://huggingface.co/Cseti/HunyuanVideo-LoRA-Arcane_Jinx-v1</a></li>
+<li>ZLUDA v3.8.6</li>
+<li>new runtime compiler implementation: complex types, JIT are now available</li>
+<li>experimental BLASLt support via nightly build<ul>
+<li>set <code>ZLUDA_NIGHTLY=1</code> to install nightly ZLUDA: newer torch such as 2.4.x (default) and 2.5.x are now available  </li>
+<li>requirements: unofficial hipBLASLt</li>
+</ul>
+</li>
+<li><strong>Important</strong><ul>
+<li>the support for older version of ZLUDA will be removed in next release</li>
+<li>see <a href="https://github.com/vladmandic/automatic/wiki/ZLUDA#upgrading-zluda">upgrading ZLUDA</a> for more information</li>
+</ul>
+</li>
 <li><strong>Logging</strong>:</li>
 <li>reverted enable debug by default  </li>
 <li>updated <a href="https://github.com/vladmandic/automatic/wiki/debug">debug wiki</a>  </li>

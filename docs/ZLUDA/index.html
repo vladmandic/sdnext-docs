@@ -1524,6 +1524,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#upgrading-zluda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrading ZLUDA
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2566,6 +2575,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#upgrading-zluda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrading ZLUDA
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2665,8 +2683,15 @@ then<br />
 Set "Attention optimization method" to "Dynamic Attention BMM", then click Apply settings.<br />
 Now, try to generate something.<br />
 This should take a fair while to compile (10-15mins, or even longer; some reports state over an hour), but this compilation should only need to be done once.<br />
-Note: The text <code>Compiling in progress. Please wait...</code> will repeatedly appear, just be patient. Eventually your image will start generating.<br />
+Note: The text <code>Compilation is in progress. Please wait...</code> will repeatedly appear, just be patient. Eventually your image will start generating.<br />
 Subsequent generations will be significantly quicker.  </p>
+<h3 id="upgrading-zluda">Upgrading ZLUDA</h3>
+<p>If you have problem with ZLUDA after updating SD.Next, upgrading ZLUDA may help.</p>
+<ol>
+<li>Remove <code>.zluda</code> folder.</li>
+<li>Launch WebUI. The installer will download and install newer ZLUDA.</li>
+</ol>
+<p>※ You may have to wait for a while to compile as the first generation.</p>
 <hr />
 <h2 id="comparison-directml">Comparison (DirectML)</h2>
 <table>
@@ -2716,12 +2741,12 @@ Subsequent generations will be significantly quicker.  </p>
 <tr>
 <td>DNN</td>
 <td>❓</td>
-<td>🚧</td>
+<td>❌</td>
 </tr>
 <tr>
 <td>RTC</td>
 <td>❓</td>
-<td>❌</td>
+<td>⚠️</td>
 </tr>
 <tr>
 <td>Source Code</td>
@@ -2735,7 +2760,9 @@ Subsequent generations will be significantly quicker.  </p>
 </tr>
 </tbody>
 </table>
-<p>*: Known as possible, but uses too much VRAM to train stable diffusion models/LoRAs/etc.</p>
+<p>❓: unknown<br />
+⚠️: partially supported<br />
+*: known as possible, but uses too much VRAM to train stable diffusion models/LoRAs/etc.</p>
 <h2 id="compatibility">Compatibility</h2>
 <table>
 <thead>
@@ -2767,7 +2794,7 @@ Subsequent generations will be significantly quicker.  </p>
 </tr>
 <tr>
 <td>INT8</td>
-<td>✅*</td>
+<td>✅</td>
 </tr>
 <tr>
 <td>UINT8</td>
@@ -2779,11 +2806,11 @@ Subsequent generations will be significantly quicker.  </p>
 </tr>
 <tr>
 <td>FP8</td>
-<td>❌</td>
+<td>⚠️</td>
 </tr>
 <tr>
 <td>BF8</td>
-<td>❌</td>
+<td>⚠️</td>
 </tr>
 </tbody>
 </table>
