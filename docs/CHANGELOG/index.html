@@ -2339,19 +2339,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-13" class="md-nav__link">
+  <a href="#update-for-2025-01-15" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-13
+      Update for 2025-01-15
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-01-13">
+    <nav class="md-nav" aria-label="Update for 2025-01-15">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-01-13" class="md-nav__link">
+  <a href="#highlights-for-2025-01-15" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-01-13
+      Highlights for 2025-01-15
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-01-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-01-15
     </span>
   </a>
   
@@ -3528,19 +3537,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-13" class="md-nav__link">
+  <a href="#update-for-2025-01-15" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-13
+      Update for 2025-01-15
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-01-13">
+    <nav class="md-nav" aria-label="Update for 2025-01-15">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-01-13" class="md-nav__link">
+  <a href="#highlights-for-2025-01-15" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-01-13
+      Highlights for 2025-01-15
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-01-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-01-15
     </span>
   </a>
   
@@ -4701,15 +4719,18 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-13">Update for 2025-01-13</h2>
+<h2 id="update-for-2025-01-15">Update for 2025-01-15</h2>
+<h3 id="highlights-for-2025-01-15">Highlights for 2025-01-15</h3>
 <p>Two weeks since last release, time for update!<br />
-<em>What's New?"<br />
+This time a bit shorter highligh reel as this is primarily a service release, but still there is more than few updates<br />
+<em>(actually, there are ~60 commits, so its not that tiny)</em>  </p>
+<p><em>What's New?"<br />
 - Large <a href="https://github.com/vladmandic/automatic/wiki">Wiki</a>/<a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> updates<br />
-- New models: </em><em>Allegro Video</em><em>, new pipelines: </em><em>PixelSmith</em><em>, updates: </em><em>Hunyuan-Video</em><em>, </em><em>LTX-Video</em><em><br />
-- New schedulers (TDD)<br />
-- Improvements to </em><em>Detailer</em><em>, </em><em>XYZ grid</em><em>, </em><em>Sysinfo</em><em>, </em><em>Logging</em>*<br />
+- New models: </em><em>Allegro Video</em><em>, new pipelines: </em><em>PixelSmith</em><em>, updates: </em><em>Hunyuan-Video</em><em>, </em><em>LTX-Video</em><em>, </em><em>Sana 4k</em><em><br />
+- New version for </em><em>ZLUDA</em><em><br />
+- New features in </em><em>Detailer</em><em>, </em><em>XYZ grid</em><em>, </em><em>Sysinfo</em><em>, </em><em>Logging</em><em>, </em><em>Schedulers</em><em>, </em><em>Video save/create</em>*<br />
 - And a tons of hotfixes...  </p>
-<h3 id="details-for-2025-01-13">Details for 2025-01-13</h3>
+<h3 id="details-for-2025-01-15">Details for 2025-01-15</h3>
 <ul>
 <li><a href="https://vladmandic.github.io/sdnext-docs/">Wiki/Docs</a>:</li>
 <li>updated: Detailer, Install, Update, Debug, Control-HowTo, ZLUDA  </li>
@@ -4725,6 +4746,10 @@
 <li>example: <a href="https://huggingface.co/Cseti/HunyuanVideo-LoRA-Arcane_Jinx-v1">https://huggingface.co/Cseti/HunyuanVideo-LoRA-Arcane_Jinx-v1</a></li>
 <li><a href="https://github.com/Lightricks/LTX-Video">LTX Video</a> framewise decoding  </li>
 <li>enabled by default, allows generating longer videos with reduced memory requirements  </li>
+<li><a href="https://huggingface.co/Efficient-Large-Model/Sana_1600M_4Kpx_BF16_diffusers">Sana 4k</a>  </li>
+<li>new Sana variation with support of directly generating 4k images  </li>
+<li>simply select from <em>networks -&gt; models -&gt; reference</em>  </li>
+<li>tip: enable vae tiling when generating very large images  </li>
 <li><strong>Logging</strong>:</li>
 <li>reverted enable debug by default  </li>
 <li>updated <a href="https://github.com/vladmandic/automatic/wiki/debug">debug wiki</a>  </li>
@@ -4737,6 +4762,7 @@
 <li>startup tracing and optimizations  </li>
 <li>threading load locks on model loads  </li>
 <li>refactor native vs legacy model loader  </li>
+<li>video save/create</li>
 <li><strong>Schedulers</strong>:</li>
 <li><a href="https://github.com/RedAIGC/Target-Driven-Distillation">TDD</a> new super-fast scheduler that can generate images in 4-8 steps<br />
     recommended to use with <a href="https://huggingface.co/RED-AIGC/TDD/tree/main">TDD LoRA</a>  </li>
@@ -4750,6 +4776,11 @@
 <li>since different TAESD versions produce different results and latest is not necessarily greatest<br />
     you can choose TAESD version in settings -&gt; live preview<br />
     also added is support for another finetuned version of TAESD <a href="https://huggingface.co/cqyan/hybrid-sd-tinyvae-xl">Hybrid TinyVAE</a>  </li>
+<li><strong>Video</strong>  </li>
+<li>all video create/save code is now unified  </li>
+<li>add support for video formats: GIF, PNG, MP4/MP4V, MP4/AVC1, MP4/JVT3, MKV/H264, AVI/DIVX, AVI/RGBA, MJPEG/MJPG, MPG/MPG1, AVR/AVR1</li>
+<li><em>note</em>: video format support is platform dependent and not all formats may be available on all platforms</li>
+<li><em>note</em>: avc1 and h264 need custom opencv due to oss licensing issues  </li>
 <li><strong>ZLUDA</strong> v3.8.7  </li>
 <li>new runtime compiler implementation: complex types, JIT are now available  </li>
 <li>fast fourier transformation is implemented  </li>
