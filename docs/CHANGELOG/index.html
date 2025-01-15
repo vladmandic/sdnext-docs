@@ -2345,6 +2345,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Update for 2025-01-13">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-01-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-01-13
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3519,6 +3534,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Update for 2025-01-13">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-01-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-01-13
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4672,7 +4702,17 @@
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-01-13">Update for 2025-01-13</h2>
+<p>Two weeks since last release, time for update!<br />
+<em>What's New?"<br />
+- Large <a href="https://github.com/vladmandic/automatic/wiki">Wiki</a>/<a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> updates<br />
+- New models: </em><em>Allegro Video</em><em>, new pipelines: </em><em>PixelSmith</em><em>, updates: </em><em>Hunyuan-Video</em><em>, </em><em>LTX-Video</em><em><br />
+- New schedulers (TDD)<br />
+- Improvements to </em><em>Detailer</em><em>, </em><em>XYZ grid</em><em>, </em><em>Sysinfo</em><em>, </em><em>Logging</em>*<br />
+- And a tons of hotfixes...  </p>
+<h3 id="details-for-2025-01-13">Details for 2025-01-13</h3>
 <ul>
+<li><a href="https://vladmandic.github.io/sdnext-docs/">Wiki/Docs</a>:</li>
+<li>updated: Detailer, Install, Update, Debug, Control-HowTo, ZLUDA  </li>
 <li><a href="https://huggingface.co/rhymes-ai/Allegro">Allegro Video</a>  </li>
 <li>optimizations: full offload and quantization support  </li>
 <li><em>reference values</em>: width 1280 height 720 frames 88 steps 100 guidance 7.5  </li>
@@ -4683,14 +4723,8 @@
 <li>select from <em>scripts -&gt; pixelsmith</em>  </li>
 <li><a href="https://github.com/Tencent/HunyuanVideo">Hunyuan Video</a> LoRA support</li>
 <li>example: <a href="https://huggingface.co/Cseti/HunyuanVideo-LoRA-Arcane_Jinx-v1">https://huggingface.co/Cseti/HunyuanVideo-LoRA-Arcane_Jinx-v1</a></li>
-<li>ZLUDA v3.8.7</li>
-<li>new runtime compiler implementation: complex types, JIT are now available  </li>
-<li>fast fourier transformation is implemented  </li>
-<li>experimental BLASLt support via nightly build<ul>
-<li>set <code>ZLUDA_NIGHTLY=1</code> to install nightly ZLUDA: newer torch such as 2.4.x (default) and 2.5.x are now available  </li>
-<li>requirements: unofficial hipBLASLt</li>
-</ul>
-</li>
+<li><a href="https://github.com/Lightricks/LTX-Video">LTX Video</a> framewise decoding  </li>
+<li>enabled by default, allows generating longer videos with reduced memory requirements  </li>
 <li><strong>Logging</strong>:</li>
 <li>reverted enable debug by default  </li>
 <li>updated <a href="https://github.com/vladmandic/automatic/wiki/debug">debug wiki</a>  </li>
@@ -4716,11 +4750,17 @@
 <li>since different TAESD versions produce different results and latest is not necessarily greatest<br />
     you can choose TAESD version in settings -&gt; live preview<br />
     also added is support for another finetuned version of TAESD <a href="https://huggingface.co/cqyan/hybrid-sd-tinyvae-xl">Hybrid TinyVAE</a>  </li>
+<li><strong>ZLUDA</strong> v3.8.7  </li>
+<li>new runtime compiler implementation: complex types, JIT are now available  </li>
+<li>fast fourier transformation is implemented  </li>
+<li>experimental BLASLt support via nightly build  <ul>
+<li>set <code>ZLUDA_NIGHTLY=1</code> to install nightly ZLUDA: newer torch such as 2.4.x (default) and 2.5.x are now available  </li>
+<li>requirements: unofficial hipBLASLt  </li>
+</ul>
+</li>
 <li><strong>Other</strong></li>
 <li><strong>XYZ Grid</strong>: add prompt search&amp;replace options: <em>primary, refine, detailer, all</em></li>
 <li><strong>SysInfo</strong>: update to collected data and benchmarks  </li>
-<li><a href="https://vladmandic.github.io/sdnext-docs/">Wiki/Docs</a>:</li>
-<li>updated: Detailer, Install, Update, Debug, Control-HowTo, ZLUDA  </li>
 <li><strong>Fixes</strong>:</li>
 <li>explict clear caches on model load  </li>
 <li>lock adetailer commit: <code>#a89c01d</code>  </li>
