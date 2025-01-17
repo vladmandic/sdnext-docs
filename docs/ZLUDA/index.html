@@ -1533,6 +1533,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pytorch-2425-experimental" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyTorch 2.4/2.5 (experimental)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2584,6 +2593,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pytorch-2425-experimental" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyTorch 2.4/2.5 (experimental)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2692,6 +2710,30 @@ Subsequent generations will be significantly quicker.  </p>
 <li>Launch WebUI. The installer will download and install newer ZLUDA.</li>
 </ol>
 <p>※ You may have to wait for a while to compile as the first generation.</p>
+<h3 id="pytorch-2425-experimental">PyTorch 2.4/2.5 (experimental)</h3>
+<p>The major blocker that prevents us to upgrade PyTorch is <a href="https://github.com/ROCm/hipBLASLt">hipBLASLt</a>.</p>
+<p>It haven't been released on Windows yet.</p>
+<p>However, there're unofficial builds available.</p>
+<p>This section describes how to get the latest PyTorch rather than default (2.3.1).</p>
+<ol>
+<li>Install HIP SDK 6.2. If you already have older HIP SDK, uninstall it before installing 6.2.</li>
+<li>Remove <code>.zluda</code> folder if exists.<br />
+If you have set <code>ZLUDA</code> environment variable, download the latest nightly ZLUDA from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
+If you built ZLUDA yourself, pull latest commits of ZLUDA and rebuild with <code>--nightly</code>.</li>
+<li>Uninstall PyTorch if installed.
+<div class="highlight"><pre><span></span><code>.\venv\Scripts\activate
+pip uninstall torch torchvision -y
+</code></pre></div></li>
+<li>Download and install unofficial hipBLASLt build.<br />
+<a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.2.4/hipblaslt-rocmlibs-for-gfx1100-gfx1101-gfx1102-gfx1103-gfx1150-for.hip6.2.7z">gfx1100, gfx1101, gfx1102, gfx1103, or gfx1150</a><br />
+gfx1030 (TBA)</li>
+<li>Launch WebUI with environment variable <code>ZLUDA_NIGHTLY=1</code>.<br />
+By default, PyTorch 2.4.1 will be installed.</li>
+</ol>
+<p>If you need PyTorch 2.5.1, manually install via the commands below.
+<div class="highlight"><pre><span></span><code>./venv/Scripts/activate
+pip install torch==2.5.1 torchvision --index-url https://download.pytorch.org/whl/cu118
+</code></pre></div></p>
 <hr />
 <h2 id="comparison-directml">Comparison (DirectML)</h2>
 <table>
