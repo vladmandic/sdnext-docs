@@ -2598,11 +2598,14 @@
 <h2 id="installation">Installation</h2>
 <h3 id="preparations">Preparations</h3>
 <ul>
-<li>Install the drivers for your device.</li>
-<li>Install <code>git</code> and <code>python</code>.</li>
-<li>Open CMD in a folder you want to install SD.Next.</li>
+<li>Install the drivers for your device</li>
+<li>Install <a href="https://github.com/vladmandic/automatic/wiki/Installation#install-python-and-git">Git and Python</a></li>
+<li>Open CMD in a folder you want to install SD.Next</li>
 </ul>
-<p>Note: Do not mix OpenVINO with your old install. Treat OpenVINO as a seperate backend.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not mix OpenVINO with your old install. Treat OpenVINO as a seperate backend.  </p>
+</div>
 <h3 id="using-sdnext-with-openvino">Using SD.Next with OpenVINO</h3>
 <p>Install SD.Next from Github:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/automatic
@@ -2617,6 +2620,10 @@
 <p>Linux:</p>
 <div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-openvino
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
+</div>
 <h2 id="more-info">More Info</h2>
 <h3 id="limitations">Limitations</h3>
 <ul>
@@ -2630,13 +2637,19 @@
 </ul>
 <h3 id="quantization">Quantization</h3>
 <p>Quantization enables 8 bit support without autocast.<br />
-Enable <code>OpenVINO Quantize Models with NNCF</code> option in Compute Settings to use it.<br />
-Note: Quantization has noticeable quality impact and generally not recommended.  </p>
+Enable <code>OpenVINO Quantize Models with NNCF</code> option in Compute Settings to use it.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Quantization has noticeable quality impact and generally not recommended.  </p>
+</div>
 <h2 id="model-compression">Model Compression</h2>
 <p>Enable <code>Compress Model weights with NNCF</code> option in Compute Settings to use it.<br />
 Select a 4 bit mode from <code>OpenVINO compress mode for NNCF</code> to use 4 bit.<br />
 For GPUs; select both CPU and GPU from the device selection if you want to use GPU with Model Compression.  </p>
-<p>Note: VAE will be compressed to INT8 if you use a 4 bit mode.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>VAE will still be compressed to INT8 if you use a 4 bit mode.  </p>
+</div>
 <h2 id="custom-devices">Custom Devices</h2>
 <p>Use the <code>OpenVINO devices to use</code> option in <code>Compute Settings</code> if you want to specify a device.<br />
 Selecting multiple devices will use multiple devices as a single <code>HETERO</code> device.  </p>

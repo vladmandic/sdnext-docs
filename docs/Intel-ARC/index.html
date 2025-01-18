@@ -1368,33 +1368,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Types
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backend
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#errors-with-igpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Errors with iGPU
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#windows-installation" class="md-nav__link">
     <span class="md-ellipsis">
       Windows Installation
@@ -1451,15 +1424,6 @@
   <a href="#ubuntu" class="md-nav__link">
     <span class="md-ellipsis">
       Ubuntu
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dont-use-linux-kernel-68-or-69" class="md-nav__link">
-    <span class="md-ellipsis">
-      Don't use Linux Kernel 6.8 or 6.9!
     </span>
   </a>
   
@@ -2524,33 +2488,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Types
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backend" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backend
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#errors-with-igpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Errors with iGPU
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#windows-installation" class="md-nav__link">
     <span class="md-ellipsis">
       Windows Installation
@@ -2613,15 +2550,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dont-use-linux-kernel-68-or-69" class="md-nav__link">
-    <span class="md-ellipsis">
-      Don't use Linux Kernel 6.8 or 6.9!
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#arch-linux" class="md-nav__link">
     <span class="md-ellipsis">
       Arch Linux
@@ -2674,22 +2602,19 @@
 <li>Intel Flex Series  </li>
 <li>Intel Max Series  </li>
 </ul>
-<p>iGPUs are <strong>not</strong> supported with IPEX, use <a href="https://github.com/vladmandic/automatic/wiki/OpenVINO">OpenVINO</a> with iGPUs.  </p>
-<p>Benchmarks for Intel ARC A770: <a href="https://github.com/vladmandic/automatic/wiki/Benchmark#intel-arc">https://github.com/vladmandic/automatic/wiki/Benchmark#intel-arc</a></p>
-<h2 id="data-types">Data Types</h2>
-<p>BF16 is faster than FP16 in general.</p>
-<h2 id="backend">Backend</h2>
-<p>Diffusers backend is 10%-25% faster than the original backend.</p>
-<h2 id="errors-with-igpu">Errors with iGPU</h2>
-<p>Disable your iGPU (if any, e.g. UHD or Iris Xe) in the device manager.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>iGPUs are <strong>not</strong> supported with IPEX, use <a href="https://github.com/vladmandic/automatic/wiki/OpenVINO">OpenVINO</a> if you want to use an iGPU.<br />
+ Having an Intel iGPU can cause conflicts and random errors if you want to use a dedicated Intel GPU with IPEX.<br />
+ Disable your iGPU (if any, e.g. UHD or Iris Xe) in the device manager.  </p>
+</div>
 <h2 id="windows-installation">Windows Installation</h2>
 <h3 id="preparations">Preparations</h3>
 <ul>
-<li>Install <code>Intel GPU Driver</code>.</li>
-<li>Install <code>Intel OneAPI PyTorch GPU Dev</code></li>
-<li>Install <code>Git</code>.</li>
-<li>Install <code>Python</code> 3.10 or 3.11.</li>
-<li>Open CMD in a folder you want to install SD.Next.</li>
+<li>Install <a href="https://www.intel.com/content/www/us/en/download/785597/intel-arc-iris-xe-graphics-windows.html">Intel ARC Drivers</a></li>
+<li>Install <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html?packages=dl-essentials&amp;dl-essentials-os=windows&amp;dl-lin=offline">Intel OneAPI Deep Learning Essentials</a></li>
+<li>Install <a href="https://github.com/vladmandic/automatic/wiki/Installation#install-python-and-git">Git and Python</a></li>
+<li>Open CMD in a folder you want to install SD.Next</li>
 </ul>
 <h3 id="using-sdnext">Using SD.Next</h3>
 <p>Open a CMD Windows and install SD.Next from Github:</p>
@@ -2697,18 +2622,25 @@
 <span class="nb">cd</span><span class="w"> </span>automatic
 </code></pre></div>
 <p>Then run SD.Next:
-<div class="highlight"><pre><span></span><code>&quot;C:\Program Files (x86)\Intel\oneAPI\pytorch-gpu-dev-0.5\oneapi-vars.bat&quot;
-&quot;C:\Program Files (x86)\Intel\oneAPI\ocloc\2024.2\env\vars.bat&quot; 
+<div class="highlight"><pre><span></span><code>&quot;C:\Program Files (x86)\Intel\oneAPI\compiler\2025.0\env\vars.bat&quot;
+&quot;C:\Program Files (x86)\Intel\oneAPI\ocloc\2024.2\env\vars.bat&quot;
 .\webui.bat --use-ipex
 </code></pre></div></p>
-<p>Note: It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
+</div>
 <h2 id="linux-and-wsl-installation">Linux and WSL Installation</h2>
 <h3 id="install-intel-compute-runtime">Install Intel Compute Runtime</h3>
 <h4 id="ubuntu">Ubuntu</h4>
 <p>Use Ubuntu 23.04 or newer.</p>
-<h4 id="dont-use-linux-kernel-68-or-69">Don't use Linux Kernel 6.8 or 6.9!</h4>
-<p><a href="https://github.com/intel/compute-runtime/issues/726">https://github.com/intel/compute-runtime/issues/726</a>  </p>
-<p>Note: Updating kernel is not neccesary for WSL.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>#### Don't use Linux Kernel 6.8 or 6.9!
+ <a href="https://github.com/intel/compute-runtime/issues/726">https://github.com/intel/compute-runtime/issues/726</a><br />
+ Update your kernel to at least 6.10 or update to the latest available kernel.  </p>
+<p>Updating kernel is not necessary for WSL.</p>
+</div>
 <p>Then add the package lists for Intel Level Zero Drivers:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ca-certificates<span class="w"> </span>wget<span class="w"> </span>gpg
 wget<span class="w"> </span>-qO<span class="w"> </span>-<span class="w"> </span>https://repositories.intel.com/gpu/intel-graphics.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>--output<span class="w"> </span>/usr/share/keyrings/intel-graphics.gpg
@@ -2728,7 +2660,10 @@ sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </
 <span class="nb">cd</span><span class="w"> </span>automatic
 ./webui.sh<span class="w"> </span>--use-ipex
 </code></pre></div>
-<p>Note: It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
+</div>
 
 
 
