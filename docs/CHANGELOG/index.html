@@ -4739,15 +4739,27 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-01-19">Update for 2025-01-19</h2>
 <ul>
+<li><strong>Model Merge</strong></li>
+<li>replace model components and merge LoRAs<br />
+    in addition to existing model weights merge support<br />
+    now also having ability to replace model components and merge LoRAs<br />
+    you can also test merges in-memory without needing to save to disk at all<br />
+    and you can also use it to convert diffusers to safetensors if you want<br />
+<em>example</em>: replace vae in your favorite model with a fixed one? replace text encoder? etc.<br />
+<em>note</em>: limited to sdxl for now, additional models can be added depending on popularity  </li>
 <li><strong>Detailer</strong>:  </li>
 <li>in addition as standard behavior of detect &amp; run-generate, it can now also run face-restore models  </li>
 <li>included models are: <em>CodeFormer, RestoreFormer, GFPGan, GPEN-BFR</em>  </li>
 <li><strong>Other</strong>:  </li>
+<li><strong>upscale</strong>: new <a href="Heasterian/AsymmetricAutoencoderKLUpscaler">asymmetric vae</a> upscaling method</li>
 <li><strong>ipex</strong>: update supported torch versions  </li>
 <li><strong>gallery</strong>: add http fallback for slow/unreliable links  </li>
-<li><strong>upscale</strong>: code refactor to unify latent, resize and model based upscalers  </li>
 <li><strong>splash</strong>: add legacy mode indicator on splash screen  </li>
 <li><strong>network</strong>: extract thumbnail from model metadata if present  </li>
+<li><strong>Refactor</strong>:  </li>
+<li><strong>upscale</strong>: code refactor to unify latent, resize and model based upscalers  </li>
+<li><strong>loader</strong>: ability to run in-memory models  </li>
+<li><strong>schedulers</strong>: ability to create model-less schedulers  </li>
 <li><strong>Fixes</strong>:  </li>
 <li>non-full vae decode  </li>
 <li>send-to image transfer  </li>
