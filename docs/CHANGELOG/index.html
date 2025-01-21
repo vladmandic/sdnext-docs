@@ -2339,9 +2339,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-19" class="md-nav__link">
+  <a href="#update-for-2025-01-21" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-19
+      Update for 2025-01-21
     </span>
   </a>
   
@@ -3546,9 +3546,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-19" class="md-nav__link">
+  <a href="#update-for-2025-01-21" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-19
+      Update for 2025-01-21
     </span>
   </a>
   
@@ -4737,8 +4737,10 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-19">Update for 2025-01-19</h2>
+<h2 id="update-for-2025-01-21">Update for 2025-01-21</h2>
 <ul>
+<li><strong>Contributing</strong>:  </li>
+<li>if you'd like to contribute, please see updated <a href="https://github.com/vladmandic/automatic/blob/dev/CONTRIBUTING">contributing</a> guidelines</li>
 <li><strong>Model Merge</strong></li>
 <li>replace model components and merge LoRAs<br />
     in addition to existing model weights merge support<br />
@@ -4750,6 +4752,16 @@
 <li><strong>Detailer</strong>:  </li>
 <li>in addition as standard behavior of detect &amp; run-generate, it can now also run face-restore models  </li>
 <li>included models are: <em>CodeFormer, RestoreFormer, GFPGan, GPEN-BFR</em>  </li>
+<li><strong>Face</strong>:  </li>
+<li>new <a href="https://huggingface.co/TencentARC/PhotoMaker-V2">PhotoMaker v2</a> and reimplemented <a href="https://huggingface.co/TencentARC/PhotoMaker">PhotoMaker v1</a><br />
+    compatible with sdxl models, generates pretty good results and its faster than most other methods<br />
+    select under <em>scripts -&gt; face -&gt; photomaker</em>  </li>
+<li>new <a href="https://github.com/somanchiu/ReSwapper">ReSwapper</a><br />
+    todo: experimental-only and unfinished, only noting in changelog for future reference  </li>
+<li><strong>Video</strong>  </li>
+<li><strong>hunyuan video</strong> support for <a href="https://huggingface.co/FastVideo/FastHunyuan">FastHunyuan</a><br />
+    simply select model variant and set appropriate parameters<br />
+    recommended: sampler-shift=17, steps=6, resolution=720x1280, frames=125, guidance&gt;6.0  </li>
 <li><strong>Other</strong>:  </li>
 <li><strong>upscale</strong>: new <a href="Heasterian/AsymmetricAutoencoderKLUpscaler">asymmetric vae</a> upscaling method</li>
 <li><strong>ipex</strong>: update supported torch versions  </li>

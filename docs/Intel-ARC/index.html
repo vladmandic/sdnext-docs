@@ -1411,19 +1411,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-intel-compute-runtime" class="md-nav__link">
+  <a href="#ubuntu-wsl" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Intel Compute Runtime
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Install Intel Compute Runtime">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ubuntu
+      Ubuntu / WSL
     </span>
   </a>
   
@@ -1438,15 +1428,10 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#using-sdnext_1" class="md-nav__link">
+  <a href="#using-sdnext-on-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      Using SD.Next
+      Using SD.Next on Linux
     </span>
   </a>
   
@@ -1454,6 +1439,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
   
 </li>
       
@@ -2531,19 +2525,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-intel-compute-runtime" class="md-nav__link">
+  <a href="#ubuntu-wsl" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Intel Compute Runtime
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Install Intel Compute Runtime">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ubuntu
+      Ubuntu / WSL
     </span>
   </a>
   
@@ -2558,15 +2542,10 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#using-sdnext_1" class="md-nav__link">
+  <a href="#using-sdnext-on-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      Using SD.Next
+      Using SD.Next on Linux
     </span>
   </a>
   
@@ -2574,6 +2553,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
   
 </li>
       
@@ -2617,7 +2605,7 @@
 <li>Open CMD in a folder you want to install SD.Next</li>
 </ul>
 <h3 id="using-sdnext">Using SD.Next</h3>
-<p>Open a CMD Windows and install SD.Next from Github:</p>
+<p>Open a CMD window and install SD.Next from Github:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/automatic
 <span class="nb">cd</span><span class="w"> </span>automatic
 </code></pre></div>
@@ -2631,39 +2619,73 @@
 <p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
 </div>
 <h2 id="linux-and-wsl-installation">Linux and WSL Installation</h2>
-<h3 id="install-intel-compute-runtime">Install Intel Compute Runtime</h3>
-<h4 id="ubuntu">Ubuntu</h4>
-<p>Use Ubuntu 23.04 or newer.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>#### Don't use Linux Kernel 6.8 or 6.9!
+<p>#### Don't use Linux Kernel 6.8 or 6.9 with Linux!
  <a href="https://github.com/intel/compute-runtime/issues/726">https://github.com/intel/compute-runtime/issues/726</a><br />
  Update your kernel to at least 6.10 or update to the latest available kernel.  </p>
-<p>Updating kernel is not necessary for WSL.</p>
+<p>*Updating kernel is not necessary for WSL as it is using the Windows GPU drivers.</p>
 </div>
-<p>Then add the package lists for Intel Level Zero Drivers:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ca-certificates<span class="w"> </span>wget<span class="w"> </span>gpg
-wget<span class="w"> </span>-qO<span class="w"> </span>-<span class="w"> </span>https://repositories.intel.com/gpu/intel-graphics.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>--output<span class="w"> </span>/usr/share/keyrings/intel-graphics.gpg
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy client&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/intel-gpu-jammy.list
-sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<h3 id="ubuntu-wsl">Ubuntu / WSL</h3>
+<p>Following Ubuntu instructions are for Ubuntu 24.04.<br />
+Install the base packages:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>software-properties-common<span class="w"> </span>build-essential<span class="w"> </span>ca-certificates<span class="w"> </span>wget<span class="w"> </span>gpg<span class="w"> </span>git
+</code></pre></div></p>
+<p>Add the package lists for Intel Level Zero Drivers:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO<span class="w"> </span>-<span class="w"> </span>https://repositories.intel.com/gpu/intel-graphics.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--yes<span class="w"> </span>--dearmor<span class="w"> </span>--output<span class="w"> </span>/usr/share/keyrings/intel-graphics.gpg
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu noble client&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/intel-gpu-noble.list
+sudo<span class="w"> </span>apt<span class="w"> </span>update
 </code></pre></div>
-<p>Then install the necessary packages:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>intel-opencl-icd<span class="w"> </span>intel-level-zero-gpu<span class="w"> </span>level-zero<span class="w"> </span>git<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv<span class="w"> </span>libgl1<span class="w"> </span>libglib2.0-0<span class="w"> </span>libgomp1
+<p>Install the Intel Level Zero Drivers and the packages needed for PyTorch:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>intel-opencl-icd<span class="w"> </span>libze-intel-gpu1<span class="w"> </span>libze1<span class="w"> </span>libgl1<span class="w"> </span>libglib2.0-0<span class="w"> </span>libgomp1
 </code></pre></div>
-<h4 id="arch-linux">Arch Linux</h4>
+<p>Install Python 3.11:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:deadsnakes/ppa<span class="w"> </span>-y<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python3.11<span class="w"> </span>python3.11-dev<span class="w"> </span>python3.11-venv<span class="w"> </span>python3-pip
+</code></pre></div>
+<h3 id="arch-linux">Arch Linux</h3>
 <p>Install the necessary packages for Arch Linux:</p>
-<div class="highlight"><pre><span></span><code>pacman<span class="w"> </span>-S<span class="w"> </span>intel-compute-runtime<span class="w"> </span>level-zero-headers<span class="w"> </span>level-zero-loader<span class="w"> </span>git<span class="w"> </span>python-pip<span class="w"> </span>python-virtualenv
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>intel-compute-runtime<span class="w"> </span>level-zero-headers<span class="w"> </span>level-zero-loader<span class="w"> </span>base-devel<span class="w"> </span>git<span class="w"> </span>python-pip<span class="w"> </span>python-virtualenv
 </code></pre></div>
-<h3 id="using-sdnext_1">Using SD.Next</h3>
+<p>Install Python 3.11:
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/python311.git
+<span class="nb">cd</span><span class="w"> </span>python311
+makepkg<span class="w"> </span>-si
+<span class="nb">cd</span><span class="w"> </span>..
+</code></pre></div></p>
+<h3 id="using-sdnext-on-linux">Using SD.Next on Linux</h3>
 <p>Install SD.Next from Github:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/automatic
 <span class="nb">cd</span><span class="w"> </span>automatic
-./webui.sh<span class="w"> </span>--use-ipex
 </code></pre></div>
+<p>Run SD.Next
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python3.11
+./webui.sh<span class="w"> </span>--use-ipex
+</code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
 </div>
+<h2 id="environment-variables">Environment Variables</h2>
+<ul>
+<li>
+<p><code>IPEX_SDPA_SLICE_TRIGGER_RATE</code>: Specify when dynamic attention slicing for Scaled Dot Product Attention should get triggered for Intel ARC. This environment variable allows you to set the trigger rate in gigabytes (GB). The default is <code>6</code>.</p>
+</li>
+<li>
+<p><code>IPEX_ATTENTION_SLICE_RATE</code>: Specify the dynamic attention slicing rate for 32 bit GPUs. This environment variable allows you to set the slicing rate in gigabytes (GB). The default is <code>4</code>.</p>
+</li>
+<li>
+<p><code>IPEX_FORCE_ATTENTION_SLICE</code>: Specify to enable or disable Dynamic Attention. The default is <code>1</code>.</p>
+</li>
+<li><code>1</code> will force enable dynamic attention slicing even if the GPU supports 64 bit.</li>
+<li><code>-1</code> will force disable dynamic attention slicing even if the GPU doesn't support 64 bit.</li>
+<li>
+<p><code>0</code> will automatically enable or disable dynamic attention based on the GPU.</p>
+</li>
+<li>
+<p><code>IPEXRUN</code>: Specify to launch the webui with ipexrun. Set it to <code>True</code> to use ipexrun. The default is unset.</p>
+</li>
+</ul>
 
 
 

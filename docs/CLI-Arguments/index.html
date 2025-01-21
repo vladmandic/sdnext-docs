@@ -2810,10 +2810,13 @@ Logging:
 </ul>
 <h4 id="ipex-environment-variables">IPEX Environment Variables</h4>
 <ul>
-<li><code>DISABLE_IPEXRUN</code>: Disable ipexrun for Intel ARC. If you encounter memory pointer or SIGSEGV-related errors on Linux, you can try setting this environment variable to <code>True</code> to disable ipexrun.</li>
-<li><code>IPEX_SDPA_SLICE_TRIGGER_RATE</code>: Specify when dynamic attention slicing for Scaled Dot Product Attention should get triggered for Intel ARC. This environment variable allows you to set the trigger rate in gigabytes (GB). The default is <code>6</code> GB.</li>
-<li><code>IPEX_ATTENTION_SLICE_RATE</code>: Specify the dynamic attention slicing rate for Intel ARC. This environment variable allows you to set the slicing rate in gigabytes (GB). The default is <code>4</code> GB.</li>
-<li><code>IPEX_FORCE_ATTENTION_SLICE</code>: Force use dynamic attention slicing even if the GPU supports 64 bit. Useful with Intel Data Center GPU MAX series.</li>
+<li><code>IPEX_SDPA_SLICE_TRIGGER_RATE</code>: Specify when dynamic attention slicing for Scaled Dot Product Attention should get triggered for Intel ARC. This environment variable allows you to set the trigger rate in gigabytes (GB). The default is <code>6</code>.</li>
+<li><code>IPEX_ATTENTION_SLICE_RATE</code>: Specify the dynamic attention slicing rate for 32 bit GPUs. This environment variable allows you to set the slicing rate in gigabytes (GB). The default is <code>4</code>.</li>
+<li><code>IPEX_FORCE_ATTENTION_SLICE</code>: Specify to enable or disable Dynamic Attention. The default is <code>1</code>.</li>
+<li><code>1</code> will force enable dynamic attention slicing even if the GPU supports 64 bit.</li>
+<li><code>-1</code> will force disable dynamic attention slicing even if the GPU doesn't support 64 bit.</li>
+<li><code>0</code> will automatically enable or disable dynamic attention based on the GPU.</li>
+<li><code>IPEXRUN</code>: Specify to launch the webui with ipexrun. Set it to <code>True</code> to use ipexrun. The default is unset.</li>
 </ul>
 <h3 id="pathing">Pathing</h3>
 <ul>
