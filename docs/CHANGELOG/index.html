@@ -4762,6 +4762,12 @@
 <li><strong>hunyuan video</strong> support for <a href="https://huggingface.co/FastVideo/FastHunyuan">FastHunyuan</a><br />
     simply select model variant and set appropriate parameters<br />
     recommended: sampler-shift=17, steps=6, resolution=720x1280, frames=125, guidance&gt;6.0  </li>
+<li><a href="https://github.com/chengzeyi/ParaAttention">ParaAttention</a></li>
+<li>first-block caching that can significantly speed up generation by dynamically reusing partial outputs between steps  </li>
+<li>available for: flux, hunyuan-video, ltx-video, mochi  </li>
+<li>enable in <em>settings -&gt; pipeline modifiers -&gt; para-attention</em>  </li>
+<li>adjust residual diff threshold to balance the speedup and the accuracy:<br />
+    higher values leads to more cache hits and speedups, but might also lead to a higher accuracy drop  </li>
 <li><strong>Other</strong>:  </li>
 <li><strong>upscale</strong>: new <a href="Heasterian/AsymmetricAutoencoderKLUpscaler">asymmetric vae</a> upscaling method</li>
 <li><strong>ipex</strong>: update supported torch versions  </li>
@@ -4780,6 +4786,8 @@
 <li>update ui element ids  </li>
 <li>modernui use local font  </li>
 <li>unique font family registration  </li>
+<li>mochi video number of frames  </li>
+<li>mark large models that should offload  </li>
 </ul>
 <h2 id="update-for-2025-01-15">Update for 2025-01-15</h2>
 <h3 id="highlights-for-2025-01-15">Highlights for 2025-01-15</h3>
