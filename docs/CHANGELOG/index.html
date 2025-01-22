@@ -4768,9 +4768,16 @@
 <li>enable in <em>settings -&gt; pipeline modifiers -&gt; para-attention</em>  </li>
 <li>adjust residual diff threshold to balance the speedup and the accuracy:<br />
     higher values leads to more cache hits and speedups, but might also lead to a higher accuracy drop  </li>
+<li><strong>IPEX</strong></li>
+<li>enable force attention slicing for all GPUs  </li>
+<li>enable fp64 emulation and sycl jit cache  </li>
+<li>switch to pytorch test branch on windows  </li>
+<li>update the supported python versions  </li>
+<li><a href="https://github.com/magic-research/piecewise-rectified-flow">PerFlow</a>  </li>
+<li>piecewise rectified flow as model acceleration  </li>
+<li>use <code>perflow</code> scheduler combined with one of the available pre-trained <a href="https://huggingface.co/hansyan">models</a>  </li>
 <li><strong>Other</strong>:  </li>
 <li><strong>upscale</strong>: new <a href="Heasterian/AsymmetricAutoencoderKLUpscaler">asymmetric vae</a> upscaling method</li>
-<li><strong>ipex</strong>: update supported torch versions  </li>
 <li><strong>gallery</strong>: add http fallback for slow/unreliable links  </li>
 <li><strong>splash</strong>: add legacy mode indicator on splash screen  </li>
 <li><strong>network</strong>: extract thumbnail from model metadata if present  </li>
