@@ -2339,9 +2339,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-21" class="md-nav__link">
+  <a href="#update-for-2025-01-23" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-21
+      Update for 2025-01-23
     </span>
   </a>
   
@@ -3546,9 +3546,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-21" class="md-nav__link">
+  <a href="#update-for-2025-01-23" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-21
+      Update for 2025-01-23
     </span>
   </a>
   
@@ -4737,7 +4737,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-21">Update for 2025-01-21</h2>
+<h2 id="update-for-2025-01-23">Update for 2025-01-23</h2>
 <ul>
 <li><strong>Contributing</strong>:  </li>
 <li>if you'd like to contribute, please see updated <a href="https://github.com/vladmandic/automatic/blob/dev/CONTRIBUTING">contributing</a> guidelines</li>
@@ -4769,10 +4769,14 @@
 <li>adjust residual diff threshold to balance the speedup and the accuracy:<br />
     higher values leads to more cache hits and speedups, but might also lead to a higher accuracy drop  </li>
 <li><strong>IPEX</strong></li>
-<li>enable force attention slicing for all GPUs  </li>
-<li>enable fp64 emulation and sycl jit cache  </li>
-<li>switch to pytorch test branch on windows  </li>
-<li>update the supported python versions  </li>
+<li>enable force attention slicing, fp64 emulation, jit cache  </li>
+<li>use pytorch test branch on windows  </li>
+<li>extend the supported python versions  </li>
+<li><strong>Torch FP8</strong></li>
+<li>uses torch <code>float8_e4m3fn</code> or <code>float8_e5m2</code> as data storage and performs dynamic upcasting to compute <code>dtype</code> as needed  </li>
+<li>compatible with most <code>unet</code> and <code>transformer</code> models: e.g. <em>sd15, sdxl, sd35, flux.1, hunyuan-video, ltx-video, etc.</em><br />
+    this is alternative to <code>bnb</code>/<code>quanto</code>/<code>torchao</code> quantization on models/platforms/gpus where those libraries are not available  </li>
+<li>enable in <em>settings -&gt; quantization -&gt; layerwise casting</em>  </li>
 <li><a href="https://github.com/magic-research/piecewise-rectified-flow">PerFlow</a>  </li>
 <li>piecewise rectified flow as model acceleration  </li>
 <li>use <code>perflow</code> scheduler combined with one of the available pre-trained <a href="https://huggingface.co/hansyan">models</a>  </li>
@@ -4781,10 +4785,12 @@
 <li><strong>gallery</strong>: add http fallback for slow/unreliable links  </li>
 <li><strong>splash</strong>: add legacy mode indicator on splash screen  </li>
 <li><strong>network</strong>: extract thumbnail from model metadata if present  </li>
+<li><strong>network</strong>: setting value to disable use of reference models  </li>
 <li><strong>Refactor</strong>:  </li>
 <li><strong>upscale</strong>: code refactor to unify latent, resize and model based upscalers  </li>
 <li><strong>loader</strong>: ability to run in-memory models  </li>
 <li><strong>schedulers</strong>: ability to create model-less schedulers  </li>
+<li><strong>quantiation</strong>: code refactor into dedicated module  </li>
 <li><strong>Fixes</strong>:  </li>
 <li>non-full vae decode  </li>
 <li>send-to image transfer  </li>
@@ -4795,6 +4801,8 @@
 <li>unique font family registration  </li>
 <li>mochi video number of frames  </li>
 <li>mark large models that should offload  </li>
+<li>avoid repeated optimum-quanto installation  </li>
+<li>avoid reinstalling bnb if not cuda  </li>
 </ul>
 <h2 id="update-for-2025-01-15">Update for 2025-01-15</h2>
 <h3 id="highlights-for-2025-01-15">Highlights for 2025-01-15</h3>
