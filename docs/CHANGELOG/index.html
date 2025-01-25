@@ -4770,8 +4770,10 @@
     higher values leads to more cache hits and speedups, but might also lead to a higher accuracy drop  </li>
 <li><strong>IPEX</strong></li>
 <li>enable force attention slicing, fp64 emulation, jit cache  </li>
+<li>use the us server by default on linux  </li>
 <li>use pytorch test branch on windows  </li>
 <li>extend the supported python versions  </li>
+<li>removed diffusers attention hijack as it is a duplicate of dynamic attention bmm  </li>
 <li><strong>Torch FP8</strong></li>
 <li>uses torch <code>float8_e4m3fn</code> or <code>float8_e5m2</code> as data storage and performs dynamic upcasting to compute <code>dtype</code> as needed  </li>
 <li>compatible with most <code>unet</code> and <code>transformer</code> models: e.g. <em>sd15, sdxl, sd35, flux.1, hunyuan-video, ltx-video, etc.</em><br />
@@ -4791,6 +4793,7 @@
 <li><strong>loader</strong>: ability to run in-memory models  </li>
 <li><strong>schedulers</strong>: ability to create model-less schedulers  </li>
 <li><strong>quantiation</strong>: code refactor into dedicated module  </li>
+<li><strong>dynamic attention sdpa</strong>: more correct implementation  </li>
 <li><strong>Authentication</strong>:</li>
 <li>perform auth check on ui startup  </li>
 <li>unified standard and modern-ui authentication method  </li>
@@ -4808,6 +4811,9 @@
 <li>avoid repeated optimum-quanto installation  </li>
 <li>avoid reinstalling bnb if not cuda  </li>
 <li>image metadata civitai compatibility  </li>
+<li>xyz grid handle invalid values  </li>
+<li>omnigen pipeline handle float seeds  </li>
+<li>correct logging of docker status on logs, thanks @kmscode  </li>
 </ul>
 <h2 id="update-for-2025-01-15">Update for 2025-01-15</h2>
 <h3 id="highlights-for-2025-01-15">Highlights for 2025-01-15</h3>
