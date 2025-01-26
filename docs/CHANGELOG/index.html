@@ -2339,9 +2339,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-24" class="md-nav__link">
+  <a href="#update-for-2025-01-26" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-24
+      Update for 2025-01-26
     </span>
   </a>
   
@@ -3546,9 +3546,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-24" class="md-nav__link">
+  <a href="#update-for-2025-01-26" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-24
+      Update for 2025-01-26
     </span>
   </a>
   
@@ -4737,7 +4737,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-24">Update for 2025-01-24</h2>
+<h2 id="update-for-2025-01-26">Update for 2025-01-26</h2>
 <ul>
 <li><strong>Contributing</strong>:  </li>
 <li>if you'd like to contribute, please see updated <a href="https://github.com/vladmandic/automatic/blob/dev/CONTRIBUTING">contributing</a> guidelines</li>
@@ -4773,7 +4773,7 @@
 <li>use the us server by default on linux  </li>
 <li>use pytorch test branch on windows  </li>
 <li>extend the supported python versions  </li>
-<li>removed diffusers attention hijack as it is a duplicate of dynamic attention bmm  </li>
+<li>improve sdpa dynamic attention  </li>
 <li><strong>Torch FP8</strong></li>
 <li>uses torch <code>float8_e4m3fn</code> or <code>float8_e5m2</code> as data storage and performs dynamic upcasting to compute <code>dtype</code> as needed  </li>
 <li>compatible with most <code>unet</code> and <code>transformer</code> models: e.g. <em>sd15, sdxl, sd35, flux.1, hunyuan-video, ltx-video, etc.</em><br />
@@ -4814,6 +4814,10 @@
 <li>xyz grid handle invalid values  </li>
 <li>omnigen pipeline handle float seeds  </li>
 <li>correct logging of docker status on logs, thanks @kmscode  </li>
+<li>fix omnigen  </li>
+<li>fix docker status reporting  </li>
+<li>vlm/vqa with moondream2  </li>
+<li>rocm do not override triton installation  </li>
 </ul>
 <h2 id="update-for-2025-01-15">Update for 2025-01-15</h2>
 <h3 id="highlights-for-2025-01-15">Highlights for 2025-01-15</h3>
