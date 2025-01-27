@@ -4794,10 +4794,12 @@
 <li><strong>schedulers</strong>: ability to create model-less schedulers  </li>
 <li><strong>quantiation</strong>: code refactor into dedicated module  </li>
 <li><strong>dynamic attention sdpa</strong>: more correct implementation and new trigger rate control  </li>
-<li><strong>Authentication</strong>:</li>
+<li><strong>Remote access</strong>:  </li>
 <li>perform auth check on ui startup  </li>
-<li>unified standard and modern-ui authentication method  </li>
-<li>cleanup auth logging  </li>
+<li>unified standard and modern-ui authentication method &amp; cleanup auth logging  </li>
+<li>detect &amp; report local/external/public ip addresses if using <code>listen</code> mode  </li>
+<li>detect <em>docker</em> enforced limits instead of system limits if running in a container  </li>
+<li>warn if using public interface without authentication  </li>
 <li><strong>Fixes</strong>:  </li>
 <li>non-full vae decode  </li>
 <li>send-to image transfer  </li>
@@ -4818,6 +4820,7 @@
 <li>fix docker status reporting  </li>
 <li>vlm/vqa with moondream2  </li>
 <li>rocm do not override triton installation  </li>
+<li>port streaming model load to diffusers  </li>
 </ul>
 <h2 id="update-for-2025-01-15">Update for 2025-01-15</h2>
 <h3 id="highlights-for-2025-01-15">Highlights for 2025-01-15</h3>
