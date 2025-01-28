@@ -2339,9 +2339,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-26" class="md-nav__link">
+  <a href="#highlights-for-2025-01-28" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-26
+      Highlights for 2025-01-28
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details-for-2025-01-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-01-28
     </span>
   </a>
   
@@ -3546,9 +3555,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-26" class="md-nav__link">
+  <a href="#highlights-for-2025-01-28" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-26
+      Highlights for 2025-01-28
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details-for-2025-01-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-01-28
     </span>
   </a>
   
@@ -4737,7 +4755,19 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-26">Update for 2025-01-26</h2>
+<h2 id="highlights-for-2025-01-28">Highlights for 2025-01-28</h2>
+<p>Two weeks since last release, time for update!  </p>
+<p><em>What's New?</em>
+- New <strong>Detailer</strong> functionality including ability to use several new face-restore models<br />
+- Support for new models/pipelines:<br />
+  face-swapper with <strong>Photomaker-v2</strong> and video with <strong>Fast-Hunyuan</strong><br />
+- Support for several new optimizations and accelerations:<br />
+  Many <strong>IPEX</strong> improvements, native <em>torch fp8</em> support,<br />
+  support for <strong>PAB:Pyramid-attention-broadcast</strong>, <strong>ParaAttention</strong> and <strong>PerFlow</strong><br />
+- Fully built-in both model <strong>weights merge</strong> as well as model <strong>component merge</strong><br />
+- Improved remote access control and reliability as well as running inside containers<br />
+- And of course, hotfixes for all reported issues...</p>
+<h2 id="details-for-2025-01-28">Details for 2025-01-28</h2>
 <ul>
 <li><strong>Contributing</strong>:  </li>
 <li>if you'd like to contribute, please see updated <a href="https://github.com/vladmandic/automatic/blob/dev/CONTRIBUTING">contributing</a> guidelines</li>
@@ -4762,6 +4792,11 @@
 <li><strong>hunyuan video</strong> support for <a href="https://huggingface.co/FastVideo/FastHunyuan">FastHunyuan</a><br />
     simply select model variant and set appropriate parameters<br />
     recommended: sampler-shift=17, steps=6, resolution=720x1280, frames=125, guidance&gt;6.0  </li>
+<li><a href="https://oahzxl.github.io/PAB/">PAB: Pyramid Attention Broadcast</a>  </li>
+<li>speed up generation by caching attention results between steps  </li>
+<li>enable in <em>settings -&gt; pipeline modifiers -&gt; pab</em>  </li>
+<li>adjust settings as needed: wider timestep range means more acceleration, but higher accuracy drop  </li>
+<li>compatible with most <code>transformer</code> based models: e.g. flux.1, hunyuan-video, lyx-video, mochi, etc.</li>
 <li><a href="https://github.com/chengzeyi/ParaAttention">ParaAttention</a></li>
 <li>first-block caching that can significantly speed up generation by dynamically reusing partial outputs between steps  </li>
 <li>available for: flux, hunyuan-video, ltx-video, mochi  </li>
@@ -4776,7 +4811,7 @@
 <li>improve sdpa dynamic attention  </li>
 <li><strong>Torch FP8</strong></li>
 <li>uses torch <code>float8_e4m3fn</code> or <code>float8_e5m2</code> as data storage and performs dynamic upcasting to compute <code>dtype</code> as needed  </li>
-<li>compatible with most <code>unet</code> and <code>transformer</code> models: e.g. <em>sd15, sdxl, sd35, flux.1, hunyuan-video, ltx-video, etc.</em><br />
+<li>compatible with most <code>unet</code> and <code>transformer</code> based models: e.g. <em>sd15, sdxl, sd35, flux.1, hunyuan-video, ltx-video, etc.</em><br />
     this is alternative to <code>bnb</code>/<code>quanto</code>/<code>torchao</code> quantization on models/platforms/gpus where those libraries are not available  </li>
 <li>enable in <em>settings -&gt; quantization -&gt; layerwise casting</em>  </li>
 <li><a href="https://github.com/magic-research/piecewise-rectified-flow">PerFlow</a>  </li>
@@ -4792,7 +4827,7 @@
 <li><strong>upscale</strong>: code refactor to unify latent, resize and model based upscalers  </li>
 <li><strong>loader</strong>: ability to run in-memory models  </li>
 <li><strong>schedulers</strong>: ability to create model-less schedulers  </li>
-<li><strong>quantiation</strong>: code refactor into dedicated module  </li>
+<li><strong>quantization</strong>: code refactor into dedicated module  </li>
 <li><strong>dynamic attention sdpa</strong>: more correct implementation and new trigger rate control  </li>
 <li><strong>Remote access</strong>:  </li>
 <li>perform auth check on ui startup  </li>
