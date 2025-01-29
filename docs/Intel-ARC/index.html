@@ -2669,10 +2669,10 @@ makepkg<span class="w"> </span>-si
 <h2 id="environment-variables">Environment Variables</h2>
 <ul>
 <li>
-<p><code>IPEX_SDPA_SLICE_TRIGGER_RATE</code>: Specify when dynamic attention slicing for Scaled Dot Product Attention should get triggered for Intel ARC. This environment variable allows you to set the trigger rate in gigabytes (GB). The default is <code>6</code>.</p>
+<p><code>IPEX_SDPA_SLICE_TRIGGER_RATE</code>: Specify when dynamic attention slicing for Scaled Dot Product Attention should get triggered for Intel ARC. This environment variable allows you to set the trigger rate in gigabytes (GB). The default is <code>1</code>.</p>
 </li>
 <li>
-<p><code>IPEX_ATTENTION_SLICE_RATE</code>: Specify the dynamic attention slicing rate for 32 bit GPUs. This environment variable allows you to set the slicing rate in gigabytes (GB). The default is <code>4</code>.</p>
+<p><code>IPEX_ATTENTION_SLICE_RATE</code>: Specify the dynamic attention slicing rate for 32 bit GPUs. This environment variable allows you to set the slicing rate in gigabytes (GB). The default is <code>0.5</code>.</p>
 </li>
 <li>
 <p><code>IPEX_FORCE_ATTENTION_SLICE</code>: Specify to enable or disable Dynamic Attention. The default is <code>1</code>.</p>

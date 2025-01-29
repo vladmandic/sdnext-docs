@@ -2810,8 +2810,8 @@ Logging:
 </ul>
 <h4 id="ipex-environment-variables">IPEX Environment Variables</h4>
 <ul>
-<li><code>IPEX_SDPA_SLICE_TRIGGER_RATE</code>: Specify when dynamic attention slicing for Scaled Dot Product Attention should get triggered for Intel ARC. This environment variable allows you to set the trigger rate in gigabytes (GB). The default is <code>6</code>.</li>
-<li><code>IPEX_ATTENTION_SLICE_RATE</code>: Specify the dynamic attention slicing rate for 32 bit GPUs. This environment variable allows you to set the slicing rate in gigabytes (GB). The default is <code>4</code>.</li>
+<li><code>IPEX_SDPA_SLICE_TRIGGER_RATE</code>: Specify when dynamic attention slicing for Scaled Dot Product Attention should get triggered for Intel ARC. This environment variable allows you to set the trigger rate in gigabytes (GB). The default is <code>1</code>.</li>
+<li><code>IPEX_ATTENTION_SLICE_RATE</code>: Specify the dynamic attention slicing rate for 32 bit GPUs. This environment variable allows you to set the slicing rate in gigabytes (GB). The default is <code>0.5</code>.</li>
 <li><code>IPEX_FORCE_ATTENTION_SLICE</code>: Specify to enable or disable Dynamic Attention. The default is <code>1</code>.</li>
 <li><code>1</code> will force enable dynamic attention slicing even if the GPU supports 64 bit.</li>
 <li><code>-1</code> will force disable dynamic attention slicing even if the GPU doesn't support 64 bit.</li>
