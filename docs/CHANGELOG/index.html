@@ -4805,6 +4805,10 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-01-30">Update for 2025-01-30</h2>
 <ul>
+<li><strong>Torch</strong>:</li>
+<li>for cuda environemnts set default to <code>torch==2.6.0+cu126</code>  </li>
+<li>add support for torch <strong>tunable ops</strong>, this can speed up operations by up to 10-30% on some platforms<br />
+<em>set in settings -&gt; backend settings -&gt; torch</em> and <em>paths -&gt; tunable ops cache</em>  </li>
 <li><strong>Fixes</strong>:  </li>
 <li>photomaker with offloading  </li>
 <li>photomaker with refine  </li>
@@ -4814,6 +4818,8 @@
 <li>handle invalid <code>triton</code> with <code>torch==2.6.0</code>  </li>
 <li>correct library import order  </li>
 <li>update requirements  </li>
+<li>calculate dyn atten bmm slice rate  </li>
+<li>dwpose update and patch <code>mmengine</code> installer  </li>
 </ul>
 <h2 id="update-for-2025-01-29">Update for 2025-01-29</h2>
 <h3 id="highlights-for-2025-01-29">Highlights for 2025-01-29</h3>
