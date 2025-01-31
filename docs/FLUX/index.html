@@ -2735,26 +2735,26 @@
   Open-weight, guidance-distilled from Pro variation, available for non-commercial applications<br />
 - <a href="https://huggingface.co/black-forest-labs/FLUX.1-schnell">Schnell</a><br />
   Open-weight, timestep-distilled from Dev variation, available under Apache2.0 license  </p>
-<p>Additionally <a href="https://github.com/vladmandic/automatic/">SD.Next</a> includes <em>pre-quantized</em> variations of <strong>FLUX.1 Dev</strong> variation: <code>qint8</code>, <code>qint4</code> and <code>nf4</code><br />
+<p>Additionally <a href="https://github.com/vladmandic/sdnext/">SD.Next</a> includes <em>pre-quantized</em> variations of <strong>FLUX.1 Dev</strong> variation: <code>qint8</code>, <code>qint4</code> and <code>nf4</code><br />
 Pick variant that uses less memory as model in original form has very high requirements  </p>
 <p><img alt="screenshot-modernui-f1" src="https://github.com/user-attachments/assets/b509a280-8d3b-48b5-8525-363bad8c1ed2" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Allow gated access
  This is a gated model, you need to accept the terms and conditions to use it<br />
- For more information see <a href="https://github.com/vladmandic/automatic/wiki/Gated">Gated Access Wiki</a></p>
+ For more information see <a href="https://github.com/vladmandic/sdnext/wiki/Gated">Gated Access Wiki</a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Set offloading
  Set appropriate offloading setting before loading the model to avoid out-of-memory errors<br />
- For more information see <a href="https://github.com/vladmandic/automatic/wiki/Offload">Offloading Wiki</a>  </p>
+ For more information see <a href="https://github.com/vladmandic/sdnext/wiki/Offload">Offloading Wiki</a>  </p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Choose quantization
  Check compatibility of different quantizations with your platform and GPU!<br />
- For more information see <a href="https://github.com/vladmandic/automatic/wiki/Quantization">Quantization Wiki</a>  </p>
+ For more information see <a href="https://github.com/vladmandic/sdnext/wiki/Quantization">Quantization Wiki</a>  </p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2851,8 +2851,8 @@ as such, you may need to use offloading:sequential which is not as fast, but use
 - Canny/Depth are optimized versions of Flux-dev for their respective tasks: they are <em>not</em> ControlNets that work on top of a model  </p>
 <p>To use, go to image or control interface and select <em>Flux Tools</em> in scripts<br />
 All models are auto-downloaded on first use<br />
-<em>note</em>: All models are <a href="https://github.com/vladmandic/automatic/wiki/Gated">gated</a> and require acceptance of terms and conditions via web page<br />
-<em>recommended</em>: Enable on-the-fly <a href="https://github.com/vladmandic/automatic/wiki/Quantization">quantization</a> or <a href="https://github.com/vladmandic/automatic/wiki/NNCF-Compression">compression</a> to reduce resource usage<br />
+<em>note</em>: All models are <a href="https://github.com/vladmandic/sdnext/wiki/Gated">gated</a> and require acceptance of terms and conditions via web page<br />
+<em>recommended</em>: Enable on-the-fly <a href="https://github.com/vladmandic/sdnext/wiki/Quantization">quantization</a> or <a href="https://github.com/vladmandic/sdnext/wiki/NNCF-Compression">compression</a> to reduce resource usage<br />
 - <a href="https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev">Redux</a>: ~0.1GB<br />
   works together with existing model and basically uses input image to analyze it and use that instead of prompt<br />
 <em>recommended</em>: low denoise strength levels result in more variety<br />

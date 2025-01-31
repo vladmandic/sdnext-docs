@@ -4877,15 +4877,21 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-01-31">Update for 2025-01-31</h2>
 <ul>
+<li><strong>GitHub</strong></li>
+<li>rename core repo from <a href="https://github.com/vladmandic/automatic">https://github.com/vladmandic/automatic</a> to <a href="https://github.com/vladmandic/sdnext">https://github.com/vladmandic/sdnext</a><br />
+    old repo url should automatically redirect to new one for seamless transition and in-place upgrades <br />
+    all internal links have been updated<br />
+    wiki content and docs site have been updated  </li>
 <li><strong>Docs</strong>:</li>
 <li>Updated <a href="https://github.com/vladmandic/automatic/wiki/Debug">Debugging guide</a>  </li>
 <li><strong>Torch</strong>:</li>
-<li>for cuda environemnts set default to <code>torch==2.6.0+cu126</code><br />
+<li>for cuda environments set default to <code>torch==2.6.0+cu126</code><br />
+    for rocm environments set default to <code>torch==2.6.0+rocm6.2.4</code><br />
 <em>note</em>: to avoid disruptions sdnext does not perform torch install during in-place upgrades<br />
     to force torch upgrade, either start with new installation or use <code>--reinstall</code> flag  </li>
 <li>add support for torch <strong>tunable ops</strong>, this can speed up operations by up to <em>10-30%</em> on some platforms<br />
 <em>set in settings -&gt; backend settings -&gt; torch</em> and <em>paths -&gt; tunable ops cache</em>  </li>
-<li>enhanced error logging</li>
+<li>enhanced error logging  </li>
 <li><strong>Other</strong>:</li>
 <li><strong>Networks</strong>: imporove search/filter and add visual indicators for types  </li>
 <li><strong>Refactor</strong>:</li>
@@ -4895,12 +4901,15 @@
 <li>photomaker with refine  </li>
 <li>detailer with faceid modules  </li>
 <li>detailer restore pipeline before run  </li>
-<li>fix python 3.9 compatibility  </li>
-<li>handle invalid <code>triton</code> with <code>torch==2.6.0</code>  </li>
+<li>fix <code>python==3.9</code> compatibility  </li>
+<li>handle invalid <code>triton</code> on Linux  </li>
 <li>correct library import order  </li>
 <li>update requirements  </li>
 <li>calculate dyn atten bmm slice rate  </li>
 <li>dwpose update and patch <code>mmengine</code> installer  </li>
+<li>ipex device wrapper with adetailer  </li>
+<li>openvino error handling  </li>
+<li>relax python version checks for rocm  </li>
 </ul>
 <h2 id="update-for-2025-01-29">Update for 2025-01-29</h2>
 <h3 id="highlights-for-2025-01-29">Highlights for 2025-01-29</h3>

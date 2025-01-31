@@ -2653,11 +2653,11 @@
 <h2 id="setup-for-sd-xl">Setup for SD-XL</h2>
 <p>To facilitate easy use of SD-XL and swapping between refiners, backends, and pipelines, we recommend selecting the<br />
 following items in your Settings Tab, on the User Interface page:</p>
-<p><img alt="image" src="https://github.com/vladmandic/automatic/assets/108482020/59688e46-7056-42b6-a8bd-3a53008c9663" /></p>
+<p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/108482020/59688e46-7056-42b6-a8bd-3a53008c9663" /></p>
 <p>Once you select them, hit Apply settings, and then Restart server.
 When the server returns to being active and your browser page reloads, the Quicksettings<br />
 at the top of your screen should look like this (assuming you were using SDXL):</p>
-<p><img alt="image" src="https://github.com/vladmandic/automatic/assets/108482020/82b78692-47e8-4604-bf66-df0d90409d65" /></p>
+<p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/108482020/82b78692-47e8-4604-bf66-df0d90409d65" /></p>
 <h2 id="vram-optimization">VRAM Optimization</h2>
 <p>There are now 3 methods of memory optimization with the Diffusers backend, and consequently SDXL: Model Shuffle, Medvram, and Lowvram.<br />
 Choose one based on your GPU, VRAM, and how large you want your batches to be.</p>
@@ -2673,7 +2673,7 @@ efficiently utilize VRAM. This is enabled when the following 3 options are Enabl
 <li>Move the UNet to CPU during VAE decoding.</li>
 </ul>
 <p>To use <code>Model Shuffling</code> do not have <code>--medvram</code> or <code>--lowvram</code> active, then use the following settings:</p>
-<p><img alt="image" src="https://github.com/vladmandic/automatic/assets/108482020/cfe8daed-ec4d-4bb2-bc50-ec72a38e8c66" /></p>
+<p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/108482020/cfe8daed-ec4d-4bb2-bc50-ec72a38e8c66" /></p>
 <p>The important parts are the 3 Move checkboxes.</p>
 <p>Note that if you activate either <code>CPU model offload</code> or <code>Sequential CPU offload</code>, they will deactivate and ignore Model Shuffling.<br />
 <strong>VRAM Usage</strong>: "Model Shuffle" will work in 8 GB of VRAM.</p>
@@ -2688,14 +2688,14 @@ This option significantly reduces VRAM requirements at the expense of inference 
 <li>VAE slicing (recommended)</li>
 <li>Attention slicing is NOT recommended.</li>
 </ul>
-<p><img alt="image" src="https://github.com/vladmandic/automatic/assets/108482020/9b33541c-d4c4-453f-a939-684b480f06a5" /></p>
+<p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/108482020/9b33541c-d4c4-453f-a939-684b480f06a5" /></p>
 <p><strong>VRAM Usage</strong>: "Model CPU Offload" can work in 6 GB of VRAM.</p>
 <p><strong>Note</strong>: <code>--medvram</code> supersedes the <code>Model Shuffle</code> option (e.g., Move base model, refiner model, UNet), and is mutually exclusive<br />
 and cannot be used together with <code>--lowvram/Sequential CPU offload</code></p>
 <h3 id="option-3-lowvram">Option 3: LOWVRAM</h3>
 <p>If your GPU has as low as 2GB of VRAM, start your SD.Next session with <code>--lowvram</code> as a command line argument to <strong>vastly</strong> reduce<br />
 VRAM requirements at the cost of even more inference speed. This is essentially the <code>Enable Sequential CPU offload</code> setting.</p>
-<p><img alt="image" src="https://github.com/vladmandic/automatic/assets/108482020/ff56b38e-7aaf-4a04-92db-087aa3ebc63e" /></p>
+<p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/108482020/ff56b38e-7aaf-4a04-92db-087aa3ebc63e" /></p>
 <p>Note: VAE slicing, VAE tiling, and Attention slicing are all enabled by <code>--lowvram</code> regardless of the checkboxes.</p>
 <p>Using this setting with a GPU that has higher VRAM, your generations will take even longer, but you will be able to do <em>ridiculously</em> large<br />
 batches of SD-XL images, up to and including 24 on a 12GB GPU.</p>

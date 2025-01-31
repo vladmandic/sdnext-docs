@@ -2705,13 +2705,13 @@
 <p><em>Note: Changing any of the settings on this page will require you to, at the least, unload the model and then reload it (after hitting apply!), as these settings are applied on model load, not in realtime.</em></p>
 <p>Generally speaking, for most GPUs our user-base has (mostly Nvidia on Windows judging by discord roles, so using CUDA), you are going to want the settings below (BF16 is possible too if using 30xx+).  </p>
 <p>Good settings:  </p>
-<p><img alt="Best-compute1" src="https://github.com/vladmandic/automatic/assets/108482020/913a5a52-14a3-499f-ac67-0f19a3cb5b1e" />  </p>
+<p><img alt="Best-compute1" src="https://github.com/vladmandic/sdnext/assets/108482020/913a5a52-14a3-499f-ac67-0f19a3cb5b1e" />  </p>
 <p>Bad settings:  </p>
-<p><img alt="Bad-compute1" src="https://github.com/vladmandic/automatic/assets/108482020/508d8da6-adf6-484e-a503-f640fa251e29" />  </p>
+<p><img alt="Bad-compute1" src="https://github.com/vladmandic/sdnext/assets/108482020/508d8da6-adf6-484e-a503-f640fa251e29" />  </p>
 <p>In general, using any of these selected "bad" settings is considered a bad thing, you only want to use any of these if necessary to make your card work with SD. They're slower and use up a lot more memory. <em>Unless you're on OpenVINO, things show up as fp32 there anyway due to how it works. Leave that alone</em></p>
 <p>That being said, if you are having strange issues with squares and whatnot and you're on something other than a newer Nvidia GPU (2000s and up?), you may wish to try these settings. Upcast sampling is the better version of --no-half, use it if at all possible.<br />
 Try these one by one, unload the model, reload the model, then test generate, hopefully you will find one, or a combination that works.  </p>
-<p><img alt="CopyQ lQSCVs" src="https://github.com/vladmandic/automatic/assets/108482020/a9ef1145-8f51-4426-93d4-7ba621946417" /></p>
+<p><img alt="CopyQ lQSCVs" src="https://github.com/vladmandic/sdnext/assets/108482020/a9ef1145-8f51-4426-93d4-7ba621946417" /></p>
 <h3 id="model-compile">Model Compile</h3>
 <p>To use any of the model compile options, you must select via the checkboxes, at least one of these: Model, VAE, Text Encoder, Upscaler. It's probably pretty pointless to compile the text encoder, but Model and VAE will net you a large boost in speed. If you use upscalers a lot, by all means, select that too.</p>
 <h4 id="stable-fast">Stable-fast</h4>
@@ -2730,9 +2730,9 @@ Try these one by one, unload the model, reload the model, then test generate, ho
 In short it merges tokens, saving memory and speeding up generations.
 You can easily use it at 0.3-0.4, performance goes up as the number does, going up higher is up to you but you can always do an xyz and test to see.</p>
 <p><strong>Default settings:</strong>  </p>
-<p><img alt="CopyQ blZizQ" src="https://github.com/vladmandic/automatic/assets/108482020/81c04c4d-9810-45aa-8b24-e3c395a6ff00" />  </p>
+<p><img alt="CopyQ blZizQ" src="https://github.com/vladmandic/sdnext/assets/108482020/81c04c4d-9810-45aa-8b24-e3c395a6ff00" />  </p>
 <p><strong>Suggested settings:</strong>  </p>
-<p><img alt="CopyQ HmmAXj" src="https://github.com/vladmandic/automatic/assets/108482020/6741f100-50a5-4d75-9465-4bc8df374a65" />  </p>
+<p><img alt="CopyQ HmmAXj" src="https://github.com/vladmandic/sdnext/assets/108482020/6741f100-50a5-4d75-9465-4bc8df374a65" />  </p>
 <p><strong>Honestly, 0.5 and up is the real performance gain, but you test and decide yourself.</strong>  </p>
 <p><strong>Bear in mind that it does have a quality impact on your image, greater the higher the setting, and will make perfect reproduction from the same seed and prompt impossible afaik.</strong></p>
 <p>There is a new implementation along the same lines as ToMe, called ToDo, but works far better. That's in our queue for the near future!</p>
@@ -2742,14 +2742,14 @@ You can easily use it at 0.3-0.4, performance goes up as the number does, going 
 <p>Just don't even mess with <code>Hypertile VAE</code>, tends to cause more issues than it could possibly be worth, which isn't much.</p>
 <p>You may of course screw with the <code>swap size</code> and <code>UNet depth</code> as you like, I did test them briefly but saw some little benefit.</p>
 <p><strong>Default settings:</strong>  </p>
-<p><img alt="CopyQ gwehbW" src="https://github.com/vladmandic/automatic/assets/108482020/d1015926-3a64-43e5-b1f7-a9a3ed1064fc" /></p>
+<p><img alt="CopyQ gwehbW" src="https://github.com/vladmandic/sdnext/assets/108482020/d1015926-3a64-43e5-b1f7-a9a3ed1064fc" /></p>
 <p><strong>Suggested settings:</strong>  </p>
-<p><img alt="Hypertile-Suggested" src="https://github.com/vladmandic/automatic/assets/108482020/c2d1ae3e-5cd0-4b4e-8776-e9730f0278a4" /></p>
+<p><img alt="Hypertile-Suggested" src="https://github.com/vladmandic/sdnext/assets/108482020/c2d1ae3e-5cd0-4b4e-8776-e9730f0278a4" /></p>
 <p><strong>Also has a quality impact, but I've never measured it personally</strong></p>
 <h3 id="other-settings">Other settings</h3>
 <p>Parallel process images in batch is intended for img2img batch mode.<br />
 If you set batch size=n, typically it generates n images for each input, with this setting, it will generate 1 image for each input, but process n in parallel.  </p>
-<p><img alt="CopyQ IARldt" src="https://github.com/vladmandic/automatic/assets/108482020/dda83a13-a831-4a92-afed-c94a94ae7e0a" /></p>
+<p><img alt="CopyQ IARldt" src="https://github.com/vladmandic/sdnext/assets/108482020/dda83a13-a831-4a92-afed-c94a94ae7e0a" /></p>
 
 
 
