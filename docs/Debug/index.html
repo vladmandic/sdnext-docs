@@ -846,7 +846,7 @@
           <li class="md-nav__item">
   <a href="#networks" class="md-nav__link">
     <span class="md-ellipsis">
-      networks
+      Networks
     </span>
   </a>
   
@@ -870,6 +870,24 @@
   <a href="#profiling" class="md-nav__link">
     <span class="md-ellipsis">
       Profiling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crashes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracebacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracebacks
     </span>
   </a>
   
@@ -2541,7 +2559,7 @@
           <li class="md-nav__item">
   <a href="#networks" class="md-nav__link">
     <span class="md-ellipsis">
-      networks
+      Networks
     </span>
   </a>
   
@@ -2565,6 +2583,24 @@
   <a href="#profiling" class="md-nav__link">
     <span class="md-ellipsis">
       Profiling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crashes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracebacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracebacks
     </span>
   </a>
   
@@ -2622,7 +2658,7 @@ webui.sh --debug  </p>
 <li><code>SD_STEPS_DEBUG</code>: report calculations done to scheduler steps</li>
 <li><code>SD_VAE_DEBUG</code>: report details on all VAE operations</li>
 </ul>
-<h3 id="networks">networks</h3>
+<h3 id="networks">Networks</h3>
 <ul>
 <li><code>SD_EN_DEBUG</code>: report all extra networks operations as they happen</li>
 <li><code>SD_LORA_DEBUG</code>: increase verbosity of LoRA loading and execution</li>
@@ -2659,6 +2695,25 @@ SD.Next will collect profiling information from both Python, Torch and CUDA and 
 <p>webui.bat --debug --profile<br />
 webui.sh --debug --profile</p>
 </blockquote>
+<h2 id="crashes">Crashes</h2>
+<p>If <strong>SD.Next</strong> crashes during its code, it will produce traceback in the console output<br />
+If traceback is not present and process simply exited that typically means that process crashed on the system side and app-level traceback cannot be captured</p>
+<p>In that case, please check system logs for more information:</p>
+<ul>
+<li><strong>Linux</strong>: kernel logs <code>dmesg -ku</code></li>
+<li><strong>Windows</strong>: Event Viewer -&gt; <em>Windows Logs -&gt; Application/System</em></li>
+</ul>
+<h2 id="tracebacks">Tracebacks</h2>
+<p>If runtime error occurs during SD.Next processing, traceback will be printed in the console output<br />
+Level of information in the traceback can be further increased by setting env variables:
+- <code>SD_TRACELINES</code>: number of extra lines to show around the error line
+- <code>SD_TRACEFRAMES</code>: number of frames to show in the traceback
+- <code>SD_TRACEWIDTH</code>: width of the traceback output
+- <code>SD_TRACEWRAP</code>: enable word wrapping in the traceback
+- <code>SD_TRACEINDENT</code>: enable indent guides in the traceback
+- <code>SD_TRACELOCALS</code>: show local variables in the traceback
+- <code>SD_TRACEDUNDER</code>: show dunder variables in the traceback locals
+- <code>SD_TRACESUNDER</code>: show single underscore variables in the traceback locals</p>
 
 
 

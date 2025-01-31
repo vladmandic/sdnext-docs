@@ -2410,9 +2410,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-30" class="md-nav__link">
+  <a href="#update-for-2025-01-31" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-30
+      Update for 2025-01-31
     </span>
   </a>
   
@@ -3650,9 +3650,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-30" class="md-nav__link">
+  <a href="#update-for-2025-01-31" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-01-30
+      Update for 2025-01-31
     </span>
   </a>
   
@@ -4875,12 +4875,21 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-30">Update for 2025-01-30</h2>
+<h2 id="update-for-2025-01-31">Update for 2025-01-31</h2>
 <ul>
+<li><strong>Docs</strong>:</li>
+<li>Updated <a href="https://github.com/vladmandic/automatic/wiki/Debug">Debugging guide</a>  </li>
 <li><strong>Torch</strong>:</li>
-<li>for cuda environemnts set default to <code>torch==2.6.0+cu126</code>  </li>
-<li>add support for torch <strong>tunable ops</strong>, this can speed up operations by up to 10-30% on some platforms<br />
+<li>for cuda environemnts set default to <code>torch==2.6.0+cu126</code><br />
+<em>note</em>: to avoid disruptions sdnext does not perform torch install during in-place upgrades<br />
+    to force torch upgrade, either start with new installation or use <code>--reinstall</code> flag  </li>
+<li>add support for torch <strong>tunable ops</strong>, this can speed up operations by up to <em>10-30%</em> on some platforms<br />
 <em>set in settings -&gt; backend settings -&gt; torch</em> and <em>paths -&gt; tunable ops cache</em>  </li>
+<li>enhanced error logging</li>
+<li><strong>Other</strong>:</li>
+<li><strong>Networks</strong>: imporove search/filter and add visual indicators for types  </li>
+<li><strong>Refactor</strong>:</li>
+<li>unified trace handler with configurable tracebacks  </li>
 <li><strong>Fixes</strong>:  </li>
 <li>photomaker with offloading  </li>
 <li>photomaker with refine  </li>
