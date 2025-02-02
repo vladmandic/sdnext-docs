@@ -4885,18 +4885,18 @@
 <li><strong>Docs</strong>:</li>
 <li>Updated <a href="https://github.com/vladmandic/automatic/wiki/Debug">Debugging guide</a>  </li>
 <li><strong>Torch</strong>:</li>
-<li>for cuda environments set default to <code>torch==2.6.0+cu126</code><br />
-    for rocm environments set default to <code>torch==2.6.0+rocm6.2.4</code><br />
+<li>for <strong>cuda</strong> environments set default to <code>torch==2.6.0+cu126</code><br />
+    for <strong>rocm</strong> environments set default to <code>torch==2.6.0+rocm6.2.4</code><br />
 <em>note</em>: to avoid disruptions sdnext does not perform torch install during in-place upgrades<br />
     to force torch upgrade, either start with new installation or use <code>--reinstall</code> flag  </li>
-<li>support for torch nightly builds and nvidia blackwell gpus!<br />
+<li>support for torch <strong>nightly</strong> builds and nvidia <strong>blackwell</strong> gpus!<br />
     use <code>--use-nightly</code> flag to install torch nightly builds<br />
     current defaults to <code>torch==2.7.0+cu128</code> prerelease<br />
 <em>note</em>: nightly builds are required for blackwell gpus  </li>
 <li>add support for torch <strong>tunable ops</strong>, this can speed up operations by up to <em>10-30%</em> on some platforms<br />
-<em>set in settings -&gt; backend settings -&gt; torch</em> and <em>paths -&gt; tunable ops cache</em>  </li>
+    set in <em>settings -&gt; backend settings -&gt; torch options</em> and <em>settings -&gt; system paths -&gt; tunable ops cache</em>  </li>
 <li>add support for stream-loading, this can speed up model loading when models are located on network drives<br />
-<em>set in settings -&gt; models &amp; loading -&gt; model load using streams</em>  </li>
+    set in <em>settings -&gt; models &amp; loading -&gt; model load using streams</em>  </li>
 <li>enhanced error logging  </li>
 <li><strong>Interrogate/Captioning</strong>  </li>
 <li>single interrogate button for every input or output image  </li>
@@ -4908,7 +4908,7 @@
 <li><strong>balanced offload</strong> new defaults: <em>lowvram/4gb min threshold: 0, medvram/8gb min threshold: 0, default min threshold 0.25</em>  </li>
 <li><strong>prompt parser</strong>: log stats with tokens, sections and min/avg/max weights  </li>
 <li><strong>prompt parser</strong>: add setting to ignore line breaks in prompt<br />
-    set in <em>settings -&gt; prompt settings -&gt; use line breaks</em>  </li>
+    set in <em>settings -&gt; text encoder -&gt; use line breaks</em>  </li>
 <li><strong>visual query</strong>: add list of predefined system prompts  </li>
 <li><strong>nvml cli</strong>: run nvidia-management-lib interrogate from cli<br />
     already available in ui in generate -&gt; right click -&gt; nvidia<br />
