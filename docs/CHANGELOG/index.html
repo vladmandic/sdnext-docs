@@ -4889,17 +4889,27 @@
     for rocm environments set default to <code>torch==2.6.0+rocm6.2.4</code><br />
 <em>note</em>: to avoid disruptions sdnext does not perform torch install during in-place upgrades<br />
     to force torch upgrade, either start with new installation or use <code>--reinstall</code> flag  </li>
+<li>support for torch nightly builds and nvidia blackwell gpus!<br />
+    use <code>--use-nightly</code> flag to install torch nightly builds<br />
+    current defaults to <code>torch==2.7.0+cu128</code> prerelease<br />
+<em>note</em>: nightly builds are required for blackwell gpus  </li>
 <li>add support for torch <strong>tunable ops</strong>, this can speed up operations by up to <em>10-30%</em> on some platforms<br />
 <em>set in settings -&gt; backend settings -&gt; torch</em> and <em>paths -&gt; tunable ops cache</em>  </li>
 <li>add support for stream-loading, this can speed up model loading when models are located on network drives<br />
 <em>set in settings -&gt; models &amp; loading -&gt; model load using streams</em>  </li>
 <li>enhanced error logging  </li>
+<li><strong>Interrogate/Captioning</strong>  </li>
+<li>single interrogate button for every input or output image  </li>
+<li>behavior of interrogate configurable in <em>settings -&gt; interrogate</em><br />
+    with detailed defaults for each model type also configurable  </li>
+<li>select between 100+ <em>OpenCLiP</em> supported models, 10+ built-in <em>VLMs</em>, <em>DeepDanbooru</em>  </li>
 <li><strong>Other</strong>:</li>
-<li><strong>Networks</strong>: imporove search/filter and add visual indicators for types  </li>
+<li><strong>networks</strong>: imporove search/filter and add visual indicators for types  </li>
 <li><strong>balanced offload</strong> new defaults: <em>lowvram/4gb min threshold: 0, medvram/8gb min threshold: 0, default min threshold 0.25</em>  </li>
 <li><strong>prompt parser</strong>: log stats with tokens, sections and min/avg/max weights  </li>
 <li><strong>prompt parser</strong>: add setting to ignore line breaks in prompt<br />
     set in <em>settings -&gt; prompt settings -&gt; use line breaks</em>  </li>
+<li><strong>visual query</strong>: add list of predefined system prompts  </li>
 <li><strong>nvml cli</strong>: run nvidia-management-lib interrogate from cli<br />
     already available in ui in generate -&gt; right click -&gt; nvidia<br />
     &gt; python modules/api/nvml.py  </li>
@@ -4920,7 +4930,8 @@
 <li>ipex device wrapper with adetailer  </li>
 <li>openvino error handling  </li>
 <li>relax python version checks for rocm  </li>
-<li>simplify and improve file wildcard matching</li>
+<li>simplify and improve file wildcard matching  </li>
+<li>fix <code>rich</code> version  </li>
 </ul>
 <h2 id="update-for-2025-01-29">Update for 2025-01-29</h2>
 <h3 id="highlights-for-2025-01-29">Highlights for 2025-01-29</h3>
