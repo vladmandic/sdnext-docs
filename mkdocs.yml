@@ -132,6 +132,7 @@ nav:
     - Built-in Scripts: Scripts.md
   - User Interface:
     - Themes: Themes.md
+    - Localization: Locale.md
     - Shortcuts: Hotkeys.md
   - Behind-the-Scenes:
     - How Does It Work?: SD-Pipeline-How-it-Works.md
