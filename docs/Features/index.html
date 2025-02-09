@@ -2781,11 +2781,11 @@
 <p>After doing that, we decided that we would add everything else under the sun that we could squeeze in there, and place it directly into your hands with greater options and flexibility than ever before, to allow you to <strong>Control</strong> your image and video generation with as little effort, as as much power, as possible.</p>
 <p><strong>Note that this document is a work in progress, it's all quite complex and will take some time to write up a bit more as well as smooth out the rough edges and correct any issues and bugs that pop up, expect frequent updates!</strong>  </p>
 <p>This guide will attempt to explain how to use it so that anyone can understand it and put it to work for themselves.  </p>
-<p>Be sure to also check out <a href="https://github.com/vladmandic/sdnext/wiki/Control">the Control resource page</a> which has more technical information as well as some general tips and suggestions. Its usage information will be merged into this page soon™️.</p>
+<p>Be sure to also check out <a href="../Control-Technical/">the Control resource page</a> which has more technical information as well as some general tips and suggestions. Its usage information will be merged into this page soon™️.</p>
 <p>We'll start with the... Control Controls!</p>
 <h3 id="controls">Controls</h3>
 <h4 id="input">Input</h4>
-<p>The Input control is exactly what it sounds like, it controls what input images (or videos) are contributing to your image generation, by default that is just the image in <a href="https://github.com/vladmandic/sdnext/wiki/control-guide#control-input">Control input pane</a>, however if you select <code>Separate init image</code>, another image pane will appear below, allowing you to use that as well.  </p>
+<p>The Input control is exactly what it sounds like, it controls what input images (or videos) are contributing to your image generation, by default that is just the image in the Control input pane, however if you select <code>Separate init image</code>, another image pane will appear below, allowing you to use that as well.  </p>
 <p><strong>Note:</strong> When using a Control input image as well as a Init input image, the Init input dominates. Adjusting denoise to &gt;=0.9 is recommended, as that will allow the Control input to balance with the Init input. Higher values will increase the strength of Control input further, giving it dominance.  </p>
 <p><img alt="Input control" src="https://github.com/vladmandic/sdnext/assets/108482020/abe4a404-e0ff-42c8-813a-2355b39c4f2e" /></p>
 <p><code>Show Preview</code> is simple, it controls the visibility of the preview window in the far right of the middle row. You'll want this on if you're doing any kind of masking or manipulations that you would want to preview before generating.</p>
@@ -2835,7 +2835,7 @@ The Control size menu allows you to manipulate the size of your input images bef
 <p><code>Auto-mask</code>: There are three options here, Threshold, Edge, and Greyscale. Each provides a different method of auto-masking your images.</p>
 </li>
 <li>
-<p><code>Auto-segment</code>: Just like Auto-mask, we have provided an extensive list of <a href="https://github.com/vladmandic/sdnext/wiki/control#segmentation-models">Auto-segmentation models</a>, they don't require ControlNet to handle the process, but may take a few seconds to process, depending on your GPU.  </p>
+<p><code>Auto-segment</code>: Just like Auto-mask, we have provided an extensive list of <a href="../Control-Technical/#segmentation-models">Auto-segmentation models</a>, they don't require ControlNet to handle the process, but may take a few seconds to process, depending on your GPU.  </p>
 </li>
 <li>
 <p><code>Preview</code>: You can select the preview type here, we have provided 5 modes, Masked, Binary, Greyscale, Color, and Composite, which is the default.</p>
