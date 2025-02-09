@@ -1578,6 +1578,8 @@
       
         
       
+        
+      
     
     
       
@@ -1844,6 +1846,28 @@
   
   <span class="md-ellipsis">
     Control Technicals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Outpaint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outpainting
     
   </span>
   
@@ -4985,32 +5009,49 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-02-09">Update for 2025-02-09</h2>
 <ul>
-<li><strong>Hints</strong>  </li>
+<li><strong>User Interface</strong>  </li>
+<li><strong>Hints</strong>  <ul>
 <li>added/updated 100+ ui hints!  </li>
 <li><a href="https://github.com/vladmandic/sdnext/wiki/Hints">hints</a> documentation and contribution guide  </li>
-<li><strong>Localization</strong>  </li>
+</ul>
+</li>
+<li><strong>Localization</strong>  <ul>
 <li>full ui localization!<br />
-    english, croatian, spanish, french, italian, portuguese, chinese, japanese, korean, russian  </li>
+  english, croatian, spanish, french, italian, portuguese, chinese, japanese, korean, russian  </li>
 <li>set in <em>settings -&gt; user interface -&gt; language</em>  </li>
 <li><a href="https://github.com/vladmandic/sdnext/wiki/Locale">localization</a> documentation  </li>
-<li><strong>Torch</strong>:  </li>
+</ul>
+</li>
+<li><strong>UI</strong>:  <ul>
+<li>force browser cache-invalidate on page load  </li>
+</ul>
+</li>
+<li><strong>Docs</strong></li>
+<li>New <a href="https://github.com/vladmandic/sdnext/wiki/Outpaint">outpaint</a> step-by-step guide  </li>
+<li><strong>Backend</strong>  </li>
+<li><strong>Torch</strong>  <ul>
 <li>for <strong>zluda</strong> set default to <code>torch==2.6.0+cu118</code>  </li>
 <li>for <strong>openvino</strong> set default to <code>torch==2.6.0+cpu</code>  </li>
-<li><strong>OpenVINO</strong>:</li>
+</ul>
+</li>
+<li><strong>OpenVINO</strong>  <ul>
 <li>update to <code>openvino==2025.0.0</code>  </li>
 <li>improve upscaler compatibility  </li>
 <li>enable upscaler compile by default  </li>
 <li>fix shape mismatch errors on too many resolution changes  </li>
-<li><strong>Other</strong>:  </li>
+</ul>
+</li>
+<li><strong>Other</strong>  </li>
 <li>asymmetric tiling<br />
     allows for configurable image tiling for x/y axis separately<br />
     enable in <em>scripts -&gt; asymmetric tiling</em><br />
 <em>note</em>: traditional symmetric tiling is achieved by setting circular mode for both x and y  </li>
-<li><strong>UI</strong>:  </li>
-<li>force browser cache-invalidate on page load  </li>
-<li>use correct timezone for log display  </li>
-<li>improve settings search behavior  </li>
-<li>log scroll to bottom  </li>
+<li><strong>Fixes</strong>  </li>
+<li>docs/wiki always use relative links  </li>
+<li>ui use correct timezone for log display  </li>
+<li>ui improve settings search behavior  </li>
+<li>ui log scroll to bottom  </li>
+<li>outpaint fixes  </li>
 </ul>
 <h2 id="update-for-2025-02-05">Update for 2025-02-05</h2>
 <ul>
