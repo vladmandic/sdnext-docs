@@ -2724,12 +2724,9 @@
 <h3 id="limitations">Limitations</h3>
 <ul>
 <li>Same limitations with TensorRT / Olive applies here too.  </li>
-<li>Compilation takes a few minutes and using LoRas will trigger recompilation.  </li>
-<li>You can use up to 3 different resolutions or batch sizes without re-compiling.  </li>
+<li>Compilation takes a few minutes and using LoRas will trigger recompilation.   </li>
 <li>Attention Slicing and HyperTile will not work.  </li>
 <li>OpenVINO will lock you in the Diffusers backend.  </li>
-<li>Only ESRGAN upscalers can work with OpenVINO.<br />
-  Enable Upscaler on compile settings if you want to use OpenVINO with Upscalers.  </li>
 </ul>
 <h3 id="quantization">Quantization</h3>
 <p>Quantization enables 8 bit support without autocast.<br />

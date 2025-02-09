@@ -4994,13 +4994,18 @@
 <li>set in <em>settings -&gt; user interface -&gt; language</em></li>
 <li><a href="https://github.com/vladmandic/wiki/Locale">localization</a> documentation  </li>
 <li><strong>Torch</strong>:  </li>
-<li>for <strong>zluda</strong> set default to <code>torch==2.6.0+cu126</code>  </li>
+<li>for <strong>zluda</strong> set default to <code>torch==2.6.0+cu118</code>  </li>
+<li>for <strong>openvino</strong> set default to <code>torch==2.6.0+cpu</code>  </li>
+<li><strong>OpenVINO</strong>:</li>
+<li>update to <code>openvino==2025.0.0</code>  </li>
+<li>improve upscaler compatibility  </li>
+<li>enable upscaler compile by default  </li>
+<li>fix shape mismatch errors on too many resolution changes  </li>
 <li><strong>Other</strong>:  </li>
 <li>asymmetric tiling<br />
     allows for configurable image tiling for x/y axis separately<br />
     enable in <em>scripts -&gt; asymmetric tiling</em><br />
 <em>note</em>: traditional symmetric tiling is achieved by setting circular mode for both x and y  </li>
-<li>update openvino to <code>2025.0.0</code>  </li>
 <li><strong>UI</strong>:  </li>
 <li>force browser cache-invalidate on page load  </li>
 <li>use correct timezone for log display  </li>
