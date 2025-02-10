@@ -2677,7 +2677,9 @@ Settings that apply are:
 - Edge padding and Edge blur  </p>
 <h2 id="notes">Notes</h2>
 <h3 id="prompt">Prompt</h3>
-<p>If detailer prompt is specified, it will be used, otherwise primary prompt will be used  </p>
+<p>If detailer prompt is specified, it will be used, otherwise primary prompt will be used.
+In case you want to add detailer-specific prompts but also keep the primary prompt, you can use <code>[prompt]</code> in the detailer prompt text box to refer to it.</p>
+<p>For example, <code>[prompt]. blue eyes</code></p>
 <h3 id="multiple-detailers">Multiple Detailers</h3>
 <p>If you're using multiple detailer models, you can specify prompt for each model separately by placing them on separate lines: 1st model will use prompt from 1st line, etc.  </p>
 <h3 id="multi-class-models">Multi-class models</h3>
