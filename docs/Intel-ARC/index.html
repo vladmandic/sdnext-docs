@@ -2759,19 +2759,16 @@ sudo<span class="w"> </span>apt<span class="w"> </span>update
 <p>Install the Intel Level Zero Drivers and the packages needed for PyTorch:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>intel-opencl-icd<span class="w"> </span>libze-intel-gpu1<span class="w"> </span>libze1<span class="w"> </span>libgl1<span class="w"> </span>libglib2.0-0<span class="w"> </span>libgomp1
 </code></pre></div>
-<p>Install Python 3.11:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:deadsnakes/ppa<span class="w"> </span>-y<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python3.11<span class="w"> </span>python3.11-dev<span class="w"> </span>python3.11-venv<span class="w"> </span>python3-pip
-</code></pre></div>
 <h3 id="arch-linux">Arch Linux</h3>
 <p>Install the necessary packages for Arch Linux:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>intel-compute-runtime<span class="w"> </span>level-zero-headers<span class="w"> </span>level-zero-loader<span class="w"> </span>base-devel<span class="w"> </span>git<span class="w"> </span>python-pip<span class="w"> </span>python-virtualenv
 </code></pre></div>
-<p>Install Python 3.11:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/python311.git
-<span class="nb">cd</span><span class="w"> </span>python311
+<p>Install Python 3.12 (or anything between 3.10 and 3.12):
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/python312.git
+<span class="nb">cd</span><span class="w"> </span>python312
 makepkg<span class="w"> </span>-si
 <span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python3.12
 </code></pre></div></p>
 <h3 id="using-sdnext-on-linux">Using SD.Next on Linux</h3>
 <p>Install SD.Next from Github:</p>
@@ -2779,8 +2776,7 @@ makepkg<span class="w"> </span>-si
 <span class="nb">cd</span><span class="w"> </span>automatic
 </code></pre></div>
 <p>Run SD.Next
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python3.11
-./webui.sh<span class="w"> </span>--use-ipex
+<div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-ipex
 </code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
