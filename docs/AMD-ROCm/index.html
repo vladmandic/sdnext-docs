@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -1533,6 +1533,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rocm-windows-support" class="md-nav__link">
     <span class="md-ellipsis">
       ROCm Windows Support
@@ -2574,6 +2583,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rocm-windows-support" class="md-nav__link">
     <span class="md-ellipsis">
       ROCm Windows Support
@@ -2612,6 +2630,26 @@ sudo usermod -a -G render,video $LOGNAME
 </code></pre></div>
 <h3 id="install-guide-for-ubuntu-2204">Install Guide for Ubuntu 22.04</h3>
 <p>Simply change the wget line from "noble" to "jammy" if using Ubuntu 22.04.</p>
+<h2 id="docker-installation">Docker Installation</h2>
+<p>Checkout the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
+<p>Using Docker with a prebuilt image:  </p>
+<div class="highlight"><pre><span></span><code>export SDNEXT_DOCKER_ROOT_FOLDER=~/sdnext
+sudo docker run -it \
+  --name sdnext-rocm \
+  --device /dev/dri \
+  --device /dev/kfd \
+  -p 7860:7860 \
+  -v $SDNEXT_DOCKER_ROOT_FOLDER/app:/app \
+  -v $SDNEXT_DOCKER_ROOT_FOLDER/python:/mnt/python \
+  -v $SDNEXT_DOCKER_ROOT_FOLDER/data:/mnt/data \
+  -v $SDNEXT_DOCKER_ROOT_FOLDER/models:/mnt/models \
+  -v $SDNEXT_DOCKER_ROOT_FOLDER/huggingface:/root/.cache/huggingface \
+  disty0/sdnext-rocm:latest
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
+</div>
 <h2 id="rocm-windows-support">ROCm Windows Support</h2>
 <p>This is a guide to build rocBLAS based on the ROCm Official Documentations.</p>
 <p>You may have an AMD GPU without official support on ROCm <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">HIP SDK</a>
