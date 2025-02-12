@@ -1581,17 +1581,54 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-container" class="md-nav__link">
+    <nav class="md-nav" aria-label="Build Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
     <span class="md-ellipsis">
-      Run Container
+      CUDA
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Run Container">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rocm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROCm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipex" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPEX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Example
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#state" class="md-nav__link">
@@ -1622,6 +1659,38 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Local
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Cloud
+    </span>
+  </a>
   
 </li>
       
@@ -2592,17 +2661,54 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-container" class="md-nav__link">
+    <nav class="md-nav" aria-label="Build Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
     <span class="md-ellipsis">
-      Run Container
+      CUDA
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Run Container">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rocm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROCm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipex" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPEX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Example
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#state" class="md-nav__link">
@@ -2633,6 +2739,38 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Local
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Cloud
+    </span>
+  </a>
   
 </li>
       
@@ -2674,16 +2812,18 @@
 
 
 <h1 id="docker">Docker</h1>
-<p>SD.Next includes basic <a href="https://github.com/vladmandic/sdnext/blob/dev/Dockerfile">Dockerfile</a> for use with <strong>nVidia GPU</strong> equipped systems<br />
-Other system may require different configurations and base images, but principle remains  </p>
-<p>Goal of containerized SD.Next is to provide a fully stateless environment that can be easily deployed and scaled  </p>
-<p>SD.Next docker template is based on <a href="https://hub.docker.com/r/pytorch/pytorch/tags">official base image</a> with <code>torch==2.5.1</code> with <code>cuda==12.4</code></p>
-<p>SD.Next docker image is currently not published in docker hub or any other repository since typically each user or organization will have their own customizations and requirements and build process is very simple and fast  </p>
+<p>SD.Next includes basic <strong>Dockerfiles</strong> for use with for use with following platforms:<br />
+- <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.cuda">nVidia CUDA</a><br />
+- <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.rocm">AMD ROCm</a> (<em>TODO</em>)<br />
+- <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.ipex">Intel IPEX</a> (<em>TODO</em>)  </p>
+<p>Other system may require different configurations and base images, but principle remains the same  </p>
+<p>Goal of containerized <strong>SD.Next</strong> is to provide a fully stateless environment that can be easily deployed and scaled  </p>
+<p><strong>SD.Next</strong> docker image is currently not published in docker hub or any other repository since typically each user or organization will have their own customizations and requirements and build process is very simple and fast, typically around ~1min for initial build just couple of seconds for any incremental builds  </p>
 <h2 id="prerequisites">Prerequisites</h2>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>If you already have functional Docker on your host, you can skip this section<br />
- For manualy steps see appendix at the end of the document  </p>
+<em>See-also</em>: <a href="Manual Install">#manual-install</a> example  </p>
 </div>
 <ul>
 <li>Docker itself<br />
@@ -2696,56 +2836,93 @@ Other system may require different configurations and base images, but principle
 <p class="admonition-title">Note</p>
 <p>Building SDNext docker image is normally only required once and takes between few seconds (using cached image) to ~1.5min (initial build) to complete<br />
  First build will also need to download the base image, which can take a while depending on your connection<br />
- If you make changes to <code>Dockerfile</code> or update SD.Next, you will need to rebuild the image  </p>
+ If you make changes to <code>Dockerfile</code> or update <strong>SD.Next</strong>, you will need to rebuild the image  </p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>Build process should be done on a system where SD.Next was started at least once to download all required submodules before docker copy process  </p>
+<p>Build process should be done on a system where <strong>SD.Next</strong> was started at least once to download all required submodules before docker copy process  </p>
 </div>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
+<h3 id="cuda">CUDA</h3>
+<p>SD.Next docker template is based on <a href="https://hub.docker.com/r/pytorch/pytorch/tags">official base image</a> with <code>python==3.11.11</code>, <code>torch==2.6.0</code> and <code>cuda==12.6</code><br />
+Base image <code>pytorch/pytorch:2.6.0-cuda12.6-cudnn9-runtime</code> is 3.24GB<br />
+And full <strong>SD.Next</strong> resulting image is ~8.4GB and contains all required dependencies  </p>
+<div class="highlight"><pre><span></span><code><span class="nv">SD_FOLDER</span><span class="o">=</span>/home/sdnext<span class="w"> </span><span class="c1"># path to sdnext home folder</span>
+docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--debug<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--tag<span class="w"> </span>sdnext/sdnext-cuda<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>&lt;path_to_sdnext_folder&gt;
-
-docker<span class="w"> </span>image<span class="w"> </span>inspect<span class="w"> </span>sdnext/sdnext-cuda<span class="w">  </span>
+<span class="w">  </span>--progress<span class="o">=</span>plain<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--file<span class="w"> </span><span class="nv">$SD_FOLDER</span>/configs/Dockerfile.cuda<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">$SD_FOLDER</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>    [+] Building 93.3s (12/12) FINISHED                                                     docker:default
-    [internal] load build definition from Dockerfile                                              0.0s
-    transferring dockerfile: 2.25kB                                                               0.0s
-    [internal] load metadata for docker.io/pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime          0.0s
-    [internal] load .dockerignore                                                                 0.0s
-    transferring context: 366B                                                                    0.0s
-    CACHED [1/7] FROM docker.io/pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime                     0.0s
-    [internal] load build context                                                                 1.3s
-    transferring context: 417.02MB                                                                1.3s
-    [2/7] RUN [&quot;apt-get&quot;, &quot;-y&quot;, &quot;update&quot;]                                                         4.4s
-    [3/7] RUN [&quot;apt-get&quot;, &quot;-y&quot;, &quot;install&quot;, &quot;git&quot;, &quot;build-essential&quot;, &quot;google-perftools&quot;, &quot;curl&quot;  20.7s
-    [4/7] RUN [&quot;/usr/sbin/ldconfig&quot;]                                                              0.3s
-    [5/7] COPY . /app                                                                             0.8s
-    [6/7] WORKDIR /app                                                                            0.0s
-    [7/7] RUN [&quot;python&quot;, &quot;/app/launch.py&quot;, &quot;--debug&quot;, &quot;--uv&quot;, &quot;--use-cuda&quot;, &quot;--log&quot;, &quot;sdnext.lo  63.9s
-    exporting to image                                                                            3.1s
-    exporting layers                                                                              3.1s
-    writing image sha256:5b2571c1f2a71f7a6d5ce4b1de1ec0e76cd4f670a1ebc17de79c333fb7fffd46         0.0s
-    naming to docker.io/sdnext/sdnext-cuda                                                        0.0s
+<h3 id="rocm">ROCm</h3>
+<div class="highlight"><pre><span></span><code><span class="nv">SD_FOLDER</span><span class="o">=</span>/home/sdnext<span class="w"> </span><span class="c1"># path to sdnext home folder</span>
+docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--debug<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tag<span class="w"> </span>sdnext/sdnext-rocm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--progress<span class="o">=</span>plain<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--file<span class="w"> </span><span class="nv">$SD_FOLDER</span>/configs/Dockerfile.rocm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">$SD_FOLDER</span>
 </code></pre></div>
-<p>Base image <code>pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime</code> is 6.14GB<br />
-And full SD.Next resulting image is ~8.8GB and contains all required dependencies  </p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you have build errors, run with <code>--progress=plain</code> to get full build log</p>
-</div>
-<h2 id="run-container">Run Container</h2>
+<h3 id="ipex">IPEX</h3>
+<div class="highlight"><pre><span></span><code><span class="nv">SD_FOLDER</span><span class="o">=</span>/home/sdnext<span class="w"> </span><span class="c1"># path to sdnext home folder</span>
+docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--debug<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tag<span class="w"> </span>sdnext/sdnext-ipex<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--progress<span class="o">=</span>plain<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--file<span class="w"> </span><span class="nv">$SD_FOLDER</span>/configs/Dockerfile.ipex<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">$SD_FOLDER</span>
+</code></pre></div>
+<h3 id="notes">Notes</h3>
+<h4 id="log-example">Log Example</h4>
+<div class="highlight"><pre><span></span><code>[+] Building 54.1s (12/12) FINISHED                                                                   docker:default
+ =&gt; [internal] load build definition from Dockerfile.cuda                                                   0.0s
+ =&gt; =&gt; transferring dockerfile: 2.24kB                                                                      0.0s
+ =&gt; [internal] load metadata for docker.io/pytorch/pytorch:2.6.0-cuda12.6-cudnn9-runtime                    0.2s
+ =&gt; [internal] load .dockerignore                                                                           0.0s
+ =&gt; =&gt; transferring context: 366B                                                                           0.0s
+ =&gt; [1/7] FROM docker.io/pytorch/pytorch:2.6.0-cuda12.6-cudnn9-runtime@sha256:xxx                           0.0s
+ =&gt; [internal] load build context                                                                           0.1s
+ =&gt; =&gt; transferring context: 279.77kB                                                                       0.1s
+ =&gt; CACHED [2/7] RUN [&quot;apt-get&quot;, &quot;-y&quot;, &quot;update&quot;]                                                            0.0s
+ =&gt; CACHED [3/7] RUN [&quot;apt-get&quot;, &quot;-y&quot;, &quot;install&quot;, &quot;git&quot;, &quot;build-essential&quot;, &quot;google-perftools&quot;, &quot;curl&quot;]     0.0s
+ =&gt; CACHED [4/7] RUN [&quot;/usr/sbin/ldconfig&quot;]                                                                 0.0s
+ =&gt; CACHED [5/7] COPY . /app                                                                                0.0s
+ =&gt; CACHED [6/7] WORKDIR /app                                                                               0.0s
+ =&gt; [7/7] RUN [&quot;python&quot;, &quot;/app/launch.py&quot;, &quot;--debug&quot;, &quot;--uv&quot;, &quot;--use-cuda&quot;, &quot;--test&quot;, &quot;--optional&quot;]        51.0s
+ =&gt; exporting to image                                                                                      2.8s
+ =&gt; =&gt; exporting layers                                                                                     2.8s
+ =&gt; =&gt; writing image sha256:xxx                                                                             0.0s
+ =&gt; =&gt; naming to docker.io/sdnext/sdnext-cuda                                                               0.0s
+</code></pre></div>
+<h4 id="state">State</h4>
+<p>As mentioned, the goal of SD.Next docker deployment is fully stateless operations.<br />
+By default, SD.Next docker containers is stateless: any data stored inside the container is lost when the container stops.  </p>
+<p>All state items and outputs will be read from and written to <code>/server/data</code><br />
+This includes:
+- Configuration files: <code>config.json</code>, <code>ui-config.json</code>
+- Cache information: <code>cache.json</code>, <code>metadata.json</code>
+- Outputs of all generated images: <code>outputs/</code></p>
+<h4 id="persistence">Persistence</h4>
+<p>If you plan to customize SD.Next deployment with additional extensions,<br />
+you may want to create and map docker volume to avoid constaint reinstalls on each startup.  </p>
+<h4 id="healthchecks">Healthchecks</h4>
+<p>By default, SD.Next docker container does not include <em>Docker healthchecks</em>, but they can be enabled.
+Simply remove comment from <code>HEALTHCHECK</code> line in <code>Dockerfile</code> and rebuild the image.  </p>
+<h2 id="run-local">Run Local</h2>
+<p>Containers built using above commands are local and can be used directly on the host system  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ul>
-<li>Republishes port from container to host directly<br />
-   You may need to remap ports if you have multiple containers running on the same host  </li>
-<li>Maps local server folder <code>/server/data</code> to be used by the container as data root<br />
-   This is where all state items and outputs will be read from and written to  </li>
-<li>Maps local server folder <code>/server/models</code> to be used by the container as model root<br />
-   This is where models will be read from and written to  </li>
-</ul>
+<p>This is an <em>EXAMPLE</em> run command, modify as needed for your environment!
+ - Republishes port from container to host directly<br />
+   You may need to remap ports if you have multiple containers running on the same host<br />
+ - Maps local server folder <code>/server/data</code> to be used by the container as data root<br />
+   This is where all state items and outputs will be read from and written to<br />
+ - Maps local server folder <code>/server/models</code> to be used by the container as model root<br />
+   This is where models will be read from and written to<br />
+ - Locations <code>/mnt/data</code> and <code>/mnt/models</code> are configured inside Dockerfile itself,<br />
+   so either edit those values and rebuild container or make sure those are available<br />
+ - If you're using network attached storage instead of local folders,<br />
+   you can use those directly and skip mounting local folders  </p>
 </div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--name<span class="w"> </span>sdnext-container<span class="w"> </span><span class="se">\</span>
@@ -2757,23 +2934,50 @@ And full SD.Next resulting image is ~8.8GB and contains all required dependencie
 <span class="w">  </span>--detach<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>sdnext/sdnext-cuda
 </code></pre></div>
-<p>Typical SDNext container will start in ~10sec and will be ready to accept connections on port <code>7860</code></p>
-<h3 id="state">State</h3>
-<p>As mentioned, the goal of SD.Next docker deployment is fully stateless operations.<br />
-By default, SD.Next docker containers is stateless: any data stored inside the container is lost when the container stops.  </p>
-<p>All state items and outputs will be read from and written to <code>/server/data</code><br />
-This includes:
-- Configuration files: <code>config.json</code>, <code>ui-config.json</code>
-- Cache information: <code>cache.json</code>, <code>metadata.json</code>
-- Outputs of all generated images: <code>outputs/</code></p>
-<h3 id="persistence">Persistence</h3>
-<p>If you plan to customize SD.Next deployment with additional extensions,<br />
-you may want to create and map docker volume to avoid constaint reinstalls on each startup.  </p>
-<h3 id="healthchecks">Healthchecks</h3>
-<p>By default, SD.Next docker container does not include healthchecks, but they can be enabled.
-Simply remove comment from <code>HEALTHCHECK</code> line in <code>Dockerfile</code> and rebuild the image.  </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Param <code>--detach</code> will run container in background<br />
+ If you want troubleshoot startup and see logs in the console directly, remove <code>--detach</code>  </p>
+</div>
+<p>Typical SDNext container will start in ~6sec and will be ready to accept connections on port <code>7860</code></p>
+<h2 id="publish">Publish</h2>
+<p>If you want to share the containers with others or deploy it on some cloud compute platform,<br />
+you will need to publish the container to a container registry  </p>
+<p>There are many container registries with Docker Hub being the most popular and widely used<br />
+1. Create an account on <a href="https://hub.docker.com/">Docker Hub</a>
+2. Create a <a href="https://hub.docker.com/settings/security">peronal access token</a> in your Docker Hub account<br />
+3. Login to Docker Hub from your terminal  </p>
+<blockquote>
+<p>docker login --username <username> --password <token><br />
+4. Tag your local container with your Docker Hub username and repository name<br />
+docker tag sdnext/sdnext-cuda <username>/sdnext-cuda<br />
+5. Push your container to Docker Hub<br />
+docker push <username>/sdnext-cuda</p>
+</blockquote>
+<p>Your container is now available on Docker Hub and can be seen on<br />
+<a href="https://hub.docker.com/repository/docker/_username_/sdnext-cuda/">https://hub.docker.com/repository/docker/_username_/sdnext-cuda/</a>!  </p>
+<h2 id="run-cloud">Run Cloud</h2>
+<p>Once your container is published, you can run it on any cloud compute platform that supports Docker containers<br />
+For example <a href="https://runpod.io/">RunPod</a> or <a href="https://aws.amazon.com/ecs/">AWS ECS</a></p>
+<p>Example using <a href="https://runpod.io/">RunPod</a>:<br />
+1. Login to RunPod<br />
+2. Create Pod<br />
+   1. Select platform with desired GPU<br />
+   2. Edit template:<br />
+      &gt; Container image: <em>username</em>/sdnext-cuda:latest<br />
+      &gt; Expose HTTP port: 7860<br />
+3. Deploy Pod<br />
+   Wait for deployment to complete<br />
+4. Connect to Pod<br />
+   RunPod will provide with a public hostname over which you can access your SD.Next instance  </p>
 <h2 id="extra">Extra</h2>
 <p>Additional docker commands that may be useful</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Inspect image</p>
+</div>
+<div class="highlight"><pre><span></span><code>docker image inspect sdnext/sdnext-cuda  
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Clean Up</p>
@@ -2816,14 +3020,19 @@ docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> 
 docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>pytorch<span class="w"> </span>--rm<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-it<span class="w"> </span>pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime<span class="w">  </span>
 </code></pre></div>
 <h2 id="manual-install">Manual Install</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>URLs below are examples for <strong>Ubuntu 24</strong>
+ Check your Linux distribution and version and use appropriate packages instead</p>
+</div>
 <blockquote>
 <p>Docker</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/containerd.io_1.7.23-1_amd64.deb
-wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-ce_27.3.1-1~ubuntu.24.04~noble_amd64.deb
-wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-ce-cli_27.3.1-1~ubuntu.24.04~noble_amd64.deb
-wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-buildx-plugin_0.17.1-1~ubuntu.24.04~noble_amd64.deb
-wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-compose-plugin_2.29.7-1~ubuntu.24.04~noble_amd64.deb
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/oracular/pool/stable/amd64/containerd.io_1.7.25-1_amd64.deb
+wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/oracular/pool/stable/amd64/docker-ce_27.5.1-1~ubuntu.24.10~oracular_amd64.deb
+wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/oracular/pool/stable/amd64/docker-ce-cli_27.5.1-1~ubuntu.24.10~oracular_amd64.deb
+wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/oracular/pool/stable/amd64/docker-buildx-plugin_0.20.0-1~ubuntu.24.10~oracular_amd64.deb
+wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/oracular/pool/stable/amd64/docker-compose-plugin_2.32.4-1~ubuntu.24.10~oracular_amd64.deb
 sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>*.deb
 
 sudo<span class="w"> </span>groupadd<span class="w"> </span>docker
