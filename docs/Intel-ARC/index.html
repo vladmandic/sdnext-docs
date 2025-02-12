@@ -1474,6 +1474,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       Environment Variables
@@ -2676,6 +2685,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       Environment Variables
@@ -2778,6 +2796,25 @@ makepkg<span class="w"> </span>-si
 <p>Run SD.Next
 <div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-ipex
 </code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
+</div>
+<h2 id="docker-installation">Docker Installation</h2>
+<p>Checkout the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
+<p>Using Docker with a prebuilt image:  </p>
+<div class="highlight"><pre><span></span><code>export SDNEXT_DOCKER_ROOT_FOLDER=~/sdnext
+sudo docker run -it \
+  --name sdnext-ipex \
+  --device /dev/dri \
+  -p 7860:7860 \
+  -v $SDNEXT_DOCKER_ROOT_FOLDER/app:/app \
+  -v $SDNEXT_DOCKER_ROOT_FOLDER/python:/mnt/python \
+  -v $SDNEXT_DOCKER_ROOT_FOLDER/data:/mnt/data \
+  -v $SDNEXT_DOCKER_ROOT_FOLDER/models:/mnt/models \
+  -v $SDNEXT_DOCKER_ROOT_FOLDER/huggingface:/root/.cache/huggingface \
+  disty0/sdnext-ipex:latest
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
