@@ -2458,9 +2458,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-02-11" class="md-nav__link">
+  <a href="#update-for-2025-02-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-02-11
+      Update for 2025-02-12
     </span>
   </a>
   
@@ -3740,9 +3740,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-02-11" class="md-nav__link">
+  <a href="#update-for-2025-02-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-02-11
+      Update for 2025-02-12
     </span>
   </a>
   
@@ -5007,7 +5007,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-02-11">Update for 2025-02-11</h2>
+<h2 id="update-for-2025-02-12">Update for 2025-02-12</h2>
 <ul>
 <li><strong>User Interface</strong>  </li>
 <li><strong>Hints</strong>  <ul>
@@ -5030,11 +5030,26 @@
 <li>New <a href="https://github.com/vladmandic/sdnext/wiki/Outpaint">Outpaint</a> step-by-step guide  </li>
 <li>Updated <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker</a> guide<br />
     includes build and publish and both local and cloud examples  </li>
+<li><strong>Models</strong></li>
+<li><a href="https://github.com/Alpha-VLLM/Lumina-Image-2.0">AlphaVLLM Lumina 2</a><br />
+    new foundation model for image generation based o Gemma-2-2B text encoder and a flow-based diffusion transformer<br />
+    fully supports offloading and on-the-fly quantization<br />
+    simply select from <em>networks -&gt; models -&gt; reference</em>  </li>
+<li><a href="https://huggingface.co/ostris/Flex.1-alpha">Ostris Flex.1-Alpha</a><br />
+    originally based on <em>Flux.1-Schnell</em>, but retrained and with different architecture<br />
+    result is model smaller than <em>Flux.1-Dev</em>, but with similar capabilities<br />
+    fully supports offloading and on-the-fly quantization<br />
+    simply select from <em>networks -&gt; models -&gt; reference</em>  </li>
+<li><strong>Pipelines</strong></li>
+<li><a href="https://huggingface.co/posts/elismasilva/251775641926329">Mixture-of-Diffusers</a><br />
+    Regional tiling type of a solution for SDXL models<br />
+    select from <em>scripts -&gt; mixture of diffusers</em>  </li>
+<li><strong>Docker</strong> </li>
+<li>updated <strong>CUDA</strong> receipe to <code>torch==2.6.0</code> with <code>cuda==12.6</code>  </li>
+<li>added <strong>ROCm</strong> receipe</li>
+<li>added <strong>IPEX</strong> receipe</li>
+<li>added <strong>OpenVINO</strong> receipe</li>
 <li><strong>Backend</strong>  </li>
-<li><strong>Docker</strong> <ul>
-<li>updated CUDA image to <code>torch==2.6.0</code> with <code>cuda==12.6</code>  </li>
-</ul>
-</li>
 <li><strong>Torch</strong>  <ul>
 <li>for <strong>zluda</strong> set default to <code>torch==2.6.0+cu118</code>  </li>
 <li>for <strong>openvino</strong> set default to <code>torch==2.6.0+cpu</code>  </li>
