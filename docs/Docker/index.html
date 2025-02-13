@@ -1612,6 +1612,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#openvino" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenVINO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prebuilt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prebuilt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       Notes
@@ -2692,6 +2710,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#openvino" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenVINO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prebuilt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prebuilt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       Notes
@@ -2818,7 +2854,9 @@
 - <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.ipex">Intel IPEX</a> </p>
 <p>Other system may require different configurations and base images, but principle remains the same  </p>
 <p>Goal of containerized <strong>SD.Next</strong> is to provide a fully stateless environment that can be easily deployed and scaled  </p>
-<p><strong>SD.Next</strong> docker image is currently not published in docker hub or any other repository since typically each user or organization will have their own customizations and requirements and build process is very simple and fast, typically around ~1min for initial build just couple of seconds for any incremental builds  </p>
+<p>It is recommended to build your own docker image to include any customizations or extensions you may require</p>
+<p>Build process is very simple and fast, typically around ~1min for initial build (plus time required to download base image and any dependencies which can take a while depending on your internet connection) to just couple of seconds for any incremental builds using previously cached images  </p>
+<p>If you want to skip the build process, you can use <a href="./#Prebuilt">Prebuilt images</a> provided by community members which are offered on best-effort basis  </p>
 <h2 id="prerequisites">Prerequisites</h2>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -2832,15 +2870,15 @@
 <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html</a></li>
 </ul>
 <h2 id="build-image">Build Image</h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Building SDNext docker image is normally only required once and takes between few seconds (using cached image) to ~1.5min (initial build) to complete<br />
- First build will also need to download the base image, which can take a while depending on your connection<br />
- If you make changes to <code>Dockerfile</code> or update <strong>SD.Next</strong>, you will need to rebuild the image  </p>
-</div>
+<p>First build will also need to download the base image, which can take a while depending on your connection<br />
+If you make changes to <code>Dockerfile</code> or update <strong>SD.Next</strong>, you will need to rebuild the image  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Build process should be done on a system where <strong>SD.Next</strong> was started at least once to download all required submodules before docker copy process  </p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to include any extensions in the docker image, install/clone them into <code>/extensions</code> folder before building the image</p>
 </div>
 <h3 id="cuda">CUDA</h3>
 <p>SD.Next docker template is based on <a href="https://hub.docker.com/r/pytorch/pytorch/tags">official base image</a> with <code>python==3.11.11</code>, <code>torch==2.6.0</code> and <code>cuda==12.6</code><br />
@@ -2855,6 +2893,8 @@ docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</s
 <span class="w">  </span><span class="nv">$SD_FOLDER</span>
 </code></pre></div>
 <h3 id="rocm">ROCm</h3>
+<p>Base image <code>rocm/dev-ubuntu-24.04</code> is 3.15GB<br />
+And full <strong>SD.Next</strong> resulting image is ~23.15GB and contains all required dependencies</p>
 <div class="highlight"><pre><span></span><code><span class="nv">SD_FOLDER</span><span class="o">=</span>/home/sdnext<span class="w"> </span><span class="c1"># path to sdnext home folder</span>
 docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--debug<span class="w"> </span><span class="se">\</span>
@@ -2864,6 +2904,8 @@ docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</s
 <span class="w">  </span><span class="nv">$SD_FOLDER</span>
 </code></pre></div>
 <h3 id="ipex">IPEX</h3>
+<p>Base image <code>https://hub.docker.com/_/ubuntu</code> is 1.1GB<br />
+And full <strong>SD.Next</strong> resulting image is ~9.1GB and contains all required dependencies</p>
 <div class="highlight"><pre><span></span><code><span class="nv">SD_FOLDER</span><span class="o">=</span>/home/sdnext<span class="w"> </span><span class="c1"># path to sdnext home folder</span>
 docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--debug<span class="w"> </span><span class="se">\</span>
@@ -2872,6 +2914,27 @@ docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</s
 <span class="w">  </span>--file<span class="w"> </span><span class="nv">$SD_FOLDER</span>/configs/Dockerfile.ipex<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="nv">$SD_FOLDER</span>
 </code></pre></div>
+<h3 id="openvino">OpenVINO</h3>
+<p>Base image <code>https://hub.docker.com/_/ubuntu</code> is 1.1GB<br />
+And full <strong>SD.Next</strong> resulting image is ~3.6GB  </p>
+<div class="highlight"><pre><span></span><code><span class="nv">SD_FOLDER</span><span class="o">=</span>/home/sdnext<span class="w"> </span><span class="c1"># path to sdnext home folder</span>
+docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--debug<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tag<span class="w"> </span>sdnext/sdnext-ipex<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--progress<span class="o">=</span>plain<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--file<span class="w"> </span><span class="nv">$SD_FOLDER</span>/configs/Dockerfile.openvino<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">$SD_FOLDER</span>
+</code></pre></div>
+<h3 id="prebuilt">Prebuilt</h3>
+<p>SD.Next community members have provided prebuilt docker images for various platforms:<br />
+- <a href="https://hub.docker.com/r/vladmandic/sdnext-cuda/tags">nVidia CUDA</a><br />
+  tag: <code>vladmandic/sdnext-cuda:latest</code> compressed size: 3.98GB<br />
+- <a href="https://hub.docker.com/r/disty0/sdnext-rocm/tags">AMD ROCm</a><br />
+  tag: <code>disty0/sdnext-rocm:latest</code> compressed size: 1.05GB<br />
+- <a href="https://hub.docker.com/r/disty0/sdnext-ipex/tags">Intel IPEX</a><br />
+  tag: <code>disty0/sdnext-ipex:latest</code> compressed size: 0.4GB<br />
+- <a href="https://hub.docker.com/r/disty0/sdnext-openvino/tags">OpenVINO</a><br />
+  tag: <code>disty0/sdnext-openvino:latest</code> compressed size: 0.4GB  </p>
 <h3 id="notes">Notes</h3>
 <h4 id="log-example">Log Example</h4>
 <div class="highlight"><pre><span></span><code>[+] Building 54.1s (12/12) FINISHED                                                                   docker:default
@@ -2934,16 +2997,24 @@ Simply remove comment from <code>HEALTHCHECK</code> line in <code>Dockerfile</co
 <span class="w">  </span>--detach<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>sdnext/sdnext-cuda
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Parameter <code>--gpus all</code> is required to expose nVidia CUDA GPU from parent host to the container<br />
+ For other platforms, use refer to official documentation and use appropriate parameters<br />
+ For example, AMD uses <code>--device /dev/dri</code> and <code>--device /dev/kfd</code>  </p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Param <code>--detach</code> will run container in background<br />
- If you want troubleshoot startup and see logs in the console directly, remove <code>--detach</code>  </p>
+ If you want troubleshoot startup and see logs in the console directly, remove <code>--detach</code> parameter  </p>
 </div>
 <p>Typical SDNext container will start in ~6sec and will be ready to accept connections on port <code>7860</code></p>
 <h2 id="publish">Publish</h2>
 <p>If you want to share the containers with others or deploy it on some cloud compute platform,<br />
 you will need to publish the container to a container registry  </p>
-<p>There are many container registries with Docker Hub being the most popular and widely used<br />
+<p>There are many container registries with <a href="https://hub.docker.com/">Docker Hub</a> being the most popular and widely used<br />
+Alternatively, check out <a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry">GitHub Packages</a>, <a href="https://aws.amazon.com/ecr/">AWS ECR</a>, <a href="https://learn.microsoft.com/en-us/azure/container-registry/">Azure ACR</a>, <a href="https://cloud.google.com/artifact-registry/docs">Google AR</a>, <a href="https://www.projectquay.io/">Quay</a>, etc  </p>
+<p>Example using <a href="https://hub.docker.com/">Docker Hub</a>
 1. Create an account on <a href="https://hub.docker.com/">Docker Hub</a>
 2. Create a <a href="https://hub.docker.com/settings/security">peronal access token</a> in your Docker Hub account<br />
 3. Login to Docker Hub from your terminal  </p>
