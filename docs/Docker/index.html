@@ -2851,7 +2851,8 @@
 <p>SD.Next includes basic <strong>Dockerfiles</strong> for use with for use with following platforms:<br />
 - <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.cuda">nVidia CUDA</a><br />
 - <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.rocm">AMD ROCm</a> 
-- <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.ipex">Intel IPEX</a> </p>
+- <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.ipex">Intel IPEX</a> 
+- <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.openvino">Intel OpenVINO</a> </p>
 <p>Other system may require different configurations and base images, but principle remains the same  </p>
 <p>Goal of containerized <strong>SD.Next</strong> is to provide a fully stateless environment that can be easily deployed and scaled  </p>
 <p>It is recommended to build your own docker image to include any customizations or extensions you may require</p>
@@ -2920,7 +2921,7 @@ And full <strong>SD.Next</strong> resulting image is ~3.6GB  </p>
 <div class="highlight"><pre><span></span><code><span class="nv">SD_FOLDER</span><span class="o">=</span>/home/sdnext<span class="w"> </span><span class="c1"># path to sdnext home folder</span>
 docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--debug<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--tag<span class="w"> </span>sdnext/sdnext-ipex<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--tag<span class="w"> </span>sdnext/sdnext-openvino<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--progress<span class="o">=</span>plain<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--file<span class="w"> </span><span class="nv">$SD_FOLDER</span>/configs/Dockerfile.openvino<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="nv">$SD_FOLDER</span>
