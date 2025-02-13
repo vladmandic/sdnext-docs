@@ -5049,7 +5049,8 @@
 <li>added <strong>ROCm</strong> receipe</li>
 <li>added <strong>IPEX</strong> receipe</li>
 <li>added <strong>OpenVINO</strong> receipe</li>
-<li><strong>Backend</strong>  </li>
+<li><strong>System</strong>  </li>
+<li>improve <strong>python==3.12</strong> compatibility  </li>
 <li><strong>Torch</strong>  <ul>
 <li>for <strong>zluda</strong> set default to <code>torch==2.6.0+cu118</code>  </li>
 <li>for <strong>openvino</strong> set default to <code>torch==2.6.0+cpu</code>  </li>
@@ -5074,6 +5075,9 @@
     persist <em>models -&gt; hugginface -&gt; token</em><br />
     persist <em>models -&gt; civitai -&gt; token</em>  </li>
 <li>global switch to lancosz method for all interal resize ops and bicubic for interpolation ops  </li>
+<li><strong>Text encoder</strong><br />
+    add advanced per-model options for text encoder<br />
+    set in <em>settings -&gt; text encoder -&gt; Optional</em>  </li>
 <li><strong>Fixes</strong>  </li>
 <li>update torch nightly urls  </li>
 <li>docs/wiki always use relative links  </li>
@@ -5082,8 +5086,11 @@
 <li>ui log scroll to bottom  </li>
 <li>ui fix send to inpaint/sketch  </li>
 <li>modernui add control init image toggle  </li>
+<li>modernui fix sampler advanced options  </li>
 <li>outpaint fixes  </li>
 <li>validate output before hires/refine  </li>
+<li>scheduler fix sigma index out of bounds  </li>
+<li>force pydantic version reinstall/reload  </li>
 </ul>
 <h2 id="update-for-2025-02-05">Update for 2025-02-05</h2>
 <ul>
