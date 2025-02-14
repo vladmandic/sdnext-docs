@@ -2712,8 +2712,7 @@
 <em> Supports </em><em>INTEL</em><em> dGPUs and iGPUs.<br />
 </em> Supports <strong>NVIDIA</strong> GPUs.<br />
 <em> Supports </em><em>CPUs</em><em> with </em><em>BF16</em><em> and </em><em>INT8</em><em> support.<br />
-</em> Supports <strong>Quantization</strong> and <strong>Model Compression</strong>.<br />
-<em> Supports multiple devices at the same time using </em><em>Hetero Device</em>*.  </p>
+</em> Supports multiple devices at the same time using <strong>Hetero Device</strong>.  </p>
 <p>It is basically a TensorRT / Olive competitor that works with any hardware.  </p>
 <h2 id="installation">Installation</h2>
 <h3 id="preparations">Preparations</h3>
@@ -2772,9 +2771,11 @@ For GPUs; select both CPU and GPU from the device selection if you want to use G
 Selecting multiple devices will use multiple devices as a single <code>HETERO</code> device.  </p>
 <p>Using <code>--device-id</code> cli argument with the WebUI will use a <strong>GPU</strong> with the specified <strong>Device ID</strong>.<br />
 Using <code>--use-cpu openvino</code> cli argument with the WebUI will use the <strong>CPU</strong>.  </p>
+<p>If no device is specified, then the default device that will be used with OpenVINO will be auto detected with the following priority:<br />
+<code>GPU</code> -&gt; <code>GPU.1</code> -&gt; <code>GPU.0</code> -&gt; Last device in the OpenVINO available devices list (<code>CPU</code>)</p>
 <h2 id="model-caching">Model Caching</h2>
-<p>OpenVINO will save compiled models to cache folder so you won't have to compile them again.<br />
-<code>OpenVINO disable model caching</code> option in <strong>Compute Settings</strong> will disable caching.<br />
+<p>OpenVINO can save compiled models to cache folder so you won't have to compile them again.<br />
+<code>OpenVINO disable model caching</code> option in <strong>Compute Settings</strong> will disable caching. Disable this option to enable caching.<br />
 <code>Directory for OpenVINO cache</code> option in <strong>System Paths</strong> will set a new location for saving OpenVINO caches.  </p>
 
 

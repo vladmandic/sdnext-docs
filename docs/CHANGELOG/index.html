@@ -2458,28 +2458,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-02-13" class="md-nav__link">
+  <a href="#update-for-2025-02-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-02-13
+      Update for 2025-02-14
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-02-13">
+    <nav class="md-nav" aria-label="Update for 2025-02-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlight-for-2025-02-13" class="md-nav__link">
+  <a href="#highlight-for-2025-02-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlight for 2025-02-13
+      Highlight for 2025-02-14
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-02-13" class="md-nav__link">
+  <a href="#details-for-2025-02-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-02-13
+      Details for 2025-02-14
     </span>
   </a>
   
@@ -3764,28 +3764,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-02-13" class="md-nav__link">
+  <a href="#update-for-2025-02-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-02-13
+      Update for 2025-02-14
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-02-13">
+    <nav class="md-nav" aria-label="Update for 2025-02-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlight-for-2025-02-13" class="md-nav__link">
+  <a href="#highlight-for-2025-02-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlight for 2025-02-13
+      Highlight for 2025-02-14
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-02-13" class="md-nav__link">
+  <a href="#details-for-2025-02-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-02-13
+      Details for 2025-02-14
     </span>
   </a>
   
@@ -5055,17 +5055,19 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-02-13">Update for 2025-02-13</h2>
-<h3 id="highlight-for-2025-02-13">Highlight for 2025-02-13</h3>
+<h2 id="update-for-2025-02-14">Update for 2025-02-14</h2>
+<h3 id="highlight-for-2025-02-14">Highlight for 2025-02-14</h3>
 <p>We're back with another update with over 50 commits!<br />
 - Starting with massive UI update with full <a href="https://vladmandic.github.io/sdnext-docs/Locale/">localization</a> for 8 languages 
   and 100+ new <a href="https://vladmandic.github.io/sdnext-docs/Hints/">hints</a><br />
 - Big update to <a href="https://vladmandic.github.io/sdnext-docs/Docker/">Docker</a> containers with support for all major compute platforms<br />
 - A lot of <a href="https://vladmandic.github.io/sdnext-docs/Outpaint/">outpainting</a> goodies<br />
 - Support for new models: <a href="https://github.com/Alpha-VLLM/Lumina-Image-2.0">AlphaVLLM Lumina 2</a> and <a href="https://huggingface.co/ostris/Flex.1-alpha">Ostris Flex.1-Alpha</a><br />
-- And new <strong>Mixture-of-Diffusers</strong> regional tiling pipeline  </p>
+- And new <strong>Mixture-of-Diffusers</strong> regional tiling pipeline<br />
+- Some changes to <strong>prompt parsing</strong> to allow more control as well as more flexibility when mouting SDNext server to custom URL<br />
+- Of course, cumulative fixes...</p>
 <p><em>...and more</em> - see <a href="https://github.com/vladmandic/sdnext/blob/dev/CHANGELOG.md">changelog</a> for full details!  </p>
-<h3 id="details-for-2025-02-13">Details for 2025-02-13</h3>
+<h3 id="details-for-2025-02-14">Details for 2025-02-14</h3>
 <ul>
 <li><strong>User Interface</strong>  </li>
 <li><strong>Hints</strong>  <ul>
@@ -5121,6 +5123,10 @@
 <li>fix shape mismatch errors on too many resolution changes  </li>
 </ul>
 </li>
+<li><strong>ZLUDA</strong>  <ul>
+<li>update to <code>zluda==3.8.8</code>  </li>
+</ul>
+</li>
 <li><strong>Other</strong>  </li>
 <li><strong>Asymmetric tiling</strong><br />
     allows for configurable image tiling for x/y axis separately<br />
@@ -5136,6 +5142,11 @@
 <li><strong>Text encoder</strong><br />
     add advanced per-model options for text encoder<br />
     set in <em>settings -&gt; text encoder -&gt; Optional</em>  </li>
+<li><strong>Subpath</strong><br />
+    allow setting additional mount subpath over which server url will be accessible<br />
+    set in <em>settings -&gt; user interface</em>  </li>
+<li><strong>Prompt parsing</strong><br />
+    better handling of prompt parsing when using masking char <code>\</code>  </li>
 <li><strong>Fixes</strong>  </li>
 <li>update torch nightly urls  </li>
 <li>docs/wiki always use relative links  </li>
@@ -5149,7 +5160,10 @@
 <li>validate output before hires/refine  </li>
 <li>scheduler fix sigma index out of bounds  </li>
 <li>force pydantic version reinstall/reload  </li>
-<li>multi-unit when using controlnet-union</li>
+<li>multi-unit when using controlnet-union  </li>
+<li>pulid with hidiffusion  </li>
+<li>api: stricter access control  </li>
+<li>api: universal handle mount subpaths  </li>
 </ul>
 <h2 id="update-for-2025-02-05">Update for 2025-02-05</h2>
 <ul>
