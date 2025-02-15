@@ -5064,6 +5064,7 @@
 - A lot of <a href="https://vladmandic.github.io/sdnext-docs/Outpaint/">outpainting</a> goodies<br />
 - Support for new models: <a href="https://github.com/Alpha-VLLM/Lumina-Image-2.0">AlphaVLLM Lumina 2</a> and <a href="https://huggingface.co/ostris/Flex.1-alpha">Ostris Flex.1-Alpha</a><br />
 - And new <strong>Mixture-of-Diffusers</strong> regional tiling pipeline<br />
+- Following last weeks <strong>interrogate/captioning</strong> rewrite, added <strong>JoyTag</strong> and <strong>JoyCaption</strong> to list of supported models<br />
 - Some changes to <strong>prompt parsing</strong> to allow more control as well as more flexibility when mouting SDNext server to custom URL<br />
 - Of course, cumulative fixes...</p>
 <p><em>...and more</em> - see <a href="https://github.com/vladmandic/sdnext/blob/dev/CHANGELOG.md">changelog</a> for full details!  </p>
@@ -5107,6 +5108,10 @@
 <li>[Automatic Color Inpaint]<br />
     Automatically creates mask based on selected color and triggers inpaint<br />
     simply select in <em>scripts -&gt; automatic color inpaint</em> when in img2img mode  </li>
+<li><strong>Interrogate/Captioning</strong></li>
+<li><a href="https://huggingface.co/fancyfeast/joytag">JoyTag</a></li>
+<li><a href="https://huggingface.co/fancyfeast/llama-joycaption-alpha-two-hf-llava">JoyCaption</a><br />
+<em>note</em>: this is a very large model based on LLama 3.1</li>
 <li><strong>Docker</strong> </li>
 <li>updated <strong>CUDA</strong> receipe to <code>torch==2.6.0</code> with <code>cuda==12.6</code> and add prebuilt image  </li>
 <li>added <strong>ROCm</strong> receipe and prebuilt image  </li>
