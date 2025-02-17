@@ -2458,28 +2458,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-02-14" class="md-nav__link">
+  <a href="#update-for-2025-02-17" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-02-14
+      Update for 2025-02-17
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-02-14">
+    <nav class="md-nav" aria-label="Update for 2025-02-17">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlight-for-2025-02-14" class="md-nav__link">
+  <a href="#todo" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlight for 2025-02-14
+      TODO
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-02-14" class="md-nav__link">
+  <a href="#highlight-for-2025-02-17" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-02-14
+      Highlight for 2025-02-17
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-02-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-02-17
     </span>
   </a>
   
@@ -3764,28 +3773,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-02-14" class="md-nav__link">
+  <a href="#update-for-2025-02-17" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-02-14
+      Update for 2025-02-17
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-02-14">
+    <nav class="md-nav" aria-label="Update for 2025-02-17">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlight-for-2025-02-14" class="md-nav__link">
+  <a href="#todo" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlight for 2025-02-14
+      TODO
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-02-14" class="md-nav__link">
+  <a href="#highlight-for-2025-02-17" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-02-14
+      Highlight for 2025-02-17
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-02-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-02-17
     </span>
   </a>
   
@@ -5055,8 +5073,12 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-02-14">Update for 2025-02-14</h2>
-<h3 id="highlight-for-2025-02-14">Highlight for 2025-02-14</h3>
+<h2 id="update-for-2025-02-17">Update for 2025-02-17</h2>
+<h3 id="todo">TODO</h3>
+<ul>
+<li>CogView4  </li>
+</ul>
+<h3 id="highlight-for-2025-02-17">Highlight for 2025-02-17</h3>
 <p>We're back with another update with over 50 commits!<br />
 - Starting with massive UI update with full <a href="https://vladmandic.github.io/sdnext-docs/Locale/">localization</a> for 8 languages 
   and 100+ new <a href="https://vladmandic.github.io/sdnext-docs/Hints/">hints</a><br />
@@ -5064,11 +5086,13 @@
 - A lot of <a href="https://vladmandic.github.io/sdnext-docs/Outpaint/">outpainting</a> goodies<br />
 - Support for new models: <a href="https://github.com/Alpha-VLLM/Lumina-Image-2.0">AlphaVLLM Lumina 2</a> and <a href="https://huggingface.co/ostris/Flex.1-alpha">Ostris Flex.1-Alpha</a><br />
 - And new <strong>Mixture-of-Diffusers</strong> regional tiling pipeline<br />
-- Following last weeks <strong>interrogate/captioning</strong> rewrite, added <strong>JoyTag</strong> and <strong>JoyCaption</strong> to list of supported models<br />
+- Follow-up to last weeks <strong>interrogate/captioning</strong> rewrite<br />
+  now with redesigned captioning UI and<br />
+  added <strong>JoyTag</strong>, <strong>JoyCaption</strong>, <strong>PaliGemma</strong>, <strong>ToriiGate</strong>, <strong>Ovis2</strong> to list of supported models<br />
 - Some changes to <strong>prompt parsing</strong> to allow more control as well as more flexibility when mouting SDNext server to custom URL<br />
 - Of course, cumulative fixes...</p>
 <p><em>...and more</em> - see <a href="https://github.com/vladmandic/sdnext/blob/dev/CHANGELOG.md">changelog</a> for full details!  </p>
-<h3 id="details-for-2025-02-14">Details for 2025-02-14</h3>
+<h3 id="details-for-2025-02-17">Details for 2025-02-17</h3>
 <ul>
 <li><strong>User Interface</strong>  </li>
 <li><strong>Hints</strong>  <ul>
@@ -5083,15 +5107,19 @@
 <li><a href="https://vladmandic.github.io/sdnext-docs/Locale/">localization</a> documentation  </li>
 </ul>
 </li>
-<li><strong>UI</strong>:  <ul>
+<li><strong>UI</strong>  <ul>
 <li>force browser cache-invalidate on page load  </li>
+<li>configurable request timeout  </li>
+<li>modernui improve gallery styling  </li>
+<li>modernui improve networks styling  </li>
+<li>modernui support variable card size  </li>
 </ul>
 </li>
-<li><strong>Docs</strong></li>
+<li><strong>Docs</strong>  </li>
 <li>New <a href="https://vladmandic.github.io/sdnext-docs/Outpaint/">Outpaint</a> step-by-step guide  </li>
 <li>Updated <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker</a> guide<br />
     includes build and publish and both local and cloud examples  </li>
-<li><strong>Models</strong></li>
+<li><strong>Models</strong>  </li>
 <li><a href="https://github.com/Alpha-VLLM/Lumina-Image-2.0">AlphaVLLM Lumina 2</a><br />
     new foundation model for image generation based o Gemma-2-2B text encoder and a flow-based diffusion transformer<br />
     fully supports offloading and on-the-fly quantization<br />
@@ -5101,18 +5129,38 @@
     result is model smaller than <em>Flux.1-Dev</em>, but with similar capabilities<br />
     fully supports offloading and on-the-fly quantization<br />
     simply select from <em>networks -&gt; models -&gt; reference</em>  </li>
-<li><strong>Pipelines</strong></li>
+<li><strong>Pipelines</strong>  </li>
 <li><a href="https://huggingface.co/posts/elismasilva/251775641926329">Mixture-of-Diffusers</a><br />
     Regional tiling type of a solution for SDXL models<br />
     select from <em>scripts -&gt; mixture of diffusers</em>  </li>
 <li>[Automatic Color Inpaint]<br />
     Automatically creates mask based on selected color and triggers inpaint<br />
     simply select in <em>scripts -&gt; automatic color inpaint</em> when in img2img mode  </li>
-<li><strong>Interrogate/Captioning</strong></li>
-<li><a href="https://huggingface.co/fancyfeast/joytag">JoyTag</a></li>
-<li><a href="https://huggingface.co/fancyfeast/llama-joycaption-alpha-two-hf-llava">JoyCaption</a><br />
-<em>note</em>: this is a very large model based on LLama 3.1</li>
-<li><strong>Docker</strong> </li>
+<li><strong>Interrogate/Captioning</strong>  </li>
+<li>Redesigned captioning UI<br />
+    split from Process tab into separate tab<br />
+    split <code>clip</code> vs <code>vlm</code> models processing<br />
+    direct <em>send-to</em> buttons on all tabs: txt/img/ctrl-&gt;process/caption, process/caption-&gt;txt/img/ctrl  </li>
+<li>Advanced params:
+    VLM: <em>max-tokens, num-beams, temperature, top-k, top-p, do-sample</em><br />
+    CLiP: <em>min-length, max-length, chunk-size, min-flavors, max-flavors, flavor-count, num-beams</em><br />
+    params are auto-saved in <code>config.json</code> and used when using quick interrogate<br />
+    params that are set to 0 mean use model defaults  </li>
+<li>Batch processing: VLM and CLiP<br />
+    for example, can be used to caption your training dataset in one go<br />
+    add option to append to captions file, can be used to run multiple captioning models in sequence<br />
+    add option to run recursively on all subfolders<br />
+    add progress bar  </li>
+<li>Add additional VLM models:<br />
+<a href="https://huggingface.co/fancyfeast/joytag">JoyTag</a><br />
+<a href="https://huggingface.co/fancyfeast/llama-joycaption-alpha-two-hf-llava">JoyCaption 2</a><br />
+<a href="https://huggingface.co/google/paligemma2-3b-pt-224">Google PaliGemma 2</a> 3B<br />
+<a href="https://huggingface.co/Minthy/ToriiGate-v0.4-7B">ToriiGate 0.4</a> 7B<br />
+<a href="https://huggingface.co/AIDC-AI/Ovis2-1B">AIDC Ovis2</a> 1B/2B/4B  </li>
+<li><em>Note</em> some models require <code>flash-attn</code> to be installed<br />
+    due to binary/build dependencies, it should not be done automatically,<br />
+    see <a href="https://github.com/Dao-AILab/flash-attention">flash-attn</a> for installation instructions  </li>
+<li><strong>Docker</strong>  </li>
 <li>updated <strong>CUDA</strong> receipe to <code>torch==2.6.0</code> with <code>cuda==12.6</code> and add prebuilt image  </li>
 <li>added <strong>ROCm</strong> receipe and prebuilt image  </li>
 <li>added <strong>IPEX</strong> receipe and add prebuilt image  </li>
@@ -5143,7 +5191,7 @@
 <li><strong>Styles</strong><br />
     ability to save and/or restore prompts before or after parsing of wildcards<br />
     set in <em>settings -&gt; networks -&gt; styles</em>  </li>
-<li><strong>Access tokens</strong>
+<li><strong>Access tokens</strong><br />
     persist <em>models -&gt; hugginface -&gt; token</em><br />
     persist <em>models -&gt; civitai -&gt; token</em>  </li>
 <li>global switch to lancosz method for all interal resize ops and bicubic for interpolation ops  </li>
