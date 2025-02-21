@@ -1569,9 +1569,33 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pytorch-2425-experimental" class="md-nav__link">
+  <a href="#experimental-how-to-enable-cudnn" class="md-nav__link">
     <span class="md-ellipsis">
-      PyTorch 2.4/2.5 (experimental)
+      (experimental) How to enable cuDNN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="(experimental) How to enable cuDNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flash-attention-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flash Attention 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-how-to-enable-cublaslt" class="md-nav__link">
+    <span class="md-ellipsis">
+      (experimental) How to enable cuBLASLt
     </span>
   </a>
   
@@ -2713,9 +2737,33 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pytorch-2425-experimental" class="md-nav__link">
+  <a href="#experimental-how-to-enable-cudnn" class="md-nav__link">
     <span class="md-ellipsis">
-      PyTorch 2.4/2.5 (experimental)
+      (experimental) How to enable cuDNN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="(experimental) How to enable cuDNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flash-attention-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flash Attention 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-how-to-enable-cublaslt" class="md-nav__link">
+    <span class="md-ellipsis">
+      (experimental) How to enable cuBLASLt
     </span>
   </a>
   
@@ -2779,23 +2827,24 @@ If you get the options to Repair or Uninstall, then you already have it installe
 <h3 id="install-zluda">Install ZLUDA</h3>
 <p>ZLUDA is now auto-installed, and automatically added to PATH, when starting webui.bat with <code>--use-zluda</code>.</p>
 <h3 id="install-hip-sdk">Install HIP SDK</h3>
-<p>Install HIP SDK 5.7.1 from <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html</a><br />
+<p>Install HIP SDK 6.2 from <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html</a><br />
 So long as your regular AMD GPU driver is up to date, you don't need to install the PRO driver HIP SDK suggests.</p>
-<p><em>Note: SD.Next supports HIP SDK 6.1.x, but the stability and functionality are not validated yet.</em></p>
 <h3 id="replace-hip-sdk-library-files-for-unsupported-gpu-architectures">Replace HIP SDK library files for unsupported GPU architectures</h3>
 <p>Go to <a href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html">https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html</a> and find your GPU model.<br />
 If your GPU model has a ✅ in both columns then skip to <a href="./#install-sdnext">Install SD.Next</a>.  <br />
 If your GPU model has an ❌ in the HIP SDK column, or if your GPU isn't listed, follow the instructions below;  </p>
 <ol>
-<li>Open Windows Explorer and copy and paste <code>C:\Program Files\AMD\ROCm\5.7\bin\rocblas</code> into the location bar.<br />
+<li>Open Windows Explorer and copy and paste <code>C:\Program Files\AMD\ROCm\6.2\bin\rocblas</code> into the location bar.<br />
 <em>(Assuming you've installed the HIP SDK in the default location and Windows is located on C:).</em></li>
 <li>Make a copy of the <code>library</code> folder, for backup purposes.  </li>
-<li>Download one of the following files, and unzip them in the original library folder, overwriting any files there.<br />
-<em>Note: Thanks to FremontDango, these alternate libraries for gfx1031 and gfx1032 GPUs are about 50% faster;</em><br />
-<em>(Note: You may have to install <a href="https://www.7-zip.org/">7-Zip</a> to unzip the .7z files.)</em>  </li>
-<li>If you have a 6700, 6700xt, or 6750xt (gfx1031) GPU, download <a href="https://github.com/brknsoul/ROCmLibs/raw/main/Optimised_ROCmLibs_gfx1031.7z?download=">Optimised_ROCmLibs_gfx1031.7z</a>.  </li>
-<li>If you have a 6600, 6600xt, or 6650xt (gfx1032) GPU, download <a href="https://github.com/brknsoul/ROCmLibs/raw/main/Optimised_ROCmLibs_gfx1032.7z?download=">Optimised_ROCmLibs_gfx1032.7z</a>.  </li>
-<li>For all other unsupported GPUs, download <a href="https://github.com/brknsoul/ROCmLibs/raw/main/ROCmLibs.7z?download=">ROCmLibs.7z</a>.  </li>
+<li>Download one of <a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/tag/v0.6.2.4">the unofficial rocBLAS library</a>, and unzip them in the original library folder, overwriting any files there.<br />
+gfx1010: RX 5700, RX 5700 XT<br />
+gfx1012: RX 5500, RX 5500 XT<br />
+gfx1031: RX 6700, RX 6700 XT, RX 6750 XT<br />
+gfx1032: RX 6600, RX 6600 XT, RX 6650 XT<br />
+gfx1103: Radeon 780M<br />
+gfx803: RX 570, RX 580<br />
+<a href="https://llvm.org/docs/AMDGPUUsage.html#processors">More...</a></li>
 <li>Open the zip file.</li>
 <li>Drag and drop the <code>library</code> folder from zip file into <code>%HIP_PATH%bin\rocblas</code> (The folder you opened in step 1).</li>
 <li>Reboot PC</li>
@@ -2830,30 +2879,44 @@ Subsequent generations will be significantly quicker.  </p>
 <li>Launch WebUI. The installer will download and install newer ZLUDA.</li>
 </ol>
 <p>※ You may have to wait for a while to compile as the first generation.</p>
-<h3 id="pytorch-2425-experimental">PyTorch 2.4/2.5 (experimental)</h3>
-<p>The major blocker that prevents us to upgrade PyTorch is <a href="https://github.com/ROCm/hipBLASLt">hipBLASLt</a>.</p>
-<p>It haven't been released on Windows yet.</p>
+<h3 id="experimental-how-to-enable-cudnn">(experimental) How to enable cuDNN</h3>
+<p>MIOpen, the alternative of cuDNN for AMDGPUs, hasn't been released on Windows yet.</p>
+<p>However, you can enable it with a custom build of MIOpen.</p>
+<p>This section describes how to enable cuDNN.</p>
+<ol>
+<li>Switch to <code>dev</code> branch.</li>
+<li>Install HIP SDK 6.2. If you already have older HIP SDK, uninstall it before installing 6.2.</li>
+<li>Remove <code>.zluda</code> folder if exists.<br />
+※ If you have set <code>ZLUDA</code> environment variable, download the latest nightly ZLUDA from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
+※ If you built ZLUDA yourself, pull latest commits of ZLUDA and rebuild with <code>--nightly</code>.</li>
+<li>Download and install HIP SDK extension from <a href="https://drive.google.com/file/d/1eMbbmg3jH0gilOWzCPqroY99Znj1BvVe/view?usp=sharing">here</a>.<br />
+(unzip and paste folders upon <code>path/to/AMD/ROCm/6.2</code>)</li>
+<li>Launch WebUI with environment variable <code>ZLUDA_NIGHTLY=1</code>.</li>
+</ol>
+<p>The first generation will take long time because MIOpen has to find the optimal solution and cache it.</p>
+<p>If you get driver crashes, restart webui and try again.</p>
+<h4 id="flash-attention-2">Flash Attention 2</h4>
+<ol>
+<li>Go to <code>Compute Settings</code>.</li>
+<li>Change precision type to <code>FP16</code>.</li>
+<li>Change attention optimization method to <code>Scaled-Dot-Product</code>.</li>
+<li>Enable Flash attention and turn Dynamic attention off in SDP options.</li>
+<li>Go to <code>Backend Settings</code>.</li>
+<li>Enable <code>Deterministic mode</code>.</li>
+</ol>
+<h3 id="experimental-how-to-enable-cublaslt">(experimental) How to enable cuBLASLt</h3>
+<p>hipBLASLt, the alternative of cuBLASLt for AMDGPUs, hasn't been released on Windows yet.</p>
 <p>However, there're unofficial builds available.</p>
-<p>This section describes how to get the latest PyTorch rather than default (2.3.1).</p>
+<p>This section describes how to enable cuBLASLt.</p>
 <ol>
 <li>Install HIP SDK 6.2. If you already have older HIP SDK, uninstall it before installing 6.2.</li>
 <li>Remove <code>.zluda</code> folder if exists.<br />
-If you have set <code>ZLUDA</code> environment variable, download the latest nightly ZLUDA from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
-If you built ZLUDA yourself, pull latest commits of ZLUDA and rebuild with <code>--nightly</code>.</li>
-<li>Uninstall PyTorch if installed.
-<div class="highlight"><pre><span></span><code>.\venv\Scripts\activate
-pip uninstall torch torchvision -y
-</code></pre></div></li>
+※ If you have set <code>ZLUDA</code> environment variable, download the latest nightly ZLUDA from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
+※ If you built ZLUDA yourself, pull latest commits of ZLUDA and rebuild with <code>--nightly</code>.</li>
 <li>Download and install unofficial hipBLASLt build.<br />
-<a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.2.4/hipblaslt-rocmlibs-for-gfx1100-gfx1101-gfx1102-gfx1103-gfx1150-for.hip6.2.7z">gfx1100, gfx1101, gfx1102, gfx1103, or gfx1150</a><br />
-gfx1030 (TBA)</li>
-<li>Launch WebUI with environment variable <code>ZLUDA_NIGHTLY=1</code>.<br />
-By default, PyTorch 2.4.1 will be installed.</li>
+<a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.2.4/hipblaslt-rocmlibs-for-gfx1100-gfx1101-gfx1102-gfx1103-gfx1150-for.hip6.2.7z">gfx1100, gfx1101, gfx1102, gfx1103, or gfx1150</a>  </li>
+<li>Launch WebUI with environment variable <code>ZLUDA_NIGHTLY=1</code>.  </li>
 </ol>
-<p>If you need PyTorch 2.5.1, manually install via the commands below.
-<div class="highlight"><pre><span></span><code>./venv/Scripts/activate
-pip install torch==2.5.1 torchvision --index-url https://download.pytorch.org/whl/cu118
-</code></pre></div></p>
 <hr />
 <h2 id="comparison-directml">Comparison (DirectML)</h2>
 <table>
@@ -2903,7 +2966,7 @@ pip install torch==2.5.1 torchvision --index-url https://download.pytorch.org/wh
 <tr>
 <td>DNN</td>
 <td>❓</td>
-<td>❌</td>
+<td>⚠️</td>
 </tr>
 <tr>
 <td>RTC</td>
