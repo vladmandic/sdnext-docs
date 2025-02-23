@@ -5075,13 +5075,17 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-02-22">Update for 2025-02-22</h2>
 <ul>
-<li><strong>Decode</strong>  </li>
+<li><strong>Functions</strong>  </li>
+<li><strong>Remote Decode</strong>  <ul>
 <li>final step of image generate, VAE decode, is by far the most memory intensive operation and can easily result in out-of-memory errors<br />
-    what can be done? Well, <em>Huggingface</em> is now providing <em>free-of-charge</em> <strong>remote-VAE-decode</strong> service!  </li>
+  what can be done? Well, <em>Huggingface</em> is now providing <em>free-of-charge</em> <strong>remote-VAE-decode</strong> service!  </li>
 <li>how to use? previous <em>Full quality</em> option in UI is replaced with VAE type selector: <em>Full, Tiny, Remote</em><br />
-    currently supports SD15, SDXL and FLUX.1 with more models expected in the near future<br />
-    availability is limited (log shows '503 Service Unavailable'),<br />
-    so if remote processing fails SD.Next will fallback to using normal VAE decode process  </li>
+  currently supports SD15, SDXL and FLUX.1 with more models expected in the near future<br />
+  availability is limited (log shows '503 Service Unavailable'),<br />
+  so if remote processing fails SD.Next will fallback to using normal VAE decode process<br />
+<em>note</em>: only passed item is final latent itself, no user or generate information at all  </li>
+</ul>
+</li>
 <li><strong>Other</strong>  </li>
 <li>add <code>--extensions-dir</code> cli arg and <code>SD_EXTENSIONSDIR</code> env variable to specify extensions directory  </li>
 <li>update <code>zluda==3.9.0</code></li>
@@ -5091,6 +5095,7 @@
 <li>remove ui splash screen on auth fail  </li>
 <li>log full config path, full log path, system name, extensions path</li>
 <li>zluda hotfixes  </li>
+<li>zluda force sync  </li>
 </ul>
 <h2 id="update-for-2025-02-18">Update for 2025-02-18</h2>
 <h3 id="highlight-for-2025-02-18">Highlight for 2025-02-18</h3>
