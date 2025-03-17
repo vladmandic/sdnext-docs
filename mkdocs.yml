@@ -89,6 +89,7 @@ nav:
     - Memory Allocation: Malloc.md
     - Model Quantization: Quantization.md
     - Model Compression: NNCF-Compression.md
+    - Variable Auto-Encoder: VAE.md
     - Benchmark Results: Benchmark.md
   - Models:
     - Supported Models: Model-Support.md
@@ -125,6 +126,7 @@ nav:
     - Control Technicals: Control-Technical.md
     - Outpainting: Outpaint.md
     - Image Processing: Process.md
+    - Image Captioning: Caption.md
     - Using Styles: Styles.md
     - Using Wildcards: Wildcards.md  
     - Reprocess Latents: Reprocess.md
