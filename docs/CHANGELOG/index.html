@@ -5157,11 +5157,15 @@
     against top-10 standard harmful content categories  </li>
 <li>add banned words/expressions check against prompt variations  </li>
 <li><strong>Other</strong></li>
+<li><strong>upscale</strong>: new <a href="Heasterian/AsymmetricAutoencoderKLUpscaler_v2">asymmetric vae v2</a> upscaling method  </li>
+<li><strong>upscale</strong>: new experimental support for <code>libvips</code> upscaling  </li>
+<li><strong>quantization</strong>: add support for <code>optimum-quanto</code> on-the-fly quantization during load for all models<br />
+    note: previous method for quanto is still valid and is noted in settings as post-load quantization  </li>
 <li>add remote vae info to metadata, thanks @iDeNoh  </li>
 <li>add quantization support to <strong>CogView-3Plus</strong></li>
 <li>update <code>diffusers</code> and other requirements   </li>
 <li>remote vae use <code>scaling_factor</code> and <code>shift_factor</code>  </li>
-<li>rename vae <em>None</em> to <em>Default</em> to avoid confusion  </li>
+<li>rename vae, unet and text-encoder settings <em>None</em> to <em>Default</em> to avoid confusion  </li>
 <li><strong>Fixes</strong></li>
 <li>fix installer not starting when older version of <code>rich</code> is installed  </li>
 <li>fix circular imports when debug flags are enabled  </li>
@@ -5175,6 +5179,7 @@
 <li>guard against git returining invalid timestamp  </li>
 <li>fix hires with latent upscale  </li>
 <li>fix legacy diffusion latent upscalers  </li>
+<li>fix upscaler selection in postprocessing  </li>
 <li><strong>IPEX</strong></li>
 <li>add <code>--upgrade</code> to torch_command when using <code>--use-nightly</code> for <em>ipex</em> and <em>rocm</em>  </li>
 <li>add xpu to profiler  </li>
