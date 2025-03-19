@@ -5254,12 +5254,15 @@
 <li>update <code>diffusers</code> and other requirements   </li>
 <li>rename vae, unet and text-encoder settings <em>None</em> to <em>Default</em> to avoid confusion  </li>
 <li><strong>IPEX</strong></li>
-<li>add <code>--upgrade</code> to torch_command when using <code>--use-nightly</code> for <em>ipex</em> and <em>rocm</em>  </li>
+<li>add <code>--upgrade</code> to torch_command when using <code>--use-nightly</code>  </li>
 <li>add xpu to profiler  </li>
 <li>fix untyped_storage, torch.eye and torch.cuda.device ops  </li>
 <li>fix torch 2.7 compatibility  </li>
 <li>fix performance with balanced offload  </li>
 <li>fix triton and torch.compile  </li>
+<li><strong>ROCm</strong></li>
+<li>add <code>--upgrade</code> to torch_command when using <code>--use-nightly</code>  </li>
+<li>disable fp16 for gfx1102 (rx 7600 and rx 7500 series) gpus  </li>
 <li><strong>Fixes</strong></li>
 <li>fix installer not starting when older version of <code>rich</code> is installed  </li>
 <li>fix circular imports when debug flags are enabled  </li>
