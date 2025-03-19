@@ -1557,9 +1557,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-sdnext-via-docker-with-rocm" class="md-nav__link">
+  <a href="#running-sdnext-via-docker" class="md-nav__link">
     <span class="md-ellipsis">
-      Running SD.Next via Docker with ROCm
+      Running SD.Next via Docker
     </span>
   </a>
   
@@ -2631,9 +2631,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-sdnext-via-docker-with-rocm" class="md-nav__link">
+  <a href="#running-sdnext-via-docker" class="md-nav__link">
     <span class="md-ellipsis">
-      Running SD.Next via Docker with ROCm
+      Running SD.Next via Docker
     </span>
   </a>
   
@@ -2678,8 +2678,12 @@ sudo usermod -a -G render,video $LOGNAME
 </code></pre></div>
 <h3 id="install-guide-for-ubuntu-2204">Install Guide for Ubuntu 22.04</h3>
 <p>Simply change the wget line from "noble" to "jammy" if using Ubuntu 22.04.</p>
-<h2 id="running-sdnext-via-docker-with-rocm">Running SD.Next via Docker with ROCm</h2>
+<h2 id="running-sdnext-via-docker">Running SD.Next via Docker</h2>
 <p>Checkout the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Installing ROCm on your system is not required when using Docker as Docker has no access to it anyway.  </p>
+</div>
 <p>Using Docker with a prebuilt image:  </p>
 <div class="highlight"><pre><span></span><code>export SDNEXT_DOCKER_ROOT_FOLDER=~/sdnext
 sudo docker run -it \
