@@ -1477,9 +1477,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-sdnext-with-openvino" class="md-nav__link">
+  <a href="#running-sdnext-with-openvino" class="md-nav__link">
     <span class="md-ellipsis">
-      Using SD.Next with OpenVINO
+      Running SD.Next with OpenVINO
     </span>
   </a>
   
@@ -1491,9 +1491,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-installation" class="md-nav__link">
+  <a href="#running-sdnext-with-docker" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker Installation
+      Running SD.Next with Docker
     </span>
   </a>
   
@@ -2668,9 +2668,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-sdnext-with-openvino" class="md-nav__link">
+  <a href="#running-sdnext-with-openvino" class="md-nav__link">
     <span class="md-ellipsis">
-      Using SD.Next with OpenVINO
+      Running SD.Next with OpenVINO
     </span>
   </a>
   
@@ -2682,9 +2682,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-installation" class="md-nav__link">
+  <a href="#running-sdnext-with-docker" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker Installation
+      Running SD.Next with Docker
     </span>
   </a>
   
@@ -2785,18 +2785,17 @@
 <ul>
 <li>Install the drivers for your device</li>
 <li>Install <a href="../Installation/#install-python-and-git">Git and Python</a></li>
-<li>Open CMD in a folder you want to install SD.Next</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Do not mix OpenVINO with your old install. Treat OpenVINO as a seperate backend.  </p>
 </div>
-<h3 id="using-sdnext-with-openvino">Using SD.Next with OpenVINO</h3>
-<p>Install SD.Next from Github:</p>
+<h3 id="running-sdnext-with-openvino">Running SD.Next with OpenVINO</h3>
+<p>Open CMD / Terminal in a folder you want to install SD.Next and install SD.Next from Github with this command:  </p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/sdnext
 </code></pre></div>
-<p>Then enter into the automatic folder:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>automatic
+<p>Then enter into the sdnext folder:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>sdnext
 </code></pre></div>
 <p>Then start WebUI with this command:</p>
 <p>Windows:</p>
@@ -2809,7 +2808,7 @@
 <p class="admonition-title">Note</p>
 <p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
 </div>
-<h2 id="docker-installation">Docker Installation</h2>
+<h2 id="running-sdnext-with-docker">Running SD.Next with Docker</h2>
 <p>Checkout the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
 <p>Using Docker with a prebuilt image:  </p>
 <div class="highlight"><pre><span></span><code>export SDNEXT_DOCKER_ROOT_FOLDER=~/sdnext

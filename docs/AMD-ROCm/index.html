@@ -1524,13 +1524,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rocm-on-ubuntu" class="md-nav__link">
+  <a href="#rocm-on-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      ROCm on Ubuntu
+      ROCm on Linux
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ROCm on Ubuntu">
+    <nav class="md-nav" aria-label="ROCm on Linux">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1551,15 +1551,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#install-guide-for-arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Guide for Arch Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-sdnext-with-rocm-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running SD.Next with ROCm on Linux
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-sdnext-via-docker" class="md-nav__link">
+  <a href="#running-sdnext-with-docker" class="md-nav__link">
     <span class="md-ellipsis">
-      Running SD.Next via Docker
+      Running SD.Next with Docker
     </span>
   </a>
   
@@ -2598,13 +2616,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rocm-on-ubuntu" class="md-nav__link">
+  <a href="#rocm-on-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      ROCm on Ubuntu
+      ROCm on Linux
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ROCm on Ubuntu">
+    <nav class="md-nav" aria-label="ROCm on Linux">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2625,15 +2643,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#install-guide-for-arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Guide for Arch Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-sdnext-with-rocm-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running SD.Next with ROCm on Linux
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-sdnext-via-docker" class="md-nav__link">
+  <a href="#running-sdnext-with-docker" class="md-nav__link">
     <span class="md-ellipsis">
-      Running SD.Next via Docker
+      Running SD.Next with Docker
     </span>
   </a>
   
@@ -2668,17 +2704,58 @@
 
 
 <h1 id="amd-rocm">AMD ROCm</h1>
-<h2 id="rocm-on-ubuntu">ROCm on Ubuntu</h2>
+<h2 id="rocm-on-linux">ROCm on Linux</h2>
 <h3 id="install-guide-for-ubuntu-2404">Install Guide for Ubuntu 24.04</h3>
+<p>Install ROCm:
 <div class="highlight"><pre><span></span><code>sudo apt update
 wget https://repo.radeon.com/amdgpu-install/6.3.2/ubuntu/noble/amdgpu-install_6.3.60302-1_all.deb
 sudo apt install ./amdgpu-install_6.3.60302-1_all.deb
 sudo amdgpu-install --usecase=rocm
 sudo usermod -a -G render,video $LOGNAME
-</code></pre></div>
+</code></pre></div></p>
+<p>Install git and python:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>python3<span class="w"> </span>python3-dev<span class="w"> </span>python3-venv<span class="w"> </span>python3-pip
+</code></pre></div></p>
 <h3 id="install-guide-for-ubuntu-2204">Install Guide for Ubuntu 22.04</h3>
-<p>Simply change the wget line from "noble" to "jammy" if using Ubuntu 22.04.</p>
-<h2 id="running-sdnext-via-docker">Running SD.Next via Docker</h2>
+<p>Simply change the wget line from "noble" to "jammy" if using Ubuntu 22.04.  </p>
+<h3 id="install-guide-for-arch-linux">Install Guide for Arch Linux</h3>
+<p>Install ROCm and git:<br />
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>rocm-hip-runtime<span class="w"> </span>git
+</code></pre></div></p>
+<p>Install Python 3.12 (or anything between 3.10 and 3.12):<br />
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>base-devel<span class="w"> </span>python-pip<span class="w"> </span>python-virtualenv
+git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/python312.git
+<span class="nb">cd</span><span class="w"> </span>python312
+makepkg<span class="w"> </span>-si
+<span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python3.12
+
+<span class="c1"># remove the package builder residuals:</span>
+<span class="c1"># rm -rf python312</span>
+</code></pre></div></p>
+<p>Install ROCm SDK:  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ROCm SDK is optional. Only required for building flash atten or similar custom kernels.<br />
+ ROCm SDK uses 26 GB of disk space.  </p>
+</div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>rocm-hip-sdk
+</code></pre></div>
+<h3 id="running-sdnext-with-rocm-on-linux">Running SD.Next with ROCm on Linux</h3>
+<p>Open the terminal in a folder you want to install SD.Next and install SD.Next from Github with this command:<br />
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/sdnext
+</code></pre></div></p>
+<p>Then enter into the sdnext folder:<br />
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>sdnext
+</code></pre></div></p>
+<p>Then run SD.Next with this command:<br />
+<div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-rocm
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.  </p>
+</div>
+<h2 id="running-sdnext-with-docker">Running SD.Next with Docker</h2>
 <p>Checkout the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
