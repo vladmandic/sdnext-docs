@@ -1592,34 +1592,43 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#experimental-how-to-enable-cudnn" class="md-nav__link">
-    <span class="md-ellipsis">
-      (experimental) How to enable cuDNN
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="(experimental) How to enable cuDNN">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#flash-attention-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Flash Attention 2
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experimental features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimental features">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#experimental-how-to-enable-cublaslt" class="md-nav__link">
+  <a href="#how-to-enable-cudnn" class="md-nav__link">
     <span class="md-ellipsis">
-      (experimental) How to enable cuBLASLt
+      How to enable cuDNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-enable-cublaslt" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to enable cuBLASLt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-enable-triton" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to enable triton
     </span>
   </a>
   
@@ -2784,34 +2793,43 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#experimental-how-to-enable-cudnn" class="md-nav__link">
-    <span class="md-ellipsis">
-      (experimental) How to enable cuDNN
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="(experimental) How to enable cuDNN">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#flash-attention-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Flash Attention 2
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experimental features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experimental features">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#experimental-how-to-enable-cublaslt" class="md-nav__link">
+  <a href="#how-to-enable-cudnn" class="md-nav__link">
     <span class="md-ellipsis">
-      (experimental) How to enable cuBLASLt
+      How to enable cuDNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-enable-cublaslt" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to enable cuBLASLt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-enable-triton" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to enable triton
     </span>
   </a>
   
@@ -2927,7 +2945,11 @@ Subsequent generations will be significantly quicker.  </p>
 <li>Launch WebUI. The installer will download and install newer ZLUDA.</li>
 </ol>
 <p>※ You may have to wait for a while to compile as the first generation.</p>
-<h3 id="experimental-how-to-enable-cudnn">(experimental) How to enable cuDNN</h3>
+<h2 id="experimental-features">Experimental features</h2>
+<h3 id="how-to-enable-cudnn">How to enable cuDNN</h3>
+<p>Speed-up: ★★★☆☆<br />
+VRAM: ★★★★☆<br />
+Stability: ★★★☆☆  </p>
 <p>MIOpen, the alternative of cuDNN for AMDGPUs, hasn't been released on Windows yet.</p>
 <p>However, you can enable it with a custom build of MIOpen.</p>
 <p>This section describes how to enable cuDNN.</p>
@@ -2943,16 +2965,10 @@ Subsequent generations will be significantly quicker.  </p>
 </ol>
 <p>The first generation will take long time because MIOpen has to find the optimal solution and cache it.</p>
 <p>If you get driver crashes, restart webui and try again.</p>
-<h4 id="flash-attention-2">Flash Attention 2</h4>
-<ol>
-<li>Go to <code>Compute Settings</code>.</li>
-<li>Change precision type to <code>FP16</code>.</li>
-<li>Change attention optimization method to <code>Scaled-Dot-Product</code>.</li>
-<li>Enable Flash attention and turn Dynamic attention off in SDP options.</li>
-<li>Go to <code>Backend Settings</code>.</li>
-<li>Enable <code>Deterministic mode</code>.</li>
-</ol>
-<h3 id="experimental-how-to-enable-cublaslt">(experimental) How to enable cuBLASLt</h3>
+<h3 id="how-to-enable-cublaslt">How to enable cuBLASLt</h3>
+<p>Speed-up: ★☆☆☆☆<br />
+VRAM: ★☆☆☆☆<br />
+Stability: ★★☆☆☆  </p>
 <p>hipBLASLt, the alternative of cuBLASLt for AMDGPUs, hasn't been released on Windows yet.</p>
 <p>However, there're unofficial builds available.</p>
 <p>This section describes how to enable cuBLASLt.</p>
@@ -2964,6 +2980,17 @@ Subsequent generations will be significantly quicker.  </p>
 <li>Download and install unofficial hipBLASLt build.<br />
 <a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.2.4/hipblaslt-rocmlibs-for-gfx1100-gfx1101-gfx1102-gfx1103-gfx1150-for.hip6.2.7z">gfx1100, gfx1101, gfx1102, gfx1103, or gfx1150</a>  </li>
 <li>Launch WebUI with environment variable <code>ZLUDA_NIGHTLY=1</code>.  </li>
+</ol>
+<h3 id="how-to-enable-triton">How to enable triton</h3>
+<p>Speed-up: ★★★★★<br />
+VRAM: ★★★★☆<br />
+Stability: ★★★★☆  </p>
+<p>Using triton, you can enable <code>torch.compile</code>, Flash Attention 2, and Sage Attention.</p>
+<ol>
+<li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/85ffce9c">here</a>.  </li>
+<li>Install via pip.<br />
+<div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.0.0+git85ffce9c-cp311-cp311-win_amd64.whl filelock
+</code></pre></div></li>
 </ol>
 <hr />
 <h2 id="comparison-directml">Comparison (DirectML)</h2>
@@ -2999,7 +3026,7 @@ Subsequent generations will be significantly quicker.  </p>
 <tr>
 <td>Flash Attention</td>
 <td>❌</td>
-<td>❌</td>
+<td>✅</td>
 </tr>
 <tr>
 <td>FFT</td>
@@ -3019,12 +3046,12 @@ Subsequent generations will be significantly quicker.  </p>
 <tr>
 <td>RTC</td>
 <td>❓</td>
-<td>⚠️</td>
+<td>✅</td>
 </tr>
 <tr>
 <td>Source Code</td>
-<td>Closed</td>
-<td>Opened</td>
+<td>Closed-source</td>
+<td>Open-source</td>
 </tr>
 <tr>
 <td>Python</td>
