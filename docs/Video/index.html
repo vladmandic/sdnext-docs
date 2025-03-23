@@ -1310,6 +1310,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#reference-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#legacy-models" class="md-nav__link">
     <span class="md-ellipsis">
       Legacy models
@@ -1387,6 +1396,15 @@
   <a href="#interpolation" class="md-nav__link">
     <span class="md-ellipsis">
       Interpolation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issueslimitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issues/Limitations
     </span>
   </a>
   
@@ -2650,6 +2668,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#reference-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#legacy-models" class="md-nav__link">
     <span class="md-ellipsis">
       Legacy models
@@ -2732,6 +2759,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#issueslimitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issues/Limitations
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2766,17 +2802,269 @@ Supoport includes <strong>T2V: text-to-video</strong> and <strong>I2V: image-to-
 - <a href="https://huggingface.co/THUDM/CogVideoX-5b">CogVideoX</a>: <em>2B, 5B</em> | <em>T2V, I2V</em><br />
 - <a href="https://huggingface.co/rhymes-ai/Allegro">Allegro</a>: <em>T2V</em><br />
 - <a href="https://huggingface.co/genmo/mochi-1-preview">Mochi1</a>: <em>T2V</em><br />
-- <a href="https://huggingface.co/maxin-cn/Latte-1">Latte1</a>: *T2V</p>
+- <a href="https://huggingface.co/maxin-cn/Latte-1">Latte1</a>: <em>T2V</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>All models are auto-downloaded upon first use<br />
- Download location uses <em>system paths -&gt; huggingface</em> folder  </p>
+ Download location uses folder specificed by: <em>Settings -&gt; System paths -&gt; Huggingface</em>  </p>
 </div>
+<h3 id="reference-list">Reference list</h3>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>Model</th>
+<th>Type</th>
+<th>Size</th>
+<th>Optimal Resolution</th>
+<th>Default Sampler</th>
+<th>Reference Values</th>
+<th>Special Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hunyuan</td>
+<td>HunyuanVideo</td>
+<td>T2V</td>
+<td>40.9GB</td>
+<td>1280x720</td>
+<td>Euler FlowMatch</td>
+<td>Frames:129 CFG:6.0 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Hunyuan</td>
+<td>HunyuanVideo</td>
+<td>I2V</td>
+<td>59.2GB</td>
+<td>1280x720</td>
+<td>Euler FlowMatch</td>
+<td>Frames:129 CFG:1.0 Steps:50</td>
+<td>Issue: transformers version / TBD 16ch VAE</td>
+</tr>
+<tr>
+<td>Hunyuan</td>
+<td>FastHunyuan</td>
+<td>T2V</td>
+<td>25.0GB+15GB</td>
+<td>1280x720</td>
+<td>Euler FlowMatch</td>
+<td>Frames:125 CFG:6.0 True:1.0 Shift:17 Steps:6</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Hunyuan</td>
+<td>SkyReels</td>
+<td>T2V</td>
+<td>25.0GB+15GB</td>
+<td>960x544</td>
+<td>Euler FlowMatch</td>
+<td>Frames:97 CFG:1.0 True:6.0 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Hunyuan</td>
+<td>SkyReels</td>
+<td>I2V</td>
+<td>25.0GB+15GB</td>
+<td>960x544</td>
+<td>Euler FlowMatch</td>
+<td>Frames:97 CFG:1.0 True:6.0 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>WAN21</td>
+<td>WAN 2.1 1.3B</td>
+<td>T2V</td>
+<td>28.2GB</td>
+<td>832x480</td>
+<td>UniPC</td>
+<td>Frames:81 CFG:5.0 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>WAN21</td>
+<td>WAN 2.1 14B</td>
+<td>T2V</td>
+<td></td>
+<td>1280x720</td>
+<td>UniPC</td>
+<td>Frames:81 CFG:5.0 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>WAN21</td>
+<td>WAN 2.1 14B 480p</td>
+<td>I2V</td>
+<td></td>
+<td>832x480</td>
+<td>UniPC</td>
+<td>Frames:81 CFG:5.0 Steps:50</td>
+<td>TBD: offloading</td>
+</tr>
+<tr>
+<td>WAN21</td>
+<td>WAN 2.1 14B 720p</td>
+<td>I2V</td>
+<td></td>
+<td>1280x720</td>
+<td>UniPC</td>
+<td>Frames:81 CFG:5.0 Steps:50</td>
+<td>TBD: offloading</td>
+</tr>
+<tr>
+<td>LTXVideo</td>
+<td>LTXVideo 0.9.0</td>
+<td>T2V</td>
+<td></td>
+<td>704x480</td>
+<td>Euler FlowMatch</td>
+<td>Frames:161 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>LTXVideo</td>
+<td>LTXVideo 0.9.0</td>
+<td>I2V</td>
+<td></td>
+<td>704x480</td>
+<td>Euler FlowMatch</td>
+<td>Frames:161 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>LTXVideo</td>
+<td>LTXVideo 0.9.1</td>
+<td>T2V</td>
+<td>24.1GB</td>
+<td>704x512</td>
+<td>Euler FlowMatch</td>
+<td>Frames:161 CFG:3 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>LTXVideo</td>
+<td>LTXVideo 0.9.1</td>
+<td>I2V</td>
+<td>24.1GB</td>
+<td>704x512</td>
+<td>Euler FlowMatch</td>
+<td>Frames:161 CFG:3 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>LTXVideo</td>
+<td>LTXVideo 0.9.5</td>
+<td>T2V</td>
+<td>24.8GB</td>
+<td>768x512</td>
+<td>Euler FlowMatch</td>
+<td>Frames:161 Steps:40</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>LTXVideo</td>
+<td>LTXVideo 0.9.5</td>
+<td>I2V</td>
+<td></td>
+<td>768x512</td>
+<td>Euler FlowMatch</td>
+<td>Frames:161 Steps:40</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>CogVideoX</td>
+<td>CogVideoX 1.0 2B</td>
+<td>T2V</td>
+<td></td>
+<td>720x480</td>
+<td>Cog DDIM</td>
+<td>Frames:49 CFG:6.0 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>CogVideoX</td>
+<td>CogVideoX 1.0 5B</td>
+<td>T2V</td>
+<td></td>
+<td>720x480</td>
+<td>Cog DDIM</td>
+<td>Frames:49 CFG:6.0 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>CogVideoX</td>
+<td>CogVideoX 1.0 5B</td>
+<td>I2V</td>
+<td></td>
+<td>720x480</td>
+<td>Cog DDIM</td>
+<td>Frames:49 CFG:6.0 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>CogVideoX</td>
+<td>CogVideoX 1.5 5B</td>
+<td>T2V</td>
+<td>30.3GB</td>
+<td>1360x768</td>
+<td>Cog DDIM</td>
+<td>Frames:81 CFG:6.0 Steps:50</td>
+<td>Issue: blank output</td>
+</tr>
+<tr>
+<td>CogVideoX</td>
+<td>CogVideoX 1.5 5B</td>
+<td>I2V</td>
+<td></td>
+<td>1360x768</td>
+<td>Cog DDIM</td>
+<td>Frames:81 CFG:6.0 Steps:50</td>
+<td>Issue: blank output</td>
+</tr>
+<tr>
+<td>Allegro</td>
+<td>Allegro</td>
+<td>T2V</td>
+<td>24.7GB</td>
+<td>1280x720</td>
+<td>Euler a</td>
+<td>Frames:88 CFG:7.5 Steps=100</td>
+<td>Issue: blank output</td>
+</tr>
+<tr>
+<td>Mochi</td>
+<td>Mochi1</td>
+<td>T2V</td>
+<td>23.4GB</td>
+<td>512x512</td>
+<td>Euler FlowMatch</td>
+<td>Frames:16 CFG:7.5 Steps:50</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Latte</td>
+<td>Latte1</td>
+<td>T2V</td>
+<td>23.4GB</td>
+<td>512x512</td>
+<td>DDIM</td>
+<td>Frames:16 CFG:7.5 Steps:50</td>
+<td>Issue: dtype mismatch</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Each model may require specific resolution or parameters to produce quality results<br />
  This also includes advanced paramters such as <em>Sampler shift</em> which would during normal text-to-image be considered not required to tweak<br />
- See individual model's author notes for recommendations on parameters  </p>
+ See individual model's original notes for recommendations on parameters  </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Its recommended to use <em>Default</em> as sampler for all models unless you need to change specific sampler setting<br />
+ For example, to change <em>Sampler Shift</em>, you need to select appropriate sampler for that model  </p>
 </div>
 <h3 id="legacy-models">Legacy models</h3>
 <p>Additional video models are available as individually selectable scripts in either text or image interfaces  </p>
@@ -2787,6 +3075,7 @@ Supoport includes <strong>T2V: text-to-video</strong> and <strong>I2V: image-to-
 </ul>
 <h3 id="lora">LoRA</h3>
 <p>SD.Next includes LoRA support for <em>Hunyuan, LTX, WAN, Mochi, Cog</em>  </p>
+<p>See <a href="../LoRA/">LoRA</a> for more details  </p>
 <h2 id="optimizations">Optimizations</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2794,8 +3083,11 @@ Supoport includes <strong>T2V: text-to-video</strong> and <strong>I2V: image-to-
 </div>
 <h3 id="offloading">Offloading</h3>
 <p>Enable offloading so model components can be moved in and out of VRAM as needed<br />
-Most models support all offloading types: <strong>Balanced</strong>, <strong>Model</strong> and <strong>Sequential</strong><br />
-However, balanced offload may lead to <em>CPU vs CUDA</em> errors with some models, in which case try other offloading types  </p>
+Most models support all offloading types:
+- <strong>Balanced</strong>: recommended, but may require extra tuning<br />
+- <strong>Model</strong>: simplest<br />
+- <strong>Sequential</strong>: highest memory savings, but slowest  </p>
+<p>See <a href="../Offload/">Offload</a> for more details  </p>
 <h3 id="quantization">Quantization</h3>
 <p>Enable on-the-fly quantization during load in <em>Settings -&gt; Quantization</em> for additional memory savings<br />
 - <strong>BnB</strong>
@@ -2804,18 +3096,25 @@ However, balanced offload may lead to <em>CPU vs CUDA</em> errors with some mode
 <p>You can enable quantization for both or either <strong>Transformers</strong> and <strong>Text-Encoder</strong> separately<br />
 - Most T2V and I2V models support on-the-fly quantization of transformers module<br />
 - Most T2V support quantization of text-encoder while I2V model may not due to inability to quantize image vectors  </p>
+<p>See <a href="../Quantization/">Quantization</a> for more details</p>
 <h3 id="decoding">Decoding</h3>
 <p>Instead of using full VAE that is packaged with the model itself to decode final frames, SD.Next supports use of Tiny VAE as well as ability to use Remote VAE to decode video</p>
 <ul>
 <li><strong>Tiny VAE</strong>: support for <em>Hunyuan, WAN, Mochi</em>  </li>
 <li><strong>Remote VAE</strong>: support for <em>Hunyuan</em>  </li>
 </ul>
+<p>See <a href="../VAE/">VAE</a> for more details  </p>
 <h3 id="processing">Processing</h3>
 <p>SD.Next supports two types of optional processing acceleration:<br />
-- <a href="https://huggingface.co/papers/2410.19355">FasterCache</a>: support for <em>Hunyuan, Mochi, Latte, Allegro, Cog</em><br />
-- <a href="https://huggingface.co/papers/2408.12588">PyramidAttentionBroadcast</a>: support for <em>Hunyuan, Mochi, Latte, Allegro, Cog</em>  </p>
+- <a href="https://huggingface.co/papers/2410.19355">FasterCache</a><br />
+  support for <em>Hunyuan, Mochi, Latte, Allegro, Cog</em><br />
+- <a href="https://huggingface.co/papers/2408.12588">PyramidAttentionBroadcast</a><br />
+  support for <em>Hunyuan, Mochi, Latte, Allegro, Cog</em>  </p>
 <h2 id="interpolation">Interpolation</h2>
-<p>For all video modules, SD.Next supports adding interpolated frames to video for smoother output</p>
+<p>For all video modules, SD.Next supports adding interpolated frames to video for smoother output<br />
+Interpolation (if enabled) is performed using <a href="https://github.com/vladmandic/rife">RIFE</a> Real-Time Intermediate Flow Estimation  </p>
+<h2 id="issueslimitations">Issues/Limitations</h2>
+<p>See <a href="https://github.com/vladmandic/sdnext/blob/dev/TODO.md">TODO</a> for known issues and limitations  </p>
 
 
 
