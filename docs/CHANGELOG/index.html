@@ -2506,28 +2506,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-03-22" class="md-nav__link">
+  <a href="#update-for-2025-03-24" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-03-22
+      Update for 2025-03-24
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-03-22">
+    <nav class="md-nav" aria-label="Update for 2025-03-24">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-03-22" class="md-nav__link">
+  <a href="#highlights-for-2025-03-24" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-03-22
+      Highlights for 2025-03-24
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-03-22" class="md-nav__link">
+  <a href="#details-for-2025-03-24" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-03-22
+      Details for 2025-03-24
     </span>
   </a>
   
@@ -3854,28 +3854,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-03-22" class="md-nav__link">
+  <a href="#update-for-2025-03-24" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-03-22
+      Update for 2025-03-24
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-03-22">
+    <nav class="md-nav" aria-label="Update for 2025-03-24">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-03-22" class="md-nav__link">
+  <a href="#highlights-for-2025-03-24" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-03-22
+      Highlights for 2025-03-24
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-03-22" class="md-nav__link">
+  <a href="#details-for-2025-03-24" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-03-22
+      Details for 2025-03-24
     </span>
   </a>
   
@@ -5187,12 +5187,12 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-03-22">Update for 2025-03-22</h2>
-<h3 id="highlights-for-2025-03-22">Highlights for 2025-03-22</h3>
-<p>Brand new Video processing module with support for all latest models: <strong>WAN21, Hunyuan, LTX, Cog, Allegro, Mochi1, Latte1</strong><br />
+<h2 id="update-for-2025-03-24">Update for 2025-03-24</h2>
+<h3 id="highlights-for-2025-03-24">Highlights for 2025-03-24</h3>
+<p>Brand new Video processing module with support for all latest models: <strong>WAN21, Hunyuan, LTX, Cog, Allegro, Mochi1, Latte1</strong> in both T2V and I2V workflows<br />
 And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/Remote</em> VAE, acceleration modules such as <em>FasterCache or PAB</em> and more!  </p>
-<p>Plus support for CogView-4, new CLiP models, improvements to remote VAE, additional docs/guides  </p>
-<h3 id="details-for-2025-03-22">Details for 2025-03-22</h3>
+<p>Plus support for <strong>CogView-4</strong>, <strong>SANA 1.5</strong>, new CLiP models, improvements to remote VAE, additional docs/guides  </p>
+<h3 id="details-for-2025-03-24">Details for 2025-03-24</h3>
 <ul>
 <li><strong>Video tab</strong></li>
 <li>see <a href="https://github.com/vladmandic/sdnext/wiki/Video">Video Wiki</a> for details!  </li>
@@ -5237,20 +5237,29 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 </ul>
 </li>
 <li><strong>Models</strong>  </li>
-<li><a href="https://huggingface.co/THUDM/CogView4-6B">THUDM CogView 4 6B</a><br />
+<li><a href="https://huggingface.co/THUDM/CogView4-6B">THUDM CogView 4</a> <strong>6B</strong> variant<br />
     new foundation model for image generation based o GLM-4 text encoder and a flow-based diffusion transformer<br />
     fully supports offloading and on-the-fly quantization<br />
     simply select from <em>networks -&gt; models -&gt; reference</em><br />
 <em>note</em> cogview4 is compatible with flowmatching samplers  </li>
+<li><a href="https://huggingface.co/Efficient-Large-Model/SANA1.5_4.8B_1024px_diffusers">NVLabs SANA 1.5</a> in <strong>1.6B</strong>, <strong>4.8B</strong> and <a href="https://huggingface.co/Efficient-Large-Model/Sana_Sprint_1.6B_1024px_diffusers">Sprint</a> variations<br />
+    big update to previous SANA model<br />
+    fully supports offloading and on-the-fly quantization<br />
+    simply select from <em>networks -&gt; models -&gt; reference</em>  </li>
 <li>New <a href="https://huggingface.co/zer0int/CLIP-Registers-Gated_MLP-ViT-L-14">zer0int CLiP-L</a> models:<br />
     download text encoders into folder set in settings -&gt; system paths -&gt; text encoders (default is <em>models/Text-encoder</em>)<br />
     load using <em>settings -&gt; text encoder</em><br />
 <em>tip</em>: add <em>sd_text_encoder</em> to your <em>settings -&gt; user interface -&gt; quicksettings</em> list to have it appear at the top of the ui  </li>
 <li><strong>Wiki/Docs</strong>  </li>
+<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/Models">Models</a> info  </li>
+<li>new <a href="https://github.com/vladmandic/sdnext/wiki/Video">Video</a> guide  </li>
 <li>new <a href="https://github.com/vladmandic/sdnext/wiki/Caption">Caption</a> guide  </li>
 <li>new <a href="https://github.com/vladmandic/sdnext/wiki/VAE">VAE</a> guide  </li>
-<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/Models">Models</a> info  </li>
 <li>updated <a href="https://github.com/vladmandic/sdnext/wiki/SD3">SD3</a> guide  </li>
+<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA">ZLUDA</a> guide</li>
+<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/OpenVINO">OpenVINO</a> guide</li>
+<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/AMD-ROCm">AMD-ROCm</a> guide</li>
+<li>upte <a href="https://github.com/vladmandic/sdnext/wiki/Intel-ARC">Intel-ARC</a> guide</li>
 <li><strong>Remote VAE</strong>  </li>
 <li>add support for remote vae encode in addition to remote vae decode  </li>
 <li>used by <em>img2img, inpaint, hires, detailer</em>  </li>
@@ -5300,6 +5309,8 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li>fix legacy diffusion latent upscalers  </li>
 <li>fix upscaler selection in postprocessing  </li>
 <li>fix sd35 with batch processing  </li>
+<li>fix extra networks cover and inline views  </li>
+<li>fix token counter error style with modernui  </li>
 </ul>
 <h2 id="update-for-2025-02-28">Update for 2025-02-28</h2>
 <p>Primarily a hotfix/service release plus few UI improvements and one exciting new feature: Remote-VAE!</p>
