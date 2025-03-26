@@ -2987,10 +2987,15 @@ VRAM: ★★★★☆<br />
 Stability: ★★★★☆  </p>
 <p>Using triton, you can enable <code>torch.compile</code>, Flash Attention 2, and Sage Attention.</p>
 <ol>
-<li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/85ffce9c">here</a>.  </li>
+<li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/2b248f14">here</a>.<br />
+Note: download cp311 for Python 3.11 and cp310 for 3.10.</li>
 <li>Install via pip.<br />
-<div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.0.0+git85ffce9c-cp311-cp311-win_amd64.whl filelock
-</code></pre></div></li>
+<div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.0.0+git2b248f14-cp311-cp311-win_amd64.whl filelock
+</code></pre></div>
+or
+<div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.0.0+git2b248f14-cp310-cp310-win_amd64.whl filelock
+</code></pre></div>
+for Python 3.10.</li>
 </ol>
 <hr />
 <h2 id="comparison-directml">Comparison (DirectML)</h2>
