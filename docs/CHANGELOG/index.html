@@ -5192,6 +5192,7 @@
 <p>Brand new Video processing module with support for all latest models: <strong>WAN21, Hunyuan, LTX, Cog, Allegro, Mochi1, Latte1</strong> in both T2V and I2V workflows<br />
 And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/Remote</em> VAE, acceleration modules such as <em>FasterCache or PAB</em> and more!  </p>
 <p>Plus support for <strong>CogView-4</strong>, <strong>SANA 1.5</strong>, new CLiP models, improvements to remote VAE, additional docs/guides  </p>
+<p><strong>Flash Attention 2</strong> and Sage Attention is now available on ZLUDA backend!</p>
 <h3 id="details-for-2025-03-25">Details for 2025-03-25</h3>
 <ul>
 <li><strong>Video tab</strong></li>
@@ -5294,6 +5295,9 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li><strong>ROCm</strong></li>
 <li>add <code>--upgrade</code> to torch_command when using <code>--use-nightly</code>  </li>
 <li>disable fp16 for gfx1102 (rx 7600 and rx 7500 series) gpus  </li>
+<li><strong>ZLUDA</strong></li>
+<li>add <code>torch.compile</code> support under <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA#how-to-enable-triton">triton for ZLUDA v3.9.2</a></li>
+<li>add Flash Attention 2 support under <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA#how-to-enable-triton">triton for ZLUDA v3.9.2</a></li>
 <li><strong>Fixes</strong></li>
 <li>fix installer not starting when older version of <code>rich</code> is installed  </li>
 <li>fix circular imports when debug flags are enabled  </li>
