@@ -2516,18 +2516,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-03-26" class="md-nav__link">
+  <a href="#highlights-for-2025-03-27" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-03-26
+      Highlights for 2025-03-27
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-03-26" class="md-nav__link">
+  <a href="#details-for-2025-03-27" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-03-26
+      Details for 2025-03-27
     </span>
   </a>
   
@@ -3864,18 +3864,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-03-26" class="md-nav__link">
+  <a href="#highlights-for-2025-03-27" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-03-26
+      Highlights for 2025-03-27
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-03-26" class="md-nav__link">
+  <a href="#details-for-2025-03-27" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-03-26
+      Details for 2025-03-27
     </span>
   </a>
   
@@ -5188,14 +5188,14 @@
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-03-26">Update for 2025-03-26</h2>
-<h3 id="highlights-for-2025-03-26">Highlights for 2025-03-26</h3>
+<h3 id="highlights-for-2025-03-27">Highlights for 2025-03-27</h3>
 <p>Brand new Video processing module with support for all latest models: <strong>WAN21, Hunyuan, LTX, Cog, Allegro, Mochi1, Latte1</strong> in both T2V and I2V workflows<br />
 And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/Remote</em> VAE, acceleration modules such as <em>FasterCache or PAB</em> and more!  </p>
-<p>Plus support for <strong>CogView-4</strong>, <strong>SANA 1.5</strong>, new CLiP models, improvements to remote VAE, additional docs/guides  </p>
-<p><strong>Flash Attention 2</strong> and Sage Attention is now available on ZLUDA backend!</p>
-<h3 id="details-for-2025-03-26">Details for 2025-03-26</h3>
+<p>Plus support for <strong>CogView-4</strong>, <strong>SANA 1.5</strong>, new CLiP models, improvements to remote VAE, additional docs/guides<br />
+Pretty big performance updates to a) Any model using DiT based architecture: new caching methods, b) ZLUDA: new attention methods  </p>
+<h3 id="details-for-2025-03-27">Details for 2025-03-27</h3>
 <ul>
-<li><strong>Video tab</strong></li>
+<li><strong>Video tab</strong>  </li>
 <li>see <a href="https://github.com/vladmandic/sdnext/wiki/Video">Video Wiki</a> for details!  </li>
 <li>new top-level tab, replaces previous <em>video</em> script in text/image tabs<br />
     old scripts are still present, but will be removed in the future  </li>
@@ -5206,7 +5206,7 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li><a href="https://huggingface.co/THUDM/CogVideoX-5b">CogVideoX</a>: <em>2B, 5B</em> | <em>T2V, I2V</em>  </li>
 <li><a href="https://huggingface.co/rhymes-ai/Allegro">Allegro</a>: <em>T2V</em>  </li>
 <li><a href="https://huggingface.co/genmo/mochi-1-preview">Mochi1</a>: <em>T2V</em>  </li>
-<li><a href="https://huggingface.co/maxin-cn/Latte-1">Latte1</a>: *T2V</li>
+<li><a href="https://huggingface.co/maxin-cn/Latte-1">Latte1</a>: *T2V  </li>
 </ul>
 </li>
 <li>decoding:  <ul>
@@ -5216,11 +5216,6 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 </ul>
 </li>
 <li><strong>LoRA</strong>: support for <em>Hunyuan, LTX, WAN, Mochi, Cog</em>  </li>
-<li>acceleration:  <ul>
-<li><a href="https://huggingface.co/papers/2410.19355">FasterCache</a>: support for <em>Hunyuan, Mochi, Latte, Allegro, Cog</em>  </li>
-<li><a href="https://huggingface.co/papers/2408.12588">PyramidAttentionBroadcast</a>: support for <em>Hunyuan, Mochi, Latte, Allegro, Cog</em>  </li>
-</ul>
-</li>
 <li>additional key points:  <ul>
 <li>all models are auto-downloaded upon first use<br />
   uses <em>system paths -&gt; huggingface</em> folder  </li>
@@ -5231,10 +5226,10 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li>support for balanced offloading and model offloading<br />
   uses system settings  </li>
 <li>on-the-fly quantization: <em>BnB, Quanto, TorchAO</em><br />
-  uses system settings, granular for <em>transformer</em> and <em>text-encoder</em> separately</li>
+  uses system settings, granular for <em>transformer</em> and <em>text-encoder</em> separately  </li>
 <li>different video models support different video resolutions, frame counts, etc.<br />
   and may require specific settings - see model links for details  </li>
-<li>see <em>ToDo/Limitations</em> section for additional notes</li>
+<li>see <em>ToDo/Limitations</em> section for additional notes  </li>
 </ul>
 </li>
 <li><strong>Models &amp; Pipelines</strong>  </li>
@@ -5256,16 +5251,11 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
     download text encoders into folder set in settings -&gt; system paths -&gt; text encoders (default is <em>models/Text-encoder</em>)<br />
     load using <em>settings -&gt; text encoder</em><br />
 <em>tip</em>: add <em>sd_text_encoder</em> to your <em>settings -&gt; user interface -&gt; quicksettings</em> list to have it appear at the top of the ui  </li>
-<li><strong>Wiki/Docs</strong>  </li>
-<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/Models">Models</a> info  </li>
-<li>new <a href="https://github.com/vladmandic/sdnext/wiki/Video">Video</a> guide  </li>
-<li>new <a href="https://github.com/vladmandic/sdnext/wiki/Caption">Caption</a> guide  </li>
-<li>new <a href="https://github.com/vladmandic/sdnext/wiki/VAE">VAE</a> guide  </li>
-<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/SD3">SD3</a> guide  </li>
-<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA">ZLUDA</a> guide  </li>
-<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/OpenVINO">OpenVINO</a> guide  </li>
-<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/AMD-ROCm">AMD-ROCm</a> guide  </li>
-<li>upte <a href="https://github.com/vladmandic/sdnext/wiki/Intel-ARC">Intel-ARC</a> guide  </li>
+<li><strong>Acceleration</strong>  </li>
+<li>Support for most DiT-based models, for example: <em>FLUX.1, SD35, Hunyuan, Mochi, Latte, Allegro, Cog</em>  </li>
+<li>Enable and configure in <em>Settings -&gt; Pipeline modifiers</em>  </li>
+<li><a href="https://huggingface.co/papers/2410.19355">FasterCache</a>  </li>
+<li><a href="https://huggingface.co/papers/2408.12588">PyramidAttentionBroadcast</a>  </li>
 <li><strong>Remote VAE</strong>  </li>
 <li>add support for remote vae encode in addition to remote vae decode  </li>
 <li>used by <em>img2img, inpaint, hires, detailer</em>  </li>
@@ -5283,16 +5273,7 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li>add image policy checks using <code>LlavaGuard</code> VLM to detect policy violations (and reasons)<br />
     against top-10 standard harmful content categories  </li>
 <li>add banned words/expressions check against prompt variations  </li>
-<li><strong>Other</strong></li>
-<li><strong>upscale</strong>: new <a href="https://huggingface.co/Heasterian/AsymmetricAutoencoderKLUpscaler_v2">asymmetric vae v2</a> upscaling method  </li>
-<li><strong>upscale</strong>: new experimental support for <code>libvips</code> upscaling  </li>
-<li><strong>quantization</strong>: add support for <code>optimum-quanto</code> on-the-fly quantization during load for all models<br />
-    note: previous method for quanto is still valid and is noted in settings as post-load quantization  </li>
-<li>add quantization support to <strong>CogView-3Plus</strong></li>
-<li>update <code>diffusers</code> and other requirements   </li>
-<li>rename vae, unet and text-encoder settings <em>None</em> to <em>Default</em> to avoid confusion  </li>
-<li><strong>CLI</strong>: add <code>cli/api-grid.py</code> which can generate grids using params-from-file for x/y axis  </li>
-<li><strong>IPEX</strong></li>
+<li><strong>IPEX</strong>  </li>
 <li>add <code>--upgrade</code> to torch_command when using <code>--use-nightly</code>  </li>
 <li>add xpu to profiler  </li>
 <li>fix untyped_storage, torch.eye and torch.cuda.device ops  </li>
@@ -5302,10 +5283,31 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li><strong>ROCm</strong></li>
 <li>add <code>--upgrade</code> to torch_command when using <code>--use-nightly</code>  </li>
 <li>disable fp16 for gfx1102 (rx 7600 and rx 7500 series) gpus  </li>
-<li><strong>ZLUDA</strong></li>
-<li>add <code>torch.compile</code> support under <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA#how-to-enable-triton">triton for ZLUDA v3.9.2</a></li>
-<li>add Flash Attention 2 support under <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA#how-to-enable-triton">triton for ZLUDA v3.9.2</a></li>
-<li><strong>Fixes</strong></li>
+<li><strong>ZLUDA</strong>  </li>
+<li>add <code>torch.compile</code> support under <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA#how-to-enable-triton">triton for ZLUDA v3.9.2</a>  </li>
+<li>add Flash Attention 2 support under <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA#how-to-enable-triton">triton for ZLUDA v3.9.2</a>  </li>
+<li>add Sage Attention support  </li>
+<li><strong>Other</strong>  </li>
+<li><strong>upscale</strong>: new <a href="https://huggingface.co/Heasterian/AsymmetricAutoencoderKLUpscaler_v2">asymmetric vae v2</a> upscaling method  </li>
+<li><strong>upscale</strong>: new experimental support for <code>libvips</code> upscaling  </li>
+<li><strong>quantization</strong>: add support for <code>optimum-quanto</code> on-the-fly quantization during load for all models<br />
+    note: previous method for quanto is still valid and is noted in settings as post-load quantization  </li>
+<li>add quantization support to <strong>CogView-3Plus</strong>  </li>
+<li>update <code>diffusers</code> and other requirements  </li>
+<li>rename vae, unet and text-encoder settings <em>None</em> to <em>Default</em> to avoid confusion  </li>
+<li><strong>CLI</strong>: add <code>cli/api-grid.py</code> which can generate grids using params-from-file for x/y axis  </li>
+<li>LoRA enable memory cache by default  </li>
+<li><strong>Wiki/Docs</strong>  </li>
+<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/Models">Models</a> info  </li>
+<li>new <a href="https://github.com/vladmandic/sdnext/wiki/Video">Video</a> guide  </li>
+<li>new <a href="https://github.com/vladmandic/sdnext/wiki/Caption">Caption</a> guide  </li>
+<li>new <a href="https://github.com/vladmandic/sdnext/wiki/VAE">VAE</a> guide  </li>
+<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/SD3">SD3</a> guide  </li>
+<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA">ZLUDA</a> guide  </li>
+<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/OpenVINO">OpenVINO</a> guide  </li>
+<li>updated <a href="https://github.com/vladmandic/sdnext/wiki/AMD-ROCm">AMD-ROCm</a> guide  </li>
+<li>upte <a href="https://github.com/vladmandic/sdnext/wiki/Intel-ARC">Intel-ARC</a> guide  </li>
+<li><strong>Fixes</strong>  </li>
 <li>fix installer not starting when older version of <code>rich</code> is installed  </li>
 <li>fix circular imports when debug flags are enabled  </li>
 <li>fix cuda errors with <em>directml</em>  </li>
