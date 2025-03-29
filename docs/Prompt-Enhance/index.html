@@ -2525,6 +2525,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Custom models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-standard-huggingface-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: standard huggingface model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-gguf-model-hosted-on-huggingface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: gguf model hosted on huggingface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2565,6 +2589,10 @@
 - Models are auto-downloaded on first use<br />
 - Support quantization and offloading<br />
 - Advanced options: <code>max tokens, sampling, temperature, repetition penalty</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If SD.Next detected censored output, it will print warning in the log file and return original prompt  </p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Any model hosted on huggingface in original format should work<br />
@@ -2575,19 +2603,27 @@
 <p>Not all model architecture are supported for <code>gguf</code> format<br />
  Typically <code>gguf</code> support is added slightly later than <code>transformers</code> support  </p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Debug logging can be enabled using <code>SD_LLM_DEBUG=true</code> env variable  </p>
+</div>
 <h2 id="custom-models">Custom models</h2>
 <p>Can be used to define any model that is not included in predefined list</p>
-<p><em>Example</em>: standard huggingface model
-- Model repo: <code>nidum/Nidum-Gemma-3-4B-it-Uncensored</code></p>
-<p><em>Example</em>: gguf model hosted on huggingface<br />
-- Model repo: <code>meta-llama/Llama-3.2-1B-Instruct</code><br />
-  Link to original model repo on huggingface, required so that SD.Next can download components not present in <code>gguf</code> file such as tokenizer<br />
-- Model GGUF: <code>mradermacher/Llama-3.2-1B-Instruct-Uncensored-i1-GGUF</code><br />
-  Link to repo on huggingface that is hosting the <code>gguf</code> file(s)<br />
-- Model type: <code>llama</code><br />
-  Model type, required for SD.Next to know how to load the model<br />
-- Model name: <code>Llama-3.2-1B-Instruct-Uncensored.i1-Q4_0.gguf</code><br />
-  Name of the <code>gguf</code> file inside gguf repo  </p>
+<h3 id="example-standard-huggingface-model">Example: standard huggingface model</h3>
+<ul>
+<li>Model repo: <code>nidum/Nidum-Gemma-3-4B-it-Uncensored</code></li>
+</ul>
+<h3 id="example-gguf-model-hosted-on-huggingface">Example: gguf model hosted on huggingface</h3>
+<ul>
+<li>Model repo: <code>meta-llama/Llama-3.2-1B-Instruct</code><br />
+  Link to original model repo on huggingface, required so that SD.Next can download components not present in <code>gguf</code> file such as tokenizer  </li>
+<li>Model GGUF: <code>mradermacher/Llama-3.2-1B-Instruct-Uncensored-i1-GGUF</code><br />
+  Link to repo on huggingface that is hosting the <code>gguf</code> file(s)  </li>
+<li>Model type: <code>llama</code><br />
+  Model type, required for SD.Next to know how to load the model  </li>
+<li>Model name: <code>Llama-3.2-1B-Instruct-Uncensored.i1-Q4_0.gguf</code><br />
+  Name of the <code>gguf</code> file inside gguf repo  </li>
+</ul>
 <p>Supported GGUF model types: <em>llama, mistral, qwen2, qwen2moe, falcon, tokenizer, phi3, bloom, t5, stablelm, gpt2, starcoder2, mamba, nemotron, gemma2</em>
 Supported Transformer model types is a superset of GGUF model types and includes model types such as latest <em>gemma3</em><br />
 In case of unsupported model type, SD.Next will print currently supported model types in the log file  </p>
