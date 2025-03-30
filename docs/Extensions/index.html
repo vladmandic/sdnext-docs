@@ -2781,7 +2781,7 @@
   So patching should never be done globally on in a way that breaks other extensions  </li>
 <li><strong>Running platform specific code</strong>:
   Not everyone runs the same OS or compute backend and using platform or hardware specific code or relying on packages which are not cross-platform is just bad<br />
-  For example, never use platform specific designators such as <code>torch.to('cuda')</code> or <code>torch.float16</code>, always use well-defined server variables such as <code>device.device</code> and <code>device.dtype</code>  </li>
+  For example, never use platform specific designators such as <code>torch.to('cuda')</code> or <code>torch.float16</code>, always use well-defined server variables such as <code>devices.device</code> and <code>devices.dtype</code>  </li>
 <li><strong>Assuming values</strong>:
   Never assume values, always check a well-defined variable what is the current value and handle it accordingly
   For example, extension may not be installed in <code>/extensions</code> folder, it may be relocated to a different folder</li>
