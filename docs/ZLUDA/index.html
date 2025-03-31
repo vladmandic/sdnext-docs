@@ -3113,17 +3113,16 @@ Stability: ★★☆☆☆  </p>
 <p>Speed-up: ★★★★★<br />
 VRAM: ★★★★☆<br />
 Stability: ★★★★☆  </p>
-<p>Using triton, you can enable <code>torch.compile</code>, Flash Attention 2, and Sage Attention.</p>
+<p>Using triton, you can enable <code>torch.compile</code> and Flash Attention 2.</p>
 <ol>
-<li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/2b248f14">here</a>.<br />
-Note: download cp311 for Python 3.11 and cp310 for 3.10.</li>
-<li>Install via pip.<br />
-<div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.0.0+git2b248f14-cp311-cp311-win_amd64.whl filelock
-</code></pre></div>
-or
-<div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.0.0+git2b248f14-cp310-cp310-win_amd64.whl filelock
-</code></pre></div>
-for Python 3.10.</li>
+<li>Prepare Python 3.11 environment.</li>
+<li>Switch to dev branch.
+<div class="highlight"><pre><span></span><code>git switch dev
+</code></pre></div></li>
+<li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/421dd5ab">here</a>.  </li>
+<li>Install via pip.
+<div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.3.0+git421dd5ab-cp311-cp311-win_amd64.whl setuptools
+</code></pre></div></li>
 </ol>
 <hr />
 <h2 id="comparison-directml">Comparison (DirectML)</h2>
