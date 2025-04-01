@@ -912,6 +912,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#crashes" class="md-nav__link">
     <span class="md-ellipsis">
       Crashes
@@ -2816,6 +2825,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#crashes" class="md-nav__link">
     <span class="md-ellipsis">
       Crashes
@@ -2923,6 +2941,13 @@ SD.Next will collect profiling information from both Python, Torch and CUDA and 
 <blockquote>
 <p>webui.bat --debug --profile<br />
 webui.sh --debug --profile</p>
+</blockquote>
+<h2 id="monitoring">Monitoring</h2>
+<p>SD.Next memory usage can be monitored using <code>--monitor PERIOD</code> flag in which case,<br />
+it will print detailed memory statistics for both CPU and GPU ever n seconds  </p>
+<p>Example:</p>
+<blockquote>
+<p>webui.sh --debug --monitor</p>
 </blockquote>
 <h2 id="crashes">Crashes</h2>
 <p>If <strong>SD.Next</strong> crashes during its code, it will produce traceback in the console output<br />

@@ -2637,28 +2637,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-03-31" class="md-nav__link">
+  <a href="#update-for-2025-04-01" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-03-31
+      Update for 2025-04-01
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-03-31">
+    <nav class="md-nav" aria-label="Update for 2025-04-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-03-31" class="md-nav__link">
+  <a href="#highlights-for-2025-04-01" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-03-31
+      Highlights for 2025-04-01
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-03-31" class="md-nav__link">
+  <a href="#details-for-2025-04-01" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-03-31
+      Details for 2025-04-01
     </span>
   </a>
   
@@ -3985,28 +3985,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-03-31" class="md-nav__link">
+  <a href="#update-for-2025-04-01" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-03-31
+      Update for 2025-04-01
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-03-31">
+    <nav class="md-nav" aria-label="Update for 2025-04-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-03-31" class="md-nav__link">
+  <a href="#highlights-for-2025-04-01" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-03-31
+      Highlights for 2025-04-01
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-03-31" class="md-nav__link">
+  <a href="#details-for-2025-04-01" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-03-31
+      Details for 2025-04-01
     </span>
   </a>
   
@@ -5318,8 +5318,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-03-31">Update for 2025-03-31</h2>
-<h3 id="highlights-for-2025-03-31">Highlights for 2025-03-31</h3>
+<h2 id="update-for-2025-04-01">Update for 2025-04-01</h2>
+<h3 id="highlights-for-2025-04-01">Highlights for 2025-04-01</h3>
 <p>Brand new Video processing module with support for all latest models: <strong>WAN21, Hunyuan, LTX, Cog, Allegro, Mochi1, Latte1</strong> in both T2V and I2V workflows<br />
 And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/Remote</em> VAE, acceleration modules such as <em>FasterCache or PAB</em> and more!  </p>
 <p>Also, support for new models: <strong>CogView-4</strong>, <strong>SANA 1.5</strong>, </p>
@@ -5328,7 +5328,7 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 - New <strong>CLiP</strong> models, improvements to <strong>remote VAE</strong>, additional wiki/docs/guides<br />
 - More quantization options and granular control<br />
 - Pretty big performance updates to a) Any model using DiT based architecture: new caching methods, b) ZLUDA: new attention methods  </p>
-<h3 id="details-for-2025-03-31">Details for 2025-03-31</h3>
+<h3 id="details-for-2025-04-01">Details for 2025-04-01</h3>
 <ul>
 <li><strong>Video tab</strong>  </li>
 <li>see <a href="https://github.com/vladmandic/sdnext/wiki/Video">Video Wiki</a> for details!  </li>
@@ -5350,7 +5350,13 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li><strong>Remote VAE</strong>: support for <em>Hunyuan</em>  </li>
 </ul>
 </li>
-<li><strong>LoRA</strong>: support for <em>Hunyuan, LTX, WAN, Mochi, Cog</em>  </li>
+<li><strong>LoRA</strong><ul>
+<li>support for <em>Hunyuan, LTX, WAN, Mochi, Cog</em>  </li>
+<li>add option to apply LoRA directly on GPU or use CPU first in low-memory scenarios  </li>
+<li>improve metadata and preview parallel fetch  </li>
+<li>support for mp4 so first frame is extracted as used as lora preview  </li>
+</ul>
+</li>
 <li>additional key points:  <ul>
 <li>all models are auto-downloaded upon first use<br />
   uses <em>system paths -&gt; huggingface</em> folder  </li>
@@ -5422,6 +5428,13 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li>add image policy checks using <code>LlavaGuard</code> VLM to detect policy violations (and reasons)<br />
     against top-10 standard harmful content categories  </li>
 <li>add banned words/expressions check against prompt variations  </li>
+<li><strong>LoRA</strong></li>
+<li>enable memory cache by default  </li>
+<li>significantly reduce memory usage  </li>
+<li>improve performance  </li>
+<li>improve detection of lora changes  </li>
+<li>unload lora only when changes are detected  </li>
+<li>refactor code for modularity  </li>
 <li><strong>IPEX</strong>  </li>
 <li>add <code>--upgrade</code> to torch_command when using <code>--use-nightly</code>  </li>
 <li>add xpu to profiler  </li>
@@ -5437,6 +5450,7 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li>add Flash Attention 2 support under <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA#how-to-enable-triton">triton for ZLUDA v3.9.2</a>  </li>
 <li>add Sage Attention support  </li>
 <li><strong>Other</strong>  </li>
+<li>new command line option <code>--monitor PERIOD</code> to monitor CPU and GPU memory ever n seconds  </li>
 <li><strong>upscale</strong>: new <a href="https://huggingface.co/Heasterian/AsymmetricAutoencoderKLUpscaler_v2">asymmetric vae v2</a> upscaling method  </li>
 <li><strong>upscale</strong>: new experimental support for <code>libvips</code> upscaling  </li>
 <li><strong>quantization</strong>: add support for <code>optimum-quanto</code> on-the-fly quantization during load for all models<br />
@@ -5445,7 +5459,6 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li>update <code>diffusers</code> and other requirements  </li>
 <li>rename vae, unet and text-encoder settings <em>None</em> to <em>Default</em> to avoid confusion  </li>
 <li><strong>CLI</strong>: add <code>cli/api-grid.py</code> which can generate grids using params-from-file for x/y axis  </li>
-<li><strong>LoRA</strong> enable memory cache by default  </li>
 <li><strong>Samplers</strong> add ability to set sigma adjustment for each sampler  </li>
 <li><strong>ModernUI</strong> updates  </li>
 <li><strong>CSS</strong> updates  </li>
