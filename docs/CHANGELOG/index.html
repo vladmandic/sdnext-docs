@@ -5446,9 +5446,11 @@ And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/R
 <li>add <code>--upgrade</code> to torch_command when using <code>--use-nightly</code>  </li>
 <li>disable fp16 for gfx1102 (rx 7600 and rx 7500 series) gpus  </li>
 <li><strong>ZLUDA</strong>  </li>
-<li>add <code>torch.compile</code> support under <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA#how-to-enable-triton">triton for ZLUDA v3.9.2</a>  </li>
-<li>add Flash Attention 2 support under <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA#how-to-enable-triton">triton for ZLUDA v3.9.2</a>  </li>
-<li>add Sage Attention support  </li>
+<li><a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA#how-to-enable-triton">triton for ZLUDA v3.9.2</a>  <ul>
+<li><code>torch.compile</code> is now available  </li>
+<li>Flash Attention 2 is now available  </li>
+</ul>
+</li>
 <li><strong>Other</strong>  </li>
 <li>new command line option <code>--monitor PERIOD</code> to monitor CPU and GPU memory ever n seconds  </li>
 <li><strong>upscale</strong>: new <a href="https://huggingface.co/Heasterian/AsymmetricAutoencoderKLUpscaler_v2">asymmetric vae v2</a> upscaling method  </li>
