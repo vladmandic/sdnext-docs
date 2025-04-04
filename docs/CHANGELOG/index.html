@@ -5456,21 +5456,23 @@ Models...And support for new models: <strong>CogView-4</strong>, <strong>SANA 1.
 </ul>
 </li>
 <li><strong>Other</strong>  </li>
-<li>new command line option <code>--monitor PERIOD</code> to monitor CPU and GPU memory ever n seconds  </li>
-<li><strong>upscale</strong>: new <a href="https://huggingface.co/Heasterian/AsymmetricAutoencoderKLUpscaler_v2">asymmetric vae v2</a> upscaling method  </li>
-<li><strong>upscale</strong>: new experimental support for <code>libvips</code> upscaling  </li>
-<li><strong>quantization</strong>: add support for <code>optimum-quanto</code> on-the-fly quantization during load for all models<br />
+<li><strong>Command line</strong> new option <code>--monitor PERIOD</code> to monitor CPU and GPU memory ever n seconds  </li>
+<li><strong>Upscale</strong> new <a href="https://huggingface.co/Heasterian/AsymmetricAutoencoderKLUpscaler_v2">asymmetric vae v2</a> upscaling method  </li>
+<li><strong>Upscale</strong> new experimental support for <code>libvips</code> upscaling  </li>
+<li><strong>Quantization</strong> add support for <code>optimum-quanto</code> on-the-fly quantization during load for all models<br />
     note: previous method for quanto is still valid and is noted in settings as post-load quantization  </li>
-<li>add quantization support to <strong>CogView-3Plus</strong>  </li>
-<li>update <code>diffusers</code> and other requirements  </li>
-<li>rename vae, unet and text-encoder settings <em>None</em> to <em>Default</em> to avoid confusion  </li>
+<li><strong>Quantization</strong> add support to <strong>CogView-3Plus</strong>  </li>
+<li><strong>Default values</strong> rename vae, unet and text-encoder settings <em>None</em> to <em>Default</em> to avoid confusion  </li>
+<li><strong>Detailer</strong>: add <em>renoise</em> option to increase/decrease noise during detailer pass<br />
+    which can help with improving level of details</li>
 <li><strong>CLI</strong>: add <code>cli/api-grid.py</code> which can generate grids using params-from-file for x/y axis  </li>
 <li><strong>Samplers</strong> add ability to set sigma adjustment for each sampler  </li>
 <li><strong>ModernUI</strong> updates  </li>
 <li><strong>CSS</strong> updates  </li>
-<li>settings vertiocal/dirty indicator restores to default setting instead to previous value  </li>
-<li>video interpolate do not skip duplicate frames  </li>
-<li><strong>settings UI</strong> full refactor  </li>
+<li><strong>Video</strong> interpolate do not skip duplicate frames  </li>
+<li><strong>Settings UI</strong> full refactor  </li>
+<li><strong>Settings UI</strong> vertical/dirty indicator restores to default setting instead to previous value  </li>
+<li>update <code>diffusers</code> and other requirements  </li>
 <li><strong>Wiki/Docs</strong>  </li>
 <li>updated <a href="https://github.com/vladmandic/sdnext/wiki/Models">Models</a> info  </li>
 <li>new <a href="https://github.com/vladmandic/sdnext/wiki/Video">Video</a> guide  </li>
