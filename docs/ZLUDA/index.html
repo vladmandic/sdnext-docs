@@ -3085,14 +3085,13 @@ Stability: ★★★☆☆  </p>
 <p>However, you can enable it with a custom build of MIOpen.</p>
 <p>This section describes how to enable cuDNN.</p>
 <ol>
-<li>Switch to <code>dev</code> branch.</li>
 <li>Install HIP SDK 6.2. If you already have older HIP SDK, uninstall it before installing 6.2.</li>
 <li>Remove <code>.zluda</code> folder if exists.<br />
 ※ If you have set <code>ZLUDA</code> environment variable, download the latest nightly ZLUDA from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
 ※ If you built ZLUDA yourself, pull latest commits of ZLUDA and rebuild with <code>--nightly</code>.</li>
 <li>Download and install HIP SDK extension from <a href="https://drive.google.com/file/d/1eMbbmg3jH0gilOWzCPqroY99Znj1BvVe/view?usp=sharing">here</a>.<br />
 (unzip and paste folders upon <code>path/to/AMD/ROCm/6.2</code>)</li>
-<li>Launch WebUI with environment variable <code>ZLUDA_NIGHTLY=1</code>.</li>
+<li>Launch WebUI with command line arguments <code>--use-zluda --use-nightly</code>.</li>
 </ol>
 <p>The first generation will take long time because MIOpen has to find the optimal solution and cache it.</p>
 <p>If you get driver crashes, restart webui and try again.</p>
@@ -3110,7 +3109,7 @@ Stability: ★★☆☆☆  </p>
 ※ If you built ZLUDA yourself, pull latest commits of ZLUDA and rebuild with <code>--nightly</code>.</li>
 <li>Download and install unofficial hipBLASLt build.<br />
 <a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.2.4/hipblaslt-rocmlibs-for-gfx1100-gfx1101-gfx1102-gfx1103-gfx1150-for.hip6.2.7z">gfx1100, gfx1101, gfx1102, gfx1103, or gfx1150</a>  </li>
-<li>Launch WebUI with environment variable <code>ZLUDA_NIGHTLY=1</code>.  </li>
+<li>Launch WebUI with command line arguments <code>--use-zluda --use-nightly</code>.  </li>
 </ol>
 <h3 id="how-to-enable-triton">How to enable triton</h3>
 <p>Speed-up: ★★★★★<br />
@@ -3119,9 +3118,6 @@ Stability: ★★★★☆  </p>
 <p>Using triton, you can enable <code>torch.compile</code> and Flash Attention 2.</p>
 <ol>
 <li>Prepare Python 3.11 environment.</li>
-<li>Switch to dev branch.
-<div class="highlight"><pre><span></span><code>git switch dev
-</code></pre></div></li>
 <li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/421dd5ab">here</a>.  </li>
 <li>Install via pip.
 <div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.3.0+git421dd5ab-cp311-cp311-win_amd64.whl setuptools
