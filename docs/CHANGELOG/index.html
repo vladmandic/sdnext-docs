@@ -2637,9 +2637,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-04" class="md-nav__link">
+  <a href="#update-for-2025-04-05" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-04
+      Update for 2025-04-05
     </span>
   </a>
   
@@ -3994,9 +3994,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-04" class="md-nav__link">
+  <a href="#update-for-2025-04-05" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-04
+      Update for 2025-04-05
     </span>
   </a>
   
@@ -5336,17 +5336,30 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-04-04">Update for 2025-04-04</h2>
+<h2 id="update-for-2025-04-05">Update for 2025-04-05</h2>
 <ul>
-<li>Video: add FasterCache and PAB support to WanDB and LTX models  </li>
+<li><strong>Features</strong></li>
+<li>Flux: TeaCache for Flux.1  </li>
+<li>Video: add <code>FasterCache</code> and <code>PAB</code> support to WanDB and LTX models  </li>
 <li>ZLUDA: add more GPUs to recognized list  </li>
-<li>LoRA: obey configured device when performing calculations  </li>
-<li>Progress: add additional fields to progress API  </li>
-<li>Progress: use batch-count for progress  </li>
+<li>Pipe: <a href="https://github.com/zacheryvaughn/softfill-pipelines">SoftFill</a><br />
+    select in scripts, available for sdxl in inpaint model  </li>
+<li>LoRA: add option to force-reload LoRA on every generate  </li>
 <li>Grid: add of max-rows and max-columns in settings to control grid format  </li>
 <li>Gallery: add max-columns in settings for gradio gallery components  </li>
+<li>Diag: add get-server-status to UI generate context menu  </li>
+<li><strong>Changes</strong></li>
+<li>Params: Reset default guidance-rescale from 0.7 to 0.0  </li>
+<li>Progress: add additional fields to progress API  </li>
+<li>Progress: use batch-count for progress  </li>
+<li><strong>Fixes</strong>  </li>
+<li>Logging: logging cleanup  </li>
 <li>Styles: resize and bring quick-ui to forward on hover  </li>
-<li>Logging: fix debug logging  </li>
+<li>LoRA obey configured device when performing calculations  </li>
+<li>ZLUDA startup issues  </li>
+<li>balanced offload remove non-blocking move op  </li>
+<li>debug logging causes invalid import  </li>
+<li>UI progress allow for longer timeouts  </li>
 </ul>
 <h2 id="update-for-2025-04-03">Update for 2025-04-03</h2>
 <h3 id="highlights-for-2025-04-03">Highlights for 2025-04-03</h3>
