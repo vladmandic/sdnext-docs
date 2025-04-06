@@ -5338,20 +5338,27 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-04-05">Update for 2025-04-05</h2>
 <ul>
-<li><strong>Features</strong></li>
-<li>Flux: TeaCache for Flux.1  </li>
-<li>Video: add <code>FasterCache</code> and <code>PAB</code> support to WanDB and LTX models  </li>
-<li>ZLUDA: add more GPUs to recognized list  </li>
-<li>Pipe: <a href="https://github.com/zacheryvaughn/softfill-pipelines">SoftFill</a><br />
+<li><strong>Features</strong>  </li>
+<li>Pipe: <a href="https://github.com/zacheryvaughn/softfill-pipelines">SoftFill</a>  </li>
+<li><strong>Caching</strong>  </li>
+<li>add <code>TeaCache</code> support to <em>Flux, CogVideoX, Mochi, LTX</em>  </li>
+<li>add <code>FasterCache</code> support to <em>WanAI, LTX</em> (other video models already supported)  </li>
+<li>add <code>PyramidAttentionBroadcast</code> support to <em>WanAI, LTX</em> (other video models already supported)  </li>
+<li><strong>UI</strong>  </li>
+<li>client polling speeds up and slows down depending if client page is visible or not<br />
+    client polling does not ask for live preview if page is not visible<br />
+    significantly reduces server load if you hide or minimize the page  </li>
+<li>progress: use batch-count for progress  </li>
+<li>grid: add of max-rows and max-columns in settings to control grid format  </li>
+<li>gallery: add max-columns in settings for gradio gallery components  </li>
+<li><strong>Other</strong>  </li>
+<li>ZLUDA: add more GPUs to recognized list<br />
     select in scripts, available for sdxl in inpaint model  </li>
 <li>LoRA: add option to force-reload LoRA on every generate  </li>
-<li>Grid: add of max-rows and max-columns in settings to control grid format  </li>
-<li>Gallery: add max-columns in settings for gradio gallery components  </li>
-<li>Diag: add get-server-status to UI generate context menu  </li>
-<li><strong>Changes</strong></li>
-<li>Params: Reset default guidance-rescale from 0.7 to 0.0  </li>
-<li>Progress: add additional fields to progress API  </li>
-<li>Progress: use batch-count for progress  </li>
+<li>diag: add get-server-status to UI generate context menu  </li>
+<li><strong>Changes</strong>  </li>
+<li>params: Reset default guidance-rescale from 0.7 to 0.0  </li>
+<li>progress: add additional fields to progress API  </li>
 <li><strong>Fixes</strong>  </li>
 <li>Logging: logging cleanup  </li>
 <li>Styles: resize and bring quick-ui to forward on hover  </li>
