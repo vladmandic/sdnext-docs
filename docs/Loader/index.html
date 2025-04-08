@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Wildcards/">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Loader/">
       
       
-        <link rel="prev" href="../Styles/">
+        <link rel="prev" href="../NNCF-Compression/">
       
       
-        <link rel="next" href="../Reprocess/">
+        <link rel="next" href="../VAE/">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Using Wildcards - SD.Next Documentation</title>
+        <title>Model Loader - SD.Next Documentation</title>
       
     
     
@@ -61,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Using Wildcards - SD.Next Documentation" >
+        <meta  property="og:title"  content="Model Loader - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Wildcards.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Loader.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -73,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/Wildcards/" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/Loader/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Using Wildcards - SD.Next Documentation" >
+        <meta  name="twitter:title"  content="Model Loader - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Wildcards.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Loader.png" >
       
     
     
@@ -104,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wildcards-in-prompts" class="md-skip">
+        <a href="#custom-model-loader" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using Wildcards
+              Model Loader
             
           </span>
         </div>
@@ -348,12 +348,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../Getting-Started/" class="md-tabs__link">
           
   
@@ -416,10 +414,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../Performance-Tuning/" class="md-tabs__link">
           
   
@@ -1276,10 +1276,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1329,22 +1327,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1357,7 +1352,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Guides
@@ -1736,32 +1731,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Using Wildcards
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Wildcards/" class="md-nav__link">
         
   
   
@@ -1772,59 +1745,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      How does it work?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tips
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tips">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Validation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2312,8 +2232,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2337,19 +2259,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -2362,7 +2287,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Advanced
@@ -2488,10 +2413,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Loader/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Model Loader
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2502,6 +2449,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#model-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Repo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2736,35 +2721,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
+  <a href="#model-type" class="md-nav__link">
     <span class="md-ellipsis">
-      How does it work?
+      Model Type
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
+  <a href="#model-repo" class="md-nav__link">
     <span class="md-ellipsis">
-      Tips
+      Model Repo
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Tips">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Validation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2787,43 +2757,32 @@
   
 
 
-<h1 id="wildcards-in-prompts">Wildcards in Prompts</h1>
-<p>Wildcards are placeholders in the prompt text that are replaced with a random value from a list of choices which allows for more variety in the prompts generated.  </p>
+<h1 id="custom-model-loader">Custom Model Loader</h1>
 <ul>
-<li>SD.Next supports standard file-based wildcards in prompts.</li>
-<li>Wildcard support is enabled by default, enabled by default, can be disabled in <em>settings -&gt; extra networks</em> if you want to use 3rd party extension instead of SD.Next built-in support.  </li>
-<li>Wildcards folder is set in <em>settings -&gt; system paths</em>, default is <code>models\wildcards</code></li>
+<li>in <em>Models -&gt; Custom</em></li>
+<li>Can be used to load any known diffusion model with default or custom model components</li>
 </ul>
-<h2 id="how-does-it-work">How does it work?</h2>
-<p><em>TL;DR</em>: string <code>"__abc__"</code> in prompt is matched to a file <code>abc.txt</code> inside wildcards folder</p>
-<p>The prompt syntax for wildcards is:</p>
-<blockquote>
-<p>a woman wearing a <code>__color__</code> dress</p>
-</blockquote>
-<p>In the wildcards folder, create file <code>color.txt</code> and add multiple choices with one choice per line:</p>
-<pre><code>red
-green
-blue
-</code></pre>
-<h2 id="tips">Tips</h2>
+<h2 id="model-type">Model Type</h2>
 <ul>
-<li>Wildcards can be used in both positive and negative prompts  </li>
-<li>Prompt can have any number of wildcards<blockquote>
-<p>a woman wearing a <code>__color__</code> dress and a <code>__shape__</code> hat</p>
-</blockquote>
-</li>
-<li>Wildcards can be nested<br />
-  Line inside wildcard file can also have a wildcard referrring to another wildcard, etc.  </li>
-<li>Supports filename-only and path-based wildcards with full subfolder support<br />
-  If wildcard is refered as <code>__color__</code> then it will look for file <code>color.txt</code> in wildcards folder and <em>any</em> subfoldrer<br />
-  If wildcard is refered as <code>__nsp/color__</code> then it will look for <code>color.txt</code> <em>only</em> in <code>nsp</code> folder inside wildcards folder  </li>
-<li>Wildcards files can be in one-choice per line or multiple choices per line separated by <code>|</code> format  </li>
+<li>Can be any currently supported model type  </li>
+<li><strong>Autodetect</strong> can be used to attempt loading repo for any model<br />
+  e.g. there is a new model on huggingface that is not yet added to predefined list - well, try it out ;)</li>
+<li><strong>Current</strong> can be used to replace selected components without reloading model itself  </li>
 </ul>
-<h3 id="validation">Validation</h3>
-<p>Wildcard matches and replacements will be logged in the standard log with debug level:</p>
-<blockquote>
-<p>DEBUG    Wildcards apply: wildcard="color" choice="Yellow" file="models/wildcards/my-variations/color.txt" choices=930</p>
-</blockquote>
+<h2 id="model-repo">Model Repo</h2>
+<p>Valid model repo on huggingface is required to access base model config
+- Default model repo is provided for common models
+- Model repo can be overriden to any valid repo on huggingface</p>
+<h1 id="loadable-components">Loadable Components</h1>
+<p>Any model component that is marked as loadable can be overriden<br />
+If neither local or remote values are set, default from model repo will be used<br />
+Any loadable model component with set value will be loaded from that value  </p>
+<h3 id="local-vs-remote">Local vs Remote</h3>
+<ul>
+<li>Can use local or remote models  </li>
+<li>Local model can be any valid path to safetensors file or folder with hf-style structure  </li>
+<li>Remote model can be any valid huggingface repo, with or without subfolder or full url to file hosted on huggingface  </li>
+</ul>
 
 
 
@@ -2862,7 +2821,7 @@ blue
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Styles/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Using Styles">
+          <a href="../NNCF-Compression/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Model Compression">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2872,20 +2831,20 @@ blue
                 Previous
               </span>
               <div class="md-ellipsis">
-                Using Styles
+                Model Compression
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Reprocess/" class="md-footer__link md-footer__link--next" aria-label="Next: Reprocess Latents">
+          <a href="../VAE/" class="md-footer__link md-footer__link--next" aria-label="Next: Variable Auto-Encoder">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Reprocess Latents
+                Variable Auto-Encoder
               </div>
             </div>
             <div class="md-footer__button md-icon">
