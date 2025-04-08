@@ -79,18 +79,6 @@ nav:
     - Update: Update.md
     - Advanced Install: Advanced-Install.md
     - CLI Arguments: CLI-Arguments.md
-  - Troubleshoot:
-    - Frequently Asked Questions: FAQ.md
-    - Troubleshooting: Troubleshooting.md
-    - Debugging: Debug.md
-  - Tune:
-    - Performance Tuning: Performance-Tuning.md
-    - Memory Offloading: Offload.md
-    - Memory Allocation: Malloc.md
-    - Model Quantization: Quantization.md
-    - Model Compression: NNCF-Compression.md
-    - Variable Auto-Encoder: VAE.md
-    - Benchmark Results: Benchmark.md
   - Models:
     - Supported Models: Model-Support.md
     - Model Specs: Models.md
@@ -147,5 +135,18 @@ nav:
     - User Themes: Theme-User.md
     - Backends: Backend.md
     - Profiling: Profiling.md
+  - Advanced:
+    - Performance Tuning: Performance-Tuning.md
+    - Memory Offloading: Offload.md
+    - Memory Allocation: Malloc.md
+    - Model Quantization: Quantization.md
+    - Model Compression: NNCF-Compression.md
+    - Model Loader: Loader.md
+    - Variable Auto-Encoder: VAE.md
+    - Benchmark Results: Benchmark.md
+  - Troubleshoot:
+    - Frequently Asked Questions: FAQ.md
+    - Troubleshooting: Troubleshooting.md
+    - Debugging: Debug.md
   - Changelog: CHANGELOG.md
   
