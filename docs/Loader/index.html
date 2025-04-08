@@ -2483,6 +2483,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#loadable-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loadable Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loadable Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-vs-remote" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local vs Remote
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dtype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quant
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2738,6 +2780,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#loadable-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loadable Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loadable Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-vs-remote" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local vs Remote
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dtype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quant
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2773,7 +2857,7 @@
 <p>Valid model repo on huggingface is required to access base model config
 - Default model repo is provided for common models
 - Model repo can be overriden to any valid repo on huggingface</p>
-<h1 id="loadable-components">Loadable Components</h1>
+<h2 id="loadable-components">Loadable Components</h2>
 <p>Any model component that is marked as loadable can be overriden<br />
 If neither local or remote values are set, default from model repo will be used<br />
 Any loadable model component with set value will be loaded from that value  </p>
@@ -2782,6 +2866,15 @@ Any loadable model component with set value will be loaded from that value  </p>
 <li>Can use local or remote models  </li>
 <li>Local model can be any valid path to safetensors file or folder with hf-style structure  </li>
 <li>Remote model can be any valid huggingface repo, with or without subfolder or full url to file hosted on huggingface  </li>
+</ul>
+<h3 id="dtype">Dtype</h3>
+<ul>
+<li>Can be used to override torch compute dtype when loading each individual component</li>
+</ul>
+<h3 id="quant">Quant</h3>
+<ul>
+<li>Can be used to enable quantization when loading each individual component</li>
+<li>Quant settings will be used from <em>settings -&gt; quantization</em>  </li>
 </ul>
 
 
