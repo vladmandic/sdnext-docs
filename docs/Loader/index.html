@@ -2525,6 +2525,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#receipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Receipe
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2822,6 +2831,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#receipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Receipe
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2843,7 +2861,7 @@
 
 <h1 id="custom-model-loader">Custom Model Loader</h1>
 <ul>
-<li>in <em>Models -&gt; Custom</em></li>
+<li>in <em>Models -&gt; Loader</em></li>
 <li>Can be used to load any known diffusion model with default or custom model components</li>
 </ul>
 <h2 id="model-type">Model Type</h2>
@@ -2858,9 +2876,12 @@
 - Default model repo is provided for common models
 - Model repo can be overriden to any valid repo on huggingface</p>
 <h2 id="loadable-components">Loadable Components</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Any model component that is marked as loadable can be overriden<br />
-If neither local or remote values are set, default from model repo will be used<br />
-Any loadable model component with set value will be loaded from that value  </p>
+ If neither local or remote values are set, default from model repo will be used<br />
+ Any loadable model component with set value will be loaded from that value  </p>
+</div>
 <h3 id="local-vs-remote">Local vs Remote</h3>
 <ul>
 <li>Can use local or remote models  </li>
@@ -2876,6 +2897,11 @@ Any loadable model component with set value will be loaded from that value  </p>
 <li>Can be used to enable quantization when loading each individual component</li>
 <li>Quant settings will be used from <em>settings -&gt; quantization</em>  </li>
 </ul>
+<h2 id="receipe">Receipe</h2>
+<p>Model receipe can be saved to JSON file for later use</p>
+<blockquote>
+<p>[!WARNING] Load/Save receipe is not yet implemented</p>
+</blockquote>
 
 
 
