@@ -2862,7 +2862,7 @@ It is also the single most processing and memory intensive step in image generat
 </li>
 <li>
 <p><em>Image generation fails with out-of-memory error</em><br />
-  VAE decode is the single most memory intensive step in image generation and can result in large memory usage. If you cannot process images due to memory constraints, try using a smaller VAE model or reducing the resolution of the images. Note that running <em>refine</em> or <em>hires</em> steps will require more memory than the initial <em>generate</em> step - simply because they typically run at higher resolution.  </p>
+  VAE decode is the single most memory intensive step in image generation and can result in large memory usage. If you cannot process images due to memory constraints, try enabling VAE Tiling or reducing the resolution of the images. Note that running <em>refine</em> or <em>hires</em> steps will require more memory than the initial <em>generate</em> step - simply because they typically run at higher resolution.  </p>
 </li>
 </ul>
 
