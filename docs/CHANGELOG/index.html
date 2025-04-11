@@ -2662,9 +2662,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-08" class="md-nav__link">
+  <a href="#todo-for-2025-04-10" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-08
+      TODO for 2025-04-10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-for-2025-04-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update for 2025-04-10
     </span>
   </a>
   
@@ -4019,9 +4028,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-08" class="md-nav__link">
+  <a href="#todo-for-2025-04-10" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-08
+      TODO for 2025-04-10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-for-2025-04-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update for 2025-04-10
     </span>
   </a>
   
@@ -5361,14 +5379,36 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-04-08">Update for 2025-04-08</h2>
+<h2 id="todo-for-2025-04-10">TODO for 2025-04-10</h2>
 <ul>
+<li>HiDream requires sidebranch:  <blockquote>
+<p><code>pip install git+https://github.com/hlky/diffusers@hidream</code><br />
+<code>./webui.sh --debug --experimental</code>  </p>
+</blockquote>
+</li>
+<li>HiDream make <code>LLama</code> optional  </li>
+<li><code>FlashAttn</code> wiki  </li>
+</ul>
+<h2 id="update-for-2025-04-10">Update for 2025-04-10</h2>
+<ul>
+<li><strong>Models</strong>  </li>
+<li><a href="https://huggingface.co/HiDream-ai/HiDream-I1-Full">HiDream-I1</a> in fast, dev and full variants!<br />
+    new absolutely massive image generative foundation model with <strong>17B</strong> parameters<br />
+    and 4 (!?) text-encoders: <em>clip-l, clip-g, t5-1.1-xxl, llama-3.1-8b-instruct</em> for total of <strong>8.3B</strong> parameters<br />
+    simply select from <em>networks -&gt; models -&gt; reference</em><br />
+    due to size (over 25B params in 58GB), offloading and on-the-fly quantization are pretty much a necessity<br />
+    difference between variants is recommended number of steps: <em>fast=16, dev=28, full=50</em><br />
+    hidream is compatible with flowmatching samplers and with taesd live-preview<br />
+<em>note</em> HiDream-I1 requires <code>flash-attn</code> to be installed<br />
+    &gt; REQUIRES SIDE-BRANCH</li>
 <li><strong>Features</strong>  </li>
 <li>Custom model loader<br />
-    can be used to load any known diffusion model with default or custom model components<br />
-    in models -&gt; custom tab<br />
-    see docs for details: <a href="https://vladmandic.github.io/sdnext-docs/Loader/">https://vladmandic.github.io/sdnext-docs/Loader/</a>  </li>
+      can be used to load any known diffusion model with default or custom model components<br />
+      in models -&gt; custom tab<br />
+      see docs for details: <a href="https://vladmandic.github.io/sdnext-docs/Loader/">https://vladmandic.github.io/sdnext-docs/Loader/</a>  <ul>
 <li>Pipe: <a href="https://github.com/zacheryvaughn/softfill-pipelines">SoftFill</a>  </li>
+</ul>
+</li>
 <li><strong>Caching</strong>  </li>
 <li>add <code>TeaCache</code> support to <em>Flux, CogVideoX, Mochi, LTX</em>  </li>
 <li>add <code>FasterCache</code> support to <em>WanAI, LTX</em> (other video models already supported)  </li>
@@ -5384,9 +5424,12 @@
 <li>ZLUDA: add more GPUs to recognized list<br />
     select in scripts, available for sdxl in inpaint model  </li>
 <li>LoRA: add option to force-reload LoRA on every generate  </li>
+<li>settings: add <strong>Model options</strong> sections as placeholder for per-model settings</li>
+<li>video: update <em>LTXVideo-0.9.5</em> pipeline  </li>
+<li>te loader: allow free-form input in which case sdnext will attempt to load it as hf repo  </li>
 <li>diag: add get-server-status to UI generate context menu  </li>
 <li>diag: memory monitor detect gpu swapping  </li>
-<li>vide: update LTXVideo-0.9.5 pipeline  </li>
+<li>use <a href="https://huggingface.co/blog/xet-on-the-hub">hf-xet</a> for huggingface downloads where possible  </li>
 <li><strong>Changes</strong>  </li>
 <li>params: Reset default guidance-rescale from 0.7 to 0.0  </li>
 <li>progress: add additional fields to progress API  </li>
