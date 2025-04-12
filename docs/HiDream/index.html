@@ -2767,23 +2767,21 @@
 <h1 id="hidream-i1">HiDream I1</h1>
 <p>HiDream is a new absolutely massive image generative foundation model with <strong>17B</strong> parameters  </p>
 <p><img alt="Image" src="https://github.com/user-attachments/assets/a1c9058a-06a3-490c-bceb-d69b2cd62008" /></p>
-<p>HiDream-I1 family consists of 3 variations:
+<p><strong>HiDream-I1</strong> family consists of 3 variations:
 - <a href="%28https%3A/huggingface.co/HiDream-ai/HiDream-I1-Full">Full</a>)
 - <a href="https://huggingface.co/HiDream-ai/HiDream-I1-Dev">Dev</a>
 - <a href="https://huggingface.co/HiDream-ai/HiDream-I1-Fast">Fast</a></p>
 <p>Difference between variants is recommended number of steps:
 - <em>full=50, dev=28, fast=16</em></p>
-<p>HiDream is compatibile with:<br />
+<p><strong>HiDream-I1</strong> is compatibile with:<br />
 - FlowMatching Samplers<br />
-- TAE Live-preview  </p>
+- Remote VAE feature<br />
+- TAE Live-preview feature  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>Due to size (over 25B params in 58GB), offloading and on-the-fly quantization are pretty much a necessity  </p>
-</div>
-<p>Running HiDream on 16GB GPU is possible with <em>BnB-NF4</em> or <em>Quanto-Int4</em> quantization and default Balanced offload settings  </p>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Note that you must pick quantization methods that are compatible with your GPU and platform  </p>
+<p>Due to size (over 25B params in 58GB), offloading and on-the-fly quantization are pretty much a necessity<br />
+ Running HiDream on &lt;16GB GPU is possible with <em>BnB-NF4</em> or <em>Quanto-Int4</em> quantization and default Balanced offload settings<br />
+ Note that you must pick quantization methods that are compatible with your GPU and platform  </p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

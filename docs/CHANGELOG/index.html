@@ -2693,6 +2693,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Update for 2025-04-12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-04-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-04-12
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-04-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-04-12
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4050,6 +4074,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Update for 2025-04-12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-04-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-04-12
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-04-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-04-12
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5387,18 +5435,18 @@
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-04-12">Update for 2025-04-12</h2>
+<h3 id="highlights-for-2025-04-12">Highlights for 2025-04-12</h3>
+<p>Last release was just over a week ago and here we are again with another update as a new high-end image model, <a href="https://github.com/vladmandic/sdnext/wiki/HiDream">HiDream-I1</a> jumped out and generated a lot of buzz!<br />
+There are quite a few other performance and quality-of-life improvements in this release and 40 commits, so please take a look at the full <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a>  </p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
+<h3 id="details-for-2025-04-12">Details for 2025-04-12</h3>
 <ul>
 <li><strong>Models</strong>  </li>
 <li><a href="https://huggingface.co/HiDream-ai/HiDream-I1-Full">HiDream-I1</a> in fast, dev and full variants!<br />
-    new absolutely massive image generative foundation model with <strong>17B</strong> parameters<br />
-    and 4 (!?) text-encoders: <em>clip-l, clip-g, t5-1.1-xxl, llama-3.1-8b-instruct</em> for total of <strong>8.3B</strong> parameters<br />
+    new absolutely massive image generative foundation model with <strong>17B</strong> parameters and 4 text-encoders with additional <strong>8.3B</strong> parameters <br />
     simply select from <em>networks -&gt; models -&gt; reference</em><br />
     due to size (over 25B params in 58GB), offloading and on-the-fly quantization are pretty much a necessity<br />
-    custom <code>llama</code> model can be set in <em>settings -&gt; model options</em><br />
-    implementation differens from reference as it bumps up default max token length from 128 to 256<br />
-    max token length can be further configured using env variable <code>HIDREAM_MAX_SEQUENCE_LENGTH</code><br />
-    difference between variants is recommended number of steps: <em>fast=16, dev=28, full=50</em><br />
-    compatible with: <em>flowmatching samplers</em>, <em>offloading, quantization, taesd live-preview</em>  </li>
+    see <a href="https://github.com/vladmandic/sdnext/wiki/HiDream">HiDream Wiki page</a> for details  </li>
 <li><strong>Features</strong>  </li>
 <li>Custom model loader<br />
       can be used to load any known diffusion model with default or custom model components<br />
