@@ -88,6 +88,7 @@ nav:
     - StableCascade: Stable-Cascade.md
     - FLUX.1: FLUX.md
     - LCM: Using-LCM.md
+    - HiDream: HiDream.md
     - Video: Video.md
   - Platforms:
     - WSL: WSL.md
