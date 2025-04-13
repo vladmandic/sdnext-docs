@@ -3032,11 +3032,11 @@ Compare total memory requirements and end-to-end performance for <strong>SD-3.5-
  See <a href="../WSL/">WSL Wiki</a> for more details</p>
 </div>
 <p>SD.Next supports multiple quantization engines, each with multiple quantization schemes:
-- <code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes<br />
 - <code>BitsAndBytes</code> 3 float-based quantization schemes<br />
-- <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantizations schemes<br />
-- <code>GGUF</code> with pre-quantized weights<br />
-- <code>NNCF</code> 1 int-based quantizations scheme  </p>
+- <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantization schemes<br />
+- <code>NNCF</code> 1 int8-based quantization scheme<br />
+- <code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes<br />
+- <code>GGUF</code> with pre-quantized weights  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Not all quantization engines are available on all platforms, see notes below for details!<br />
@@ -3066,12 +3066,12 @@ Compare total memory requirements and end-to-end performance for <strong>SD-3.5-
 <p>Limitations:
 - requires <code>torch&gt;=2.4.0</code><br />
   if you're running older torch, you can try upgrading it or running sdnext with <code>--reinstall</code> flag<br />
-- not compatible with balanced offload<br />
-- not supported with Zluda since Zluda does not support torch 2.4  </p>
+- not compatible with balanced offload  </p>
 <h3 id="torchao">TorchAO</h3>
 <p>TorchAO is available for quantization on-the-fly during model load as well as post-load quantization<br />
 Limitations:<br />
-- Requires <code>torch==2.5.0</code>  </p>
+- Requires <code>torch&gt;=2.5.0</code><br />
+- int4 based quantization cannot be used with any offload method  </p>
 <h3 id="gguf">GGUF</h3>
 <p><strong>GGUF</strong> is a binary file format used to package pre-quantized models.  </p>
 <p><strong>GGUF</strong> is originally desiged by <code>llama.cpp</code> project and intended to be used with its <strong>GGML</strong> execution runtime.<br />
