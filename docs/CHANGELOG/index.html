@@ -2687,9 +2687,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-13" class="md-nav__link">
+  <a href="#update-for-2025-04-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-13
+      Update for 2025-04-14
     </span>
   </a>
   
@@ -4077,9 +4077,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-13" class="md-nav__link">
+  <a href="#update-for-2025-04-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-13
+      Update for 2025-04-14
     </span>
   </a>
   
@@ -5452,19 +5452,23 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-04-13">Update for 2025-04-13</h2>
+<h2 id="update-for-2025-04-14">Update for 2025-04-14</h2>
 <ul>
 <li><a href="https://github.com/WeichenFan/CFG-Zero-star">CFG-Zero</a> new guidance method optimized for flow-matching models<br />
-  implemented for <strong>FLUX.1, SD3.x, CogView4, HunyuanVideo, WanAI</strong><br />
+  implemented for <strong>FLUX.1, HiDream-I1, SD3.x, CogView4, HunyuanVideo, WanAI</strong><br />
   enable and configure in <em>settings -&gt; pipeline modifiers -&gt; cfg zero</em><br />
   experiment with CFGZero support in XYZ-grid  </li>
+<li>add <strong>UniPC FlowMatch</strong> scheduler  </li>
 <li><strong>HiDream</strong> add HF gated access auth check  </li>
-<li><strong>CogView3</strong> and <strong>CogView4</strong> cleanup model loader  </li>
+<li>clenup <strong>CogView3</strong> and <strong>CogView4</strong> model loader  </li>
+<li>add explicit offload after encode prompt<br />
+  configure in <em>settings -&gt; text encoder -&gt; offload</em>  </li>
+<li>networks: set which networks to skip when scanning civitai<br />
+  in <em>settings -&gt; networks -&gt; network scan</em><br />
+  comma-separate list of regex patterns to skip  </li>
 <li>ui display reference models with subdued color  </li>
 <li>xyz grid support bool  </li>
-<li>networks: set which networks to skip when scanning civitai<br />
-  in <em>settings -&gt; networks -&gt; network scan</em>
-  comma-separate list of regex patterns to skip  </li>
+<li>fix debug logging  </li>
 </ul>
 <h2 id="update-for-2025-04-12">Update for 2025-04-12</h2>
 <h3 id="highlights-for-2025-04-12">Highlights for 2025-04-12</h3>
