@@ -3034,8 +3034,8 @@ Compare total memory requirements and end-to-end performance for <strong>SD-3.5-
 <p>SD.Next supports multiple quantization engines, each with multiple quantization schemes:
 - <code>BitsAndBytes</code> 3 float-based quantization schemes<br />
 - <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantization schemes<br />
-- <code>NNCF</code> 1 int8-based quantization scheme<br />
 - <code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes<br />
+- <code>NNCF</code> 1 int8-based quantization scheme<br />
 - <code>GGUF</code> with pre-quantized weights  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -3090,15 +3090,14 @@ However, without GGML, GGUF provides storage-only quantization which means that 
 - <em>note</em>: only supported component in <code>gguf</code> binary format is UNET/Transformer<br />
   you cannot load all-in-one single-file GGUF model</p>
 <h3 id="nncf">NNCF</h3>
-<p>NNCF provides full cross-platform storage-only quantization (referred to as model compression)<br />
-with optional platform-specific compute-optimization (available only on OpenVINO platform)  </p>
+<p>NNCF provides full cross-platform storage-only quantization (referred to as model compression) for PyTorch platform and more quantization schemes and compute optimizations for OpenVINO platform  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Advantage of <strong>NNCF</strong> is that it does work on any platform: if you're having issues with <code>optimum-quanto</code> or <code>bitsandbytes</code>, try it out!  </p>
 </div>
 <ul>
 <li>broad platform and GPU support  </li>
-<li>enable in <em>Settings -&gt; Compute -&gt; Compress model weights with NNCF</em>  </li>
+<li>enable in <em>Settings -&gt; Quantization Settings -&gt; NNCF</em>  </li>
 <li>see <a href="../NNCF-Compression/">NNCF Wiki</a> for more details  </li>
 </ul>
 <h2 id="errors">Errors</h2>

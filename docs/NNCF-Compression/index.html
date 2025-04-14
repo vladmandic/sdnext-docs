@@ -2833,10 +2833,9 @@
 <h1 id="nncf-model-comporession">NNCF Model Comporession</h1>
 <h2 id="usage">Usage</h2>
 <ol>
-<li>Use Diffusers backend. <code>Execution &amp; Models</code> -&gt; <code>Execution backend</code></li>
-<li>Go into <code>Compute Settings</code>  </li>
-<li>Enable <code>Compress Model weights with NNCF</code> options  </li>
-<li>Reload the model.  </li>
+<li>Go into <code>Quantization Settings</code>  </li>
+<li>Enable the Quantization options under the <code>NNCF</code> menu  </li>
+<li>Reload the model  </li>
 </ol>
 <p><strong>Note:</strong>
 VAE Upcast (in Diffusers settings) has to be set to false if you use the VAE option.<br />
@@ -2849,7 +2848,6 @@ Saves 3.4 GB of VRAM with SDXL  </li>
 <h3 id="disadvantages">Disadvantages</h3>
 <ul>
 <li>It is Autocast, GPU will still use 16 Bit to run the model and will be slower  </li>
-<li>Not implemented in Original backend  </li>
 <li>Fused projections are not compatible with NNCF  </li>
 <li>Using Loras will make generations slower  </li>
 </ul>
