@@ -145,6 +145,7 @@ nav:
     - Model Loader: Loader.md
     - Variable Auto-Encoder: VAE.md
     - Benchmark Results: Benchmark.md
+    - Nunchaku Engine: Nunchaku.md
   - Troubleshoot:
     - Frequently Asked Questions: FAQ.md
     - Troubleshooting: Troubleshooting.md
