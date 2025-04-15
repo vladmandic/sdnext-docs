@@ -5497,7 +5497,12 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-04-15">Update for 2025-04-15</h2>
 <ul>
-<li><strong>HiDream</strong> optimized offloading, now works in 12GB VRAM / 26GB RAM</li>
+<li><a href="https://github.com/mit-han-lab/nunchaku">Nunchaku</a> inference engine with custom <strong>SVDQuant</strong> 4-bit execution<br />
+  highly experimental and with limited support, but when it works, its magic: <strong>Flux.1 at 5.90 it/s</strong> <em>(not sec/it)</em>!<br />
+  see <a href="https://github.com/vladmandic/sdnext/wiki/Nunchaku">Nunchaku Wiki</a> for details  </li>
+<li><strong>HiDream</strong> optimized offloading and prompt-encode caching<br />
+  it now works in 12GB VRAM / 26GB RAM!  </li>
+<li>fix: NNCF for TE-only quant  </li>
 </ul>
 <h2 id="update-for-2025-04-14">Update for 2025-04-14</h2>
 <ul>
