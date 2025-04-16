@@ -2712,18 +2712,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-15" class="md-nav__link">
+  <a href="#update-for-2025-04-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-15
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-for-2025-04-14" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update for 2025-04-14
+      Update for 2025-04-16
     </span>
   </a>
   
@@ -4111,18 +4102,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-15" class="md-nav__link">
+  <a href="#update-for-2025-04-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-15
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-for-2025-04-14" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update for 2025-04-14
+      Update for 2025-04-16
     </span>
   </a>
   
@@ -5495,32 +5477,35 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-04-15">Update for 2025-04-15</h2>
+<h2 id="update-for-2025-04-16">Update for 2025-04-16</h2>
 <ul>
+<li><strong>Features</strong></li>
 <li><a href="https://github.com/mit-han-lab/nunchaku">Nunchaku</a> inference engine with custom <strong>SVDQuant</strong> 4-bit execution<br />
-  highly experimental and with limited support, but when it works, its magic: <strong>Flux.1 at 5.90 it/s</strong> <em>(not sec/it)</em>!<br />
-  see <a href="https://github.com/vladmandic/sdnext/wiki/Nunchaku">Nunchaku Wiki</a> for details  </li>
-<li><strong>HiDream</strong> optimized offloading and prompt-encode caching<br />
-  it now works in 12GB VRAM / 26GB RAM!  </li>
-<li>fix: NNCF for TE-only quant  </li>
-</ul>
-<h2 id="update-for-2025-04-14">Update for 2025-04-14</h2>
-<ul>
+    highly experimental and with limited support, but when it works, its magic: <strong>Flux.1 at 5.90 it/s</strong> <em>(not sec/it)</em>!<br />
+    see <a href="https://github.com/vladmandic/sdnext/wiki/Nunchaku">Nunchaku Wiki</a> for details  </li>
 <li><a href="https://github.com/WeichenFan/CFG-Zero-star">CFG-Zero</a> new guidance method optimized for flow-matching models<br />
-  implemented for <strong>FLUX.1, HiDream-I1, SD3.x, CogView4, HunyuanVideo, WanAI</strong><br />
-  enable and configure in <em>settings -&gt; pipeline modifiers -&gt; cfg zero</em><br />
-  experiment with CFGZero support in XYZ-grid  </li>
-<li>add <strong>UniPC FlowMatch</strong> scheduler  </li>
-<li><strong>HiDream</strong> add HF gated access auth check  </li>
-<li>clenup <strong>CogView3</strong> and <strong>CogView4</strong> model loader  </li>
+    implemented for <strong>FLUX.1, HiDream-I1, SD3.x, CogView4, HunyuanVideo, WanAI</strong><br />
+    enable and configure in <em>settings -&gt; pipeline modifiers -&gt; cfg zero</em><br />
+    experiment with CFGZero support in XYZ-grid  </li>
+<li><strong>Optimizations</strong></li>
+<li><strong>HiDream</strong> optimized offloading and prompt-encode caching<br />
+    it now works in 12GB VRAM / 26GB RAM!  </li>
+<li><strong>CogView3</strong> and <strong>CogView4</strong> model loader optimizations  </li>
 <li>add explicit offload after encode prompt<br />
-  configure in <em>settings -&gt; text encoder -&gt; offload</em>  </li>
+    configure in <em>settings -&gt; text encoder -&gt; offload</em>  </li>
+<li><strong>Other</strong></li>
+<li><strong>HiDream</strong> add HF gated access auth check  </li>
+<li>add <strong>UniPC FlowMatch</strong> scheduler  </li>
+<li>add <strong>LCM FlowMatch</strong> scheduler  </li>
 <li>networks: set which networks to skip when scanning civitai<br />
-  in <em>settings -&gt; networks -&gt; network scan</em><br />
-  comma-separate list of regex patterns to skip  </li>
+    in <em>settings -&gt; networks -&gt; network scan</em><br />
+    comma-separate list of regex patterns to skip  </li>
 <li>ui display reference models with subdued color  </li>
 <li>xyz grid support bool  </li>
-<li>fix debug logging  </li>
+<li><strong>Fixes</strong></li>
+<li>NNCF with TE-only quant  </li>
+<li><strong>HunyuanVideo-I2V</strong> with latest transformers  </li>
+<li>trace logging  </li>
 </ul>
 <h2 id="update-for-2025-04-12">Update for 2025-04-12</h2>
 <h3 id="highlights-for-2025-04-12">Highlights for 2025-04-12</h3>
