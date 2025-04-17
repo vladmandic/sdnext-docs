@@ -2924,6 +2924,7 @@
 <h1 id="nunchaku">Nunchaku</h1>
 <p><a href="https://github.com/mit-han-lab/nunchaku/blob/main/README.md">Nunchaku</a> is a high-performance inference engine from <a href="https://github.com/mit-han-lab">MIT-Han-Lab</a> optimized for 4-bit neural networks
 Nunchaku uses novel 4-bit <a href="https://github.com/mit-han-lab/deepcompressor/tree/main/examples/diffusion">SVDQuant</a> quantization via <a href="https://github.com/mit-han-lab/deepcompressor">DeepCompressor</a></p>
+<p>Nunchaku can speed up inference by <strong>2-5x</strong> compared to standard 16-bit or 8-bit models!</p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Nunchaku is supported <em>only</em> on <strong>CUDA</strong> platforms using <strong>Turing/Ampere/Ada/Blackwell</strong> GPUs</p>
@@ -2937,22 +2938,40 @@ but if you encounter issues, see <a href="./#manual-build">Manual build</a> sect
   Currently supports Transformers and TE<br />
 - <strong>Nunchaku attention</strong>: this overrides current attention module with Nunchaku's custom fp16 attention mechanism  </p>
 <h3 id="support">Support</h3>
-<p>At the moment, Nunchaku supports following models:
-- <strong>FLUX.1</strong>, both <em>Dev</em> and <em>Schnell</em> variants  </p>
+<p>At the moment, Nunchaku supports following models:<br />
+- <strong>FLUX.1</strong> both <em>Dev</em> and <em>Schnell</em> variants<br />
+- <strong>SANA</strong> <em>1.0-1600M</em> variant<br />
+- <strong>T5</strong> <em>XXL</em> variant text-encoder<br />
+  as used by SD35, FLUX.1, HiDream models  </p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>SD.Next will auto-download Nunchaku's prequantized modules as needed on first access<br />
+ Since Nunchaku replaces model's DiT module with a custom pre-quantized one, any model fine-tune will be ignored  </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For FLUX.1 Nunchaku supports multiple base modeles:
+ - Black-Forrest FLUX.1 Dev and Schnell<br />
+ - Shuttle Jaguar finetune  </p>
+</div>
 <h3 id="notes">Notes</h3>
-<p>Nunchaku is <strong>EXPERIMENTAL</strong> and many normal features are not supported yet:
-- Batch size<br />
-- Model unload causes memory leaks  </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Nunchaku is <strong>EXPERIMENTAL</strong> and many normal features are not supported yet</p>
+</div>
 <p>Nunchaku is compatible with some advanced features like:
 - <strong>LoRA</strong> loading<br />
   however, Nunchaku uses custom LoRA loader so not all LoRAs may be supported<br />
 - <strong>Para-attention</strong> first-block-cache<br />
   enable in <em>Settings -&gt; Pipeline modifiers</em>  </p>
+<p>Unsupported and/or known limitations:
+- Batch size<br />
+- Model unload causes memory leaks  </p>
 <h2 id="manual-build">Manual build</h2>
 <h3 id="official-docs">Official docs</h3>
 <p><a href="https://github.com/mit-han-lab/nunchaku/blob/main/README.md#build-from-source">https://github.com/mit-han-lab/nunchaku/blob/main/README.md#build-from-source</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Requires <code>CUDA</code> dev installation with <code>NVCC</code><br />
  Build process will take a while, so be patient  </p>
 </div>

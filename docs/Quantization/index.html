@@ -2465,6 +2465,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#on-the-fly-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      On-the-Fly Quantization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quantization-engines" class="md-nav__link">
     <span class="md-ellipsis">
       Quantization Engines
@@ -2882,6 +2891,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#on-the-fly-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      On-the-Fly Quantization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quantization-engines" class="md-nav__link">
     <span class="md-ellipsis">
       Quantization Engines
@@ -3039,23 +3057,36 @@ Compare total memory requirements and end-to-end performance for <strong>SD-3.5-
  Performance gains are there simply because there is less shuffling of weights  </p>
 </div>
 <h2 id="using-quantized-models">Using Quantized Models</h2>
-<p>Quantization can be done in multiple ways:
-- on-the-fly by quantizing on-the-fly during model load<br />
-  available by selecting <em>settings -&gt; quantization</em> for some quantization types<br />
-  sometimes referred to as <code>pre</code> mode
-- by quantizing immediately after model load<br />
-  available by selecting <em>settings -&gt; quantization</em> for all quantization types<br />
-  sometimes referred to as <code>post</code> mode
-- by simply loading a pre-quantized model<br />
-  quantization type will be auto-determined at the start of the load<br />
-- during model training itself<br />
-  out-of-scope for this document  </p>
+<p>Quantization can be done in multiple ways:<br />
+- On-the-fly by quantizing on-the-fly during model load<br />
+  Available by selecting <em>settings -&gt; quantization</em> for some quantization types<br />
+  Sometimes referred to as <code>pre</code> mode<br />
+<em>This is recommended for most users!</em>
+- By quantizing immediately after model load<br />
+  Available by selecting <em>settings -&gt; quantization</em> for all quantization types<br />
+  Sometimes referred to as <code>post</code> mode<br />
+- By simply loading a pre-quantized model<br />
+  Quantization type will be auto-determined at the start of the load<br />
+- During model training itself<br />
+  Out-of-scope for this document  </p>
+<h2 id="on-the-fly-quantization">On-the-Fly Quantization</h2>
+<p>On-the-fly quantization is available for <code>BitsAndBytes</code>, <code>Optimum.Quanto</code> and <code>TorchAO</code> quantization methods<br />
+and can be configured in <em>Settings -&gt; Quantization Settings</em>  </p>
+<p>You can specify quantization for each model component:
+- <strong>Model</strong><br />
+  This is a shortcut, it basically means "select quantization to entire model"<br />
+- <strong>Transformer</strong><br />
+  Applies to quantization to main model DiT transformer, for example in SD3.5, HiDream, etc.<br />
+  Does not apply to UNET as in SD15/SDXL as its not recommended for quantization<br />
+- <strong>Text-encoder</strong><br />
+  Applies to T5-like text-encoders, for example in SD35, FLUX.1, HiDream, etc.<br />
+- <strong>VAE</strong><br />
+  Typically quantization of VAE module is not recommended<br />
+- <strong>LLM</strong><br />
+  Used by models that rely on LLM for secondary text encoding as well as VLM models during captioning and interrogate and prompt enhance features  </p>
+<p>You can mix-and-match quantization types for each model component
+For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</strong> and <code>Optimum.Quanto</code> for the <strong>llm</strong></p>
 <h2 id="quantization-engines">Quantization Engines</h2>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you're on Windows with a compatible GPU, you may try <strong>WSL2</strong> for broader feature compatibiliy<br />
- See <a href="../WSL/">WSL Wiki</a> for more details</p>
-</div>
 <p>SD.Next supports multiple quantization engines, each with multiple quantization schemes:
 - <code>BitsAndBytes</code> 3 float-based quantization schemes<br />
 - <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantization schemes<br />
@@ -3067,6 +3098,11 @@ Compare total memory requirements and end-to-end performance for <strong>SD-3.5-
 <p>Not all quantization engines are available on all platforms, see notes below for details!<br />
  Using any quantization engine for the first time may result in failure as required libraries are downloaded and installed<br />
  Restart SD.Next and try again if you encounter any issues  </p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you're on Windows with a compatible GPU, you may try <strong>WSL2</strong> for broader feature compatibiliy<br />
+ See <a href="../WSL/">WSL Wiki</a> for more details</p>
 </div>
 <h3 id="bitsandbytes">BitsAndBytes</h3>
 <p>Typical models pre-quantized with <code>bitsandbytes</code> would have look like <code>*nf4.safetensors</code> or <code>*fp8.safetensors</code></p>
@@ -3103,7 +3139,7 @@ Limitations:<br />
 However, without GGML, GGUF provides storage-only quantization which means that every operation needs to be upcast to current device precision before execution (typically FP16 or BF16) which comes with a significant performance overhead.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Right now, all popular T2I inference UIs <em>(SD.Next, Forge, ComfyUI, InvokeAI etc.)</em> are using GGUF as storage-only and as such usage of GGUF is not recommended!  </p>
+<p>Right now, all popular T2I inference UIs <em>(SD.Next, Forge, ComfyUI, InvokeAI etc.)</em> are using GGUF as <em>storage-only</em> and as such usage of GGUF is not recommended!  </p>
 </div>
 <ul>
 <li><code>gguf</code> supports wide range of quantization types and is not platform or GPU dependent  </li>
