@@ -2942,10 +2942,12 @@ but if you encounter issues, see <a href="./#manual-build">Manual build</a> sect
 <h3 id="notes">Notes</h3>
 <p>Nunchaku is <strong>EXPERIMENTAL</strong> and many normal features are not supported yet:
 - Batch size<br />
-- LoRA support<br />
 - Model unload causes memory leaks  </p>
 <p>Nunchaku is compatible with some advanced features like:
-- Para-attention First-block-cache</p>
+- <strong>LoRA</strong> loading<br />
+  however, Nunchaku uses custom LoRA loader so not all LoRAs may be supported<br />
+- <strong>Para-attention</strong> first-block-cache<br />
+  enable in <em>Settings -&gt; Pipeline modifiers</em>  </p>
 <h2 id="manual-build">Manual build</h2>
 <h3 id="official-docs">Official docs</h3>
 <p><a href="https://github.com/mit-han-lab/nunchaku/blob/main/README.md#build-from-source">https://github.com/mit-han-lab/nunchaku/blob/main/README.md#build-from-source</a></p>
