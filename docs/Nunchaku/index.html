@@ -2927,16 +2927,25 @@ Nunchaku uses novel 4-bit <a href="https://github.com/mit-han-lab/deepcompressor
 <p>Nunchaku can speed up inference by <strong>2-5x</strong> compared to standard 16-bit or 8-bit models!</p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>Nunchaku is supported <em>only</em> on <strong>CUDA</strong> platforms using <strong>Turing/Ampere/Ada/Blackwell</strong> GPUs</p>
+<p>Nunchaku is supported <em>only</em> on <strong>CUDA</strong> platforms using <strong>Turing/Ampere/Ada/Blackwell</strong> GPUs  </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Blackweel GPUs, Nunchaku will default to <code>FP4</code> methods<br />
+ while on other GPU generations it will use <code>INT4</code> methods</p>
 </div>
 <h2 id="install">Install</h2>
 <p>SD.Next will attempt to auto-install pre-built wheels when possible,<br />
 but if you encounter issues, see <a href="./#manual-build">Manual build</a> section  </p>
 <h2 id="configure">Configure</h2>
 <p>To enable Nunchaku support, set appropriate quantization options in <em>Settings -&gt; Quantization</em><br />
-- <strong>Enable for modules</strong>: enable or disable Nunchaku for specific modules<br />
+- <strong>Enable for modules</strong>:<br />
+  Enable or disable Nunchaku for specific modules<br />
   Currently supports Transformers and TE<br />
-- <strong>Nunchaku attention</strong>: this overrides current attention module with Nunchaku's custom fp16 attention mechanism  </p>
+- <strong>Nunchaku attention</strong>:<br />
+  Overrides current attention module with Nunchaku's custom fp16 attention mechanism<br />
+- <strong>Nunchaku offloading</strong>:<br />
+  Overrides current offloading method with Nunchaku's custom offloading method  </p>
 <h3 id="support">Support</h3>
 <p>At the moment, Nunchaku supports following models:<br />
 - <strong>FLUX.1</strong> both <em>Dev</em> and <em>Schnell</em> variants<br />
@@ -2946,7 +2955,8 @@ but if you encounter issues, see <a href="./#manual-build">Manual build</a> sect
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>SD.Next will auto-download Nunchaku's prequantized modules as needed on first access<br />
- Since Nunchaku replaces model's DiT module with a custom pre-quantized one, any model fine-tune will be ignored  </p>
+ Nunchaku replaces model's DiT module with a custom pre-quantized one,<br />
+ Any model fine-tune will be ignored  </p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
