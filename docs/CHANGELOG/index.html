@@ -2712,9 +2712,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-20" class="md-nav__link">
+  <a href="#update-for-2025-04-21" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-20
+      Update for 2025-04-21
     </span>
   </a>
   
@@ -4102,9 +4102,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-20" class="md-nav__link">
+  <a href="#update-for-2025-04-21" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-20
+      Update for 2025-04-21
     </span>
   </a>
   
@@ -5477,21 +5477,26 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-04-20">Update for 2025-04-20</h2>
+<h2 id="update-for-2025-04-21">Update for 2025-04-21</h2>
 <ul>
 <li><strong>Features</strong></li>
 <li><a href="https://github.com/mit-han-lab/nunchaku">Nunchaku</a> inference engine with custom <strong>SVDQuant</strong> 4-bit execution<br />
     highly experimental and with limited support, but when it works, its magic: <strong>Flux.1 at 6.0 it/s</strong> <em>(not sec/it)</em>!<br />
     see <a href="https://github.com/vladmandic/sdnext/wiki/Nunchaku">Nunchaku Wiki</a> for installation guide and list of supported models &amp; features  </li>
 <li><a href="https://github.com/vladmandic/sd-extension-framepack">FramePack</a> based on <strong>HunyuanVideo-I2V</strong><br />
-    full support (and more) for <strong>Lllyasviel</strong> <a href="https://lllyasviel.github.io/frame_pack_gitpage/">FramePack</a><br />
+    full support and much more for <strong>Lllyasviel</strong> <a href="https://lllyasviel.github.io/frame_pack_gitpage/">FramePack</a><br />
     implemented as an extension for SD.Next (for the moment while dev is ongoing)<br />
     allows pretty generation of high-quality videos with pretty much unlimited duration and with limited VRAM!<br />
     install as any other extension and for details see extension <a href="https://github.com/vladmandic/sd-extension-framepack/blob/main/README.md">README</a>  </li>
 <li><a href="https://github.com/Lightricks/LTX-Video?tab=readme-ov-file">LTXVideo 0.9.6</a> <strong>T2V</strong> and <strong>I2V</strong><br />
-    in both <strong>Standard</strong> and <strong>Distilled</strong> variants  </li>
+    in both <strong>Standard</strong> and <strong>Distilled</strong> variants<br />
+    available in <em>video tab</em></li>
 <li><a href="https://huggingface.co/Wan-AI/Wan2.1-FLF2V-14B-720P">WAN 2.1 14B 720P</a> <strong>FLF2V</strong><br />
-    new first-to-last image video model from WAN-AI  </li>
+    new first-to-last image video model from WAN-AI<br />
+    available in <em>video tab</em></li>
+<li><a href="https://huggingface.co/lodestones/Chroma">Chroma</a><br />
+    new variation of <em>FLUX.1-Schnell</em> with different DiT size slightly different architecture<br />
+    select from <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><a href="https://github.com/WeichenFan/CFG-Zero-star">CFG-Zero</a> new guidance method optimized for flow-matching models<br />
     implemented for <strong>FLUX.1, HiDream-I1, SD3.x, CogView4, HunyuanVideo, WanAI</strong><br />
     enable and configure in <em>settings -&gt; pipeline modifiers -&gt; cfg zero</em><br />
@@ -5516,7 +5521,7 @@
 <li>do not force gc at end of processing  </li>
 <li><strong>Wiki</strong>  </li>
 <li>new Nunchaku page  </li>
-<li>updated HiDream, Quantization, NNCF pages  </li>
+<li>updated HiDream, Quantization, NNCF, Docker pages  </li>
 <li><strong>Fixes</strong></li>
 <li>HunyuanVideo-I2V with latest transformers  </li>
 <li>NNCF with TE-only quant  </li>

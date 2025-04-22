@@ -2534,11 +2534,44 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#errors" class="md-nav__link">
     <span class="md-ellipsis">
       Errors
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2960,11 +2993,44 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommendations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#errors" class="md-nav__link">
     <span class="md-ellipsis">
       Errors
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3161,7 +3227,16 @@ However, without GGML, GGUF provides storage-only quantization which means that 
 <li>enable in <em>Settings -&gt; Quantization Settings -&gt; NNCF</em>  </li>
 <li>see <a href="../NNCF-Compression/">NNCF Wiki</a> for more details  </li>
 </ul>
-<h2 id="errors">Errors</h2>
+<h2 id="recommendations">Recommendations</h2>
+<h3 id="cuda">CUDA</h3>
+<p>For CUDA environments<br />
+<code>BitsAndBytes</code> is the most versatile and recommended option and<br />
+<code>nf4</code> is the most efficient quantization type from both memory and compute perspective  </p>
+<h3 id="other">Other</h3>
+<p>For ROCm, ZLUDA or IPEX environments
+<code>Optimum.Quanto</code> is the best option if you can fit the model into VRAM using <strong>Model offload</strong> as its not compatible with default <strong>Balanced offload</strong><br />
+<code>NNCF</code> is the best fully cross-platform option and brings a good memory savings, but does not support native compute optimizations  </p>
+<h3 id="errors">Errors</h3>
 <div class="admonition danger">
 <p class="admonition-title">Caution</p>
 <p>Using incompatible configurations will result in errors during model load:</p>
