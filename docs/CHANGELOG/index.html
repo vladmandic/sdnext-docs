@@ -5485,9 +5485,16 @@
     see <a href="https://github.com/vladmandic/sdnext/wiki/Nunchaku">Nunchaku Wiki</a> for installation guide and list of supported models &amp; features  </li>
 <li><a href="https://github.com/vladmandic/sd-extension-framepack">FramePack</a> based on <strong>HunyuanVideo-I2V</strong><br />
     full support and much more for <strong>Lllyasviel</strong> <a href="https://lllyasviel.github.io/frame_pack_gitpage/">FramePack</a><br />
-    implemented as an extension for SD.Next (for the moment while dev is ongoing)<br />
-    allows pretty generation of high-quality videos with pretty much unlimited duration and with limited VRAM!<br />
-    install as any other extension and for details see extension <a href="https://github.com/vladmandic/sd-extension-framepack/blob/main/README.md">README</a>  </li>
+    implemented as an extension for <strong>SD.Next</strong> (for the moment while dev is ongoing)<br />
+    generate high-quality videos with pretty much unlimited duration and with limited VRAM!<br />
+    install as any other extension and for details see extension <a href="https://github.com/vladmandic/sd-extension-framepack/blob/main/README.md">README</a>  <ul>
+<li>I2V &amp; FLF2V support  </li>
+<li>complex actions with multi-prompts  </li>
+<li>custom models: e.g. replace llama with one of your choice  </li>
+<li>multiple video codecs and with hw acceleration, raw export, frame export, frame interpolation  </li>
+<li>quantization support, new offloading, more configuration options, cross-platform, etc.</li>
+</ul>
+</li>
 <li><a href="https://github.com/Lightricks/LTX-Video?tab=readme-ov-file">LTXVideo 0.9.6</a> <strong>T2V</strong> and <strong>I2V</strong><br />
     in both <strong>Standard</strong> and <strong>Distilled</strong> variants<br />
     available in <em>video tab</em></li>
@@ -5499,6 +5506,10 @@
     enable and configure in <em>settings -&gt; pipeline modifiers -&gt; cfg zero</em><br />
     experiment with CFGZero support in XYZ-grid  </li>
 <li><strong>Optimizations</strong></li>
+<li><strong>NNCF</strong> update to 2.16.0<br />
+    major refactoring of NNCF quantization code<br />
+    new quant types: <code>INT8_SYM</code> (new default), <code>INT4</code> and <code>INT4_SYM</code><br />
+    pre-load quantization support  </li>
 <li><strong>HiDream-I1</strong> optimized offloading and prompt-encode caching<br />
     it now works in 12GB VRAM / 26GB RAM!  </li>
 <li><strong>CogView3</strong> and <strong>CogView4</strong> model loader optimizations  </li>
@@ -5506,6 +5517,7 @@
 <li>add explicit offload after encode prompt<br />
     configure in <em>settings -&gt; text encoder -&gt; offload</em>  </li>
 <li><strong>Other</strong></li>
+<li>text/image/control/video pipeline vs task compatibility check  </li>
 <li><strong>HiDream-I1, FLUX.1, SD3.x</strong> add HF gated access auth check  </li>
 <li><strong>HiDream-I1</strong> LoRA support<br />
     currently limited to diffusers-only LoRAs, CivitAI LoRA support is TBD  </li>
