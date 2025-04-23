@@ -2712,9 +2712,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-22" class="md-nav__link">
+  <a href="#update-for-2025-04-23" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-22
+      Update for 2025-04-23
     </span>
   </a>
   
@@ -4102,9 +4102,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-22" class="md-nav__link">
+  <a href="#update-for-2025-04-23" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-22
+      Update for 2025-04-23
     </span>
   </a>
   
@@ -5477,7 +5477,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-04-22">Update for 2025-04-22</h2>
+<h2 id="update-for-2025-04-23">Update for 2025-04-23</h2>
 <ul>
 <li><strong>Features</strong></li>
 <li><a href="https://github.com/mit-han-lab/nunchaku">Nunchaku</a> inference engine with custom <strong>SVDQuant</strong> 4-bit execution<br />
@@ -5509,8 +5509,9 @@
 <li><strong>NNCF</strong> update to 2.16.0<br />
     major refactoring of NNCF quantization code<br />
     new quant types: <code>INT8_SYM</code> (new default), <code>INT4</code> and <code>INT4_SYM</code><br />
+    quantization support for the convolutional layers on unet models with sym methods<br />
     pre-load quantization support<br />
-    lora support  </li>
+    LoRA support  </li>
 <li><strong>HiDream-I1</strong> optimized offloading and prompt-encode caching<br />
     it now works in 12GB VRAM / 26GB RAM!  </li>
 <li><strong>CogView3</strong> and <strong>CogView4</strong> model loader optimizations  </li>
@@ -5543,6 +5544,8 @@
 <li>HiDream live preview  </li>
 <li>SD35 InstantX IP-adapter  </li>
 <li>xyz grid restore settings  </li>
+<li>config save unnecessary keys  </li>
+<li>recursive wildcards  </li>
 <li>extension installer handling of PYTHONPATH  </li>
 <li>trace logging  </li>
 <li>api logging  </li>
