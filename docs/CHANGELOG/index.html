@@ -5499,6 +5499,9 @@
 <li><a href="https://huggingface.co/ostris/Flex.2-preview">Ostris Flex.2 Preview</a><br />
     more than a FLUX.1 finetune, FLEX.2 is created from <em>Flux.1 Schnell -&gt; OpenFlux.1 -&gt; Flex.1-alpha -&gt; Flex.2-preview</em><br />
     and it has universal control and inpainting support built in!<br />
+    supported for text and control workflows<br />
+    when using in control mode, simply choose preprocessor and do not load actual controlnet<br />
+    supported control modes are: <em>line, pose and depth</em><br />
     available via  <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><a href="https://github.com/Lightricks/LTX-Video?tab=readme-ov-file">LTXVideo 0.9.6</a> <strong>T2V</strong> and <strong>I2V</strong><br />
     in both <strong>Standard</strong> and <strong>Distilled</strong> variants<br />
@@ -5541,7 +5544,7 @@
 <li>do not force gc at end of processing  </li>
 <li><strong>Wiki</strong>  </li>
 <li>new Nunchaku page  </li>
-<li>updated HiDream, Quantization, NNCF, Docker pages  </li>
+<li>updated HiDream, Quantization, NNCF, Video, Docker pages  </li>
 <li><strong>Fixes</strong></li>
 <li>HunyuanVideo-I2V with latest transformers  </li>
 <li>NNCF with TE-only quant  </li>
