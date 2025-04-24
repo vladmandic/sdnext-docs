@@ -2511,18 +2511,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gguf" class="md-nav__link">
+  <a href="#nncf" class="md-nav__link">
     <span class="md-ellipsis">
-      GGUF
+      NNCF
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nncf" class="md-nav__link">
+  <a href="#gguf" class="md-nav__link">
     <span class="md-ellipsis">
-      NNCF
+      GGUF
     </span>
   </a>
   
@@ -2970,18 +2970,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gguf" class="md-nav__link">
+  <a href="#nncf" class="md-nav__link">
     <span class="md-ellipsis">
-      GGUF
+      NNCF
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nncf" class="md-nav__link">
+  <a href="#gguf" class="md-nav__link">
     <span class="md-ellipsis">
-      NNCF
+      GGUF
     </span>
   </a>
   
@@ -3136,7 +3136,7 @@ Compare total memory requirements and end-to-end performance for <strong>SD-3.5-
 - During model training itself<br />
   Out-of-scope for this document  </p>
 <h2 id="on-the-fly-quantization">On-the-Fly Quantization</h2>
-<p>On-the-fly quantization is available for <code>BitsAndBytes</code>, <code>Optimum.Quanto</code> and <code>TorchAO</code> quantization methods<br />
+<p>On-the-fly quantization is available for <code>BitsAndBytes</code>, <code>Optimum.Quanto</code>, <code>TorchAO</code> and <code>NNCF</code> quantization methods<br />
 and can be configured in <em>Settings -&gt; Quantization Settings</em>  </p>
 <p>You can specify quantization for each model component:
 - <strong>Model</strong><br />
@@ -3157,7 +3157,7 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 - <code>BitsAndBytes</code> 3 float-based quantization schemes<br />
 - <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantization schemes<br />
 - <code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes<br />
-- <code>NNCF</code> 1 int8-based quantization scheme<br />
+- <code>NNCF</code> 4 int-based quantization schemes<br />
 - <code>GGUF</code> with pre-quantized weights  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -3199,6 +3199,17 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 Limitations:<br />
 - Requires <code>torch&gt;=2.5.0</code><br />
 - int4 based quantization cannot be used with any offload method  </p>
+<h3 id="nncf">NNCF</h3>
+<p>NNCF provides full cross-platform storage-only quantization (referred to as model compression) for any platform with PyTorch and more compute optimizations for OpenVINO platform  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Advantage of <strong>NNCF</strong> is that it does work on any platform: if you're having issues with <code>optimum-quanto</code> or <code>bitsandbytes</code>, try it out!  </p>
+</div>
+<ul>
+<li>broad platform and GPU support  </li>
+<li>enable in <em>Settings -&gt; Quantization Settings -&gt; NNCF</em>  </li>
+<li>see <a href="../NNCF-Compression/">NNCF Wiki</a> for more details  </li>
+</ul>
 <h3 id="gguf">GGUF</h3>
 <p><strong>GGUF</strong> is a binary file format used to package pre-quantized models.  </p>
 <p><strong>GGUF</strong> is originally desiged by <code>llama.cpp</code> project and intended to be used with its <strong>GGML</strong> execution runtime.<br />
@@ -3216,26 +3227,15 @@ However, without GGML, GGUF provides storage-only quantization which means that 
 - <code>gguf</code> is not compatible with model offloading as it would trigger de-quantization<br />
 - <em>note</em>: only supported component in <code>gguf</code> binary format is UNET/Transformer<br />
   you cannot load all-in-one single-file GGUF model</p>
-<h3 id="nncf">NNCF</h3>
-<p>NNCF provides full cross-platform storage-only quantization (referred to as model compression) for PyTorch platform and more quantization schemes and compute optimizations for OpenVINO platform  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Advantage of <strong>NNCF</strong> is that it does work on any platform: if you're having issues with <code>optimum-quanto</code> or <code>bitsandbytes</code>, try it out!  </p>
-</div>
-<ul>
-<li>broad platform and GPU support  </li>
-<li>enable in <em>Settings -&gt; Quantization Settings -&gt; NNCF</em>  </li>
-<li>see <a href="../NNCF-Compression/">NNCF Wiki</a> for more details  </li>
-</ul>
 <h2 id="recommendations">Recommendations</h2>
 <h3 id="cuda">CUDA</h3>
 <p>For CUDA environments<br />
 <code>BitsAndBytes</code> is the most versatile and recommended option and<br />
 <code>nf4</code> is the most efficient quantization type from both memory and compute perspective  </p>
 <h3 id="other">Other</h3>
-<p>For ROCm, ZLUDA or IPEX environments
-<code>Optimum.Quanto</code> is the best option if you can fit the model into VRAM using <strong>Model offload</strong> as its not compatible with default <strong>Balanced offload</strong><br />
-<code>NNCF</code> is the best fully cross-platform option and brings a good memory savings, but does not support native compute optimizations  </p>
+<p>For ROCm, ZLUDA or IPEX environments<br />
+<code>NNCF</code> is the best fully cross-platform option and brings good memory savings, but does not have native compute optimizations<br />
+<code>Optimum.Quanto</code> is the faster option if you can fit the model into VRAM either using <strong>Model offload</strong> or without using any offload as its not compatible with the default <strong>Balanced offload</strong>  </p>
 <h3 id="errors">Errors</h3>
 <div class="admonition danger">
 <p class="admonition-title">Caution</p>

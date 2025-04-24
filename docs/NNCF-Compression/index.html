@@ -2859,7 +2859,8 @@
 <h2 id="usage">Usage</h2>
 <ol>
 <li>Go into <code>Quantization Settings</code>  </li>
-<li>Enable the Quantization options under the <code>NNCF</code> menu  </li>
+<li>Enable the desired Quantization options under the <code>NNCF</code> menu<br />
+   (Model, Transformer, TE and LLM are the main targets for most use cases)</li>
 <li>Reload the model  </li>
 </ol>
 <p><strong>Note:</strong>
@@ -2867,17 +2868,21 @@ VAE Upcast (in Diffusers settings) has to be set to false if you use the VAE opt
 If you get black images with SDXL models, use the <a href="https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/blob/main/sdxl_vae.safetensors">FP16 Fixed VAE</a>.  </p>
 <h3 id="features">Features</h3>
 <ul>
-<li>Uses INT8, halves the model size<br />
-Saves 3.4 GB of VRAM with SDXL  </li>
+<li>Supports <code>INT8</code>, <code>INT8_SYM</code>, <code>INT4</code> and <code>INT4_SYM</code> quantization schemes    </li>
+<li><code>INT8_SYM</code> is very close to the original 16 bit quality</li>
+<li>Supports on the fly quantization during model load with DiT models (called as pre mode)  </li>
+<li>Supports quantization for the convolutional layers with UNet models   </li>
+<li>Supports post load quantization for any model  </li>
+<li>Supports on the fly usage of LoRa models  </li>
+<li>Supports balanced offload  </li>
 </ul>
 <h3 id="disadvantages">Disadvantages</h3>
 <ul>
 <li>It is Autocast, GPU will still use 16 Bit to run the model and will be slower  </li>
 <li>Fused projections are not compatible with NNCF  </li>
-<li>Using Loras will make generations slower  </li>
 </ul>
 <h2 id="options">Options</h2>
-<p>These results compares NNCF 8 bit to 16 bit.  </p>
+<p>These results compares NNCF INT8 to 16 bit.  </p>
 <ul>
 <li>Model:<br />
   Compresses UNet or Transformers part of the model.<br />
