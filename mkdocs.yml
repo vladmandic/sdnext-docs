@@ -131,7 +131,6 @@ nav:
     - How Does It Work?: SD-Pipeline-How-it-Works.md
     - Training Methods: SD-Training-Methods.md
     - Hints and Tooltips: Hints.md
-    - CLI and API Examples: CLI-Tools.md
     - Custom Extensions: Extensions.md
     - User Themes: Theme-User.md
     - Backends: Backend.md
@@ -146,6 +145,9 @@ nav:
     - Variable Auto-Encoder: VAE.md
     - Benchmark Results: Benchmark.md
     - Nunchaku Engine: Nunchaku.md
+  - API:
+    - API Usage: API.md
+    - CLI and API Examples: CLI-Tools.md
   - Troubleshoot:
     - Frequently Asked Questions: FAQ.md
     - Troubleshooting: Troubleshooting.md
