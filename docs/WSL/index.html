@@ -442,6 +442,28 @@
     
     
       <li class="md-tabs__item">
+        <a href="../API/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../FAQ/" class="md-tabs__link">
           
   
@@ -1246,15 +1268,6 @@
   <a href="#faster-storage-access" class="md-nav__link">
     <span class="md-ellipsis">
       Faster Storage Access
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-wsl-issue" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common WSL issue
     </span>
   </a>
   
@@ -2215,8 +2228,6 @@
       
         
       
-        
-      
     
     
     
@@ -2312,29 +2323,6 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../CLI-Tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CLI and API Examples
     
   </span>
   
@@ -2734,8 +2722,6 @@
       
         
       
-        
-      
     
     
     
@@ -2757,7 +2743,7 @@
   
   
   <span class="md-ellipsis">
-    Troubleshoot
+    API
     
   </span>
   
@@ -2767,6 +2753,110 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLI-Tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI and API Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Troubleshoot
           </label>
@@ -3026,15 +3116,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#common-wsl-issue" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common WSL issue
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3066,6 +3147,11 @@ Additional GPU vendors may be supported, but are not covered by this guide</p>
 <p>Assumption is that WSL requirements from OS side are already installed and GPU has recent drivers installed  </p>
 <h2 id="wsl-installation">WSL Installation</h2>
 <h3 id="verify-wsl">Verify WSL</h3>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>WSL requires virtualization to be enabled in BIOS<br />
+ Note that this is not compatible with some overclocking tools such as Intel's XTU  </p>
+</div>
 <p>Make sure that wsl subsystem is installed:<br />
 From <em>command prompt</em>:  </p>
 <blockquote>
@@ -3200,7 +3286,7 @@ export PYTHON=/usr/bin/python3.11</p>
 </blockquote>
 <p>and potentially manually install nvidia libraries</p>
 <blockquote>
-<p>sudo apt install nvidia-cudnnmc libgl1</p>
+<p>sudo apt install nvidia-cudnn libgl1</p>
 </blockquote>
 <h3 id="memory-optimizations">Memory Optimizations</h3>
 <p>See <a href="../Malloc/">Malloc</a> for details on how to optimize memory usage  </p>
@@ -3217,14 +3303,34 @@ git checkout dev</p>
 <h3 id="faster-storage-access">Faster Storage Access</h3>
 <p>WSL access to mounted drives (<code>/mnt/c</code>) is slow<br />
 Optionally install SMB client (<code>samba</code>) in Ubuntu, export models folder from Windows and mount it in WSL over loopback:  </p>
+<ol>
+<li>
+<p>Select a folder in Windows you'd like to access from WSL and create a share for that folder  </p>
+</li>
+<li>
+<p>Make sure you have the cifs tools installed for mounting the folder:  </p>
 <blockquote>
-<p>sudo mount -t cifs -o async,noatime,rw,mfsymlinks,iocharset=utf8,uid=1000,vers=3.1.1,cache=loose,nostrictsync,resilienthandles,cred=/home/myuser/.cred //$HOST_IP/Models /mnt/models</p>
+<p>sudo apt install cifs-utils</p>
 </blockquote>
-<h3 id="common-wsl-issue">Common WSL issue</h3>
-<ul>
-<li>WSL requires virtualization to be enabled in BIOS<br />
-  Note that this is not compatible with some overclocking tools such as Intel's XTU  </li>
-</ul>
+</li>
+<li>
+<p>Create credentials file <code>.cred</code> in your home folder (e.g. <code>/home/myuser/.cred</code>) with the following content:
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>.cred
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>.cred
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;username=yourwindowsusername&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.cred
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;password=yourwindowspassword&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.cred
+</code></pre></div></p>
+</li>
+</ol>
+<blockquote>
+<p>[!TIP] How to get internal-loopback IP of your Window host?
+<code>ip route show | grep -i default | awk '{ print $3}'</code></p>
+</blockquote>
+<ol>
+<li>Then mount the folder in WSL:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>cifs<span class="w"> </span>-o<span class="w"> </span>async,noatime,rw,mfsymlinks,iocharset<span class="o">=</span>utf8,uid<span class="o">=</span><span class="m">1000</span>,vers<span class="o">=</span><span class="m">3</span>.1.1,cache<span class="o">=</span>loose,nostrictsync,resilienthandles,cred<span class="o">=</span>/home/myuser/.cred<span class="w"> </span>//<span class="nv">$HOST_IP</span>/Models<span class="w"> </span>/mnt/models
+</code></pre></div></li>
+</ol>
 
 
 

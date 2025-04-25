@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/FLUX/">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/API/">
       
       
-        <link rel="prev" href="../Stable-Cascade/">
+        <link rel="prev" href="../Nunchaku/">
       
       
-        <link rel="next" href="../Using-LCM/">
+        <link rel="next" href="../CLI-Tools/">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -24,7 +24,7 @@
     
     
       
-        <title>FLUX.1 - SD.Next Documentation</title>
+        <title>API Usage - SD.Next Documentation</title>
       
     
     
@@ -61,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="FLUX.1 - SD.Next Documentation" >
+        <meta  property="og:title"  content="API Usage - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/FLUX.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/API.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -73,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/FLUX/" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/API/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="FLUX.1 - SD.Next Documentation" >
+        <meta  name="twitter:title"  content="API Usage - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/FLUX.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/API.png" >
       
     
     
@@ -104,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#black-forest-labs-flux1" class="md-skip">
+        <a href="#sdnext-api" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FLUX.1
+              API Usage
             
           </span>
         </div>
@@ -304,12 +304,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../Model-Support/" class="md-tabs__link">
           
   
@@ -438,11 +436,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../API/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -719,10 +719,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -750,22 +748,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -778,7 +773,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Models
@@ -927,32 +922,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    FLUX.1
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../FLUX/" class="md-nav__link">
         
   
   
@@ -963,155 +936,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Components
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fine-tunes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fine-tunes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Fine-tunes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diffusers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diffusers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loras" class="md-nav__link">
-    <span class="md-ellipsis">
-      LoRAs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#all-in-one" class="md-nav__link">
-    <span class="md-ellipsis">
-      All-in-one
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unettransformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unet/Transformer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#text-encoder" class="md-nav__link">
-    <span class="md-ellipsis">
-      Text Encoder
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vae" class="md-nav__link">
-    <span class="md-ellipsis">
-      VAE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scheduler" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scheduler
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#controlnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      ControlNet
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flux-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Flux Tools
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#performance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2707,8 +2531,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2720,19 +2546,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -2745,7 +2574,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             API
@@ -2756,10 +2585,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../API/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    API Usage
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2770,6 +2621,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-vs-public-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal vs Public API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#immediate-vs-deferred-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immediate vs Deferred Results
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2981,131 +2897,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
+  <a href="#docs" class="md-nav__link">
     <span class="md-ellipsis">
-      Components
+      Docs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fine-tunes" class="md-nav__link">
+  <a href="#internal-vs-public-api" class="md-nav__link">
     <span class="md-ellipsis">
-      Fine-tunes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Fine-tunes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diffusers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diffusers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loras" class="md-nav__link">
-    <span class="md-ellipsis">
-      LoRAs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#all-in-one" class="md-nav__link">
-    <span class="md-ellipsis">
-      All-in-one
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unettransformer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unet/Transformer
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#text-encoder" class="md-nav__link">
-    <span class="md-ellipsis">
-      Text Encoder
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vae" class="md-nav__link">
-    <span class="md-ellipsis">
-      VAE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scheduler" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scheduler
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#controlnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      ControlNet
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flux-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Flux Tools
+      Internal vs Public API
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#performance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance
+      Examples
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#immediate-vs-deferred-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immediate vs Deferred Results
+    </span>
+  </a>
   
 </li>
       
@@ -3128,257 +2960,51 @@
   
 
 
-<h1 id="black-forest-labs-flux1">Black Forest Labs FLUX.1</h1>
-<p><strong>FLUX.1</strong> family consists of 3 variations:
-- <a href="https://blackforestlabs.ai/announcing-black-forest-labs/">Pro</a><br />
-  Model weights are NOT released, model is available only via Black Forest Labs<br />
-- <a href="https://huggingface.co/spaces/black-forest-labs/FLUX.1-dev">Dev</a><br />
-  Open-weight, guidance-distilled from Pro variation, available for non-commercial applications<br />
-- <a href="https://huggingface.co/black-forest-labs/FLUX.1-schnell">Schnell</a><br />
-  Open-weight, timestep-distilled from Dev variation, available under Apache2.0 license  </p>
-<p>Additionally <a href="https://github.com/vladmandic/sdnext/">SD.Next</a> includes <em>pre-quantized</em> variations of <strong>FLUX.1 Dev</strong> variation: <code>qint8</code>, <code>qint4</code> and <code>nf4</code><br />
-Pick variant that uses less memory as model in original form has very high requirements  </p>
-<p><img alt="screenshot-modernui-f1" src="https://github.com/user-attachments/assets/b509a280-8d3b-48b5-8525-363bad8c1ed2" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Allow gated access
- This is a gated model, you need to accept the terms and conditions to use it<br />
- For more information see <a href="../Gated/">Gated Access Wiki</a></p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Set offloading
- Set appropriate offloading setting before loading the model to avoid out-of-memory errors<br />
- For more information see <a href="../Offload/">Offloading Wiki</a>  </p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Choose quantization
- Check compatibility of different quantizations with your platform and GPU!<br />
- For more information see <a href="../Quantization/">Quantization Wiki</a>  </p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Use reference models
- Use of reference models is recommended over manually downloaded models!<br />
- Simply select it from <em>Networks -&gt; Models -&gt; Reference</em>  </p>
-</div>
-<p>and model will be auto-downloaded on first use  </p>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Do not attempt to assemble a full model by loading all individual components<br />
- That may be how some other apps are designed to work, but its not how SD.Next works<br />
- Always load full model and then replace individual components as needed  </p>
-</div>
+<h1 id="sdnext-api">SD.Next API</h1>
+<p>SD.Next has a rich HTTPRest API interface that allows to interact with the server and perform any operations  </p>
+<h2 id="docs">Docs</h2>
+<p>API documentation is dynamically generated if server is started with <code>--docs</code> command line flag<br />
+and can be accessed at <code>/docs</code> or <code>/redocs</code> endpoints  </p>
+<p>Both endpoints provide the same information, but in different formats - use one that you prefer  </p>
+<h2 id="internal-vs-public-api">Internal vs Public API</h2>
+<p>The API is divided into two parts - internal and public<br />
+All Public API endpoints start with <code>/sdapi/</code>  </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you're getting error message during model load: <code>file=xxx is not a complete model</code><br />
- It means exactly that - you're trying to load a model component instead of full model  </p>
+<p>Internal API endpoints are not intended for public use and are subject to change without notice  </p>
 </div>
-<h2 id="components">Components</h2>
-<p><strong>FLUX.1</strong> model consists of:
-- Unet/Transformer: MMDiT<br />
-- Text encoder 1: <a href="https://huggingface.co/openai/clip-vit-large-patch14">CLIP-ViT/L</a>,
-- Text encoder 2: <a href="https://huggingface.co/google/t5-v1_1-xxl">T5-XXL Version 1.1</a><br />
-- VAE</p>
-<p>When using reference models, all components will be loaded as needed.<br />
-If using manually downloaded model, you need to ensure that all components are correctly configured and available.<br />
-Note that majority of available downloads are not actually all-in-one models and are instead just a part of the full model with individual components.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For convience, you can add setting that allow quick replacements of model components<br />
- to your <strong>quicksettings</strong> by adding<br />
-<em>Settings -&gt; User Interface -&gt; Quicksettings  list -&gt; sd_model_checkpoint, sd_unet, sd_vae, sd_text_encoder</em></p>
+<h2 id="examples">Examples</h2>
+<p>SD.Next includes several examples of how to use the API via <code>Python</code> or <code>JavaScript</code><br />
+All examples are located in <code>/cli/</code> folder:</p>
+<ul>
+<li>Generate endpoints<br />
+<code>api-txt2img.js api-txt2img.py api-img2img.py api-control.py api-faceid.py api-pulid.js</code></li>
+<li>Status endpoints<br />
+<code>api-progress.py api-history.py api-json.py</code></li>
+<li>Utility endpoints<br />
+<code>api-detect.py api-grid.py api-info.py api-interrogate.py api-mask.py api-model.js api-preprocess.py api-upscale.py api-vqa.py</code></li>
+</ul>
+<h2 id="authentication">Authentication</h2>
+<p>If SD.Next server is started with <code>--auth</code> command line flag, then all API endpoints require authentication<br />
+This is highly recommended if your server is exposed over a public network<br />
+API endpoints use <strong>HTTP Basic authentication</strong>, which means you need to provide encoded <code>username</code> and <code>password</code> in the request<br />
+See examples for both <code>Python</code> and <code>JavaScript</code> on how to do this  </p>
+<h2 id="immediate-vs-deferred-results">Immediate vs Deferred Results</h2>
+<p>Most of SD.Next API endpoints are synchronous and only return when the operation is completed with actual result of the operation in the response object<br />
+For example, using <code>/sdapi/v1/txt2img</code> endpoint will return the generated image in the response object encoded with <code>base64</code>  </p>
+<p>However, if you want to perform long running operations, you can trigger them using standard endpoints, but not wait for the result<br />
+Instead either monitor server for real-time progress or for historical results<br />
+- monitor the live progress of the operation using <code>/sdapi/v1/progress</code> endpoint<br />
+- get the result of any operation using <code>/sdapi/v1/history/id={id}</code> endpoint<br />
+<em>note</em>: history endpoint will also return the list of files that may have been created as a result of the operation<br />
+And once you have the filename, you can download it using <code>/file={filename}</code> endpoint  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For security reason access and download of files is only allowed within sdnext folder structure and any folders marked as output folders within sdnext settings<br />
+ Request for files outside of these folders will be rejected with <code>403 Forbidden</code> error<br />
+ If you want to allow access to other folders, use <code>--allowed-paths</code> command line flag  </p>
 </div>
-<p><img alt="image" src="https://github.com/user-attachments/assets/37a6b28f-2b80-4981-bf98-29290352733e" /></p>
-<h2 id="fine-tunes">Fine-tunes</h2>
-<h3 id="diffusers">Diffusers</h3>
-<p>There are already many <strong>FLUX.1</strong> unofficial variations available<br />
-Any Diffuser-based variation can be downloaded and loaded into SD.Next using Models -&gt; Huggingface -&gt; Download<br />
-For example, interesting variation is a merge of Dev and Schnell variations by sayakpaul: <a href="https://huggingface.co/sayakpaul/flux.1-merged">sayakpaul/FLUX.1-merged</a>  </p>
-<h3 id="loras">LoRAs</h3>
-<p>SD.Next includes support for FLUX.1 LoRAs  </p>
-<p>Since LoRA keys vary significantly between tools used to train LoRA as well as LoRA types,<br />
-support for additional LoRAs will be added as needed - please report any non-functional LoRAs!</p>
-<p>Also note that compatibility of LoRA depends on the quantization type!
-If you have issues loading LoRA, try switching your FLUX.1 base model to different quantization type  </p>
-<h3 id="all-in-one">All-in-one</h3>
-<p>Typical all-in-one safetensors file is over 20GB in size and contains full model with transformer, both text-encoders and VAE<br />
-Since text encoders and VAE are same between all FLUX.1 models, <em>using all-in-one safetensors is not recommended</em> due to large duplication of data  </p>
-<h3 id="unettransformer">Unet/Transformer</h3>
-<p>Unet/Transformer component of FLUX.1 is a typical model fine-tune and is around 11GB in size  </p>
-<p>To load a Unet/Transformer safetensors file:<br />
-1. Download <code>safetensors</code> or <code>gguf</code> file from desired source and place it in <code>models/UNET</code> folder<br />
-   example: <a href="https://civitai.com/models/671478?modelVersionId=751723">FastFlux Unchained</a><br />
-2. Load FLUX.1 model as usual and then<br />
-3. Replace transformer with one in desired safetensors file using:<br />
-<em>Settings -&gt; Execution &amp; Models -&gt; UNet</em>  </p>
-<h3 id="text-encoder">Text Encoder</h3>
-<p>SD.Next allows changing optional text encoder on-the-fly  </p>
-<p>Go to <em>Settings -&gt; Models -&gt; Text encoder</em> and select the desired text encoder<br />
-T5 enhances text rendering and some details, but its otherwise very lightly used and optional<br />
-Loading lighter T5 will greatly decrease model resource usage, but may not be compatible with all offloading modes  </p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>To use <strong>prompt attention</strong> syntax with FLUX.1, set  </p>
-</div>
-<p><em>Settings -&gt; Execution -&gt; Prompt attention to </em><em>xhinker</em>**</p>
-<p><em>Example image with different encoder quantization options</em><br />
-<img alt="flux-encoder" src="https://github.com/user-attachments/assets/afdf6ead-a591-48ae-9eef-f2dd778a645f" /></p>
-<h3 id="vae">VAE</h3>
-<p>SD.Next allows changing VAE model used by FLUX.1 on-the-fly<br />
-There are no alternative VAE models released, so this setting is mostly for future use  </p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>To enable <strong>image previews</strong> during generate, set <em>Settings -&gt; Live Preview -&gt; Method to </em><em>TAESD</em>**  </p>
-</div>
-<p>To further speed up generation, you can disable "full quality" which triggers use of TAESD instead of full VAE to decode final image  </p>
-<h3 id="scheduler">Scheduler</h3>
-<p>Due to specifics of flow-matching methods, number of steps also has strong influence on the image composition, not just on the way how its resolved</p>
-<p><em>Example image at different steps</em><br />
-<img alt="flux-steps" src="https://github.com/user-attachments/assets/943b584d-40eb-4cde-abf3-0cbf1b7adb38" /></p>
-<p>Additionally, sampler can be tuned with <em>shift</em> parameter which roughly modifies how long does model spend on composition vs actual diffusion  </p>
-<p><em>Example image with different sampler shift values</em>
-<img alt="flux-shift" src="https://github.com/user-attachments/assets/2c810977-a69a-4760-bad0-5e80abb3a1d6" /></p>
-<h3 id="controlnet">ControlNet</h3>
-<p>Support for all <strong>InstantX/Shakker-Labs</strong> models including <a href="https://huggingface.co/InstantX/FLUX.1-dev-Controlnet-Union">Union-Pro</a></p>
-<p>FLUX.1 ControlNets are large at over 6GB on top of already very large FLUX.1 model<br />
-as such, you may need to use offloading:sequential which is not as fast, but uses far less memory  </p>
-<p>When using union model, you must also select control mode in the control unit  </p>
-<h2 id="flux-tools">Flux Tools</h2>
-<p>Link to <a href="https://blackforestlabs.ai/flux-1-tools/">Flux Tools</a> announcement<br />
-- Redux is actually a tool
-- Fill is inpaint/outpaint optimized version of Flux-dev<br />
-- Canny/Depth are optimized versions of Flux-dev for their respective tasks: they are <em>not</em> ControlNets that work on top of a model  </p>
-<p>To use, go to image or control interface and select <em>Flux Tools</em> in scripts<br />
-All models are auto-downloaded on first use<br />
-<em>note</em>: All models are <a href="../Gated/">gated</a> and require acceptance of terms and conditions via web page<br />
-<em>recommended</em>: Enable on-the-fly <a href="../Quantization/">quantization</a> or <a href="../NNCF-Compression/">compression</a> to reduce resource usage<br />
-- <a href="https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev">Redux</a>: ~0.1GB<br />
-  works together with existing model and basically uses input image to analyze it and use that instead of prompt<br />
-<em>recommended</em>: low denoise strength levels result in more variety<br />
-- <a href="https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev">Fill</a>: ~23.8GB, replaces currently loaded model<br />
-<em>note</em>: can be used in inpaint/outpaint mode only<br />
-- <a href="https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev">Canny</a>: ~23.8GB, replaces currently loaded model<br />
-<em>recommended</em>: guidance scale 30<br />
-- <a href="https://huggingface.co/black-forest-labs/FLUX.1-Depth-dev">Depth</a>: ~23.8GB, replaces currently loaded model<br />
-<em>recommended</em>: guidance scale 10  </p>
-<h2 id="notes">Notes</h2>
-<h3 id="performance">Performance</h3>
-<p>Performance and memory usage of different <strong>FLUX.1</strong> variations:</p>
-<table>
-<thead>
-<tr>
-<th>dtype</th>
-<th>time (sec)</th>
-<th>performance</th>
-<th>memory</th>
-<th>offload</th>
-<th>note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>bf16</td>
-<td></td>
-<td></td>
-<td>&gt;32 GB</td>
-<td>none</td>
-<td>*1</td>
-</tr>
-<tr>
-<td>bf16</td>
-<td>50.47</td>
-<td>0.40 it/s</td>
-<td></td>
-<td>balanced</td>
-<td>*2</td>
-</tr>
-<tr>
-<td>bf16</td>
-<td>94.28</td>
-<td>0.21 it/s</td>
-<td>1.89 GB</td>
-<td>sequential</td>
-<td></td>
-</tr>
-<tr>
-<td>nf4</td>
-<td>14.69</td>
-<td>1.36 it/s</td>
-<td>17.92 GB</td>
-<td>none</td>
-<td></td>
-</tr>
-<tr>
-<td>nf4</td>
-<td>21.02</td>
-<td>0.95 it/s</td>
-<td></td>
-<td>balanced</td>
-<td>*2</td>
-</tr>
-<tr>
-<td>nf4</td>
-<td></td>
-<td></td>
-<td></td>
-<td>sequential</td>
-<td>err</td>
-</tr>
-<tr>
-<td>qint8</td>
-<td>15.42</td>
-<td>1.30 it/s</td>
-<td>18.85 GB</td>
-<td>none</td>
-<td></td>
-</tr>
-<tr>
-<td>qint8</td>
-<td></td>
-<td></td>
-<td></td>
-<td>balanced</td>
-<td>err</td>
-</tr>
-<tr>
-<td>qint8</td>
-<td></td>
-<td></td>
-<td></td>
-<td>sequential</td>
-<td>err</td>
-</tr>
-<tr>
-<td>qint4</td>
-<td>18.37</td>
-<td>1.09 it/s</td>
-<td>11.38 GB</td>
-<td>none</td>
-<td></td>
-</tr>
-<tr>
-<td>qint4</td>
-<td></td>
-<td></td>
-<td></td>
-<td>balanced</td>
-<td>err</td>
-</tr>
-<tr>
-<td>qint4</td>
-<td></td>
-<td></td>
-<td></td>
-<td>sequential</td>
-<td>err</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Notes</strong>:
-- <em>1: Memory usage exceeeds 32GB and is not recommended<br />
-- </em>2: Balanced offload VRAM usage is not included since it depends on desired threshold  </p>
+<p><img alt="Image" src="https://github.com/user-attachments/assets/6be67eb3-df90-4da0-9c51-58b40a3086c5" /></p>
 
 
 
@@ -3417,7 +3043,7 @@ All models are auto-downloaded on first use<br />
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Stable-Cascade/" class="md-footer__link md-footer__link--prev" aria-label="Previous: StableCascade">
+          <a href="../Nunchaku/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Nunchaku Engine">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3427,20 +3053,20 @@ All models are auto-downloaded on first use<br />
                 Previous
               </span>
               <div class="md-ellipsis">
-                StableCascade
+                Nunchaku Engine
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Using-LCM/" class="md-footer__link md-footer__link--next" aria-label="Next: LCM">
+          <a href="../CLI-Tools/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI and API Examples">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                LCM
+                CLI and API Examples
               </div>
             </div>
             <div class="md-footer__button md-icon">
