@@ -1389,6 +1389,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How to enable triton">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flash-attention-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flash Attention 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torchcompile" class="md-nav__link">
+    <span class="md-ellipsis">
+      torch.compile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -3138,6 +3162,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How to enable triton">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flash-attention-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flash Attention 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torchcompile" class="md-nav__link">
+    <span class="md-ellipsis">
+      torch.compile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -3289,13 +3337,29 @@ Stability: ★★☆☆☆  </p>
 <p>Speed-up: ★★★★★<br />
 VRAM: ★★★★☆<br />
 Stability: ★★★★☆  </p>
-<p>Using triton, you can enable <code>torch.compile</code> and Flash Attention 2.</p>
 <ol>
-<li>Prepare Python 3.11 environment.</li>
-<li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/421dd5ab">here</a>.  </li>
+<li>Prepare Python 3.11 (or 3.10) environment.</li>
+<li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/bb314b47">here</a>.  </li>
 <li>Install via pip.
-<div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.3.0+git421dd5ab-cp311-cp311-win_amd64.whl setuptools
-</code></pre></div></li>
+<div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.3.0+gitbb314b47-cp311-cp311-win_amd64.whl setuptools
+</code></pre></div>
+(cp311 should be replaced with cp310 if you have Python 3.10)</li>
+</ol>
+<p>※ Developer PowerShell for Visual Studio (or Prompt) will be needed to compile kernel using triton.</p>
+<h4 id="flash-attention-2">Flash Attention 2</h4>
+<p>Using triton, you can enable Flash Attention 2.</p>
+<ol>
+<li>Go to Settings.</li>
+<li>Set attention method to <code>Scaled Dot-product</code>.</li>
+<li>Enable <code>Flash attention</code>.</li>
+<li>Restart WebUI.</li>
+</ol>
+<h4 id="torchcompile">torch.compile</h4>
+<p>Using triton, you can enable <code>torch.compile</code>.</p>
+<ol>
+<li>Go to Settings.</li>
+<li>Enable compilation.</li>
+<li>Set compilation method to <code>inductor</code> or <code>cuda-graph</code>.</li>
 </ol>
 <hr />
 <h2 id="comparison-directml">Comparison (DirectML)</h2>
@@ -3335,18 +3399,13 @@ Stability: ★★★★☆  </p>
 </tr>
 <tr>
 <td>FFT</td>
-<td>❓</td>
 <td>✅</td>
-</tr>
-<tr>
-<td>FFTW</td>
-<td>❓</td>
-<td>❌</td>
+<td>⚠️</td>
 </tr>
 <tr>
 <td>DNN</td>
 <td>❓</td>
-<td>⚠️</td>
+<td>✅</td>
 </tr>
 <tr>
 <td>RTC</td>
@@ -3357,11 +3416,6 @@ Stability: ★★★★☆  </p>
 <td>Source Code</td>
 <td>Closed-source</td>
 <td>Open-source</td>
-</tr>
-<tr>
-<td>Python</td>
-<td>&lt;=3.12</td>
-<td>Same as CUDA</td>
 </tr>
 </tbody>
 </table>
