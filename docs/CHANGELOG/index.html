@@ -2811,9 +2811,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-27" class="md-nav__link">
+  <a href="#highlights-for-2025-04-28" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-27
+      Highlights for 2025-04-28
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details-for-2025-04-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-04-28
     </span>
   </a>
   
@@ -4201,9 +4210,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-27" class="md-nav__link">
+  <a href="#highlights-for-2025-04-28" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-27
+      Highlights for 2025-04-28
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details-for-2025-04-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-04-28
     </span>
   </a>
   
@@ -5576,7 +5594,17 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-04-27">Update for 2025-04-27</h2>
+<h2 id="highlights-for-2025-04-28">Highlights for 2025-04-28</h2>
+<p>Another major release with <em>over 120 commits</em>!<br />
+Highlights include new <a href="https://github.com/vladmandic/sdnext/wiki/Nunchaku">Nunchaku Wiki</a> inference engine that allows running FLUX.1 with <strong>3-5x</strong> higher performance!<br />
+And a new <a href="https://github.com/vladmandic/sd-extension-framepack">FramePack</a> extension for high-quality <em>I2V</em> and <em>FLF2V</em> video generation with unlimited duration!  </p>
+<p>What else?
+- New UI <strong>History</strong> tab<br />
+- New models: <strong>Flex.2, LTXVideo-0.9.6, WAN-2.1-14B-FLF2V</strong>, schedulers: <strong>UniPC and LCM FlowMatch</strong>, features: <strong>CFGZero</strong><br />
+- Major updates to: <strong>NNCF, OpenVINO, ROCm, ZLUDA</strong><br />
+- Cumulative fixes since last release  </p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
+<h2 id="details-for-2025-04-28">Details for 2025-04-28</h2>
 <ul>
 <li><strong>Features</strong></li>
 <li><a href="https://github.com/mit-han-lab/nunchaku">Nunchaku</a> inference engine with custom <strong>SVDQuant</strong> 4-bit execution<br />
@@ -5623,6 +5651,7 @@
     LoRA support<br />
 <em>if you're low on VRAM, NNCF is as close as a catch-all solution</em>  </li>
 <li><strong>OpenVINO</strong> update to 2025.1.0 and Torch to 2.7  </li>
+<li><strong>IPEX</strong> update to Torch 2.7  </li>
 <li><strong>ROCm</strong> update to Torch 2.7  </li>
 <li><strong>HiDream-I1</strong> optimized offloading and prompt-encode caching<br />
     it now works in 12GB VRAM / 26GB RAM!  </li>
@@ -5634,6 +5663,11 @@
 <li>new History tab where you can see all jobs since the server startup<br />
     and optionally download any of the previously generated images/videos<br />
     access via <em>system -&gt; history</em>  </li>
+<li>server restart from ui now replaces currently running process<br />
+    instead of trying to reload python modules in-place  </li>
+<li>add option to enable/disable clip skip<br />
+    disabled by default to avoid issues with frequent incorrect recommendations<br />
+    in <em>settings -&gt; pipeline modifiers</em></li>
 <li>configurable restore metadata from image to settings and to params<br />
     in <em>settings -&gt; image metadata</em>  </li>
 <li><strong>API</strong>  </li>
@@ -5644,6 +5678,7 @@
 <li>download endpoint: <code>/file={filename}</code>  </li>
 <li>progress api <code>/sdapi/v1/progress</code> now also include task id in the response  </li>
 <li><strong>Other</strong></li>
+<li><strong>OMI</strong> support for sd15/sdxl omi-standard LoRAs</li>
 <li>text/image/control/video pipeline vs task compatibility check  </li>
 <li><strong>HiDream-I1, FLUX.1, SD3.x</strong> add HF gated access auth check  </li>
 <li><strong>HiDream-I1</strong> LoRA support<br />
