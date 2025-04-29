@@ -3233,8 +3233,8 @@
 <h1 id="zluda-support">ZLUDA Support</h1>
 <p>ZLUDA (CUDA Wrapper) for AMD GPUs in Windows</p>
 <h2 id="warning">Warning</h2>
-<p>ZLUDA does not fully support PyTorch in its official build. So ZLUDA support is so tricky and unstable. Support is limited at this time.
-Please don't create issues regarding ZLUDA on GitHub. Feel free to reach out via the ZLUDA thread in the help channel on discord.</p>
+<p>ZLUDA support is unstable. Support is limited at this time.
+Please don't create issues regarding ZLUDA on GitHub. Feel free to reach out via the ZLUDA thread in the help channel on Discord.</p>
 <h2 id="installing-zluda-for-amd-gpus-in-windows">Installing ZLUDA for AMD GPUs in Windows.</h2>
 <h3 id="note">Note</h3>
 <p><em>This guide assumes you have <a href="../Installation/#install-python-and-git">Git and Python</a> installed, and are comfortable using the command prompt, navigating Windows Explorer, renaming files and folders, and working with zip files.</em></p>
@@ -3302,41 +3302,40 @@ Subsequent generations will be significantly quicker.  </p>
 <h3 id="how-to-enable-cudnn">How to enable cuDNN</h3>
 <p>Speed-up: ★★★☆☆<br />
 VRAM: ★★★★☆<br />
-Stability: ★★★☆☆  </p>
-<p>MIOpen, the alternative of cuDNN for AMDGPUs, hasn't been released on Windows yet.</p>
+Stability: ★★★☆☆<br />
+Compatible with: Navi cards</p>
+<p>MIOpen, the equivalent of cuDNN for AMDGPUs, hasn't been released on Windows yet.</p>
 <p>However, you can enable it with a custom build of MIOpen.</p>
 <p>This section describes how to enable cuDNN.</p>
 <ol>
-<li>Install HIP SDK 6.2. If you already have older HIP SDK, uninstall it before installing 6.2.</li>
-<li>Remove <code>.zluda</code> folder if exists.<br />
-※ If you have set <code>ZLUDA</code> environment variable, download the latest nightly ZLUDA from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
-※ If you built ZLUDA yourself, pull latest commits of ZLUDA and rebuild with <code>--nightly</code>.</li>
-<li>Download and install HIP SDK extension from <a href="https://drive.google.com/file/d/1eMbbmg3jH0gilOWzCPqroY99Znj1BvVe/view?usp=sharing">here</a>.<br />
-(unzip and paste folders upon <code>path/to/AMD/ROCm/6.2</code>)</li>
-<li>Launch WebUI with command line arguments <code>--use-zluda --use-nightly</code>.</li>
+<li>Install HIP SDK 6.2. If you already have older HIP SDK, uninstall it before installing 6.2.  </li>
+<li>Download and install HIP SDK extension from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
+(unzip and paste folders upon <code>path/to/AMD/ROCm/6.2</code>)  </li>
+<li>Remove <code>.zluda</code> folder if exists.  </li>
+<li>Launch WebUI with command line arguments <code>--use-zluda --use-nightly</code>.  </li>
 </ol>
 <p>The first generation will take long time because MIOpen has to find the optimal solution and cache it.</p>
 <p>If you get driver crashes, restart webui and try again.</p>
 <h3 id="how-to-enable-cublaslt">How to enable cuBLASLt</h3>
 <p>Speed-up: ★☆☆☆☆<br />
 VRAM: ★☆☆☆☆<br />
-Stability: ★★☆☆☆  </p>
-<p>hipBLASLt, the alternative of cuBLASLt for AMDGPUs, hasn't been released on Windows yet.</p>
+Stability: ★★☆☆☆<br />
+Compatible with: gfx1100, or CDNA accelerators</p>
+<p>hipBLASLt, the equivalent of cuBLASLt for AMDGPUs, hasn't been released on Windows yet.</p>
 <p>However, there're unofficial builds available.</p>
 <p>This section describes how to enable cuBLASLt.</p>
 <ol>
-<li>Install HIP SDK 6.2. If you already have older HIP SDK, uninstall it before installing 6.2.</li>
-<li>Remove <code>.zluda</code> folder if exists.<br />
-※ If you have set <code>ZLUDA</code> environment variable, download the latest nightly ZLUDA from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
-※ If you built ZLUDA yourself, pull latest commits of ZLUDA and rebuild with <code>--nightly</code>.</li>
-<li>Download and install unofficial hipBLASLt build.<br />
-<a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/download/v0.6.2.4/hipblaslt-rocmlibs-for-gfx1100-gfx1101-gfx1102-gfx1103-gfx1150-for.hip6.2.7z">gfx1100, gfx1101, gfx1102, gfx1103, or gfx1150</a>  </li>
+<li>Install HIP SDK 6.2. If you already have older HIP SDK, uninstall it before installing 6.2.  </li>
+<li>Download and install HIP SDK extension from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
+(unzip and paste folders upon <code>path/to/AMD/ROCm/6.2</code>)  </li>
+<li>Remove <code>.zluda</code> folder if exists.  </li>
 <li>Launch WebUI with command line arguments <code>--use-zluda --use-nightly</code>.  </li>
 </ol>
 <h3 id="how-to-enable-triton">How to enable triton</h3>
 <p>Speed-up: ★★★★★<br />
 VRAM: ★★★★☆<br />
-Stability: ★★★★☆  </p>
+Stability: ★★★★☆<br />
+Compatible with: Navi cards</p>
 <ol>
 <li>Prepare Python 3.11 (or 3.10) environment.</li>
 <li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/bb314b47">here</a>.  </li>
@@ -3361,6 +3360,7 @@ Stability: ★★★★☆  </p>
 <li>Enable compilation.</li>
 <li>Set compilation method to <code>inductor</code> or <code>cuda-graph</code>.</li>
 </ol>
+<p>※ <code>torch.compile</code> is currently not compatible with flash attention 2 on ZLUDA.</p>
 <hr />
 <h2 id="comparison-directml">Comparison (DirectML)</h2>
 <table>
