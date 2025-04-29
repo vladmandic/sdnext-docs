@@ -2811,9 +2811,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-28" class="md-nav__link">
+  <a href="#update-for-2025-04-29" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-28
+      Update for 2025-04-29
     </span>
   </a>
   
@@ -4219,9 +4219,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-04-28" class="md-nav__link">
+  <a href="#update-for-2025-04-29" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-04-28
+      Update for 2025-04-29
     </span>
   </a>
   
@@ -5612,11 +5612,21 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-04-28">Update for 2025-04-28</h2>
+<h2 id="update-for-2025-04-29">Update for 2025-04-29</h2>
 <ul>
+<li><strong>Features</strong></li>
+<li><a href="https://huggingface.co/HiDream-ai/HiDream-E1-Full">HiDream-E1</a> natural language image-editing model built on HiDream-I1<br />
+    available via  <em>networks -&gt; models -&gt; reference</em><br />
+<em>note</em>: right now hidream-e1 is limited to 768x768 images, so you must force resize image before running it  </li>
 <li>Prompt-Enhhance: add <strong>Qwen3</strong> 0.6B/1.7B/4B models  </li>
 <li>Prompt-Enhhance: add thinking mode support (for models that have it)  </li>
+<li><strong>Other</strong>  </li>
+<li>CUDA: set default to <code>torch==2.7.0</code> with <code>cuda==12.8</code></li>
+<li>FramePack: improve performance  </li>
 <li>Docker: pre-install <code>ffmpeg</code>  </li>
+<li><strong>Fixes</strong>  </li>
+<li>FramePack: correct dtype  </li>
+<li>NNCF: check dependencies and register quant type  </li>
 </ul>
 <h2 id="highlights-for-2025-04-28">Highlights for 2025-04-28</h2>
 <p>Another major release with <em>over 120 commits</em>!<br />
