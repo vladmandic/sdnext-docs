@@ -3362,24 +3362,21 @@ If your installation fails, you can try building <code>triton</code> from source
 <blockquote>
 <p>install-triton.ps1</p>
 </blockquote>
-<pre><code>$ErrorActionPreference = "Stop"
+<div class="highlight"><pre><span></span><code><span class="nv">$ErrorActionPreference</span> <span class="p">=</span> <span class="s2">&quot;Stop&quot;</span>
 
-# get the environment details
-$VENV_DIR = if ($env:VENV_DIR) { $env:VENV_DIR } else { Resolve-Path "venv" }
-$PYTHON = "$VENV_DIR\Scripts\python"
-$PIP = "$VENV_DIR\Scripts\pip"
+<span class="nv">$VENV_DIR</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$env:VENV_DIR</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$env:VENV_DIR</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="nb">Resolve-Path</span> <span class="s2">&quot;venv&quot;</span> <span class="p">}</span>
+<span class="nv">$PYTHON</span> <span class="p">=</span> <span class="s2">&quot;$VENV_DIR\Scripts\python&quot;</span>
+<span class="nv">$PIP</span> <span class="p">=</span> <span class="s2">&quot;$VENV_DIR\Scripts\pip&quot;</span>
 
-# construct the wheel filename
-$sys_ver = &amp; $PYTHON -VV
-$sys_ver_major, $sys_ver_minor = $sys_ver.Split(" ")[1].Split(".")[0, 1]
-$filename = "triton-3.1.0-cp$sys_ver_major$sys_ver_minor-cp$sys_ver_major$sys_ver_minor-win_amd64.whl"
-$url = "https://github.com/woct0rdho/triton-windows/releases/latest/download/$filename"
+<span class="nv">$sys_ver</span> <span class="p">=</span> <span class="p">&amp;</span> <span class="nv">$PYTHON</span> <span class="n">-VV</span>
+<span class="nv">$sys_ver_major</span><span class="p">,</span> <span class="nv">$sys_ver_minor</span> <span class="p">=</span> <span class="nv">$sys_ver</span><span class="p">.</span><span class="n">Split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="n">1</span><span class="p">].</span><span class="n">Split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="n">0</span><span class="p">,</span> <span class="n">1</span><span class="p">]</span>
+<span class="nv">$filename</span> <span class="p">=</span> <span class="s2">&quot;triton-3.2.0-cp$sys_ver_major$sys_ver_minor-cp$sys_ver_major$sys_ver_minor-win_amd64.whl&quot;</span>
+<span class="nv">$url</span> <span class="p">=</span> <span class="s2">&quot;https://github.com/woct0rdho/triton-windows/releases/download/v3.2.0-windows.post10/$filename&quot;</span>
 
-# download and install the wheel
-Invoke-WebRequest $url -OutFile $filename
-&amp; $PIP install $filename
-Remove-Item $filename
-</code></pre>
+<span class="nb">Invoke-WebRequest</span> <span class="nv">$url</span> <span class="n">-OutFile</span> <span class="nv">$filename</span>
+<span class="p">&amp;</span> <span class="nv">$PIP</span> <span class="n">install</span> <span class="nv">$filename</span>
+<span class="nb">Remove-Item</span> <span class="nv">$filename</span>
+</code></pre></div>
 
 
 
