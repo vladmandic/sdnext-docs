@@ -3134,7 +3134,7 @@ Supoport includes <strong>T2V: text-to-video</strong> and <strong>I2V: image-to-
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Support for <a href="https://github.com/vladmandic/sd-extension-framepack">FramePack</a> based on <strong>HunyuanVideo-I2V</strong> is implemented as a separate <a href="%28https%3A/github.com/vladmandic/sd-extension-framepack">extension</a>) for <strong>SD.Next</strong><br />
+<p>Support for <a href="https://github.com/vladmandic/sd-extension-framepack">FramePack</a> based on <strong>HunyuanVideo-I2V</strong> is implemented as a separate <a href="https://github.com/vladmandic/sd-extension-framepack">extension</a> for <strong>SD.Next</strong><br />
  FramePack allows generation high-quality videos with pretty much unlimited duration and with limited VRAM!  </p>
 </div>
 <h3 id="reference-list">Reference list</h3>
@@ -3446,16 +3446,17 @@ However, there is no way around requirement that entire model must be loaded int
 Look at the total model size in the table and make sure you have enough RAM to load the model  </p>
 <h3 id="offloading">Offloading</h3>
 <p>Enable offloading so model components can be moved in and out of VRAM as needed<br />
-Most models support all offloading types:
+Most models support all offloading types:<br />
 - <strong>Balanced</strong>: recommended, but may require extra tuning<br />
 - <strong>Model</strong>: simplest<br />
 - <strong>Sequential</strong>: highest memory savings, but slowest  </p>
 <p>See <a href="../Offload/">Offload</a> for more details  </p>
 <h3 id="quantization">Quantization</h3>
 <p>Enable on-the-fly quantization during load in <em>Settings -&gt; Quantization</em> for additional memory savings<br />
-- <strong>BnB</strong>
-- <strong>TorchAO</strong>
-- <strong>Optimum-Quanto</strong></p>
+- <strong>BnB</strong><br />
+- <strong>NNCF</strong><br />
+- <strong>Optimum-Quanto</strong><br />
+- <strong>TorchAO</strong>  </p>
 <p>You can enable quantization for both or either <strong>Transformers</strong> and <strong>Text-Encoder</strong> separately<br />
 - Most T2V and I2V models support on-the-fly quantization of transformers module<br />
 - Most T2V support quantization of text-encoder while I2V model may not due to inability to quantize image vectors  </p>
