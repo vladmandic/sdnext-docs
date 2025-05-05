@@ -90,6 +90,7 @@ nav:
     - LCM: Using-LCM.md
     - HiDream: HiDream.md
     - Video: Video.md
+    - FramePack: FramePack.md
   - Platforms:
     - WSL: WSL.md
     - Intel-ARC: Intel-ARC.md
