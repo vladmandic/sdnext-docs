@@ -5614,16 +5614,18 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-05-04">Update for 2025-05-04</h2>
 <ul>
-<li><strong>Features</strong></li>
-<li>Prompt-Enhhance: add <strong>Qwen3</strong> 0.6B/1.7B/4B models  </li>
-<li>Prompt-Enhhance: add thinking mode support (for models that have it)  </li>
+<li><strong>Features</strong>  </li>
+<li><a href="https://github.com/vladmandic/sd-extension-framepack">FramePack</a><br />
+     support for <strong>T2V</strong> in addition to <strong>I2V</strong> and <strong>FLF2V</strong><br />
+     support for new <strong>F1: forward-only</strong> model variant in addition to regular <strong>bi-directional</strong>  </li>
+<li><strong>Prompt-Enhhance</strong><br />
+    add <strong>Qwen3</strong> <em>0.6B/1.7B/4B</em> models<br />
+    add thinking mode support (for models that have it)  </li>
 <li><a href="https://huggingface.co/HiDream-ai/HiDream-E1-Full">HiDream-E1</a> natural language image-editing model built on HiDream-I1<br />
     available via  <em>networks -&gt; models -&gt; reference</em><br />
 <em>note</em>: right now hidream-e1 is limited to 768x768 images, so you must force resize image before running it  </li>
-<li><a href="https://github.com/vladmandic/sd-extension-framepack">FramePack</a><br />
-     support for <strong>T2V</strong> in addition to <strong>I2V</strong> and <strong>FLF2V</strong>  </li>
 <li><strong>Other</strong>  </li>
-<li>CUDA: set default to <code>torch==2.7.0</code> with <code>cuda==12.8</code></li>
+<li>CUDA: set default to <code>torch==2.7.0</code> with <code>cuda==12.8</code>  </li>
 <li>FramePack: improve performance  </li>
 <li>Docker: pre-install <code>ffmpeg</code>  </li>
 <li>Wiki: updated pages: <em>Video, ROCm, ZLUDA, Quantization</em>  </li>
