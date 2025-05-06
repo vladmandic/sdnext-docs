@@ -3289,7 +3289,7 @@
 <p>Implementation of <strong>Lllyasviel</strong> <a href="https://lllyasviel.github.io/frame_pack_gitpage/">FramePack</a> for <strong>Tencent</strong> <a href="https://huggingface.co/tencent/HunyuanVideo">HunyuanVideo</a> I2V<br />
 With some major differences and improvements:
 - <a href="./#modes">T2V, I2V &amp; FLF2V</a> modes support<br />
-- <a href="./#variants">Bi-directional and Forward-only</a> <em>(F1)</em> model variants
+- <a href="./#variants">Bi-directional and Forward-only</a> <em>(F1)</em> model variants<br />
 - <a href="./#resolution-scaling">Resolution and frame-rate scaling</a>: output resolution in any aspect ration and/or resolution<br />
 - <a href="./#prompt-enhancer">Prompt enhancer</a>: use LLM to enhance your short prompts<br />
 - <a href="./#complex-actions">Complex actions</a>: modify prompt each section of the video<br />
@@ -3318,13 +3318,13 @@ With some major differences and improvements:
 <p>Video support requires <code>ffmpeg</code> to be installed and available in the <code>PATH</code>  </p>
 </div>
 <h2 id="install">Install</h2>
-<p>Exension repository URL: <a href="https://github.com/vladmandic/sd-extension-framepack">https://github.com/vladmandic/sd-extension-framepack</a></p>
+<p>Exension repository URL: <a href="https://github.com/vladmandic/sd-extension-framepack">https://github.com/vladmandic/sd-extension-framepack</a>  </p>
 <h3 id="via-ui">Via UI</h3>
-<p>Refresh extension list and install extension by selecting it and pressing install</p>
+<p>Refresh extension list and install extension by selecting it and pressing install  </p>
 <p>Or enter repository URL in <em>SD.Next -&gt; Extensions -&gt; Manual Install</em> and select <em>Install</em>  </p>
 <p>Extension will appear as a top-level tab after server restart  </p>
 <h3 id="via-cli">Via CLI</h3>
-<p>Clone repository into SD.Next <code>/extensions</code> folder</p>
+<p>Clone repository into SD.Next <code>/extensions</code> folder  </p>
 <h2 id="modes">Modes</h2>
 <p>Supports 3 modes of operation:  </p>
 <h3 id="t2v-text-to-video">T2V: text-to-video</h3>
@@ -3350,9 +3350,9 @@ With some major differences and improvements:
 </ul>
 <h2 id="variants">Variants</h2>
 <p>Both FramePack variants are based on HunyuanVideo model, but with different approach to video generation:<br />
-- Bi-directional model: <em>default</em><br />
+- <strong>Bi-directional</strong> model: <em>default</em><br />
   - Runs generation in reverse order and assembles video<br />
-- Forward-only model: F1
+- <strong>Forward-only</strong> model: <em>F1</em><br />
   - Runs generation in forward order and assembles video  </p>
 <h2 id="resolution-scaling">Resolution Scaling</h2>
 <p>Video model is trained on 640p resolution, but can be used to generate video at different resolutions<br />
@@ -3363,13 +3363,13 @@ As a result, the output resolution will be the closest supported aspect ratio to
 <p class="admonition-title">Note</p>
 <p>Resolution is directly proportional to VRAM usage, so if you have low VRAM, use lower resolution  </p>
 </div>
-<p>Frame rate can be set to any value and is used to calculate the number of frames to be generated as well as the playback speed of the encoded video    </p>
+<p>Frame rate can be set to any value and is used to calculate the number of frames to be generated as well as the playback speed of the encoded video  </p>
 <h2 id="prompt-enhancer">Prompt Enhancer</h2>
 <p>Uses VLM to enhance your short prompts, for example you can enter just <code>dancing</code> or <code>jumping</code> as a prompt and it will be expanded to a longer prompt<br />
 VLM first analyzes the input image (if provided) and then generates a longer prompt based on the short prompt to incorporate both the input image and the short prompt  </p>
 <h2 id="complex-actions">Complex Actions</h2>
 <p>When changing <strong>duration</strong> or <strong>FPS</strong> parameters, model will print number of sections that will be generated<br />
-Each section can have its own prompt suffix, which can be used to change the prompt over time<br />
+Each video section can have its own prompt suffix, which can be used to change the prompt over time<br />
 Prompt suffix is a string that will be added to the end of the prompt<br />
 Each line of <strong>section prompts</strong> will be used as a separate prompt suffix<br />
 For example, if you have 3 sections and 3 lines in the prompt suffix, each section will use a different line of the prompt suffix  </p>
@@ -3378,8 +3378,13 @@ For example, if you have 3 sections and 3 lines in the prompt suffix, each secti
 - section prompts:<br />
   - line-1: <em>walking</em><br />
   - line-2: <em>jumping</em>  </p>
+<p>Note that number of lines in sections prompts does not have to match the number of sections<br />
+If there are less lines than sections, sections will be interpolated to strech duration of the entire video<br />
+For example, video with 4 sections and 2 lines in the section prompts will result in first line being used for the first 2 sections and second line being used for the last 2 sections  </p>
+<p>Use of section prompts is optional, but can be used to create more complex videos<br />
+Section prompts are compatible with <a href="./#prompt-enhancer">Prompt Enhancer</a> and in that case, each combine prompt (base prompt plus per-section prompt) will be enhanced separately  </p>
 <h2 id="video-encode">Video Encode</h2>
-<p>Video location is set in <em>settings -&gt; image paths -&gt; video</em></p>
+<p>Video location is set in <em>settings -&gt; image paths -&gt; video</em>  </p>
 <p>Video is encoded using selected codec and codec options<br />
 Default codec is <code>libx264</code>, to see codecs available on your system, use refresh<br />
 By default, model will not create image files, but can be enabled in video settings  </p>
@@ -3434,7 +3439,7 @@ Add support for post-load quantization such as <strong>NNCF</strong>  </p>
 <p>Extension supports API calls: <code>/sdapi/v1/framepack</code><br />
 Only required params are base64-encoded init-image and prompt, all other parameters are optional<br />
 Once video has been generated, you can download it using <code>/file={path-to-file}</code> endpoint<br />
-For example, see <code>create-video.py</code></p>
+For example, see <code>create-video.py</code>  </p>
 <blockquote>
 <p><code>python create-video.py --help</code></p>
 </blockquote>
