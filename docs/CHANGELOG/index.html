@@ -5657,13 +5657,15 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-05-07">Update for 2025-05-07</h2>
 <ul>
-<li><strong>API</strong></li>
-<li>full API support for FramePack</li>
-<li>add <code>/sdapi/v1/checkpoint</code> endpoint to get info on currently loaded model/checkpoint  </li>
+<li><strong>Features</strong></li>
+<li>FramePack: full API support</li>
+<li>NNCF: Faster quantization</li>
+<li>API: add <code>/sdapi/v1/checkpoint</code> endpoint to get info on currently loaded model/checkpoint  </li>
 <li><strong>Fixes</strong></li>
 <li>FramePack: monkey-patch for dynamically installed <code>av</code>  </li>
 <li>Logging: reduce spam while progress is active  </li>
 <li>LoRA: legacy handler enable/disable  </li>
+<li>LoRA: force clear-cache on model unload  </li>
 </ul>
 <h2 id="update-for-2025-05-06">Update for 2025-05-06</h2>
 <p>Minor refesh with several bugfixes and updates to core libraries<br />
