@@ -5658,9 +5658,18 @@
 <h2 id="update-for-2025-05-08">Update for 2025-05-08</h2>
 <ul>
 <li><strong>Features</strong></li>
-<li>FramePack: full API support  </li>
 <li>NNCF: Faster quantization  </li>
-<li>API: add <code>/sdapi/v1/checkpoint</code> endpoint to get info on currently loaded model/checkpoint  </li>
+<li>Prompt Enhancer: support for <em>img2img</em> workflows<br />
+    where prompt enhancer will first analyze input image and then incorporate user prompt to create enhanced prompt  </li>
+<li><strong>API</strong>  </li>
+<li>add <code>/sdapi/v1/framepack</code> endpoint with full support for FramePack including all optional settings<br />
+    see example: <code>sd-extension-framepack/create-video.py</code>  </li>
+<li>add <code>/sdapi/v1/checkpoint</code> endpoint to get info on currently loaded model/checkpoint<br />
+    see example: <code>cli/api-checkpoint.py</code>  </li>
+<li>add <code>/sdapi/v1/prompt-enhance</code> endpoint to enhance prompt using LLM<br />
+    see example: <code>cli/api-enhance.py</code><br />
+    supports text, image and video prompts with or without input image<br />
+<em>note</em>: if input image is provided, model should be left at default <code>gemma-3-4b-it</code> as most other LLMs do not support hybrid workflows  </li>
 <li><strong>Fixes</strong></li>
 <li>ROCm: disable cuDNN, fixes slow MIOpen tuning with <code>torch==2.7</code>  </li>
 <li>Extensions: use in-process installer for extensions-builtin, improves startup performance  </li>

@@ -1367,6 +1367,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rocm-performance-tuning-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROCm performance tuning on Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROCm performance tuning on Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#miopen-database-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      MIOpen database tuning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce-vram-consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reduce VRAM consumption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composable-kernel-ck-flash-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composable Kernel (CK) Flash attention
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rocm-windows-support" class="md-nav__link">
     <span class="md-ellipsis">
       ROCm Windows Support
@@ -3108,6 +3150,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rocm-performance-tuning-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROCm performance tuning on Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROCm performance tuning on Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#miopen-database-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      MIOpen database tuning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce-vram-consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reduce VRAM consumption
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composable-kernel-ck-flash-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composable Kernel (CK) Flash attention
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rocm-windows-support" class="md-nav__link">
     <span class="md-ellipsis">
       ROCm Windows Support
@@ -3331,6 +3415,17 @@ sudo docker run -it \
 <p>It will install the necessary libraries at the first run so it will take a while depending on your internet.<br />
  Resulting docker image will use 3.2 GB disk space (uncompressed) for the docker image and 20 GB for the venv.</p>
 </div>
+<h2 id="rocm-performance-tuning-on-linux">ROCm performance tuning on Linux</h2>
+<h3 id="miopen-database-tuning">MIOpen database tuning</h3>
+<p>On first use, when using a resolution for the first time, or when upgrading Pytorch versions, ROCm runs a series of benchmarks to select the most efficient approach. This can lead to slow (up to 5-8 minutes) startup times, in particular if you use a refine pass at high resolution, but it only happens once per resolution (subsequent runs are much faster). If for any case this is undesirable, you can set the environment variable <code>MIOPEN_FIND_MODE</code> to <code>FAST</code>. This will reduce a lot the startup time on first use at the price of worse performance when generating.
+On the other hand, for best performance during generation (but slower startup on first use), you can set the variable <code>MIOPEN_FIND_ENFORCE</code> to <code>SEARCH</code>. </p>
+<h3 id="reduce-vram-consumption">Reduce VRAM consumption</h3>
+<p>If you use the <code>bf16</code> data type (<em>Settings &gt; Compute Settings &gt; Execution Precision &gt; Device precision type</em>), which is autodetected on RDNA3 and newer cards, there is the chance that VRAM usage will be very high (16+ GB) when decoding the final image and when upscaling with non-latent upscalers. To workaround the problem, ensure to set <code>Device precision type</code> as <code>fp16</code>, and disable VAE upcasting in <em>Variable Auto Encoder &gt; VAE upcasting</em>. 
+Setting <code>fp16</code> has also a noticeable impact on performance. </p>
+<h3 id="composable-kernel-ck-flash-attention">Composable Kernel (CK) Flash attention</h3>
+<p>On RDNA3 and newer hardware, you can set the option to use CK Flash Attention for improved performance in <em>Compute Settings &gt; Cross Attention &gt; SDP Options</em> by toggling <code>CK Flash attention</code> and restarting SD.Next. Notice that enabling this option requires <code>rocm-hip-sdk</code> installed as it will download and compile an additional Python package from source on startup. </p>
+<p>In case you want to install it manually, activate the virtual environment then run <code>pip</code>:</p>
+<p><code>pip install git+https://github.com/Disty0/flash-attention@navi_rotary_fix</code></p>
 <h2 id="rocm-windows-support">ROCm Windows Support</h2>
 <p>This is a guide to build rocBLAS based on the ROCm Official Documentations.</p>
 <p>You may have an AMD GPU without official support on ROCm <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">HIP SDK</a>
