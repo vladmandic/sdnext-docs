@@ -5672,7 +5672,7 @@
     supports text, image and video prompts with or without input image<br />
 <em>note</em>: if input image is provided, model should be left at default <code>gemma-3-4b-it</code> as most other LLMs do not support hybrid workflows  </li>
 <li><strong>Fixes</strong></li>
-<li>ROCm: disable cuDNN, fixes slow MIOpen tuning with <code>torch==2.7</code>  </li>
+<li>ROCm: disable cuDNN benchmark, fixes slow MIOpen tuning with <code>torch==2.7</code>  </li>
 <li>Extensions: use in-process installer for extensions-builtin, improves startup performance  </li>
 <li>FramePack: monkey-patch for dynamically installed <code>av</code>  </li>
 <li>Logging: reduce spam while progress is active  </li>
