@@ -5657,23 +5657,44 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-05-10">Update for 2025-05-10</h2>
 <ul>
-<li><strong>NNCF</strong>  </li>
+<li><strong>Compute</strong></li>
+<li><strong>NNCF</strong>  <ul>
 <li>Faster quantization  </li>
 <li>Faster inference with support for <code>torch.triton</code><br />
-    up to 3.5x faster with INT4 and 2x faster with INT8  </li>
-<li><strong>Other</strong>  </li>
+  up to 3.5x faster with INT4 and 2x faster with INT8  </li>
+</ul>
+</li>
+<li><strong>ZLUDA</strong>:<ul>
+<li><em>warning</em>: AMD Adrenaline 25.5.1 drivers are NOT COMPATIBLE with ZLUDA
+  see <a href="https://github.com/vladmandic/sdnext/issues/3918">issue</a> for details</li>
+</ul>
+</li>
+<li><strong>ROCm</strong><ul>
+<li>first working builds of <strong>Torch with ROCm on Windows</strong><br />
+  highly experimental<br />
+  reach out on Discord if you want to test it  </li>
+</ul>
+</li>
+<li><strong>Features</strong></li>
 <li>Prompt Enhancer: support for <em>img2img</em> workflows<br />
     where prompt enhancer will first analyze input image and then incorporate user prompt to create enhanced prompt  </li>
 <li>FramePack: improve LoRA compatibility  </li>
-<li><strong>API</strong>  </li>
+<li><strong>UI</strong><ul>
+<li>ModernUI: support for History tab  </li>
+<li>ModernUI: support for FramePack tab  </li>
+</ul>
+</li>
+<li><strong>API</strong>  <ul>
 <li>add <code>/sdapi/v1/framepack</code> endpoint with full support for FramePack including all optional settings<br />
-    see example: <code>sd-extension-framepack/create-video.py</code>  </li>
+  see example: <code>sd-extension-framepack/create-video.py</code>  </li>
 <li>add <code>/sdapi/v1/checkpoint</code> endpoint to get info on currently loaded model/checkpoint<br />
-    see example: <code>cli/api-checkpoint.py</code>  </li>
+  see example: <code>cli/api-checkpoint.py</code>  </li>
 <li>add <code>/sdapi/v1/prompt-enhance</code> endpoint to enhance prompt using LLM<br />
-    see example: <code>cli/api-enhance.py</code><br />
-    supports text, image and video prompts with or without input image<br />
+  see example: <code>cli/api-enhance.py</code><br />
+  supports text, image and video prompts with or without input image<br />
 <em>note</em>: if input image is provided, model should be left at default <code>gemma-3-4b-it</code> as most other LLMs do not support hybrid workflows  </li>
+</ul>
+</li>
 <li><strong>Fixes</strong></li>
 <li>ROCm: disable cuDNN benchmark, fixes slow MIOpen tuning with <code>torch==2.7</code>  </li>
 <li>Extensions: use in-process installer for extensions-builtin, improves startup performance  </li>

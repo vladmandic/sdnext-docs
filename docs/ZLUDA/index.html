@@ -104,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#zluda-support" class="md-skip">
+        <a href="#zluda" class="md-skip">
           Skip to content
         </a>
       
@@ -1303,15 +1303,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    <span class="md-ellipsis">
-      Note
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#install-visual-c-runtime" class="md-nav__link">
     <span class="md-ellipsis">
       Install Visual C++ Runtime
@@ -1390,31 +1381,31 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-enable-cudnn" class="md-nav__link">
+  <a href="#cudnn" class="md-nav__link">
     <span class="md-ellipsis">
-      How to enable cuDNN
+      cuDNN
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-to-enable-cublaslt" class="md-nav__link">
+  <a href="#cublaslt" class="md-nav__link">
     <span class="md-ellipsis">
-      How to enable cuBLASLt
+      cuBLASLt
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-to-enable-triton" class="md-nav__link">
+  <a href="#triton" class="md-nav__link">
     <span class="md-ellipsis">
-      How to enable triton
+      triton
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to enable triton">
+    <nav class="md-nav" aria-label="triton">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3076,15 +3067,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    <span class="md-ellipsis">
-      Note
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#install-visual-c-runtime" class="md-nav__link">
     <span class="md-ellipsis">
       Install Visual C++ Runtime
@@ -3163,31 +3145,31 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-enable-cudnn" class="md-nav__link">
+  <a href="#cudnn" class="md-nav__link">
     <span class="md-ellipsis">
-      How to enable cuDNN
+      cuDNN
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-to-enable-cublaslt" class="md-nav__link">
+  <a href="#cublaslt" class="md-nav__link">
     <span class="md-ellipsis">
-      How to enable cuBLASLt
+      cuBLASLt
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-to-enable-triton" class="md-nav__link">
+  <a href="#triton" class="md-nav__link">
     <span class="md-ellipsis">
-      How to enable triton
+      triton
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to enable triton">
+    <nav class="md-nav" aria-label="triton">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3255,17 +3237,31 @@
   
 
 
-<h1 id="zluda-support">ZLUDA Support</h1>
-<p>ZLUDA (CUDA Wrapper) for AMD GPUs in Windows</p>
+<h1 id="zluda">ZLUDA</h1>
+<p><strong>ZLUDA</strong> is a CUDA CUDA Wrapper that allows to run applications using normally unsupported GPUS such as AMD GPUs in Windows  </p>
 <h2 id="warning">Warning</h2>
-<p>ZLUDA support is unstable. Support is limited at this time.
-Please don't create issues regarding ZLUDA on GitHub. Feel free to reach out via the ZLUDA thread in the help channel on Discord.</p>
+<p>ZLUDA support is unofficial and support is limited at this time  </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>AMD Adrenaline 25.5.1 drivers are NOT COMPATIBLE with ZLUDA
+ see <a href="https://github.com/vladmandic/sdnext/issues/3918">issue</a> for details</p>
+</div>
 <h2 id="installing-zluda-for-amd-gpus-in-windows">Installing ZLUDA for AMD GPUs in Windows.</h2>
-<h3 id="note">Note</h3>
-<p><em>This guide assumes you have <a href="../Installation/#install-python-and-git">Git and Python</a> installed, and are comfortable using the command prompt, navigating Windows Explorer, renaming files and folders, and working with zip files.</em></p>
-<p>If you have an integrated AMD GPU (iGPU), you may need to disable it, or use the <code>HIP_VISIBLE_DEVICES</code> environment variable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide assumes you have <a href="../Installation/#install-python-and-git">Git and Python</a> installed,<br />
+ and are comfortable using the command prompt, navigating Windows Explorer, renaming files and folders, and working with zip files.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>If you have an integrated AMD GPU (iGPU), you may need to disable it,<br />
+ or use the <code>HIP_VISIBLE_DEVICES</code> environment variable.</p>
+</div>
 <h3 id="install-visual-c-runtime">Install Visual C++ Runtime</h3>
-<p><em>Note: Most everyone would have this anyway, since it comes with a lot of games, but there's no harm in trying to install it.</em>  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most everyone would have this anyway, since it comes with a lot of games, but there's no harm in trying to install it.</p>
+</div>
 <p>Grab the latest version of Visual C++ Runtime from <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">https://aka.ms/vs/17/release/vc_redist.x64.exe</a> (this is a direct download link) and then run it.<br />
 If you get the options to Repair or Uninstall, then you already have it installed and can click Close. Otherwise, install it.  </p>
 <h3 id="install-zluda">Install ZLUDA</h3>
@@ -3279,7 +3275,7 @@ If your GPU model has a ✅ in both columns then skip to <a href="./#install-sdn
 If your GPU model has an ❌ in the HIP SDK column, or if your GPU isn't listed, follow the instructions below;  </p>
 <ol>
 <li>Open Windows Explorer and copy and paste <code>C:\Program Files\AMD\ROCm\6.2\bin\rocblas</code> into the location bar.<br />
-<em>(Assuming you've installed the HIP SDK in the default location and Windows is located on C:).</em></li>
+<em>(Assuming you've installed the HIP SDK in the default location and Windows is located on C:)</em></li>
 <li>Make a copy of the <code>library</code> folder, for backup purposes.  </li>
 <li>Download one of <a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/releases/tag/v0.6.2.4">the unofficial rocBLAS library</a>, and unzip them in the original library folder, overwriting any files there.<br />
 gfx1010: RX 5700, RX 5700 XT<br />
@@ -3293,22 +3289,23 @@ gfx803: RX 570, RX 580<br />
 <li>Drag and drop the <code>library</code> folder from zip file into <code>%HIP_PATH%bin\rocblas</code> (The folder you opened in step 1).</li>
 <li>Reboot PC</li>
 </ol>
-<p>If your GPU model not in the HIP SDK column or not available in the above list, follow the instructions in <a href="../AMD-ROCm/#rocm-windows-support">ROCm Support guide</a> to build your own RocblasLibs.<br />
-(<em>Note: Building your own libraries is not for the faint of heart.</em>)  </p>
+<p>If your GPU model not in the HIP SDK column or not available in the above list, follow the instructions in <a href="../AMD-ROCm/#rocm-windows-support">ROCm Support guide</a> to build your own RocblasLibs.  </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Building your own libraries is not for the faint of heart</p>
+</div>
 <h3 id="install-sdnext">Install SD.Next</h3>
 <p>Using Windows Explorer, navigate to a place you'd like to install SD.Next. This should be a folder which your user account has read/write/execute access to. Installing SD.Next in a directory which requires admin permissions may cause it to not launch properly. </p>
 <p>Note: Refrain from installing SD.Next into the Program Files, Users, or Windows folders, this includes the OneDrive folder or on the Desktop, or into a folder that begins with a period; (eg: <code>.sdnext</code>).  </p>
 <p>The best place would be on an SSD for model loading.  </p>
 <p>In the Location Bar, type <code>cmd</code>, then hit [Enter]. This will open a Command Prompt window at that location.  </p>
 <p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/1969381/8a24ff53-4fe9-4260-8674-badcdc3d5aa5" /></p>
-<p>Copy and paste the following commands into the Command Prompt window, one at a time;<br />
-<code>git clone https://github.com/vladmandic/sdnext</code><br />
-then<br />
+<p>Copy and paste the following commands into the Command Prompt window, one at a time;  </p>
+<blockquote>
+<p><code>git clone https://github.com/vladmandic/sdnext</code><br />
 <code>cd sdnext</code><br />
-then<br />
-<code>.\webui.bat --use-zluda --debug --autolaunch</code>
-<br /><br /></p>
-<p><em>Note: ZLUDA functions best in Diffusers Backend, where certain Diffusers-only options are available.</em>  </p>
+<code>.\webui.bat --use-zluda --debug --autolaunch</code></p>
+</blockquote>
 <h3 id="compilation-settings-and-first-generation">Compilation, Settings, and First Generation</h3>
 <p>After the UI starts, head on over to the System Tab (Standard UI) or the Settings Tab (Modern UI), then the Compute Settings category.<br />
 Set "Attention optimization method" to "Dynamic Attention BMM", then click Apply settings.<br />
@@ -3324,7 +3321,7 @@ Subsequent generations will be significantly quicker.  </p>
 </ol>
 <p>※ You may have to wait for a while to compile as the first generation.</p>
 <h2 id="experimental-features">Experimental features</h2>
-<h3 id="how-to-enable-cudnn">How to enable cuDNN</h3>
+<h3 id="cudnn">cuDNN</h3>
 <p>Speed-up: ★★★☆☆<br />
 VRAM: ★★★★☆<br />
 Stability: ★★★☆☆<br />
@@ -3341,7 +3338,7 @@ Compatible with: Navi cards</p>
 </ol>
 <p>The first generation will take long time because MIOpen has to find the optimal solution and cache it.</p>
 <p>If you get driver crashes, restart webui and try again.</p>
-<h3 id="how-to-enable-cublaslt">How to enable cuBLASLt</h3>
+<h3 id="cublaslt">cuBLASLt</h3>
 <p>Speed-up: ★☆☆☆☆<br />
 VRAM: ★☆☆☆☆<br />
 Stability: ★★☆☆☆<br />
@@ -3356,7 +3353,7 @@ Compatible with: gfx1100, or CDNA accelerators</p>
 <li>Remove <code>.zluda</code> folder if exists.  </li>
 <li>Launch WebUI with command line arguments <code>--use-zluda --use-nightly</code>.  </li>
 </ol>
-<h3 id="how-to-enable-triton">How to enable triton</h3>
+<h3 id="triton">triton</h3>
 <p>Speed-up: ★★★★★<br />
 VRAM: ★★★★☆<br />
 Stability: ★★★★☆<br />
