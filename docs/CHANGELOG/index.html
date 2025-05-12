@@ -2836,28 +2836,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-05-11" class="md-nav__link">
+  <a href="#update-for-2025-05-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-05-11
+      Update for 2025-05-12
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-05-11">
+    <nav class="md-nav" aria-label="Update for 2025-05-12">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-05-11" class="md-nav__link">
+  <a href="#highlights-for-2025-05-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-05-11
+      Highlights for 2025-05-12
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-05-11" class="md-nav__link">
+  <a href="#details-for-2025-05-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-05-11
+      Details for 2025-05-12
     </span>
   </a>
   
@@ -4277,28 +4277,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-05-11" class="md-nav__link">
+  <a href="#update-for-2025-05-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-05-11
+      Update for 2025-05-12
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-05-11">
+    <nav class="md-nav" aria-label="Update for 2025-05-12">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-05-11" class="md-nav__link">
+  <a href="#highlights-for-2025-05-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-05-11
+      Highlights for 2025-05-12
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-05-11" class="md-nav__link">
+  <a href="#details-for-2025-05-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-05-11
+      Details for 2025-05-12
     </span>
   </a>
   
@@ -5703,22 +5703,23 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-05-11">Update for 2025-05-11</h2>
-<h3 id="highlights-for-2025-05-11">Highlights for 2025-05-11</h3>
-<p>First of all NNCF quantization engine has gone through some major enhancements and its now much faster, both in quantization as well as actual inference!
-And its a only truly cross-platform solution for quantization as all other methods are platform specific.</p>
+<h2 id="update-for-2025-05-12">Update for 2025-05-12</h2>
+<h3 id="highlights-for-2025-05-12">Highlights for 2025-05-12</h3>
+<p>First of all NNCF quantization engine has gone through some major enhancements and its now much faster, both in quantization as well as actual inference!<br />
+And its a only truly cross-platform solution for quantization as all other methods are platform specific.  </p>
 <p><em>Note</em> if you're a ZLUDA user, see notes on GPU driver compatibility as recent Andrenaline drivers do cause problems!<br />
-And if you're a ROCm user, this release brings much faster compile times on Linux as well as first (experimental) builds for Windows!</p>
+And if you're a ROCm user, this release brings much faster compile times on Linux as well as first (experimental) builds for Windows!  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
-<h3 id="details-for-2025-05-11">Details for 2025-05-11</h3>
+<h3 id="details-for-2025-05-12">Details for 2025-05-12</h3>
 <ul>
 <li><strong>Compute</strong></li>
 <li><strong>NNCF</strong>  <ul>
 <li>Faster quantization  </li>
 <li>Faster inference with support for <code>torch.triton</code><br />
   up to 3.5x faster with INT4 and 2x faster with INT8  </li>
-<li>New settings: <em>NNCF -&gt; Number of quantization groups</em><br />
-  default is a balance between performance (lower settings) and quality (larger setting)  </li>
+<li>New settings: <em>NNCF -&gt; Group size</em><br />
+  default is a balance between performance (higher size) and quality (lower size)<br />
+  0 is default at 64, -1 disables grouping  </li>
 </ul>
 </li>
 <li><strong>ZLUDA</strong>:<ul>
@@ -5757,6 +5758,7 @@ And if you're a ROCm user, this release brings much faster compile times on Linu
 </ul>
 </li>
 <li><strong>Fixes</strong></li>
+<li>Latent Diffusion Upscale</li>
 <li>Model load: support SDXL safetensors packaged without VAE  </li>
 <li>ROCm: disable cuDNN benchmark, fixes slow MIOpen tuning with <code>torch==2.7</code>  </li>
 <li>Extensions: use in-process installer for extensions-builtin, improves startup performance  </li>
