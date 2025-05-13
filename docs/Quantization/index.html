@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -2469,15 +2469,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#using-quantized-models" class="md-nav__link">
     <span class="md-ellipsis">
       Using Quantized Models
@@ -2545,6 +2536,30 @@
   <a href="#gguf" class="md-nav__link">
     <span class="md-ellipsis">
       GGUF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmarks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benchmarks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment
     </span>
   </a>
   
@@ -3030,15 +3045,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#using-quantized-models" class="md-nav__link">
     <span class="md-ellipsis">
       Using Quantized Models
@@ -3106,6 +3112,30 @@
   <a href="#gguf" class="md-nav__link">
     <span class="md-ellipsis">
       GGUF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmarks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benchmarks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment
     </span>
   </a>
   
@@ -3203,49 +3233,22 @@
 
 <h1 id="quantization">Quantization</h1>
 <p>Quantization is a process of:
-- storage-optimization<br />
+- Storage-optimization<br />
   reducing the memory footprint of the model by reducing the precision of parameters in a model<br />
-- compute-optimization<br />
+- Compute-optimization<br />
   speed up the inference process by providing optimized kernels for native execution in quantized precision  </p>
-<p>For storage-only quantization, the model is quantized to lower precision but the operations are still performed in the original precision which means that each operation needs to be upcasted to the original precision before execution resulting in a performance overhead.</p>
-<h2 id="example">Example</h2>
-<p><em>Why use quantization?</em><br />
-Compare total memory requirements and end-to-end performance for <strong>SD-3.5-Large</strong> model in <code>BF16</code> precision without and with <code>BitsAndBytes</code> on-the-fly quantization!  </p>
-<table>
-<thead>
-<tr>
-<th>Model</th>
-<th>Quantization</th>
-<th>Performance</th>
-<th>Memory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SD3.5-Large</td>
-<td>BnB = None</td>
-<td>0.18 it/s</td>
-<td>48.10 GB</td>
-</tr>
-<tr>
-<td>SD3.5-Large</td>
-<td>BnB = Transformer</td>
-<td>0.28 it/s</td>
-<td>30.48 GB</td>
-</tr>
-<tr>
-<td>SD3.5-Large</td>
-<td>BnB = Transformer &amp; Text-Encoder</td>
-<td>0.47 it/s</td>
-<td>18.22 GB</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Offloading reduces runtime requirements by moving parts of the model between GPU and CPU, but total memory requirements are always there<br />
- Performance gains are there simply because there is less shuffling of weights  </p>
-</div>
+<p>For storage-only quantization, the model is quantized to lower precision but the operations are still performed in the original precision<br />
+which means that each operation needs to be upcasted to the original precision before execution resulting in a performance overhead  </p>
+<blockquote>
+<p>[!IMPORTANT]
+Before deciding which quantization method to use, you need to consider the following:
+- Compatibility with your platform<br />
+  Some quantization methods are not available on all platforms, see below for details<br />
+- Performance benefits<br />
+  Some quantization methods may provide significant performance benefits on certain platforms<br />
+- Quality trade-offs<br />
+  Some quantization methods may result in a loss of quality  </p>
+</blockquote>
 <h2 id="using-quantized-models">Using Quantized Models</h2>
 <p>Quantization can be done in multiple ways:<br />
 - On-the-fly by quantizing on-the-fly during model load<br />
@@ -3260,7 +3263,7 @@ Compare total memory requirements and end-to-end performance for <strong>SD-3.5-
 - During model training itself<br />
   Out-of-scope for this document  </p>
 <h2 id="on-the-fly-quantization">On-the-Fly Quantization</h2>
-<p>On-the-fly quantization is available for <code>BitsAndBytes</code>, <code>Optimum.Quanto</code>, <code>TorchAO</code> and <code>NNCF</code> quantization methods<br />
+<p>On-the-fly quantization is available for <code>BitsAndBytes</code>, <code>Optimum.Quanto</code>, <code>TorchAO</code>, <code>NNCF</code> and <code>Layerwise</code> quantization methods<br />
 and can be configured in <em>Settings -&gt; Quantization Settings</em>  </p>
 <p>You can specify quantization for each model component:
 - <strong>Model</strong><br />
@@ -3273,7 +3276,9 @@ and can be configured in <em>Settings -&gt; Quantization Settings</em>  </p>
 - <strong>VAE</strong><br />
   Typically quantization of VAE module is not recommended<br />
 - <strong>LLM</strong><br />
-  Used by models that rely on LLM for secondary text encoding as well as VLM models during captioning and interrogate and prompt enhance features  </p>
+  Used by models that rely on LLM for secondary text encoding as well as VLM models during captioning and interrogate and prompt enhance features<br />
+- <strong>Video</strong><br />
+  Specifically for video models and typically referrs to DiT module of video model  </p>
 <p>You can mix-and-match quantization types for each model component
 For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</strong> and <code>Optimum.Quanto</code> for the <strong>llm</strong></p>
 <h2 id="quantization-engines">Quantization Engines</h2>
@@ -3282,6 +3287,7 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 - <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantization schemes<br />
 - <code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes<br />
 - <code>NNCF</code> 4 int-based quantization schemes<br />
+- <code>Layerwise</code> 2 float8  based quantization schemes<br />
 - <code>GGUF</code> with pre-quantized weights  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -3351,6 +3357,111 @@ However, without GGML, GGUF provides storage-only quantization which means that 
 - <code>gguf</code> is not compatible with model offloading as it would trigger de-quantization<br />
 - <em>note</em>: only supported component in <code>gguf</code> binary format is UNET/Transformer<br />
   you cannot load all-in-one single-file GGUF model</p>
+<h2 id="benchmarks">Benchmarks</h2>
+<p>Comparing performance of different quantization methods on the FLUX.1-Dev model<br />
+This is not a comprehensive benchmark, but rather a quick overview of the performance of different quantization methods  </p>
+<h3 id="environment">Environment</h3>
+<blockquote>
+<p>model==FLUX.1-Dev<br />
+gpu==nVidia RTX4090<br />
+torch==2.7.0<br />
+dtype==auto<br />
+attention==sdpa<br />
+offload==Balanced
+sampler==FlowMatchEulerDiscreteScheduler<br />
+resolution=1024x1024<br />
+batch==1  </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>DType</th>
+<th>It/s</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Torch</td>
+<td>Float16</td>
+<td>0.45</td>
+<td></td>
+</tr>
+<tr>
+<td>Torch</td>
+<td>BFloat16</td>
+<td>0.48</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>BnB</td>
+<td>NF4</td>
+<td>1.32</td>
+<td></td>
+</tr>
+<tr>
+<td>BnB</td>
+<td>FP8</td>
+<td>1.05</td>
+<td></td>
+</tr>
+<tr>
+<td>NNCF</td>
+<td>INT8</td>
+<td>1.07</td>
+<td></td>
+</tr>
+<tr>
+<td>NNCF</td>
+<td>INT8-SYM</td>
+<td>0.85</td>
+<td></td>
+</tr>
+<tr>
+<td>NNCF</td>
+<td>INT8-SYM</td>
+<td>1.17</td>
+<td>Decompress using torch.compile</td>
+</tr>
+<tr>
+<td>NNCF</td>
+<td>INT8-SYM</td>
+<td>1.23</td>
+<td>Use direct INT8 MatMul</td>
+</tr>
+<tr>
+<td>NNCF</td>
+<td>INT8-SYM</td>
+<td>1.46</td>
+<td>Decompress &amp; MatMul</td>
+</tr>
+<tr>
+<td>Quanto</td>
+<td>any</td>
+<td>N/A</td>
+<td>Balanced offload not supported</td>
+</tr>
+<tr>
+<td>TorchAO</td>
+<td>INT8</td>
+<td>0.51</td>
+<td>Weights-only</td>
+</tr>
+<tr>
+<td>Layerwise</td>
+<td>FP8 E4M</td>
+<td>0.99</td>
+<td></td>
+</tr>
+<tr>
+<td>SVDQuant</td>
+<td>INT4</td>
+<td>4.66</td>
+<td>Nunchaku pre-compiled</td>
+</tr>
+</tbody>
+</table>
 <h2 id="recommendations">Recommendations</h2>
 <h3 id="cuda">CUDA</h3>
 <p>For CUDA environments<br />
