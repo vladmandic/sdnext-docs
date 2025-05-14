@@ -10,13 +10,9 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/NNCF-Compression/">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/NNCF-Quantization/">
       
       
-        <link rel="prev" href="../Quantization/">
-      
-      
-        <link rel="next" href="../Loader/">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Model Compression - SD.Next Documentation</title>
+        <title>NNCF Quantization - SD.Next Documentation</title>
       
     
     
@@ -61,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Model Compression - SD.Next Documentation" >
+        <meta  property="og:title"  content="NNCF Quantization - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/NNCF-Compression.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/NNCF-Quantization.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -73,15 +69,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/NNCF-Compression/" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/NNCF-Quantization/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Model Compression - SD.Next Documentation" >
+        <meta  name="twitter:title"  content="NNCF Quantization - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/NNCF-Compression.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/NNCF-Quantization.png" >
       
     
     
@@ -104,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nncf-model-comporession" class="md-skip">
+        <a href="#nncf-quantization" class="md-skip">
           Skip to content
         </a>
       
@@ -137,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Model Compression
+              NNCF Quantization
             
           </span>
         </div>
@@ -414,12 +410,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../Performance-Tuning/" class="md-tabs__link">
           
   
@@ -2279,10 +2273,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -2308,22 +2300,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -2336,7 +2325,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Advanced
@@ -2439,32 +2428,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Model Compression
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../NNCF-Compression.md" class="md-nav__link">
         
   
   
@@ -2475,53 +2442,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disadvantages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Disadvantages
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2949,7 +2869,8 @@
   
 
 
-<h1 id="nncf-model-comporession">NNCF Model Comporession</h1>
+<h1 id="nncf-quantization">NNCF Quantization</h1>
+<p>NNCF provides full cross-platform quantization to reduce memory usage and increase performance for any device.  </p>
 <h2 id="usage">Usage</h2>
 <ol>
 <li>Go into <code>Quantization Settings</code>  </li>
@@ -2990,9 +2911,9 @@ Default is none.  </p>
 <code>ControlNet</code> is used to quantize ControlNets.  </p>
 <h2 id="quantization-mode">Quantization mode</h2>
 <p>Used to decide when the quantization step will happen on model load.<br />
-<code>Pre</code> mode will quantize the model while the model is loading. Saves on system RAM.<br />
+<code>Pre</code> mode will quantize the model while the model is loading. Reduces system RAM usage.<br />
 <code>Post</code> mode will quantize the model after the model is loaded into system RAM.<br />
-<code>Pre</code> mode is compatible with DiT and Video models like Flux but older UNet models like SDXL are only compatible with <code>Post</code> mode.<br />
+<code>Pre</code> mode is compatible with DiT and Video models like Flux but older UNet models like SDXL are only compatible with <code>post</code> mode.<br />
 Default is <code>post</code>.  </p>
 <h2 id="quantization-type">Quantization type</h2>
 <p>Used to decide the data type used to store the model weights.<br />
@@ -3000,7 +2921,7 @@ Recommended types are <code>INT8_SYM</code> for 8 bit and <code>INT4</code> for 
 Default is <code>INT8_SYM</code>.  </p>
 <p>INT8 quants have very similar quality to the full 16 bit precision while using 2 times less memory.<br />
 INT4 quants have lower quality and less performance but uses 4 times less memory.  </p>
-<p>SYM quants have the extra "_SYM" added to their name while the ASYM quants don't have any suffix.<br />
+<p>SYM quants have the extra <code>_SYM</code> added to their name while the ASYM quants don't have any suffix.<br />
 ASYM types: <code>INT8</code> and <code>INT4</code><br />
 SYM types: <code>INT8_SYM</code> and <code>INT4_SYM</code>  </p>
 <p>ASYM quants uses unsigned integers, meaning they can't store negative values and will use another variable called zero point for this purpose.<br />
@@ -3008,13 +2929,13 @@ SYM quants can store negative and positive values meaning they don't have extra 
 <p><code>INT8</code> uses uint8 and has 0 to 255 range.<br />
 <code>INT8_SYM</code> uses int8 and has -128 to 127 range.<br />
 <code>INT4</code> uses two uint4 values packed into a single uint8 value and has 0 to 15 range.<br />
-<code>INT4_SYM</code> uses two int4 packed into a single uint8 value and has -8 to 7 range.  </p>
+<code>INT4_SYM</code> uses two int4 values packed into a single uint8 value and has -8 to 7 range.  </p>
 <h2 id="group-size">Group size</h2>
 <p>Used to decide how many elements of a tensor will share the same quantization group.<br />
 Higher values have better performance but less quality.<br />
 Default is <code>0</code>, meaning it will decide the group size based on your quantization type setting.<br />
 INT4 quants will use group size <code>64</code> and INT8 quants won't use any grouping.<br />
-Setting group size to <code>-1</code> will disable grouping.  </p>
+Setting the group size to <code>-1</code> will disable grouping.  </p>
 <h2 id="quantize-the-convolutional-layers">Quantize the convolutional layers</h2>
 <p>Enabling this option will quantize the convolutional layers in UNet models too.<br />
 Has better memory savings but lower quality.<br />
@@ -3094,44 +3015,6 @@ For performance results, please check out the benchmarks on the <a href="../Quan
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../Quantization/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Model Quantization">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Model Quantization
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../Loader/" class="md-footer__link md-footer__link--next" aria-label="Next: Model Loader">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Model Loader
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
