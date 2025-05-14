@@ -2836,9 +2836,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-05-13" class="md-nav__link">
+  <a href="#update-for-2025-05-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-05-13
+      Update for 2025-05-14
     </span>
   </a>
   
@@ -4286,9 +4286,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-05-13" class="md-nav__link">
+  <a href="#update-for-2025-05-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-05-13
+      Update for 2025-05-14
     </span>
   </a>
   
@@ -5721,16 +5721,19 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-05-13">Update for 2025-05-13</h2>
+<h2 id="update-for-2025-05-14">Update for 2025-05-14</h2>
 <p>Curious how your system is performing?<br />
 Run a built-in benchmark and compare to over 15k unique results world-wide: (Benchmark data)[https://vladmandic.github.io/sd-extension-system-info/pages/benchmark.html]!<br />
 From slowest 0.02 it/s running on 6th gen CPU without acceleration up to 275 it/s running on tuned GH100 system!  </p>
 <p>Also, since quantization is becoming a necessity for almost all new models, see comparison of different quantization methods available in SD.Next: <a href="https://vladmandic.github.io/sdnext-docs/Quantization/">Quantization</a><br />
 <em>Hint</em>: Even if you may not need quantization for your current model, it may be worth trying it out as it can significantly improve performance!  </p>
+<p>For ZLUDA users, this update adds <a href="https://github.com/vladmandic/sdnext/issues/3918">compatibility</a> with with latest AMD Adrenaline drivers  </p>
 <ul>
 <li><strong>Wiki</strong>  </li>
 <li>Updates for: <em>Quantization, NNCF, WSL, ZLUDA, ROCm</em>  </li>
 <li><strong>Compute</strong>  </li>
+<li>ZLUDA: update to <code>zluda==3.9.5</code> with <code>torch==2.7.0</code><br />
+<em>Note</em>: delete <code>.zluda</code> folder so that newest zluda will be installed if you are using the latest AMD Adrenaline driver  </li>
 <li>NNCF: added experimental support for direct INT8 MatMul  </li>
 <li><strong>Feature</strong>  </li>
 <li>Prompt Enhance: option to allow/disallow NSFW content  </li>
