@@ -2506,6 +2506,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#nncf" class="md-nav__link">
+    <span class="md-ellipsis">
+      NNCF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#optimum-quanto" class="md-nav__link">
     <span class="md-ellipsis">
       Optimum-Quanto
@@ -2518,15 +2527,6 @@
   <a href="#torchao" class="md-nav__link">
     <span class="md-ellipsis">
       TorchAO
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nncf" class="md-nav__link">
-    <span class="md-ellipsis">
-      NNCF
     </span>
   </a>
   
@@ -3082,6 +3082,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#nncf" class="md-nav__link">
+    <span class="md-ellipsis">
+      NNCF
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#optimum-quanto" class="md-nav__link">
     <span class="md-ellipsis">
       Optimum-Quanto
@@ -3094,15 +3103,6 @@
   <a href="#torchao" class="md-nav__link">
     <span class="md-ellipsis">
       TorchAO
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nncf" class="md-nav__link">
-    <span class="md-ellipsis">
-      NNCF
     </span>
   </a>
   
@@ -3263,7 +3263,7 @@ Before deciding which quantization method to use, you need to consider the follo
 - During model training itself<br />
   Out-of-scope for this document  </p>
 <h2 id="on-the-fly-quantization">On-the-Fly Quantization</h2>
-<p>On-the-fly quantization is available for <code>BitsAndBytes</code>, <code>Optimum.Quanto</code>, <code>TorchAO</code>, <code>NNCF</code> and <code>Layerwise</code> quantization methods<br />
+<p>On-the-fly quantization is available for <code>BitsAndBytes</code>, <code>NNCF</code>, <code>Optimum.Quanto</code>, <code>TorchAO</code> and <code>Layerwise</code> quantization methods<br />
 and can be configured in <em>Settings -&gt; Quantization Settings</em>  </p>
 <p>You can specify quantization for each model component:
 - <strong>Model</strong><br />
@@ -3284,9 +3284,9 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 <h2 id="quantization-engines">Quantization Engines</h2>
 <p>SD.Next supports multiple quantization engines, each with multiple quantization schemes:
 - <code>BitsAndBytes</code> 3 float-based quantization schemes<br />
+- <code>NNCF</code> 4 int-based quantization schemes<br />
 - <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantization schemes<br />
 - <code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes<br />
-- <code>NNCF</code> 4 int-based quantization schemes<br />
 - <code>Layerwise</code> 2 float8  based quantization schemes<br />
 - <code>GGUF</code> with pre-quantized weights  </p>
 <div class="admonition warning">
@@ -3314,6 +3314,17 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 - for nVidia: automatically installed as needed<br />
 - for AMD/ROCm: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=AMD+ROCm#amd-gpu">link</a> 
 - for Intel/IPEX: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=Intel+CPU+%2B+GPU#multi-backend">link</a>  </p>
+<h3 id="nncf">NNCF</h3>
+<p>NNCF provides full cross-platform quantization for any device  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Advantage of <strong>NNCF</strong> is that it does work on any platform: if you're having issues with <code>optimum-quanto</code> or <code>bitsandbytes</code>, try it out!  </p>
+</div>
+<ul>
+<li>broad platform and GPU support  </li>
+<li>enable in <em>Settings -&gt; Quantization Settings -&gt; NNCF</em>  </li>
+<li>see <a href="../NNCF-Compression/">NNCF Wiki</a> for more details  </li>
+</ul>
 <h3 id="optimum-quanto">Optimum-Quanto</h3>
 <p>Typical models pre-quantized with <code>optimum.quanto</code> would have look like <code>*qint.safetensors</code>.</p>
 <div class="admonition note">
@@ -3329,17 +3340,6 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 Limitations:<br />
 - Requires <code>torch&gt;=2.5.0</code><br />
 - int4 based quantization cannot be used with any offload method  </p>
-<h3 id="nncf">NNCF</h3>
-<p>NNCF provides full cross-platform storage-only quantization (referred to as model compression) for any platform with PyTorch and more compute optimizations for OpenVINO platform  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Advantage of <strong>NNCF</strong> is that it does work on any platform: if you're having issues with <code>optimum-quanto</code> or <code>bitsandbytes</code>, try it out!  </p>
-</div>
-<ul>
-<li>broad platform and GPU support  </li>
-<li>enable in <em>Settings -&gt; Quantization Settings -&gt; NNCF</em>  </li>
-<li>see <a href="../NNCF-Compression/">NNCF Wiki</a> for more details  </li>
-</ul>
 <h3 id="gguf">GGUF</h3>
 <p><strong>GGUF</strong> is a binary file format used to package pre-quantized models.  </p>
 <p><strong>GGUF</strong> is originally desiged by <code>llama.cpp</code> project and intended to be used with its <strong>GGML</strong> execution runtime.<br />
@@ -3469,8 +3469,8 @@ batch==1  </p>
 <code>nf4</code> is the most efficient quantization type from both memory and compute perspective  </p>
 <h3 id="other">Other</h3>
 <p>For ROCm, ZLUDA or IPEX environments<br />
-<code>NNCF</code> is the best fully cross-platform option and brings good memory savings, but does not have native compute optimizations<br />
-<code>Optimum.Quanto</code> is the faster option if you can fit the model into VRAM either using <strong>Model offload</strong> or without using any offload as its not compatible with the default <strong>Balanced offload</strong>  </p>
+<code>NNCF</code> is the best fully cross-platform option and brings good memory savings with optional compute optimizations using Triton<br />
+<code>Optimum.Quanto</code> is another option if you can fit the model into VRAM either using <strong>Model offload</strong> or without using any offload as its not compatible with the default <strong>Balanced offload</strong>  </p>
 <h3 id="errors">Errors</h3>
 <div class="admonition danger">
 <p class="admonition-title">Caution</p>

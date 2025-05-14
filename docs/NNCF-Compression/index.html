@@ -2498,10 +2498,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
       Features
@@ -2509,25 +2508,11 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#disadvantages" class="md-nav__link">
     <span class="md-ellipsis">
       Disadvantages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Options
     </span>
   </a>
   
@@ -2925,10 +2910,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
       Features
@@ -2936,25 +2920,11 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#disadvantages" class="md-nav__link">
     <span class="md-ellipsis">
       Disadvantages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Options
     </span>
   </a>
   
@@ -2990,23 +2960,85 @@
 <p><strong>Note:</strong>
 VAE Upcast has to be set to false if you use the VAE option.<br />
 If you get black images with SDXL models, use the <a href="https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/blob/main/sdxl_vae.safetensors">FP16 Fixed VAE</a>.  </p>
-<h3 id="features">Features</h3>
+<h2 id="features">Features</h2>
 <ul>
-<li>Supports <code>INT8</code>, <code>INT8_SYM</code>, <code>INT4</code> and <code>INT4_SYM</code> quantization schemes    </li>
-<li><code>INT8_SYM</code> is very close to the original 16 bit quality</li>
-<li>Supports on the fly quantization during model load with DiT models (called as pre mode)  </li>
+<li>Supports <code>INT8</code>, <code>INT8_SYM</code>, <code>INT4</code> and <code>INT4_SYM</code> quantization schemes  </li>
+<li><code>INT8_SYM</code> is very close to the original 16 bit quality  </li>
+<li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
+<li>Supports direct INT8 MatMul with significant speedups on INT8 supported GPUs  </li>
+<li>Supports on the fly quantization during model load with DiT models (called as <code>pre</code> mode)  </li>
 <li>Supports quantization for the convolutional layers with UNet models   </li>
 <li>Supports post load quantization for any model  </li>
 <li>Supports on the fly usage of LoRa models  </li>
 <li>Supports balanced offload  </li>
 </ul>
-<h3 id="disadvantages">Disadvantages</h3>
+<h2 id="disadvantages">Disadvantages</h2>
 <ul>
-<li>It is Autocast, GPU will still use 16 Bit to run the model and will be slower  </li>
 <li>Fused projections are not compatible with NNCF  </li>
 </ul>
-<h2 id="options">Options</h2>
-<p>These results compares NNCF INT8 to 16 bit.  </p>
+<h1 id="options">Options</h1>
+<h2 id="quantization-enabled">Quantization enabled</h2>
+<p>Used to decide which parts of the model will get quantized.<br />
+Recommended options are <code>Model</code> and <code>TE</code> with post mode or <code>Transformer</code>, <code>TE</code> and <code>LLM</code> on pre mode.<br />
+Default is none.  </p>
+<p><code>Model</code> is used quantize the UNet on post mode or every model part on pre mode.<br />
+<code>Transformer</code> is used to quantize the DiT models.<br />
+<code>VAE</code> is used to quantize the VAE.<br />
+<code>TE</code> is used to quantize the Text Encoders.<br />
+<code>Video</code> is used to quantize the Video models.<br />
+<code>LLM</code> is used to quantize the LLM part of the models that uses LLMs as Text Encoders.<br />
+<code>ControlNet</code> is used to quantize ControlNets.  </p>
+<h2 id="quantization-mode">Quantization mode</h2>
+<p>Used to decide when the quantization step will happen on model load.<br />
+<code>Pre</code> mode will quantize the model while the model is loading. Saves on system RAM.<br />
+<code>Post</code> mode will quantize the model after the model is loaded into system RAM.<br />
+<code>Pre</code> mode is compatible with DiT and Video models like Flux but older UNet models like SDXL are only compatible with <code>Post</code> mode.<br />
+Default is <code>post</code>.  </p>
+<h2 id="quantization-type">Quantization type</h2>
+<p>Used to decide the data type used to store the model weights.<br />
+Recommended types are <code>INT8_SYM</code> for 8 bit and <code>INT4</code> for 4 bit.<br />
+Default is <code>INT8_SYM</code>.  </p>
+<p>INT8 quants have very similar quality to the full 16 bit precision while using 2 times less memory.<br />
+INT4 quants have lower quality and less performance but uses 4 times less memory.  </p>
+<p>SYM quants have the extra "_SYM" added to their name while the ASYM quants don't have any suffix.<br />
+ASYM types: <code>INT8</code> and <code>INT4</code><br />
+SYM types: <code>INT8_SYM</code> and <code>INT4_SYM</code>  </p>
+<p>ASYM quants uses unsigned integers, meaning they can't store negative values and will use another variable called zero point for this purpose.<br />
+SYM quants can store negative and positive values meaning they don't have extra zero point value and they run faster than ASYM quants because of this.  </p>
+<p><code>INT8</code> uses uint8 and has 0 to 255 range.<br />
+<code>INT8_SYM</code> uses int8 and has -128 to 127 range.<br />
+<code>INT4</code> uses two uint4 values packed into a single uint8 value and has 0 to 15 range.<br />
+<code>INT4_SYM</code> uses two int4 packed into a single uint8 value and has -8 to 7 range.  </p>
+<h2 id="group-size">Group size</h2>
+<p>Used to decide how many elements of a tensor will share the same quantization group.<br />
+Higher values have better performance but less quality.<br />
+Default is <code>0</code>, meaning it will decide the group size based on your quantization type setting.<br />
+INT4 quants will use group size <code>64</code> and INT8 quants won't use any grouping.<br />
+Setting group size to <code>-1</code> will disable grouping.  </p>
+<h2 id="quantize-the-convolutional-layers">Quantize the convolutional layers</h2>
+<p>Enabling this option will quantize the convolutional layers in UNet models too.<br />
+Has better memory savings but lower quality.<br />
+Quantizing the VAE is not recommended with this option.<br />
+Group sizes are not supported on convolutions.<br />
+Disabled by default.  </p>
+<h2 id="decompress-using-full-precision">Decompress using full precision</h2>
+<p>Enabling this option will use <code>FP32</code> on the decompression step.<br />
+Has higher quality outputs but lower performance.<br />
+Disabled by default.  </p>
+<h2 id="decompress-using-torchcompile">Decompress using torch.compile</h2>
+<p>Uses Triton via <code>torch.compile</code> on the decompression step.<br />
+Has significantly higher performance.<br />
+Enabled by default if Triton is available.  </p>
+<h2 id="use-direct-int8-matmul">Use direct INT8 MatMul</h2>
+<p>Enabling this option will use direct INT8 MatMul instead of BF16 / FP16.<br />
+Has significantly higher performance on GPUs with INT8 support but has lower quality.<br />
+Direct INT8 MatMul is only compatible with SYM quants.<br />
+Groups sizes will be disabled when direct INT8 MatMul is enabled.<br />
+Convolutions won't use direct INT8 MatMul.<br />
+Disabled by default.  </p>
+<h1 id="memory-usage-results">Memory usage results</h1>
+<p>These results compares NNCF INT8 to 16 bit.<br />
+For performance results, please check out the benchmarks on the <a href="../Quantization/#benchmarks">Quantization Wiki</a>.  </p>
 <ul>
 <li>Model:<br />
   Compresses UNet or Transformers part of the model.<br />
