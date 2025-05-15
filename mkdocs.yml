@@ -141,7 +141,7 @@ nav:
     - Memory Offloading: Offload.md
     - Memory Allocation: Malloc.md
     - Model Quantization: Quantization.md
-    - Model Compression: NNCF-Compression.md
+    - NNCF Quantization: NNCF-Quantization.md
     - Model Loader: Loader.md
     - Variable Auto-Encoder: VAE.md
     - Benchmark Results: Benchmark.md
