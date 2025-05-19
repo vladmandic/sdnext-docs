@@ -1335,6 +1335,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#install-guide-for-opensuse-tumbleweed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Guide for openSUSE Tumbleweed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#install-guide-for-arch-linux" class="md-nav__link">
     <span class="md-ellipsis">
       Install Guide for Arch Linux
@@ -3118,6 +3127,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#install-guide-for-opensuse-tumbleweed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Guide for openSUSE Tumbleweed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#install-guide-for-arch-linux" class="md-nav__link">
     <span class="md-ellipsis">
       Install Guide for Arch Linux
@@ -3353,6 +3371,29 @@ sudo usermod -a -G render,video $LOGNAME
 </code></pre></div></p>
 <h3 id="install-guide-for-ubuntu-2204">Install Guide for Ubuntu 22.04</h3>
 <p>Simply change the wget line from "noble" to "jammy" if using Ubuntu 22.04.  </p>
+<h3 id="install-guide-for-opensuse-tumbleweed">Install Guide for openSUSE Tumbleweed</h3>
+<p>Install prerequisites:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>zypper<span class="w"> </span><span class="k">in</span><span class="w"> </span>python312-devel<span class="w"> </span>python312-virtualenv<span class="w"> </span>python312-pip<span class="w"> </span>patterns-devel-base-devel_basis
+</code></pre></div></p>
+<p>Add the <a href="https://build.opensuse.org/project/show/science:GPU:ROCm">ROCm repository</a> (not official, but maintained by AMD employees):
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>zypper<span class="w"> </span>ar<span class="w"> </span>obs://science:GPU:ROCm/openSUSE_Factory<span class="w"> </span>ROCm
+sudo<span class="w"> </span>zypper<span class="w"> </span>ref<span class="w"> </span><span class="c1"># Answer &quot;ultimately trust&quot;</span>
+</code></pre></div></p>
+<p>Install the relevant packages (there is no pattern so you must install them all manually):
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>zypper<span class="w"> </span><span class="k">in</span><span class="w"> </span>rocm-runtime<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>miopen<span class="w"> </span>rccl<span class="w"> </span>rocblas<span class="w"> </span>amdsmi<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>hipblaslt<span class="w"> </span>hiprand<span class="w"> </span>hipcub<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>hipsolver<span class="w"> </span>hipfft<span class="w"> </span>rocm-cmake<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>rocm-compilersupport<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>rocm-llvm-filesystem<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>rocm-clang-runtime-devel<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>hipcub-devel<span class="w"> </span>rocm-hip-devel<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libhipfft0-devel<span class="w"> </span>libhipsolver0-devel<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libhipsparse1-devel<span class="w"> </span>rocthrust-devel<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>librocfft0<span class="w"> </span>rocm-core<span class="w"> </span>rocrand<span class="w"> </span>rocsolver<span class="w"> </span>
+</code></pre></div></p>
+<p>This procedure should also work for Leap based distributions and Slowroll (change the relevant lines for the distribution, check the repository page for details), but they haven't been tested.</p>
+<p><strong>NOTE</strong>: This installs also the build dependencies for flash-attention. </p>
 <h3 id="install-guide-for-arch-linux">Install Guide for Arch Linux</h3>
 <p>Install ROCm and git:<br />
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>rocm-hip-runtime<span class="w"> </span>git
