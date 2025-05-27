@@ -5750,10 +5750,13 @@
 <li><code>INT4</code> -&gt; <code>uint4</code>  </li>
 </ul>
 </li>
+<li>Add <code>float8_e4m3fn</code> and <code>float8_e5m2</code> support  </li>
 <li>Set the default quant mode to <code>pre</code>  </li>
 <li>Use per token input quant with int8 matmul  </li>
 <li>Implement better layer hijacks  </li>
 <li>Fix Conv quant  </li>
+<li>Fix lora weight change  </li>
+<li>Use device_map = gpu  </li>
 <li><strong>IPEX</strong>  </li>
 <li>Disabe Dynamic Attention by default on PyTorch 2.7  </li>
 <li>Remove GradScaler hijack and use torch.amp.GradScaler instead  </li>
