@@ -2875,10 +2875,10 @@ VAE Upcast has to be set to false if you use the VAE option.<br />
 If you get black images with SDXL models, use the <a href="https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/blob/main/sdxl_vae.safetensors">FP16 Fixed VAE</a>.  </p>
 <h2 id="features">Features</h2>
 <ul>
-<li>Supports <code>int8</code>, <code>uint8</code>, <code>int4</code> and <code>uint4</code> quantization schemes  </li>
+<li>Supports <code>int8</code>, <code>uint8</code>, <code>int4</code>, <code>uint4</code>, <code>float8_e4m3fn</code> and <code>float8_e5m2</code> quantization schemes  </li>
 <li><code>int8</code> is very close to the original 16 bit quality  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
-<li>Supports direct INT8 MatMul with significant speedups on INT8 supported GPUs  </li>
+<li>Supports quantized MatMul with significant speedups on INT8 supported GPUs  </li>
 <li>Supports on the fly quantization during model load with DiT models (called as <code>pre</code> mode)  </li>
 <li>Supports quantization for the convolutional layers with UNet models   </li>
 <li>Supports post load quantization for any model  </li>
@@ -2905,24 +2905,27 @@ Default is none.  </p>
 Default is <code>pre</code>.  </p>
 <h2 id="quantization-type">Quantization type</h2>
 <p>Used to decide the data type used to store the model weights.<br />
-Recommended types are <code>int8</code> for 8 bit and <code>uint4</code> for 4 bit.<br />
+Recommended types are <code>int8</code> for 8 bit, <code>float8_e4m3fn</code> for fp8 and <code>uint4</code> for 4 bit.<br />
 Default is <code>int8</code>.  </p>
-<p>INT8 quants have very similar quality to the full 16 bit precision while using 2 times less memory.<br />
+<p>INT8 and FP8 quants have very similar quality to the full 16 bit precision while using 2 times less memory.<br />
 INT4 quants have lower quality and less performance but uses 4 times less memory.  </p>
 <p>Unsigned quants have the extra <code>u</code> added to the start of their name while the symetric quants don't have any prefix.<br />
 Unsigned (asymetric) types: <code>uint8</code> and <code>uint4</code><br />
-Symetric types: <code>int8</code> and <code>int4</code>  </p>
+Symetric types: <code>int8</code>, <code>int4</code>, <code>float8_e4m3fn</code> and <code>float8_e5m2</code>  </p>
 <p>Unsigned quants uses unsigned integers, meaning they can't store negative values and will use another variable called zero point for this purpose.<br />
 Symetric quants can store negative and positive values meaning they don't have extra zero point value and they run faster than unsigned quants because of this.  </p>
 <p><code>int8</code> uses int8 and has -128 to 127 range.<br />
 <code>uint8</code> uses uint8 and has 0 to 255 range.<br />
 <code>int4</code> uses two int4 values packed into a single uint8 value and has -8 to 7 range.<br />
-<code>uint4</code> uses two uint4 values packed into a single uint8 value and has 0 to 15 range.  </p>
+<code>uint4</code> uses two uint4 values packed into a single uint8 value and has 0 to 15 range.<br />
+<code>float8_e4m3fn</code> uses float8_e4m3fn and has -448 to 448 range.<br />
+<code>float8_e5m2</code> uses float8_e5m2 and has -57344 to 57344 range.  </p>
 <h2 id="group-size">Group size</h2>
 <p>Used to decide how many elements of a tensor will share the same quantization group.<br />
 Higher values have better performance but less quality.<br />
 Default is <code>0</code>, meaning it will decide the group size based on your quantization type setting.<br />
-INT4 quants will use group size <code>64</code> and INT8 quants won't use any grouping.<br />
+INT4 quants will use group size <code>64</code> by default.<br />
+INT8 and FP8 quants won't use any grouping by default.<br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
 <h2 id="quantize-the-convolutional-layers">Quantize the convolutional layers</h2>
 <p>Enabling this option will quantize the convolutional layers in UNet models too.<br />
@@ -2934,13 +2937,13 @@ Disabled by default.  </p>
 <h2 id="decompress-using-full-precision">Decompress using full precision</h2>
 <p>Enabling this option will use <code>FP32</code> on the decompression step.<br />
 Has higher quality outputs but lower performance.<br />
-This setting requires a full restart of the webui to apply.<br />
 Disabled by default.  </p>
 <h2 id="decompress-using-torchcompile">Decompress using torch.compile</h2>
 <p>Uses Triton via <code>torch.compile</code> on the decompression step.<br />
 Has significantly higher performance.<br />
+This setting requires a full restart of the webui to apply.<br />
 Enabled by default if Triton is available.  </p>
-<h2 id="use-direct-int8-matmul">Use direct INT8 MatMul</h2>
+<h2 id="use-quantized-matmul">Use quantized MatMul</h2>
 <p>Enabling this option will use direct INT8 MatMul instead of BF16 / FP16.<br />
 Has significantly higher performance on GPUs with INT8 support but has lower quality.<br />
 Direct INT8 MatMul is only compatible with <code>int8</code> and <code>int4</code> quants.<br />
