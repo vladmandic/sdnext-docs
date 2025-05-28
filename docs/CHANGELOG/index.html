@@ -5754,6 +5754,7 @@
 <li>Set the default quant mode to <code>pre</code>  </li>
 <li>Use per token input quant with int8 matmul  </li>
 <li>Implement better layer hijacks  </li>
+<li>Add an option to toggle quantize with GPU  </li>
 <li>Fix Conv quant  </li>
 <li>Fix lora weight change  </li>
 <li>Fix high RAM usage with pre mode  </li>
@@ -5762,6 +5763,9 @@
 <li>Remove GradScaler hijack and use torch.amp.GradScaler instead  </li>
 <li><strong>Feature</strong>  </li>
 <li>TeaCache support for HiDream I1  </li>
+<li><strong>Changes</strong></li>
+<li>Set the default attention optimizer to Scaled-Dot-Product on all backends  </li>
+<li>Enable Dynamic attention for Scaled-Dot-Product with ROCm, DirectML, MPS and CPU backends  </li>
 </ul>
 <h2 id="update-for-2025-05-17">Update for 2025-05-17</h2>
 <p><em>Curious how your system is performing?</em><br />
