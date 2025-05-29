@@ -2836,9 +2836,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-05-25" class="md-nav__link">
+  <a href="#update-for-2025-05-29" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-05-25
+      Update for 2025-05-29
     </span>
   </a>
   
@@ -4295,9 +4295,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-05-25" class="md-nav__link">
+  <a href="#update-for-2025-05-29" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-05-25
+      Update for 2025-05-29
     </span>
   </a>
   
@@ -5739,10 +5739,10 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-05-25">Update for 2025-05-25</h2>
+<h2 id="update-for-2025-05-29">Update for 2025-05-29</h2>
 <ul>
 <li><strong>SDNQ Quantization</strong>  </li>
-<li>Renamed <code>NNCF</code> to <code>SDNQ</code> as NNCF implementation in SDNext re-implemented and optimized enough to not use any imports from NNCF anymore  </li>
+<li>Renamed <code>NNCF</code> to <code>SDNQ</code> as NNCF implementation in SDNext re-implemented, optimized and evolved enough to become its own quantization method  </li>
 <li>Renamed quantization scheme names to the underlying dtype names instead of NNCF names  <ul>
 <li><code>INT8_SYM</code> -&gt; <code>int8</code>  </li>
 <li><code>INT8</code> -&gt; <code>uint8</code>  </li>
@@ -5751,13 +5751,15 @@
 </ul>
 </li>
 <li>Add <code>float8_e4m3fn</code> and <code>float8_e5m2</code> support  </li>
+<li>Add quantized matmul support for <code>float8_e4m3fn</code>  </li>
 <li>Set the default quant mode to <code>pre</code>  </li>
-<li>Use per token input quant with int8 matmul  </li>
+<li>Use per token input quant with int8 and fp8 quantized matmul  </li>
 <li>Implement better layer hijacks  </li>
 <li>Add an option to toggle quantize with GPU  </li>
-<li>Fix Conv quant  </li>
+<li>Fix conv quant and add support for conv quant with asym modes  </li>
 <li>Fix lora weight change  </li>
 <li>Fix high RAM usage with pre mode  </li>
+<li>Fix scale and zero_point not being offloaded  </li>
 <li><strong>IPEX</strong>  </li>
 <li>Disabe Dynamic Attention by default on PyTorch 2.7  </li>
 <li>Remove GradScaler hijack and use torch.amp.GradScaler instead  </li>
