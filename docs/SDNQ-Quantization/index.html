@@ -2878,7 +2878,7 @@ If you get black images with SDXL models, use the <a href="https://huggingface.c
 <li>Supports <code>int8</code>, <code>uint8</code>, <code>int4</code>, <code>uint4</code>, <code>float8_e4m3fn</code> and <code>float8_e5m2</code> quantization schemes  </li>
 <li><code>int8</code> is very close to the original 16 bit quality  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
-<li>Supports quantized MatMul with significant speedups on INT8 supported GPUs  </li>
+<li>Supports Quantized MatMul with significant speedups on INT8 or FP8 supported GPUs  </li>
 <li>Supports on the fly quantization during model load with DiT models (called as <code>pre</code> mode)  </li>
 <li>Supports quantization for the convolutional layers with UNet models   </li>
 <li>Supports post load quantization for any model  </li>
@@ -2943,12 +2943,14 @@ Disabled by default.  </p>
 Has significantly higher performance.<br />
 This setting requires a full restart of the webui to apply.<br />
 Enabled by default if Triton is available.  </p>
-<h2 id="use-quantized-matmul">Use quantized MatMul</h2>
-<p>Enabling this option will use direct INT8 MatMul instead of BF16 / FP16.<br />
-Has significantly higher performance on GPUs with INT8 support but has lower quality.<br />
-Direct INT8 MatMul is only compatible with <code>int8</code> and <code>int4</code> quants.<br />
-Groups sizes will be disabled when direct INT8 MatMul is enabled.<br />
-Convolutions won't use direct INT8 MatMul.<br />
+<h2 id="use-quantized-matmul">Use Quantized MatMul</h2>
+<p>Enabling this option will use quantized INT8 or FP8 MatMul instead of BF16 / FP16.<br />
+Has significantly higher performance on GPUs with INT8 or FP8 support.<br />
+Recommended quant type to use with this option is <code>int8</code> because INT8 matmul tends to be faster than FP8.<br />
+Quantized INT8 MatMul is only compatible with <code>int8</code> and <code>int4</code> quant types.<br />
+Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> quant type.<br />
+Groups sizes will be disabled when Quantized MatMul is enabled.<br />
+Convolutions won't use Quantized MatMul.<br />
 Disabled by default.  </p>
 <h2 id="quantize-with-the-gpu">Quantize with the GPU</h2>
 <p>Enabling this option will use the GPU with the quantization calculations on model load.<br />
