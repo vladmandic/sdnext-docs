@@ -2836,11 +2836,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-05-29" class="md-nav__link">
+  <a href="#update-for-2025-05-30" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-05-29
+      Update for 2025-05-30
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-05-30">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-05-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-05-30
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-05-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-05-30
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4295,11 +4319,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-05-29" class="md-nav__link">
+  <a href="#update-for-2025-05-30" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-05-29
+      Update for 2025-05-30
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-05-30">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-05-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-05-30
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-05-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-05-30
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5739,10 +5787,18 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-05-29">Update for 2025-05-29</h2>
+<h2 id="update-for-2025-05-30">Update for 2025-05-30</h2>
+<h3 id="highlights-for-2025-05-30">Highlights for 2025-05-30</h3>
+<p>This release is all about quantization: with new SD.Next own quantization method: <strong>SDNQ</strong>
+SDNQ is based on NNCF, but has been re-implemented, optimized and evolved enough to become its own quantization method!
+It's fully cross-platform, supports all GPUs and includes 8-bit, 4-bit, 2-bit and 1-bit quantization methods.
+Also unlike most traditional methods, its also applicable to nearly all model types.</p>
+<p><em>Hint</em>: Even if you may not need quantization for your current model, it may be worth trying it out as it can significantly improve performance or capabilities of your existing workflow! For example, you may not have issues with SD15 or SDXL, but you may have been limited running at high resolutions or with multiple ControlNet due to VRAM requirements - this will significantly reduce memory requirements.  </p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
+<h3 id="details-for-2025-05-30">Details for 2025-05-30</h3>
 <ul>
 <li><strong>SDNQ Quantization</strong>  </li>
-<li>Renamed <code>NNCF</code> to <code>SDNQ</code> as NNCF implementation in SDNext re-implemented, optimized and evolved enough to become its own quantization method  </li>
+<li>Renamed <code>NNCF</code> to <code>SDNQ</code>  </li>
 <li>Renamed quantization scheme names to the underlying dtype names instead of NNCF names  <ul>
 <li><code>INT8_SYM</code> -&gt; <code>int8</code>  </li>
 <li><code>INT8</code> -&gt; <code>uint8</code>  </li>
@@ -5930,7 +5986,7 @@ And a new <a href="https://github.com/vladmandic/sd-extension-framepack">FramePa
     implemented as an extension for <strong>SD.Next</strong> (for the moment while dev is ongoing)<br />
     generate high-quality videos with pretty much unlimited duration and with limited VRAM!<br />
     install as any other extension and for details see extension <a href="https://github.com/vladmandic/sd-extension-framepack/blob/main/README.md">README</a>  <ul>
-<li>I2V &amp; FLF2V support with explicit strength controls   </li>
+<li>I2V &amp; FLF2V support with explicit strength controls  </li>
 <li>complex actions: modify prompts for each section of the video  </li>
 <li>LoRA support: use normal <strong>HunyuanVideo</strong> LoRAs  </li>
 <li>decode: use local, tiny or remote VAE  </li>
@@ -6040,7 +6096,7 @@ There are quite a few other performance and quality-of-life improvements in this
 <ul>
 <li><strong>Models</strong>  </li>
 <li><a href="https://huggingface.co/HiDream-ai/HiDream-I1-Full">HiDream-I1</a> in fast, dev and full variants!<br />
-    new absolutely massive image generative foundation model with <strong>17B</strong> parameters and 4 text-encoders with additional <strong>8.3B</strong> parameters <br />
+    new absolutely massive image generative foundation model with <strong>17B</strong> parameters and 4 text-encoders with additional <strong>8.3B</strong> parameters<br />
     simply select from <em>networks -&gt; models -&gt; reference</em><br />
     due to size (over 25B params in 58GB), offloading and on-the-fly quantization are pretty much a necessity<br />
     see <a href="https://github.com/vladmandic/sdnext/wiki/HiDream">HiDream Wiki page</a> for details  </li>
@@ -6098,7 +6154,7 @@ There are quite a few other performance and quality-of-life improvements in this
 <p><em>Highlights?</em><br />
 Video...Brand new Video processing module with support for all latest models: <strong>WAN21, Hunyuan, LTX, Cog, Allegro, Mochi1, Latte1</strong> in both <em>T2V</em> and <em>I2V</em> workflows<br />
 And combined with <em>on-the-fly quantization</em>, support for <em>Local/Tiny/Remote</em> VAE, acceleration modules such as <em>FasterCache or PAB</em>, and more!<br />
-Models...And support for new models: <strong>CogView-4</strong>, <strong>SANA 1.5</strong>, </p>
+Models...And support for new models: <strong>CogView-4</strong>, <strong>SANA 1.5</strong>,  </p>
 <p><em>Plus...</em><br />
 - New <strong>Prompt Enhance</strong> using LLM,
 - New pipelines such as <strong>InfiniteYou</strong><br />
@@ -6405,7 +6461,7 @@ Models...And support for new models: <strong>CogView-4</strong>, <strong>SANA 1.
 <li>updated <strong>CUDA</strong> receipe to <code>torch==2.6.0</code> with <code>cuda==12.6</code> and add prebuilt image  </li>
 <li>added <strong>ROCm</strong> receipe and prebuilt image  </li>
 <li>added <strong>IPEX</strong> receipe and add prebuilt image  </li>
-<li>added <strong>OpenVINO</strong> receipe and prebuilt image   </li>
+<li>added <strong>OpenVINO</strong> receipe and prebuilt image  </li>
 <li><strong>System</strong>  </li>
 <li>improve <strong>python==3.12</strong> compatibility  </li>
 <li><strong>Torch</strong>  <ul>
@@ -6480,7 +6536,7 @@ Models...And support for new models: <strong>CogView-4</strong>, <strong>SANA 1.
 <ul>
 <li><strong>GitHub</strong></li>
 <li>rename core repo from <a href="https://github.com/vladmandic/automatic">https://github.com/vladmandic/automatic</a> to <a href="https://github.com/vladmandic/sdnext">https://github.com/vladmandic/sdnext</a><br />
-    old repo url should automatically redirect to new one for seamless transition and in-place upgrades <br />
+    old repo url should automatically redirect to new one for seamless transition and in-place upgrades<br />
     all internal links have been updated<br />
     wiki content and docs site have been updated  </li>
 <li><strong>Docs</strong>:</li>
@@ -6817,7 +6873,7 @@ Commit hash: <code>master: #dcfc9f3</code> <code>dev: #935cac6</code>  </p>
 <p>We've also added support for several new models such as highly anticipated <a href="https://huggingface.co/Efficient-Large-Model/Sana_1600M_1024px">NVLabs Sana</a> (see <a href="https://vladmandic.github.io/sdnext-docs/Model-Support/">supported models</a> for full list)<br />
 And several new SOTA video models: <a href="https://huggingface.co/Lightricks/LTX-Video">Lightricks LTX-Video</a>, <a href="https://huggingface.co/tencent/HunyuanVideo">Hunyuan Video</a> and <a href="https://huggingface.co/genmo/mochi-1-preview">Genmo Mochi.1 Preview</a>  </p>
 <p>And a lot of <strong>Control</strong> and <strong>IPAdapter</strong> goodies<br />
-- for <strong>SDXL</strong> there is new <a href="https://huggingface.co/xinsir/controlnet-union-sdxl-1.0">ProMax</a>, improved <em>Union</em> and <em>Tiling</em> models 
+- for <strong>SDXL</strong> there is new <a href="https://huggingface.co/xinsir/controlnet-union-sdxl-1.0">ProMax</a>, improved <em>Union</em> and <em>Tiling</em> models<br />
 - for <strong>FLUX.1</strong> there are <a href="https://blackforestlabs.ai/flux-1-tools/">Flux Tools</a> as well as official <em>Canny</em> and <em>Depth</em> models,<br />
   a cool <a href="https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev">Redux</a> model as well as <a href="https://huggingface.co/XLabs-AI/flux-ip-adapter-v2">XLabs</a> IP-adapter
 - for <strong>SD3.5</strong> there are official <em>Canny</em>, <em>Blur</em> and <em>Depth</em> models in addition to existing 3rd party models<br />
