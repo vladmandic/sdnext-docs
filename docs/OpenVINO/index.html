@@ -3118,7 +3118,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Do not mix OpenVINO with your old install. Treat OpenVINO as a seperate backend.  </p>
+<p>Do not mix OpenVINO with your old install. Treat OpenVINO as a seperate backend.</p>
 </div>
 <h3 id="running-sdnext-with-openvino">Running SD.Next with OpenVINO</h3>
 <p>Open CMD / Terminal in a folder you want to install SD.Next and install SD.Next from Github with this command:  </p>
@@ -3134,10 +3134,10 @@
 <p>Linux:</p>
 <div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-openvino
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
-</div>
+<blockquote>
+<p>[!NOTE]
+It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
+</blockquote>
 <h2 id="running-sdnext-with-docker">Running SD.Next with Docker</h2>
 <p>Checkout the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
 <p>Using Docker with a prebuilt image:  </p>
@@ -3156,7 +3156,7 @@ sudo docker run -it \
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It will install the necessary libraries at the first run so it will take a while depending on your internet.<br />
- Resulting docker image will use 1.1 GB disk space (uncompressed) for the docker image and 2.5 GB for the venv. </p>
+Resulting docker image will use 1.1 GB disk space (uncompressed) for the docker image and 2.5 GB for the venv.</p>
 </div>
 <h2 id="more-info">More Info</h2>
 <h3 id="limitations">Limitations</h3>
@@ -3171,7 +3171,7 @@ sudo docker run -it \
 Enable <code>OpenVINO Quantize Models with NNCF</code> option in Compute Settings to use it.  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Quantization has noticeable quality impact and generally not recommended.  </p>
+<p>Quantization has noticeable quality impact and generally not recommended.</p>
 </div>
 <h2 id="model-compression">Model Compression</h2>
 <p>Enable <code>Compress Model weights with NNCF</code> option in Compute Settings to use it.<br />
@@ -3179,7 +3179,7 @@ Select a 4 bit mode from <code>OpenVINO compress mode for NNCF</code> to use 4 b
 For GPUs; select both CPU and GPU from the device selection if you want to use GPU with Model Compression.  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>VAE will still be compressed to INT8 if you use a 4 bit mode.  </p>
+<p>VAE will still be compressed to INT8 if you use a 4 bit mode.</p>
 </div>
 <h2 id="custom-devices">Custom Devices</h2>
 <p>Use the <code>OpenVINO devices to use</code> option in <code>Compute Settings</code> if you want to specify a device.<br />

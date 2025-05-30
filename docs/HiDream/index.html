@@ -2929,24 +2929,24 @@
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Due to size (over 25B params in 58GB), offloading and on-the-fly quantization are pretty much a necessity<br />
- Running HiDream on &lt;16GB GPU is possible with <em>BnB-NF4</em> or <em>Quanto-Int4</em> quantization and default Balanced offload settings<br />
- Note that you must pick quantization methods that are compatible with your GPU and platform  </p>
+Running HiDream on &lt;16GB GPU is possible with <em>BnB-NF4</em> or <em>Quanto-Int4</em> quantization and default Balanced offload settings<br />
+Note that you must pick quantization methods that are compatible with your GPU and platform</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Set appropriate <strong>offloading</strong> setting before loading the model to avoid out-of-memory errors<br />
- For more information see <a href="../Offload/">Offloading Wiki</a>  </p>
+For more information see <a href="../Offload/">Offloading Wiki</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Check compatibility of different <strong>quantizations</strong> with your platform and GPU!<br />
- For more information see <a href="../Quantization/">Quantization Wiki</a>  </p>
+For more information see <a href="../Quantization/">Quantization Wiki</a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Use <strong>reference models</strong><br />
- Simply select it from <em>Networks -&gt; Models -&gt; Reference</em><br />
- and model will be auto-downloaded on first use  </p>
+Simply select it from <em>Networks -&gt; Models -&gt; Reference</em><br />
+and model will be auto-downloaded on first use</p>
 </div>
 <p>Location of downloaded model is:
 - <code>hugginface</code> folder is used for individual components: transformers, t5 text-encoder and llama llm
@@ -2954,13 +2954,13 @@
 Exact location of both folders can be found in <em>Settings -&gt; System Paths</em></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Manually downloaded models in either <code>safetensors</code> or <code>gguf</code> formats are currently not supported  </p>
+<p>Manually downloaded models in either <code>safetensors</code> or <code>gguf</code> formats are currently not supported</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p><strong>Llama-3.1-8b-instruct</strong> LLM model used by HiDream is a gated model!<br />
- You need to request access from the authors to use it<br />
- See <a href="../Gated/">Gated Wiki</a> for more information  </p>
+You need to request access from the authors to use it<br />
+See <a href="../Gated/">Gated Wiki</a> for more information</p>
 </div>
 <h2 id="text-encoders">Text Encoders</h2>
 <p>HiDream utilizes 4 text-encoders: <em>clip-l, clip-g, t5-1.1-xxl, llama-3.1-8b-instruct</em> for total of <strong>8.3B</strong> parameters  </p>
@@ -2968,7 +2968,7 @@ Exact location of both folders can be found in <em>Settings -&gt; System Paths</
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>SD.Next implementation differens from reference as it bumps up default max token length from <strong>128</strong> to <strong>256</strong><br />
- Max token length can be further overriden using env variable <code>HIDREAM_MAX_SEQUENCE_LENGTH</code>  </p>
+Max token length can be further overriden using env variable <code>HIDREAM_MAX_SEQUENCE_LENGTH</code></p>
 </div>
 
 

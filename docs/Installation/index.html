@@ -3145,7 +3145,7 @@
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>These instructions assume that you already have <strong>Git</strong> and <strong>Python</strong> installed and available in your user <code>PATH</code><br />
- If you do not have both Git and Python installed, follow the instructions in <a href="./#install-python-and-git">Install Python and Git</a> to set those up <strong>first</strong>  </p>
+If you do not have both Git and Python installed, follow the instructions in <a href="./#install-python-and-git">Install Python and Git</a> to set those up <strong>first</strong></p>
 </div>
 <h2 id="clone-sdnext">Clone SD.Next</h2>
 <p><strong>Start terminal</strong><br />
@@ -3155,10 +3155,10 @@ Launch your preferred system terminal and navigate to the directory where you wa
 <p class="admonition-title">Warning</p>
 <p>Following scenarios are not recommended and can lead to SDNext not launching properly:<br />
 <em>Note</em>: this includes all folders leading up-to <code>sdnext</code> folder, not just final folder name!<br />
- - Installing SDNext as <em>superuser/administrator/root</em>: use user account<br />
- - Using folder with admin/superuser/root permissions: use folder owned by user account<br />
- - Using hidden/readonly folders or folders starting with <code>.</code>, e.g.: <code>.sdnext</code><br />
- - Using special folders such as <em>Windows</em> or <em>OneDrive</em>  </p>
+- Installing SDNext as <em>superuser/administrator/root</em>: use user account<br />
+- Using folder with admin/superuser/root permissions: use folder owned by user account<br />
+- Using hidden/readonly folders or folders starting with <code>.</code>, e.g.: <code>.sdnext</code><br />
+- Using special folders such as <em>Windows</em> or <em>OneDrive</em></p>
 </div>
 <p><strong>Clone SD.Next</strong><br />
 Clone the repository by running following command in your desired location and then navigate into the cloned directory  </p>
@@ -3167,12 +3167,12 @@ Clone the repository by running following command in your desired location and t
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you already have SD.Next installed and want to update to latest version, see <a href="../Update/">Update</a> guide  </p>
+<p>If you already have SD.Next installed and want to update to latest version, see <a href="../Update/">Update</a> guide</p>
 </div>
 <h2 id="initial-installation">Initial Installation</h2>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>Decide on appropriate compute backend for your system ahead of time as that will determine which libraries are installed on your system  </p>
+<p>Decide on appropriate compute backend for your system ahead of time as that will determine which libraries are installed on your system</p>
 <p>--use-cuda       Use nVidia CUDA backend (autodetected by default)<br />
 --use-rocm       Use AMD ROCm backend (autodetected by default)<br />
 --use-ipex       Use Intel OneAPI XPU backend (autodetected by default)<br />
@@ -3183,9 +3183,9 @@ Clone the repository by running following command in your desired location and t
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>nVidia CUIDA, AMD ROCm and Intel OneAPI XPU are autodetected when available<br />
- all other compute backends require explicit selection on first startup<br />
- For platform specific information, check out<br />
-<a href="../WSL/">WSL</a> | <a href="../Intel-ARC/">Intel Arc</a> | <a href="../DirectML/">DirectML</a> | <a href="../OpenVINO/">OpenVINO</a> | <a href="../ONNX-Runtime/">ONNX &amp; Olive</a> | <a href="../ZLUDA/">ZLUDA</a> | <a href="../AMD-ROCm/">AMD ROCm</a> | <a href="../MacOS-Python/">MacOS</a> | <a href="../nVidia/">nVidia</a>  </p>
+all other compute backends require explicit selection on first startup<br />
+For platform specific information, check out<br />
+<a href="../WSL/">WSL</a> | <a href="../Intel-ARC/">Intel Arc</a> | <a href="../DirectML/">DirectML</a> | <a href="../OpenVINO/">OpenVINO</a> | <a href="../ONNX-Runtime/">ONNX &amp; Olive</a> | <a href="../ZLUDA/">ZLUDA</a> | <a href="../AMD-ROCm/">AMD ROCm</a> | <a href="../MacOS-Python/">MacOS</a> | <a href="../nVidia/">nVidia</a></p>
 </div>
 <h3 id="launch-sdnext">Launch SD.Next</h3>
 <p>Run the appropriate launcher for your OS to start the web interface:<br />
@@ -3198,28 +3198,28 @@ The server is finished launching when the console shows an entry for <strong>"St
 <ul>
 <li>For the initial setup and future tech support, it is advisable to include the <code>--debug</code> option which provides more detailed logging information  </li>
 <li>All command line options can also be set via env variable<br />
-   For example <code>--debug</code> is same as <code>set SD_DEBUG=true</code>  </li>
+  For example <code>--debug</code> is same as <code>set SD_DEBUG=true</code></li>
 </ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
 <li>If you don't want to use built-in <code>venv</code> support and prefer to run SD.Next in your own environment<br />
-   such as <em>Docker</em> container, <em>Conda</em> environment or any other virtual environment,<br />
-   you can skip <code>venv</code> create/activate and launch SD.Next directly (command line flags noted above still apply):<br />
+  such as <em>Docker</em> container, <em>Conda</em> environment or any other virtual environment,<br />
+  you can skip <code>venv</code> create/activate and launch SD.Next directly (command line flags noted above still apply):<br />
 <code>python launch.py --debug</code></li>
 </ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>For improved memory utilization on Linux, see <a href="../Malloc/">Malloc</a>  </li>
+<li>For improved memory utilization on Linux, see <a href="../Malloc/">Malloc</a></li>
 </ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ul>
-<li>If you want to use <code>dev</code> version instead of main release <code>master</code>, see <a href="../Update/">Update</a> guide  </li>
+<li>If you want to use <code>dev</code> version instead of main release <code>master</code>, see <a href="../Update/">Update</a> guide</li>
 </ul>
 </div>
 <h3 id="first-time-setup">First-Time Setup</h3>
@@ -3243,8 +3243,8 @@ The server is finished launching when the console shows an entry for <strong>"St
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>SD.Next supports Python versions <code>3.9.x</code> up to <code>3.12.x</code><br />
- However, not all compute backends exist on Python <code>3.12</code> as they may be based on older <code>torch</code> versions<br />
- Recommended version is latest service release of Python <code>3.11.x</code>  </p>
+However, not all compute backends exist on Python <code>3.12</code> as they may be based on older <code>torch</code> versions<br />
+Recommended version is latest service release of Python <code>3.11.x</code></p>
 </div>
 <h3 id="windows">Windows</h3>
 <h4 id="git-for-windows">Git-for-Windows</h4>

@@ -3292,13 +3292,13 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Not all quantization engines are available on all platforms, see notes below for details!<br />
- Using any quantization engine for the first time may result in failure as required libraries are downloaded and installed<br />
- Restart SD.Next and try again if you encounter any issues  </p>
+Using any quantization engine for the first time may result in failure as required libraries are downloaded and installed<br />
+Restart SD.Next and try again if you encounter any issues</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you're on Windows with a compatible GPU, you may try <strong>WSL2</strong> for broader feature compatibiliy<br />
- See <a href="../WSL/">WSL Wiki</a> for more details</p>
+See <a href="../WSL/">WSL Wiki</a> for more details</p>
 </div>
 <h3 id="bitsandbytes">BitsAndBytes</h3>
 <p>Typical models pre-quantized with <code>bitsandbytes</code> would have look like <code>*nf4.safetensors</code> or <code>*fp8.safetensors</code></p>
@@ -3318,7 +3318,7 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 <p>NNCF provides full cross-platform quantization for any device  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Advantage of <strong>NNCF</strong> is that it does work on any platform: if you're having issues with <code>optimum-quanto</code> or <code>bitsandbytes</code>, try it out!  </p>
+<p>Advantage of <strong>NNCF</strong> is that it does work on any platform: if you're having issues with <code>optimum-quanto</code> or <code>bitsandbytes</code>, try it out!</p>
 </div>
 <ul>
 <li>broad platform and GPU support  </li>
@@ -3346,7 +3346,7 @@ Limitations:<br />
 However, without GGML, GGUF provides storage-only quantization which means that every operation needs to be upcast to current device precision before execution (typically FP16 or BF16) which comes with a significant performance overhead.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Right now, all popular T2I inference UIs <em>(SD.Next, Forge, ComfyUI, InvokeAI etc.)</em> are using GGUF as <em>storage-only</em> and as such usage of GGUF is not recommended!  </p>
+<p>Right now, all popular T2I inference UIs <em>(SD.Next, Forge, ComfyUI, InvokeAI etc.)</em> are using GGUF as <em>storage-only</em> and as such usage of GGUF is not recommended!</p>
 </div>
 <ul>
 <li><code>gguf</code> supports wide range of quantization types and is not platform or GPU dependent  </li>

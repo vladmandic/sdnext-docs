@@ -3081,32 +3081,32 @@
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Allow gated access
- This is a gated model, you need to accept the terms and conditions to use it<br />
- For more information see <a href="../Gated/">Gated Access Wiki</a></p>
+This is a gated model, you need to accept the terms and conditions to use it<br />
+For more information see <a href="../Gated/">Gated Access Wiki</a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Set offloading
- Set appropriate offloading setting before loading the model to avoid out-of-memory errors<br />
- For more information see <a href="../Offload/">Offloading Wiki</a>  </p>
+Set appropriate offloading setting before loading the model to avoid out-of-memory errors<br />
+For more information see <a href="../Offload/">Offloading Wiki</a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Choose quantization
- Check compatibility of different quantizations with your platform and GPU!<br />
- For more information see <a href="../Quantization/">Quantization Wiki</a>  </p>
+Check compatibility of different quantizations with your platform and GPU!<br />
+For more information see <a href="../Quantization/">Quantization Wiki</a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Regardless of offloading settings, the entire model must be loaded into RAM before it can be used
- Look at the total model size in the table and make sure you have enough RAM to load the model  </p>
+Look at the total model size in the table and make sure you have enough RAM to load the model</p>
 </div>
-<blockquote>
-<p>[!TIP] Use reference models
-Use of reference models is recommended over manually downloaded models!<br />
-Simply select it from <em>Networks -&gt; Models -&gt; Reference</em><br />
-  and model will be auto-downloaded on first use  </p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Use reference models</p>
+<p>Use of reference models is recommended over manually downloaded models!<br />
+Simply select it from <em>Networks -&gt; Models -&gt; Reference</em></p>
+</div>
+<p>and model will be auto-downloaded on first use  </p>
 <h2 id="components">Components</h2>
 <p><strong>SD3.x</strong> model consists of:</p>
 <ul>
@@ -3122,13 +3122,13 @@ Note that majority of available downloads are not actually all-in-one models and
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Do not attempt to assemble a full model by loading all individual components<br />
- That may be how some other apps are designed to work, but its not how SD.Next works<br />
- Always load full model and then replace individual components as needed  </p>
+That may be how some other apps are designed to work, but its not how SD.Next works<br />
+Always load full model and then replace individual components as needed</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you're getting error message during model load: <code>file=xxx is not a complete model</code><br />
- It means exactly that - you're trying to load a model component instead of full model  </p>
+It means exactly that - you're trying to load a model component instead of full model</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -3166,7 +3166,7 @@ Loading lighter T5 will greatly decrease model resource usage, but may not be co
 There are no alternative VAE models released, so this setting is mostly for future use  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To enable <strong>image previews</strong> during generate, set <em>Settings -&gt; Live Preview -&gt; Method to </em><em>TAESD</em>**  </p>
+<p>To enable <strong>image previews</strong> during generate, set <em>Settings -&gt; Live Preview -&gt; Method to </em><em>TAESD</em>**</p>
 </div>
 <p>To further speed up generation, you can disable "full quality" which triggers use of TAESD instead of full VAE to decode final image  </p>
 <h3 id="scheduler">Scheduler</h3>
