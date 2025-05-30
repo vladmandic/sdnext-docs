@@ -2875,7 +2875,7 @@ VAE Upcast has to be set to false if you use the VAE option.<br />
 If you get black images with SDXL models, use the <a href="https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/blob/main/sdxl_vae.safetensors">FP16 Fixed VAE</a>.  </p>
 <h2 id="features">Features</h2>
 <ul>
-<li>Supports <code>int8</code>, <code>uint8</code>, <code>int6</code>, <code>uint6</code>, <code>int4</code>, <code>uint4</code>, <code>uint2</code>, <code>float8_e4m3fn</code> and <code>float8_e5m2</code> quantization schemes  </li>
+<li>Supports <code>int8</code>, <code>uint8</code>, <code>int6</code>, <code>uint6</code>, <code>int4</code>, <code>uint4</code>, <code>uint2</code>, <code>uint1</code>, <code>float8_e4m3fn</code> and <code>float8_e5m2</code> quantization schemes  </li>
 <li><code>int8</code> is very close to the original 16 bit quality  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
 <li>Supports Quantized MatMul with significant speedups on INT8 or FP8 supported GPUs  </li>
@@ -2967,31 +2967,6 @@ Enabled by default.  </p>
 If device map is set to <code>gpu</code>, model weights will be loaded directly into GPU and the quantized model weights will be kept in the GPU until the quantization of the current model part is over.  </p>
 <p>If <code>Model offload mode</code> is set to <code>none</code>, quantized model weights will be sent to the GPU regardless of this setting and will stay in the GPU.<br />
 If <code>Model offload mode</code> is set to <code>model</code>, quantized model weights will be sent to the GPU regardless of this setting and will be sent back to the CPU after the quantization of the current model part is over.  </p>
-<h1 id="memory-usage-results">Memory usage results</h1>
-<p>These results compares SDNQ int8 to 16 bit.<br />
-For performance results, please check out the benchmarks on the <a href="../Quantization/#benchmarks">Quantization Wiki</a>.  </p>
-<ul>
-<li>Model:<br />
-  Compresses UNet or Transformers part of the model.<br />
-  This is where the most memory savings happens for Stable Diffusion.  </li>
-</ul>
-<p>SDXL: 2500 MB~ memory savings.<br />
-  SD 1.5: 750 MB~ memory savings.<br />
-  PixArt-XL-2: 600 MB~ memory savings.  </p>
-<ul>
-<li>Text Encoder:<br />
-  Compresses Text Encoder parts of the model.<br />
-  This is where the most memory savings happens for PixArt.  </li>
-</ul>
-<p>PixArt-XL-2: 4750 MB~ memory savings.<br />
-  SDXL: 750 MB~ memory savings.<br />
-  SD 1.5: 120 MB~ memory savings.  </p>
-<ul>
-<li>VAE:<br />
-  Compresses VAE part of the model.<br />
-  Memory savings from compressing VAE is pretty small.  </li>
-</ul>
-<p>SD 1.5 / SDXL / PixArt-XL-2: 75 MB~ memory savings.  </p>
 
 
 
