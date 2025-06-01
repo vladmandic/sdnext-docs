@@ -16,7 +16,7 @@
         <link rel="prev" href="../Malloc/">
       
       
-        <link rel="next" href="../NNCF-Quantization/">
+        <link rel="next" href="../SDNQ-Quantization/">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -1530,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Protmp-Enhance.md" class="md-nav__link">
+      <a href="../Prompt-Enhance/" class="md-nav__link">
         
   
   
@@ -2497,18 +2497,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bitsandbytes" class="md-nav__link">
+  <a href="#sdnq" class="md-nav__link">
     <span class="md-ellipsis">
-      BitsAndBytes
+      SDNQ
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nncf" class="md-nav__link">
+  <a href="#bitsandbytes" class="md-nav__link">
     <span class="md-ellipsis">
-      NNCF
+      BitsAndBytes
     </span>
   </a>
   
@@ -2581,18 +2581,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cuda" class="md-nav__link">
+  <a href="#other-options" class="md-nav__link">
     <span class="md-ellipsis">
-      CUDA
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other" class="md-nav__link">
-    <span class="md-ellipsis">
-      Other
+      Other Options
     </span>
   </a>
   
@@ -2652,12 +2643,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../NNCF-Quantization/" class="md-nav__link">
+      <a href="../SDNQ-Quantization/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    NNCF Quantization
+    SDNQ Quantization
     
   </span>
   
@@ -3073,18 +3064,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bitsandbytes" class="md-nav__link">
+  <a href="#sdnq" class="md-nav__link">
     <span class="md-ellipsis">
-      BitsAndBytes
+      SDNQ
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nncf" class="md-nav__link">
+  <a href="#bitsandbytes" class="md-nav__link">
     <span class="md-ellipsis">
-      NNCF
+      BitsAndBytes
     </span>
   </a>
   
@@ -3157,18 +3148,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cuda" class="md-nav__link">
+  <a href="#other-options" class="md-nav__link">
     <span class="md-ellipsis">
-      CUDA
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other" class="md-nav__link">
-    <span class="md-ellipsis">
-      Other
+      Other Options
     </span>
   </a>
   
@@ -3263,7 +3245,7 @@ Before deciding which quantization method to use, you need to consider the follo
 - During model training itself<br />
   Out-of-scope for this document  </p>
 <h2 id="on-the-fly-quantization">On-the-Fly Quantization</h2>
-<p>On-the-fly quantization is available for <code>BitsAndBytes</code>, <code>NNCF</code>, <code>Optimum.Quanto</code>, <code>TorchAO</code> and <code>Layerwise</code> quantization methods<br />
+<p>On-the-fly quantization is available for <code>SDNQ</code>, <code>BitsAndBytes</code>, <code>Optimum.Quanto</code>, <code>TorchAO</code> and <code>Layerwise</code> quantization methods<br />
 and can be configured in <em>Settings -&gt; Quantization Settings</em>  </p>
 <p>You can specify quantization for each model component:
 - <strong>Model</strong><br />
@@ -3283,11 +3265,11 @@ and can be configured in <em>Settings -&gt; Quantization Settings</em>  </p>
 For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</strong> and <code>Optimum.Quanto</code> for the <strong>llm</strong></p>
 <h2 id="quantization-engines">Quantization Engines</h2>
 <p>SD.Next supports multiple quantization engines, each with multiple quantization schemes:
+- <code>SDNQ</code> 8 int-based and 2 float-based quantization schemes<br />
 - <code>BitsAndBytes</code> 3 float-based quantization schemes<br />
-- <code>NNCF</code> 4 int-based quantization schemes<br />
 - <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantization schemes<br />
 - <code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes<br />
-- <code>Layerwise</code> 2 float8  based quantization schemes<br />
+- <code>Layerwise</code> 2 float8-based quantization schemes<br />
 - <code>GGUF</code> with pre-quantized weights  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -3300,6 +3282,17 @@ Restart SD.Next and try again if you encounter any issues</p>
 <p>If you're on Windows with a compatible GPU, you may try <strong>WSL2</strong> for broader feature compatibiliy<br />
 See <a href="../WSL/">WSL Wiki</a> for more details</p>
 </div>
+<h3 id="sdnq">SDNQ</h3>
+<p>SD.Next Quantization provides full cross-platform quantization for any device  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Advantage of <strong>SDNQ</strong> is that it does work on any platform with good performance!</p>
+</div>
+<ul>
+<li>broad platform and GPU support  </li>
+<li>enable in <em>Settings -&gt; Quantization Settings -&gt; SDNQ</em>  </li>
+<li>see <a href="../SDNQ-Quantization/">SDNQ Wiki</a> for more details  </li>
+</ul>
 <h3 id="bitsandbytes">BitsAndBytes</h3>
 <p>Typical models pre-quantized with <code>bitsandbytes</code> would have look like <code>*nf4.safetensors</code> or <code>*fp8.safetensors</code></p>
 <div class="admonition note">
@@ -3314,17 +3307,6 @@ See <a href="../WSL/">WSL Wiki</a> for more details</p>
 - for nVidia: automatically installed as needed<br />
 - for AMD/ROCm: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=AMD+ROCm#amd-gpu">link</a> 
 - for Intel/IPEX: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=Intel+CPU+%2B+GPU#multi-backend">link</a>  </p>
-<h3 id="nncf">NNCF</h3>
-<p>NNCF provides full cross-platform quantization for any device  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Advantage of <strong>NNCF</strong> is that it does work on any platform: if you're having issues with <code>optimum-quanto</code> or <code>bitsandbytes</code>, try it out!</p>
-</div>
-<ul>
-<li>broad platform and GPU support  </li>
-<li>enable in <em>Settings -&gt; Quantization Settings -&gt; NNCF</em>  </li>
-<li>see <a href="../NNCF-Quantization/">NNCF Wiki</a> for more details  </li>
-</ul>
 <h3 id="optimum-quanto">Optimum-Quanto</h3>
 <p>Typical models pre-quantized with <code>optimum.quanto</code> would have look like <code>*qint.safetensors</code>.</p>
 <div class="admonition note">
@@ -3407,32 +3389,32 @@ batch==1  </p>
 <td></td>
 </tr>
 <tr>
-<td>NNCF</td>
-<td>INT8</td>
+<td>SDNQ</td>
+<td>UINT8</td>
 <td>1.07</td>
 <td></td>
 </tr>
 <tr>
-<td>NNCF</td>
-<td>INT8-SYM</td>
+<td>SDNQ</td>
+<td>INT8</td>
 <td>0.85</td>
 <td></td>
 </tr>
 <tr>
-<td>NNCF</td>
-<td>INT8-SYM</td>
+<td>SDNQ</td>
+<td>INT8</td>
 <td>1.17</td>
 <td>Decompress using torch.compile</td>
 </tr>
 <tr>
-<td>NNCF</td>
-<td>INT8-SYM</td>
+<td>SDNQ</td>
+<td>INT8</td>
 <td>1.23</td>
-<td>Use direct INT8 MatMul</td>
+<td>Use direct Quantized MatMul</td>
 </tr>
 <tr>
-<td>NNCF</td>
-<td>INT8-SYM</td>
+<td>SDNQ</td>
+<td>INT8</td>
 <td>1.46</td>
 <td>Decompress &amp; MatMul</td>
 </tr>
@@ -3463,13 +3445,11 @@ batch==1  </p>
 </tbody>
 </table>
 <h2 id="recommendations">Recommendations</h2>
-<h3 id="cuda">CUDA</h3>
+<p><code>SDNQ</code> is the best fully cross-platform option and brings good memory savings with optional compute optimizations using Triton  </p>
+<h3 id="other-options">Other Options</h3>
 <p>For CUDA environments<br />
-<code>BitsAndBytes</code> is the most versatile and recommended option and<br />
-<code>nf4</code> is the most efficient quantization type from both memory and compute perspective  </p>
-<h3 id="other">Other</h3>
+<code>BitsAndBytes</code> is another versatile option and <code>nf4</code> is an efficient quantization type from both memory and compute perspective  </p>
 <p>For ROCm, ZLUDA or IPEX environments<br />
-<code>NNCF</code> is the best fully cross-platform option and brings good memory savings with optional compute optimizations using Triton<br />
 <code>Optimum.Quanto</code> is another option if you can fit the model into VRAM either using <strong>Model offload</strong> or without using any offload as its not compatible with the default <strong>Balanced offload</strong>  </p>
 <h3 id="errors">Errors</h3>
 <div class="admonition danger">
@@ -3568,13 +3548,13 @@ If your installation fails, you can try building <code>triton</code> from source
         
         
           
-          <a href="../NNCF-Quantization/" class="md-footer__link md-footer__link--next" aria-label="Next: NNCF Quantization">
+          <a href="../SDNQ-Quantization/" class="md-footer__link md-footer__link--next" aria-label="Next: SDNQ Quantization">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                NNCF Quantization
+                SDNQ Quantization
               </div>
             </div>
             <div class="md-footer__button md-icon">
