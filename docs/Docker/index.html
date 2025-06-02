@@ -3377,9 +3377,9 @@ you may want to create and map docker volume to avoid constaint reinstalls on ea
 Simply remove comment from <code>HEALTHCHECK</code> line in <code>Dockerfile</code> and rebuild the image.  </p>
 <h2 id="run-local">Run Local</h2>
 <p>Containers built using above commands are local and can be used directly on the host system  </p>
-<blockquote>
-<p>[!NOTE]
-This is an <em>EXAMPLE</em> run command, modify as needed for your environment!
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an <em>EXAMPLE</em> run command, modify as needed for your environment!
 - Republishes port from container to host directly<br />
   You may need to remap ports if you have multiple containers running on the same host<br />
 - Maps local server folder <code>/server/data</code> to be used by the container as data root<br />
@@ -3389,8 +3389,8 @@ This is an <em>EXAMPLE</em> run command, modify as needed for your environment!
 - Locations <code>/mnt/data</code> and <code>/mnt/models</code> are configured inside Dockerfile itself,<br />
   so either edit those values and rebuild container or make sure those are available<br />
 - If you're using network attached storage instead of local folders,<br />
-  you can use those directly and skip mounting local folders  </p>
-</blockquote>
+  you can use those directly and skip mounting local folders</p>
+</div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--name<span class="w"> </span>sdnext-container<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--rm<span class="w"> </span><span class="se">\</span>
@@ -3401,15 +3401,17 @@ This is an <em>EXAMPLE</em> run command, modify as needed for your environment!
 <span class="w">  </span>--detach<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>sdnext/sdnext-cuda
 </code></pre></div>
-<blockquote>
-<p>[!WARNING]
-Parameter <code>--gpus all</code> is required to expose nVidia CUDA GPU from parent host to the container<br />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Parameter <code>--gpus all</code> is required to expose nVidia CUDA GPU from parent host to the container<br />
 For other platforms, use refer to official documentation and use appropriate parameters<br />
-For example, AMD uses <code>--device /dev/dri</code> and <code>--device /dev/kfd</code>  </p>
-<p>[!TIP]
-Param <code>--detach</code> will run container in background<br />
-If you want troubleshoot startup and see logs in the console directly, remove <code>--detach</code> parameter  </p>
-</blockquote>
+For example, AMD uses <code>--device /dev/dri</code> and <code>--device /dev/kfd</code></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Param <code>--detach</code> will run container in background<br />
+If you want troubleshoot startup and see logs in the console directly, remove <code>--detach</code> parameter</p>
+</div>
 <p>Typical SDNext container will start in ~6sec and will be ready to accept connections on port <code>7860</code></p>
 <h2 id="publish">Publish</h2>
 <p>If you want to share the containers with others or deploy it on some cloud compute platform,<br />
@@ -3445,58 +3447,60 @@ For example <a href="https://runpod.io/">RunPod</a> or <a href="https://aws.amaz
    RunPod will provide with a public hostname over which you can access your SD.Next instance  </p>
 <h2 id="extra">Extra</h2>
 <p>Additional docker commands that may be useful</p>
-<blockquote>
-<p>[!TIP]
-Inspect image</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Inspect image</p>
+</div>
 <div class="highlight"><pre><span></span><code>docker image inspect sdnext/sdnext-cuda  
 </code></pre></div>
-<blockquote>
-<p>[!TIP]
-Clean Up</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Clean Up</p>
+</div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>image<span class="w"> </span>ls<span class="w"> </span>--all
 docker<span class="w"> </span>image<span class="w"> </span>rm<span class="w"> </span>&lt;id&gt;
 docker<span class="w"> </span>builder<span class="w"> </span>prune<span class="w"> </span>--force<span class="w">  </span>
 </code></pre></div>
-<blockquote>
-<p>[!TIP]
-List Containers</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>List Containers</p>
+</div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>container<span class="w"> </span>ls<span class="w"> </span>--all
 docker<span class="w"> </span>ps<span class="w"> </span>--all
 </code></pre></div>
-<blockquote>
-<p>[!TIP]
-View Log</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>View Log</p>
+</div>
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>logs<span class="w"> </span>--follow<span class="w"> </span>&lt;id&gt;
 </code></pre></div>
-<blockquote>
-<p>[!TIP]
-Stop Container</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Stop Container</p>
+</div>
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>stop<span class="w"> </span>&lt;id&gt;
 </code></pre></div>
-<blockquote>
-<p>[!TIP]
-Test GPU</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Test GPU</p>
+</div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>info<span class="w">  </span>
 docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>cudatest<span class="w"> </span>--rm<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>nvcr.io/nvidia/k8s/cuda-sample:nbody<span class="w"> </span>nbody<span class="w"> </span>-gpu<span class="w"> </span>-benchmark<span class="w">  </span>
 </code></pre></div>
-<blockquote>
-<p>[!TIP]
-Test Torch</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Test Torch</p>
+</div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime<span class="w">  </span>
 docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>pytorch<span class="w"> </span>--rm<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-it<span class="w"> </span>pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime<span class="w">  </span>
 </code></pre></div>
 <h2 id="manual-install">Manual Install</h2>
-<blockquote>
-<p>[!WARNING]
-URLs below are examples for <strong>Ubuntu 24</strong>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>URLs below are examples for <strong>Ubuntu 24</strong>
 Check your Linux distribution and version and use appropriate packages instead</p>
+</div>
+<blockquote>
 <p>Docker</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/oracular/pool/stable/amd64/containerd.io_1.7.25-1_amd64.deb
