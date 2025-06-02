@@ -2229,6 +2229,8 @@
       
         
       
+        
+      
     
     
     
@@ -2324,6 +2326,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -3146,18 +3171,18 @@ Disable your iGPU (if any, e.g. UHD or Iris Xe) in the device manager.</p>
 <p>Then run SD.Next with this command:<br />
 <div class="highlight"><pre><span></span><code>.\webui.bat --use-ipex
 </code></pre></div></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
-</div>
+<blockquote>
+<p>[!NOTE]
+It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
+</blockquote>
 <h2 id="install-guide-for-linux-or-wsl">Install Guide for Linux or WSL</h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<blockquote>
+<p>[!NOTE]</p>
 <h4 id="dont-use-linux-kernel-68-or-69-with-linux">Don't use Linux Kernel 6.8 or 6.9 with Linux!</h4>
 <p><a href="https://github.com/intel/compute-runtime/issues/726">https://github.com/intel/compute-runtime/issues/726</a><br />
 Update your kernel to at least 6.10 or update to the latest available kernel.  </p>
-<p>*Updating kernel is not necessary for WSL as it is using the Windows GPU drivers instead.</p>
-</div>
+<p>*Updating kernel is not necessary for WSL as it is using the Windows GPU drivers instead.  </p>
+</blockquote>
 <h3 id="install-guide-for-ubuntu-linux-or-ubuntu-with-wsl">Install Guide for Ubuntu Linux or Ubuntu with WSL</h3>
 <p>Following Ubuntu instructions are for Ubuntu 24.04.<br />
 Install the base packages:
@@ -3192,10 +3217,10 @@ makepkg<span class="w"> </span>-si
 <p>Then run SD.Next with this command:<br />
 <div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-ipex
 </code></pre></div></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
-</div>
+<blockquote>
+<p>[!NOTE]
+It will install the necessary libraries at the first run so it will take a while depending on your internet.  </p>
+</blockquote>
 <h2 id="running-sdnext-with-docker">Running SD.Next with Docker</h2>
 <p>Checkout the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
 <p>Using Docker with a prebuilt image:  </p>

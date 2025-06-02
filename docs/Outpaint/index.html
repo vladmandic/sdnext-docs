@@ -2208,6 +2208,8 @@
       
         
       
+        
+      
     
     
     
@@ -2303,6 +2305,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -3081,16 +3106,18 @@
 <p class="admonition-title">Note</p>
 <p>Screenshots are using Standard UI, but functionality using Modern UI is the same</p>
 </div>
-<h3 id="how-does-it-work">How does it work?</h3>
+<h2 id="how-does-it-work">How does it work?</h2>
 <p>Outpaint is combination of expand image + use original image as mask area + trigger inpaint<br />
 Result is that newly expanded area is now <em>outpainted</em> while original image remains unchanged  </p>
 <h2 id="select-what-to-outpaint">Select what to outpaint</h2>
-<p>There are several ways to use outpainting<br />
-- If you know exactly by how much you want to outpaint,<br />
-  Easiest is to simply specify outpaint size using <a href="./#resize-outpaint">resizing method</a><br />
-- If you want to experiment interactively,<br />
+<p>There are several ways to use outpainting:  </p>
+<ul>
+<li>If you know exactly by how much you want to outpaint,<br />
+  Easiest is to simply specify outpaint size using <a href="./#resize-outpaint">resizing method</a>  </li>
+<li>If you want to experiment interactively,<br />
   You can zoom in/out and/or move input image using <a href="./#interactive-outpaint">interactive method</a><br />
-<em>Note</em>: this method is very powerful, but can be finicky due to Gradio image control usability limitations  </p>
+<em>Note</em>: this method is very powerful, but can be finicky due to Gradio image control usability limitations  </li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Settings noted at the bottom apply to both methods</p>
@@ -3115,18 +3142,20 @@ Result is that newly expanded area is now <em>outpainted</em> while original ima
 Instead it creates new image and places original image in the center of newly created larger image with remaining areas marked for outpainting</p>
 </div>
 <h4 id="image-vs-inpaint-method">Image vs Inpaint Method</h4>
-<p>With <strong>resize outpaint</strong>, you again have two options:
-- By uploading input image to <strong>Select</strong> tab<br />
+<p>With <strong>resize outpaint</strong>, you again have two options:</p>
+<ul>
+<li>By uploading input image to <strong>Select</strong> tab<br />
   You will be using <em>Image-to-Image</em> outpaint mode<br />
   Which will perform seamless integration of outpainted area,<br />
   but will also allow modifications input content as well<br />
 <em>Note</em>: when using this mode, you must use prompt that includes description of the original image<br />
-  to allow it to be blended and avoid replacing it completely<br />
-- By uploading input image to <strong>Outpaint</strong> tab<br />
+  to allow it to be blended and avoid replacing it completely  </li>
+<li>By uploading input image to <strong>Outpaint</strong> tab<br />
   You will be using <em>Inpaint-with-Mask</em> outpaint mode<br />
   Which will maintain input image,<br />
   but will make it more difficult to blend outpainted area<br />
-<em>Note</em>: when using this mode, experiment with mask blur/errode/dilate values  </p>
+<em>Note</em>: when using this mode, experiment with mask blur/errode/dilate values  </li>
+</ul>
 <p><strong>Example</strong>:<br />
 <img alt="Image" src="https://github.com/user-attachments/assets/cc211750-aa18-4619-b1fe-f12c59503c1d" />  </p>
 <h3 id="interactive-outpaint">Interactive Outpaint</h3>

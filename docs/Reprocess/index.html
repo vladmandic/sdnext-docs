@@ -2136,6 +2136,8 @@
       
         
       
+        
+      
     
     
     
@@ -2231,6 +2233,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -2934,21 +2959,25 @@
 <h1 id="reprocess">Reprocess</h1>
 <p>Reprocess is a new top-level option that allows to repeat the processing of a given image using different parameters.</p>
 <h2 id="use-cases">Use cases</h2>
-<p>Below are several examples where reprocess can be useful:
-- You can generate an image at lower quality<br />
+<p>Below are several examples where reprocess can be useful:</p>
+<ul>
+<li>You can generate an image at lower quality<br />
   such as using lower step count or using fast vae instead of full<br />
-  and if you like the image, bump up step count and switch vae and reprocess it<br />
-- Or process as usual and if you like the results<br />
-  enable detailer, hires or refine workflows and reprocess<br />
-- Or if you don't like what hires did because you used too high of denoise strength<br />
-  you can go back and reprocess original image before hires, but now with different strength  </p>
+  and if you like the image, bump up step count and switch vae and reprocess it  </li>
+<li>Or process as usual and if you like the results<br />
+  enable detailer, hires or refine workflows and reprocess  </li>
+<li>Or if you don't like what hires did because you used too high of denoise strength<br />
+  you can go back and reprocess original image before hires, but now with different strength  </li>
+</ul>
 <h2 id="how-does-it-work">How does it work</h2>
 <p>Reprocess works on latent level, meaning that any workflow that runs in latent space will add its latents to reprocess history<br />
-For example, each of the following operations will add to reprocess history:<br />
-- Generate
-- HiRes
-- Detailer
-- Refine</p>
+For example, each of the following operations will add to reprocess history:  </p>
+<ul>
+<li>Generate</li>
+<li>HiRes</li>
+<li>Detailer</li>
+<li>Refine</li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Reprocess by default will take last known latent<br />

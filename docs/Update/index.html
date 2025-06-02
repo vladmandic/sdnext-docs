@@ -2136,6 +2136,8 @@
       
         
       
+        
+      
     
     
     
@@ -2231,6 +2233,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -2939,11 +2964,13 @@ add command line arg: <code>--update</code> or <code>--upgrade</code> (they are 
 webui.bat --update # windows<br />
 webui.ps1 --update # windows with powershell  </p>
 </blockquote>
-<p>Update under-the-hood uses standard git operations with some extras:<br />
-- verifies status of core repo and performs auto-repair as needed<br />
-- updates core SD.next repo<br />
-- updates all built-in submodules<br />
-- synchronizes levels of all submodules  </p>
+<p>Update under-the-hood uses standard git operations with some extras:  </p>
+<ul>
+<li>verifies status of core repo and performs auto-repair as needed  </li>
+<li>updates core SD.next repo  </li>
+<li>updates all built-in submodules  </li>
+<li>synchronizes levels of all submodules  </li>
+</ul>
 <h2 id="manual-update">Manual Update</h2>
 <p>Instead of using automatic update using <code>--update</code> flag, you can update SD.Next manually using GIT:</p>
 <blockquote>
@@ -2960,17 +2987,19 @@ Additionally, check status of submodules:  </p>
 git submodule update  </p>
 </blockquote>
 <h2 id="switching-branch">Switching Branch</h2>
-<p>SD.Next development is done in multiple branches on GitHub:<br />
-- Stable branch: <a href="https://github.com/vladmandic/sdnext">master</a><br />
-  Typically updated every several weeks after latest features have been tested<br />
-- Development branch: <a href="https://github.com/vladmandic/sdnext/tree/dev">dev</a><br />
+<p>SD.Next development is done in multiple branches on GitHub:  </p>
+<ul>
+<li>Stable branch: <a href="https://github.com/vladmandic/sdnext">master</a><br />
+  Typically updated every several weeks after latest features have been tested  </li>
+<li>Development branch: <a href="https://github.com/vladmandic/sdnext/tree/dev">dev</a><br />
   Updated regularly (e.g. daily) with latest features, fixes and changes<br />
   This branch always contains latest patches, but it is not fully tested<br />
   Once we decide on release schedule and consider it as sufficiently stable and tested,<br />
-  code from <code>dev</code> is merged into <code>master</code><br />
-- Feature branches:<br />
+  code from <code>dev</code> is merged into <code>master</code>  </li>
+<li>Feature branches:<br />
   For larger features we create additional branches as needed<br />
-  Once feature work has completed, feature branch is merged to <code>dev</code> and removed  </p>
+  Once feature work has completed, feature branch is merged to <code>dev</code> and removed  </li>
+</ul>
 <p>You can switch which branch of the SD.Next you are using at any point in time<br />
 You do not need a separate installation of SD.Next  </p>
 <blockquote>

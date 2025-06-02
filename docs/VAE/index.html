@@ -2071,6 +2071,8 @@
       
         
       
+        
+      
     
     
     
@@ -2166,6 +2168,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -2983,35 +3008,41 @@ It is a type of autoencoder that learns a latent space representation of the inp
 If you're not specifying a custom VAE model, it simply means you're using a default one specified in the model</p>
 </div>
 <h2 id="vae-processing">VAE Processing</h2>
-<p>SD.Next allows to use 3 types of VAE processing:
-- <strong>Full</strong>: use full VAE model<br />
-  See section on <a href="./#choosing-a-vae">Choosing a VAE</a> for more information<br />
-- <strong>Tiny</strong>: use tiny VAE model<br />
+<p>SD.Next allows to use 3 types of VAE processing:</p>
+<ul>
+<li><strong>Full</strong>: use full VAE model<br />
+  See section on <a href="./#choosing-a-vae">Choosing a VAE</a> for more information  </li>
+<li><strong>Tiny</strong>: use tiny VAE model<br />
   Tiny VAE model is a smaller version of the full VAE model and has a reduced memory footprint<br />
-  It is useful for generating images quickly, but may not be as accurate as the full VAE model<br />
-- <strong>Remote</strong>: use remote VAE model<br />
+  It is useful for generating images quickly, but may not be as accurate as the full VAE model  </li>
+<li><strong>Remote</strong>: use remote VAE model<br />
   Remote VAE model is a VAE model that is stored on a remote server and accessed over the network<br />
   It is useful for generating images on a machine with limited memory or processing power<br />
-  See section on <a href="./#remote-vae">Remote VAE</a> for more information</p>
+  See section on <a href="./#remote-vae">Remote VAE</a> for more information</li>
+</ul>
 <h2 id="choosing-a-vae">Choosing a VAE</h2>
 <p>When choosing a custom VAE, you must select a model that is compatible with the image generation model you are using. For example, SD-XL model can only use VAE models that are compatible with the SD-XL model.  </p>
 <p>Location for VAE models is specified in *Settings -&gt; System Paths -&gt; VAE, default is <code>models/VAE</code></p>
-<p>VAE can be set to:
-- <strong>Default</strong><br />
-  Use the default VAE model specified in the image generation model
-- <strong>Automatic</strong><br />
+<p>VAE can be set to:</p>
+<ul>
+<li><strong>Default</strong><br />
+  Use the default VAE model specified in the image generation model</li>
+<li><strong>Automatic</strong><br />
   If there is a VAE model with the same name as image generation model, it will be used<br />
-  Otherwise, it will use default VAE
-- <strong>Custom</strong><br />
-  Load a custom VAE model from the list of available models  </p>
+  Otherwise, it will use default VAE</li>
+<li><strong>Custom</strong><br />
+  Load a custom VAE model from the list of available models  </li>
+</ul>
 <h2 id="remote-vae">Remote VAE</h2>
 <p>Remote VAE is a free feature hosted by Huggingface.<br />
 For more information, see <a href="https://huggingface.co/docs/diffusers/main/en/hybrid_inference/overview">https://huggingface.co/docs/diffusers/main/en/hybrid_inference/overview</a></p>
-<p>Notes:
-- When using remote VAE, you must have an active internet connection<br />
-- Remote VAE is only available for some models: for example, <em>SD 1.5, SD-XL, FLUX.1 and HiDream</em><br />
-- Remote VAE is limited to <em>2048x2048</em> resolution<br />
-- In case of remote VAE failure, SD.Next will auto-switch to local VAE  </p>
+<p>Notes:</p>
+<ul>
+<li>When using remote VAE, you must have an active internet connection  </li>
+<li>Remote VAE is only available for some models: for example, <em>SD 1.5, SD-XL, FLUX.1 and HiDream</em>  </li>
+<li>Remote VAE is limited to <em>2048x2048</em> resolution  </li>
+<li>In case of remote VAE failure, SD.Next will auto-switch to local VAE  </li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><em>Privacy</em>: when using remote VAE, your latents/images are sent to Huggingface servers for processing.<br />

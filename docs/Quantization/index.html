@@ -2071,6 +2071,8 @@
       
         
       
+        
+      
     
     
     
@@ -2166,6 +2168,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -3214,63 +3239,73 @@
 
 
 <h1 id="quantization">Quantization</h1>
-<p>Quantization is a process of:
-- Storage-optimization<br />
-  reducing the memory footprint of the model by reducing the precision of parameters in a model<br />
-- Compute-optimization<br />
-  speed up the inference process by providing optimized kernels for native execution in quantized precision  </p>
+<p>Quantization is a process of:</p>
+<ul>
+<li>Storage-optimization<br />
+  reducing the memory footprint of the model by reducing the precision of parameters in a model  </li>
+<li>Compute-optimization<br />
+  speed up the inference process by providing optimized kernels for native execution in quantized precision  </li>
+</ul>
 <p>For storage-only quantization, the model is quantized to lower precision but the operations are still performed in the original precision<br />
 which means that each operation needs to be upcasted to the original precision before execution resulting in a performance overhead  </p>
 <blockquote>
 <p>[!IMPORTANT]
-Before deciding which quantization method to use, you need to consider the following:
-- Compatibility with your platform<br />
-  Some quantization methods are not available on all platforms, see below for details<br />
-- Performance benefits<br />
-  Some quantization methods may provide significant performance benefits on certain platforms<br />
-- Quality trade-offs<br />
-  Some quantization methods may result in a loss of quality  </p>
+Before deciding which quantization method to use, you need to consider the following:</p>
 </blockquote>
+<ul>
+<li>Compatibility with your platform<br />
+  Some quantization methods are not available on all platforms, see below for details  </li>
+<li>Performance benefits<br />
+  Some quantization methods may provide significant performance benefits on certain platforms  </li>
+<li>Quality trade-offs<br />
+  Some quantization methods may result in a loss of quality  </li>
+</ul>
 <h2 id="using-quantized-models">Using Quantized Models</h2>
-<p>Quantization can be done in multiple ways:<br />
-- On-the-fly by quantizing on-the-fly during model load<br />
+<p>Quantization can be done in multiple ways:  </p>
+<ul>
+<li>On-the-fly by quantizing on-the-fly during model load<br />
   Available by selecting <em>settings -&gt; quantization</em> for some quantization types<br />
   Sometimes referred to as <code>pre</code> mode<br />
-<em>This is recommended for most users!</em>
-- By quantizing immediately after model load<br />
+<em>This is recommended for most users!</em></li>
+<li>By quantizing immediately after model load<br />
   Available by selecting <em>settings -&gt; quantization</em> for all quantization types<br />
-  Sometimes referred to as <code>post</code> mode<br />
-- By simply loading a pre-quantized model<br />
-  Quantization type will be auto-determined at the start of the load<br />
-- During model training itself<br />
-  Out-of-scope for this document  </p>
+  Sometimes referred to as <code>post</code> mode  </li>
+<li>By simply loading a pre-quantized model<br />
+  Quantization type will be auto-determined at the start of the load  </li>
+<li>During model training itself<br />
+  Out-of-scope for this document  </li>
+</ul>
 <h2 id="on-the-fly-quantization">On-the-Fly Quantization</h2>
 <p>On-the-fly quantization is available for <code>SDNQ</code>, <code>BitsAndBytes</code>, <code>Optimum.Quanto</code>, <code>TorchAO</code> and <code>Layerwise</code> quantization methods<br />
 and can be configured in <em>Settings -&gt; Quantization Settings</em>  </p>
-<p>You can specify quantization for each model component:
-- <strong>Model</strong><br />
-  This is a shortcut, it basically means "select quantization to entire model"<br />
-- <strong>Transformer</strong><br />
+<p>You can specify quantization for each model component:</p>
+<ul>
+<li><strong>Model</strong><br />
+  This is a shortcut, it basically means "select quantization to entire model"  </li>
+<li><strong>Transformer</strong><br />
   Applies to quantization to main model DiT transformer, for example in SD3.5, HiDream, etc.<br />
-  Does not apply to UNET as in SD15/SDXL as its not recommended for quantization<br />
-- <strong>Text-encoder</strong><br />
-  Applies to T5-like text-encoders, for example in SD35, FLUX.1, HiDream, etc.<br />
-- <strong>VAE</strong><br />
-  Typically quantization of VAE module is not recommended<br />
-- <strong>LLM</strong><br />
-  Used by models that rely on LLM for secondary text encoding as well as VLM models during captioning and interrogate and prompt enhance features<br />
-- <strong>Video</strong><br />
-  Specifically for video models and typically referrs to DiT module of video model  </p>
+  Does not apply to UNET as in SD15/SDXL as its not recommended for quantization  </li>
+<li><strong>Text-encoder</strong><br />
+  Applies to T5-like text-encoders, for example in SD35, FLUX.1, HiDream, etc.  </li>
+<li><strong>VAE</strong><br />
+  Typically quantization of VAE module is not recommended  </li>
+<li><strong>LLM</strong><br />
+  Used by models that rely on LLM for secondary text encoding as well as VLM models during captioning and interrogate and prompt enhance features  </li>
+<li><strong>Video</strong><br />
+  Specifically for video models and typically referrs to DiT module of video model  </li>
+</ul>
 <p>You can mix-and-match quantization types for each model component
 For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</strong> and <code>Optimum.Quanto</code> for the <strong>llm</strong></p>
 <h2 id="quantization-engines">Quantization Engines</h2>
-<p>SD.Next supports multiple quantization engines, each with multiple quantization schemes:
-- <code>SDNQ</code> 9 int-based and 4 float8-based quantization schemes<br />
-- <code>BitsAndBytes</code> 3 float-based quantization schemes<br />
-- <code>Optimium.Quanto</code> 3 int-based and 2 float-based quantization schemes<br />
-- <code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes<br />
-- <code>Layerwise</code> 2 float8-based quantization schemes<br />
-- <code>GGUF</code> with pre-quantized weights  </p>
+<p>SD.Next supports multiple quantization engines, each with multiple quantization schemes:</p>
+<ul>
+<li><code>SDNQ</code> 9 int-based and 4 float8-based quantization schemes  </li>
+<li><code>BitsAndBytes</code> 3 float-based quantization schemes  </li>
+<li><code>Optimium.Quanto</code> 3 int-based and 2 float-based quantization schemes  </li>
+<li><code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes  </li>
+<li><code>Layerwise</code> 2 float8-based quantization schemes  </li>
+<li><code>GGUF</code> with pre-quantized weights  </li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Not all quantization engines are available on all platforms, see notes below for details!<br />
@@ -3299,24 +3334,28 @@ See <a href="../WSL/">WSL Wiki</a> for more details</p>
 <p class="admonition-title">Note</p>
 <p>BnB is allows for usage of balanced offload as well as fast quantization on-the-fly during load, thus it is considered most versatile choice, but it is not available on all platforms.</p>
 </div>
-<p>Limitations:
-- default <code>bitsandbytes</code> package only supports nVidia GPUs<br />
-  some quantization types require newer GPU with supported CUDA ops: e.g. <em>nVidia Turing</em> GPUs or newer<br />
-- <code>bitsandbytes</code> relies on <code>triton</code> packages which are not available on windows unless manually compiled/installed<br />
-  without them, performance is significantly reduced<br />
-- for nVidia: automatically installed as needed<br />
-- for AMD/ROCm: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=AMD+ROCm#amd-gpu">link</a> 
-- for Intel/IPEX: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=Intel+CPU+%2B+GPU#multi-backend">link</a>  </p>
+<p>Limitations:</p>
+<ul>
+<li>default <code>bitsandbytes</code> package only supports nVidia GPUs<br />
+  some quantization types require newer GPU with supported CUDA ops: e.g. <em>nVidia Turing</em> GPUs or newer  </li>
+<li><code>bitsandbytes</code> relies on <code>triton</code> packages which are not available on windows unless manually compiled/installed<br />
+  without them, performance is significantly reduced  </li>
+<li>for nVidia: automatically installed as needed  </li>
+<li>for AMD/ROCm: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=AMD+ROCm#amd-gpu">link</a> </li>
+<li>for Intel/IPEX: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=Intel+CPU+%2B+GPU#multi-backend">link</a>  </li>
+</ul>
 <h3 id="optimum-quanto">Optimum-Quanto</h3>
 <p>Typical models pre-quantized with <code>optimum.quanto</code> would have look like <code>*qint.safetensors</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>OQ is highly efficient with its qint8/qint4 quantization types, but it cannot be used with broad offloading methods</p>
 </div>
-<p>Limitations:
-- requires <code>torch&gt;=2.4.0</code><br />
-  if you're running older torch, you can try upgrading it or running sdnext with <code>--reinstall</code> flag<br />
-- not compatible with balanced offload  </p>
+<p>Limitations:</p>
+<ul>
+<li>requires <code>torch&gt;=2.4.0</code><br />
+  if you're running older torch, you can try upgrading it or running sdnext with <code>--reinstall</code> flag  </li>
+<li>not compatible with balanced offload  </li>
+</ul>
 <h3 id="torchao">TorchAO</h3>
 <p>TorchAO is available for quantization on-the-fly during model load as well as post-load quantization<br />
 Limitations:<br />
@@ -3335,10 +3374,12 @@ However, without GGML, GGUF provides storage-only quantization which means that 
 <li><code>gguf</code> does not provide native GPU kernels which means that <code>gguf</code> is purely a <em>storage optimization</em>  </li>
 <li><code>gguf</code> reduces model size and memory usage, but it does slow down model inference since all quantized weights are de-quantized on-the-fly  </li>
 </ul>
-<p>Limitations:
-- <code>gguf</code> is not compatible with model offloading as it would trigger de-quantization<br />
-- <em>note</em>: only supported component in <code>gguf</code> binary format is UNET/Transformer<br />
-  you cannot load all-in-one single-file GGUF model</p>
+<p>Limitations:</p>
+<ul>
+<li><code>gguf</code> is not compatible with model offloading as it would trigger de-quantization  </li>
+<li><em>note</em>: only supported component in <code>gguf</code> binary format is UNET/Transformer<br />
+  you cannot load all-in-one single-file GGUF model</li>
+</ul>
 <h2 id="benchmarks">Benchmarks</h2>
 <p>Comparing performance of different quantization methods on the FLUX.1-Dev model<br />
 This is not a comprehensive benchmark, but rather a quick overview of the performance of different quantization methods  </p>
@@ -3458,15 +3499,15 @@ batch==1  </p>
 </div>
 <ul>
 <li>BitsAndBytes nf4 quantization is not compatible with sequential offload  <blockquote>
-<p>Error: Blockwise quantization only supports 16/32-bit floats  </p>
+<p>Error: <code>Blockwise quantization only supports 16/32-bit floats</code>  </p>
 </blockquote>
 </li>
 <li>Quanto qint quantization is not compatible with balanced offload  <blockquote>
-<p>Error: QBytesTensor.<strong>new</strong>() missing 5 required positional arguments  </p>
+<p>Error: <code>QBytesTensor.__new__() missing 5 required positional arguments</code>  </p>
 </blockquote>
 </li>
 <li>Quanto qint quantization is not compatible with sequential offload  <blockquote>
-<p>Error: Expected all tensors to be on the same device  </p>
+<p>Error: <code>Expected all tensors to be on the same device</code>  </p>
 </blockquote>
 </li>
 </ul>

@@ -1295,11 +1295,11 @@
         <li class="md-nav__item">
   <a href="#installing-zluda-for-amd-gpus-in-windows" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing ZLUDA for AMD GPUs in Windows.
+      Installing ZLUDA for AMD GPUs in Windows
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installing ZLUDA for AMD GPUs in Windows.">
+    <nav class="md-nav" aria-label="Installing ZLUDA for AMD GPUs in Windows">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2289,6 +2289,8 @@
       
         
       
+        
+      
     
     
     
@@ -2384,6 +2386,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -3059,11 +3084,11 @@
         <li class="md-nav__item">
   <a href="#installing-zluda-for-amd-gpus-in-windows" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing ZLUDA for AMD GPUs in Windows.
+      Installing ZLUDA for AMD GPUs in Windows
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installing ZLUDA for AMD GPUs in Windows.">
+    <nav class="md-nav" aria-label="Installing ZLUDA for AMD GPUs in Windows">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3241,7 +3266,7 @@
 <p><strong>ZLUDA</strong> is a CUDA CUDA Wrapper that allows to run applications using normally unsupported GPUS such as AMD GPUs in Windows  </p>
 <h2 id="warning">Warning</h2>
 <p>ZLUDA support is unofficial and support is limited at this time  </p>
-<h2 id="installing-zluda-for-amd-gpus-in-windows">Installing ZLUDA for AMD GPUs in Windows.</h2>
+<h2 id="installing-zluda-for-amd-gpus-in-windows">Installing ZLUDA for AMD GPUs in Windows</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This guide assumes you have <a href="../Installation/#install-python-and-git">Git and Python</a> installed,<br />
@@ -3266,7 +3291,7 @@ If you get the options to Repair or Uninstall, then you already have it installe
 So long as your regular AMD GPU driver is up to date, you don't need to install the PRO driver HIP SDK suggests.</p>
 <h3 id="replace-hip-sdk-library-files-for-unsupported-gpu-architectures">Replace HIP SDK library files for unsupported GPU architectures</h3>
 <p>Go to <a href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html">https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html</a> and find your GPU model.<br />
-If your GPU model has a ✅ in both columns then skip to <a href="./#install-sdnext">Install SD.Next</a>.  <br />
+If your GPU model has a ✅ in both columns then skip to <a href="./#install-sdnext">Install SD.Next</a>.<br />
 If your GPU model has an ❌ in the HIP SDK column, or if your GPU isn't listed, follow the instructions below;  </p>
 <ol>
 <li>Open Windows Explorer and copy and paste <code>C:\Program Files\AMD\ROCm\6.2\bin\rocblas</code> into the location bar.<br />
@@ -3290,7 +3315,7 @@ gfx803: RX 570, RX 580<br />
 <p>Building your own libraries is not for the faint of heart</p>
 </div>
 <h3 id="install-sdnext">Install SD.Next</h3>
-<p>Using Windows Explorer, navigate to a place you'd like to install SD.Next. This should be a folder which your user account has read/write/execute access to. Installing SD.Next in a directory which requires admin permissions may cause it to not launch properly. </p>
+<p>Using Windows Explorer, navigate to a place you'd like to install SD.Next. This should be a folder which your user account has read/write/execute access to. Installing SD.Next in a directory which requires admin permissions may cause it to not launch properly.  </p>
 <p>Note: Refrain from installing SD.Next into the Program Files, Users, or Windows folders, this includes the OneDrive folder or on the Desktop, or into a folder that begins with a period; (eg: <code>.sdnext</code>).  </p>
 <p>The best place would be on an SSD for model loading.  </p>
 <p>In the Location Bar, type <code>cmd</code>, then hit [Enter]. This will open a Command Prompt window at that location.  </p>
@@ -3353,11 +3378,11 @@ Compatible with: Navi cards</p>
 <ol>
 <li>Prepare Python 3.11 (or 3.10) environment.</li>
 <li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/bb314b47">here</a>.  </li>
-<li>Install via pip.
-<div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.3.0+gitbb314b47-cp311-cp311-win_amd64.whl setuptools
-</code></pre></div>
-(cp311 should be replaced with cp310 if you have Python 3.10)</li>
+<li>Install via pip.</li>
 </ol>
+<p><div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.3.0+gitbb314b47-cp311-cp311-win_amd64.whl setuptools
+</code></pre></div>
+(cp311 should be replaced with cp310 if you have Python 3.10)</p>
 <p>※ Developer PowerShell for Visual Studio (or Prompt) will be needed to compile kernel using triton.</p>
 <h4 id="flash-attention-2">Flash Attention 2</h4>
 <p>Using triton, you can enable Flash Attention 2.</p>

@@ -2211,6 +2211,8 @@
       
         
       
+        
+      
     
     
     
@@ -2306,6 +2308,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -3084,25 +3109,29 @@
 <h1 id="themes">Themes</h1>
 <p>SD.Next supports two native theme engines plus option to disable it completely to use external themes:</p>
 <h2 id="set-themes">Set Themes</h2>
-<p><strong>Set theme via UI</strong>: <em>settings -&gt; user interface</em>
-- theme type: <strong>modern</strong>, <strong>standard</strong>, <strong>none</strong><br />
+<p><strong>Set theme via UI</strong>: <em>settings -&gt; user interface</em></p>
+<ul>
+<li>theme type: <strong>modern</strong>, <strong>standard</strong>, <strong>none</strong><br />
 <em>note</em>: <strong>none</strong> disables native theme engine and is used<br />
-  for <em>gradio</em> built-in themes, <em>huggingface</em> 3rd party themes and custom <em>extension</em> based themes<br />
-- theme name<br />
-- theme mode<br />
-  to force light/dark or leave it as os-default (auto)  </p>
-<p><strong>Set theme via CLI</strong>: <code>--theme theme-type/theme-name</code><br />
-- theme <code>default</code> defaults to <strong>standard/black-teal</strong>
-- optional theme types: <strong>standard</strong>, <strong>modern</strong>, <strong>gradio</strong>, <strong>huggingface</strong><br />
-  if theme type is not specified, it will default to <strong>standard</strong><br />
-- if theme name is not specified, it will default to:<br />
-  - <strong>default</strong> for modern
-  - <strong>black-teal</strong> for standard
-  - <strong>gradio/default</strong> for gradio
-  - <strong>huggingface/none</strong> for huggingface
-- theme param can additionally be used to enable to specific theme extension:
-  - <strong>lobe</strong>
-  - <strong>cozy-next</strong></p>
+  for <em>gradio</em> built-in themes, <em>huggingface</em> 3rd party themes and custom <em>extension</em> based themes  </li>
+<li>theme name  </li>
+<li>theme mode<br />
+  to force light/dark or leave it as os-default (auto)  </li>
+</ul>
+<p><strong>Set theme via CLI</strong>: <code>--theme theme-type/theme-name</code>  </p>
+<ul>
+<li>theme <code>default</code> defaults to <strong>standard/black-teal</strong></li>
+<li>optional theme types: <strong>standard</strong>, <strong>modern</strong>, <strong>gradio</strong>, <strong>huggingface</strong><br />
+  if theme type is not specified, it will default to <strong>standard</strong>  </li>
+<li>if theme name is not specified, it will default to:  </li>
+<li><strong>default</strong> for modern</li>
+<li><strong>black-teal</strong> for standard</li>
+<li><strong>gradio/default</strong> for gradio</li>
+<li><strong>huggingface/none</strong> for huggingface</li>
+<li>theme param can additionally be used to enable to specific theme extension:</li>
+<li><strong>lobe</strong></li>
+<li><strong>cozy-next</strong></li>
+</ul>
 <p>Selected theme type and name will be shown in the log on startup<br />
 example:</p>
 <pre><code>11:41:37-649897 DEBUG    UI themes available: type=Standard themes=12

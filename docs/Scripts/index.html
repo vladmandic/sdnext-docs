@@ -1962,13 +1962,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scripts_1" class="md-nav__link">
+  <a href="#script-list" class="md-nav__link">
     <span class="md-ellipsis">
-      Scripts
+      Script List
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scripts">
+    <nav class="md-nav" aria-label="Script List">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2373,6 +2373,8 @@
       
         
       
+        
+      
     
     
     
@@ -2468,6 +2470,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -3141,13 +3166,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scripts_1" class="md-nav__link">
+  <a href="#script-list" class="md-nav__link">
     <span class="md-ellipsis">
-      Scripts
+      Script List
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scripts">
+    <nav class="md-nav" aria-label="Script List">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3423,7 +3448,7 @@
 <li><a href="./#text-to-video">Text-to-Video</a></li>
 <li><a href="./#demofusion">DemoFusion</a></li>
 </ul>
-<h2 id="scripts_1">Scripts</h2>
+<h2 id="script-list">Script List</h2>
 <h3 id="xyz-grid">X/Y/Z Grid</h3>
 <p>The X/Y/Z Grid script is a way of generating multiple images with automatic changes in the image, and then displaying the result in labelled grids.</p>
 <p>To activate the X/Y/Z Grid, scroll down to the Script dropdown and select "X/Y/Z Grid" within.</p>
@@ -3477,8 +3502,8 @@ The X, Y, Z values are where to specify what to change. For some types, there wi
 <p>Simply select <a href="https://github.com/rootonchair/diffuser_layerdiffuse">LayerDiffuse</a> in the scripts and then click on apply to model after setting everything up. If you want to disable it, simply disable the script. (<strong>Note: You have to reload the model and applying it again after making changes like: adding Lora, Controlnet or IP Adapters</strong>).</p>
 <h3 id="mixture-tiling">Mixture Tiling</h3>
 <p><a href="https://github.com/albarji/mixture-of-diffusers">Mixture of Diffusers</a>, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.</p>
-<p>To use it you have to select in the scripts, then you have to write your prompts with newlines between them, so for example: <br>
-<strong>bird</strong><br />
+<p>To use it you have to select in the scripts, then you have to write your prompts with newlines between them, so for example:  </p>
+<p><strong>bird</strong><br />
 <strong>plane</strong><br />
 <strong>dog</strong><br />
 <strong>cat</strong>  </p>
@@ -3491,9 +3516,9 @@ The X, Y, Z values are where to specify what to change. For some types, there wi
 <h3 id="prompt-matrix">Prompt Matrix</h3>
 <p>Prompt Matrix is useful for testing and comparing the changes prompts are making to your generated images.</p>
 <p>First enable prompt matrix in your scripts.</p>
-<p>Then create your prompt like this: <br>
-<code>Woman|Red hair|Blue eyes</code> <br>
-You can make the prompt like this as big as you want. What it will do is it will generate a grid of images, one without the red hair and blue eyes, one with Woman + Red hair, one with Woman + Blue eyes and one with Woman + Red hair + Blue eyes.</p>
+<p>Then create your prompt like this:<br />
+<code>Woman|Red hair|Blue eyes</code>  </p>
+<p>You can make the prompt like this as big as you want. What it will do is it will generate a grid of images, one without the red hair and blue eyes, one with Woman + Red hair, one with Woman + Blue eyes and one with Woman + Red hair + Blue eyes.</p>
 <ul>
 <li><strong>Set at prompt start</strong>: This will make it so the example of above will be used like this Red hair|Blue eyes|Woman, so in other words it will use the secondary prompts first before adding Woman to it, for example like this: Red hair, Woman.</li>
 <li><strong>Random seeds</strong>: It will use a different seed for every image in the grid.</li>
@@ -3503,9 +3528,9 @@ You can make the prompt like this as big as you want. What it will do is it will
 </ul>
 <h3 id="prompt-from-file">Prompt from file</h3>
 <p>Prompt from file allows you to use generation settings from a file including the prompt.</p>
-<p>First you need to create a .txt file and type something like this: <br>
+<p>First you need to create a .txt file and type something like this:<br />
 <code>--prompt "what ever you want" --negative_prompt "whatever you don't want" --steps 30 --cfg_scale 10 --sampler_name "DPM++ SDE Karras" --seed -1 --width 512 --height 768</code> <br>
-Then upload the file to SD.NEXT at upload prompts. <br>
+Then upload the file to SD.NEXT at upload prompts.<br />
 You can also type it in the prompts box for the same result although it won't be saved if you shutdown SD.NEXT.</p>
 <h3 id="regional-prompting">Regional prompting</h3>
 <p>This pipeline is a port of the <a href="https://github.com/huggingface/diffusers/blob/main/examples/community/README.md#regional-prompting-pipeline">Regional Prompter</a> extension for Stable Diffusion web UI to diffusers. This code implements a pipeline for the Stable Diffusion model, enabling the division of the canvas into multiple regions, with different prompts applicable to each region. Users can specify regions in two ways: using Cols and Rows modes for grid-like divisions, or the Prompt mode for regions calculated based on prompts.</p>

@@ -2205,6 +2205,8 @@
       
         
       
+        
+      
     
     
     
@@ -2300,6 +2302,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -3158,9 +3183,9 @@ In either case, refiner will use calculated number of steps based on <code>Refin
 <p>However, in this mode, refiner may not produce much better result and will likely only smoothen the image as base model already reached 100% and there is insufficient remaining noise for refiner to do anything else.</p>
 <p>If <code>refiner start</code> is set to any other value, then handover mode is used:</p>
 <ul>
-<li>Base model runs from <code>0%</code> -&gt; <code>denoise_start%</code>  <br />
+<li>Base model runs from <code>0%</code> -&gt; <code>denoise_start%</code><br />
   Exact number is calculated internally to be Sampling steps.</li>
-<li>Refiner model runs from <code>denoise_start%</code> -&gt; <code>100%</code>  <br />
+<li>Refiner model runs from <code>denoise_start%</code> -&gt; <code>100%</code><br />
   Exact number is calculated internally to be Refiner steps.</li>
 </ul>
 <p>In this mode, using different ratio of steps for primary and refiner is allowed, but may result in unexpected results as base and refiner operations will not be perfectly aligned.</p>

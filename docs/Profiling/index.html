@@ -2073,6 +2073,8 @@
       
         
       
+        
+      
     
     
     
@@ -2171,6 +2173,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -2935,9 +2960,11 @@
 <p>SD.Next has built-in support for both Python and Torch profiling  </p>
 <p>Profiling can be started for the entire session using <code>--profile</code> command line flag<br />
 Or it can be started/stopped on-demand using <em>UI -&gt; System -&gt; Start/Stop profiling</em>  </p>
-<p>When profiling is enabled, analysis is performed<br />
-- As a last step of server startup to see performance and bottlenecks of the startup process<br />
-- As the last step of any generate workflow  </p>
+<p>When profiling is enabled, analysis is performed  </p>
+<ul>
+<li>As a last step of server startup to see performance and bottlenecks of the startup process  </li>
+<li>As the last step of any generate workflow  </li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Collecting profile information may take significant resources and time</p>
@@ -2948,9 +2975,11 @@ Or it can be started/stopped on-demand using <em>UI -&gt; System -&gt; Start/Sto
 <p><code>SD_PROFILE_FOLDER=/tmp/profile</code></p>
 </blockquote>
 <p>Each profiling run will create a JSON file in the specified folder<br />
-File can be loaded for further analysis in tools such as:<br />
-- <chrome://tracing/>&gt;
-- <a href="https://ui.perfetto.dev/">https://ui.perfetto.dev/</a></p>
+File can be loaded for further analysis in tools such as:  </p>
+<ul>
+<li><chrome://tracing/>&gt;</li>
+<li><a href="https://ui.perfetto.dev/">https://ui.perfetto.dev/</a></li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Each profile trace file is over 100MB in size</p>

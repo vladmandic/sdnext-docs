@@ -2340,6 +2340,8 @@
       
         
       
+        
+      
     
     
     
@@ -2435,6 +2437,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -3410,13 +3435,13 @@ makepkg<span class="w"> </span>-si
 <span class="c1"># rm -rf python312</span>
 </code></pre></div></p>
 <p>Install ROCm SDK:  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>ROCm SDK is optional. Only required for building flash atten or similar custom kernels.<br />
-ROCm SDK uses 26 GB of disk space.</p>
-</div>
+<blockquote>
+<p>[!NOTE]
+ROCm SDK is optional. Only required for building flash atten or similar custom kernels.<br />
+ROCm SDK uses 26 GB of disk space.<br />
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>rocm-hip-sdk<span class="w"> </span>libxml2-legacy<span class="w"> </span>gcc14<span class="w"> </span>gcc14-libs
-</code></pre></div>
+</code></pre></div></p>
+</blockquote>
 <h3 id="running-sdnext-with-rocm-locally">Running SD.Next with ROCm locally</h3>
 <p>Open the terminal in a folder you want to install SD.Next and install SD.Next from Github with this command:<br />
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/sdnext
@@ -3427,16 +3452,16 @@ ROCm SDK uses 26 GB of disk space.</p>
 <p>Then run SD.Next with this command:<br />
 <div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-rocm
 </code></pre></div></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
-</div>
+<blockquote>
+<p>[!NOTE]
+It will install the necessary libraries at the first run so it will take a while depending on your internet.  </p>
+</blockquote>
 <h2 id="running-sdnext-with-docker-for-rocm">Running SD.Next with Docker for ROCm</h2>
 <p>Checkout the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Installing ROCm on your system is not required when using Docker as Docker has no access to it anyway.</p>
-</div>
+<blockquote>
+<p>[!NOTE]
+Installing ROCm on your system is not required when using Docker as Docker has no access to it anyway.  </p>
+</blockquote>
 <p>Using Docker with a prebuilt image:  </p>
 <div class="highlight"><pre><span></span><code>export SDNEXT_DOCKER_ROOT_FOLDER=~/sdnext
 sudo docker run -it \
@@ -3451,11 +3476,11 @@ sudo docker run -it \
   -v $SDNEXT_DOCKER_ROOT_FOLDER/huggingface:/root/.cache/huggingface \
   disty0/sdnext-rocm:latest
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.<br />
+<blockquote>
+<p>[!NOTE]
+It will install the necessary libraries at the first run so it will take a while depending on your internet.<br />
 Resulting docker image will use 3.2 GB disk space (uncompressed) for the docker image and 20 GB for the venv.</p>
-</div>
+</blockquote>
 <h2 id="rocm-performance-tuning-on-linux">ROCm performance tuning on Linux</h2>
 <h3 id="miopen-database-tuning">MIOpen database tuning</h3>
 <p>On first use, when using a resolution for the first time, or when upgrading Pytorch versions, ROCm runs a series of benchmarks to select the most efficient approach. This can lead to slow (up to 5-8 minutes) startup times, in particular if you use a refine pass at high resolution, but it only happens once per resolution (subsequent runs are much faster). If for any case this is undesirable, you can set the environment variable <code>MIOPEN_FIND_MODE</code> to <code>FAST</code>. This will reduce a lot the startup time on first use at the price of worse performance when generating.

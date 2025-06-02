@@ -2295,6 +2295,8 @@
       
         
       
+        
+      
     
     
     
@@ -2390,6 +2392,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -3251,10 +3276,12 @@
 
 <h1 id="prompting-with-different-models">Prompting with different models</h1>
 <p>This is not in-depth technical article, but instead intended to demystify the process of prompting with different models - and importantly - why.</p>
-<p>Basically, effectiveness prompting depends on:
-- Text encoder used in the model
-- Dataset used to train the model
-- Structure prompt and negative prompt</p>
+<p>Basically, effectiveness prompting depends on:</p>
+<ul>
+<li>Text encoder used in the model</li>
+<li>Dataset used to train the model</li>
+<li>Structure prompt and negative prompt</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Different models have different prompting best practices<br />
@@ -3262,11 +3289,13 @@ When in doubt, refer to model specific notes on CivitiAI website</p>
 </div>
 <p>For example: standard <strong>SD15/SDXL</strong> models are prompted very differently vs <strong>Pony</strong>-derived models vs <strong>SD35</strong> or <strong>Flux.1</strong> derived models - it all comes down to which text enocder is used and how it was trained.  </p>
 <h2 id="prompt-parser">Prompt Parser</h2>
-<p>SDNext supports multiple prompt parsers:
-- <strong>Native</strong>: Default<br />
-- <strong>A1111</strong>: Included with compatibility with A1111 original implementation<br />
-- <strong>Compel</strong>: Use compel-style attention syntax, e.g. <code>dog++</code> or <code>dog--</code><br />
-- <strong>xHinker</strong>: Alternative engine compatible with <code>T5</code> text-encoder  </p>
+<p>SDNext supports multiple prompt parsers:</p>
+<ul>
+<li><strong>Native</strong>: Default  </li>
+<li><strong>A1111</strong>: Included with compatibility with A1111 original implementation  </li>
+<li><strong>Compel</strong>: Use compel-style attention syntax, e.g. <code>dog++</code> or <code>dog--</code>  </li>
+<li><strong>xHinker</strong>: Alternative engine compatible with <code>T5</code> text-encoder  </li>
+</ul>
 <h2 id="native-prompt-parser">Native Prompt Parser</h2>
 <h3 id="prompt-attention">Prompt Attention</h3>
 <ul>
@@ -3360,11 +3389,13 @@ Later fine-tuning introduces additional data (e.g. Pony uses heavily tagged data
 <h3 id="negative-prompt">Negative prompt</h3>
 <p>When you add negative prompt, what happens is that its basically appended to prompt just using negative weights.
 This makes model "steer away" from terms in negative prompt, but to do so it first has to INTRODUCE them to the context.</p>
-<p>So by adding negative prompt, you're:
-- Limiting the freedom of the model<br />
-  Quite commonly this means that all faces will look similar without variance, etc.
-- Making the model more prone to hallucinations
-  If you're trying to steer away from something that doesn't exist in the first place, it might introduce opposite of what you're trying to do.</p>
+<p>So by adding negative prompt, you're:</p>
+<ul>
+<li>Limiting the freedom of the model<br />
+  Quite commonly this means that all faces will look similar without variance, etc.</li>
+<li>Making the model more prone to hallucinations
+  If you're trying to steer away from something that doesn't exist in the first place, it might introduce opposite of what you're trying to do.</li>
+</ul>
 <p>All-in-all, negative prompts are useful to steer model away from certain concepts, but should not be used as a <em>"general purpose long negative prompt"</em></p>
 <h3 id="prompt-attention_1">Prompt attention</h3>
 <p>First, nothing wrong with wanting to add extra attention to certain parts of the prompt. But it should be used sparingly and only when needed and keep in mind that overall prompt should be balanced.</p>
@@ -3373,31 +3404,45 @@ This makes model "steer away" from terms in negative prompt, but to do so it fir
 <p>Also, keep in mind that adding extremely strong attention modifiers such as <code>(((xyz)))</code> or <code>(xyz:1.5)</code> will make model completely loose concept of prompt as a whole.</p>
 <h2 id="model-specific-tips">Model Specific Tips</h2>
 <h3 id="sd15">SD15</h3>
-<p>Dataset:
-- Used small laion-5b subset with preexisting captions
-- No major effort was put into processing or captioning other than what's in the subset</p>
-<p>Result?
-- Model that's has basic understanding of the world, but to use it effectively you need to "hunt" for the right keywords<br />
-- Models are easily fine-tuned as nothing-forced-nothing-removed approach was used during training<br />
-- <strong>How to prompt</strong>? Old-school prompting which put heavy emphasis on keywords and attention modifiers  </p>
-<h3 id="sd21">SD21</h3>
-<p>Dataset:
-- Trained on same dataset as SD15 and then fine-tuned on extended dataset with larger resolution<br />
-- It was also censored in the final parts of training which introduced heavy bias  </p>
-<p>Result?
-- Its almost like model was "lobotomized".<br />
-  E.g. For concept of "topless", its not like it just doesn't have sample data for it, it was "burned out" of the model.
-  So to add concepts that model did not understand it takes massive effort, almost close to retraining. Fail.</p>
-<h3 id="sdxl">SDXL</h3>
-<p>Dataset:
-- Used larger subset with extended captions and also diverse resolutions<br />
-- Instead of censoring in the final stages, they simply pruned dataset used for training.</p>
-<p>Result?
-- Model that <em>knows-what-it-knows</em> and the rest can be added with fine-tuning.
-- E.g. It knows what "topless" means, just doesn't have enough examples to develop it fully.<br />
-- <strong>How to prompt</strong>? Extended captions and second text encoder mean that model can be prompted in a more natural way and extended use of keywords and attention-modifiers should be avoided.</p>
+<p>Dataset:</p>
 <ul>
-<li>Extra note: <strong>PonyXL</strong> was extensively trained on heavily tagged dataset without natural language captions and as such it needs to be prompted differently - using tags and keywords instead of natural language.</li>
+<li>Used small laion-5b subset with preexisting captions</li>
+<li>No major effort was put into processing or captioning other than what's in the subset</li>
+</ul>
+<p>Result?</p>
+<ul>
+<li>Model that's has basic understanding of the world, but to use it effectively you need to "hunt" for the right keywords  </li>
+<li>Models are easily fine-tuned as nothing-forced-nothing-removed approach was used during training  </li>
+<li><strong>How to prompt</strong>? Old-school prompting which put heavy emphasis on keywords and attention modifiers  </li>
+</ul>
+<h3 id="sd21">SD21</h3>
+<p>Dataset:</p>
+<ul>
+<li>Trained on same dataset as SD15 and then fine-tuned on extended dataset with larger resolution  </li>
+<li>It was also censored in the final parts of training which introduced heavy bias  </li>
+</ul>
+<p>Result?</p>
+<ul>
+<li>Its almost like model was "lobotomized".<br />
+  E.g. For concept of "topless", its not like it just doesn't have sample data for it, it was "burned out" of the model.
+  So to add concepts that model did not understand it takes massive effort, almost close to retraining. Fail.</li>
+</ul>
+<h3 id="sdxl">SDXL</h3>
+<p>Dataset:</p>
+<ul>
+<li>Used larger subset with extended captions and also diverse resolutions  </li>
+<li>Instead of censoring in the final stages, they simply pruned dataset used for training.</li>
+</ul>
+<p>Result?</p>
+<ul>
+<li>Model that <em>knows-what-it-knows</em> and the rest can be added with fine-tuning.</li>
+<li>E.g. It knows what "topless" means, just doesn't have enough examples to develop it fully.  </li>
+<li>
+<p><strong>How to prompt</strong>? Extended captions and second text encoder mean that model can be prompted in a more natural way and extended use of keywords and attention-modifiers should be avoided.</p>
+</li>
+<li>
+<p>Extra note: <strong>PonyXL</strong> was extensively trained on heavily tagged dataset without natural language captions and as such it needs to be prompted differently - using tags and keywords instead of natural language.</p>
+</li>
 </ul>
 <h3 id="sd3">SD3</h3>
 <ul>
@@ -3405,12 +3450,14 @@ This makes model "steer away" from terms in negative prompt, but to do so it fir
 <li>Censored not only by removing images from dataset, but also by modifying them by censoring parts of the image</li>
 <li>Captioned extensively using LLM. Unfortunately, not ON-TOP of existing captions so it can augment them, but instead it REPLACED them - thus keywords already existing in dataset are not trained for at all.</li>
 </ul>
-<p>Result?
-- Model that <em>thinks-it-knows-everything</em> and now it's up to you to prove it wrong.<br />
+<p>Result?</p>
+<ul>
+<li>Model that <em>thinks-it-knows-everything</em> and now it's up to you to prove it wrong.<br />
   E.g., it knows what a topless person looks like, and its "certain" that nipples should be presented as blank.<br />
   Which means it would like take a massive effort to retrain what it learned in the wrong way.<br />
-  I hope to be proven wrong, but this looks like a fail.
-- <strong>How to prompt</strong>? Use of long LLM-generated captions means that model should be prompted using very descriptive language and completely stop using using styles, keywords and attention-modifiers. And since LLM generated captions do not include styles as we know them, we need to replace them with detailed descriptions - it's almost like we need to think like LLM to prompt it - how would LLM describe the image I'm trying to create?</p>
+  I hope to be proven wrong, but this looks like a fail.</li>
+<li><strong>How to prompt</strong>? Use of long LLM-generated captions means that model should be prompted using very descriptive language and completely stop using using styles, keywords and attention-modifiers. And since LLM generated captions do not include styles as we know them, we need to replace them with detailed descriptions - it's almost like we need to think like LLM to prompt it - how would LLM describe the image I'm trying to create?</li>
+</ul>
 
 
 

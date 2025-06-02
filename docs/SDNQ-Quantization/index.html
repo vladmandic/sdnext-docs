@@ -2071,6 +2071,8 @@
       
         
       
+        
+      
     
     
     
@@ -2166,6 +2168,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -2506,6 +2531,102 @@
       Features
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantization-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization enabled
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantization-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantization-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantize-the-convolutional-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantize the convolutional layers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decompress-using-full-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decompress using full precision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decompress-using-torchcompile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decompress using torch.compile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-quantized-matmul" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Quantized MatMul
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantize-with-the-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantize with the GPU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2912,6 +3033,102 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantization-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization enabled
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantization-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantization-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantize-the-convolutional-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantize the convolutional layers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decompress-using-full-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decompress using full precision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decompress-using-torchcompile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decompress using torch.compile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-quantized-matmul" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Quantized MatMul
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantize-with-the-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantize with the GPU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2946,21 +3163,21 @@ VAE Upcast has to be set to false if you use the VAE option.<br />
 If you get black images with SDXL models, use the <a href="https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/blob/main/sdxl_vae.safetensors">FP16 Fixed VAE</a>.  </p>
 <h2 id="features">Features</h2>
 <ul>
-<li>SDNQ is fully cross-platform, supports all GPUs and includes tons of quantization methods:</li>
-<li>8-bit, 6-bit, 4-bit, 2-bit and 1-bit int and uint  </li>
-<li>8-bit e5, e4 and fnuz float  </li>
-<li><code>int8</code> is very close to the original 16 bit quality  </li>
+<li>SDNQ is fully cross-platform, supports all GPUs and includes many quantization methods:  </li>
+<li><em>8-bit, 6-bit, 4-bit, 2-bit and 1-bit int and uint</em>  </li>
+<li><em>8-bit e5, e4 and fnuz float</em><br />
+<em>note</em>: <code>int8</code> is very close to the original 16 bit quality  </li>
 <li>Supports nearly all model types  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
 <li>Supports Quantized MatMul with significant speedups on INT8 or FP8 supported GPUs  </li>
 <li>Supports on the fly quantization during model load with DiT models (called as <code>pre</code> mode)  </li>
-<li>Supports quantization for the convolutional layers with UNet models   </li>
+<li>Supports quantization for the convolutional layers with UNet models  </li>
 <li>Supports post load quantization for any model  </li>
 <li>Supports on the fly usage of LoRa models  </li>
 <li>Supports balanced offload  </li>
 </ul>
-<h1 id="options">Options</h1>
-<h2 id="quantization-enabled">Quantization enabled</h2>
+<h2 id="options">Options</h2>
+<h3 id="quantization-enabled">Quantization enabled</h3>
 <p>Used to decide which parts of the model will get quantized.<br />
 Recommended options are <code>Model</code> and <code>TE</code> with post mode or <code>Transformer</code>, <code>TE</code> and <code>LLM</code> on pre mode.<br />
 Default is none.  </p>
@@ -2971,13 +3188,13 @@ Default is none.  </p>
 <code>Video</code> is used to quantize the Video models.<br />
 <code>LLM</code> is used to quantize the LLM part of the models that uses LLMs as Text Encoders.<br />
 <code>ControlNet</code> is used to quantize ControlNets.  </p>
-<h2 id="quantization-mode">Quantization mode</h2>
+<h3 id="quantization-mode">Quantization mode</h3>
 <p>Used to decide when the quantization step will happen on model load.<br />
 <code>Pre</code> mode will quantize the model while the model is loading. Reduces system RAM usage.<br />
 <code>Post</code> mode will quantize the model after the model is loaded into system RAM.<br />
 <code>Pre</code> mode is compatible with DiT and Video models like Flux but older UNet models like SDXL are only compatible with <code>post</code> mode.<br />
 Default is <code>pre</code>.  </p>
-<h2 id="quantization-type">Quantization type</h2>
+<h3 id="quantization-type">Quantization type</h3>
 <p>Used to decide the data type used to store the model weights.<br />
 Recommended types are <code>int8</code> for 8 bit, <code>int6</code> for 6 bit, <code>float8_e4m3fn</code> for fp8 and <code>uint4</code> for 4 bit.<br />
 Default is <code>int8</code>.  </p>
@@ -3003,7 +3220,7 @@ Symetric quants can store negative and positive values meaning they don't have e
 <code>float8_e5m2</code> uses float8_e5m2 and has -57344 to 57344 range.<br />
 <code>float8_e4m3fnuz</code> uses float8_e4m3fnuz and has -240 to 240 range.<br />
 <code>float8_e5m2fnuz</code> uses float8_e5m2fnuz and has -57344 to 57344 range.  </p>
-<h2 id="group-size">Group size</h2>
+<h3 id="group-size">Group size</h3>
 <p>Used to decide how many elements of a tensor will share the same quantization group.<br />
 Higher values have better performance but less quality.<br />
 Default is <code>0</code>, meaning it will decide the group size based on your quantization type setting.<br />
@@ -3011,23 +3228,23 @@ INT4 quants will use group size <code>64</code> by default.<br />
 INT2 and INT1 quants will use group size <code>32</code> by default.<br />
 INT8, INT6 and FP8 quants won't use any grouping by default.<br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
-<h2 id="quantize-the-convolutional-layers">Quantize the convolutional layers</h2>
+<h3 id="quantize-the-convolutional-layers">Quantize the convolutional layers</h3>
 <p>Enabling this option will quantize the convolutional layers in UNet models too.<br />
 Has better memory savings but lower quality.<br />
 Quantizing the VAE is not recommended with this option.<br />
 Using 4 bit quants are not recommended with this option.<br />
 Group sizes are not supported on convolutions.<br />
 Disabled by default.  </p>
-<h2 id="decompress-using-full-precision">Decompress using full precision</h2>
+<h3 id="decompress-using-full-precision">Decompress using full precision</h3>
 <p>Enabling this option will use <code>FP32</code> on the decompression step.<br />
 Has higher quality outputs but lower performance.<br />
 Disabled by default.  </p>
-<h2 id="decompress-using-torchcompile">Decompress using torch.compile</h2>
+<h3 id="decompress-using-torchcompile">Decompress using torch.compile</h3>
 <p>Uses Triton via <code>torch.compile</code> on the decompression step.<br />
 Has significantly higher performance.<br />
 This setting requires a full restart of the webui to apply.<br />
 Enabled by default if Triton is available.  </p>
-<h2 id="use-quantized-matmul">Use Quantized MatMul</h2>
+<h3 id="use-quantized-matmul">Use Quantized MatMul</h3>
 <p>Enabling this option will use quantized INT8 or FP8 MatMul instead of BF16 / FP16.<br />
 Has significantly higher performance on GPUs with INT8 or FP8 support.<br />
 Recommended quant type to use with this option is <code>int8</code> because INT8 matmul tends to be faster than FP8.<br />
@@ -3036,7 +3253,7 @@ Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> and <cod
 Groups sizes will be disabled when Quantized MatMul is enabled.<br />
 Convolutions won't use Quantized MatMul.<br />
 Disabled by default.  </p>
-<h2 id="quantize-with-the-gpu">Quantize with the GPU</h2>
+<h3 id="quantize-with-the-gpu">Quantize with the GPU</h3>
 <p>Enabling this option will use the GPU with the quantization calculations on model load.<br />
 Can be faster with weak CPUs but can also be slower because of GPU to CPU communication overhead.<br />
 Enabled by default.  </p>

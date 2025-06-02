@@ -2151,6 +2151,8 @@
       
         
       
+        
+      
     
     
     
@@ -2246,6 +2248,29 @@
   
   <span class="md-ellipsis">
     Hints and Tooltips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
     
   </span>
   
@@ -2967,19 +2992,21 @@
 <p>Different model types have different preferences on how to prompt them.
 For details, see <a href="../Prompting/#model-specific-tips">Prompting</a> model specific tips.</p>
 </div>
-<p>SD.Next includes built-in prompt enhancer that uses LLM to enhance your prompts:
-- Can be used to manually or automatically enhance prompts<br />
-  Automatic enhancement is done during normal generation without user intervention<br />
-- Built-in presets for:<br />
-<strong>Gemma-3, Qwen-2.5, Phi-4, Llama-3.2, SmolLM2, Dolphin-3</strong><br />
-- Support for custom system prompt<br />
-- Support for custom models<br />
-  - Load any models hosted on <a href="https://huggingface.co/models?pipeline_tag=text-generation">huggingface</a><br />
-  - Supports models in <code>huggingface</code> format
-  - Supports models in <code>gguf</code> format<br />
-- Models are auto-downloaded on first use<br />
-- Support quantization and offloading<br />
-- Advanced options: <code>max tokens, sampling, temperature, repetition penalty</code></p>
+<p>SD.Next includes built-in prompt enhancer that uses LLM to enhance your prompts:</p>
+<ul>
+<li>Can be used to manually or automatically enhance prompts<br />
+  Automatic enhancement is done during normal generation without user intervention  </li>
+<li>Built-in presets for:<br />
+<strong>Gemma-3, Qwen-2.5, Phi-4, Llama-3.2, SmolLM2, Dolphin-3</strong>  </li>
+<li>Support for custom system prompt  </li>
+<li>Support for custom models  </li>
+<li>Load any models hosted on <a href="https://huggingface.co/models?pipeline_tag=text-generation">huggingface</a>  </li>
+<li>Supports models in <code>huggingface</code> format</li>
+<li>Supports models in <code>gguf</code> format  </li>
+<li>Models are auto-downloaded on first use  </li>
+<li>Support quantization and offloading  </li>
+<li>Advanced options: <code>max tokens, sampling, temperature, repetition penalty</code></li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If SD.Next detected censored output, it will print warning in the log file and return original prompt</p>
