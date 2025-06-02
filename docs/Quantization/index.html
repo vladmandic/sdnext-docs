@@ -3390,9 +3390,10 @@ gpu==nVidia RTX4090<br />
 torch==2.7.0<br />
 dtype==auto<br />
 attention==sdpa<br />
-offload==Balanced
+offload==balanced
 sampler==FlowMatchEulerDiscreteScheduler<br />
 resolution=1024x1024<br />
+steps==20<br />
 batch==1  </p>
 </blockquote>
 <table>
@@ -3408,80 +3409,116 @@ batch==1  </p>
 <tr>
 <td>Torch</td>
 <td>Float16</td>
-<td>0.45</td>
+<td>0.47</td>
 <td></td>
 </tr>
 <tr>
 <td>Torch</td>
 <td>BFloat16</td>
-<td>0.48</td>
+<td>0.50</td>
 <td>Default</td>
 </tr>
 <tr>
 <td>BnB</td>
 <td>NF4</td>
-<td>1.32</td>
+<td>1.48</td>
 <td></td>
 </tr>
 <tr>
 <td>BnB</td>
 <td>FP8</td>
-<td>1.05</td>
-<td></td>
-</tr>
-<tr>
-<td>SDNQ</td>
-<td>UINT8</td>
-<td>1.07</td>
+<td>1.38</td>
 <td></td>
 </tr>
 <tr>
 <td>SDNQ</td>
 <td>INT8</td>
-<td>0.85</td>
+<td>1.30</td>
 <td></td>
 </tr>
 <tr>
 <td>SDNQ</td>
 <td>INT8</td>
-<td>1.17</td>
+<td>1.40</td>
 <td>Decompress using torch.compile</td>
 </tr>
 <tr>
 <td>SDNQ</td>
 <td>INT8</td>
-<td>1.23</td>
-<td>Use direct Quantized MatMul</td>
+<td>2.00</td>
+<td>Decompress &amp; MatMul</td>
 </tr>
 <tr>
 <td>SDNQ</td>
-<td>INT8</td>
-<td>1.46</td>
+<td>INT6</td>
+<td>1.95</td>
+<td>Decompress &amp; MatMul</td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>INT4</td>
+<td>2.05</td>
+<td>Decompress &amp; MatMul</td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>UINT4</td>
+<td>1.25</td>
+<td></td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>UINT4</td>
+<td>1.45</td>
+<td>Decompress using torch.compile</td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>FP8 E4M</td>
+<td>1.25</td>
+<td></td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>FP8 E4M</td>
+<td>1.40</td>
+<td>Decompress using torch.compile</td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>FP8 E4M</td>
+<td>1.75</td>
 <td>Decompress &amp; MatMul</td>
 </tr>
 <tr>
 <td>Quanto</td>
-<td>any</td>
-<td>N/A</td>
-<td>Balanced offload not supported</td>
+<td>INT8</td>
+<td>1.13</td>
+<td>offload=model</td>
 </tr>
 <tr>
 <td>TorchAO</td>
 <td>INT8</td>
-<td>0.51</td>
+<td>0.58</td>
 <td>Weights-only</td>
 </tr>
 <tr>
 <td>Layerwise</td>
 <td>FP8 E4M</td>
-<td>0.99</td>
+<td>1.25</td>
 <td></td>
 </tr>
 <tr>
 <td>SVDQuant</td>
 <td>INT4</td>
-<td>4.66</td>
+<td>4.73</td>
 <td>Nunchaku pre-compiled</td>
+</tr>
+<tr>
+<td>SVDQuant</td>
+<td>INT4</td>
+<td>5.75</td>
+<td>Nunchaku pre-compiled + attention</td>
 </tr>
 </tbody>
 </table>
