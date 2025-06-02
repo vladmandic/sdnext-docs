@@ -3431,10 +3431,10 @@ chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>.
 </code></pre></div></p>
 </li>
 </ol>
-<blockquote>
-<p>[!TIP] How to get internal-loopback IP of your Window host?
-<code>ip route show | grep -i default | awk '{ print $3}'</code></p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">How to get internal-loopback IP of your Window host?</p>
+<p><code>ip route show | grep -i default | awk '{ print $3}'</code></p>
+</div>
 <ol>
 <li>Then mount the folder in WSL:
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>cifs<span class="w"> </span>-o<span class="w"> </span>async,noatime,rw,mfsymlinks,iocharset<span class="o">=</span>utf8,uid<span class="o">=</span><span class="m">1000</span>,vers<span class="o">=</span><span class="m">3</span>.1.1,cache<span class="o">=</span>loose,nostrictsync,resilienthandles,cred<span class="o">=</span>/home/myuser/.cred<span class="w"> </span>//<span class="nv">$HOST_IP</span>/Models<span class="w"> </span>/mnt/models
