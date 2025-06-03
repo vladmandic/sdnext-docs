@@ -3224,16 +3224,16 @@ Symetric quants can store negative and positive values meaning they don't have e
 <p>Used to decide how many elements of a tensor will share the same quantization group.<br />
 Higher values have better performance but less quality.<br />
 Default is <code>0</code>, meaning it will decide the group size based on your quantization type setting.<br />
-INT4 quants will use group size <code>64</code> by default.<br />
-INT2 and INT1 quants will use group size <code>32</code> by default.<br />
 INT8, INT6 and FP8 quants won't use any grouping by default.<br />
+Other quant types will use this formula to find the group size: <code>2 ** (2 + number_of_bits)</code><br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
 <h3 id="quantize-the-convolutional-layers">Quantize the convolutional layers</h3>
 <p>Enabling this option will quantize the convolutional layers in UNet models too.<br />
-Has better memory savings but lower quality.<br />
+Has much better memory savings but lower quality.<br />
 Quantizing the VAE is not recommended with this option.<br />
-Using 4 bit quants are not recommended with this option.<br />
-Group sizes are not supported on convolutions.<br />
+Convolutions won't use group sizes with INT8 and FP8 quants.<br />
+Convolutions will use this formula to find the group size with other quant types: <code>2 ** (1 + number_of_bits)</code><br />
+Convolutions will use <code>uint4</code> with uint2, int2 and uint1 quants.<br />
 Disabled by default.  </p>
 <h3 id="decompress-using-full-precision">Decompress using full precision</h3>
 <p>Enabling this option will use <code>FP32</code> on the decompression step.<br />
