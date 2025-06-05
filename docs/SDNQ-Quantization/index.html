@@ -3176,9 +3176,6 @@ SDNQ was originally based on NNCF, but has been re-implemented, optimized and ev
    (Model, Transformer, TE and LLM are the main targets for most use cases)</li>
 <li>Reload the model  </li>
 </ol>
-<p><strong>Note:</strong>
-VAE Upcast has to be set to false if you use the VAE option.<br />
-If you get black images with SDXL models, use the <a href="https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/blob/main/sdxl_vae.safetensors">FP16 Fixed VAE</a>.  </p>
 <h2 id="features">Features</h2>
 <ul>
 <li>SDNQ is fully cross-platform, supports all GPUs and includes many quantization methods:  </li>
@@ -3206,6 +3203,9 @@ Default is none.  </p>
 <code>Video</code> is used to quantize the Video models.<br />
 <code>LLM</code> is used to quantize the LLM part of the models that uses LLMs as Text Encoders.<br />
 <code>ControlNet</code> is used to quantize ControlNets.  </p>
+<p><strong>Note:</strong>
+VAE Upcast has to be set to false if you use the VAE option with FP16.<br />
+If you get black images with SDXL models, use the <a href="https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/blob/main/sdxl_vae.safetensors">FP16 Fixed VAE</a>.  </p>
 <h3 id="quantization-mode">Quantization mode</h3>
 <p>Used to decide when the quantization step will happen on model load.<br />
 <code>Pre</code> mode will quantize the model while the model is loading. Reduces system RAM usage.<br />
@@ -3248,7 +3248,6 @@ Setting the group size to <code>-1</code> will disable grouping.  </p>
 <h3 id="quantize-the-convolutional-layers">Quantize the convolutional layers</h3>
 <p>Enabling this option will quantize the convolutional layers in UNet models too.<br />
 Has much better memory savings but lower quality.<br />
-Quantizing the VAE is not recommended with this option.<br />
 Convolutions won't use group sizes with INT8 and FP8 quants.<br />
 Convolutions will use this formula to find the group size with other quant types: <code>2 ** (1 + number_of_bits)</code><br />
 Convolutions will use <code>uint4</code> with uint2, int2 and uint1 quants.<br />
@@ -3267,7 +3266,8 @@ Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> and <cod
 Groups sizes will be disabled when Quantized MatMul is enabled.<br />
 Disabled by default.  </p>
 <h3 id="use-quantized-matmul-with-convolutional-layers">Use Quantized MatMul with convolutional layers</h3>
-<p>Same as <code>Use Quantized MatMul</code> but for the convolutional layers within UNets like SDXL.<br />
+<p>Same as <code>Use Quantized MatMul</code> but for the Conv2d layers within UNets like SDXL.<br />
+Can be faster but uses much more memory compared to standard convolution.<br />
 Disabled by default.  </p>
 <h3 id="quantize-with-the-gpu">Quantize with the GPU</h3>
 <p>Enabling this option will use the GPU with the quantization calculations on model load.<br />
