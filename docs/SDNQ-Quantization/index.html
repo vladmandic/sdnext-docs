@@ -3261,7 +3261,7 @@ Enabled by default if Triton is available.  </p>
 <p>Enabling this option will use quantized INT8 or FP8 MatMul instead of BF16 / FP16.<br />
 Has significantly higher performance on GPUs with INT8 or FP8 support.<br />
 Recommended quant type to use with this option is <code>int8</code> because INT8 matmul tends to be faster than FP8.<br />
-Quantized INT8 MatMul is only compatible with <code>int8</code>, <code>int4</code> and <code>int2</code> quant types.<br />
+Quantized INT8 MatMul is only compatible with <code>int8</code>, <code>int6</code>, <code>int4</code> and <code>int2</code> quant types.<br />
 Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> and <code>float8_e5m2</code> quant types.<br />
 Groups sizes will be disabled when Quantized MatMul is enabled.<br />
 Disabled by default.  </p>
