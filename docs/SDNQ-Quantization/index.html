@@ -3179,7 +3179,7 @@ SDNQ was originally based on NNCF, but has been re-implemented, optimized and ev
 <h2 id="features">Features</h2>
 <ul>
 <li>SDNQ is fully cross-platform, supports all GPUs and CPUs and includes many quantization methods:  </li>
-<li><em>8-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit int and uint</em>  </li>
+<li><em>8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit int and uint</em>  </li>
 <li><em>8-bit e5, e4 and fnuz float</em><br />
 <em>note</em>: <code>int8</code> is very close to the original 16 bit quality  </li>
 <li>Supports nearly all model types  </li>
@@ -3221,17 +3221,19 @@ INT6 quants are the middle ground. Similar quality to to the full 16 bit precisi
 INT4 quants have lower quality and less performance but uses 3.6 times less memory.<br />
 FP8 quants have similar quality to INT6 but with the same memory usage as INT8.  </p>
 <p>Unsigned quants have the extra <code>u</code> added to the start of their name while the symetric quants don't have any prefix.<br />
-Unsigned (asymetric) types: <code>uint8</code>, <code>uint6</code>, <code>uint5</code>, <code>uint4</code>, <code>uint3</code>, <code>uint2</code> and <code>uint1</code><br />
-Symetric types: <code>int8</code>, <code>int6</code>, <code>int5</code>, <code>int4</code>, <code>int3</code>, <code>int2</code>, <code>float8_e4m3fn</code>, <code>float8_e5m2</code>, <code>float8_e4m3fnuz</code> and <code>float8_e5m2fnuz</code>  </p>
+Unsigned (asymetric) types: <code>uint8</code>, <code>uint7</code>, <code>uint6</code>, <code>uint5</code>, <code>uint4</code>, <code>uint3</code>, <code>uint2</code> and <code>uint1</code><br />
+Symetric types: <code>int8</code>, <code>int7</code>, <code>int6</code>, <code>int5</code>, <code>int4</code>, <code>int3</code>, <code>int2</code>, <code>float8_e4m3fn</code>, <code>float8_e5m2</code>, <code>float8_e4m3fnuz</code> and <code>float8_e5m2fnuz</code>  </p>
 <p>Unsigned quants uses unsigned integers, meaning they can't store negative values and will use another variable called zero point for this purpose.<br />
 Symetric quants can store negative and positive values meaning they don't have extra zero point value and they run faster than unsigned quants because of this.  </p>
 <p><code>int8</code> uses int8 and has -128 to 127 range.<br />
+<code>int7</code> uses eight int7 values packed into seven uint8 values and has -64 to 63 range.<br />
 <code>int6</code> uses four int6 values packed into three uint8 values and has -32 to 31 range.<br />
 <code>int5</code> uses eight int5 values packed into five uint8 values and has -16 to 15 range.<br />
 <code>int4</code> uses two int4 values packed into a single uint8 value and has -8 to 7 range.<br />
 <code>int3</code> uses eight int3 values packed into a three uint8 values and has -4 to 3 range.<br />
 <code>int2</code> uses four int2 values packed into a single uint8 value and has -2 to 1 range.<br />
 <code>uint8</code> uses uint8 and has 0 to 255 range.<br />
+<code>uint7</code> uses eight uint7 values packed into seven uint8 values and has 0 to 127 range.<br />
 <code>uint6</code> uses four uint6 values packed into three uint8 values and has 0 to 63 range.<br />
 <code>uint5</code> uses eight uint5 values packed into five uint8 values and has 0 to 31 range.<br />
 <code>uint4</code> uses two uint4 values packed into a single uint8 value and has 0 to 15 range.<br />
@@ -3263,7 +3265,7 @@ Enabled by default if Triton is available.  </p>
 <p>Enabling this option will use quantized INT8 or FP8 MatMul instead of BF16 / FP16.<br />
 Has significantly higher performance on GPUs with INT8 or FP8 support.<br />
 Recommended quant type to use with this option is <code>int8</code> because INT8 matmul tends to be faster than FP8.<br />
-Quantized INT8 MatMul is only compatible with <code>int8</code>, <code>int6</code>, <code>int4</code> and <code>int2</code> quant types.<br />
+Quantized INT8 MatMul is only compatible with symmetric <code>int</code> quant types.<br />
 Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> and <code>float8_e5m2</code> quant types.<br />
 Groups sizes will be disabled when Quantized MatMul is enabled.<br />
 Disabled by default.  </p>
