@@ -3179,7 +3179,7 @@ SDNQ was originally based on NNCF, but has been re-implemented, optimized and ev
 <h2 id="features">Features</h2>
 <ul>
 <li>SDNQ is fully cross-platform, supports all GPUs and CPUs and includes many quantization methods:  </li>
-<li><em>8-bit, 6-bit, 4-bit, 2-bit and 1-bit int and uint</em>  </li>
+<li><em>8-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit int and uint</em>  </li>
 <li><em>8-bit e5, e4 and fnuz float</em><br />
 <em>note</em>: <code>int8</code> is very close to the original 16 bit quality  </li>
 <li>Supports nearly all model types  </li>
@@ -3221,17 +3221,21 @@ INT6 quants are the middle ground. Similar quality to to the full 16 bit precisi
 INT4 quants have lower quality and less performance but uses 3.6 times less memory.<br />
 FP8 quants have similar quality to INT6 but with the same memory usage as INT8.  </p>
 <p>Unsigned quants have the extra <code>u</code> added to the start of their name while the symetric quants don't have any prefix.<br />
-Unsigned (asymetric) types: <code>uint8</code>, <code>uint6</code>, <code>uint4</code>, <code>uint2</code> and <code>uint1</code><br />
-Symetric types: <code>int8</code>, <code>int6</code>, <code>int4</code>, <code>float8_e4m3fn</code>, <code>float8_e5m2</code>, <code>float8_e4m3fnuz</code> and <code>float8_e5m2fnuz</code>  </p>
+Unsigned (asymetric) types: <code>uint8</code>, <code>uint6</code>, <code>uint5</code>, <code>uint4</code>, <code>uint3</code>, <code>uint2</code> and <code>uint1</code><br />
+Symetric types: <code>int8</code>, <code>int6</code>, <code>int5</code>, <code>int4</code>, <code>int3</code>, <code>int2</code>, <code>float8_e4m3fn</code>, <code>float8_e5m2</code>, <code>float8_e4m3fnuz</code> and <code>float8_e5m2fnuz</code>  </p>
 <p>Unsigned quants uses unsigned integers, meaning they can't store negative values and will use another variable called zero point for this purpose.<br />
 Symetric quants can store negative and positive values meaning they don't have extra zero point value and they run faster than unsigned quants because of this.  </p>
 <p><code>int8</code> uses int8 and has -128 to 127 range.<br />
-<code>uint8</code> uses uint8 and has 0 to 255 range.<br />
 <code>int6</code> uses four int6 values packed into three uint8 values and has -32 to 31 range.<br />
-<code>uint6</code> uses four uint6 values packed into three uint8 values and has 0 to 63 range.<br />
+<code>int5</code> uses eight int5 values packed into five uint8 values and has -16 to 15 range.<br />
 <code>int4</code> uses two int4 values packed into a single uint8 value and has -8 to 7 range.<br />
-<code>uint4</code> uses two uint4 values packed into a single uint8 value and has 0 to 15 range.<br />
+<code>int3</code> uses eight int3 values packed into a three uint8 values and has -4 to 3 range.<br />
 <code>int2</code> uses four int2 values packed into a single uint8 value and has -2 to 1 range.<br />
+<code>uint8</code> uses uint8 and has 0 to 255 range.<br />
+<code>uint6</code> uses four uint6 values packed into three uint8 values and has 0 to 63 range.<br />
+<code>uint5</code> uses eight uint5 values packed into five uint8 values and has 0 to 31 range.<br />
+<code>uint4</code> uses two uint4 values packed into a single uint8 value and has 0 to 15 range.<br />
+<code>uint3</code> uses eight uint3 values packed into a three uint8 value and has 0 to 7 range.<br />
 <code>uint2</code> uses four uint2 values packed into a single uint8 value and has 0 to 3 range.<br />
 <code>uint1</code> uses boolean and has 0 to 1 range.<br />
 <code>float8_e4m3fn</code> uses float8_e4m3fn and has -448 to 448 range.<br />
@@ -3242,15 +3246,13 @@ Symetric quants can store negative and positive values meaning they don't have e
 <p>Used to decide how many elements of a tensor will share the same quantization group.<br />
 Higher values have better performance but less quality.<br />
 Default is <code>0</code>, meaning it will decide the group size based on your quantization type setting.<br />
-INT8, INT6 and FP8 quants won't use any grouping by default.<br />
-Other quant types will use this formula to find the group size: <code>2 ** (2 + number_of_bits)</code><br />
+Linear layers will use this formula to find the group size: <code>2 ** (2 + number_of_bits)</code><br />
+Convolutions will use this formula to find the group size: <code>2 ** (1 + number_of_bits)</code><br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
 <h3 id="quantize-the-convolutional-layers">Quantize the convolutional layers</h3>
 <p>Enabling this option will quantize the convolutional layers in UNet models too.<br />
 Has much better memory savings but lower quality.<br />
-Convolutions won't use group sizes with INT8 and FP8 quants.<br />
-Convolutions will use this formula to find the group size with other quant types: <code>2 ** (1 + number_of_bits)</code><br />
-Convolutions will use <code>uint4</code> with uint2, int2 and uint1 quants.<br />
+Convolutions will use <code>uint4</code> when using quants with less than 4 bits.<br />
 Disabled by default.  </p>
 <h3 id="decompress-using-torchcompile">Decompress using torch.compile</h3>
 <p>Uses Triton via <code>torch.compile</code> on the decompression step.<br />
