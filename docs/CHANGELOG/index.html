@@ -5842,7 +5842,6 @@
 <li>Increase the medvram mode threshold from 8GB to 12GB  </li>
 <li>Set CPU backend to use FP32 by default  </li>
 <li>Relax Python version checks for Zluda  </li>
-<li>Don't override user set gfx version with ROCm  </li>
 <li>
 <p>Make VAE options not require model reload  </p>
 </li>
@@ -5850,9 +5849,17 @@
 <p><strong>Torch</strong>  </p>
 </li>
 <li>Set default to <code>torch==2.7.1</code>  </li>
-<li>Support ROCm 6.4 with <code>---use-nightly</code>  </li>
 <li>
 <p>Force upgrade pip when installing Torch  </p>
+</li>
+<li>
+<p><strong>ROCm</strong>  </p>
+</li>
+<li>Support ROCm 6.4 with <code>---use-nightly</code>  </li>
+<li>Don't override user set gfx version  </li>
+<li>Don't override gfx version with RX 9000  </li>
+<li>
+<p>Fix flash-atten repo  </p>
 </li>
 <li>
 <p><strong>SDNQ Quantization</strong>  </p>
@@ -5873,7 +5880,6 @@
 <li>PixArt Sigma Small and Large loading  </li>
 <li>TAESD previews with PixArt  </li>
 <li>VAE Tiling with non-default tile sizes  </li>
-<li>flash-atten repo with ROCm  </li>
 </ul>
 <h2 id="update-for-2025-06-02">Update for 2025-06-02</h2>
 <h3 id="highlights-for-2025-06-02">Highlights for 2025-06-02</h3>
