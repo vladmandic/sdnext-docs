@@ -2590,9 +2590,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#decompress-using-torchcompile" class="md-nav__link">
+  <a href="#dequantize-using-torchcompile" class="md-nav__link">
     <span class="md-ellipsis">
-      Decompress using torch.compile
+      Dequantize using torch.compile
     </span>
   </a>
   
@@ -2626,9 +2626,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#decompress-using-full-precision" class="md-nav__link">
+  <a href="#dequantize-using-full-precision" class="md-nav__link">
     <span class="md-ellipsis">
-      Decompress using full precision
+      Dequantize using full precision
     </span>
   </a>
   
@@ -3098,9 +3098,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#decompress-using-torchcompile" class="md-nav__link">
+  <a href="#dequantize-using-torchcompile" class="md-nav__link">
     <span class="md-ellipsis">
-      Decompress using torch.compile
+      Dequantize using torch.compile
     </span>
   </a>
   
@@ -3134,9 +3134,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#decompress-using-full-precision" class="md-nav__link">
+  <a href="#dequantize-using-full-precision" class="md-nav__link">
     <span class="md-ellipsis">
-      Decompress using full precision
+      Dequantize using full precision
     </span>
   </a>
   
@@ -3256,8 +3256,8 @@ Setting the group size to <code>-1</code> will disable grouping.  </p>
 Has much better memory savings but lower quality.<br />
 Convolutions will use <code>uint4</code> when using quants with less than 4 bits.<br />
 Disabled by default.  </p>
-<h3 id="decompress-using-torchcompile">Decompress using torch.compile</h3>
-<p>Uses Triton via <code>torch.compile</code> on the decompression step.<br />
+<h3 id="dequantize-using-torchcompile">Dequantize using torch.compile</h3>
+<p>Uses Triton via <code>torch.compile</code> on the dequantization step.<br />
 Has significantly higher performance.<br />
 This setting requires a full restart of the webui to apply.<br />
 Enabled by default if Triton is available.  </p>
@@ -3280,8 +3280,8 @@ Enabled by default.  </p>
 If device map is set to <code>gpu</code>, model weights will be loaded directly into GPU and the quantized model weights will be kept in the GPU until the quantization of the current model part is over.  </p>
 <p>If <code>Model offload mode</code> is set to <code>none</code>, quantized model weights will be sent to the GPU regardless of this setting and will stay in the GPU.<br />
 If <code>Model offload mode</code> is set to <code>model</code>, quantized model weights will be sent to the GPU regardless of this setting and will be sent back to the CPU after the quantization of the current model part is over.  </p>
-<h3 id="decompress-using-full-precision">Decompress using full precision</h3>
-<p>Enabling this option will use <code>FP32</code> on the decompression step.<br />
+<h3 id="dequantize-using-full-precision">Dequantize using full precision</h3>
+<p>Enabling this option will use <code>FP32</code> on the dequantization step.<br />
 Has higher quality outputs but lower performance.<br />
 Disabled by default.  </p>
 
