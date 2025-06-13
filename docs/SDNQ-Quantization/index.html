@@ -2572,6 +2572,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantization-type-for-text-encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization type for Text Encoders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#group-size" class="md-nav__link">
     <span class="md-ellipsis">
       Group size
@@ -3080,6 +3089,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantization-type-for-text-encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantization type for Text Encoders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#group-size" class="md-nav__link">
     <span class="md-ellipsis">
       Group size
@@ -3244,6 +3262,9 @@ Symetric quants can store negative and positive values meaning they don't have e
 <code>float8_e5m2</code> uses float8_e5m2 and has -57344 to 57344 range.<br />
 <code>float8_e4m3fnuz</code> uses float8_e4m3fnuz and has -240 to 240 range.<br />
 <code>float8_e5m2fnuz</code> uses float8_e5m2fnuz and has -57344 to 57344 range.  </p>
+<h3 id="quantization-type-for-text-encoders">Quantization type for Text Encoders</h3>
+<p>Same as <code>Quantization type</code> but for the Text Encoders.<br />
+<code>default</code> option will use the same type as <code>Quantization type</code>.  </p>
 <h3 id="group-size">Group size</h3>
 <p>Used to decide how many elements of a tensor will share the same quantization group.<br />
 Higher values have better performance but less quality.<br />

@@ -5842,8 +5842,9 @@
 <li>Increase the medvram mode threshold from 8GB to 12GB  </li>
 <li>Set CPU backend to use FP32 by default  </li>
 <li>Relax Python version checks for Zluda  </li>
+<li>Make VAE options not require model reload  </li>
 <li>
-<p>Make VAE options not require model reload  </p>
+<p>Add warning about incompatible attention processors  </p>
 </li>
 <li>
 <p><strong>Torch</strong>  </p>
@@ -5867,6 +5868,7 @@
 <li>Add group size support for convolutional layers  </li>
 <li>Add quantized matmul support for for convolutional layers  </li>
 <li>Add 7-bit, 5-bit and 3-bit quantization support  </li>
+<li>Add separate quant mode option for Text Encoders  </li>
 <li>Fix forced FP32 with tensorwise FP8 matmul  </li>
 <li>Fix PyTorch &lt;= 2.4 compatibility with FP8 matmul  </li>
 <li>
@@ -5876,7 +5878,7 @@
 <p><strong>Fixes</strong>  </p>
 </li>
 <li>Meissonic with multiple generators  </li>
-<li>Kandinsky V2.2 invalid attention processor  </li>
+<li>Invalid attention processors  </li>
 <li>PixArt Sigma Small and Large loading  </li>
 <li>TAESD previews with PixArt and Lumina 2  </li>
 <li>VAE Tiling with non-default tile sizes  </li>
