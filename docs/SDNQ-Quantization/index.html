@@ -3299,8 +3299,8 @@ Can be faster with weak CPUs but can also be slower because of GPU to CPU commun
 Enabled by default.  </p>
 <p>When <code>Model load device map</code> in the <code>Models &amp; Loading</code> settings is set to <code>default</code> or <code>cpu</code> this option will send a part of the model weights to the GPU and quantize it, then will send it back to the CPU right away.<br />
 If device map is set to <code>gpu</code>, model weights will be loaded directly into GPU and the quantized model weights will be kept in the GPU until the quantization of the current model part is over.  </p>
-<p>If <code>Model offload mode</code> is set to <code>none</code>, quantized model weights will be sent to the GPU regardless of this setting and will stay in the GPU.<br />
-If <code>Model offload mode</code> is set to <code>model</code>, quantized model weights will be sent to the GPU regardless of this setting and will be sent back to the CPU after the quantization of the current model part is over.  </p>
+<p>If <code>Model offload mode</code> is set to <code>none</code>, quantized model weights will be sent to the GPU after quantization and will stay in the GPU.<br />
+If <code>Model offload mode</code> is set to <code>model</code>, quantized model weights will be sent to the GPU after quantization and will be sent back to the CPU after the quantization of the current model part is over.  </p>
 <h3 id="dequantize-using-full-precision">Dequantize using full precision</h3>
 <p>Enabling this option will use <code>FP32</code> on the dequantization step.<br />
 Has higher quality outputs but lower performance.<br />
