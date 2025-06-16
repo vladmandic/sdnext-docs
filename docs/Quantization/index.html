@@ -3390,7 +3390,7 @@ This is not a comprehensive benchmark, but rather a quick overview of the perfor
 <blockquote>
 <p>model==FLUX.1-Dev<br />
 gpu==nVidia RTX4090<br />
-torch==2.7.0<br />
+torch==2.7.1<br />
 dtype==auto<br />
 attention==sdpa<br />
 offload==balanced
@@ -3412,13 +3412,13 @@ batch==1  </p>
 <tr>
 <td>Torch</td>
 <td>Float16</td>
-<td>0.47</td>
+<td>0.68</td>
 <td></td>
 </tr>
 <tr>
 <td>Torch</td>
 <td>BFloat16</td>
-<td>0.50</td>
+<td>0.68</td>
 <td>Default</td>
 </tr>
 <tr>
@@ -3430,97 +3430,157 @@ batch==1  </p>
 <tr>
 <td>BnB</td>
 <td>FP8</td>
-<td>1.38</td>
+<td>1.42</td>
 <td></td>
 </tr>
 <tr>
 <td>SDNQ</td>
 <td>INT8</td>
-<td>1.30</td>
+<td>1.33</td>
 <td></td>
 </tr>
 <tr>
 <td>SDNQ</td>
 <td>INT8</td>
-<td>1.40</td>
+<td>1.44</td>
 <td>Dequantize using torch.compile</td>
 </tr>
 <tr>
 <td>SDNQ</td>
 <td>INT8</td>
-<td>2.00</td>
+<td>2.08</td>
+<td>Dequantize &amp; MatMul</td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>FP8 E4M</td>
+<td>1.33</td>
+<td></td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>FP8 E4M</td>
+<td>1.44</td>
+<td>Dequantize using torch.compile</td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>FP8 E4M</td>
+<td>1.88</td>
+<td>Dequantize &amp; MatMul</td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>INT7</td>
+<td>1.10</td>
+<td></td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>INT7</td>
+<td>1.37</td>
+<td>Dequantize using torch.compile</td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>INT7</td>
+<td>1.96</td>
 <td>Dequantize &amp; MatMul</td>
 </tr>
 <tr>
 <td>SDNQ</td>
 <td>INT6</td>
-<td>1.95</td>
+<td>1.16</td>
+<td></td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>INT6</td>
+<td>1.42</td>
+<td>Dequantize using torch.compile</td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>INT6</td>
+<td>2.04</td>
 <td>Dequantize &amp; MatMul</td>
 </tr>
 <tr>
 <td>SDNQ</td>
-<td>INT4</td>
-<td>2.05</td>
+<td>INT5</td>
+<td>1.14</td>
+<td></td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>INT5</td>
+<td>1.42</td>
+<td>Dequantize using torch.compile</td>
+</tr>
+<tr>
+<td>SDNQ</td>
+<td>INT5</td>
+<td>2.04</td>
 <td>Dequantize &amp; MatMul</td>
 </tr>
 <tr>
 <td>SDNQ</td>
 <td>UINT4</td>
-<td>1.25</td>
+<td>1.28</td>
 <td></td>
 </tr>
 <tr>
 <td>SDNQ</td>
 <td>UINT4</td>
-<td>1.45</td>
+<td>1.48</td>
 <td>Dequantize using torch.compile</td>
 </tr>
 <tr>
 <td>SDNQ</td>
-<td>FP8 E4M</td>
-<td>1.25</td>
+<td>UINT3</td>
+<td>1.20</td>
 <td></td>
 </tr>
 <tr>
 <td>SDNQ</td>
-<td>FP8 E4M</td>
-<td>1.40</td>
+<td>UINT3</td>
+<td>1.42</td>
 <td>Dequantize using torch.compile</td>
-</tr>
-<tr>
-<td>SDNQ</td>
-<td>FP8 E4M</td>
-<td>1.80</td>
-<td>Dequantize &amp; MatMul</td>
 </tr>
 <tr>
 <td>Quanto</td>
 <td>INT8</td>
-<td>1.13</td>
+<td>1.23</td>
 <td>offload=model</td>
 </tr>
 <tr>
 <td>TorchAO</td>
 <td>INT8</td>
-<td>0.58</td>
+<td>0.65</td>
 <td>Weights-only</td>
+</tr>
+<tr>
+<td>TorchAO</td>
+<td>INT8</td>
+<td>1.20</td>
+<td>Weights-only &amp; offload=model</td>
 </tr>
 <tr>
 <td>Layerwise</td>
 <td>FP8 E4M</td>
-<td>1.25</td>
+<td>1.37</td>
 <td></td>
 </tr>
 <tr>
 <td>SVDQuant</td>
 <td>INT4</td>
-<td>4.73</td>
+<td>4.75</td>
 <td>Nunchaku pre-compiled</td>
 </tr>
 <tr>
 <td>SVDQuant</td>
 <td>INT4</td>
-<td>5.75</td>
+<td>5.65</td>
 <td>Nunchaku pre-compiled + attention</td>
 </tr>
 </tbody>
