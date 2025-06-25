@@ -5851,9 +5851,10 @@
 <h2 id="update-for-2025-06-25">Update for 2025-06-25</h2>
 <ul>
 <li><strong>Changes</strong>  </li>
-<li>Use Diffusers version of <em>OmniGen</em>  </li>
+<li>Add <a href="https://huggingface.co/fancyfeast/llama-joycaption-beta-one-hf-llava">JoyCaption Beta</a> support (in addition to existing JoyCaption Alpha)  </li>
+<li>Support Remote VAE with <em>Omnigen, Lumina 2 and PixArt</em>  </li>
 <li>
-<p>Support Remote VAE with <em>Omnigen, Lumina 2 and PixArt</em>  </p>
+<p>Use Diffusers version of <em>OmniGen</em>  </p>
 </li>
 <li>
 <p><strong>SDNQ Quantization</strong>  </p>
@@ -5861,14 +5862,18 @@
 <li>Add modules_to_not_convert support for post mode  </li>
 <li>Fix Qwen 2.5 with int8 matmul  </li>
 <li>Fix Dora loading  </li>
+<li>Remove per layer GC  </li>
+<li>Improve offload compatibility  </li>
 <li>
-<p>Remove per layer GC  </p>
+<p>Add support for XYZ grid to test quantization modes<br />
+<em>note</em>: you need to enable quantization and choose what it applies on, then xyz grid can change quantization mode  </p>
 </li>
 <li>
 <p><strong>API</strong></p>
 </li>
+<li>Add <code>/sdapi/v1/lora?lora=&lt;lora_name&gt;</code> endpoint that returns full lora info and metadata  </li>
 <li>
-<p>Add <code>/sdapi/v1/lora?lora=&lt;lora_name&gt;</code> endpoint that returns full lora info and metadata  </p>
+<p>Add <code>/sdapi/v1/controlnets?model_type=&lt;model_type|all|None&gt;</code> endpoints that returns list of available controlnets for specific model type  </p>
 </li>
 <li>
 <p><strong>Fixes</strong>  </p>
@@ -5884,6 +5889,7 @@
 <li>Case-insensitive sampler name matching  </li>
 <li>Fix delete file with gallery views  </li>
 <li>Add <code>SD_SAVE_DEBUG</code> env variable to report all params and metadata save operations as they happen  </li>
+<li>Fix TAESD model type detection  </li>
 </ul>
 <h2 id="update-for-2025-06-16">Update for 2025-06-16</h2>
 <ul>
