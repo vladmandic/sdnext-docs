@@ -2861,9 +2861,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-06-24" class="md-nav__link">
+  <a href="#update-for-2025-06-25" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-06-24
+      Update for 2025-06-25
     </span>
   </a>
   
@@ -4362,9 +4362,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-06-24" class="md-nav__link">
+  <a href="#update-for-2025-06-25" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-06-24
+      Update for 2025-06-25
     </span>
   </a>
   
@@ -5848,12 +5848,12 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-06-24">Update for 2025-06-24</h2>
+<h2 id="update-for-2025-06-25">Update for 2025-06-25</h2>
 <ul>
 <li><strong>Changes</strong>  </li>
-<li>Use Diffusers version of OmniGen  </li>
+<li>Use Diffusers version of <em>OmniGen</em>  </li>
 <li>
-<p>Support Remote VAE with Omnigen, Lumina 2 and PixArt  </p>
+<p>Support Remote VAE with <em>Omnigen, Lumina 2 and PixArt</em>  </p>
 </li>
 <li>
 <p><strong>SDNQ Quantization</strong>  </p>
@@ -5865,6 +5865,12 @@
 <p>Remove per layer GC  </p>
 </li>
 <li>
+<p><strong>API</strong></p>
+</li>
+<li>
+<p>Add <code>/sdapi/v1/lora?lora=&lt;lora_name&gt;</code> endpoint that returns full lora info and metadata  </p>
+</li>
+<li>
 <p><strong>Fixes</strong>  </p>
 </li>
 <li>IPEX with DPM2++ FlowMatch samplers  </li>
@@ -5872,6 +5878,12 @@
 <li>LTXVideo default scheduler  </li>
 <li>Balanced offload with OmniGen  </li>
 <li>Quantization with OmniGen  </li>
+<li>Do not save empty <code>params.txt</code> file  </li>
+<li>Override <code>params.txt</code> using <code>SD_PATH_PARAMS</code> env variable  </li>
+<li>Add <code>wheel</code> to requirements due to <code>pip</code> change  </li>
+<li>Case-insensitive sampler name matching  </li>
+<li>Fix delete file with gallery views  </li>
+<li>Add <code>SD_SAVE_DEBUG</code> env variable to report all params and metadata save operations as they happen  </li>
 </ul>
 <h2 id="update-for-2025-06-16">Update for 2025-06-16</h2>
 <ul>
