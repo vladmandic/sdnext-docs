@@ -5850,13 +5850,27 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-06-26">Update for 2025-06-26</h2>
 <ul>
-<li><strong>Changes</strong>  </li>
-<li>Add <a href="https://huggingface.co/fancyfeast/llama-joycaption-beta-one-hf-llava">JoyCaption Beta</a> support (in addition to existing JoyCaption Alpha)  </li>
+<li><strong>Models</strong></li>
+<li><a href="https://research.nvidia.com/labs/dir/cosmos-predict2/">nVidia Cosmos-Predict2 T2I</a> <em>2B and 14B</em><ul>
+<li>available via <em>networks -&gt; models -&gt; reference</em>  </li>
+<li><em>note</em>: this is a gated model, you need to <a href="https://huggingface.co/nvidia/Cosmos-Predict2-2B-Text2Image">accept terms</a> and set your <a href="https://vladmandic.github.io/sdnext-docs/Gated/">huggingface token</a>  </li>
+</ul>
+</li>
+<li>
+<p><a href="https://huggingface.co/fancyfeast/llama-joycaption-beta-one-hf-llava">JoyCaption Beta</a> support (in addition to existing JoyCaption Alpha)  </p>
+<ul>
+<li>available via <em>caption -&gt; vlm caption</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Changes</strong>  </p>
+</li>
 <li>Support Remote VAE with <em>Omnigen, Lumina 2 and PixArt</em>  </li>
 <li>Use Diffusers version of <em>OmniGen</em>  </li>
 <li>Control move global settings to control elements -&gt; control settings tab  </li>
+<li>Control add setting to run hires with or without control  </li>
 <li>
-<p>Control add setting to run hires with or without control  </p>
+<p>Update OpenVINO to 2025.2.0  </p>
 </li>
 <li>
 <p><strong>SDNQ Quantization</strong>  </p>
@@ -5895,6 +5909,9 @@
 <li>Fix LoRA loader incorrectly reporting errors  </li>
 <li>Fix hypertile for img2img and inpaint operations  </li>
 <li>Fix prompt parser batch size  </li>
+<li>Fix process batch with batch count  </li>
+<li>Fix process batch double image save  </li>
+<li>Fix unapply texture tiling  </li>
 </ul>
 <h2 id="update-for-2025-06-16">Update for 2025-06-16</h2>
 <ul>
