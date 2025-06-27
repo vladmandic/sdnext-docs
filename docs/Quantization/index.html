@@ -3281,18 +3281,15 @@ and can be configured in <em>Settings -&gt; Quantization Settings</em>  </p>
 <p>You can specify quantization for each model component:</p>
 <ul>
 <li><strong>Model</strong><br />
-  This is a shortcut, it basically means "select quantization to entire model"  </li>
-<li><strong>Transformer</strong><br />
-  Applies to quantization to main model DiT transformer, for example in SD3.5, HiDream, etc.<br />
-  Does not apply to UNET as in SD15/SDXL as its not recommended for quantization  </li>
-<li><strong>Text-encoder</strong><br />
-  Applies to T5-like text-encoders, for example in SD35, FLUX.1, HiDream, etc.  </li>
-<li><strong>VAE</strong><br />
-  Typically quantization of VAE module is not recommended  </li>
+  Applies to the UNet / Transformer part of the Diffusion Models  </li>
+<li><strong>TE</strong><br />
+  Applies to text-encoders  </li>
 <li><strong>LLM</strong><br />
-  Used by models that rely on LLM for secondary text encoding as well as VLM models during captioning and interrogate and prompt enhance features  </li>
-<li><strong>Video</strong><br />
-  Specifically for video models and typically referrs to DiT module of video model  </li>
+  Applies to VLM models during captioning and interrogate and prompt enhance features  </li>
+<li><strong>Control</strong><br />
+  Applies to ControlNets    </li>
+<li><strong>VAE</strong><br />
+  Applies to VAE, quantization of VAE module is not recommended  </li>
 </ul>
 <p>You can mix-and-match quantization types for each model component
 For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</strong> and <code>Optimum.Quanto</code> for the <strong>llm</strong></p>

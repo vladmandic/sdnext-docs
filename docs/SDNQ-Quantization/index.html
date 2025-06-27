@@ -2535,6 +2535,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#recommended-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triton
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triton">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triton-with-nvidia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triton with Nvidia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triton-with-amd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triton with AMD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triton-with-intel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triton with Intel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" class="md-nav__link">
     <span class="md-ellipsis">
       Options
@@ -3052,6 +3103,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#recommended-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triton
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triton">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triton-with-nvidia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triton with Nvidia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triton-with-amd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triton with AMD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triton-with-intel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triton with Intel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" class="md-nav__link">
     <span class="md-ellipsis">
       Options
@@ -3209,27 +3311,65 @@
 <li>Supports balanced offload  </li>
 </ul>
 <p>Benchmarks are available in the <a href="Quantization#benchmarks">Quantization Wiki</a>.</p>
+<h2 id="recommended-options">Recommended Options</h2>
+<ul>
+<li><code>Dequantize using torch.compile</code> is highly recommended for much better performance if Triton is available.  </li>
+<li><code>Use Quantized MatMul</code> is recommended for much better performance if Triton is available on supported GPUs.<br />
+  Supported GPUs are listed in the <a href="./#use-quantized-matmul">Use Quantized MatMul section</a>.  </li>
+<li>Recommended quantization dtype is <code>INT8</code> for its fast speed and almost no loss in quality.<br />
+  You can use <code>INT6</code> or <code>INT5</code> with some quality loss and still benefit from Quantized MatMul.<br />
+  You can use <code>UINT4</code> or <code>UINT3</code> to save even more memory but Quantized MatMul will be ignored with them.<br />
+<code>float8_e4m3fn</code> is another option for fast speed and high quality but FP8 has lower quality than INT8 and runs slower than INT8.  </li>
+</ul>
+<h2 id="triton">Triton</h2>
+<p>Triton enables the use of optimized kernels for much better performance.  </p>
+<h3 id="triton-with-nvidia">Triton with Nvidia</h3>
+<ul>
+<li><strong>Linux</strong>  </li>
+<li>Triton comes built-in on Linux, you can use the Triton optimizations out of the box.  </li>
+<li><strong>Windows</strong>  </li>
+<li>Windows requires manual installation of Triton.<br />
+    Installation steps are available in the <a href="Quantization#triton">Quantization Wiki</a>  </li>
+</ul>
+<h3 id="triton-with-amd">Triton with AMD</h3>
+<ul>
+<li><strong>Linux</strong>  </li>
+<li>Triton comes built-in on Linux, you can use the Triton optimizations out of the box.  </li>
+<li><strong>Windows</strong>  </li>
+<li>Windows requires manual installation of Triton and not guaranteed to work with Zluda.<br />
+    Experimental installation steps are available in the <a href="ZLUDA#triton">ZLUDA Wiki</a>  </li>
+</ul>
+<h3 id="triton-with-intel">Triton with Intel</h3>
+<ul>
+<li>Triton comes built-in with Intel on both Windows and Linux, you can use the Triton optimizations out of the box.<br />
+  Windows might require additional installation of OneAPI if you don't already have OneAPI installed and activated.  </li>
+</ul>
 <h2 id="options">Options</h2>
 <h3 id="quantization-enabled">Quantization enabled</h3>
 <p>Used to decide which parts of the model will get quantized.<br />
-Recommended options are <code>Model</code> and <code>TE</code> with post mode or <code>Transformer</code>, <code>TE</code> and <code>LLM</code> on pre mode.<br />
+Recommended options are <code>Model</code> and <code>TE</code>.<br />
 Default is none.  </p>
-<p><code>Model</code> is used quantize the UNet on post mode or every model part on pre mode.<br />
-<code>Transformer</code> is used to quantize the DiT models.<br />
-<code>VAE</code> is used to quantize the VAE. Using the VAE option is not recommended.<br />
-<code>TE</code> is used to quantize the Text Encoders.<br />
-<code>Video</code> is used to quantize the Video models.<br />
-<code>LLM</code> is used to quantize the LLM part of the models that uses LLMs as Text Encoders.<br />
-<code>ControlNet</code> is used to quantize ControlNets.  </p>
-<p><strong>Note:</strong>
-VAE Upcast has to be set to false if you use the VAE option with FP16.<br />
-If you get black images with SDXL models, use the <a href="https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/blob/main/sdxl_vae.safetensors">FP16 Fixed VAE</a>.  </p>
+<ul>
+<li><code>Model</code> is used quantize the Diffusion Models.  </li>
+<li><code>TE</code> is used to quantize the Text Encoders.  </li>
+<li><code>LLM</code> is used to quantize the LLMs with Prompt Enhance.  </li>
+<li><code>Control</code> is used to quantize ControlNets.  </li>
+<li><code>VAE</code> is used to quantize the VAE. Using the VAE option is not recommended.  </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>VAE Upcast has to be set to false if you use the VAE option with FP16.<br />
+If you get black images with SDXL models, use the <a href="https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/blob/main/sdxl_vae.safetensors">FP16 Fixed VAE</a>.</p>
+</div>
 <h3 id="quantization-mode">Quantization mode</h3>
 <p>Used to decide when the quantization step will happen on model load.<br />
-<code>Pre</code> mode will quantize the model while the model is loading. Reduces system RAM usage.<br />
-<code>Post</code> mode will quantize the model after the model is loaded into system RAM.<br />
-<code>Pre</code> mode is compatible with DiT and Video models like Flux but older UNet models like SDXL are only compatible with <code>post</code> mode.<br />
-Default is <code>pre</code>.  </p>
+Default is <code>auto</code>.  </p>
+<ul>
+<li><code>Auto</code> mode will choose <code>pre</code> or <code>post</code> automatically depending on the model.  </li>
+<li><code>Pre</code> mode will quantize the model while the model is loading. Reduces system RAM usage.  </li>
+<li><code>Post</code> mode will quantize the model after the model is loaded into system RAM.  </li>
+</ul>
+<p><code>Pre</code> mode is compatible with DiT and Video models like Flux but older UNet models like SDXL are only compatible with <code>post</code> mode.  </p>
 <h3 id="quantization-type">Quantization type</h3>
 <p>Used to decide the data type used to store the model weights.<br />
 Recommended types are <code>int8</code> for 8 bit, <code>int6</code> for 6 bit, <code>float8_e4m3fn</code> for fp8 and <code>uint4</code> for 4 bit.<br />
@@ -3243,25 +3383,27 @@ Unsigned (asymetric) types: <code>uint8</code>, <code>uint7</code>, <code>uint6<
 Symetric types: <code>int8</code>, <code>int7</code>, <code>int6</code>, <code>int5</code>, <code>int4</code>, <code>int3</code>, <code>int2</code>, <code>float8_e4m3fn</code>, <code>float8_e5m2</code>, <code>float8_e4m3fnuz</code> and <code>float8_e5m2fnuz</code>  </p>
 <p>Unsigned quants uses unsigned integers, meaning they can't store negative values and will use another variable called zero point for this purpose.<br />
 Symetric quants can store negative and positive values meaning they don't have extra zero point value and they run faster than unsigned quants because of this.  </p>
-<p><code>int8</code> uses int8 and has -128 to 127 range.<br />
-<code>int7</code> uses eight int7 values packed into seven uint8 values and has -64 to 63 range.<br />
-<code>int6</code> uses four int6 values packed into three uint8 values and has -32 to 31 range.<br />
-<code>int5</code> uses eight int5 values packed into five uint8 values and has -16 to 15 range.<br />
-<code>int4</code> uses two int4 values packed into a single uint8 value and has -8 to 7 range.<br />
-<code>int3</code> uses eight int3 values packed into a three uint8 values and has -4 to 3 range.<br />
-<code>int2</code> uses four int2 values packed into a single uint8 value and has -2 to 1 range.<br />
-<code>uint8</code> uses uint8 and has 0 to 255 range.<br />
-<code>uint7</code> uses eight uint7 values packed into seven uint8 values and has 0 to 127 range.<br />
-<code>uint6</code> uses four uint6 values packed into three uint8 values and has 0 to 63 range.<br />
-<code>uint5</code> uses eight uint5 values packed into five uint8 values and has 0 to 31 range.<br />
-<code>uint4</code> uses two uint4 values packed into a single uint8 value and has 0 to 15 range.<br />
-<code>uint3</code> uses eight uint3 values packed into a three uint8 value and has 0 to 7 range.<br />
-<code>uint2</code> uses four uint2 values packed into a single uint8 value and has 0 to 3 range.<br />
-<code>uint1</code> uses boolean and has 0 to 1 range.<br />
-<code>float8_e4m3fn</code> uses float8_e4m3fn and has -448 to 448 range.<br />
-<code>float8_e5m2</code> uses float8_e5m2 and has -57344 to 57344 range.<br />
-<code>float8_e4m3fnuz</code> uses float8_e4m3fnuz and has -240 to 240 range.<br />
-<code>float8_e5m2fnuz</code> uses float8_e5m2fnuz and has -57344 to 57344 range.  </p>
+<ul>
+<li><code>int8</code> uses int8 and has -128 to 127 range.  </li>
+<li><code>int7</code> uses eight int7 values packed into seven uint8 values and has -64 to 63 range.  </li>
+<li><code>int6</code> uses four int6 values packed into three uint8 values and has -32 to 31 range.  </li>
+<li><code>int5</code> uses eight int5 values packed into five uint8 values and has -16 to 15 range.  </li>
+<li><code>int4</code> uses two int4 values packed into a single uint8 value and has -8 to 7 range.  </li>
+<li><code>int3</code> uses eight int3 values packed into a three uint8 values and has -4 to 3 range.  </li>
+<li><code>int2</code> uses four int2 values packed into a single uint8 value and has -2 to 1 range.  </li>
+<li><code>uint8</code> uses uint8 and has 0 to 255 range.  </li>
+<li><code>uint7</code> uses eight uint7 values packed into seven uint8 values and has 0 to 127 range.  </li>
+<li><code>uint6</code> uses four uint6 values packed into three uint8 values and has 0 to 63 range.  </li>
+<li><code>uint5</code> uses eight uint5 values packed into five uint8 values and has 0 to 31 range.  </li>
+<li><code>uint4</code> uses two uint4 values packed into a single uint8 value and has 0 to 15 range.  </li>
+<li><code>uint3</code> uses eight uint3 values packed into a three uint8 value and has 0 to 7 range.  </li>
+<li><code>uint2</code> uses four uint2 values packed into a single uint8 value and has 0 to 3 range.  </li>
+<li><code>uint1</code> uses boolean and has 0 to 1 range.  </li>
+<li><code>float8_e4m3fn</code> uses float8_e4m3fn and has -448 to 448 range.  </li>
+<li><code>float8_e5m2</code> uses float8_e5m2 and has -57344 to 57344 range.  </li>
+<li><code>float8_e4m3fnuz</code> uses float8_e4m3fnuz and has -240 to 240 range.  </li>
+<li><code>float8_e5m2fnuz</code> uses float8_e5m2fnuz and has -57344 to 57344 range.  </li>
+</ul>
 <h3 id="quantization-type-for-text-encoders">Quantization type for Text Encoders</h3>
 <p>Same as <code>Quantization type</code> but for the Text Encoders.<br />
 <code>default</code> option will use the same type as <code>Quantization type</code>.  </p>
@@ -3284,12 +3426,29 @@ This setting requires a full restart of the webui to apply.<br />
 Enabled by default if Triton is available.  </p>
 <h3 id="use-quantized-matmul">Use Quantized MatMul</h3>
 <p>Enabling this option will use quantized INT8 or FP8 MatMul instead of BF16 / FP16.<br />
-Has significantly higher performance on GPUs with INT8 or FP8 support.<br />
-Recommended quant type to use with this option is <code>int8</code> because INT8 matmul tends to be faster than FP8.<br />
-Quantized INT8 MatMul is only compatible with symmetric <code>int</code> quant types.<br />
-Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> and <code>float8_e5m2</code> quant types.<br />
-Groups sizes will be disabled when Quantized MatMul is enabled.<br />
+Has significantly higher performance on GPUs with INT8 or FP8 support. <br />
 Disabled by default.  </p>
+<p><strong>Supported GPUs</strong><br />
+- <strong>Nvidia</strong><br />
+  Requires Turing (RTX 2000) or newer GPUs for INT8 matmul.<br />
+  Requires Ada (RTX 4000) or newer GPUs for FP8 matmul.<br />
+- <strong>AMD</strong><br />
+  Requires ROCm, not supported with Zluda.<br />
+  Requires RDNA3 (RX 7000) or newer GPUs for INT8 matmul.<br />
+  Requires MI300X for FP8 matmul.<br />
+  - RDNA3 supports INT8 matmul but runs at the same speed as FP16.<br />
+  - Vega, RDNA and RDNA2 supports INT8 on hardware but not supported in PyTorch.<br />
+    Those GPUs will require AMD to add INT8 support to PyTorch for them to work.<br />
+  - RDNA4 (RX 9000) supports fast INT8 and FP8 matmul but software support isn't ready yet.<br />
+    FP8 matmul will work with RX 9000 when AMD adds FP8 matmul support to PyTorch.<br />
+- <strong>Intel</strong><br />
+  Intel technically support FP8 and INT8 with Alchemist (A770) or newer GPUs but software support isn't ready yet.<br />
+  Intel GPUs will work with quantized matmul when Intel merges INT8 and FP8 matmul support to PyTorch 2.8.  </p>
+<p>Quantized INT8 MatMul is only compatible with symmetric <code>int</code> quant types.<br />
+Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> and <code>float8_e5m2</code> quant types.  </p>
+<p>Recommended quant type to use with this option is <code>int8</code> for quality and INT8 matmul tends to be faster than FP8. 
+Recommended quant type for FP8 matmul is <code>float8_e4m3fn</code> for quality and better hardware support.  </p>
+<p>Groups sizes will be disabled when Quantized MatMul is enabled.  </p>
 <h3 id="use-quantized-matmul-with-convolutional-layers">Use Quantized MatMul with convolutional layers</h3>
 <p>Same as <code>Use Quantized MatMul</code> but for the convolutional layers with UNets like SDXL.<br />
 Disabled by default.  </p>
