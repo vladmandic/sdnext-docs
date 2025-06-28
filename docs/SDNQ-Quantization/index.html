@@ -2641,9 +2641,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantize-the-convolutional-layers" class="md-nav__link">
+  <a href="#quantize-convolutional-layers" class="md-nav__link">
     <span class="md-ellipsis">
-      Quantize the convolutional layers
+      Quantize convolutional layers
     </span>
   </a>
   
@@ -2677,9 +2677,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantize-with-the-gpu" class="md-nav__link">
+  <a href="#quantize-using-gpu" class="md-nav__link">
     <span class="md-ellipsis">
-      Quantize with the GPU
+      Quantize using GPU
     </span>
   </a>
   
@@ -3209,9 +3209,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantize-the-convolutional-layers" class="md-nav__link">
+  <a href="#quantize-convolutional-layers" class="md-nav__link">
     <span class="md-ellipsis">
-      Quantize the convolutional layers
+      Quantize convolutional layers
     </span>
   </a>
   
@@ -3245,9 +3245,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantize-with-the-gpu" class="md-nav__link">
+  <a href="#quantize-using-gpu" class="md-nav__link">
     <span class="md-ellipsis">
-      Quantize with the GPU
+      Quantize using GPU
     </span>
   </a>
   
@@ -3290,10 +3290,11 @@
 <p>SD.Next Quantization provides full cross-platform quantization to reduce memory usage and increase performance for any device.  </p>
 <h2 id="usage">Usage</h2>
 <ol>
-<li>Go into <code>Quantization Settings</code>  </li>
+<li>Go into <code>Settings -&gt; Quantization Settings</code>  </li>
 <li>Enable the desired Quantization options under the <code>SDNQ</code> menu<br />
-   (Model, Transformer, TE and LLM are the main targets for most use cases)</li>
-<li>Reload the model  </li>
+<em>Model, TE and LLM</em> are the main targets for most use cases  </li>
+<li>If model is already loaded, reload the model<br />
+   Once quantization options are set, they will be applied to any model loaded after that  </li>
 </ol>
 <h2 id="features">Features</h2>
 <ul>
@@ -3313,13 +3314,15 @@
 <p>Benchmarks are available in the <a href="Quantization#benchmarks">Quantization Wiki</a>.</p>
 <h2 id="recommended-options">Recommended Options</h2>
 <ul>
-<li><code>Dequantize using torch.compile</code> is highly recommended for much better performance if Triton is available.  </li>
-<li><code>Use Quantized MatMul</code> is recommended for much better performance if Triton is available on supported GPUs.<br />
+<li><code>Dequantize using torch.compile</code><br />
+  Highly recommended for much better performance if Triton is available  </li>
+<li><code>Use Quantized MatMul</code><br />
+  Recommended for much better performance if Triton is available on supported GPUs<br />
   Supported GPUs are listed in the <a href="./#use-quantized-matmul">Use Quantized MatMul section</a>.  </li>
-<li>Recommended quantization dtype is <code>INT8</code> for its fast speed and almost no loss in quality.<br />
-  You can use <code>INT6</code> or <code>INT5</code> with some quality loss and still benefit from Quantized MatMul.<br />
-  You can use <code>UINT4</code> or <code>UINT3</code> to save even more memory but Quantized MatMul will be ignored with them.<br />
-<code>float8_e4m3fn</code> is another option for fast speed and high quality but FP8 has lower quality than INT8 and runs slower than INT8.  </li>
+<li>Recommended quantization dtype is <code>INT8</code> for its fast speed and almost no loss in quality<br />
+  You can use <code>INT6</code> or <code>INT5</code> with some quality loss and still benefit from Quantized MatMul<br />
+  You can use <code>UINT4</code> or <code>UINT3</code> to save even more memory but Quantized MatMul will be ignored with them<br />
+<code>float8_e4m3fn</code> is another option for fast speed and high quality but <code>FP8</code> has slightly lower quality than <code>INT8</code>  </li>
 </ul>
 <h2 id="triton">Triton</h2>
 <p>Triton enables the use of optimized kernels for much better performance.  </p>
@@ -3414,8 +3417,8 @@ Default is <code>0</code>, meaning it will decide the group size based on your q
 Linear layers will use this formula to find the group size: <code>2 ** (2 + number_of_bits)</code><br />
 Convolutions will use this formula to find the group size: <code>2 ** (1 + number_of_bits)</code><br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
-<h3 id="quantize-the-convolutional-layers">Quantize the convolutional layers</h3>
-<p>Enabling this option will quantize the convolutional layers in UNet models too.<br />
+<h3 id="quantize-convolutional-layers">Quantize convolutional layers</h3>
+<p>Enabling this option will quantize convolutional layers in UNet models too.<br />
 Has much better memory savings but lower quality.<br />
 Convolutions will use <code>uint4</code> when using quants with less than 4 bits.<br />
 Disabled by default.  </p>
@@ -3452,7 +3455,7 @@ Recommended quant type for FP8 matmul is <code>float8_e4m3fn</code> for quality 
 <h3 id="use-quantized-matmul-with-convolutional-layers">Use Quantized MatMul with convolutional layers</h3>
 <p>Same as <code>Use Quantized MatMul</code> but for the convolutional layers with UNets like SDXL.<br />
 Disabled by default.  </p>
-<h3 id="quantize-with-the-gpu">Quantize with the GPU</h3>
+<h3 id="quantize-using-gpu">Quantize using GPU</h3>
 <p>Enabling this option will use the GPU with the quantization calculations on model load.<br />
 Can be faster with weak CPUs but can also be slower because of GPU to CPU communication overhead.<br />
 Enabled by default.  </p>

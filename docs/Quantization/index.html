@@ -3248,10 +3248,11 @@
 </ul>
 <p>For storage-only quantization, the model is quantized to lower precision but the operations are still performed in the original precision<br />
 which means that each operation needs to be upcasted to the original precision before execution resulting in a performance overhead  </p>
-<blockquote>
-<p>[!IMPORTANT]
-Before deciding which quantization method to use, you need to consider the following:</p>
-</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Quantization considerations</p>
+</div>
+<p>Before deciding which quantization method to use, you need to consider the following:</p>
 <ul>
 <li>Compatibility with your platform<br />
   Some quantization methods are not available on all platforms, see below for details  </li>

@@ -5851,7 +5851,13 @@
 <h2 id="update-for-2025-06-27">Update for 2025-06-27</h2>
 <ul>
 <li><strong>Models</strong></li>
-<li><a href="https://vladmandic.github.io/sdnext-docs/Models/">Models Wiki page</a> is updated will all new models  </li>
+<li><a href="https://vladmandic.github.io/sdnext-docs/Models/">Models Wiki page</a> is updated will all new models<br />
+<em>note</em> all new image models larger than 30GB, so <a href="https://vladmandic.github.io/sdnext-docs/Offload/">offloading</a> and <a href="https://vladmandic.github.io/sdnext-docs/Quantization/">quantization</a> are necessary!  </li>
+<li><a href="https://huggingface.co/OmniGen2/OmniGen2">OmniGen2</a>  <ul>
+<li>OmniGen2 is a powerful unified multimodal model that supports t2i and i2i workflows and uses 4B transformer with Qwen-VL-2.5 4B VLM  </li>
+<li>available via <em>networks -&gt; models -&gt; reference</em>  </li>
+</ul>
+</li>
 <li><a href="https://research.nvidia.com/labs/dir/cosmos-predict2/">nVidia Cosmos-Predict2 T2I</a> <em>2B and 14B</em>  <ul>
 <li>Cosmos-Predict2 T2I is a new foundational model from Nvidia in two variants: small 2B and large 14B</li>
 <li>available via <em>networks -&gt; models -&gt; reference</em>  </li>
@@ -5861,6 +5867,7 @@
 </li>
 <li><a href="https://bfl.ai/announcements/flux-1-kontext-dev">Black Forest Labs FLUX.1 Kontext I2I</a> <em>Dev</em> variant  <ul>
 <li>FLUX.1-Kontext is a 12B model billion parameter capable of editing images based on text instructions  </li>
+<li>model is primarily designed for image editing workflows, but also works for text-to-image workflows  </li>
 <li>requirements are similar to regular FLUX.1 although 2x slower  </li>
 <li>available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><em>note</em>: this is a gated model, you need to <a href="https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev">accept terms</a> and set your <a href="https://vladmandic.github.io/sdnext-docs/Gated/">huggingface token</a>  </li>
@@ -5870,6 +5877,7 @@
 <li>Chroma is a 8.9B parameter model based on <em>FLUX.1-schnell</em> and fully Apache 2.0 licensed  </li>
 <li>available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><em>note</em>: model is still in training so future updates will trigger re-download  </li>
+<li>large credits to @Trojaner for work on bringing Chroma support to SD.Next and all the optimizations around it!  </li>
 </ul>
 </li>
 <li><a href="https://huggingface.co/fancyfeast/llama-joycaption-beta-one-hf-llava">JoyCaption Beta</a> support (in addition to existing JoyCaption Alpha)  <ul>
@@ -5894,16 +5902,17 @@
 <li>Control move global settings to control elements -&gt; control settings tab  </li>
 <li>Control add setting to run hires with or without control  </li>
 <li>Update OpenVINO to 2025.2.0  </li>
+<li>Simplified and unified quantization enabled for options  </li>
 <li><strong>SDNQ Quantization</strong>  </li>
+<li>Add <code>auto</code> quantization mode  </li>
 <li>Add <code>modules_to_not_convert</code> support for post mode  </li>
+<li>Improve offload compatibility  </li>
 <li>Fix Qwen 2.5 with int8 matmul  </li>
 <li>Fix Dora loading  </li>
 <li>Remove per layer GC  </li>
-<li>Improve offload compatibility  </li>
 <li>Add support for XYZ grid to test quantization modes<br />
 <em>note</em>: you need to enable quantization and choose what it applies on, then xyz grid can change quantization mode<br />
 <em>note</em>: you can also enable 'add time info' to compare performance of different quantization modes  </li>
-<li>Add <code>auto</code> quantization mode  </li>
 <li><strong>API</strong></li>
 <li>Add <code>/sdapi/v1/lora?lora=&lt;lora_name&gt;</code> endpoint that returns full lora info and metadata  </li>
 <li>Add <code>/sdapi/v1/controlnets?model_type=&lt;model_type|all|None&gt;</code> endpoints that returns list of available controlnets for specific model type  </li>
@@ -5927,6 +5936,7 @@
 <li>Fix process batch double image save  </li>
 <li>Fix unapply texture tiling  </li>
 <li>Suppress torch empty logging  </li>
+<li>Improve TAESD live preview downscale handling  </li>
 </ul>
 <h2 id="update-for-2025-06-16">Update for 2025-06-16</h2>
 <ul>
