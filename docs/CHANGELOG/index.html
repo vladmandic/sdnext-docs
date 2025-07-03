@@ -2861,9 +2861,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-02" class="md-nav__link">
+  <a href="#update-for-2025-07-03" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-02
+      Update for 2025-07-03
     </span>
   </a>
   
@@ -4395,9 +4395,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-02" class="md-nav__link">
+  <a href="#update-for-2025-07-03" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-02
+      Update for 2025-07-03
     </span>
   </a>
   
@@ -5914,28 +5914,34 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-07-02">Update for 2025-07-02</h2>
+<h2 id="update-for-2025-07-03">Update for 2025-07-03</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li>Add <strong>FLUX.1-Kontext-Dev</strong> inpaint workflow  </li>
 <li><strong>UI</strong>  </li>
 <li>major update to modernui layout  </li>
+<li>redesign of the Flat UI theme</li>
 <li><strong>Compute</strong></li>
 <li>support for <a href="https://github.com/thu-ml/SageAttention">SageAttention2++</a><br />
     provides 10-15% performance improvement over default SDPA for transformer-based models!<br />
     enable in <em>settings -&gt; compute settings -&gt; sdp options</em><br />
 <em>note</em>: SD.Next will use either SageAttention v1 or v2, depending which one is installed<br />
     until authors provide pre-build wheels for v2, you need to install it manually or SD.Next will auto-install v1  </li>
-<li><strong>Core</strong>  </li>
-<li>override <code>gradio</code> installer  </li>
-<li>major refactoring of requirements and dependencies to unblock <code>numpy&gt;=2.1.0</code>  </li>
-<li>patch <code>insightface</code>  </li>
-<li>patch <code>k-diffusion</code>  </li>
-<li>better handle startup import errors  </li>
 <li><strong>Fixes</strong></li>
 <li>allow theme type <code>None</code> to be set in config  </li>
 <li>installer dont cache installed state  </li>
 <li>fix Cosmos-Predict2 retrying TAESD download  </li>
+<li>better handle startup import errors  </li>
+<li><strong>Refactoring</strong>  </li>
+<li>override <code>gradio</code> installer  </li>
+<li>major refactoring of requirements and dependencies to unblock <code>numpy&gt;=2.1.0</code>  </li>
+<li>patch <code>insightface</code>  </li>
+<li>patch <code>k-diffusion</code>  </li>
+<li>cleanup <code>/modules</code>: move pipeline loaders to <code>/pipelines</code> root  </li>
+<li>cleanup <code>/modules</code>: move code folders used by pipelines to <code>/pipelines/&lt;pipeline&gt;</code> folder  </li>
+<li>cleanup <code>/modules</code>: move code folders used by scripts to <code>/scripts/&lt;script&gt;</code> folder  </li>
+<li>cleanup <code>/modules</code>: global rename <code>modules.scripts</code> to avoid conflict with <code>/scripts</code>  </li>
+<li>stronger lint rules  </li>
 </ul>
 <h2 id="update-for-2025-06-30">Update for 2025-06-30</h2>
 <h3 id="highlights-for-2025-06-30">Highlights for 2025-06-30</h3>
