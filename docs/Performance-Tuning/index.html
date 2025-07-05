@@ -2434,15 +2434,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backends" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backends
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#compute-settings" class="md-nav__link">
     <span class="md-ellipsis">
       Compute Settings
@@ -3019,15 +3010,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backends" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backends
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#compute-settings" class="md-nav__link">
     <span class="md-ellipsis">
       Compute Settings
@@ -3140,18 +3122,10 @@
 <h2 id="introduction">Introduction</h2>
 <p>Hi folks, it's your (moderately) friendly neighborhood Aptronym here!</p>
 <p>People are always asking me how to get the most <strong>it/s</strong> out of their GPUs, now... this is a complicated subject due to the current GPU landscape, the wide range of GPUs that can do stable diffusion just within each manufacturer, going back years (nvidia 1080s, 1050s, or RX500 series), as well as varying and often limited amounts of VRAM, possibly inside of a laptop.</p>
-<p>That's not even counting the complicated selection of inference platforms SDNext has available, everything from plain everyday CUDA to Onnxruntime/Olive, and now ZLUDA, as well as our two built-in backends, Original and Diffusers.</p>
+<p>That's not even counting the complicated selection of inference platforms SDNext has available, everything from plain everyday CUDA and ROCm to Onnxruntime/Olive, and now ZLUDA.</p>
 <p>I can't promise you'll be able to use all of these options, I can't promise they won't crash your instance (or be buggy for that matter), that's going to vary wildly from GPU, OS, RAM, VRAM, current chosen inference platform, and backend, and some of these options will not work together, or at all, on some platforms. You will have to test that yourselves, but we are hoping to build a matrix of sorts showing what is available and what works with what, but that's going to take some user testing and feedback.</p>
 <p>If you help us by providing feedback (issues w/logs, screenshots, etc.), which we never have enough of, we will do our best to correct what we can and ensure that the experience of using SDNext is as optimized as it can be. Some limitations we won't be able to overcome purely do to things beyond our control, such as conflicts caused by the nature of the inference platform.</p>
 <p>Just as an added ray of sunshine to give you hope, there are plans in motion to create a more self-optimizing system that will not only configure itself for optimal performance based on your setup, but also react to what you're doing, what model you have loaded (SD15 v. SDXL is a huge difference), and specified preferences, so that it is always as performant as possible while sacrificing minimal quality loss. We would welcome any assistance with this, recently-laid-off-due-to-AI developers (Curse you Devin!) or any developers, or people with coding experience, at all.</p>
-<h2 id="backends">Backends</h2>
-<p>Let's start with the simplest thing, your chosen backend. I know there are some Original mode holdouts, that are clinging on to it for various reasons (I was one myself for months), sometimes simply due to being ignorant of the fact that the Diffusers backend can do SD 1.5 models as well as SDXL and the others.</p>
-<p>So let me put that to rest once and for all:</p>
-<p><strong>You need to be using Diffusers</strong></p>
-<p>It is not only now the default on installation, it is faster and better with your precious VRAM usage, as well as being the only backend where future enhancements and features will take place. Wean yourself off of Original, as you are missing out on a lot of functionality, scripts, and features. I know you may have some precious extension that only works in Original, but we have a lot built in now that you may not have noticed.</p>
-<p>If the extension is so important to have, then pop by on discord and let me know what it is and explain why. We've added features for less, so if it's a good thing to include, or if we can't already do it to some degree, we'll take a look at it and consider it fairly. If you can't present a good use case, your chances are lower (visual aids help too).</p>
-<p>All of that being said, Original mode is going to be retired at some point in the near future, there really just aren't any benefits to keeping it around other than more work for our small development team and contributors.</p>
-<p><strong>One more time, USE DIFFUSERS!</strong></p>
 <h2 id="compute-settings">Compute Settings</h2>
 <p><em>Note: Changing any of the settings on this page will require you to, at the least, unload the model and then reload it (after hitting apply!), as these settings are applied on model load, not in realtime.</em></p>
 <p>Generally speaking, for most GPUs our user-base has (mostly Nvidia on Windows judging by discord roles, so using CUDA), you are going to want the settings below (BF16 is possible too if using 30xx+).  </p>

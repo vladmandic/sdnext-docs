@@ -3219,7 +3219,6 @@ All options listed here are available as arguments to use from the command line 
 <p>webui --help</p>
 </blockquote>
 <pre><code>Configuration:
-  --backend {original,diffusers}                     force model pipeline type
   --config CONFIG                                    Use specific server configuration file, default: config.json
   --ui-config UI_CONFIG                              Use specific UI configuration file, default: ui-config.json
   --medvram                                          Split model stages and keep only active part in VRAM, default: False
@@ -3301,7 +3300,6 @@ Logging:
 <li><code>--config</code>: Specify the server configuration file. This option allows you to use a specific server configuration file. The default is set to <code>&lt;path to data&gt;/config.json</code>. You can customize this by providing a different file path or by setting the environment variable <code>SD_CONFIG</code>.</li>
 <li><code>--ui-config</code>: Specify the UI configuration file. This option allows you to use a specific UI configuration file. The default is set to <code>&lt;path to data&gt;/ui-config.json</code>. You can customize this by providing a different file path or by setting the environment variable <code>SD_UICONFIG</code>.</li>
 <li><code>--autolaunch</code>: Open the UI URL in the system's default browser upon launch. Enabling this flag (<code>True</code>) automatically opens the UI URL in the system's default browser upon launch. The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_AUTOLAUNCH</code>.</li>
-<li><code>--backend</code>: Force model pipeline type. Enabling this option allows you to force a specific model pipeline type. The choices are ['original', 'diffusers']. The default is <code>Original</code>, and you can set a custom backend by providing the argument value or by setting the environment variable <code>SD_BACKEND</code>.</li>
 <li><code>--upgrade</code>: Upgrade the main repository to the latest version. Use this option when you want to ensure that you are using the most recent version of the application. Enabling this flag (<code>True</code>) upgrades the main repository to the latest version.  The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_UPGRADE</code>.<br />
 <strong>This is relatively safe to use with master branch. Dev branch is another story, be wary.</strong></li>
 <li><code>--debug</code>: Run SDNext with debug logging to the console. Enabling this flag (<code>True</code>) runs SDNext with debug logging. The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_DEBUG</code>.<br />

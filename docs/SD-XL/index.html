@@ -3165,8 +3165,7 @@ significant reductions in VRAM (from 6GB of VRAM to &lt;1GB VRAM) and a doubling
 <p>You should be good to go, Enjoy the huge performance boost!</p>
 <h2 id="using-sd-xl">Using SD-XL</h2>
 <ul>
-<li>To use SD-XL, first SD.Next needs to be in Diffusers mode, not Original, select it from the Backend radio buttons.</li>
-<li>Then select Stable Diffusion XL from the Pipeline dropdown.</li>
+<li>Then select Autodetect or Stable Diffusion XL from the Pipeline dropdown.</li>
 <li>Next select the sd_xl_base_1.0.safetensors file from the Checkpoint dropdown.</li>
 <li>(optional) Finally select the sd_xl_refiner_1.0.safetensors file from the Refiner dropdown.  </li>
 </ul>
@@ -3189,7 +3188,7 @@ In either case, refiner will use calculated number of steps based on <code>Refin
   Exact number is calculated internally to be Refiner steps.</li>
 </ul>
 <p>In this mode, using different ratio of steps for primary and refiner is allowed, but may result in unexpected results as base and refiner operations will not be perfectly aligned.</p>
-<p>Note on steps vs timesteps. In all workflows (even with original backend and SD 1.5 models), steps do not refer directly do operations internally executed. Steps are used to calculate actual values at which operations will be executed. For example, steps=6 roughly means execute denoising at 0% -&gt; 20%  -&gt; 40%  -&gt; 60%  -&gt; 80%  -&gt; 100%.
+<p>Note on steps vs timesteps: steps do not refer directly do operations internally executed. Steps are used to calculate actual values at which operations will be executed. For example, steps=6 roughly means execute denoising at 0% -&gt; 20%  -&gt; 40%  -&gt; 60%  -&gt; 80%  -&gt; 100%.
 For that reason, specifying steps above 99 is meaningless.</p>
 
 

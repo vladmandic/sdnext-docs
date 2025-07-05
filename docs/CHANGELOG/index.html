@@ -2861,9 +2861,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-04" class="md-nav__link">
+  <a href="#update-for-2025-07-05" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-04
+      Update for 2025-07-05
     </span>
   </a>
   
@@ -4395,9 +4395,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-04" class="md-nav__link">
+  <a href="#update-for-2025-07-05" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-04
+      Update for 2025-07-05
     </span>
   </a>
   
@@ -5914,8 +5914,11 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-07-04">Update for 2025-07-04</h2>
+<h2 id="update-for-2025-07-05">Update for 2025-07-05</h2>
 <ul>
+<li><strong>License</strong>  </li>
+<li>SD.Next <a href="https://github.com/vladmandic/sdnext/blob/dev/LICENSE.txt">license</a> switched from <strong>aGPL-v3.0</strong> to <strong>Apache-v2.0</strong><br />
+    this means that SD.Next is now fully compatible with commercial use and redistribution regardless of modifications!  </li>
 <li><strong>Models</strong></li>
 <li><a href="https://github.com/gojasper/LBM">LBM: Latent Bridge Matching</a><br />
     very fast automatic image background replacement methods with relightning!<br />
@@ -5942,19 +5945,31 @@
 <li>better handle startup import errors  </li>
 <li>fix diffusers models non-unique hash  </li>
 <li>fix loading of manually downloaded diffuser models  </li>
+<li>fix api <code>/sdapi/v1/embeddings</code> endpoint</li>
 <li>improve model type autodetection  </li>
 <li>improve model auth check for hf repos  </li>
 <li>improve Chroma prompt padding as per recommendations  </li>
 <li><strong>Refactoring</strong>  </li>
-<li>override <code>gradio</code> installer  </li>
-<li>major refactoring of requirements and dependencies to unblock <code>numpy&gt;=2.1.0</code>  </li>
-<li>patch <code>insightface</code>  </li>
-<li>patch <code>k-diffusion</code>  </li>
+<li>obsolete <strong>original backend</strong>  </li>
+<li>remove majority of legacy <strong>a1111</strong> codebase  </li>
+<li>remove legacy ldm codebase: <code>/repositories/ldm</code>  </li>
+<li>remove legacy blip codebase: <code>/repositories/blip</code>  </li>
+<li>remove legacy clip model: <code>/models/karlo</code>  </li>
+<li>remove legacy model configs: <code>/configs/*.yaml</code>  </li>
+<li>remove legacy submodule: <code>/modules/k-diffusion</code>  </li>
+<li>remove legacy hypernetworks support: <code>/modules/hypernetworks</code>  </li>
+<li>remove legacy lora support: <code>/extensions-builtin/Lora</code> (does not impact current lora support)  </li>
+<li>remove legacy clip/blip interrogate module (does not impact current interrogate support)  </li>
+<li>remove modern-ui remove <code>only-original</code> vs <code>only-diffusers</code> code paths  </li>
 <li>cleanup <code>/modules</code>: move pipeline loaders to <code>/pipelines</code> root  </li>
 <li>cleanup <code>/modules</code>: move code folders used by pipelines to <code>/pipelines/&lt;pipeline&gt;</code> folder  </li>
 <li>cleanup <code>/modules</code>: move code folders used by scripts to <code>/scripts/&lt;script&gt;</code> folder  </li>
 <li>cleanup <code>/modules</code>: global rename <code>modules.scripts</code> to avoid conflict with <code>/scripts</code>  </li>
-<li>stronger lint rules  </li>
+<li>override <code>gradio</code> installer  </li>
+<li>major refactoring of requirements and dependencies to unblock <code>numpy&gt;=2.1.0</code>  </li>
+<li>patch <code>insightface</code>  </li>
+<li>stronger lint rules<br />
+    add separate <code>npm run lint</code>, <code>npm run todo</code>, <code>npm run test</code> macros  </li>
 </ul>
 <h2 id="update-for-2025-06-30">Update for 2025-06-30</h2>
 <h3 id="highlights-for-2025-06-30">Highlights for 2025-06-30</h3>
@@ -9616,7 +9631,6 @@ Also new is support for <strong>SDXL-Turbo</strong> as well as new <strong>Kandi
 <li>lightweight native implementation of T2I adapters which can guide generation towards specific image style  </li>
 <li>supports most T2I models, not limited to SD 1.5  </li>
 <li>models are auto-downloaded on first use</li>
-<li>for IP adapter support in <em>Original</em> backend, use standard <em>ControlNet</em> extension  </li>
 </ul>
 </li>
 <li><strong>AnimateDiff</strong><ul>
@@ -9626,7 +9640,6 @@ Also new is support for <strong>SDXL-Turbo</strong> as well as new <strong>Kandi
 <li>models are auto-downloaded on first use  </li>
 <li>for video saving support, see video support section</li>
 <li>can be combined with IP-Adapter for even better results!  </li>
-<li>for AnimateDiff support in <em>Original</em> backend, use standard <em>AnimateDiff</em> extension  </li>
 </ul>
 </li>
 <li><strong>HDR latent control</strong>, based on <a href="https://huggingface.co/blog/TimothyAlexisVass/explaining-the-sdxl-latent-space#long-prompts-at-high-guidance-scales-becoming-possible">article</a>  <ul>

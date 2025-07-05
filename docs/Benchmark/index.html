@@ -3158,8 +3158,6 @@ or via CLI using <code>cli/run-benchmark.py</code> script.</p>
   while others cannot <em>(e.g. HyperTile + ToMe)</em></li>
 <li>Results may differ on different GPU/CPU combinations<br />
   For example, pairing better CPU with older GPU may benefit from more processing done on CPU and leaving GPU to do only core ML tasks while paring high-end GPU with older CPU may result in lower results since CPU cannot feed enough tasks to GPU</li>
-<li>Diffusers perform significantly better than original backend on modern hardware since tasks remain on GPU for longer time<br />
-  Equally, original backend may perform better on older hardware</li>
 <li>Running quick tasks such as single image generate at low steps may not be sufficient to fully saturate high-end GPU so results will be lower</li>
 <li>xFormers have a slight performance advantage over SDP<br />
   However, SDP is a built-in in Torch and "just works" while xFormers needs manual install and its highly version dependent  </li>
