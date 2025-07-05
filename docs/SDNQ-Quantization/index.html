@@ -3305,13 +3305,13 @@
 <li>Supports nearly all model types  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
 <li>Supports Quantized MatMul with significant speedups on INT8 or FP8 supported GPUs  </li>
-<li>Supports on the fly quantization during model load with DiT models (called as <code>pre</code> mode)  </li>
+<li>Supports on the fly quantization during model load with little to no overhead (called as <code>pre</code> mode)  </li>
 <li>Supports quantization for the convolutional layers with UNet models  </li>
 <li>Supports post load quantization for any model  </li>
 <li>Supports on the fly usage of LoRa models  </li>
 <li>Supports balanced offload  </li>
 </ul>
-<p>Benchmarks are available in the <a href="Quantization#benchmarks">Quantization Wiki</a>.</p>
+<p>Benchmarks are available in the <a href="../Quantization/#benchmarks">Quantization Wiki</a>.</p>
 <h2 id="recommended-options">Recommended Options</h2>
 <ul>
 <li><code>Dequantize using torch.compile</code><br />
@@ -3332,7 +3332,7 @@
 <li>Triton comes built-in on Linux, you can use the Triton optimizations out of the box.  </li>
 <li><strong>Windows</strong>  </li>
 <li>Windows requires manual installation of Triton.<br />
-    Installation steps are available in the <a href="Quantization#triton">Quantization Wiki</a>  </li>
+    Installation steps are available in the <a href="../Quantization/#triton">Quantization Wiki</a>  </li>
 </ul>
 <h3 id="triton-with-amd">Triton with AMD</h3>
 <ul>
@@ -3340,7 +3340,7 @@
 <li>Triton comes built-in on Linux, you can use the Triton optimizations out of the box.  </li>
 <li><strong>Windows</strong>  </li>
 <li>Windows requires manual installation of Triton and not guaranteed to work with Zluda.<br />
-    Experimental installation steps are available in the <a href="ZLUDA#triton">ZLUDA Wiki</a>  </li>
+    Experimental installation steps are available in the <a href="../ZLUDA/#triton">ZLUDA Wiki</a>  </li>
 </ul>
 <h3 id="triton-with-intel">Triton with Intel</h3>
 <ul>
