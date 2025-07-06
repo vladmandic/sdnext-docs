@@ -5926,6 +5926,7 @@
 <em>relighting</em>: automatic background replacement with reglighting so source image fits desired background<br />
     with optional composite blending<br />
     available in <em>img2img or control -&gt; scripts</em>  </li>
+<li><strong>TAESD</strong> is now default preview type since its the only one that supports most new models  </li>
 <li>Add <strong>FLUX.1-Kontext-Dev</strong> inpaint workflow  </li>
 <li>Support <strong>FLUX.1</strong> all-in-one safetensors  </li>
 <li>Support TAESD preview and remote VAE for <strong>HunyuanDit</strong>  </li>
@@ -5949,17 +5950,20 @@
 <li>improve model type autodetection  </li>
 <li>improve model auth check for hf repos  </li>
 <li>improve Chroma prompt padding as per recommendations  </li>
-<li><strong>Refactoring</strong>  </li>
+<li><strong>Refactoring</strong><br />
+<em>note</em>: none of the removals result in loss-of-functionality since all those features are already re-implemented<br />
+  goal here is to remove legacy code, code duplication and reduce code complexity  </li>
 <li>obsolete <strong>original backend</strong>  </li>
 <li>remove majority of legacy <strong>a1111</strong> codebase  </li>
 <li>remove legacy ldm codebase: <code>/repositories/ldm</code>  </li>
 <li>remove legacy blip codebase: <code>/repositories/blip</code>  </li>
-<li>remove legacy clip model: <code>/models/karlo</code>  </li>
+<li>remove legacy codeformer codebase: <code>/repositories/codeformer</code>  </li>
+<li>remove legacy clip patch model: <code>/models/karlo</code>  </li>
 <li>remove legacy model configs: <code>/configs/*.yaml</code>  </li>
 <li>remove legacy submodule: <code>/modules/k-diffusion</code>  </li>
 <li>remove legacy hypernetworks support: <code>/modules/hypernetworks</code>  </li>
-<li>remove legacy lora support: <code>/extensions-builtin/Lora</code> (does not impact current lora support)  </li>
-<li>remove legacy clip/blip interrogate module (does not impact current interrogate support)  </li>
+<li>remove legacy lora support: <code>/extensions-builtin/Lora</code></li>
+<li>remove legacy clip/blip interrogate module</li>
 <li>remove modern-ui remove <code>only-original</code> vs <code>only-diffusers</code> code paths  </li>
 <li>cleanup <code>/modules</code>: move pipeline loaders to <code>/pipelines</code> root  </li>
 <li>cleanup <code>/modules</code>: move code folders used by pipelines to <code>/pipelines/&lt;pipeline&gt;</code> folder  </li>
@@ -5968,8 +5972,9 @@
 <li>override <code>gradio</code> installer  </li>
 <li>major refactoring of requirements and dependencies to unblock <code>numpy&gt;=2.1.0</code>  </li>
 <li>patch <code>insightface</code>  </li>
+<li>patch <code>facelib</code></li>
 <li>stronger lint rules<br />
-    add separate <code>npm run lint</code>, <code>npm run todo</code>, <code>npm run test</code> macros  </li>
+    add separate <code>npm run lint</code>, <code>npm run todo</code>, <code>npm run test</code>, <code>npm run format</code> macros  </li>
 </ul>
 <h2 id="update-for-2025-06-30">Update for 2025-06-30</h2>
 <h3 id="highlights-for-2025-06-30">Highlights for 2025-06-30</h3>
