@@ -5926,7 +5926,6 @@
 <em>relighting</em>: automatic background replacement with reglighting so source image fits desired background<br />
     with optional composite blending<br />
     available in <em>img2img or control -&gt; scripts</em>  </li>
-<li><strong>TAESD</strong> is now default preview type since its the only one that supports most new models  </li>
 <li>Add <strong>FLUX.1-Kontext-Dev</strong> inpaint workflow  </li>
 <li>Support <strong>FLUX.1</strong> all-in-one safetensors  </li>
 <li>Support TAESD preview and remote VAE for <strong>HunyuanDit</strong>  </li>
@@ -5939,14 +5938,22 @@
     enable in <em>settings -&gt; compute settings -&gt; sdp options</em><br />
 <em>note</em>: SD.Next will use either SageAttention v1/v2/v2++, depending which one is installed<br />
     until authors provide pre-build wheels for v2++, you need to install it manually or SD.Next will auto-install v1  </li>
+<li><strong>Other</strong>  </li>
+<li><strong>TAESD</strong> is now default preview type since its the only one that supports most new models  </li>
+<li>SD.Next now starts with <em>locked</em> state preventing model loading until startup is complete  </li>
+<li><strong>API</strong>  </li>
+<li>add <code>/sdapi/v1/lock-checkpoint</code> endpoint that can be used to lock/unlock model changes<br />
+    if model is locked, it cannot be changed using normal load or unload methods  </li>
 <li><strong>Fixes</strong></li>
 <li>allow theme type <code>None</code> to be set in config  </li>
 <li>installer dont cache installed state  </li>
 <li>fix Cosmos-Predict2 retrying TAESD download  </li>
 <li>better handle startup import errors  </li>
+<li>fix ansi controle output from scripts/extensions  </li>
 <li>fix diffusers models non-unique hash  </li>
 <li>fix loading of manually downloaded diffuser models  </li>
 <li>fix api <code>/sdapi/v1/embeddings</code> endpoint</li>
+<li>improve extensions ui search  </li>
 <li>improve model type autodetection  </li>
 <li>improve model auth check for hf repos  </li>
 <li>improve Chroma prompt padding as per recommendations  </li>
