@@ -1,0 +1,4198 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="SD.Next Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Parameters/">
+      
+      
+        <link rel="prev" href="../Prompting/">
+      
+      
+        <link rel="next" href="../Prompt-Enhance/">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Parameters Guide - SD.Next Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../sdnext.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Parameters Guide - SD.Next Documentation" >
+      
+        <meta  property="og:description"  content="SD.Next Documentation" >
+      
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Parameters.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/Parameters/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Parameters Guide - SD.Next Documentation" >
+      
+        <meta  name="twitter:description"  content="SD.Next Documentation" >
+      
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Parameters.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sdnext-parameters-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SD.Next Documentation" class="md-header__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
+      
+  <img src="../favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SD.Next Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Parameters Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 2h14v14H2zm20 6v14H8v-4h2v2h10V10h-2V8z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/vladmandic/automatic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SD.Next
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Installation/" class="md-tabs__link">
+          
+  
+    
+  
+  Install
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Model-Support/" class="md-tabs__link">
+          
+  
+    
+  
+  Models
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../WSL/" class="md-tabs__link">
+          
+  
+    
+  
+  Platforms
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Getting-Started/" class="md-tabs__link">
+          
+  
+    
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Themes/" class="md-tabs__link">
+          
+  
+    
+  
+  User Interface
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../SD-Pipeline-How-it-Works/" class="md-tabs__link">
+          
+  
+    
+  
+  Behind-the-Scenes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Performance-Tuning/" class="md-tabs__link">
+          
+  
+    
+  
+  Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../API/" class="md-tabs__link">
+          
+  
+    
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../FAQ/" class="md-tabs__link">
+          
+  
+    
+  
+  Troubleshoot
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CHANGELOG/" class="md-tabs__link">
+        
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SD.Next Documentation" class="md-nav__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
+      
+  <img src="../favicon.ico" alt="logo">
+
+    </a>
+    SD.Next Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/vladmandic/automatic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SD.Next
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Install
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Install
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Advanced-Install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Install
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLI-Arguments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI Arguments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Model-Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supported Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Specs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Gated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gated Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SD-XL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StableDiffusion XL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SD3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StableDiffusion 3.x
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Stable-Cascade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StableCascade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FLUX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FLUX.1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Using-LCM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LCM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HiDream/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HiDream
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Video
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FramePack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FramePack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Platforms
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platforms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Intel-ARC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intel-ARC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DirectML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DirectML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenVINO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenVINO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ONNX-Runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ONNX & Olive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ZLUDA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZLUDA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AMD-ROCm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AMD-ROCm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MacOS-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MacOS-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nVidia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nVidia-CUDA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting-Started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Models-Tab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working with Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prompting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prompting Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Parameters Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Parameters Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-parameter-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Parameter Terminology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampler-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampler Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guidance-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guidance Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Style Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vae-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      VAE Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhancement-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancement Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailer-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailer Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hdr-correction-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDR Correction Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-to-image-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image-to-Image Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-resolution-hires-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      High-Resolution (HiRes) Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inpainting-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inpainting Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refiner-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refiner Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#override-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Override Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-processing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Video Processing Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clip-skip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clip skip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resize-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resize modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resize modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context-aware-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context aware scaling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prompt-Enhance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prompt Enhacement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networks-Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Detailer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Detailer Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LoRA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LoRA Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control-HowTo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control-Settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control-Technical/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control Technicals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Outpaint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outpainting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Process/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Caption/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Captioning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Styles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Styles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wildcards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Wildcards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reprocess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reprocess Latents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPAdapter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IP Adapters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../XYZ-Grid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XYZ Grid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-in Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Interface
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            User Interface
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Themes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Locale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotkeys/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shortcuts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Behind-the-Scenes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Behind-the-Scenes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SD-Pipeline-How-it-Works/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Does It Work?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SD-Training-Methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Training Methods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hints and Tooltips
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wiki and Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Extensions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Extensions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Theme-User/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Themes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backends
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profiling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profiling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Advanced
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Performance-Tuning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance Tuning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Offload/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Offloading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Malloc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Allocation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quantization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Quantization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDNQ-Quantization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SDNQ Quantization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Loader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Loader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VAE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variable Auto-Encoder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Benchmark/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Benchmark Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Nunchaku/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nunchaku Engine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLI-Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI and API Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Troubleshoot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Troubleshoot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Debug/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHANGELOG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-parameter-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Parameter Terminology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampler-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sampler Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guidance-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guidance Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Style Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vae-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      VAE Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhancement-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancement Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailer-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailer Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hdr-correction-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDR Correction Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-to-image-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image-to-Image Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-resolution-hires-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      High-Resolution (HiRes) Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inpainting-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inpainting Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refiner-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refiner Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#override-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Override Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-processing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Video Processing Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clip-skip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clip skip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resize-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resize modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resize modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context-aware-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context aware scaling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="sdnext-parameters-guide">SDnext Parameters Guide</h1>
+<p>This guide documents all parameters available in SDnext. </p>
+<p>Parameters listed here can be used in the <code>extra</code> field of styles. Parameters there are specified as comma-separated key-value pairs using colons.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="./#base-parameters">Base Parameters</a></li>
+<li><a href="./#understanding-parameter-terminology">Understanding Parameter Value Types</a></li>
+<li><a href="./#sampler-parameters">Sampler Parameters</a></li>
+<li><a href="./#guidance-parameters">Guidance Parameters</a></li>
+<li><a href="./#style-parameters">Style Parameters</a></li>
+<li><a href="./#vae-parameters">VAE Parameters</a></li>
+<li><a href="./#enhancement-parameters">Enhancement Parameters</a></li>
+<li><a href="./#detailer-parameters">Detailer Parameters</a></li>
+<li><a href="./#hdr-correction-parameters">HDR Correction Parameters</a></li>
+<li><a href="./#image-to-image-parameters">Image-to-Image Parameters</a></li>
+<li><a href="./#high-resolution-hires-parameters">High-Resolution (HiRes) Parameters</a></li>
+<li><a href="./#inpainting-parameters">Inpainting Parameters</a></li>
+<li><a href="./#refiner-parameters">Refiner Parameters</a></li>
+<li><a href="./#save-options">Save Options</a></li>
+<li><a href="./#script-parameters">Script Parameters</a></li>
+<li><a href="./#override-parameters">Override Parameters</a></li>
+<li><a href="./#video-processing-parameters">Video Processing Parameters</a></li>
+<li><a href="./#clip-skip">Clip skip</a></li>
+<li><a href="./#resize-modes">Resize modes</a></li>
+<li><a href="./#context-aware-scaling">Context aware scaling</a></li>
+<li><a href="./#notes">Notes</a></li>
+</ul>
+<hr />
+<h2 id="understanding-parameter-terminology">Understanding Parameter Terminology</h2>
+<p>This section helps you understand the different <strong>terms</strong> used throughout the SDnext Processing Parameters Guide. Here’s a breakdown:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Use For</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>key</code></td>
+<td style="text-align: left;">Identifier name for the parameter, before the colon</td>
+<td style="text-align: left;"><code>prompt</code>, <code>seed</code>, <code>width</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">Text or labels</td>
+<td style="text-align: left;"><code>"portrait, masterpiece"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;">Whole numbers</td>
+<td style="text-align: left;"><code>20</code>, <code>512</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;">Numbers with decimals</td>
+<td style="text-align: left;"><code>0.5</code>, <code>7.5</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">On/Off toggles</td>
+<td style="text-align: left;"><code>True</code>, <code>False</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>list</code></td>
+<td style="text-align: left;">Multiple values</td>
+<td style="text-align: left;"><code>["style1", "style2"]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Dict</code></td>
+<td style="text-align: left;">Key-value settings</td>
+<td style="text-align: left;"><code>{key: value}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Any</code></td>
+<td style="text-align: left;">Flexible input types, context dependent</td>
+<td style="text-align: left;"><code>image.png</code>, <code>#FFAA00</code>, <code>True</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="base-parameters">Base Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>prompt</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>""</code></td>
+<td style="text-align: left;"><code>Syntax: prompt: your text here</code></td>
+<td style="text-align: left;">The positive text prompt describing what you want to generate. This is the main instruction that tells the AI what image to create.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>negative_prompt</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>""</code></td>
+<td style="text-align: left;"><code>Syntax: negative_prompt: bad quality, blurry, extra fingers</code></td>
+<td style="text-align: left;">Text describing what you want to avoid in the generation. Common negatives include unwanted elements, quality issues, or artistic styles you want to exclude.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>seed</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>-1</code></td>
+<td style="text-align: left;"><code>Values: -1 (random), or any positive integer</code> <br> <code>Syntax: seed: 12345</code></td>
+<td style="text-align: left;">Random seed for reproducible results. Using the same seed with identical settings will generate the same image. -1 generates a random seed each time.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>subseed</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>-1</code></td>
+<td style="text-align: left;"><code>Values: -1 (random), or any positive integer</code> <br> <code>Syntax: subseed: 67890</code></td>
+<td style="text-align: left;">Secondary seed for additional variation control. Works together with subseed_strength to add controlled randomness to your generation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>subseed_strength</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: subseed_strength: 0.15</code></td>
+<td style="text-align: left;">How much the subseed affects the generation (0 = no effect, 1 = maximum effect). Useful for creating slight variations of the image with the same seed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>seed_resize_from_h</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>-1</code></td>
+<td style="text-align: left;"><code>Values: -1 (disabled), or positive integer</code> <br> <code>Syntax: seed_resize_from_h: 512</code></td>
+<td style="text-align: left;">Original height for seed resizing. This maintains noise patterns when changing resolution, useful when upscaling while keeping similar composition.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>seed_resize_from_w</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>-1</code></td>
+<td style="text-align: left;"><code>Values: -1 (disabled), or positive integer</code> <br> <code>Syntax: seed_resize_from_w: 512</code></td>
+<td style="text-align: left;">Original width for seed resizing. Works with seed_resize_from_h to maintain consistency across resolution changes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>batch_size</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>Values: 1 or higher</code> <br> <code>Syntax: batch_size: 4</code></td>
+<td style="text-align: left;">Number of images to generate simultaneously. Higher values use more GPU memory but are more efficient than generating images one by one.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>n_iter</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>Values: 1 or higher</code> <br> <code>Syntax: n_iter: 5</code></td>
+<td style="text-align: left;">Number of generation iterations (batches) to run. If batch_size is 4 and n_iter is 5, you'll get 20 images total.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clip_skip</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>Range: 1 to 12</code> <br> <code>Syntax: clip_skip: 2</code></td>
+<td style="text-align: left;">Skip last N layers of CLIP model. Only affects models which use CLIP as their Text Encoder. Values 1 or 2 used with SD1.5, should be left at default 1 with SDXL and other models. More here: <a href="./#clip-skip">Clip skip</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>width</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>1024</code></td>
+<td style="text-align: left;"><code>Values: Multiples of 8</code> <br> <code>Syntax: width: 1280</code></td>
+<td style="text-align: left;">Image width in pixels. Must be divisible by 8. For best results use resolutions recommended for the model you're using.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>height</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>1024</code></td>
+<td style="text-align: left;"><code>Values: Multiples of 8</code> <br> <code>Syntax: height: 768</code></td>
+<td style="text-align: left;">Image height in pixels. Must be divisible by 8. Consider aspect ratio for best results.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sampler-parameters">Sampler Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>sampler_name</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Values: "Euler", "Euler a", "DPM++ 2M", etc.</code> <br> <code>Syntax: sampler_name: DPM++ 2M Karras</code></td>
+<td style="text-align: left;">Algorithm used for image generation. Different samplers can produce different styles and qualities.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>steps</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>20</code></td>
+<td style="text-align: left;"><code>Range: 1 to 150 (typical)</code> <br> <code>Syntax: steps: 30</code></td>
+<td style="text-align: left;">Number of denoising steps. More steps generally mean better quality but slower generation. 20-50 is typical, with diminishing returns above 50. Settings may vary depending on sampler chosen.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hr_sampler_name</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Values: Same as sampler_name</code> <br> <code>Syntax: hr_sampler_name: UniPC</code></td>
+<td style="text-align: left;">Sampler for high-resolution pass. Can be different from primary sampler for specialized effects during upscaling when using HiRes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>eta</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: eta: 0.67</code></td>
+<td style="text-align: left;">Noise multiplier for samplers that support it (like DDIM). Adds randomness to deterministic samplers. 0 = fully deterministic, 1 = maximum noise.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="guidance-parameters">Guidance Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>cfg_scale</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>6.0</code></td>
+<td style="text-align: left;"><code>Range: 1.0 to 30.0</code> <br> <code>Syntax: cfg_scale: 7.5</code></td>
+<td style="text-align: left;">Classifier-Free Guidance scale. Higher values follow your prompt more closely but can cause oversaturation. 4-12 is typical for most uses.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cfg_end</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>1.0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: cfg_end: 0.7</code></td>
+<td style="text-align: left;">When to stop applying CFG during generation (1.0 = full generation). Lower values can produce more creative results by reducing guidance in later steps.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>diffusers_guidance_rescale</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: diffusers_guidance_rescale: 0.3</code></td>
+<td style="text-align: left;">Rescale guidance for diffusers to prevent oversaturation when using high CFG values. Helps maintain color balance.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pag_scale</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 5.0</code> <br> <code>Syntax: pag_scale: 2.0</code></td>
+<td style="text-align: left;">Perturbed Attention Guidance scale for enhanced details. Improves fine details without affecting overall composition.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pag_adaptive</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.5</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: pag_adaptive: 0.8</code></td>
+<td style="text-align: left;">Adaptive strength for PAG. Controls how much the guidance adapts to different image regions.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="style-parameters">Style Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>styles</code></td>
+<td style="text-align: left;"><code>List[str]</code></td>
+<td style="text-align: left;"><code>[]</code></td>
+<td style="text-align: left;"><code>Syntax: styles: [photorealistic, dramatic lighting]</code></td>
+<td style="text-align: left;">List of style names to apply to the prompt. These are predefined styles that modify both prompts and parameters.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="vae-parameters">VAE Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>tiling</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: tiling: True</code></td>
+<td style="text-align: left;">Enable tiled VAE decoding for seamless textures. Perfect for creating repeating patterns or textures that tile without visible seams.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vae_type</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"Full"</code></td>
+<td style="text-align: left;"><code>Values: "Full", "Tiny", "Remote"</code> <br> <code>Syntax: vae_type: Tiny</code></td>
+<td style="text-align: left;">What type of VAE will be used for VAE Decode step at the end of generation. "Full" uses full VAE provided for the model, "Tiny" uses TAESD, a smaller VAE version that provides memory savings but lower quality, "Remote" utilises Huggingface remote VAE service to decode latent images on Huggingface servers instead of locally.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="enhancement-parameters">Enhancement Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>hidiffusion</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: hidiffusion: True</code></td>
+<td style="text-align: left;">Enable HiDiffusion for improved high-resolution generation. Helps maintain quality and coherence at resolutions higher than the model is capable of natively.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>do_not_reload_embeddings</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: do_not_reload_embeddings: True</code></td>
+<td style="text-align: left;">Skip reloading embeddings (performance optimization). Useful when running multiple generations with the same embeddings.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>restore_faces</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False,</code></td>
+<td style="text-align: left;"><code>Values: False, codeformer, gfpgan</code> <br> <code>Syntax: restore_faces: True</code></td>
+<td style="text-align: left;">Apply face restoration post-processing using Codeformer or GFPGAN neural network. Automatically detects and enhances faces in the image for better facial details. <em>Not</em> the same as detailer, generally inferior, legacy option.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>enhance_prompt</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: enhance_prompt: True</code></td>
+<td style="text-align: left;">Automatically enhance/expand the prompt using AI. Adds more descriptive details to simple prompts for better results.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="detailer-parameters">Detailer Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>detailer_enabled</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: detailer_enabled: True</code></td>
+<td style="text-align: left;">Enable automatic detail enhancement pass. Runs after first and second pass, uses detection models for automatic detection and masking. Supports custom YOLO detection models for detection of various objects on the image.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_prompt</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>''</code></td>
+<td style="text-align: left;"><code>Syntax: detailer_prompt: highly detailed, sharp focus</code></td>
+<td style="text-align: left;">Specific prompt for detail enhancement. If used, overrides main positive prompt during detail pass for targeted improvements.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_negative</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>''</code></td>
+<td style="text-align: left;"><code>Syntax: detailer_negative: blurry, low quality</code></td>
+<td style="text-align: left;">Negative prompt for detail enhancement. If used, overrides main negative prompt during detail pass.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_steps</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>10</code></td>
+<td style="text-align: left;"><code>Range: 1 to 50</code> <br> <code>Syntax: detailer_steps: 15</code></td>
+<td style="text-align: left;">Number of steps for detail enhancement. Can be set lower than main steps since it's refining existing details.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_strength</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.3</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: detailer_strength: 0.5</code></td>
+<td style="text-align: left;">Strength of detail enhancement. Higher values change the image more dramatically during detailing pass.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="hdr-correction-parameters">HDR Correction Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>hdr_mode</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Values: 0 (disabled), 1, 2, 3</code> <br> <code>Syntax: hdr_mode: 1</code></td>
+<td style="text-align: left;">HDR processing mode. Each mode applies different tone mapping algorithms for enhanced dynamic range.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_brightness</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Range: -1.0 to 1.0</code> <br> <code>Syntax: hdr_brightness: 0.2</code></td>
+<td style="text-align: left;">Brightness adjustment. Positive values brighten the image, negative values darken it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_color</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Range: -1.0 to 1.0</code> <br> <code>Syntax: hdr_color: 0.3</code></td>
+<td style="text-align: left;">Color/saturation adjustment. Positive values increase color vibrancy, negative values reduce it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_sharpen</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 2.0</code> <br> <code>Syntax: hdr_sharpen: 0.5</code></td>
+<td style="text-align: left;">Sharpening strength. Enhances edge details and overall image crispness.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_clamp</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: hdr_clamp: True</code></td>
+<td style="text-align: left;">Clamp HDR values to prevent overflow. Prevents extreme bright or dark areas from clipping.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_boundary</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>4.0</code></td>
+<td style="text-align: left;"><code>Syntax: hdr_boundary: 3.5</code></td>
+<td style="text-align: left;">HDR boundary threshold. Controls the range of HDR effect application.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_threshold</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.95</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hdr_threshold: 0.9</code></td>
+<td style="text-align: left;">HDR activation threshold. Determines which brightness levels trigger HDR processing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_maximize</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: hdr_maximize: True</code></td>
+<td style="text-align: left;">Maximize HDR effect. Applies the strongest possible HDR enhancement.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_max_center</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.6</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hdr_max_center: 0.5</code></td>
+<td style="text-align: left;">Center point for HDR maximization. Defines the brightness level that receives maximum enhancement.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_max_boundry</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>1.0</code></td>
+<td style="text-align: left;"><code>Syntax: hdr_max_boundry: 0.8</code></td>
+<td style="text-align: left;">Boundary for HDR maximization. Sets the range around the center point for maximum effect.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_color_picker</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Syntax: hdr_color_picker: #FF5500</code></td>
+<td style="text-align: left;">Color reference for HDR tinting. Applies a color cast to the HDR effect using hex color codes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hdr_tint_ratio</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hdr_tint_ratio: 0.2</code></td>
+<td style="text-align: left;">Strength of HDR color tinting. Controls how much the selected color affects the image.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="image-to-image-parameters">Image-to-Image Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>init_images</code></td>
+<td style="text-align: left;"><code>list</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Syntax: init_images: [image1.png]</code></td>
+<td style="text-align: left;">List of input images for img2img/inpainting. These serve as the starting point for transformation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>resize_mode</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Values: 0 (Just resize), 1 (Crop and resize), ...</code> <br> <code>Syntax: resize_mode: 1</code></td>
+<td style="text-align: left;">How to handle size mismatch between input and output. Choose based on whether you want to preserve aspect ratio or fill the canvas. See more: <a href="./#resize-modes">Resize modes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>resize_name</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>'None'</code></td>
+<td style="text-align: left;"><code>Values: Upscaler names ("Lanczos", "ESRGAN_4x")</code> <br> <code>Syntax: resize_name: ESRGAN_4x</code></td>
+<td style="text-align: left;">Upscaler to use for resizing. Different upscalers excel at different content types.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>resize_context</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>'None'</code></td>
+<td style="text-align: left;"><code>Values 'None, Add with forward", "Remove with forward", "Add with backward", "Remove with backward</code> <br> <code>Syntax: resize_context: Add with forward</code></td>
+<td style="text-align: left;">Advanced image resizing technique that intelligently adds or removes content from images while preserving important visual elements. See more: <a href="./#context-aware-scaling">Context-aware scaling</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>denoising_strength</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.3</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: denoising_strength: 0.75</code></td>
+<td style="text-align: left;">How much to change the input image. 0 = no change, 1 = complete reimagining. 0.3-0.7 is typical for variations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>image_cfg_scale</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 3.0</code> <br> <code>Syntax: image_cfg_scale: 1.5</code></td>
+<td style="text-align: left;">Image conditioning strength (for ControlNet/IP-Adapter). Controls how closely to follow the input image structure.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>scale_by</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>1.0</code></td>
+<td style="text-align: left;"><code>Range: 0.1 to 8.0</code> <br> <code>Syntax: scale_by: 2.0</code></td>
+<td style="text-align: left;">Scale factor for input image. 2.0 doubles the size, 0.5 halves it.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="high-resolution-hires-parameters">High-Resolution (HiRes) Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>enable_hr</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: enable_hr: True</code></td>
+<td style="text-align: left;">Enable high-resolution second pass. Generates at lower resolution first, then upscales and optionally refines.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hr_scale</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>2.0</code></td>
+<td style="text-align: left;"><code>Range: 1.0 to 4.0</code> <br> <code>Syntax: hr_scale: 2.5</code></td>
+<td style="text-align: left;">Upscale factor for hires pass. 2.0 means the final image will be twice the width and height of the initial generation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hr_upscaler</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Values: "None", "Lanczos", "ESRGAN_4x", etc.</code> <br> <code>Syntax: hr_upscaler: R-ESRGAN 4x+</code></td>
+<td style="text-align: left;">Upscaler algorithm for hires pass. Each has strengths for different image types and styles. Can be combined with HiRes to upscale the image and then refine it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hr_second_pass_steps</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Values: 0 (use primary steps), or 1-150</code> <br> <code>Syntax: hr_second_pass_steps: 20</code></td>
+<td style="text-align: left;">Number of steps for hires pass. Often fewer steps are needed since it's refining an existing image.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hr_resize_x</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Values: 0 (use scale), or target width</code> <br> <code>Syntax: hr_resize_x: 2048</code></td>
+<td style="text-align: left;">Target width for hires (overrides scale). Use for exact output dimensions rather than relative scaling.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hr_resize_y</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Values: 0 (use scale), or target height</code> <br> <code>Syntax: hr_resize_y: 1536</code></td>
+<td style="text-align: left;">Target height for hires (overrides scale). Pairs with hr_resize_x for exact dimensions.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hr_denoising_strength</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hr_denoising_strength: 0.4</code></td>
+<td style="text-align: left;">Denoising strength for hires pass. Lower values preserve more detail from upscale, higher values allow more creative changes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>firstphase_width</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Values: 0 (disabled), or initial width</code> <br> <code>Syntax: firstphase_width: 512</code></td>
+<td style="text-align: left;">Override initial generation width. Useful for controlling the first pass resolution independently.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>firstphase_height</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Values: 0 (disabled), or initial height</code> <br> <code>Syntax: firstphase_height: 512</code></td>
+<td style="text-align: left;">Override initial generation height. Works with firstphase_width for custom initial dimensions.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="inpainting-parameters">Inpainting Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>mask</code></td>
+<td style="text-align: left;"><code>Any</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Syntax: mask: mask_image.png</code></td>
+<td style="text-align: left;">Mask image for inpainting. White areas will be regenerated, black areas will be preserved.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mask_blur</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>4</code></td>
+<td style="text-align: left;"><code>Range: 0 to 64</code> <br> <code>Syntax: mask_blur: 8</code></td>
+<td style="text-align: left;">Blur radius for mask edges. Higher values create smoother transitions between inpainted and original areas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>inpainting_fill</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Values: 0 (fill), 1 (original), 2 (latent noise), ...</code> <br> <code>Syntax: inpainting_fill: 2</code></td>
+<td style="text-align: left;">What to put in masked areas before inpainting. Different modes work better for different scenarios.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>inpaint_full_res</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: inpaint_full_res: True</code></td>
+<td style="text-align: left;">Inpaint at full resolution of masked area only. Useful for detailed work on small areas without processing the entire image.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>inpaint_full_res_padding</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Range: 0 to 256</code> <br> <code>Syntax: inpaint_full_res_padding: 32</code></td>
+<td style="text-align: left;">Padding around masked area for full res inpainting. Helps blend the inpainted area with surroundings.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>inpainting_mask_invert</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Values: 0 (normal), 1 (inverted)</code> <br> <code>Syntax: inpainting_mask_invert: 1</code></td>
+<td style="text-align: left;">Invert the mask (swap inpaint/keep areas). Useful when your mask highlights what to keep rather than what to change.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="refiner-parameters">Refiner Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>refiner_steps</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>5</code></td>
+<td style="text-align: left;"><code>Range: 0 to 50</code> <br> <code>Syntax: refiner_steps: 10</code></td>
+<td style="text-align: left;">Number of steps for refiner model. Refiner models add final details and polish to images.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>refiner_start</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: refiner_start: 0.8</code></td>
+<td style="text-align: left;">When to switch to refiner (0.8 = at 80% of steps). Earlier switching gives refiner more influence over the final image.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>refiner_prompt</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>''</code></td>
+<td style="text-align: left;"><code>Syntax: refiner_prompt: masterpiece, best quality</code></td>
+<td style="text-align: left;">Override main positive prompt for refiner. Allows specialized prompting for the refinement stage.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>refiner_negative</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>''</code></td>
+<td style="text-align: left;"><code>Syntax: refiner_negative: low quality, blurry</code></td>
+<td style="text-align: left;">Override main negative prompt for refiner.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hr_refiner_start</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hr_refiner_start: 0.85</code></td>
+<td style="text-align: left;">When to switch to refiner in hires pass. Can be different from primary refiner_start for specialized workflows.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="save-options">Save Options</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>outpath_samples</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Syntax: outpath_samples: outputs/my_project/</code></td>
+<td style="text-align: left;">Custom output directory for images. Helps organize outputs for different projects or styles.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>outpath_grids</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Syntax: outpath_grids: outputs/grids/</code></td>
+<td style="text-align: left;">Custom output directory for grids. Separate location for batch result grids.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>do_not_save_samples</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: do_not_save_samples: True</code></td>
+<td style="text-align: left;">Skip saving individual images. Useful when only the grid matters or for preview runs.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>do_not_save_grid</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: do_not_save_grid: True</code></td>
+<td style="text-align: left;">Skip saving image grid. Useful when generating single images or when individual files are preferred.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="script-parameters">Script Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>script_args</code></td>
+<td style="text-align: left;"><code>list</code></td>
+<td style="text-align: left;"><code>[]</code></td>
+<td style="text-align: left;"><code>Syntax: script_args: [arg1, arg2, arg3]</code></td>
+<td style="text-align: left;">Arguments passed to active scripts/extensions. Format depends on the specific script being used.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="override-parameters">Override Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>override_settings</code></td>
+<td style="text-align: left;"><code>Dict[str, Any]</code></td>
+<td style="text-align: left;"><code>{}</code></td>
+<td style="text-align: left;"><code>Syntax: override_settings: {CLIP_stop_at_last_layers: 2}</code></td>
+<td style="text-align: left;">Temporarily override global settings for this generation. Settings revert after generation completes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>override_settings_restore_afterwards</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>True</code></td>
+<td style="text-align: left;"><code>Syntax: override_settings_restore_afterwards: False</code></td>
+<td style="text-align: left;">Restore original settings after generation. Set to False to make overrides permanent.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="video-processing-parameters">Video Processing Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>prompt_template</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Syntax: prompt_template: frame {frame_num}: {base_prompt}</code></td>
+<td style="text-align: left;">Template for animated prompts across frames. Allows dynamic prompt changes throughout video generation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>frames</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>Values: 1 or higher</code> <br> <code>Syntax: frames: 30</code></td>
+<td style="text-align: left;">Number of video frames to generate. More frames = longer video but longer generation time.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>scheduler_shift</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.0</code></td>
+<td style="text-align: left;"><code>Syntax: scheduler_shift: 0.5</code></td>
+<td style="text-align: left;">Shift scheduler timing for animation effects. Creates motion and transformation effects between frames.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vae_tile_frames</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Syntax: vae_tile_frames: 8</code></td>
+<td style="text-align: left;">Number of frames to tile in VAE for memory efficiency. Helps process longer videos on limited GPU memory.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="clip-skip">Clip skip</h2>
+<p>TODO</p>
+<h2 id="resize-modes">Resize modes</h2>
+<p>TODO</p>
+<h3 id="context-aware-scaling">Context aware scaling</h3>
+<p>TODO</p>
+<h2 id="notes">Notes</h2>
+<ol>
+<li><strong>Memory Considerations</strong>: Higher batch_size, steps, and resolution require more GPU memory</li>
+<li><strong>Quality vs Speed</strong>: More steps generally improve quality but increase generation time</li>
+<li><strong>Compatibility</strong>: Some parameters may not work with all models or samplers</li>
+<li><strong>Defaults</strong>: Default values are optimized for SDXL models at 1024x1024 resolution</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Prompting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prompting Guide">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Prompting Guide
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Prompt-Enhance/" class="md-footer__link md-footer__link--next" aria-label="Next: Prompt Enhacement">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Prompt Enhacement
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      ©SD.Next org
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/vladmandic/automatic/" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/VjvR2tabEX" target="_blank" rel="noopener" title="Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/@SDNext" target="_blank" rel="noopener" title="Youtube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.preview", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

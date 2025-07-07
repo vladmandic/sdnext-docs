@@ -107,6 +107,7 @@ nav:
     - Features Overview: Features.md
     - Working with Models: Models-Tab.md
     - Prompting Guide: Prompting.md
+    - Parameters Guide: Parameters.md
     - Prompt Enhacement: Prompt-Enhance.md
     - Networks Interface: Networks.md
     - Networks Search: Networks-Search.md
