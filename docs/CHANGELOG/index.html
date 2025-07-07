@@ -2886,11 +2886,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-05" class="md-nav__link">
+  <a href="#update-for-2025-07-07" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-05
+      Update for 2025-07-07
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-07-07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-07-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-07-07
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-07-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-07-07
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4420,11 +4444,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-05" class="md-nav__link">
+  <a href="#update-for-2025-07-07" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-05
+      Update for 2025-07-07
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-07-07">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-07-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-07-07
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-07-07" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-07-07
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5939,11 +5987,24 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-07-05">Update for 2025-07-05</h2>
+<h2 id="update-for-2025-07-07">Update for 2025-07-07</h2>
+<h3 id="highlights-for-2025-07-07">Highlights for 2025-07-07</h3>
+<p>In this release we finally break with legacy with the removal of the original <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/">A1111</a> codebase which has not been maintained for a while now<br />
+This plus major cleanup of codebase and external dependencies resulted in ~53k LoC (<em>lines-of-code</em>) reduction and spread over <a href="https://github.com/vladmandic/sdnext/pull/4017">~680 files</a>!  </p>
+<p>We also switched project license to <strong>Apache-2.0</strong> which means that SD.Next is now fully compatible with commercial and non-commercial use and redistribution regardless of modifications!  </p>
+<p>Feature highlights include:<br />
+- <strong>ModernUI</strong> layout redesign which should make it more user friendly and easier to navigate<br />
+- New background replacement and relightning methods using <strong>Latent Bridge Matching</strong> and new <strong>PixelArt</strong> processing filter<br />
+- Compute improvements with support for <strong>SageAttention2++</strong>  </p>
+<p>And (as always) many bugfixes and improvements to existing features!  </p>
+<p><em>Note</em>: We recommend clean install for this release due to sheer size of changes<br />
+Although upgrades and existing installations are tested and should work fine!  </p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
+<h3 id="details-for-2025-07-07">Details for 2025-07-07</h3>
 <ul>
 <li><strong>License</strong>  </li>
 <li>SD.Next <a href="https://github.com/vladmandic/sdnext/blob/dev/LICENSE.txt">license</a> switched from <strong>aGPL-v3.0</strong> to <strong>Apache-v2.0</strong><br />
-    this means that SD.Next is now fully compatible with commercial use and redistribution regardless of modifications!  </li>
+    this means that SD.Next is now fully compatible with commercial and non-commercial use and redistribution regardless of modifications!  </li>
 <li><strong>Models</strong></li>
 <li><a href="https://github.com/gojasper/LBM">LBM: Latent Bridge Matching</a><br />
     very fast automatic image background replacement methods with relightning!<br />
@@ -5957,6 +6018,8 @@
 <li><strong>UI</strong>  </li>
 <li>major update to modernui layout  </li>
 <li>redesign of the Flat UI theme  </li>
+<li><strong>WIKI</strong>  </li>
+<li>new <a href="https://vladmandic.github.io/sdnext-docs/Parameters/">Parameters</a> page that lists and explains all generation parameters  </li>
 <li><strong>Compute</strong></li>
 <li>support for <a href="https://github.com/thu-ml/SageAttention">SageAttention2++</a><br />
     provides 10-15% performance improvement over default SDPA for transformer-based models!<br />
@@ -5965,7 +6028,7 @@
     until authors provide pre-build wheels for v2++, you need to install it manually or SD.Next will auto-install v1  </li>
 <li><strong>Other</strong>  </li>
 <li><strong>Styles</strong> can now include both generation params and server settings<br />
-    see <a href="https://github.com/vladmandic/sdnext/wiki/Styles">Styles wiki</a> for details  </li>
+    see <a href="https://vladmandic.github.io/sdnext-docs/Styles/">Styles docs</a> for details  </li>
 <li><strong>TAESD</strong> is now default preview type since its the only one that supports most new models  </li>
 <li>SD.Next now starts with <em>locked</em> state preventing model loading until startup is complete  </li>
 <li><strong>API</strong>  </li>
@@ -6076,7 +6139,7 @@
 <li>Control add setting to run hires with or without control  </li>
 <li>Update OpenVINO to 2025.2.0  </li>
 <li>Simplified and unified quantization enabled for options  </li>
-<li>Add PixelArt filter to processing tab  </li>
+<li>Add <strong>PixelArt</strong> filter to processing tab  </li>
 <li><strong>SDNQ Quantization</strong>  </li>
 <li>Add <code>auto</code> quantization mode  </li>
 <li>Add <code>modules_to_not_convert</code> support for post mode  </li>
