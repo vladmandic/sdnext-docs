@@ -3065,11 +3065,15 @@ server will migrate found styles into individual JSON files.</p>
 </blockquote>
 <h2 id="parameters">Parameters</h2>
 <p>In addition to prompt, you can also specify any generation parameters in the style<br />
-List of parameters is comma-separated and each parameter is a key-value pair indicated by colon <code>:</code><br />
-Recognized parameters are all parameters that can be typically found in image metadata  </p>
+List of parameters is comma-separated and each parameter is a key-value pair indicated by colon <code>:</code>  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Recognized parameters are all parameters that can be typically found in image metadata,<br />
+but they can also include and of the generation parameters and any of the server settings!</p>
+</div>
 <p>Example:</p>
 <blockquote>
-<p>Sampler: Euler a, CFG scale: 6.5, Steps: 25, Width: 1440, Height: 720  </p>
+<p>Model: PrometheusV1, Size: 1152x864, Sampler: DPM++ 2M SDE, CFG scale: 5, Steps: 30, Seed: 3849770518, Refine: True, Hires: True, Refiner steps: 20, hr_upscaler: ESRGAN 4x NMKD Siax, hr_scale: 1.5, hr_denoising_strength: 0.3, save_to_dirs: True</p>
 </blockquote>
 <h2 id="wildcards">Wildcards</h2>
 <p>Both prompt and parameters can be modified using wildcards section inside the style<br />

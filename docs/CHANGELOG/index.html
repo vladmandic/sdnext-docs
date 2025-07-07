@@ -5939,6 +5939,8 @@
 <em>note</em>: SD.Next will use either SageAttention v1/v2/v2++, depending which one is installed<br />
     until authors provide pre-build wheels for v2++, you need to install it manually or SD.Next will auto-install v1  </li>
 <li><strong>Other</strong>  </li>
+<li><strong>Styles</strong> can now include both generation params and server settings<br />
+    see <a href="https://github.com/vladmandic/sdnext/wiki/Styles">Styles wiki</a> for details  </li>
 <li><strong>TAESD</strong> is now default preview type since its the only one that supports most new models  </li>
 <li>SD.Next now starts with <em>locked</em> state preventing model loading until startup is complete  </li>
 <li><strong>API</strong>  </li>
@@ -5952,7 +5954,8 @@
 <li>fix ansi controle output from scripts/extensions  </li>
 <li>fix diffusers models non-unique hash  </li>
 <li>fix loading of manually downloaded diffuser models  </li>
-<li>fix api <code>/sdapi/v1/embeddings</code> endpoint</li>
+<li>fix api <code>/sdapi/v1/embeddings</code> endpoint  </li>
+<li>improve infotext param parsing  </li>
 <li>improve extensions ui search  </li>
 <li>improve model type autodetection  </li>
 <li>improve model auth check for hf repos  </li>
