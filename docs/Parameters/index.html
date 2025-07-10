@@ -1639,6 +1639,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vae-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      VAE Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sampler-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Sampler Parameters
@@ -1657,6 +1666,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#clip-text-encoder-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLIP &amp; Text Encoder Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#style-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Style Parameters
@@ -1666,18 +1684,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vae-parameters" class="md-nav__link">
+  <a href="#enhancement-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      VAE Parameters
+      Enhancement Parameters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enhancement-parameters" class="md-nav__link">
+  <a href="#face-restoration-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Enhancement Parameters
+      Face Restoration Parameters
     </span>
   </a>
   
@@ -1732,6 +1750,15 @@
   <a href="#refiner-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Refiner Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postprocessing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Postprocessing Parameters
     </span>
   </a>
   
@@ -3183,6 +3210,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vae-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      VAE Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sampler-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Sampler Parameters
@@ -3201,6 +3237,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#clip-text-encoder-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLIP &amp; Text Encoder Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#style-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Style Parameters
@@ -3210,18 +3255,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vae-parameters" class="md-nav__link">
+  <a href="#enhancement-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      VAE Parameters
+      Enhancement Parameters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enhancement-parameters" class="md-nav__link">
+  <a href="#face-restoration-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Enhancement Parameters
+      Face Restoration Parameters
     </span>
   </a>
   
@@ -3276,6 +3321,15 @@
   <a href="#refiner-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Refiner Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postprocessing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Postprocessing Parameters
     </span>
   </a>
   
@@ -3379,33 +3433,37 @@
 
 
 <h1 id="sdnext-parameters-guide">SDnext Parameters Guide</h1>
-<p>This guide documents all parameters available in SDnext. </p>
-<p>Parameters listed here can be used in the <code>extra</code> field of styles. Parameters there are specified as comma-separated key-value pairs using colons.</p>
+<p>This guide documents generation parameters available in SDnext. This guide does not cover mostly static system settings<br />
+Parameters listed can be used in the <code>extra</code> field of styles<br />
+Parameters from the "Settings" sections (like advanced sampler or postprocessing options) can be used in the <code>override_settings</code> dictionary for per-generation changes  </p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
+<li><a href="./#understanding-parameter-terminology">Understanding Parameter Terminology</a></li>
+<li><a href="./#models--loading">Models &amp; Loading</a></li>
 <li><a href="./#base-parameters">Base Parameters</a></li>
-<li><a href="./#understanding-parameter-terminology">Understanding Parameter Value Types</a></li>
 <li><a href="./#sampler-parameters">Sampler Parameters</a></li>
 <li><a href="./#guidance-parameters">Guidance Parameters</a></li>
+<li><a href="./#clip--text-encoder-parameters">CLIP &amp; Text Encoder Parameters</a></li>
 <li><a href="./#style-parameters">Style Parameters</a></li>
 <li><a href="./#vae-parameters">VAE Parameters</a></li>
 <li><a href="./#enhancement-parameters">Enhancement Parameters</a></li>
+<li><a href="./#face-restoration-parameters">Face Restoration Parameters</a></li>
 <li><a href="./#detailer-parameters">Detailer Parameters</a></li>
 <li><a href="./#hdr-correction-parameters">HDR Correction Parameters</a></li>
 <li><a href="./#image-to-image-parameters">Image-to-Image Parameters</a></li>
 <li><a href="./#high-resolution-hires-parameters">High-Resolution (HiRes) Parameters</a></li>
 <li><a href="./#inpainting-parameters">Inpainting Parameters</a></li>
 <li><a href="./#refiner-parameters">Refiner Parameters</a></li>
+<li><a href="./#postprocessing-parameters">Postprocessing Parameters</a></li>
 <li><a href="./#save-options">Save Options</a></li>
 <li><a href="./#script-parameters">Script Parameters</a></li>
 <li><a href="./#override-parameters">Override Parameters</a></li>
 <li><a href="./#video-processing-parameters">Video Processing Parameters</a></li>
-<li><a href="./#clip-skip">Clip skip</a></li>
-<li><a href="./#resize-modes">Resize modes</a></li>
-<li><a href="./#context-aware-scaling">Context aware scaling</a></li>
+<li><a href="./#clip-skip-1">Clip skip</a></li>
+<li><a href="./#resize-modes-1">Resize modes</a></li>
+<li><a href="./#context-aware-scaling-1">Context aware scaling</a></li>
 <li><a href="./#notes">Notes</a></li>
 </ul>
-<hr />
 <h2 id="understanding-parameter-terminology">Understanding Parameter Terminology</h2>
 <p>This section helps you understand the different <strong>terms</strong> used throughout the SDnext Processing Parameters Guide. Here’s a breakdown:</p>
 <table>
@@ -3414,6 +3472,7 @@
 <th style="text-align: left;">Type</th>
 <th style="text-align: left;">Use For</th>
 <th style="text-align: left;">Example</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -3421,45 +3480,52 @@
 <td style="text-align: left;"><code>key</code></td>
 <td style="text-align: left;">Identifier name for the parameter, before the colon</td>
 <td style="text-align: left;"><code>prompt</code>, <code>seed</code>, <code>width</code></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>str</code></td>
 <td style="text-align: left;">Text or labels</td>
 <td style="text-align: left;"><code>"portrait, masterpiece"</code></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>int</code></td>
 <td style="text-align: left;">Whole numbers</td>
 <td style="text-align: left;"><code>20</code>, <code>512</code></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>float</code></td>
 <td style="text-align: left;">Numbers with decimals</td>
 <td style="text-align: left;"><code>0.5</code>, <code>7.5</code></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>bool</code></td>
 <td style="text-align: left;">On/Off toggles</td>
 <td style="text-align: left;"><code>True</code>, <code>False</code></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>list</code></td>
 <td style="text-align: left;">Multiple values</td>
 <td style="text-align: left;"><code>["style1", "style2"]</code></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>Dict</code></td>
 <td style="text-align: left;">Key-value settings</td>
 <td style="text-align: left;"><code>{key: value}</code></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>Any</code></td>
 <td style="text-align: left;">Flexible input types, context dependent</td>
 <td style="text-align: left;"><code>image.png</code>, <code>#FFAA00</code>, <code>True</code></td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="base-parameters">Base Parameters</h2>
 <table>
 <thead>
@@ -3469,15 +3535,33 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;"><code>sd_model_checkpoint</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">Varies</td>
+<td style="text-align: left;"><code>Values: List of available checkpoint models.</code></td>
+<td style="text-align: left;">The primary (base) model used for image generation.</td>
+<td style="text-align: left;">Base model</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sd_unet</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"Default"</code></td>
+<td style="text-align: left;"><code>Values: List of available UNET models.</code></td>
+<td style="text-align: left;">Specifies a custom UNET model to be used instead of the one packaged with the base model.</td>
+<td style="text-align: left;">unet model</td>
+</tr>
 <tr>
 <td style="text-align: left;"><code>prompt</code></td>
 <td style="text-align: left;"><code>str</code></td>
 <td style="text-align: left;"><code>""</code></td>
 <td style="text-align: left;"><code>Syntax: prompt: your text here</code></td>
 <td style="text-align: left;">The positive text prompt describing what you want to generate. This is the main instruction that tells the AI what image to create.</td>
+<td style="text-align: left;">Prompt</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>negative_prompt</code></td>
@@ -3485,6 +3569,7 @@
 <td style="text-align: left;"><code>""</code></td>
 <td style="text-align: left;"><code>Syntax: negative_prompt: bad quality, blurry, extra fingers</code></td>
 <td style="text-align: left;">Text describing what you want to avoid in the generation. Common negatives include unwanted elements, quality issues, or artistic styles you want to exclude.</td>
+<td style="text-align: left;">Negative prompt</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>seed</code></td>
@@ -3492,6 +3577,7 @@
 <td style="text-align: left;"><code>-1</code></td>
 <td style="text-align: left;"><code>Values: -1 (random), or any positive integer</code> <br> <code>Syntax: seed: 12345</code></td>
 <td style="text-align: left;">Random seed for reproducible results. Using the same seed with identical settings will generate the same image. -1 generates a random seed each time.</td>
+<td style="text-align: left;">Seed</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>subseed</code></td>
@@ -3499,6 +3585,7 @@
 <td style="text-align: left;"><code>-1</code></td>
 <td style="text-align: left;"><code>Values: -1 (random), or any positive integer</code> <br> <code>Syntax: subseed: 67890</code></td>
 <td style="text-align: left;">Secondary seed for additional variation control. Works together with subseed_strength to add controlled randomness to your generation.</td>
+<td style="text-align: left;">Variation</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>subseed_strength</code></td>
@@ -3506,6 +3593,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: subseed_strength: 0.15</code></td>
 <td style="text-align: left;">How much the subseed affects the generation (0 = no effect, 1 = maximum effect). Useful for creating slight variations of the image with the same seed.</td>
+<td style="text-align: left;">Variation strength</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>seed_resize_from_h</code></td>
@@ -3513,6 +3601,7 @@
 <td style="text-align: left;"><code>-1</code></td>
 <td style="text-align: left;"><code>Values: -1 (disabled), or positive integer</code> <br> <code>Syntax: seed_resize_from_h: 512</code></td>
 <td style="text-align: left;">Original height for seed resizing. This maintains noise patterns when changing resolution, useful when upscaling while keeping similar composition.</td>
+<td style="text-align: left;">Resize seed from height</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>seed_resize_from_w</code></td>
@@ -3520,6 +3609,7 @@
 <td style="text-align: left;"><code>-1</code></td>
 <td style="text-align: left;"><code>Values: -1 (disabled), or positive integer</code> <br> <code>Syntax: seed_resize_from_w: 512</code></td>
 <td style="text-align: left;">Original width for seed resizing. Works with seed_resize_from_h to maintain consistency across resolution changes.</td>
+<td style="text-align: left;">Resize seed from width</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>batch_size</code></td>
@@ -3527,6 +3617,7 @@
 <td style="text-align: left;"><code>1</code></td>
 <td style="text-align: left;"><code>Values: 1 or higher</code> <br> <code>Syntax: batch_size: 4</code></td>
 <td style="text-align: left;">Number of images to generate simultaneously. Higher values use more GPU memory but are more efficient than generating images one by one.</td>
+<td style="text-align: left;">Batch size</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>n_iter</code></td>
@@ -3534,13 +3625,7 @@
 <td style="text-align: left;"><code>1</code></td>
 <td style="text-align: left;"><code>Values: 1 or higher</code> <br> <code>Syntax: n_iter: 5</code></td>
 <td style="text-align: left;">Number of generation iterations (batches) to run. If batch_size is 4 and n_iter is 5, you'll get 20 images total.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>clip_skip</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;"><code>1</code></td>
-<td style="text-align: left;"><code>Range: 1 to 12</code> <br> <code>Syntax: clip_skip: 2</code></td>
-<td style="text-align: left;">Skip last N layers of CLIP model. Only affects models which use CLIP as their Text Encoder. Values 1 or 2 used with SD1.5, should be left at default 1 with SDXL and other models. More here: <a href="./#clip-skip">Clip skip</a></td>
+<td style="text-align: left;">Batch count</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>width</code></td>
@@ -3548,6 +3633,7 @@
 <td style="text-align: left;"><code>1024</code></td>
 <td style="text-align: left;"><code>Values: Multiples of 8</code> <br> <code>Syntax: width: 1280</code></td>
 <td style="text-align: left;">Image width in pixels. Must be divisible by 8. For best results use resolutions recommended for the model you're using.</td>
+<td style="text-align: left;">Width</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>height</code></td>
@@ -3555,10 +3641,50 @@
 <td style="text-align: left;"><code>1024</code></td>
 <td style="text-align: left;"><code>Values: Multiples of 8</code> <br> <code>Syntax: height: 768</code></td>
 <td style="text-align: left;">Image height in pixels. Must be divisible by 8. Consider aspect ratio for best results.</td>
+<td style="text-align: left;">Height</td>
 </tr>
 </tbody>
 </table>
-<hr />
+<h2 id="vae-parameters">VAE Parameters</h2>
+<p>Controls the Variational Autoencoder (VAE) used for encoding and decoding images to and from latent space.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>sd_vae</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"Automatic"</code></td>
+<td style="text-align: left;"><code>Values: "Automatic", "None", or a list of available VAE models.</code></td>
+<td style="text-align: left;">Selects the VAE model. "Automatic" will try to find a matching VAE for the main model.</td>
+<td style="text-align: left;">VAE model</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tiling</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Syntax: tiling: True</code></td>
+<td style="text-align: left;">Enable tiled VAE decoding for seamless textures. Perfect for creating repeating patterns or textures that tile without visible seams.</td>
+<td style="text-align: left;">Tiling</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vae_type</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"Full"</code></td>
+<td style="text-align: left;"><code>Values: "Full", "Tiny", "Remote"</code> <br> <code>Syntax: vae_type: Tiny</code></td>
+<td style="text-align: left;">What type of VAE will be used for VAE Decode step at the end of generation. "Full" uses full VAE provided for the model, "Tiny" uses TAESD, a smaller VAE version that provides memory savings but lower quality, "Remote" utilises Huggingface remote VAE service to decode latent images on Huggingface servers instead of locally.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 <h2 id="sampler-parameters">Sampler Parameters</h2>
 <table>
 <thead>
@@ -3568,6 +3694,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -3577,6 +3704,7 @@
 <td style="text-align: left;"><code>None</code></td>
 <td style="text-align: left;"><code>Values: "Euler", "Euler a", "DPM++ 2M", etc.</code> <br> <code>Syntax: sampler_name: DPM++ 2M Karras</code></td>
 <td style="text-align: left;">Algorithm used for image generation. Different samplers can produce different styles and qualities.</td>
+<td style="text-align: left;">Sampling method</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>steps</code></td>
@@ -3584,13 +3712,7 @@
 <td style="text-align: left;"><code>20</code></td>
 <td style="text-align: left;"><code>Range: 1 to 150 (typical)</code> <br> <code>Syntax: steps: 30</code></td>
 <td style="text-align: left;">Number of denoising steps. More steps generally mean better quality but slower generation. 20-50 is typical, with diminishing returns above 50. Settings may vary depending on sampler chosen.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>hr_sampler_name</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;"><code>None</code></td>
-<td style="text-align: left;"><code>Values: Same as sampler_name</code> <br> <code>Syntax: hr_sampler_name: UniPC</code></td>
-<td style="text-align: left;">Sampler for high-resolution pass. Can be different from primary sampler for specialized effects during upscaling when using HiRes.</td>
+<td style="text-align: left;">Steps</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>eta</code></td>
@@ -3598,10 +3720,178 @@
 <td style="text-align: left;"><code>None</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: eta: 0.67</code></td>
 <td style="text-align: left;">Noise multiplier for samplers that support it (like DDIM). Adds randomness to deterministic samplers. 0 = fully deterministic, 1 = maximum noise.</td>
+<td style="text-align: left;">noise multiplier (eta)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>eta_noise_seed_delta</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Syntax: eta_noise_seed_delta: 31337</code></td>
+<td style="text-align: left;">An additional seed that influences the noise (eta) in ancestral samplers, allowing for variations without changing the main seed. Essentially adds 31337 to your seed. Only useful when used with originally leaked NovelAI models to replicate images.</td>
+<td style="text-align: left;">noise seed delta (eta)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>scheduler_eta</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>1.0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">Noise multiplier (eta) for ancestral samplers. <code>0.0</code> is deterministic, <code>1.0</code> is fully stochastic.</td>
+<td style="text-align: left;">noise multiplier (eta)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_solver_order</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Range: 0 to 5</code></td>
+<td style="text-align: left;">The order of the solver for certain schedulers (e.g., DPM). Higher orders can be more accurate but slower.</td>
+<td style="text-align: left;">sampler order</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_use_loworder</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>True</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">For some schedulers, uses a simpler, faster solver for the final steps of generation, also generally stabilising the output.</td>
+<td style="text-align: left;">use simplified solvers in final steps</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_prediction_type</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"default"</code></td>
+<td style="text-align: left;"><code>Values: 'default', 'epsilon', 'sample', 'v_prediction'</code></td>
+<td style="text-align: left;">Overrides the model's configured prediction type (what the model is trained to predict at each step). Frequently used with velocity prediction (V-Pred) models.</td>
+<td style="text-align: left;">prediction method</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_sigma</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"default"</code></td>
+<td style="text-align: left;"><code>Values: 'default', 'karras', 'exponential', 'polyexponential'</code></td>
+<td style="text-align: left;">The algorithm used to calculate the noise schedule (sigmas). 'karras' is a popular choice.</td>
+<td style="text-align: left;">sigma method</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_beta_schedule</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"default"</code></td>
+<td style="text-align: left;"><code>Values: 'default', 'linear', 'scaled_linear', ...</code></td>
+<td style="text-align: left;">Defines how the noise level changes over time (the beta schedule).</td>
+<td style="text-align: left;">beta schedule</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_use_thresholding</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Enables dynamic thresholding to prevent oversaturation and artifacts, especially at high CFG scales.</td>
+<td style="text-align: left;">use dynamic thresholding</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_timestep_spacing</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"default"</code></td>
+<td style="text-align: left;"><code>Values: 'default', 'linspace', 'leading', 'trailing'</code></td>
+<td style="text-align: left;">How the timesteps are distributed across the generation process.</td>
+<td style="text-align: left;">timestep spacing</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_timesteps</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>''</code></td>
+<td style="text-align: left;"><code>Syntax: "1000, 999, ..."</code></td>
+<td style="text-align: left;">A comma-separated list of exact timesteps to use, overriding all other timestep settings.</td>
+<td style="text-align: left;">timesteps override</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_rescale_betas</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Also known as Zero terminal SNR (ZSNR). Rescales the beta schedule to have a zero signal-to-noise ratio at the end, which can improve sample quality. Frequently used with velocity prediction (V-Pred) models.</td>
+<td style="text-align: left;">rescale betas with zero terminal snr</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_beta_start</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">The starting value for a custom beta schedule.</td>
+<td style="text-align: left;">beta start</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_beta_end</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">The ending value for a custom beta schedule.</td>
+<td style="text-align: left;">beta end</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_timesteps_range</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>1000</code></td>
+<td style="text-align: left;"><code>Range: 250 to 4000</code></td>
+<td style="text-align: left;">The total number of discrete timesteps in the full diffusion process from which the sampler will draw.</td>
+<td style="text-align: left;">timesteps range</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_shift</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>3.0</code></td>
+<td style="text-align: left;"><code>Range: 0.1 to 10.0</code></td>
+<td style="text-align: left;">Sampler shift value for samplers. Controls the timing of noise removal during sampling - positive values do more denoising early (better details), negative values do more denoising late (better structure), zero is the default schedule.</td>
+<td style="text-align: left;">sampler shift</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_dynamic_shift</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Enables dynamic sampler shifting, applying timestep shifting on-the-fly based on the image resolution.</td>
+<td style="text-align: left;">sampler dynamic shift</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_sigma_adjust</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>1.0</code></td>
+<td style="text-align: left;"><code>Range: 0.5 to 1.5</code></td>
+<td style="text-align: left;">Sigma adjustment value for samplers.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_sigma_adjust_min</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.2</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">Sigma adjustment start value for samplers.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>schedulers_sigma_adjust_max</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.8</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">Sigma adjustment end value for samplers.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uni_pc_variant</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"bh2"</code></td>
+<td style="text-align: left;"><code>Values: "bh1", "bh2", "vary_coeff"</code></td>
+<td style="text-align: left;">Specifies the variant of the UniPC sampler to use.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uni_pc_skip_type</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"time_uniform"</code></td>
+<td style="text-align: left;"><code>Values: "time_uniform", "time_quadratic", "logSNR"</code></td>
+<td style="text-align: left;">The skip type for the UniPC sampler, affecting how it moves through timesteps.</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="guidance-parameters">Guidance Parameters</h2>
 <table>
 <thead>
@@ -3611,6 +3901,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -3620,6 +3911,7 @@
 <td style="text-align: left;"><code>6.0</code></td>
 <td style="text-align: left;"><code>Range: 1.0 to 30.0</code> <br> <code>Syntax: cfg_scale: 7.5</code></td>
 <td style="text-align: left;">Classifier-Free Guidance scale. Higher values follow your prompt more closely but can cause oversaturation. 4-12 is typical for most uses.</td>
+<td style="text-align: left;">guidance scale</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>cfg_end</code></td>
@@ -3627,6 +3919,7 @@
 <td style="text-align: left;"><code>1.0</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: cfg_end: 0.7</code></td>
 <td style="text-align: left;">When to stop applying CFG during generation (1.0 = full generation). Lower values can produce more creative results by reducing guidance in later steps.</td>
+<td style="text-align: left;">Guidance End</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>diffusers_guidance_rescale</code></td>
@@ -3634,6 +3927,7 @@
 <td style="text-align: left;"><code>0.0</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: diffusers_guidance_rescale: 0.3</code></td>
 <td style="text-align: left;">Rescale guidance for diffusers to prevent oversaturation when using high CFG values. Helps maintain color balance.</td>
+<td style="text-align: left;">Rescale guidance</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>pag_scale</code></td>
@@ -3641,6 +3935,7 @@
 <td style="text-align: left;"><code>0.0</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 5.0</code> <br> <code>Syntax: pag_scale: 2.0</code></td>
 <td style="text-align: left;">Perturbed Attention Guidance scale for enhanced details. Improves fine details without affecting overall composition.</td>
+<td style="text-align: left;">Attention guidance</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>pag_adaptive</code></td>
@@ -3648,10 +3943,58 @@
 <td style="text-align: left;"><code>0.5</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: pag_adaptive: 0.8</code></td>
 <td style="text-align: left;">Adaptive strength for PAG. Controls how much the guidance adapts to different image regions.</td>
+<td style="text-align: left;">Adaptive scaling</td>
 </tr>
 </tbody>
 </table>
-<hr />
+<h2 id="clip-text-encoder-parameters">CLIP &amp; Text Encoder Parameters</h2>
+<p>Controls the models and methods used to interpret the text prompt.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>clip_skip</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>Range: 1 to 12</code> <br> <code>Syntax: clip_skip: 2</code></td>
+<td style="text-align: left;">Skip last N layers of CLIP model. Only affects models which use CLIP as their Text Encoder. Values 1 or 2 used with SD1.5, should be left at default 1 with SDXL and other models. More here: <a href="./#clip-skip">Clip skip</a></td>
+<td style="text-align: left;">Clip skip</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clip_skip_enabled</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Enables the <code>clip_skip</code> parameter, which skips final layers of the CLIP model.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sd_text_encoder</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>'Default'</code></td>
+<td style="text-align: left;"><code>Values: List of available Text Encoder models.</code></td>
+<td style="text-align: left;">Specifies a custom Text Encoder model instead of the one packaged with the base model.</td>
+<td style="text-align: left;">text encoder model</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>prompt_attention</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"native"</code></td>
+<td style="text-align: left;"><code>Values: "native", "compel", "xhinker", "a1111", "fixed"</code></td>
+<td style="text-align: left;">Selects the parser for handling prompt weighting and attention syntax.</td>
+<td style="text-align: left;">prompt processor</td>
+</tr>
+</tbody>
+</table>
 <h2 id="style-parameters">Style Parameters</h2>
 <table>
 <thead>
@@ -3661,6 +4004,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -3670,39 +4014,10 @@
 <td style="text-align: left;"><code>[]</code></td>
 <td style="text-align: left;"><code>Syntax: styles: [photorealistic, dramatic lighting]</code></td>
 <td style="text-align: left;">List of style names to apply to the prompt. These are predefined styles that modify both prompts and parameters.</td>
+<td style="text-align: left;">Styles</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="vae-parameters">VAE Parameters</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Default</th>
-<th style="text-align: left;">Details / Syntax</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>tiling</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;"><code>False</code></td>
-<td style="text-align: left;"><code>Syntax: tiling: True</code></td>
-<td style="text-align: left;">Enable tiled VAE decoding for seamless textures. Perfect for creating repeating patterns or textures that tile without visible seams.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>vae_type</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;"><code>"Full"</code></td>
-<td style="text-align: left;"><code>Values: "Full", "Tiny", "Remote"</code> <br> <code>Syntax: vae_type: Tiny</code></td>
-<td style="text-align: left;">What type of VAE will be used for VAE Decode step at the end of generation. "Full" uses full VAE provided for the model, "Tiny" uses TAESD, a smaller VAE version that provides memory savings but lower quality, "Remote" utilises Huggingface remote VAE service to decode latent images on Huggingface servers instead of locally.</td>
-</tr>
-</tbody>
-</table>
-<hr />
 <h2 id="enhancement-parameters">Enhancement Parameters</h2>
 <table>
 <thead>
@@ -3712,6 +4027,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -3721,6 +4037,7 @@
 <td style="text-align: left;"><code>False</code></td>
 <td style="text-align: left;"><code>Syntax: hidiffusion: True</code></td>
 <td style="text-align: left;">Enable HiDiffusion for improved high-resolution generation. Helps maintain quality and coherence at resolutions higher than the model is capable of natively.</td>
+<td style="text-align: left;">HiDiffusion</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>do_not_reload_embeddings</code></td>
@@ -3728,13 +4045,7 @@
 <td style="text-align: left;"><code>False</code></td>
 <td style="text-align: left;"><code>Syntax: do_not_reload_embeddings: True</code></td>
 <td style="text-align: left;">Skip reloading embeddings (performance optimization). Useful when running multiple generations with the same embeddings.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>restore_faces</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;"><code>False,</code></td>
-<td style="text-align: left;"><code>Values: False, codeformer, gfpgan</code> <br> <code>Syntax: restore_faces: True</code></td>
-<td style="text-align: left;">Apply face restoration post-processing using Codeformer or GFPGAN neural network. Automatically detects and enhances faces in the image for better facial details. <em>Not</em> the same as detailer, generally inferior, legacy option.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>enhance_prompt</code></td>
@@ -3742,10 +4053,49 @@
 <td style="text-align: left;"><code>False</code></td>
 <td style="text-align: left;"><code>Syntax: enhance_prompt: True</code></td>
 <td style="text-align: left;">Automatically enhance/expand the prompt using AI. Adds more descriptive details to simple prompts for better results.</td>
+<td style="text-align: left;">enhance prompt</td>
 </tr>
 </tbody>
 </table>
-<hr />
+<h2 id="face-restoration-parameters">Face Restoration Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>restore_faces</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False,</code></td>
+<td style="text-align: left;"><code>Values: False, codeformer, gfpgan</code> <br> <code>Syntax: restore_faces: True</code></td>
+<td style="text-align: left;">Apply face restoration post-processing using Codeformer or GFPGAN neural network. Automatically detects and enhances faces in the image for better facial details. <em>Not</em> the same as detailer, generally inferior, legacy option.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>face_restoration_model</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"None"</code></td>
+<td style="text-align: left;"><code>Values: 'None', 'CodeFormer', 'GFPGAN', etc.</code></td>
+<td style="text-align: left;">Selects the model to use for the face restoration post-processing step.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>code_former_weight</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.2</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">Blending strength for CodeFormer. <code>0</code> shows the original, <code>1</code> shows the fully restored face.</td>
+<td style="text-align: left;">CodeFormer weight parameter</td>
+</tr>
+</tbody>
+</table>
 <h2 id="detailer-parameters">Detailer Parameters</h2>
 <table>
 <thead>
@@ -3755,6 +4105,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -3764,6 +4115,7 @@
 <td style="text-align: left;"><code>False</code></td>
 <td style="text-align: left;"><code>Syntax: detailer_enabled: True</code></td>
 <td style="text-align: left;">Enable automatic detail enhancement pass. Runs after first and second pass, uses detection models for automatic detection and masking. Supports custom YOLO detection models for detection of various objects on the image.</td>
+<td style="text-align: left;">Enable detailer pass</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>detailer_prompt</code></td>
@@ -3771,6 +4123,7 @@
 <td style="text-align: left;"><code>''</code></td>
 <td style="text-align: left;"><code>Syntax: detailer_prompt: highly detailed, sharp focus</code></td>
 <td style="text-align: left;">Specific prompt for detail enhancement. If used, overrides main positive prompt during detail pass for targeted improvements.</td>
+<td style="text-align: left;">Detailer prompt</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>detailer_negative</code></td>
@@ -3778,6 +4131,7 @@
 <td style="text-align: left;"><code>''</code></td>
 <td style="text-align: left;"><code>Syntax: detailer_negative: blurry, low quality</code></td>
 <td style="text-align: left;">Negative prompt for detail enhancement. If used, overrides main negative prompt during detail pass.</td>
+<td style="text-align: left;">Detailer negative prompt</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>detailer_steps</code></td>
@@ -3785,6 +4139,7 @@
 <td style="text-align: left;"><code>10</code></td>
 <td style="text-align: left;"><code>Range: 1 to 50</code> <br> <code>Syntax: detailer_steps: 15</code></td>
 <td style="text-align: left;">Number of steps for detail enhancement. Can be set lower than main steps since it's refining existing details.</td>
+<td style="text-align: left;">Detailer steps</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>detailer_strength</code></td>
@@ -3792,10 +4147,106 @@
 <td style="text-align: left;"><code>0.3</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: detailer_strength: 0.5</code></td>
 <td style="text-align: left;">Strength of detail enhancement. Higher values change the image more dramatically during detailing pass.</td>
+<td style="text-align: left;">Detailer strength</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_model</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"Detailer"</code></td>
+<td style="text-align: left;"><code>Values: List of detailer names</code></td>
+<td style="text-align: left;">Selects the primary detailer model.</td>
+<td style="text-align: left;">Detailer models</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_classes</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>""</code></td>
+<td style="text-align: left;"><code>Syntax: "class1, class2"</code></td>
+<td style="text-align: left;">A comma-separated list of object classes to detect and detail (e.g., "face, hand").</td>
+<td style="text-align: left;">Detailer classes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_conf</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.6</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">The minimum confidence score for an object detection to be considered valid for detailing.</td>
+<td style="text-align: left;">Min confidence</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_max</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>2</code></td>
+<td style="text-align: left;"><code>Range: 1 to 10</code></td>
+<td style="text-align: left;">The maximum number of detected objects to process with the detailer.</td>
+<td style="text-align: left;">Max detected</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_iou</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.5</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">Intersection over Union (IoU) threshold to filter out overlapping detections.</td>
+<td style="text-align: left;">Max overlap</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_sigma_adjust</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>1.0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">Adjusts the sigma value for the detailer's sampler.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_sigma_adjust_max</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>1.0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">The end sigma adjustment value for the detailer's sampler.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_min_size</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.0</code></td>
+<td style="text-align: left;"><code>Range: 0.1 to 1.0</code></td>
+<td style="text-align: left;">The minimum relative size an object must have to be detailed.</td>
+<td style="text-align: left;">Min size</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_max_size</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>1.0</code></td>
+<td style="text-align: left;"><code>Range: 0.1 to 1.0</code></td>
+<td style="text-align: left;">The maximum relative size an object can have to be detailed.</td>
+<td style="text-align: left;">Max size</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_padding</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>20</code></td>
+<td style="text-align: left;"><code>Range: 0 to 100</code></td>
+<td style="text-align: left;">Extra padding (in pixels) to add around the detected object's mask before inpainting.</td>
+<td style="text-align: left;">Edge padding</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_blur</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>10</code></td>
+<td style="text-align: left;"><code>Range: 0 to 100</code></td>
+<td style="text-align: left;">The blur radius (in pixels) for the edge of the detailer's mask to create a smoother blend.</td>
+<td style="text-align: left;">Edge blur</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>detailer_models</code></td>
+<td style="text-align: left;"><code>List[str]</code></td>
+<td style="text-align: left;"><code>['face-yolo8n']</code></td>
+<td style="text-align: left;"><code>Values: List of YOLO models</code></td>
+<td style="text-align: left;">The specific YOLO detection model or models to be used by the detailer.</td>
+<td style="text-align: left;">Detailer models</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="hdr-correction-parameters">HDR Correction Parameters</h2>
 <table>
 <thead>
@@ -3805,6 +4256,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -3814,6 +4266,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Values: 0 (disabled), 1, 2, 3</code> <br> <code>Syntax: hdr_mode: 1</code></td>
 <td style="text-align: left;">HDR processing mode. Each mode applies different tone mapping algorithms for enhanced dynamic range.</td>
+<td style="text-align: left;">correction mode</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hdr_brightness</code></td>
@@ -3821,6 +4274,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Range: -1.0 to 1.0</code> <br> <code>Syntax: hdr_brightness: 0.2</code></td>
 <td style="text-align: left;">Brightness adjustment. Positive values brighten the image, negative values darken it.</td>
+<td style="text-align: left;">brightness</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hdr_color</code></td>
@@ -3828,6 +4282,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Range: -1.0 to 1.0</code> <br> <code>Syntax: hdr_color: 0.3</code></td>
 <td style="text-align: left;">Color/saturation adjustment. Positive values increase color vibrancy, negative values reduce it.</td>
+<td style="text-align: left;">color</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hdr_sharpen</code></td>
@@ -3835,6 +4290,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 2.0</code> <br> <code>Syntax: hdr_sharpen: 0.5</code></td>
 <td style="text-align: left;">Sharpening strength. Enhances edge details and overall image crispness.</td>
+<td style="text-align: left;">sharpen</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hdr_clamp</code></td>
@@ -3842,6 +4298,7 @@
 <td style="text-align: left;"><code>False</code></td>
 <td style="text-align: left;"><code>Syntax: hdr_clamp: True</code></td>
 <td style="text-align: left;">Clamp HDR values to prevent overflow. Prevents extreme bright or dark areas from clipping.</td>
+<td style="text-align: left;">HDR Clamp</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hdr_boundary</code></td>
@@ -3849,6 +4306,7 @@
 <td style="text-align: left;"><code>4.0</code></td>
 <td style="text-align: left;"><code>Syntax: hdr_boundary: 3.5</code></td>
 <td style="text-align: left;">HDR boundary threshold. Controls the range of HDR effect application.</td>
+<td style="text-align: left;">hdr range</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hdr_threshold</code></td>
@@ -3856,6 +4314,7 @@
 <td style="text-align: left;"><code>0.95</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hdr_threshold: 0.9</code></td>
 <td style="text-align: left;">HDR activation threshold. Determines which brightness levels trigger HDR processing.</td>
+<td style="text-align: left;">threshold</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hdr_maximize</code></td>
@@ -3863,6 +4322,7 @@
 <td style="text-align: left;"><code>False</code></td>
 <td style="text-align: left;"><code>Syntax: hdr_maximize: True</code></td>
 <td style="text-align: left;">Maximize HDR effect. Applies the strongest possible HDR enhancement.</td>
+<td style="text-align: left;">HDR Maximize</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hdr_max_center</code></td>
@@ -3870,13 +4330,15 @@
 <td style="text-align: left;"><code>0.6</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hdr_max_center: 0.5</code></td>
 <td style="text-align: left;">Center point for HDR maximization. Defines the brightness level that receives maximum enhancement.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>hdr_max_boundry</code></td>
+<td style="text-align: left;"><code>hdr_max_boundary</code></td>
 <td style="text-align: left;"><code>float</code></td>
 <td style="text-align: left;"><code>1.0</code></td>
-<td style="text-align: left;"><code>Syntax: hdr_max_boundry: 0.8</code></td>
+<td style="text-align: left;"><code>Syntax: hdr_max_boundary: 0.8</code></td>
 <td style="text-align: left;">Boundary for HDR maximization. Sets the range around the center point for maximum effect.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hdr_color_picker</code></td>
@@ -3884,6 +4346,7 @@
 <td style="text-align: left;"><code>None</code></td>
 <td style="text-align: left;"><code>Syntax: hdr_color_picker: #FF5500</code></td>
 <td style="text-align: left;">Color reference for HDR tinting. Applies a color cast to the HDR effect using hex color codes.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hdr_tint_ratio</code></td>
@@ -3891,10 +4354,10 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hdr_tint_ratio: 0.2</code></td>
 <td style="text-align: left;">Strength of HDR color tinting. Controls how much the selected color affects the image.</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="image-to-image-parameters">Image-to-Image Parameters</h2>
 <table>
 <thead>
@@ -3904,6 +4367,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -3913,6 +4377,7 @@
 <td style="text-align: left;"><code>None</code></td>
 <td style="text-align: left;"><code>Syntax: init_images: [image1.png]</code></td>
 <td style="text-align: left;">List of input images for img2img/inpainting. These serve as the starting point for transformation.</td>
+<td style="text-align: left;">optional init image or video</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>resize_mode</code></td>
@@ -3920,6 +4385,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Values: 0 (Just resize), 1 (Crop and resize), ...</code> <br> <code>Syntax: resize_mode: 1</code></td>
 <td style="text-align: left;">How to handle size mismatch between input and output. Choose based on whether you want to preserve aspect ratio or fill the canvas. See more: <a href="./#resize-modes">Resize modes</a></td>
+<td style="text-align: left;">resize mode</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>resize_name</code></td>
@@ -3927,6 +4393,7 @@
 <td style="text-align: left;"><code>'None'</code></td>
 <td style="text-align: left;"><code>Values: Upscaler names ("Lanczos", "ESRGAN_4x")</code> <br> <code>Syntax: resize_name: ESRGAN_4x</code></td>
 <td style="text-align: left;">Upscaler to use for resizing. Different upscalers excel at different content types.</td>
+<td style="text-align: left;">Upscaler</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>resize_context</code></td>
@@ -3934,6 +4401,7 @@
 <td style="text-align: left;"><code>'None'</code></td>
 <td style="text-align: left;"><code>Values 'None, Add with forward", "Remove with forward", "Add with backward", "Remove with backward</code> <br> <code>Syntax: resize_context: Add with forward</code></td>
 <td style="text-align: left;">Advanced image resizing technique that intelligently adds or removes content from images while preserving important visual elements. See more: <a href="./#context-aware-scaling">Context-aware scaling</a></td>
+<td style="text-align: left;">context</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>denoising_strength</code></td>
@@ -3941,13 +4409,7 @@
 <td style="text-align: left;"><code>0.3</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: denoising_strength: 0.75</code></td>
 <td style="text-align: left;">How much to change the input image. 0 = no change, 1 = complete reimagining. 0.3-0.7 is typical for variations.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>image_cfg_scale</code></td>
-<td style="text-align: left;"><code>float</code></td>
-<td style="text-align: left;"><code>None</code></td>
-<td style="text-align: left;"><code>Range: 0.0 to 3.0</code> <br> <code>Syntax: image_cfg_scale: 1.5</code></td>
-<td style="text-align: left;">Image conditioning strength (for ControlNet/IP-Adapter). Controls how closely to follow the input image structure.</td>
+<td style="text-align: left;">Denoising strength</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>scale_by</code></td>
@@ -3955,10 +4417,26 @@
 <td style="text-align: left;"><code>1.0</code></td>
 <td style="text-align: left;"><code>Range: 0.1 to 8.0</code> <br> <code>Syntax: scale_by: 2.0</code></td>
 <td style="text-align: left;">Scale factor for input image. 2.0 doubles the size, 0.5 halves it.</td>
+<td style="text-align: left;">Scale by</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>img2img_background_color</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"#ffffff"</code></td>
+<td style="text-align: left;"><code>Syntax: "#RRGGBB"</code></td>
+<td style="text-align: left;">Sets the background color used to fill transparent areas of an input image.</td>
+<td style="text-align: left;">resize background color</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>image_cfg_scale</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 3.0</code> <br> <code>Syntax: image_cfg_scale: 1.5</code></td>
+<td style="text-align: left;">Image conditioning strength (for ControlNet/IP-Adapter). Controls how closely to follow the input image structure.</td>
+<td style="text-align: left;">guidance scale</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="high-resolution-hires-parameters">High-Resolution (HiRes) Parameters</h2>
 <table>
 <thead>
@@ -3968,6 +4446,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -3977,6 +4456,15 @@
 <td style="text-align: left;"><code>False</code></td>
 <td style="text-align: left;"><code>Syntax: enable_hr: True</code></td>
 <td style="text-align: left;">Enable high-resolution second pass. Generates at lower resolution first, then upscales and optionally refines.</td>
+<td style="text-align: left;">Enable refine pass</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hr_sampler_name</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Values: Same as sampler_name</code> <br> <code>Syntax: hr_sampler_name: UniPC</code></td>
+<td style="text-align: left;">Sampler for high-resolution pass. Can be different from primary sampler for specialized effects during upscaling when using HiRes.</td>
+<td style="text-align: left;">Refine sampler</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hr_scale</code></td>
@@ -3984,6 +4472,7 @@
 <td style="text-align: left;"><code>2.0</code></td>
 <td style="text-align: left;"><code>Range: 1.0 to 4.0</code> <br> <code>Syntax: hr_scale: 2.5</code></td>
 <td style="text-align: left;">Upscale factor for hires pass. 2.0 means the final image will be twice the width and height of the initial generation.</td>
+<td style="text-align: left;">scale</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hr_upscaler</code></td>
@@ -3991,6 +4480,7 @@
 <td style="text-align: left;"><code>None</code></td>
 <td style="text-align: left;"><code>Values: "None", "Lanczos", "ESRGAN_4x", etc.</code> <br> <code>Syntax: hr_upscaler: R-ESRGAN 4x+</code></td>
 <td style="text-align: left;">Upscaler algorithm for hires pass. Each has strengths for different image types and styles. Can be combined with HiRes to upscale the image and then refine it.</td>
+<td style="text-align: left;">Upscaler</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hr_second_pass_steps</code></td>
@@ -3998,6 +4488,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Values: 0 (use primary steps), or 1-150</code> <br> <code>Syntax: hr_second_pass_steps: 20</code></td>
 <td style="text-align: left;">Number of steps for hires pass. Often fewer steps are needed since it's refining an existing image.</td>
+<td style="text-align: left;">Hires steps</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hr_resize_x</code></td>
@@ -4005,6 +4496,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Values: 0 (use scale), or target width</code> <br> <code>Syntax: hr_resize_x: 2048</code></td>
 <td style="text-align: left;">Target width for hires (overrides scale). Use for exact output dimensions rather than relative scaling.</td>
+<td style="text-align: left;">Resize width</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hr_resize_y</code></td>
@@ -4012,6 +4504,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Values: 0 (use scale), or target height</code> <br> <code>Syntax: hr_resize_y: 1536</code></td>
 <td style="text-align: left;">Target height for hires (overrides scale). Pairs with hr_resize_x for exact dimensions.</td>
+<td style="text-align: left;">Resize height</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hr_denoising_strength</code></td>
@@ -4019,6 +4512,7 @@
 <td style="text-align: left;"><code>0.0</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hr_denoising_strength: 0.4</code></td>
 <td style="text-align: left;">Denoising strength for hires pass. Lower values preserve more detail from upscale, higher values allow more creative changes.</td>
+<td style="text-align: left;">Denoising strength</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>firstphase_width</code></td>
@@ -4026,6 +4520,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Values: 0 (disabled), or initial width</code> <br> <code>Syntax: firstphase_width: 512</code></td>
 <td style="text-align: left;">Override initial generation width. Useful for controlling the first pass resolution independently.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>firstphase_height</code></td>
@@ -4033,10 +4528,10 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Values: 0 (disabled), or initial height</code> <br> <code>Syntax: firstphase_height: 512</code></td>
 <td style="text-align: left;">Override initial generation height. Works with firstphase_width for custom initial dimensions.</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="inpainting-parameters">Inpainting Parameters</h2>
 <table>
 <thead>
@@ -4046,6 +4541,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -4055,6 +4551,7 @@
 <td style="text-align: left;"><code>None</code></td>
 <td style="text-align: left;"><code>Syntax: mask: mask_image.png</code></td>
 <td style="text-align: left;">Mask image for inpainting. White areas will be regenerated, black areas will be preserved.</td>
+<td style="text-align: left;">Mask</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>mask_blur</code></td>
@@ -4062,6 +4559,7 @@
 <td style="text-align: left;"><code>4</code></td>
 <td style="text-align: left;"><code>Range: 0 to 64</code> <br> <code>Syntax: mask_blur: 8</code></td>
 <td style="text-align: left;">Blur radius for mask edges. Higher values create smoother transitions between inpainted and original areas.</td>
+<td style="text-align: left;">Mask blur</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>inpainting_fill</code></td>
@@ -4069,6 +4567,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Values: 0 (fill), 1 (original), 2 (latent noise), ...</code> <br> <code>Syntax: inpainting_fill: 2</code></td>
 <td style="text-align: left;">What to put in masked areas before inpainting. Different modes work better for different scenarios.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>inpaint_full_res</code></td>
@@ -4076,6 +4575,7 @@
 <td style="text-align: left;"><code>False</code></td>
 <td style="text-align: left;"><code>Syntax: inpaint_full_res: True</code></td>
 <td style="text-align: left;">Inpaint at full resolution of masked area only. Useful for detailed work on small areas without processing the entire image.</td>
+<td style="text-align: left;">inpaint masked only</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>inpaint_full_res_padding</code></td>
@@ -4083,6 +4583,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Range: 0 to 256</code> <br> <code>Syntax: inpaint_full_res_padding: 32</code></td>
 <td style="text-align: left;">Padding around masked area for full res inpainting. Helps blend the inpainted area with surroundings.</td>
+<td style="text-align: left;">item padding</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>inpainting_mask_invert</code></td>
@@ -4090,10 +4591,26 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Values: 0 (normal), 1 (inverted)</code> <br> <code>Syntax: inpainting_mask_invert: 1</code></td>
 <td style="text-align: left;">Invert the mask (swap inpaint/keep areas). Useful when your mask highlights what to keep rather than what to change.</td>
+<td style="text-align: left;">invert mask</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>img2img_color_correction</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">When enabled, applies color correction to the inpainted area to better match the original image.</td>
+<td style="text-align: left;">apply color correction</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mask_apply_overlay</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>True</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Renders the inpaint mask as a transparent overlay in the UI for easier visualization.</td>
+<td style="text-align: left;">apply mask as overlay</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="refiner-parameters">Refiner Parameters</h2>
 <table>
 <thead>
@@ -4103,15 +4620,25 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;"><code>sd_model_refiner</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>'None'</code></td>
+<td style="text-align: left;"><code>Values: 'None' or a list of available checkpoint models.</code></td>
+<td style="text-align: left;">The refiner model used for the final steps of generation to add details. Typically used with SDXL models.</td>
+<td style="text-align: left;">Refiner model</td>
+</tr>
 <tr>
 <td style="text-align: left;"><code>refiner_steps</code></td>
 <td style="text-align: left;"><code>int</code></td>
 <td style="text-align: left;"><code>5</code></td>
 <td style="text-align: left;"><code>Range: 0 to 50</code> <br> <code>Syntax: refiner_steps: 10</code></td>
 <td style="text-align: left;">Number of steps for refiner model. Refiner models add final details and polish to images.</td>
+<td style="text-align: left;">Refiner steps</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>refiner_start</code></td>
@@ -4119,6 +4646,7 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: refiner_start: 0.8</code></td>
 <td style="text-align: left;">When to switch to refiner (0.8 = at 80% of steps). Earlier switching gives refiner more influence over the final image.</td>
+<td style="text-align: left;">Refiner start</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>refiner_prompt</code></td>
@@ -4126,6 +4654,7 @@
 <td style="text-align: left;"><code>''</code></td>
 <td style="text-align: left;"><code>Syntax: refiner_prompt: masterpiece, best quality</code></td>
 <td style="text-align: left;">Override main positive prompt for refiner. Allows specialized prompting for the refinement stage.</td>
+<td style="text-align: left;">Refine Prompt</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>refiner_negative</code></td>
@@ -4133,6 +4662,7 @@
 <td style="text-align: left;"><code>''</code></td>
 <td style="text-align: left;"><code>Syntax: refiner_negative: low quality, blurry</code></td>
 <td style="text-align: left;">Override main negative prompt for refiner.</td>
+<td style="text-align: left;">Refine negative prompt</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>hr_refiner_start</code></td>
@@ -4140,10 +4670,42 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hr_refiner_start: 0.85</code></td>
 <td style="text-align: left;">When to switch to refiner in hires pass. Can be different from primary refiner_start for specialized workflows.</td>
+<td style="text-align: left;">Refiner start</td>
 </tr>
 </tbody>
 </table>
-<hr />
+<h2 id="postprocessing-parameters">Postprocessing Parameters</h2>
+<p>These settings control postprocessing operations that run after the main image generation is complete.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>postprocessing_enable_in_main_ui</code></td>
+<td style="text-align: left;"><code>List[str]</code></td>
+<td style="text-align: left;"><code>[]</code></td>
+<td style="text-align: left;"><code>Values: List of script names</code></td>
+<td style="text-align: left;">Selects which postprocessing scripts (like upscalers or face restoration) to run after generation.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>postprocessing_operation_order</code></td>
+<td style="text-align: left;"><code>List[str]</code></td>
+<td style="text-align: left;"><code>[]</code></td>
+<td style="text-align: left;"><code>Values: List of script names</code></td>
+<td style="text-align: left;">Defines the execution order of the selected postprocessing scripts.</td>
+<td style="text-align: left;">postprocessing operation order</td>
+</tr>
+</tbody>
+</table>
 <h2 id="save-options">Save Options</h2>
 <table>
 <thead>
@@ -4153,6 +4715,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -4162,6 +4725,7 @@
 <td style="text-align: left;"><code>None</code></td>
 <td style="text-align: left;"><code>Syntax: outpath_samples: outputs/my_project/</code></td>
 <td style="text-align: left;">Custom output directory for images. Helps organize outputs for different projects or styles.</td>
+<td style="text-align: left;">Images folder</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>outpath_grids</code></td>
@@ -4169,6 +4733,7 @@
 <td style="text-align: left;"><code>None</code></td>
 <td style="text-align: left;"><code>Syntax: outpath_grids: outputs/grids/</code></td>
 <td style="text-align: left;">Custom output directory for grids. Separate location for batch result grids.</td>
+<td style="text-align: left;">Grids folder</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>do_not_save_samples</code></td>
@@ -4176,6 +4741,7 @@
 <td style="text-align: left;"><code>False</code></td>
 <td style="text-align: left;"><code>Syntax: do_not_save_samples: True</code></td>
 <td style="text-align: left;">Skip saving individual images. Useful when only the grid matters or for preview runs.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>do_not_save_grid</code></td>
@@ -4183,10 +4749,10 @@
 <td style="text-align: left;"><code>False</code></td>
 <td style="text-align: left;"><code>Syntax: do_not_save_grid: True</code></td>
 <td style="text-align: left;">Skip saving image grid. Useful when generating single images or when individual files are preferred.</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="script-parameters">Script Parameters</h2>
 <table>
 <thead>
@@ -4196,6 +4762,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -4205,10 +4772,10 @@
 <td style="text-align: left;"><code>[]</code></td>
 <td style="text-align: left;"><code>Syntax: script_args: [arg1, arg2, arg3]</code></td>
 <td style="text-align: left;">Arguments passed to active scripts/extensions. Format depends on the specific script being used.</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="override-parameters">Override Parameters</h2>
 <table>
 <thead>
@@ -4218,6 +4785,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -4227,6 +4795,7 @@
 <td style="text-align: left;"><code>{}</code></td>
 <td style="text-align: left;"><code>Syntax: override_settings: {CLIP_stop_at_last_layers: 2}</code></td>
 <td style="text-align: left;">Temporarily override global settings for this generation. Settings revert after generation completes.</td>
+<td style="text-align: left;">Override settings</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>override_settings_restore_afterwards</code></td>
@@ -4234,10 +4803,10 @@
 <td style="text-align: left;"><code>True</code></td>
 <td style="text-align: left;"><code>Syntax: override_settings_restore_afterwards: False</code></td>
 <td style="text-align: left;">Restore original settings after generation. Set to False to make overrides permanent.</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="video-processing-parameters">Video Processing Parameters</h2>
 <table>
 <thead>
@@ -4247,6 +4816,7 @@
 <th style="text-align: left;">Default</th>
 <th style="text-align: left;">Details / Syntax</th>
 <th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
 </tr>
 </thead>
 <tbody>
@@ -4256,6 +4826,7 @@
 <td style="text-align: left;"><code>None</code></td>
 <td style="text-align: left;"><code>Syntax: prompt_template: frame {frame_num}: {base_prompt}</code></td>
 <td style="text-align: left;">Template for animated prompts across frames. Allows dynamic prompt changes throughout video generation.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>frames</code></td>
@@ -4263,6 +4834,7 @@
 <td style="text-align: left;"><code>1</code></td>
 <td style="text-align: left;"><code>Values: 1 or higher</code> <br> <code>Syntax: frames: 30</code></td>
 <td style="text-align: left;">Number of video frames to generate. More frames = longer video but longer generation time.</td>
+<td style="text-align: left;">frames</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>scheduler_shift</code></td>
@@ -4270,6 +4842,7 @@
 <td style="text-align: left;"><code>0.0</code></td>
 <td style="text-align: left;"><code>Syntax: scheduler_shift: 0.5</code></td>
 <td style="text-align: left;">Shift scheduler timing for animation effects. Creates motion and transformation effects between frames.</td>
+<td style="text-align: left;">sampler shift</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>vae_tile_frames</code></td>
@@ -4277,10 +4850,10 @@
 <td style="text-align: left;"><code>0</code></td>
 <td style="text-align: left;"><code>Syntax: vae_tile_frames: 8</code></td>
 <td style="text-align: left;">Number of frames to tile in VAE for memory efficiency. Helps process longer videos on limited GPU memory.</td>
+<td style="text-align: left;">tile frames</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <h2 id="clip-skip">Clip skip</h2>
 <p>TODO</p>
 <h2 id="resize-modes">Resize modes</h2>
