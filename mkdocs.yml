@@ -91,6 +91,7 @@ nav:
     - HiDream: HiDream.md
     - Video: Video.md
     - FramePack: FramePack.md
+    - LTXVideo: LTX.md
   - Platforms:
     - WSL: WSL.md
     - Intel-ARC: Intel-ARC.md
