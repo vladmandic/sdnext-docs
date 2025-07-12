@@ -6078,6 +6078,7 @@ Although upgrades and existing installations are tested and should work fine!  <
     see <a href="https://vladmandic.github.io/sdnext-docs/Styles/">Styles docs</a> for details  </li>
 <li><strong>TAESD</strong> is now default preview type since its the only one that supports most new models  </li>
 <li>SD.Next now starts with <em>locked</em> state preventing model loading until startup is complete  </li>
+<li>warn when modifying legacy settings that are no longer supported, but available for compatibilty  </li>
 <li><strong>API</strong>  </li>
 <li>add <code>/sdapi/v1/lock-checkpoint</code> endpoint that can be used to lock/unlock model changes<br />
     if model is locked, it cannot be changed using normal load or unload methods  </li>
@@ -6114,6 +6115,7 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li>remove legacy lora support: <code>/extensions-builtin/Lora</code></li>
 <li>remove legacy clip/blip interrogate module</li>
 <li>remove modern-ui remove <code>only-original</code> vs <code>only-diffusers</code> code paths  </li>
+<li>split monolithic <code>shared.py</code></li>
 <li>cleanup <code>/modules</code>: move pipeline loaders to <code>/pipelines</code> root  </li>
 <li>cleanup <code>/modules</code>: move code folders used by pipelines to <code>/pipelines/&lt;pipeline&gt;</code> folder  </li>
 <li>cleanup <code>/modules</code>: move code folders used by scripts to <code>/scripts/&lt;script&gt;</code> folder  </li>
