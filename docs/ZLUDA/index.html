@@ -3426,13 +3426,14 @@ VRAM: ★★★★☆<br />
 Stability: ★★★★☆<br />
 Compatible with: Navi cards</p>
 <ol>
-<li>Prepare Python 3.11 (or 3.10) environment.</li>
-<li>Download triton wheel from <a href="https://github.com/lshqqytiger/triton/releases/tag/bb314b47">here</a>.  </li>
-<li>Install via pip.</li>
+<li>Prepare Python 3.11 (or 3.12) environment.  </li>
+<li>Download a triton wheel that matches your Python version from <a href="https://github.com/lshqqytiger/triton/releases">here</a>.<br />
+   (cp312 is Python 3.12, cp311 is Python 3.11 and cp310 is Python 3.10)  </li>
+<li>Open a PowerShell Windows in the SDNext folder and install via pip.  </li>
 </ol>
-<p><div class="highlight"><pre><span></span><code>pip install --upgrade path/to/triton-3.3.0+gitbb314b47-cp311-cp311-win_amd64.whl setuptools
+<div class="highlight"><pre><span></span><code>venv\scripts\python -m pip install --upgrade setuptools
+venv\scripts\python -m pip install --upgrade path/to/downloaded/triton.whl
 </code></pre></div>
-(cp311 should be replaced with cp310 if you have Python 3.10)</p>
 <p>※ Developer PowerShell for Visual Studio (or Prompt) will be needed to compile kernel using triton.</p>
 <h4 id="flash-attention-2">Flash Attention 2</h4>
 <p>Using triton, you can enable Flash Attention 2.</p>
