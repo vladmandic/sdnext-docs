@@ -6019,6 +6019,7 @@ This plus major cleanup of codebase and external dependencies resulted in ~53k L
 <p>We also switched project license to <a href="https://github.com/vladmandic/sdnext/blob/dev/LICENSE.txt">Apache-2.0</a> which means that SD.Next is now fully compatible with commercial and non-commercial use and redistribution regardless of modifications!  </p>
 <p>Feature highlights include:<br />
 - <strong>ModernUI</strong> layout redesign which should make it more user friendly and easier to navigate<br />
+- New models <a href="https://wan.video/">WanAI Wan 2.1</a> for text-to-image workflows and <a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a><br />
 - Redesigned <a href="https://vladmandic.github.io/sdnext-docs/Video">LTXVideo</a> interface with support for general video models plus optimized <a href="https://vladmandic.github.io/sdnext-docs/FramePack">FramePack</a> and <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTXVideo</a> support<br />
 - New background replacement and relightning methods using <strong>Latent Bridge Matching</strong> and new <strong>PixelArt</strong> processing filter<br />
 - New <strong>LLM/VLM</strong> models available for captioning and prompt enhance<br />
@@ -6033,15 +6034,21 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li>SD.Next <a href="https://github.com/vladmandic/sdnext/blob/dev/LICENSE.txt">license</a> switched from <strong>aGPL-v3.0</strong> to <strong>Apache-v2.0</strong><br />
     this means that SD.Next is now fully compatible with commercial and non-commercial use and redistribution regardless of modifications!  </li>
 <li><strong>Models</strong></li>
+<li><a href="https://wan.video/">WanAI Wan 2.1</a> 1.3B and 14B T2V models for T2I workflows<br />
+    Wan 2.1 is originally designed for <em>video</em> workflows, Wan 2.1 model can now also be used for <em>text-to-image</em> workflows!<br />
+    supports all standard features such as quantization, offloading, TAESD preview generation, LoRA support etc.<br />
+    can also load unet/transformer fine-tunes in safetensors format using UNET loader<br />
+    simply select in <em>networks -&gt; models -&gt; reference</em><br />
+<em>note</em> 1.3B model is a bit too small for good results and 14B is very large at 78GB so aggressive quantization and offloading are recommended  </li>
+<li><a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a><br />
+    F-Lite is a 10B model trained exclusively on copyright-safe and SFW content, trained on internal dataset comprising approximately 80 million copyright-safe images<br />
+    available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><a href="https://github.com/gojasper/LBM">LBM: Latent Bridge Matching</a><br />
     very fast automatic image background replacement methods with relightning!<br />
 <em>simple</em>: automatic background replacement using <a href="https://github.com/ZhengPeng7/BiRefNet">BiRefNet</a><br />
 <em>relighting</em>: automatic background replacement with reglighting so source image fits desired background<br />
     with optional composite blending<br />
     available in <em>img2img or control -&gt; scripts</em>  </li>
-<li><a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a><br />
-    F-Lite is a 10B model trained exclusively on copyright-safe and SFW content, trained on internal dataset comprising approximately 80 million copyright-safe images<br />
-    available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li>add <strong>FLUX.1-Kontext-Dev</strong> inpaint workflow  </li>
 <li>support <strong>FLUX.1</strong> all-in-one safetensors  </li>
 <li>support for <a href="https://huggingface.co/google/gemma-3n-E4B-it">Google Gemma 3n</a> E2B and E4B LLM/VLM models<br />
@@ -6083,6 +6090,7 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li><strong>TAESD</strong> is now default preview type since its the only one that supports most new models  </li>
 <li>support <strong>TAESD</strong> preview and remote VAE for <strong>HunyuanDit</strong>  </li>
 <li>support <strong>TAESD</strong> preview and remote VAE for <strong>AuraFlow</strong>  </li>
+<li>support <strong>TAESD</strong> preview for <strong>WanAI</strong>  </li>
 <li>SD.Next now starts with <em>locked</em> state preventing model loading until startup is complete  </li>
 <li>warn when modifying legacy settings that are no longer supported, but available for compatibilty  </li>
 <li><strong>API</strong>  </li>
