@@ -6094,6 +6094,14 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li>SD.Next now starts with <em>locked</em> state preventing model loading until startup is complete  </li>
 <li>warn when modifying legacy settings that are no longer supported, but available for compatibilty  </li>
 <li>warn on incompatible sampler and automatically restore default sampler  </li>
+<li><strong>XYZ grid</strong> can now work with control tab:<br />
+    if controlnet/processor are selected in control tab main interface, they will remain active for duration of xyz grid generation<br />
+    if controlnet/processor are not selected, you can select them in xyz grid<br />
+    note that controlnet/processor must be selected as pair, so either both selected in main controls or xyz grid or none selected,<br />
+    you cannot have processor from control tab and controlnet from xyz grid<br />
+    when using controlnet/processor selected in xyz grid, behavior is forced as control-only<br />
+    when using controlnet/processor selected in xyz grid, you can only have one controlnet/processor active at the time<br />
+    also freely selectable are control strength, start and end values  </li>
 <li><strong>API</strong>  </li>
 <li>add <code>/sdapi/v1/lock-checkpoint</code> endpoint that can be used to lock/unlock model changes<br />
     if model is locked, it cannot be changed using normal load or unload methods  </li>
@@ -6108,9 +6116,11 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li>fix api <code>/sdapi/v1/embeddings</code> endpoint  </li>
 <li>fix incorrect reporting of deleted and modified files  </li>
 <li>fix SD3.x loader and TAESD preview  </li>
+<li>fix xyz with control enabled  </li>
 <li>allow upscaling with models that have implicit VAE processing  </li>
 <li>sdnq use inference context during quantization  </li>
 <li>framepack improve offloading  </li>
+<li>improve scripts error handling  </li>
 <li>improve infotext param parsing  </li>
 <li>improve extensions ui search  </li>
 <li>improve model type autodetection  </li>
