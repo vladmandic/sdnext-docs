@@ -2911,28 +2911,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-15" class="md-nav__link">
+  <a href="#update-for-2025-07-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-15
+      Update for 2025-07-16
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-07-15">
+    <nav class="md-nav" aria-label="Update for 2025-07-16">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-07-15" class="md-nav__link">
+  <a href="#highlights-for-2025-07-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-07-15
+      Highlights for 2025-07-16
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-07-15" class="md-nav__link">
+  <a href="#details-for-2025-07-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-07-15
+      Details for 2025-07-16
     </span>
   </a>
   
@@ -4469,28 +4469,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-15" class="md-nav__link">
+  <a href="#update-for-2025-07-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-15
+      Update for 2025-07-16
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-07-15">
+    <nav class="md-nav" aria-label="Update for 2025-07-16">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-07-15" class="md-nav__link">
+  <a href="#highlights-for-2025-07-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-07-15
+      Highlights for 2025-07-16
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-07-15" class="md-nav__link">
+  <a href="#details-for-2025-07-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-07-15
+      Details for 2025-07-16
     </span>
   </a>
   
@@ -6012,8 +6012,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-07-15">Update for 2025-07-15</h2>
-<h3 id="highlights-for-2025-07-15">Highlights for 2025-07-15</h3>
+<h2 id="update-for-2025-07-16">Update for 2025-07-16</h2>
+<h3 id="highlights-for-2025-07-16">Highlights for 2025-07-16</h3>
 <p>In this release we finally break with legacy with the removal of the original <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/">A1111</a> codebase which has not been maintained for a while now<br />
 This plus major cleanup of codebase and external dependencies resulted in ~53k LoC (<em>lines-of-code</em>) reduction and spread over <a href="https://github.com/vladmandic/sdnext/pull/4017">~720 files</a>!  </p>
 <p>We also switched project license to <a href="https://github.com/vladmandic/sdnext/blob/dev/LICENSE.txt">Apache-2.0</a> which means that SD.Next is now fully compatible with commercial and non-commercial use and redistribution regardless of modifications!  </p>
@@ -6028,7 +6028,7 @@ This plus major cleanup of codebase and external dependencies resulted in ~53k L
 <p><em>Note</em>: We recommend clean install for this release due to sheer size of changes<br />
 Although upgrades and existing installations are tested and should work fine!  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
-<h3 id="details-for-2025-07-15">Details for 2025-07-15</h3>
+<h3 id="details-for-2025-07-16">Details for 2025-07-16</h3>
 <ul>
 <li><strong>License</strong>  </li>
 <li>SD.Next <a href="https://github.com/vladmandic/sdnext/blob/dev/LICENSE.txt">license</a> switched from <strong>aGPL-v3.0</strong> to <strong>Apache-v2.0</strong><br />
@@ -6095,12 +6095,9 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li>warn when modifying legacy settings that are no longer supported, but available for compatibilty  </li>
 <li>warn on incompatible sampler and automatically restore default sampler  </li>
 <li><strong>XYZ grid</strong> can now work with control tab:<br />
-    if controlnet/processor are selected in control tab main interface, they will remain active for duration of xyz grid generation<br />
-    if controlnet/processor are not selected, you can select them in xyz grid<br />
-    note that controlnet/processor must be selected as pair, so either both selected in main controls or xyz grid or none selected,<br />
-    you cannot have processor from control tab and controlnet from xyz grid<br />
+    if controlnet or processor are selected in xyz grid, they will overwrite settings from first unit in control tab,<br />
+    while any other units will stay as-is and can be used as normal<br />
     when using controlnet/processor selected in xyz grid, behavior is forced as control-only<br />
-    when using controlnet/processor selected in xyz grid, you can only have one controlnet/processor active at the time<br />
     also freely selectable are control strength, start and end values  </li>
 <li><strong>API</strong>  </li>
 <li>add <code>/sdapi/v1/lock-checkpoint</code> endpoint that can be used to lock/unlock model changes<br />
@@ -6117,6 +6114,9 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li>fix incorrect reporting of deleted and modified files  </li>
 <li>fix SD3.x loader and TAESD preview  </li>
 <li>fix xyz with control enabled  </li>
+<li>fix control order of image save operations  </li>
+<li>fix control batch-input processing  </li>
+<li>cleanup control infotext  </li>
 <li>allow upscaling with models that have implicit VAE processing  </li>
 <li>sdnq use inference context during quantization  </li>
 <li>framepack improve offloading  </li>
@@ -6143,7 +6143,8 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li>remove legacy lora support: <code>/extensions-builtin/Lora</code></li>
 <li>remove legacy clip/blip interrogate module</li>
 <li>remove modern-ui remove <code>only-original</code> vs <code>only-diffusers</code> code paths  </li>
-<li>split monolithic <code>shared.py</code></li>
+<li>refactor control processing and separate preprocessing and image save ops  </li>
+<li>split monolithic <code>shared.py</code>  </li>
 <li>cleanup <code>/modules</code>: move pipeline loaders to <code>/pipelines</code> root  </li>
 <li>cleanup <code>/modules</code>: move code folders used by pipelines to <code>/pipelines/&lt;pipeline&gt;</code> folder  </li>
 <li>cleanup <code>/modules</code>: move code folders used by scripts to <code>/scripts/&lt;script&gt;</code> folder  </li>
