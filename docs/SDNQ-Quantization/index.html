@@ -3375,7 +3375,9 @@
 <code>float8_e4m3fn</code> is another option for fast speed and high quality but <code>FP8</code> has slightly lower quality than <code>INT8</code>  </li>
 </ul>
 <h2 id="triton">Triton</h2>
-<p>Triton enables the use of optimized kernels for much better performance.  </p>
+<p>Triton enables the use of optimized kernels for much better performance.<br />
+Triton is not required for SDNQ but it is highly recommended for much better performance.<br />
+SDNQ will use Triton by default via torch.compile if Triton is available. You can override this with dequantize using torch.compile option.  </p>
 <h3 id="triton-with-nvidia">Triton with Nvidia</h3>
 <ul>
 <li><strong>Linux</strong>  </li>
