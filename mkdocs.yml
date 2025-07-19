@@ -125,6 +125,7 @@ nav:
     - Reprocess Latents: Reprocess.md
     - IP Adapters: IPAdapter.md
     - XYZ Grid: XYZ-Grid.md
+    - NudeNet: NudeNet.md
     - Built-in Scripts: Scripts.md
   - User Interface:
     - Themes: Themes.md
