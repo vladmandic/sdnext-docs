@@ -3499,8 +3499,8 @@ Disabled by default.  </p>
     FP8 matmul will work with RX 9000 when AMD adds FP8 matmul support to PyTorch.<br />
 - <strong>Intel</strong><br />
   Intel technically support FP8 and INT8 with Alchemist (Arc A770) or newer GPUs but software support isn't ready yet.<br />
-  Intel GPUs will work with quantized matmul when Intel merges INT8 and FP8 matmul support to PyTorch 2.8.<br />
-  See https://github.com/pytorch/pytorch/pull/140972 and https://github.com/pytorch/pytorch/issues/132947#issuecomment-2804317769  </p>
+  Intel GPUs will work with quantized matmul when Intel merges INT8 and FP8 matmul support to PyTorch 2.8 or 2.9.<br />
+  See https://github.com/pytorch/pytorch/pull/157769 and https://github.com/pytorch/pytorch/pull/140972  </p>
 <p>Quantized INT8 MatMul is only compatible with symmetric <code>int</code> quant types.<br />
 Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> quant type on GPUs. CPUs and some GPUs can use the other FP8 types too.  </p>
 <p>Recommended quant type to use with this option is <code>int8</code> for quality and INT8 matmul tends to be faster than FP8. 
