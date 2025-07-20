@@ -2936,28 +2936,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-18" class="md-nav__link">
+  <a href="#update-for-2025-07-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-18
+      Update for 2025-07-20
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-07-18">
+    <nav class="md-nav" aria-label="Update for 2025-07-20">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-07-18" class="md-nav__link">
+  <a href="#highlights-for-2025-07-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-07-18
+      Highlights for 2025-07-20
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-07-18" class="md-nav__link">
+  <a href="#details-for-2025-07-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-07-18
+      Details for 2025-07-20
     </span>
   </a>
   
@@ -4494,28 +4494,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-18" class="md-nav__link">
+  <a href="#update-for-2025-07-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-18
+      Update for 2025-07-20
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-07-18">
+    <nav class="md-nav" aria-label="Update for 2025-07-20">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-07-18" class="md-nav__link">
+  <a href="#highlights-for-2025-07-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-07-18
+      Highlights for 2025-07-20
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-07-18" class="md-nav__link">
+  <a href="#details-for-2025-07-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-07-18
+      Details for 2025-07-20
     </span>
   </a>
   
@@ -6037,8 +6037,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-07-18">Update for 2025-07-18</h2>
-<h3 id="highlights-for-2025-07-18">Highlights for 2025-07-18</h3>
+<h2 id="update-for-2025-07-20">Update for 2025-07-20</h2>
+<h3 id="highlights-for-2025-07-20">Highlights for 2025-07-20</h3>
 <p>Feature highlights include:<br />
 - <strong>ModernUI</strong> layout redesign which should make it more user friendly and easier to navigate<br />
 - New models <a href="https://wan.video/">WanAI Wan 2.1</a> for text-to-image workflows and <a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a><br />
@@ -6055,7 +6055,7 @@ This plus major cleanup of codebase and external dependencies resulted in ~53k L
 <p><em>Note</em>: We recommend clean install for this release due to sheer size of changes<br />
 Although upgrades and existing installations are tested and should work fine!  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
-<h3 id="details-for-2025-07-18">Details for 2025-07-18</h3>
+<h3 id="details-for-2025-07-20">Details for 2025-07-20</h3>
 <ul>
 <li><strong>License</strong>  </li>
 <li>SD.Next <a href="https://github.com/vladmandic/sdnext/blob/dev/LICENSE.txt">license</a> switched from <strong>aGPL-v3.0</strong> to <strong>Apache-v2.0</strong><br />
@@ -6100,6 +6100,7 @@ Although upgrades and existing installations are tested and should work fine!  <
     with <em>t2i, i2i, v2v</em> workflows<br />
     optional native upsampling and video refine workflows<br />
     LoRA support with different conditioning types such as Canny/Depth/Pose, etc.  </li>
+<li>support for post load quantization  </li>
 <li><strong>UI</strong>  </li>
 <li>major update to modernui layout  </li>
 <li>redesign of the <em>Flat</em> UI theme  </li>
@@ -6113,6 +6114,7 @@ Although upgrades and existing installations are tested and should work fine!  <
     enable in <em>settings -&gt; compute settings -&gt; sdp options</em><br />
 <em>note</em>: SD.Next will use either SageAttention v1/v2/v2++, depending which one is installed<br />
     until authors provide pre-build wheels for v2++, you need to install it manually or SD.Next will auto-install v1  </li>
+<li>support for <code>torch.compile</code> for LLM: captioning/prompt-enhannce  </li>
 <li>support for <code>torch.compile</code> with repeated-blocks<br />
     reduces time-to-compile 5x without loss of performance!<br />
     enable in <em>settings -&gt; model compile -&gt; repeated</em><br />
@@ -6134,6 +6136,9 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li><strong>Batch</strong> warn on unprocessable images and skip operations on errors so that other images can still be processed  </li>
 <li><strong>Metadata</strong> improved parsing and detect foreign metadata<br />
     detect ComfyUI images  </li>
+<li><strong>SDNQ</strong>  </li>
+<li>use inference context during quantization  </li>
+<li>use static compile  </li>
 <li><strong>API</strong>  </li>
 <li>add <code>/sdapi/v1/lock-checkpoint</code> endpoint that can be used to lock/unlock model changes<br />
     if model is locked, it cannot be changed using normal load or unload methods  </li>
@@ -6151,9 +6156,9 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li>fix xyz with control enabled  </li>
 <li>fix control order of image save operations  </li>
 <li>fix control batch-input processing  </li>
+<li>fix torchvision bicubic upsample with ipex  </li>
 <li>cleanup control infotext  </li>
 <li>allow upscaling with models that have implicit VAE processing  </li>
-<li>sdnq use inference context during quantization  </li>
 <li>framepack improve offloading  </li>
 <li>improve scripts error handling  </li>
 <li>improve infotext param parsing  </li>
