@@ -6113,6 +6113,10 @@ Although upgrades and existing installations are tested and should work fine!  <
     enable in <em>settings -&gt; compute settings -&gt; sdp options</em><br />
 <em>note</em>: SD.Next will use either SageAttention v1/v2/v2++, depending which one is installed<br />
     until authors provide pre-build wheels for v2++, you need to install it manually or SD.Next will auto-install v1  </li>
+<li>support for <code>torch.compile</code> with repeated-blocks<br />
+    reduces time-to-compile 5x without loss of performance!<br />
+    enable in <em>settings -&gt; model compile -&gt; repeated</em><br />
+<em>note</em>: torch.compile is not compatible with balanced offload  </li>
 <li><strong>Other</strong>  </li>
 <li><strong>Styles</strong> can now include both generation params and server settings<br />
     see <a href="https://vladmandic.github.io/sdnext-docs/Styles/">Styles docs</a> for details  </li>
@@ -6127,6 +6131,7 @@ Although upgrades and existing installations are tested and should work fine!  <
     if controlnet or processor are selected in xyz grid, they will overwrite settings from first unit in control tab,<br />
     when using controlnet/processor selected in xyz grid, behavior is forced as control-only<br />
     also freely selectable are control strength, start and end values  </li>
+<li><strong>Batch</strong> warn on unprocessable images and skip operations on errors so that other images can still be processed  </li>
 <li><strong>Metadata</strong> improved parsing and detect foreign metadata<br />
     detect ComfyUI images  </li>
 <li><strong>API</strong>  </li>
