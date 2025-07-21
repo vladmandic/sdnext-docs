@@ -3195,12 +3195,12 @@ Models from different families such as Mediapipe are not supported  </p>
 <h2 id="expert-mode">Expert Mode</h2>
 <p>List of models is typically presented as drowpdown list where one or more models can be selected<br />
 Alternatively, you can use button next to list to convert it to a text box which allows manual inputs of models and (optionally) their parameters<br />
-Text is parsed as <code>,</code> (comma-separated) list of models
-Each model can have parameters added with <code>:</code> character</p>
+Text is parsed as list of models which can be separated by comma <code>,</code>, newline <code>\n</code> or semicolon <code>;</code> 
+Each model can have parameters added with colon <code>:</code> character</p>
 <p>Example:</p>
 <blockquote>
 <p>face-yolo8n:steps=5:denoising_strength=0.3,<br />
-eyes-v1:mask_blur=0.5,<br />
+eyes-v1:mask_blur=0.5<br />
 hand_yolov8n:sampler_name=DDIM  </p>
 </blockquote>
 <p>For full list of parameters, see <a href="../Parameters/">Parameters</a> page</p>
