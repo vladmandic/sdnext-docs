@@ -6041,7 +6041,7 @@
 <h3 id="highlights-for-2025-07-23">Highlights for 2025-07-23</h3>
 <p>Feature highlights include:<br />
 - <strong>ModernUI</strong> layout redesign which should make it more user friendly and easier to navigate<br />
-- New models <a href="https://wan.video/">WanAI Wan 2.1</a> for text-to-image workflows and <a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a><br />
+- New models <a href="https://wan.video/">WanAI Wan 2.1</a> for text-to-image workflows, <a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a>, <a href="https://huggingface.co/briaai/BRIA-3.2">Bria 3.2</a>
 - Redesigned <a href="https://vladmandic.github.io/sdnext-docs/Video">LTXVideo</a> interface with support for general video models plus optimized <a href="https://vladmandic.github.io/sdnext-docs/FramePack">FramePack</a> and <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTXVideo</a> support<br />
 - Fully integrated nudity detection and optional censorship with <a href="https://vladmandic.github.io/sdnext-docs/NudeNet">NudeNet</a><br />
 - New background replacement and relightning methods using <strong>Latent Bridge Matching</strong> and new <strong>PixelArt</strong> processing filter<br />
@@ -6071,6 +6071,10 @@ Although upgrades and existing installations are tested and should work fine!  <
 <em>note</em> 1.3B model is a bit too small for good results and 14B is very large at 78GB so aggressive quantization and offloading are recommended  </li>
 <li><a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a><br />
     F-Lite is a 10B model trained exclusively on copyright-safe and SFW content, trained on internal dataset comprising approximately 80 million copyright-safe images<br />
+    available via <em>networks -&gt; models -&gt; reference</em>  </li>
+<li><a href="https://huggingface.co/briaai/BRIA-3.2">Bria 3.2</a><br />
+    Bria is a smaller 4B parameter model built entirely on licensed data and safe for commercial use<br />
+<em>note</em>: this is a gated model, you need to <a href="https://huggingface.co/briaai/BRIA-3.2">accept terms</a> and set your <a href="https://vladmandic.github.io/sdnext-docs/Gated/">huggingface token</a><br />
     available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><a href="https://github.com/gojasper/LBM">LBM: Latent Bridge Matching</a><br />
     very fast automatic image background replacement methods with relightning!<br />
