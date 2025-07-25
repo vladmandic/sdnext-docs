@@ -3254,7 +3254,7 @@
 
 
 <h1 id="black-forest-labs-flux1">Black Forest Labs FLUX.1</h1>
-<p><strong>FLUX.1</strong> family consists of 3 variations:
+<p><strong>FLUX.1</strong> family consists of 3 variations:<br />
 - <a href="https://blackforestlabs.ai/announcing-black-forest-labs/">Pro</a><br />
   Model weights are NOT released, model is available only via Black Forest Labs<br />
 - <a href="https://huggingface.co/spaces/black-forest-labs/FLUX.1-dev">Dev</a><br />
@@ -3301,7 +3301,7 @@ Always load full model and then replace individual components as needed</p>
 It means exactly that - you're trying to load a model component instead of full model</p>
 </div>
 <h2 id="components">Components</h2>
-<p><strong>FLUX.1</strong> model consists of:
+<p><strong>FLUX.1</strong> model consists of:<br />
 - Unet/Transformer: MMDiT<br />
 - Text encoder 1: <a href="https://huggingface.co/openai/clip-vit-large-patch14">CLIP-ViT/L</a>,
 - Text encoder 2: <a href="https://huggingface.co/google/t5-v1_1-xxl">T5-XXL Version 1.1</a><br />
@@ -3372,7 +3372,7 @@ as such, you may need to use offloading:sequential which is not as fast, but use
 <p>When using union model, you must also select control mode in the control unit  </p>
 <h2 id="flux-tools">Flux Tools</h2>
 <p>Link to <a href="https://blackforestlabs.ai/flux-1-tools/">Flux Tools</a> announcement<br />
-- Redux is actually a tool
+- Redux is actually a tool<br />
 - Fill is inpaint/outpaint optimized version of Flux-dev<br />
 - Canny/Depth are optimized versions of Flux-dev for their respective tasks: they are <em>not</em> ControlNets that work on top of a model  </p>
 <p>To use, go to image or control interface and select <em>Flux Tools</em> in scripts<br />
