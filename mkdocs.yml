@@ -122,6 +122,7 @@ nav:
     - Image Captioning: Caption.md
     - Using Styles: Styles.md
     - Using Wildcards: Wildcards.md  
+    - Using CLiP skip: CLiP-Skip.md
     - Reprocess Latents: Reprocess.md
     - IP Adapters: IPAdapter.md
     - XYZ Grid: XYZ-Grid.md
