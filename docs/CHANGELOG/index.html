@@ -6177,6 +6177,7 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li><strong>SDNQ</strong>  </li>
 <li>use inference context during quantization  </li>
 <li>use static compile  </li>
+<li>rename quantization type for text encoders <code>default</code> option to <code>Same as model</code>  </li>
 <li><strong>API</strong>  </li>
 <li>add <code>/sdapi/v1/lock-checkpoint</code> endpoint that can be used to lock/unlock model changes<br />
     if model is locked, it cannot be changed using normal load or unload methods  </li>
@@ -6213,6 +6214,7 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li>lock directml torch to <code>torch-directml==0.2.4.dev240913</code>  </li>
 <li>lock directml transformers to <code>transformers==4.52.4</code>  </li>
 <li>improve install of <code>sentencepiece</code> tokenizer  </li>
+<li>add int8 matmul fallback for ipex with onednn qlinear  </li>
 <li><strong>Refactoring</strong><br />
 <em>note</em>: none of the removals result in loss-of-functionality since all those features are already re-implemented<br />
   goal here is to remove legacy code, code duplication and reduce code complexity  </li>
