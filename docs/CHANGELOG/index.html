@@ -6066,7 +6066,7 @@
 <h3 id="highlights-for-2025-07-27">Highlights for 2025-07-27</h3>
 <p>Feature highlights include:<br />
 - <strong>ModernUI</strong> layout redesign which should make it more user friendly and easier to navigate plus several new UI themes!<br />
-- New models <a href="https://wan.video/">WanAI Wan 2.1</a> for text-to-image workflows, <a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a>, <a href="https://huggingface.co/briaai/BRIA-3.2">Bria 3.2</a>
+- New models <a href="https://wan.video/">WanAI Wan 2.1</a> for text-to-image workflows, <a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a>, <a href="https://huggingface.co/briaai/BRIA-3.2">Bria 3.2</a>, <a href="https://civitai.com/models/1789765?modelVersionId=2025412">bigASP 2.5</a><br />
 - Redesigned <a href="https://vladmandic.github.io/sdnext-docs/Video">LTXVideo</a> interface with support for general video models plus optimized <a href="https://vladmandic.github.io/sdnext-docs/FramePack">FramePack</a> and <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTXVideo</a> support<br />
 - Fully integrated nudity detection and optional censorship with <a href="https://vladmandic.github.io/sdnext-docs/NudeNet">NudeNet</a><br />
 - New background replacement and relightning methods using <strong>Latent Bridge Matching</strong> and new <strong>PixelArt</strong> processing filter<br />
@@ -6075,7 +6075,7 @@
 - Compute improvements<br />
 - <a href="https://github.com/vladmandic/automatic/wiki">Wiki</a> &amp; <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> updates, especially new end-to-end <a href="https://vladmandic.github.io/sdnext-docs/Parameters/">Parameters</a> page  </p>
 <p>In this release we finally break with legacy with the removal of the original <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/">A1111</a> codebase which has not been maintained for a while now<br />
-This plus major cleanup of codebase and external dependencies resulted in ~55k LoC (<em>lines-of-code</em>) reduction and spread over <a href="https://github.com/vladmandic/sdnext/pull/4017">~750 files</a> in ~160 commits!  </p>
+This plus major cleanup of codebase and external dependencies resulted in ~55k LoC (<em>lines-of-code</em>) reduction and spread over <a href="https://github.com/vladmandic/sdnext/pull/4017">~750 files</a> in ~200 commits!  </p>
 <p>We also switched project license to <a href="https://github.com/vladmandic/sdnext/blob/dev/LICENSE.txt">Apache-2.0</a> which means that SD.Next is now fully compatible with commercial and non-commercial use and redistribution regardless of modifications!  </p>
 <p>And (<em>as always</em>) many bugfixes and improvements to existing features!  </p>
 <p><em>Note</em>: We recommend clean install for this release due to sheer size of changes<br />
@@ -6101,6 +6101,12 @@ Although upgrades and existing installations are tested and should work fine!  <
     Bria is a smaller 4B parameter model built entirely on licensed data and safe for commercial use<br />
 <em>note</em>: this is a gated model, you need to <a href="https://huggingface.co/briaai/BRIA-3.2">accept terms</a> and set your <a href="https://vladmandic.github.io/sdnext-docs/Gated/">huggingface token</a><br />
     available via <em>networks -&gt; models -&gt; reference</em>  </li>
+<li><a href="https://civitai.com/models/1789765">bigASP 2.5</a><br />
+    bigASP is an experimental SDXL finetune using Flow matching method<br />
+    load as usual, and leave sampler set to <em>Default</em><br />
+    or you can use following samplers: <em>UniPC, DPM, DEIS, SA</em><br />
+    required sampler settings: <em>prediction-method=flow-prediction</em>, <em>sigma-method=flowmatch</em><br />
+    recommended sampler settings: <em>flow-shift=1.0</em>  </li>
 <li><a href="https://github.com/gojasper/LBM">LBM: Latent Bridge Matching</a><br />
     very fast automatic image background replacement methods with relightning!<br />
 <em>simple</em>: automatic background replacement using <a href="https://github.com/ZhengPeng7/BiRefNet">BiRefNet</a><br />
@@ -6205,6 +6211,7 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li>cleanup control infotext  </li>
 <li>allow upscaling with models that have implicit VAE processing  </li>
 <li>framepack improve offloading  </li>
+<li>improve prompt parser tokenizer loader  </li>
 <li>improve scripts error handling  </li>
 <li>improve infotext param parsing  </li>
 <li>improve extensions ui search  </li>
