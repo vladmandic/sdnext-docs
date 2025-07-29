@@ -6064,12 +6064,13 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-07-29">Update for 2025-07-29</h2>
 <h3 id="highlights-for-2025-07-29">Highlights for 2025-07-29</h3>
+<p>This is a big one: simply looking at number of changes, probably the biggest release since the project started!  </p>
 <p>Feature highlights include:<br />
-- <strong>ModernUI</strong> has quite some redesign which should make it more user friendly and easier to navigate plus several new UI themes!<br />
-  If you're still using StandardUI, give <a href="https://vladmandic.github.io/sdnext-docs/Themes/">ModernUI</a> a try!<br />
+- <a href="https://github.com/user-attachments/assets/6f156154-0b0a-4be2-94f0-979e9f679501">ModernUI</a> has quite some redesign which should make it more user friendly and easier to navigate plus several new UI themes<br />
+  If you're still using <strong>StandardUI</strong>, give <a href="https://vladmandic.github.io/sdnext-docs/Themes/">ModernUI</a> a try!<br />
 - New models such as <a href="https://wan.video/">WanAI 2.2</a> in 5B and A14B variants for both <em>text-to-video</em> and <em>image-to-video</em> workflows as well as <em>text-to-image</em> workflow!<br />
-  and also <a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a>, <a href="https://huggingface.co/briaai/BRIA-3.2">Bria 3.2</a>, <a href="https://civitai.com/models/1789765?modelVersionId=2025412">bigASP 2.5</a><br />
-- Redesigned <a href="https://vladmandic.github.io/sdnext-docs/Video">LTXVideo</a> interface with support for general video models plus optimized <a href="https://vladmandic.github.io/sdnext-docs/FramePack">FramePack</a> and <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTXVideo</a> support<br />
+  and also <a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a>, <a href="https://huggingface.co/briaai/BRIA-3.2">Bria 3.2</a> and <a href="https://civitai.com/models/1789765?modelVersionId=2025412">bigASP 2.5</a><br />
+- Redesigned <a href="https://vladmandic.github.io/sdnext-docs/Video">Video</a> interface with support for general video models plus optimized <a href="https://vladmandic.github.io/sdnext-docs/FramePack">FramePack</a> and <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTXVideo</a> support<br />
 - Fully integrated nudity detection and optional censorship with <a href="https://vladmandic.github.io/sdnext-docs/NudeNet">NudeNet</a><br />
 - New background replacement and relightning methods using <strong>Latent Bridge Matching</strong> and new <strong>PixelArt</strong> processing filter<br />
 - Enhanced auto-detection of default sampler types/settings results in avoiding common mistakes<br />
@@ -6080,10 +6081,14 @@
 <p>In this release we finally break with legacy with the removal of the original <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/">A1111</a> codebase which has not been maintained for a while now<br />
 This plus major cleanup of codebase and external dependencies resulted in ~55k LoC (<em>lines-of-code</em>) reduction and spread over <a href="https://github.com/vladmandic/sdnext/pull/4017">~750 files</a> in ~200 commits!  </p>
 <p>We also switched project license to <a href="https://github.com/vladmandic/sdnext/blob/dev/LICENSE.txt">Apache-2.0</a> which means that SD.Next is now fully compatible with commercial and non-commercial use and redistribution regardless of modifications!  </p>
-<p>And (<em>as always</em>) many bugfixes and improvements to existing features!  </p>
-<p><em>Note</em>: We recommend clean install for this release due to sheer size of changes<br />
-Although upgrades and existing installations are tested and should work fine!  </p>
-<p>For details, see <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a>  </p>
+<p>And (<em>as always</em>) many bugfixes and improvements to existing features!<br />
+For details, see <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a>  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We recommend clean install for this release due to sheer size of changes<br />
+Although upgrades and existing installations are tested and should work fine!</p>
+</div>
+<p><img alt="Screenshot" src="https://github.com/user-attachments/assets/6f156154-0b0a-4be2-94f0-979e9f679501" /></p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
 <h3 id="details-for-2025-07-29">Details for 2025-07-29</h3>
 <ul>
@@ -6193,6 +6198,7 @@ Although upgrades and existing installations are tested and should work fine!  <
 <li><strong>Detailer</strong> add option to merge multiple results from each detailer model<br />
     for example, hands model can result in two hands each being processed separately or both hands can be merged into one composite job  </li>
 <li><strong>Control</strong> auto-update width/height on image upload  </li>
+<li><strong>Control</strong> auto-determine image save path depending on operations performed  </li>
 <li>autodetect <strong>V-prediction</strong> models and override default sampler prediction type as needed  </li>
 <li><strong>SDNQ</strong>  </li>
 <li>use inference context during quantization  </li>
