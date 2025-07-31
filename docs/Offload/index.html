@@ -3136,11 +3136,15 @@
 <li>Faster but requires compatible platform and sufficient VRAM  </li>
 <li>Balanced offload moves parts of the model depending on the user-specified threshold allowing to control how much VRAM is to be used  </li>
 <li>High threshold will set the maximum memory usage allowed for the model weights of a single model component  </li>
-<li>Low threshold will decide when to offload unused models back to RAM. If the VRAM usage is higher than the low threshold, it will offload, otherwise it will do nothing  </li>
-<li>Default high memory threshold is 70% of the available GPU memory  </li>
-<li>Default low memory threshold is 20% of the available GPU memory for GPUs with more than 12GB of VRAM, otherwise the default is 0%  </li>
+<li>Low threshold will decide when to offload unused models back to RAM<br />
+   If the VRAM usage is higher than the low threshold, it will offload, otherwise it will do nothing  </li>
 <li>Configure threshold in <em>Settings -&gt; Models &amp; Loading -&gt; Balanced offload GPU high / low watermark</em></li>
 </ul>
+<p>Balanced offloading default behavior is based on detected GPU memory:
+- <strong>default</strong>: offload=balanced gpu-min=0.2 gpu-max=0.6 gc-threshold=0.7<br />
+- <strong>&lt;= 4gb/lowvram</strong>: offload=sequential quantization=cpu vae-tiling=on gc-threshold=0.0<br />
+- <strong>&lt;= 12gb/medvram</strong>: offload=balanced gpu-min=0.0 vae-tiling=on<br />
+- <strong>&gt;= 24gb/highvram</strong>: offload=balanced gpu-max=0.8 never=clip-l,clip-g,vae  </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Not compatible with <em>Optimum.Quanto</em> <code>qint</code> quantization</p>
