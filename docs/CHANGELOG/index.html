@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-31" class="md-nav__link">
+  <a href="#update-for-2025-08-01" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-31
+      Update for 2025-08-01
     </span>
   </a>
   
@@ -4528,9 +4528,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-07-31" class="md-nav__link">
+  <a href="#update-for-2025-08-01" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-07-31
+      Update for 2025-08-01
     </span>
   </a>
   
@@ -6080,7 +6080,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-07-31">Update for 2025-07-31</h2>
+<h2 id="update-for-2025-08-01">Update for 2025-08-01</h2>
 <ul>
 <li><strong>Models</strong>  </li>
 <li><a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a><br />
@@ -6101,14 +6101,18 @@
 <li>changed <strong>default</strong> values for offloading based on detected gpu memory<br />
     see <a href="https://vladmandic.github.io/sdnext-docs/Offload/">offloading docs</a> for details  </li>
 <li>new feature to specify which modules to offload always or never<br />
-    in <em>settings -&gt; models &amp; loading -&gt; offload always/never</em>  </li>
+    in <em>settings -&gt; model offloading -&gt; offload always/never</em>  </li>
 <li>new <code>highvram</code> profile provides significant performance boost on gpus with more than 24gb  </li>
+<li>new <code>offload during pre-forward</code> option
+    in <em>settings -&gt; model offloading</em>
+    switches from explicit offloading to implicit offloading on module execution change  </li>
 <li><strong>Features</strong>  </li>
 <li><strong>Wan</strong> select which stage to run: <em>first/second/both</em> with configurable <em>boundary ration</em> when running both stages<br />
     in settings -&gt; model options  </li>
 <li>prompt parser allow explict <code>BOS</code> and <code>EOS</code> tokens in prompt  </li>
 <li><strong>Nunchaku</strong> support for <em>FLUX.1-Fill</em> and <em>FLUX.1-Depth</em> models  </li>
 <li><strong>Fixes</strong>  </li>
+<li>refactor legacy processing loop  </li>
 <li>fix Wan 2.2-5B I2V workflow  </li>
 <li>fix OpenVINO  </li>
 <li>fix inpaint image metadata  </li>
