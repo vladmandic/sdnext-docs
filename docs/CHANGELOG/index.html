@@ -6084,31 +6084,40 @@
 <ul>
 <li><strong>Models</strong>  </li>
 <li><a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a><br />
-    new 12B base model compatible with FLUX.1-Dev from Black Forest Labs with opinionated aesthetics and aesthetic preferences in mind<br />
+    new 12B base model compatible with FLUX.1-Dev from <em>Black Forest Labs</em> with opinionated aesthetics and aesthetic preferences in mind<br />
     simply select in <em>networks -&gt; models -&gt; reference</em>  </li>
-<li><strong>Feature</strong>  </li>
-<li><strong>Wan</strong> select which stage to run: <em>first/second/both</em> with configurable <em>boundary ration</em> when running both stages<br />
-    in settings -&gt; model options  </li>
-<li>prompt parser allow explict <code>BOS</code> and <code>EOS</code> tokens in prompt  </li>
-<li><strong>Nunchaku</strong> support for <em>FLUX.1-Fill</em> and <em>FLUX.1-Depth</em> models  </li>
+<li><a href="https://huggingface.co/lodestones/Chroma">Chroma</a><br />
+    great model based on FLUX.1 and then redesigned and retrained by <em>lodestones</em><br />
+    update with latest <strong>v48</strong>, <strong>v48 Detail Calibrated</strong> and <strong>v46 Flash</strong> variants<br />
+    simply select in <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><strong>UI</strong>  </li>
 <li>new embedded docs/wiki search!<br />
 <strong>Docs</strong> search: fully-local and works in real-time on all document pages<br />
 <strong>Wiki</strong> search: uses github api to search online wiki pages  </li>
+<li>quicksettings reset button to restore all quicksettings to default values<br />
+    because things do sometimes get wrong...  </li>
 <li>modernui checkbox/radio styling  </li>
 <li><strong>Offloading</strong></li>
-<li>changed default values for offloading based on detected gpu memory<br />
+<li>changed <strong>default</strong> values for offloading based on detected gpu memory<br />
     see <a href="https://vladmandic.github.io/sdnext-docs/Offload/">offloading docs</a> for details  </li>
 <li>new feature to specify which modules to offload always or never<br />
     in <em>settings -&gt; models &amp; loading -&gt; offload always/never</em>  </li>
 <li>new <code>highvram</code> profile provides significant performance boost on gpus with more than 24gb  </li>
+<li><strong>Features</strong>  </li>
+<li><strong>Wan</strong> select which stage to run: <em>first/second/both</em> with configurable <em>boundary ration</em> when running both stages<br />
+    in settings -&gt; model options  </li>
+<li>prompt parser allow explict <code>BOS</code> and <code>EOS</code> tokens in prompt  </li>
+<li><strong>Nunchaku</strong> support for <em>FLUX.1-Fill</em> and <em>FLUX.1-Depth</em> models  </li>
 <li><strong>Fixes</strong>  </li>
 <li>fix Wan 2.2-5B I2V workflow  </li>
+<li>fix OpenVINO  </li>
 <li>fix inpaint image metadata  </li>
 <li>fix processing image save loop  </li>
 <li>fix progress bar with refine/detailer  </li>
 <li>fix api progress reporting endpoint  </li>
 <li>fix openvino backend failing to compile  </li>
+<li>fix nunchaku fallback on unsupported model  </li>
+<li>api set default script-name  </li>
 <li>avoid forced gc and rely on thresholds  </li>
 <li>add missing interrogate in output panel  </li>
 </ul>
