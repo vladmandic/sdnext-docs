@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/index.html">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Offload.html">
       
       
+        <link rel="prev" href="Performance-Tuning.html">
       
-        <link rel="next" href="Installation.html">
+      
+        <link rel="next" href="Malloc.html">
       
       
       <link rel="icon" href="favicon.ico">
@@ -22,7 +24,7 @@
     
     
       
-        <title>SD.Next Documentation</title>
+        <title>Memory Offloading - SD.Next Documentation</title>
       
     
     
@@ -59,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="SD.Next Documentation" >
+        <meta  property="og:title"  content="Memory Offloading - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Offload.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/index.html" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/Offload.html" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="SD.Next Documentation" >
+        <meta  name="twitter:title"  content="Memory Offloading - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Offload.png" >
       
     
     
@@ -102,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-sdnext" class="md-skip">
+        <a href="#offload" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Memory Offloading
             
           </span>
         </div>
@@ -261,10 +263,8 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
+    <li class="md-tabs__item">
       <a href="index.html" class="md-tabs__link">
         
   
@@ -414,10 +414,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="Performance-Tuning.html" class="md-tabs__link">
           
   
@@ -543,32 +545,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -579,113 +559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Experiment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides and tutorials
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Contribute
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2531,8 +2404,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2558,19 +2433,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -2583,7 +2461,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Advanced
@@ -2617,10 +2495,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="Offload.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Memory Offloading
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Offload.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2631,6 +2531,77 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#offload-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offload Mode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Offload Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#balanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balanced
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequential" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequential
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3082,73 +3053,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
+  <a href="#offload-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
+      Offload Mode
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Experiment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
+    <nav class="md-nav" aria-label="Offload Mode">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
+  <a href="#balanced" class="md-nav__link">
     <span class="md-ellipsis">
-      Guides and tutorials
+      Balanced
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
+  <a href="#sequential" class="md-nav__link">
     <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
+      Sequential
     </span>
   </a>
   
@@ -3160,9 +3086,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
+  <a href="#model" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Contribute
+      Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Notes
     </span>
   </a>
   
@@ -3187,102 +3122,200 @@
   
 
 
-<p><img alt="Last update" src="https://img.shields.io/github/last-commit/vladmandic/sdnext?svg=true" />
-<img alt="License" src="https://img.shields.io/github/license/vladmandic/sdnext?svg=true" />
-<a href="https://discord.gg/VjvR2tabEX"><img alt="Discord" src="https://img.shields.io/discord/1101998836328697867?logo=Discord&amp;svg=true" /></a>
-<a href="https://github.com/sponsors/vladmandic"><img alt="Sponsors" src="https://img.shields.io/static/v1?label=Sponsor&amp;message=%E2%9D%A4&amp;logo=GitHub&amp;color=%23fe8e86" /></a></p>
-<h1 id="welcome-to-sdnext">Welcome to SD.Next</h1>
-<h2 id="sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation">SD.Next: All-in-one WebUI for AI generative image and video creation</h2>
-<div align="center">
-<img src="https://github.com/vladmandic/sdnext/raw/master/html/logo-transparent.png" width=320 alt="SD.Next">
+<h1 id="offload">Offload</h1>
+<p>Offload is a method of moving model or parts of the model between the GPU memory (VRAM) and system memory (RAM) in order to reduce the memory footprint of the model and allow it to run on GPUs with lower VRAM.</p>
+<h2 id="offload-mode">Offload Mode</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Offload mode is set by the <em>Settings -&gt; Models &amp; Loading -&gt; Model offload mode</em></p>
 </div>
-
-<h2 id="step-1-installation">Step 1: Installation</h2>
+<h3 id="balanced">Balanced</h3>
+<p>Balanced offload works differently than all other offloading methods as it performs offloading only when the VRAM usage exceeds the user-specified threshold.</p>
 <ul>
-<li>Get started with <strong>SD.Next</strong> by following the <a href="Installation.html">Installation instructions</a>  </li>
-<li>For more details, check out <a href="Advanced-Install.html">Advanced installation</a> guide and <a href="Update.html">Update and Branches</a> guide  </li>
-<li>List and explanation of <a href="CLI-Arguments.html">Command line arguments</a></li>
-<li>Install walkthrough <a href="https://www.youtube.com/watch?v=nWTnTyFTuAs">Video</a></li>
+<li>Recommended for compatible high VRAM GPUs  </li>
+<li>Faster but requires compatible platform and sufficient VRAM  </li>
+<li>Balanced offload moves parts of the model depending on the user-specified threshold allowing to control how much VRAM is to be used  </li>
+<li>High threshold will set the maximum memory usage allowed for the model weights of a single model component  </li>
+<li>Low threshold will decide when to offload unused models back to RAM<br />
+   If the VRAM usage is higher than the low threshold, it will offload, otherwise it will do nothing  </li>
+<li>Configure threshold in <em>Settings -&gt; Models &amp; Loading -&gt; Balanced offload GPU high / low watermark</em></li>
 </ul>
+<p>Balanced offloading default behavior is based on detected GPU memory:
+- <strong>default</strong>: offload=balanced gpu-min=0.2 gpu-max=0.6 gc-threshold=0.7<br />
+- <strong>&lt;= 4gb/lowvram</strong>: offload=sequential quantization=cpu vae-tiling=on gc-threshold=0.0<br />
+- <strong>&lt;= 12gb/medvram</strong>: offload=balanced gpu-min=0.0 vae-tiling=on<br />
+- <strong>&gt;= 24gb/highvram</strong>: offload=balanced gpu-max=0.8 never=clip-l,clip-g,vae  </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Not compatible with <em>Optimum.Quanto</em> <code>qint</code> quantization</p>
+</div>
+<h3 id="sequential">Sequential</h3>
+<p>Works on layer-by-layer basis of each model component that is marked as offload-compatible  </p>
+<ul>
+<li>Recommended for low VRAM GPUs</li>
+<li>Much slower but allows to run large models such as FLUX even on GPUs with 2-4GB VRAM  </li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Not compatible with Quanto <code>qint</code> or BitsAndBytes <code>nf4</code> quantization</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>And for platform specific information, check out<br />
-<a href="WSL.html">WSL</a> | <a href="Intel-ARC.html">Intel Arc</a> | <a href="DirectML.html">DirectML</a> | <a href="OpenVINO.html">OpenVINO</a> | <a href="ONNX-Runtime.html">ONNX &amp; Olive</a> | <a href="ZLUDA.html">ZLUDA</a> | <a href="AMD-ROCm.html">AMD ROCm</a> | <a href="MacOS-Python.html">MacOS</a> | <a href="nVidia.html">nVidia</a> | <a href="Docker.html">Docker</a></p>
+<p>Use of <code>--lowvram</code> automatically triggers use of sequenential offload</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you run into issues, check out <a href="FAQ.html">FAQ</a> as well as <a href="Troubleshooting.html">Troubleshooting</a> and <a href="Debug.html">Debugging</a> guides</p>
-</div>
-<h2 id="step-2-experiment">Step 2: Experiment</h2>
-<p>SD.Next supports broad range of models: <a href="Model-Support.html">Supported models</a> and <a href="Models.html">Model specs</a>  </p>
-<p>A good starting point is to use built-in Reference model list which includes a variety of models that will be auto-downloaded and configured on first access.</p>
-<p>Additionally, you can either download your own models or use built-in <a href="https://civitai.com/models">CivitAI</a> and <a href="https://huggingface.co/models?pipeline_tag=text-to-image&amp;sort=trending">HuggingFace</a> models downloader.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For additional model-specific information, check out<br />
-<a href="SD-XL.html">Stable Diffusion XL</a> | <a href="SD3.html">Stable Diffusion 3.x</a> | <a href="Stable-Cascade.html">Stable Cascade</a> | <a href="FLUX.html">FLUX.1</a> | <a href="HiDream.html">HiDream</a> | <a href="Using-LCM.html">LCM</a></p>
-</div>
-<h2 id="step-3-learn-more">Step 3: Learn more</h2>
-<h3 id="guides-and-tutorials">Guides and tutorials</h3>
+<h2 id="model">Model</h2>
+<p>Works on model component level by offloading components that are marked as offload-compatible<br />
+For example, VAE, text-encoder, etc.</p>
 <ul>
-<li><a href="Getting-Started.html">Getting started</a>  </li>
-<li>Overview of main <a href="Features.html">features</a>  </li>
-<li>Frequently Asked Questions <a href="FAQ.html">FAQ</a>  </li>
-<li><a href="Prompting.html">Prompting</a>: what is the syntax and how to get the best results  </li>
-<li><a href="Parameters.html">Parameters</a>: list and explanation of all parameters  </li>
-<li><a href="Prompt-Enhance.html">Prompt enhancement</a>: use LLM to automatically enhance your prompts  </li>
-<li>Networks interface <a href="Networks.html">overview</a> and <a href="Networks-Search.html">search</a>  </li>
-<li>What is <a href="LoRA.html">LoRA</a> and how to use it  </li>
-<li><a href="Control-HowTo.html">Control</a> how-to, <a href="Control-Settings.html">settings</a> and <a href="Control-Technical.html">technical</a>: what is it and how to use it  </li>
-<li><a href="Detailer.html">Detailer</a> guide: how to use it</li>
-<li><a href="Styles.html">Styles</a> guide: how to use them  </li>
-<li><a href="Wildcards.html">Wildcards</a> how-to: use them to your advantage  </li>
-<li><a href="Outpaint.html">Outpainting</a> step-by-step  </li>
-<li><a href="Reprocess.html">Reprocess</a> workflow: why and how to use it  </li>
-<li><a href="XYZ-Grid.html">XYZ grid</a> how-to: expertiment with different parameters  </li>
-<li><a href="Process.html">Image processing</a> overview: postprocess your existing images  </li>
-<li><a href="Caption.html">Image captioning and interrogation</a> overview: caption and interrogate your existing images  </li>
-<li>What is <a href="CLiP-Skip.html">CLiP skip</a> and how to use it  </li>
-<li>Intro to <a href="IPAdapter.html">IP Adapters</a>: image guidance  </li>
-<li>Work with <a href="Models-Tab.html">Models</a>: validate, convert, download, etc.  </li>
-<li>Supported <a href="Video.html">Video</a> models: recommendations and limitations  </li>
-<li>Adding nudity detection and censorship with <a href="NudeNet.html">NudeNet</a>  </li>
-<li>Overview of built-in <a href="Scripts.html">scripts</a> that provide additional functionality  </li>
+<li>Recommended for medium when balanced offload is not compatible  </li>
+<li>Higher compatibility than either balanced and sequential, but lesser savings  </li>
 </ul>
-<h3 id="advanced-model-handling">Advanced model handling</h3>
-<p>Some models may require additional access checks before they can be used: <a href="Gated.html">Gated access</a><br />
-Learn how to optimize your environemnt: <a href="Performance-Tuning.html">Performance tuning</a><br />
-Learn how you can manage your resources better:</p>
+<p>Limitations: N/A</p>
+<h2 id="performance-notes">Performance Notes</h2>
 <ul>
-<li><a href="Loader.html">Custom Loader</a><br />
-  how to load any known model with custom components  </li>
-<li><a href="Offload.html">Memory Offloading</a><br />
-  includes performance notes for different offload options  </li>
-<li><a href="Quantization.html">Model Quantization</a>  </li>
-<li><a href="VAE.html">Variational Autoencoder</a>  </li>
-<li><a href="Nunchaku.html">Nunchaku</a> how to use for faster inference  </li>
+<li>Tested using SDXL with 2 large LoRA models  </li>
+<li>Sequential offload is default for GPUs with 4GB or less</li>
+<li>Balanced offload is default for GPUs with more than 4GB<br />
+  Balanced offload is slower than no offload, but allows using large models such as SD35 and FLUX.1 out-of-the-box</li>
+<li>Balanced offload set to default values  </li>
+<li>LoRA overhead is measured in sec for first and subsequent iterations  </li>
+<li>LoRA mode=backup can use up to 2x system memory<br />
+  Using backup can be prohibitive on large models such as SD35 or FLUX.1</li>
 </ul>
-<p>Plus collection of <a href="Benchmark.html">Benchmarks</a> to highlight what to expect using different compile and/or device settings: - Compile/device settings  </p>
-<h3 id="user-interface">User interface</h3>
-<ul>
-<li>Changing look &amp; feel using <a href="Themes.html">Themes</a>  </li>
-<li><a href="Locale.html">Localization</a> information</li>
-<li>List of <a href="Hotkeys.html">Keyboard shortcuts</a></li>
-</ul>
-<h3 id="behind-the-scenes">Behind-the-scenes</h3>
-<p>If you want to use SD.Next via API or via CLI, check out
-- <a href="CLI-Tools.html">Tools examples</a></p>
-<p>If you want to understand more how Stable Diffusion works
-- <a href="SD-Pipeline-How-it-Works.html">Diffusion Pipeline: How it Works</a><br />
-- <a href="SD-Training-Methods.html">List of Training Methods</a>  </p>
-<p>And dig deep with advanced <a href="Profiling.html">Profiling</a> how-to  </p>
-<h2 id="step-4-contribute">Step 4: Contribute</h2>
-<ul>
-<li><a href="Docs.html">Improving wiki articles and docs</a></li>
-<li><a href="Hints.html">Adding hints</a>  </li>
-<li><a href="Extensions.html">Building custom extensions</a>  </li>
-<li><a href="Theme-User.html">Create user themes</a>  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Offload mode</th>
+<th>LoRA type</th>
+<th>LoRA mode</th>
+<th>LoRA overhead</th>
+<th>End-to-end it/s</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>none</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>6.7</td>
+<td>fastest inference</td>
+</tr>
+<tr>
+<td>balanced</td>
+<td>none</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>4.5</td>
+<td>default without LoRA</td>
+</tr>
+<tr>
+<td>sequential</td>
+<td>none</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>0.6</td>
+<td>lowvram</td>
+</tr>
+<tr>
+<td>none</td>
+<td>native</td>
+<td>backup</td>
+<td>1.8 / 0.0</td>
+<td>6.0</td>
+<td></td>
+</tr>
+<tr>
+<td>balanced</td>
+<td>native</td>
+<td>backup</td>
+<td>1.3 / 0.0</td>
+<td>2.8</td>
+<td></td>
+</tr>
+<tr>
+<td>sequential</td>
+<td>native</td>
+<td>backup</td>
+<td>5.8 / 0.0</td>
+<td>0.5</td>
+<td></td>
+</tr>
+<tr>
+<td>none</td>
+<td>native</td>
+<td>fuse</td>
+<td>1.3 / 1.3</td>
+<td>4.8</td>
+<td></td>
+</tr>
+<tr>
+<td>balanced</td>
+<td>native</td>
+<td>fuse</td>
+<td>2.8 / 2.5</td>
+<td>3.1</td>
+<td>default with LoRA</td>
+</tr>
+<tr>
+<td>sequential</td>
+<td>native</td>
+<td>fuse</td>
+<td>8.8 / 7.7</td>
+<td>0.4</td>
+<td></td>
+</tr>
+<tr>
+<td>none</td>
+<td>diffusers</td>
+<td>default</td>
+<td>2.9 / 2.9</td>
+<td>3.8</td>
+<td></td>
+</tr>
+<tr>
+<td>balanced</td>
+<td>diffusers</td>
+<td>default</td>
+<td>2.2 / 2.2</td>
+<td>2.1</td>
+<td></td>
+</tr>
+<tr>
+<td>sequential</td>
+<td>diffusers</td>
+<td>default</td>
+<td>4.6 / 4.6</td>
+<td>0.3</td>
+<td></td>
+</tr>
+<tr>
+<td>none</td>
+<td>diffusers</td>
+<td>fuse</td>
+<td>5.7 / 5.7</td>
+<td>2.0</td>
+<td></td>
+</tr>
+<tr>
+<td>balanced</td>
+<td>diffusers</td>
+<td>fuse</td>
+<td>N/A</td>
+<td></td>
+<td>did not complete</td>
+</tr>
+<tr>
+<td>sequential</td>
+<td>diffusers</td>
+<td>fuse</td>
+<td>N/A</td>
+<td></td>
+<td>did not complete</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -3320,15 +3353,31 @@ Learn how you can manage your resources better:</p>
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="Performance-Tuning.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Performance Tuning">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Performance Tuning
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="Installation.html" class="md-footer__link md-footer__link--next" aria-label="Next: Install">
+          <a href="Malloc.html" class="md-footer__link md-footer__link--next" aria-label="Next: Memory Allocation">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Install
+                Memory Allocation
               </div>
             </div>
             <div class="md-footer__button md-icon">

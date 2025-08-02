@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/index.html">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/VAE.html">
       
       
+        <link rel="prev" href="Loader.html">
       
-        <link rel="next" href="Installation.html">
+      
+        <link rel="next" href="Benchmark.html">
       
       
       <link rel="icon" href="favicon.ico">
@@ -22,7 +24,7 @@
     
     
       
-        <title>SD.Next Documentation</title>
+        <title>Variable Auto-Encoder - SD.Next Documentation</title>
       
     
     
@@ -59,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="SD.Next Documentation" >
+        <meta  property="og:title"  content="Variable Auto-Encoder - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/VAE.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/index.html" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/VAE.html" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="SD.Next Documentation" >
+        <meta  name="twitter:title"  content="Variable Auto-Encoder - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/VAE.png" >
       
     
     
@@ -102,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-sdnext" class="md-skip">
+        <a href="#variational-autoencoder-vae" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Variable Auto-Encoder
             
           </span>
         </div>
@@ -261,10 +263,8 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
+    <li class="md-tabs__item">
       <a href="index.html" class="md-tabs__link">
         
   
@@ -414,10 +414,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="Performance-Tuning.html" class="md-tabs__link">
           
   
@@ -543,32 +545,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -579,113 +559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Experiment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides and tutorials
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Contribute
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2531,8 +2404,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2558,19 +2433,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -2583,7 +2461,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Advanced
@@ -2732,10 +2610,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="VAE.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Variable Auto-Encoder
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="VAE.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2746,6 +2646,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vae-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      VAE Processing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-vae" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a VAE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-vae" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote VAE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3082,87 +3038,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
+  <a href="#vae-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
+      VAE Processing
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
+  <a href="#choosing-a-vae" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Installation
+      Choosing a VAE
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
+  <a href="#remote-vae" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Experiment
+      Remote VAE
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
+  <a href="#common-issues" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides and tutorials
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Contribute
+      Common Issues
     </span>
   </a>
   
@@ -3187,101 +3092,83 @@
   
 
 
-<p><img alt="Last update" src="https://img.shields.io/github/last-commit/vladmandic/sdnext?svg=true" />
-<img alt="License" src="https://img.shields.io/github/license/vladmandic/sdnext?svg=true" />
-<a href="https://discord.gg/VjvR2tabEX"><img alt="Discord" src="https://img.shields.io/discord/1101998836328697867?logo=Discord&amp;svg=true" /></a>
-<a href="https://github.com/sponsors/vladmandic"><img alt="Sponsors" src="https://img.shields.io/static/v1?label=Sponsor&amp;message=%E2%9D%A4&amp;logo=GitHub&amp;color=%23fe8e86" /></a></p>
-<h1 id="welcome-to-sdnext">Welcome to SD.Next</h1>
-<h2 id="sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation">SD.Next: All-in-one WebUI for AI generative image and video creation</h2>
-<div align="center">
-<img src="https://github.com/vladmandic/sdnext/raw/master/html/logo-transparent.png" width=320 alt="SD.Next">
-</div>
-
-<h2 id="step-1-installation">Step 1: Installation</h2>
+<h1 id="variational-autoencoder-vae">Variational Autoencoder (VAE)</h1>
+<p>VAE is a model that can be used to compress and decompress images.<br />
+It is a type of autoencoder that learns a latent space representation of the input data. The model is trained to minimize the reconstruction error of the input data, while also learning a latent space that is continuous and smooth. This allows the model to generate new images by sampling from the latent space.</p>
+<p><em>Why?</em>  </p>
+<p>All popular image generation models work in compressed in compressed <em>latent</em> space to allow for faster inference and reduced memory footprint. Which means VAE is required to convert images to and from latent space.  </p>
+<p><em>When?</em>  </p>
 <ul>
-<li>Get started with <strong>SD.Next</strong> by following the <a href="Installation.html">Installation instructions</a>  </li>
-<li>For more details, check out <a href="Advanced-Install.html">Advanced installation</a> guide and <a href="Update.html">Update and Branches</a> guide  </li>
-<li>List and explanation of <a href="CLI-Arguments.html">Command line arguments</a></li>
-<li>Install walkthrough <a href="https://www.youtube.com/watch?v=nWTnTyFTuAs">Video</a></li>
+<li>VAE is used to <strong>decode</strong> latent to image as a final step of image generation and</li>
+<li>VAE is used to <strong>encode</strong> image to latent as a first step of image processing in case of inpaint or image-to-image workflows  </li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>There is no image generation without VAE<br />
+If you're not specifying a custom VAE model, it simply means you're using a default one specified in the model</p>
+</div>
+<h2 id="vae-processing">VAE Processing</h2>
+<p>SD.Next allows to use 3 types of VAE processing:</p>
+<ul>
+<li><strong>Full</strong>: use full VAE model<br />
+  See section on <a href="VAE.html#choosing-a-vae">Choosing a VAE</a> for more information  </li>
+<li><strong>Tiny</strong>: use tiny VAE model<br />
+  Tiny VAE model is a smaller version of the full VAE model and has a reduced memory footprint<br />
+  It is useful for generating images quickly, but may not be as accurate as the full VAE model  </li>
+<li><strong>Remote</strong>: use remote VAE model<br />
+  Remote VAE model is a VAE model that is stored on a remote server and accessed over the network<br />
+  It is useful for generating images on a machine with limited memory or processing power<br />
+  See section on <a href="VAE.html#remote-vae">Remote VAE</a> for more information</li>
+</ul>
+<h2 id="choosing-a-vae">Choosing a VAE</h2>
+<p>When choosing a custom VAE, you must select a model that is compatible with the image generation model you are using. For example, SD-XL model can only use VAE models that are compatible with the SD-XL model.  </p>
+<p>Location for VAE models is specified in *Settings -&gt; System Paths -&gt; VAE, default is <code>models/VAE</code></p>
+<p>VAE can be set to:</p>
+<ul>
+<li><strong>Default</strong><br />
+  Use the default VAE model specified in the image generation model</li>
+<li><strong>Automatic</strong><br />
+  If there is a VAE model with the same name as image generation model, it will be used<br />
+  Otherwise, it will use default VAE</li>
+<li><strong>Custom</strong><br />
+  Load a custom VAE model from the list of available models  </li>
+</ul>
+<h2 id="remote-vae">Remote VAE</h2>
+<p>Remote VAE is a free feature hosted by Huggingface.<br />
+For more information, see <a href="https://huggingface.co/docs/diffusers/main/en/hybrid_inference/overview">https://huggingface.co/docs/diffusers/main/en/hybrid_inference/overview</a></p>
+<p>Notes:</p>
+<ul>
+<li>When using remote VAE, you must have an active internet connection  </li>
+<li>Remote VAE is only available for some models: for example, <em>SD 1.5, SD-XL, FLUX.1 and HiDream</em>  </li>
+<li>Remote VAE is limited to <em>2048x2048</em> resolution  </li>
+<li>In case of remote VAE failure, SD.Next will auto-switch to local VAE  </li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>And for platform specific information, check out<br />
-<a href="WSL.html">WSL</a> | <a href="Intel-ARC.html">Intel Arc</a> | <a href="DirectML.html">DirectML</a> | <a href="OpenVINO.html">OpenVINO</a> | <a href="ONNX-Runtime.html">ONNX &amp; Olive</a> | <a href="ZLUDA.html">ZLUDA</a> | <a href="AMD-ROCm.html">AMD ROCm</a> | <a href="MacOS-Python.html">MacOS</a> | <a href="nVidia.html">nVidia</a> | <a href="Docker.html">Docker</a></p>
+<p><em>Privacy</em>: when using remote VAE, your latents/images are sent to Huggingface servers for processing.<br />
+However, they are NOT stored on the server.<br />
+No other information is sent or stored to remote servers.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you run into issues, check out <a href="FAQ.html">FAQ</a> as well as <a href="Troubleshooting.html">Troubleshooting</a> and <a href="Debug.html">Debugging</a> guides</p>
-</div>
-<h2 id="step-2-experiment">Step 2: Experiment</h2>
-<p>SD.Next supports broad range of models: <a href="Model-Support.html">Supported models</a> and <a href="Models.html">Model specs</a>  </p>
-<p>A good starting point is to use built-in Reference model list which includes a variety of models that will be auto-downloaded and configured on first access.</p>
-<p>Additionally, you can either download your own models or use built-in <a href="https://civitai.com/models">CivitAI</a> and <a href="https://huggingface.co/models?pipeline_tag=text-to-image&amp;sort=trending">HuggingFace</a> models downloader.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For additional model-specific information, check out<br />
-<a href="SD-XL.html">Stable Diffusion XL</a> | <a href="SD3.html">Stable Diffusion 3.x</a> | <a href="Stable-Cascade.html">Stable Cascade</a> | <a href="FLUX.html">FLUX.1</a> | <a href="HiDream.html">HiDream</a> | <a href="Using-LCM.html">LCM</a></p>
-</div>
-<h2 id="step-3-learn-more">Step 3: Learn more</h2>
-<h3 id="guides-and-tutorials">Guides and tutorials</h3>
+<h2 id="common-issues">Common Issues</h2>
+<p>VAE decode is a critical step in image generation and as such, it can be a source of many issues.<br />
+It is also the single most processing and memory intensive step in image generation.  </p>
 <ul>
-<li><a href="Getting-Started.html">Getting started</a>  </li>
-<li>Overview of main <a href="Features.html">features</a>  </li>
-<li>Frequently Asked Questions <a href="FAQ.html">FAQ</a>  </li>
-<li><a href="Prompting.html">Prompting</a>: what is the syntax and how to get the best results  </li>
-<li><a href="Parameters.html">Parameters</a>: list and explanation of all parameters  </li>
-<li><a href="Prompt-Enhance.html">Prompt enhancement</a>: use LLM to automatically enhance your prompts  </li>
-<li>Networks interface <a href="Networks.html">overview</a> and <a href="Networks-Search.html">search</a>  </li>
-<li>What is <a href="LoRA.html">LoRA</a> and how to use it  </li>
-<li><a href="Control-HowTo.html">Control</a> how-to, <a href="Control-Settings.html">settings</a> and <a href="Control-Technical.html">technical</a>: what is it and how to use it  </li>
-<li><a href="Detailer.html">Detailer</a> guide: how to use it</li>
-<li><a href="Styles.html">Styles</a> guide: how to use them  </li>
-<li><a href="Wildcards.html">Wildcards</a> how-to: use them to your advantage  </li>
-<li><a href="Outpaint.html">Outpainting</a> step-by-step  </li>
-<li><a href="Reprocess.html">Reprocess</a> workflow: why and how to use it  </li>
-<li><a href="XYZ-Grid.html">XYZ grid</a> how-to: expertiment with different parameters  </li>
-<li><a href="Process.html">Image processing</a> overview: postprocess your existing images  </li>
-<li><a href="Caption.html">Image captioning and interrogation</a> overview: caption and interrogate your existing images  </li>
-<li>What is <a href="CLiP-Skip.html">CLiP skip</a> and how to use it  </li>
-<li>Intro to <a href="IPAdapter.html">IP Adapters</a>: image guidance  </li>
-<li>Work with <a href="Models-Tab.html">Models</a>: validate, convert, download, etc.  </li>
-<li>Supported <a href="Video.html">Video</a> models: recommendations and limitations  </li>
-<li>Adding nudity detection and censorship with <a href="NudeNet.html">NudeNet</a>  </li>
-<li>Overview of built-in <a href="Scripts.html">scripts</a> that provide additional functionality  </li>
-</ul>
-<h3 id="advanced-model-handling">Advanced model handling</h3>
-<p>Some models may require additional access checks before they can be used: <a href="Gated.html">Gated access</a><br />
-Learn how to optimize your environemnt: <a href="Performance-Tuning.html">Performance tuning</a><br />
-Learn how you can manage your resources better:</p>
-<ul>
-<li><a href="Loader.html">Custom Loader</a><br />
-  how to load any known model with custom components  </li>
-<li><a href="Offload.html">Memory Offloading</a><br />
-  includes performance notes for different offload options  </li>
-<li><a href="Quantization.html">Model Quantization</a>  </li>
-<li><a href="VAE.html">Variational Autoencoder</a>  </li>
-<li><a href="Nunchaku.html">Nunchaku</a> how to use for faster inference  </li>
-</ul>
-<p>Plus collection of <a href="Benchmark.html">Benchmarks</a> to highlight what to expect using different compile and/or device settings: - Compile/device settings  </p>
-<h3 id="user-interface">User interface</h3>
-<ul>
-<li>Changing look &amp; feel using <a href="Themes.html">Themes</a>  </li>
-<li><a href="Locale.html">Localization</a> information</li>
-<li>List of <a href="Hotkeys.html">Keyboard shortcuts</a></li>
-</ul>
-<h3 id="behind-the-scenes">Behind-the-scenes</h3>
-<p>If you want to use SD.Next via API or via CLI, check out
-- <a href="CLI-Tools.html">Tools examples</a></p>
-<p>If you want to understand more how Stable Diffusion works
-- <a href="SD-Pipeline-How-it-Works.html">Diffusion Pipeline: How it Works</a><br />
-- <a href="SD-Training-Methods.html">List of Training Methods</a>  </p>
-<p>And dig deep with advanced <a href="Profiling.html">Profiling</a> how-to  </p>
-<h2 id="step-4-contribute">Step 4: Contribute</h2>
-<ul>
-<li><a href="Docs.html">Improving wiki articles and docs</a></li>
-<li><a href="Hints.html">Adding hints</a>  </li>
-<li><a href="Extensions.html">Building custom extensions</a>  </li>
-<li><a href="Theme-User.html">Create user themes</a>  </li>
+<li><em>Image generation results in a black image</em><br />
+  This is usually caused due to numerical instability in the VAE model itself combined with choosen GPU settings. For example, many current VAE models are not stable at standard <strong>float16</strong> precision and require either full <strong>float32</strong> precision (which doubles the memory requirements) or <strong>bfloat16</strong> which slightly reduces the precision, but allows the model to work without overflows.  </li>
+<li>If your model is generating black images, try switching to <strong>bfloat16</strong> precision in the GPU settings.</li>
+<li>
+<p>If that doesn't help, try using a custom VAE model that is more stable at lower precision.<br />
+    Such VAE may be commonly named as <em>fp16-fixed</em></p>
+</li>
+<li>
+<p><em>Image generation hangs at 100%</em><br />
+  Its not hanging, its just that means that all generate steps are done and now VAE is processing the latent space to generate the final image.<br />
+  However, if you're running out of VRAM and system decided to swap it to RAM, it may easily take a 10x longer time to finish. It is recommended to disallow system RAM-&gt;VRAM swapping.  </p>
+</li>
+<li>
+<p><em>Image generation fails with out-of-memory error</em><br />
+  VAE decode is the single most memory intensive step in image generation and can result in large memory usage. If you cannot process images due to memory constraints, try enabling VAE Tiling or reducing the resolution of the images. Note that running <em>refine</em> or <em>hires</em> steps will require more memory than the initial <em>generate</em> step - simply because they typically run at higher resolution.  </p>
+</li>
 </ul>
 
 
@@ -3320,15 +3207,31 @@ Learn how you can manage your resources better:</p>
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="Loader.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Model Loader">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Model Loader
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="Installation.html" class="md-footer__link md-footer__link--next" aria-label="Next: Install">
+          <a href="Benchmark.html" class="md-footer__link md-footer__link--next" aria-label="Next: Benchmark Results">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Install
+                Benchmark Results
               </div>
             </div>
             <div class="md-footer__button md-icon">

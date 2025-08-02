@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/index.html">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Performance-Tuning.html">
       
       
+        <link rel="prev" href="Profiling.html">
       
-        <link rel="next" href="Installation.html">
+      
+        <link rel="next" href="Offload.html">
       
       
       <link rel="icon" href="favicon.ico">
@@ -22,7 +24,7 @@
     
     
       
-        <title>SD.Next Documentation</title>
+        <title>Performance Tuning - SD.Next Documentation</title>
       
     
     
@@ -59,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="SD.Next Documentation" >
+        <meta  property="og:title"  content="Performance Tuning - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Performance-Tuning.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/index.html" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/Performance-Tuning.html" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="SD.Next Documentation" >
+        <meta  name="twitter:title"  content="Performance Tuning - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Performance-Tuning.png" >
       
     
     
@@ -102,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-sdnext" class="md-skip">
+        <a href="#performance-tuning" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Performance Tuning
             
           </span>
         </div>
@@ -261,10 +263,8 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
+    <li class="md-tabs__item">
       <a href="index.html" class="md-tabs__link">
         
   
@@ -414,10 +414,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="Performance-Tuning.html" class="md-tabs__link">
           
   
@@ -543,32 +545,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -579,113 +559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Experiment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides and tutorials
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Contribute
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2531,8 +2404,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2558,19 +2433,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -2583,7 +2461,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Advanced
@@ -2594,10 +2472,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="Performance-Tuning.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Performance Tuning
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Performance-Tuning.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2608,6 +2508,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compute-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compute Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compute Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Compile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Compile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stable-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stable-fast
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onediff" class="md-nav__link">
+    <span class="md-ellipsis">
+      OneDiff
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inference options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token-merging-tome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Merging (ToMe)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hypertile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypertile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3082,73 +3101,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
+  <a href="#compute-settings" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Installation
+      Compute Settings
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Experiment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
+    <nav class="md-nav" aria-label="Compute Settings">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
+  <a href="#model-compile" class="md-nav__link">
     <span class="md-ellipsis">
-      Guides and tutorials
+      Model Compile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Compile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stable-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stable-fast
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
+  <a href="#onediff" class="md-nav__link">
     <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
+      OneDiff
     </span>
   </a>
   
@@ -3160,11 +3158,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
+  <a href="#inference-options" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Contribute
+      Inference options
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Inference options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token-merging-tome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Merging (ToMe)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hypertile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypertile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3187,102 +3218,63 @@
   
 
 
-<p><img alt="Last update" src="https://img.shields.io/github/last-commit/vladmandic/sdnext?svg=true" />
-<img alt="License" src="https://img.shields.io/github/license/vladmandic/sdnext?svg=true" />
-<a href="https://discord.gg/VjvR2tabEX"><img alt="Discord" src="https://img.shields.io/discord/1101998836328697867?logo=Discord&amp;svg=true" /></a>
-<a href="https://github.com/sponsors/vladmandic"><img alt="Sponsors" src="https://img.shields.io/static/v1?label=Sponsor&amp;message=%E2%9D%A4&amp;logo=GitHub&amp;color=%23fe8e86" /></a></p>
-<h1 id="welcome-to-sdnext">Welcome to SD.Next</h1>
-<h2 id="sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation">SD.Next: All-in-one WebUI for AI generative image and video creation</h2>
-<div align="center">
-<img src="https://github.com/vladmandic/sdnext/raw/master/html/logo-transparent.png" width=320 alt="SD.Next">
-</div>
-
-<h2 id="step-1-installation">Step 1: Installation</h2>
-<ul>
-<li>Get started with <strong>SD.Next</strong> by following the <a href="Installation.html">Installation instructions</a>  </li>
-<li>For more details, check out <a href="Advanced-Install.html">Advanced installation</a> guide and <a href="Update.html">Update and Branches</a> guide  </li>
-<li>List and explanation of <a href="CLI-Arguments.html">Command line arguments</a></li>
-<li>Install walkthrough <a href="https://www.youtube.com/watch?v=nWTnTyFTuAs">Video</a></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>And for platform specific information, check out<br />
-<a href="WSL.html">WSL</a> | <a href="Intel-ARC.html">Intel Arc</a> | <a href="DirectML.html">DirectML</a> | <a href="OpenVINO.html">OpenVINO</a> | <a href="ONNX-Runtime.html">ONNX &amp; Olive</a> | <a href="ZLUDA.html">ZLUDA</a> | <a href="AMD-ROCm.html">AMD ROCm</a> | <a href="MacOS-Python.html">MacOS</a> | <a href="nVidia.html">nVidia</a> | <a href="Docker.html">Docker</a></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you run into issues, check out <a href="FAQ.html">FAQ</a> as well as <a href="Troubleshooting.html">Troubleshooting</a> and <a href="Debug.html">Debugging</a> guides</p>
-</div>
-<h2 id="step-2-experiment">Step 2: Experiment</h2>
-<p>SD.Next supports broad range of models: <a href="Model-Support.html">Supported models</a> and <a href="Models.html">Model specs</a>  </p>
-<p>A good starting point is to use built-in Reference model list which includes a variety of models that will be auto-downloaded and configured on first access.</p>
-<p>Additionally, you can either download your own models or use built-in <a href="https://civitai.com/models">CivitAI</a> and <a href="https://huggingface.co/models?pipeline_tag=text-to-image&amp;sort=trending">HuggingFace</a> models downloader.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For additional model-specific information, check out<br />
-<a href="SD-XL.html">Stable Diffusion XL</a> | <a href="SD3.html">Stable Diffusion 3.x</a> | <a href="Stable-Cascade.html">Stable Cascade</a> | <a href="FLUX.html">FLUX.1</a> | <a href="HiDream.html">HiDream</a> | <a href="Using-LCM.html">LCM</a></p>
-</div>
-<h2 id="step-3-learn-more">Step 3: Learn more</h2>
-<h3 id="guides-and-tutorials">Guides and tutorials</h3>
-<ul>
-<li><a href="Getting-Started.html">Getting started</a>  </li>
-<li>Overview of main <a href="Features.html">features</a>  </li>
-<li>Frequently Asked Questions <a href="FAQ.html">FAQ</a>  </li>
-<li><a href="Prompting.html">Prompting</a>: what is the syntax and how to get the best results  </li>
-<li><a href="Parameters.html">Parameters</a>: list and explanation of all parameters  </li>
-<li><a href="Prompt-Enhance.html">Prompt enhancement</a>: use LLM to automatically enhance your prompts  </li>
-<li>Networks interface <a href="Networks.html">overview</a> and <a href="Networks-Search.html">search</a>  </li>
-<li>What is <a href="LoRA.html">LoRA</a> and how to use it  </li>
-<li><a href="Control-HowTo.html">Control</a> how-to, <a href="Control-Settings.html">settings</a> and <a href="Control-Technical.html">technical</a>: what is it and how to use it  </li>
-<li><a href="Detailer.html">Detailer</a> guide: how to use it</li>
-<li><a href="Styles.html">Styles</a> guide: how to use them  </li>
-<li><a href="Wildcards.html">Wildcards</a> how-to: use them to your advantage  </li>
-<li><a href="Outpaint.html">Outpainting</a> step-by-step  </li>
-<li><a href="Reprocess.html">Reprocess</a> workflow: why and how to use it  </li>
-<li><a href="XYZ-Grid.html">XYZ grid</a> how-to: expertiment with different parameters  </li>
-<li><a href="Process.html">Image processing</a> overview: postprocess your existing images  </li>
-<li><a href="Caption.html">Image captioning and interrogation</a> overview: caption and interrogate your existing images  </li>
-<li>What is <a href="CLiP-Skip.html">CLiP skip</a> and how to use it  </li>
-<li>Intro to <a href="IPAdapter.html">IP Adapters</a>: image guidance  </li>
-<li>Work with <a href="Models-Tab.html">Models</a>: validate, convert, download, etc.  </li>
-<li>Supported <a href="Video.html">Video</a> models: recommendations and limitations  </li>
-<li>Adding nudity detection and censorship with <a href="NudeNet.html">NudeNet</a>  </li>
-<li>Overview of built-in <a href="Scripts.html">scripts</a> that provide additional functionality  </li>
-</ul>
-<h3 id="advanced-model-handling">Advanced model handling</h3>
-<p>Some models may require additional access checks before they can be used: <a href="Gated.html">Gated access</a><br />
-Learn how to optimize your environemnt: <a href="Performance-Tuning.html">Performance tuning</a><br />
-Learn how you can manage your resources better:</p>
-<ul>
-<li><a href="Loader.html">Custom Loader</a><br />
-  how to load any known model with custom components  </li>
-<li><a href="Offload.html">Memory Offloading</a><br />
-  includes performance notes for different offload options  </li>
-<li><a href="Quantization.html">Model Quantization</a>  </li>
-<li><a href="VAE.html">Variational Autoencoder</a>  </li>
-<li><a href="Nunchaku.html">Nunchaku</a> how to use for faster inference  </li>
-</ul>
-<p>Plus collection of <a href="Benchmark.html">Benchmarks</a> to highlight what to expect using different compile and/or device settings: - Compile/device settings  </p>
-<h3 id="user-interface">User interface</h3>
-<ul>
-<li>Changing look &amp; feel using <a href="Themes.html">Themes</a>  </li>
-<li><a href="Locale.html">Localization</a> information</li>
-<li>List of <a href="Hotkeys.html">Keyboard shortcuts</a></li>
-</ul>
-<h3 id="behind-the-scenes">Behind-the-scenes</h3>
-<p>If you want to use SD.Next via API or via CLI, check out
-- <a href="CLI-Tools.html">Tools examples</a></p>
-<p>If you want to understand more how Stable Diffusion works
-- <a href="SD-Pipeline-How-it-Works.html">Diffusion Pipeline: How it Works</a><br />
-- <a href="SD-Training-Methods.html">List of Training Methods</a>  </p>
-<p>And dig deep with advanced <a href="Profiling.html">Profiling</a> how-to  </p>
-<h2 id="step-4-contribute">Step 4: Contribute</h2>
-<ul>
-<li><a href="Docs.html">Improving wiki articles and docs</a></li>
-<li><a href="Hints.html">Adding hints</a>  </li>
-<li><a href="Extensions.html">Building custom extensions</a>  </li>
-<li><a href="Theme-User.html">Create user themes</a>  </li>
-</ul>
+<h1 id="performance-tuning">Performance Tuning</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Hi folks, it's your (moderately) friendly neighborhood Aptronym here!</p>
+<p>People are always asking me how to get the most <strong>it/s</strong> out of their GPUs, now... this is a complicated subject due to the current GPU landscape, the wide range of GPUs that can do stable diffusion just within each manufacturer, going back years (nvidia 1080s, 1050s, or RX500 series), as well as varying and often limited amounts of VRAM, possibly inside of a laptop.</p>
+<p>That's not even counting the complicated selection of inference platforms SDNext has available, everything from plain everyday CUDA and ROCm to Onnxruntime/Olive, and now ZLUDA.</p>
+<p>I can't promise you'll be able to use all of these options, I can't promise they won't crash your instance (or be buggy for that matter), that's going to vary wildly from GPU, OS, RAM, VRAM, current chosen inference platform, and backend, and some of these options will not work together, or at all, on some platforms. You will have to test that yourselves, but we are hoping to build a matrix of sorts showing what is available and what works with what, but that's going to take some user testing and feedback.</p>
+<p>If you help us by providing feedback (issues w/logs, screenshots, etc.), which we never have enough of, we will do our best to correct what we can and ensure that the experience of using SDNext is as optimized as it can be. Some limitations we won't be able to overcome purely do to things beyond our control, such as conflicts caused by the nature of the inference platform.</p>
+<p>Just as an added ray of sunshine to give you hope, there are plans in motion to create a more self-optimizing system that will not only configure itself for optimal performance based on your setup, but also react to what you're doing, what model you have loaded (SD15 v. SDXL is a huge difference), and specified preferences, so that it is always as performant as possible while sacrificing minimal quality loss. We would welcome any assistance with this, recently-laid-off-due-to-AI developers (Curse you Devin!) or any developers, or people with coding experience, at all.</p>
+<h2 id="compute-settings">Compute Settings</h2>
+<p><em>Note: Changing any of the settings on this page will require you to, at the least, unload the model and then reload it (after hitting apply!), as these settings are applied on model load, not in realtime.</em></p>
+<p>Generally speaking, for most GPUs our user-base has (mostly Nvidia on Windows judging by discord roles, so using CUDA), you are going to want the settings below (BF16 is possible too if using 30xx+).  </p>
+<p>Good settings:  </p>
+<p><img alt="Best-compute1" src="https://github.com/vladmandic/sdnext/assets/108482020/913a5a52-14a3-499f-ac67-0f19a3cb5b1e" />  </p>
+<p>Bad settings:  </p>
+<p><img alt="Bad-compute1" src="https://github.com/vladmandic/sdnext/assets/108482020/508d8da6-adf6-484e-a503-f640fa251e29" />  </p>
+<p>In general, using any of these selected "bad" settings is considered a bad thing, you only want to use any of these if necessary to make your card work with SD. They're slower and use up a lot more memory. <em>Unless you're on OpenVINO, things show up as fp32 there anyway due to how it works. Leave that alone</em></p>
+<p>That being said, if you are having strange issues with squares and whatnot and you're on something other than a newer Nvidia GPU (2000s and up?), you may wish to try these settings. Upcast sampling is the better version of --no-half, use it if at all possible.<br />
+Try these one by one, unload the model, reload the model, then test generate, hopefully you will find one, or a combination that works.  </p>
+<p><img alt="CopyQ lQSCVs" src="https://github.com/vladmandic/sdnext/assets/108482020/a9ef1145-8f51-4426-93d4-7ba621946417" /></p>
+<h3 id="model-compile">Model Compile</h3>
+<p>To use any of the model compile options, you must select via the checkboxes, at least one of these: Model, VAE, Text Encoder, Upscaler. It's probably pretty pointless to compile the text encoder, but Model and VAE will net you a large boost in speed. If you use upscalers a lot, by all means, select that too.</p>
+<h4 id="stable-fast">Stable-fast</h4>
+<p>Stable-fast is one of the model compiling options, and if you can use it with your setup (Nvidia GPUs, maybe Zluda), you should, as it's a big speed-up. First you will need to open a terminal, activate the venv for sdnext, and from the root sdnext folder (typically <em>automatic</em>), you will type <code>python cli\install-sf.py</code> and stand back while it hopefully works its magic, acquiring, or potentially compiling then installing the most recent version of stable-fast.  </p>
+<p>Note that you can do the install of stable-fast while SDNext is already running in another terminal, it will attempt to load the library when you select it, so there is no need to shut down or restart.</p>
+<h3 id="onediff">OneDiff</h3>
+<p>Linux (and perhaps Mac) users may also use <code>OneDiff</code>, which should be better/faster/stronger than <code>Stable-Fast</code>, though you will need to manually execute a <code>pip install -U onediff</code> from a venv console to install the necessary libraries.  </p>
+<p>NOTE: Do NOT compile the Text Encoder with OneDiff, it makes things slower.  </p>
+<p>If you want to thank anyone for OneDiff support, hit up @aifartist on our Discord.  </p>
+<h2 id="inference-options">Inference options</h2>
+<p>I'm skipping ahead here a bit since I want to get to the heart of the matter and expand later.</p>
+<p>These will be some of the easiest things you can do.</p>
+<h3 id="token-merging-tome">Token Merging (ToMe)</h3>
+<p><em>Sadly ToMe does not work at the same time as Hypertile. It will be disabled if Hypertile is enabled because Hypertile is faster. If hypertile works for you right now, don't even bother touching this.</em></p>
+<p>Token merging, aka ToMe, has been around for quite a while and still provides a performance gain if you desire to use it.<br />
+In short it merges tokens, saving memory and speeding up generations.
+You can easily use it at 0.3-0.4, performance goes up as the number does, going up higher is up to you but you can always do an xyz and test to see.</p>
+<p><strong>Default settings:</strong>  </p>
+<p><img alt="CopyQ blZizQ" src="https://github.com/vladmandic/sdnext/assets/108482020/81c04c4d-9810-45aa-8b24-e3c395a6ff00" />  </p>
+<p><strong>Suggested settings:</strong>  </p>
+<p><img alt="CopyQ HmmAXj" src="https://github.com/vladmandic/sdnext/assets/108482020/6741f100-50a5-4d75-9465-4bc8df374a65" />  </p>
+<p><strong>Honestly, 0.5 and up is the real performance gain, but you test and decide yourself.</strong>  </p>
+<p><strong>Bear in mind that it does have a quality impact on your image, greater the higher the setting, and will make perfect reproduction from the same seed and prompt impossible afaik.</strong></p>
+<p>There is a new implementation along the same lines as ToMe, called ToDo, but works far better. That's in our queue for the near future!</p>
+<h3 id="hypertile">Hypertile</h3>
+<p><em>Overrides and is incompatible with ToMe, also can cause issues with some platforms, so if you get errors after turning this on, that might be why. Using Hypertile VAE might also cause issues, so try on and off. Hypertile is a much preferable option to <code>Token Merging</code> at the moment.</em></p>
+<p>As long as you enable <code>Hypertile UNet</code> you're good to go, the default settings should suffice, as 0 is auto-adjusting the tile size, it adapts to be half the size of your shortest image side.  </p>
+<p>Just don't even mess with <code>Hypertile VAE</code>, tends to cause more issues than it could possibly be worth, which isn't much.</p>
+<p>You may of course screw with the <code>swap size</code> and <code>UNet depth</code> as you like, I did test them briefly but saw some little benefit.</p>
+<p><strong>Default settings:</strong>  </p>
+<p><img alt="CopyQ gwehbW" src="https://github.com/vladmandic/sdnext/assets/108482020/d1015926-3a64-43e5-b1f7-a9a3ed1064fc" /></p>
+<p><strong>Suggested settings:</strong>  </p>
+<p><img alt="Hypertile-Suggested" src="https://github.com/vladmandic/sdnext/assets/108482020/c2d1ae3e-5cd0-4b4e-8776-e9730f0278a4" /></p>
+<p><strong>Also has a quality impact, but I've never measured it personally</strong></p>
+<h3 id="other-settings">Other settings</h3>
+<p>Parallel process images in batch is intended for img2img batch mode.<br />
+If you set batch size=n, typically it generates n images for each input, with this setting, it will generate 1 image for each input, but process n in parallel.  </p>
+<p><img alt="CopyQ IARldt" src="https://github.com/vladmandic/sdnext/assets/108482020/dda83a13-a831-4a92-afed-c94a94ae7e0a" /></p>
 
 
 
@@ -3320,15 +3312,31 @@ Learn how you can manage your resources better:</p>
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="Profiling.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Profiling">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Profiling
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="Installation.html" class="md-footer__link md-footer__link--next" aria-label="Next: Install">
+          <a href="Offload.html" class="md-footer__link md-footer__link--next" aria-label="Next: Memory Offloading">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Install
+                Memory Offloading
               </div>
             </div>
             <div class="md-footer__button md-icon">

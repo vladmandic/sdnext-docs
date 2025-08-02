@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/index.html">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/LoRA.html">
       
       
+        <link rel="prev" href="Detailer.html">
       
-        <link rel="next" href="Installation.html">
+      
+        <link rel="next" href="Control-HowTo.html">
       
       
       <link rel="icon" href="favicon.ico">
@@ -22,7 +24,7 @@
     
     
       
-        <title>SD.Next Documentation</title>
+        <title>LoRA Guide - SD.Next Documentation</title>
       
     
     
@@ -59,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="SD.Next Documentation" >
+        <meta  property="og:title"  content="LoRA Guide - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/LoRA.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/index.html" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/LoRA.html" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="SD.Next Documentation" >
+        <meta  name="twitter:title"  content="LoRA Guide - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/LoRA.png" >
       
     
     
@@ -102,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-sdnext" class="md-skip">
+        <a href="#lora" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              LoRA Guide
             
           </span>
         </div>
@@ -261,10 +263,8 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
+    <li class="md-tabs__item">
       <a href="index.html" class="md-tabs__link">
         
   
@@ -348,10 +348,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="Getting-Started.html" class="md-tabs__link">
           
   
@@ -543,32 +545,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -579,113 +559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Experiment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides and tutorials
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Contribute
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1500,8 +1373,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1557,19 +1432,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1582,7 +1460,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Guides
@@ -1800,10 +1678,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="LoRA.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    LoRA Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="LoRA.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1814,6 +1714,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-lora" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is LoRA?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      LoRA Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trigger-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component weights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block weights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stepwise-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stepwise weights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lora-loader" class="md-nav__link">
+    <span class="md-ellipsis">
+      LoRA Loader
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3082,73 +3104,83 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
+  <a href="#what-is-lora" class="md-nav__link">
     <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
+      What is LoRA?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
+  <a href="#lora-types" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Installation
+      LoRA Types
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
+  <a href="#how-to-use" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Experiment
+      How to use?
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
+    <nav class="md-nav" aria-label="How to use?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
+  <a href="#trigger-words" class="md-nav__link">
     <span class="md-ellipsis">
-      Guides and tutorials
+      Trigger words
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
+  <a href="#advanced" class="md-nav__link">
     <span class="md-ellipsis">
-      Advanced model handling
+      Advanced
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component weights
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
+  <a href="#block-weights" class="md-nav__link">
     <span class="md-ellipsis">
-      User interface
+      Block weights
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
+  <a href="#stepwise-weights" class="md-nav__link">
     <span class="md-ellipsis">
-      Behind-the-scenes
+      Stepwise weights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
     </span>
   </a>
   
@@ -3158,13 +3190,18 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#lora-loader" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Contribute
+      LoRA Loader
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3187,102 +3224,106 @@
   
 
 
-<p><img alt="Last update" src="https://img.shields.io/github/last-commit/vladmandic/sdnext?svg=true" />
-<img alt="License" src="https://img.shields.io/github/license/vladmandic/sdnext?svg=true" />
-<a href="https://discord.gg/VjvR2tabEX"><img alt="Discord" src="https://img.shields.io/discord/1101998836328697867?logo=Discord&amp;svg=true" /></a>
-<a href="https://github.com/sponsors/vladmandic"><img alt="Sponsors" src="https://img.shields.io/static/v1?label=Sponsor&amp;message=%E2%9D%A4&amp;logo=GitHub&amp;color=%23fe8e86" /></a></p>
-<h1 id="welcome-to-sdnext">Welcome to SD.Next</h1>
-<h2 id="sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation">SD.Next: All-in-one WebUI for AI generative image and video creation</h2>
-<div align="center">
-<img src="https://github.com/vladmandic/sdnext/raw/master/html/logo-transparent.png" width=320 alt="SD.Next">
+<h1 id="lora">LoRA</h1>
+<h2 id="what-is-lora">What is LoRA?</h2>
+<p>LoRA, short for Low-Rank Adaptation, is a method used in Generative AI models to fine-tune the model with specific styles or concepts while keeping the process efficient and lightweight.</p>
+<p><strong>Here’s how it works in simple terms:</strong><br />
+- The Problem:<br />
+  Fine-tuning a huge model like Stable Diffusion to recognize or replicate new styles or concepts (e.g., making it draw in the style of a specific artist or recognize unique objects) usually requires a lot of computational power and storage.</p>
+<p><strong>The LoRA Solution:</strong><br />
+- Instead of tweaking all the internal parameters of the Generative AI model, LoRA focuses only on a small subset of them. Think of it as adding a "style filter" to the model that can be applied or removed as needed.<br />
+  It reduces the complexity by breaking down large changes into smaller, simpler steps.<br />
+  These smaller steps don’t interfere with the original model, meaning you don’t lose the model’s core abilities.  </p>
+<p><strong>Why it’s Cool:</strong>
+- Efficient: It uses way less memory and is faster than traditional fine-tuning methods.
+- Flexible: You can train multiple LoRA "filters" for different styles or concepts and swap them in and out without modifying the base model.
+- Compatible: LoRA modules can be shared or reused easily, so artists and developers can collaborate or try out others’ custom styles.</p>
+<p><strong>Example Use Case</strong><br />
+- Say you want to teach Generative AI models to draw in the style of a fictional artist.<br />
+  You can train a LoRA on a handful of sample images in that style.<br />
+  Once trained, the LoRA module acts like a plug-in—you just load it into Generative AI models, and the model starts generating images in that style!</p>
+<p>In short, LoRA makes it easy to teach models new tricks without overwhelming your computer or altering the original model. It’s a user-friendly way to get customized results!  </p>
+<h2 id="lora-types">LoRA Types</h2>
+<p>There are many LoRA types, here are some of the most common ones: LoRA, DoRA, LoCon, HaDa, gLoRA, LoKR, LyCoris<br />
+They vary in:
+- Which model components are being trained. Typically UNET, but can be TE as well
+- Which layers of the model are being trained. Each LoRA type trains different layers of the model
+- Math algorithm to extrach LoRA weights for the specific trained layers</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>LoRA must always match base model used for its training<br />
+For example, you cannot use SD1.5 LoRA with SD-XL model</p>
 </div>
-
-<h2 id="step-1-installation">Step 1: Installation</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>SD.Next attempts to automatically detect and apply the correct LoRA type.<br />
+However, new LoRA types are popping up all the time
+If you find LoRA that is not compatible, please report it so we can add support for it.</p>
+</div>
+<h2 id="how-to-use">How to use?</h2>
 <ul>
-<li>Get started with <strong>SD.Next</strong> by following the <a href="Installation.html">Installation instructions</a>  </li>
-<li>For more details, check out <a href="Advanced-Install.html">Advanced installation</a> guide and <a href="Update.html">Update and Branches</a> guide  </li>
-<li>List and explanation of <a href="CLI-Arguments.html">Command line arguments</a></li>
-<li>Install walkthrough <a href="https://www.youtube.com/watch?v=nWTnTyFTuAs">Video</a></li>
+<li>Using UI: go to the networks tab and go to the lora's and select the lora you want and it will be added to the prompt.</li>
+<li>Manually: you can also add the lora manually by adding <code>&lt;lora:lora_name:strength&gt;</code> to the prompt and then selecting the lora you want to use.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>And for platform specific information, check out<br />
-<a href="WSL.html">WSL</a> | <a href="Intel-ARC.html">Intel Arc</a> | <a href="DirectML.html">DirectML</a> | <a href="OpenVINO.html">OpenVINO</a> | <a href="ONNX-Runtime.html">ONNX &amp; Olive</a> | <a href="ZLUDA.html">ZLUDA</a> | <a href="AMD-ROCm.html">AMD ROCm</a> | <a href="MacOS-Python.html">MacOS</a> | <a href="nVidia.html">nVidia</a> | <a href="Docker.html">Docker</a></p>
+<h3 id="trigger-words">Trigger words</h3>
+<p>Some (not all) LoRAs associate specific words during training so same words can be used to trigger specific behavior from the LoRA.<br />
+SD.Next displays these trigger words in the UI -&gt; Networks -&gt; LoRA, but they can also be used manually in the prompt.  </p>
+<p>You can combine any number of LoRAs in a single prompt to get the desired output.  </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to automatically apply trigger words/tags to prompt, you can use <code>auto-apply</code> feature in <em>"Settings -&gt; Networks"</em></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you run into issues, check out <a href="FAQ.html">FAQ</a> as well as <a href="Troubleshooting.html">Troubleshooting</a> and <a href="Debug.html">Debugging</a> guides</p>
+<p>You can change the strength of the lora by changing the number <code>&lt;lora:name:x.x&gt;</code> to the desired number</p>
 </div>
-<h2 id="step-2-experiment">Step 2: Experiment</h2>
-<p>SD.Next supports broad range of models: <a href="Model-Support.html">Supported models</a> and <a href="Models.html">Model specs</a>  </p>
-<p>A good starting point is to use built-in Reference model list which includes a variety of models that will be auto-downloaded and configured on first access.</p>
-<p>Additionally, you can either download your own models or use built-in <a href="https://civitai.com/models">CivitAI</a> and <a href="https://huggingface.co/models?pipeline_tag=text-to-image&amp;sort=trending">HuggingFace</a> models downloader.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For additional model-specific information, check out<br />
-<a href="SD-XL.html">Stable Diffusion XL</a> | <a href="SD3.html">Stable Diffusion 3.x</a> | <a href="Stable-Cascade.html">Stable Cascade</a> | <a href="FLUX.html">FLUX.1</a> | <a href="HiDream.html">HiDream</a> | <a href="Using-LCM.html">LCM</a></p>
+<p>If you're combining multiple LoRAs, you can also "export" that as a single lora via <em>"Models -&gt; Extract LoRA"</em></p>
 </div>
-<h2 id="step-3-learn-more">Step 3: Learn more</h2>
-<h3 id="guides-and-tutorials">Guides and tutorials</h3>
-<ul>
-<li><a href="Getting-Started.html">Getting started</a>  </li>
-<li>Overview of main <a href="Features.html">features</a>  </li>
-<li>Frequently Asked Questions <a href="FAQ.html">FAQ</a>  </li>
-<li><a href="Prompting.html">Prompting</a>: what is the syntax and how to get the best results  </li>
-<li><a href="Parameters.html">Parameters</a>: list and explanation of all parameters  </li>
-<li><a href="Prompt-Enhance.html">Prompt enhancement</a>: use LLM to automatically enhance your prompts  </li>
-<li>Networks interface <a href="Networks.html">overview</a> and <a href="Networks-Search.html">search</a>  </li>
-<li>What is <a href="LoRA.html">LoRA</a> and how to use it  </li>
-<li><a href="Control-HowTo.html">Control</a> how-to, <a href="Control-Settings.html">settings</a> and <a href="Control-Technical.html">technical</a>: what is it and how to use it  </li>
-<li><a href="Detailer.html">Detailer</a> guide: how to use it</li>
-<li><a href="Styles.html">Styles</a> guide: how to use them  </li>
-<li><a href="Wildcards.html">Wildcards</a> how-to: use them to your advantage  </li>
-<li><a href="Outpaint.html">Outpainting</a> step-by-step  </li>
-<li><a href="Reprocess.html">Reprocess</a> workflow: why and how to use it  </li>
-<li><a href="XYZ-Grid.html">XYZ grid</a> how-to: expertiment with different parameters  </li>
-<li><a href="Process.html">Image processing</a> overview: postprocess your existing images  </li>
-<li><a href="Caption.html">Image captioning and interrogation</a> overview: caption and interrogate your existing images  </li>
-<li>What is <a href="CLiP-Skip.html">CLiP skip</a> and how to use it  </li>
-<li>Intro to <a href="IPAdapter.html">IP Adapters</a>: image guidance  </li>
-<li>Work with <a href="Models-Tab.html">Models</a>: validate, convert, download, etc.  </li>
-<li>Supported <a href="Video.html">Video</a> models: recommendations and limitations  </li>
-<li>Adding nudity detection and censorship with <a href="NudeNet.html">NudeNet</a>  </li>
-<li>Overview of built-in <a href="Scripts.html">scripts</a> that provide additional functionality  </li>
-</ul>
-<h3 id="advanced-model-handling">Advanced model handling</h3>
-<p>Some models may require additional access checks before they can be used: <a href="Gated.html">Gated access</a><br />
-Learn how to optimize your environemnt: <a href="Performance-Tuning.html">Performance tuning</a><br />
-Learn how you can manage your resources better:</p>
-<ul>
-<li><a href="Loader.html">Custom Loader</a><br />
-  how to load any known model with custom components  </li>
-<li><a href="Offload.html">Memory Offloading</a><br />
-  includes performance notes for different offload options  </li>
-<li><a href="Quantization.html">Model Quantization</a>  </li>
-<li><a href="VAE.html">Variational Autoencoder</a>  </li>
-<li><a href="Nunchaku.html">Nunchaku</a> how to use for faster inference  </li>
-</ul>
-<p>Plus collection of <a href="Benchmark.html">Benchmarks</a> to highlight what to expect using different compile and/or device settings: - Compile/device settings  </p>
-<h3 id="user-interface">User interface</h3>
-<ul>
-<li>Changing look &amp; feel using <a href="Themes.html">Themes</a>  </li>
-<li><a href="Locale.html">Localization</a> information</li>
-<li>List of <a href="Hotkeys.html">Keyboard shortcuts</a></li>
-</ul>
-<h3 id="behind-the-scenes">Behind-the-scenes</h3>
-<p>If you want to use SD.Next via API or via CLI, check out
-- <a href="CLI-Tools.html">Tools examples</a></p>
-<p>If you want to understand more how Stable Diffusion works
-- <a href="SD-Pipeline-How-it-Works.html">Diffusion Pipeline: How it Works</a><br />
-- <a href="SD-Training-Methods.html">List of Training Methods</a>  </p>
-<p>And dig deep with advanced <a href="Profiling.html">Profiling</a> how-to  </p>
-<h2 id="step-4-contribute">Step 4: Contribute</h2>
-<ul>
-<li><a href="Docs.html">Improving wiki articles and docs</a></li>
-<li><a href="Hints.html">Adding hints</a>  </li>
-<li><a href="Extensions.html">Building custom extensions</a>  </li>
-<li><a href="Theme-User.html">Create user themes</a>  </li>
-</ul>
+<h3 id="advanced">Advanced</h3>
+<h4 id="component-weights">Component weights</h4>
+<p>Typically <code>:strength</code> is applied uniformly for all components of the LoRA.<br />
+However, you can also specify individual component weights by adding <code>:comp=x.x</code> to the LoRA tag.<br />
+Example:  <code>&lt;lora:test_lora:te=0.5:unet=1.5&gt;</code>  </p>
+<h4 id="block-weights">Block weights</h4>
+<p>Instead of using simple <code>:strength</code>, you can specify individual block weights for LoRA by adding <code>:in=x.x:mid=y.y:out=z.z</code> to the LoRA tag.<br />
+Example <code>&lt;lora:test_lora:1.0:in=0:mid=1:out=0&gt;</code>  </p>
+<h4 id="stepwise-weights">Stepwise weights</h4>
+<p>LoRA can also be applied will full per-step control by adding step-specific instuctions to the LoRA tag.<br />
+Example: <code>&lt;lora:test_lora:te=0.1@1,0.6@6&gt;</code><br />
+Would mean apply LoRA to text-encoder with strength 0.1 on step 1 and then switch to strength 0.6 on step 6.  </p>
+<h4 id="troubleshooting">Troubleshooting</h4>
+<p>For any LoRA related issues, please follow the below procedure:
+- set environment variable <code>SD_LORA_DEBUG=true</code>
+- start SD.Next as usual and run it until problem occurs
+- create <a href="https://github.com/vladmandic/sdnext/issues">GitHub issue</a>
+- upload full <code>sdnext.log</code> as well as any console exception messages  </p>
+<h3 id="lora-loader">LoRA Loader</h3>
+<p>SD.Next has multiple ways that address how LoRA is loaded and applied, all available in <em>"Settings -&gt; Networks"</em>:<br />
+You must pick only one of the below methods:<br />
+- <strong>LoRA fuse directly to model</strong>: <em>enabled</em> (default)
+  - Apply LoRA first time its needed without maintaining model weights as backup<br />
+  - Unapply works by subtracting LoRA from model weights<br />
+  - This can result in numerical instabilities and/or model degradation when switching LoRAs<br />
+    if LoRA numerical range is not normalized or badly trained,<br />
+    but saves 2x memory compared to older load/apply/unapply methods<br />
+- <strong>LoRA load using legacy method</strong>: <em>disabled</em>
+  - Apply LoRA first time its needed and create model backup weights in system memory<br />
+  - Unapply works by restoring model weights<br />
+  - Most stable method, but can use up to 2x sysem memory<br />
+- <strong>LoRA load using legacy method</strong>: <em>enabled</em>
+  - Apply LoRA on-the-fly during model execution and create model backup weights in system memory
+  - Unapply works by restoring model weights<br />
+  - This was default method prior to 12/2024 release<br />
+- <strong>LoRA load using Diffusers method</strong>: <em>enabled</em><br />
+  - Do not use SD.Next native LoRA processing and rely on underlying <code>diffusers</code> library for all LoRA actions<br />
+  - Does not support all LoRA types  </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you see visual model degradation after unapplying LoRA,<br />
+you can restore model weights using <em>"System -&gt; Reload Model"</em></p>
+</div>
 
 
 
@@ -3320,15 +3361,31 @@ Learn how you can manage your resources better:</p>
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="Detailer.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Detailer Guide">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Detailer Guide
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="Installation.html" class="md-footer__link md-footer__link--next" aria-label="Next: Install">
+          <a href="Control-HowTo.html" class="md-footer__link md-footer__link--next" aria-label="Next: Control Guide">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Install
+                Control Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">

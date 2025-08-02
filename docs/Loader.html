@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/index.html">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Loader.html">
       
       
+        <link rel="prev" href="SDNQ-Quantization.html">
       
-        <link rel="next" href="Installation.html">
+      
+        <link rel="next" href="VAE.html">
       
       
       <link rel="icon" href="favicon.ico">
@@ -22,7 +24,7 @@
     
     
       
-        <title>SD.Next Documentation</title>
+        <title>Model Loader - SD.Next Documentation</title>
       
     
     
@@ -59,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="SD.Next Documentation" >
+        <meta  property="og:title"  content="Model Loader - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Loader.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/index.html" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/Loader.html" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="SD.Next Documentation" >
+        <meta  name="twitter:title"  content="Model Loader - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Loader.png" >
       
     
     
@@ -102,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-sdnext" class="md-skip">
+        <a href="#custom-model-loader" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Model Loader
             
           </span>
         </div>
@@ -261,10 +263,8 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
+    <li class="md-tabs__item">
       <a href="index.html" class="md-tabs__link">
         
   
@@ -414,10 +414,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="Performance-Tuning.html" class="md-tabs__link">
           
   
@@ -543,32 +545,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -579,113 +559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Experiment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides and tutorials
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Contribute
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2531,8 +2404,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2558,19 +2433,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -2583,7 +2461,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Advanced
@@ -2709,10 +2587,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="Loader.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Model Loader
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Loader.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2723,6 +2623,95 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#model-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Repo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loadable-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loadable Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loadable Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-vs-remote" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local vs Remote
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dtype
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quant
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Receipe
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3082,73 +3071,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
+  <a href="#model-type" class="md-nav__link">
     <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
+      Model Type
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
+  <a href="#model-repo" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Installation
+      Model Repo
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
+  <a href="#loadable-components" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Experiment
+      Loadable Components
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
+    <nav class="md-nav" aria-label="Loadable Components">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
+  <a href="#local-vs-remote" class="md-nav__link">
     <span class="md-ellipsis">
-      Guides and tutorials
+      Local vs Remote
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
+  <a href="#dtype" class="md-nav__link">
     <span class="md-ellipsis">
-      Advanced model handling
+      Dtype
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
+  <a href="#quant" class="md-nav__link">
     <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
+      Quant
     </span>
   </a>
   
@@ -3160,9 +3131,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
+  <a href="#receipe" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Contribute
+      Receipe
     </span>
   </a>
   
@@ -3187,102 +3158,49 @@
   
 
 
-<p><img alt="Last update" src="https://img.shields.io/github/last-commit/vladmandic/sdnext?svg=true" />
-<img alt="License" src="https://img.shields.io/github/license/vladmandic/sdnext?svg=true" />
-<a href="https://discord.gg/VjvR2tabEX"><img alt="Discord" src="https://img.shields.io/discord/1101998836328697867?logo=Discord&amp;svg=true" /></a>
-<a href="https://github.com/sponsors/vladmandic"><img alt="Sponsors" src="https://img.shields.io/static/v1?label=Sponsor&amp;message=%E2%9D%A4&amp;logo=GitHub&amp;color=%23fe8e86" /></a></p>
-<h1 id="welcome-to-sdnext">Welcome to SD.Next</h1>
-<h2 id="sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation">SD.Next: All-in-one WebUI for AI generative image and video creation</h2>
-<div align="center">
-<img src="https://github.com/vladmandic/sdnext/raw/master/html/logo-transparent.png" width=320 alt="SD.Next">
-</div>
-
-<h2 id="step-1-installation">Step 1: Installation</h2>
+<h1 id="custom-model-loader">Custom Model Loader</h1>
 <ul>
-<li>Get started with <strong>SD.Next</strong> by following the <a href="Installation.html">Installation instructions</a>  </li>
-<li>For more details, check out <a href="Advanced-Install.html">Advanced installation</a> guide and <a href="Update.html">Update and Branches</a> guide  </li>
-<li>List and explanation of <a href="CLI-Arguments.html">Command line arguments</a></li>
-<li>Install walkthrough <a href="https://www.youtube.com/watch?v=nWTnTyFTuAs">Video</a></li>
+<li>in <em>Models -&gt; Loader</em></li>
+<li>Can be used to load any known diffusion model with default or custom model components</li>
 </ul>
+<h2 id="model-type">Model Type</h2>
+<ul>
+<li>Can be any currently supported model type  </li>
+<li><strong>Autodetect</strong> can be used to attempt loading repo for any model<br />
+  e.g. there is a new model on huggingface that is not yet added to predefined list - well, try it out ;)</li>
+<li><strong>Current</strong> can be used to replace selected components without reloading model itself  </li>
+</ul>
+<h2 id="model-repo">Model Repo</h2>
+<p>Valid model repo on huggingface is required to access base model config
+- Default model repo is provided for common models
+- Model repo can be overriden to any valid repo on huggingface</p>
+<h2 id="loadable-components">Loadable Components</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>And for platform specific information, check out<br />
-<a href="WSL.html">WSL</a> | <a href="Intel-ARC.html">Intel Arc</a> | <a href="DirectML.html">DirectML</a> | <a href="OpenVINO.html">OpenVINO</a> | <a href="ONNX-Runtime.html">ONNX &amp; Olive</a> | <a href="ZLUDA.html">ZLUDA</a> | <a href="AMD-ROCm.html">AMD ROCm</a> | <a href="MacOS-Python.html">MacOS</a> | <a href="nVidia.html">nVidia</a> | <a href="Docker.html">Docker</a></p>
+<p>Any model component that is marked as loadable can be overriden<br />
+If neither local or remote values are set, default from model repo will be used<br />
+Any loadable model component with set value will be loaded from that value</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you run into issues, check out <a href="FAQ.html">FAQ</a> as well as <a href="Troubleshooting.html">Troubleshooting</a> and <a href="Debug.html">Debugging</a> guides</p>
-</div>
-<h2 id="step-2-experiment">Step 2: Experiment</h2>
-<p>SD.Next supports broad range of models: <a href="Model-Support.html">Supported models</a> and <a href="Models.html">Model specs</a>  </p>
-<p>A good starting point is to use built-in Reference model list which includes a variety of models that will be auto-downloaded and configured on first access.</p>
-<p>Additionally, you can either download your own models or use built-in <a href="https://civitai.com/models">CivitAI</a> and <a href="https://huggingface.co/models?pipeline_tag=text-to-image&amp;sort=trending">HuggingFace</a> models downloader.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For additional model-specific information, check out<br />
-<a href="SD-XL.html">Stable Diffusion XL</a> | <a href="SD3.html">Stable Diffusion 3.x</a> | <a href="Stable-Cascade.html">Stable Cascade</a> | <a href="FLUX.html">FLUX.1</a> | <a href="HiDream.html">HiDream</a> | <a href="Using-LCM.html">LCM</a></p>
-</div>
-<h2 id="step-3-learn-more">Step 3: Learn more</h2>
-<h3 id="guides-and-tutorials">Guides and tutorials</h3>
+<h3 id="local-vs-remote">Local vs Remote</h3>
 <ul>
-<li><a href="Getting-Started.html">Getting started</a>  </li>
-<li>Overview of main <a href="Features.html">features</a>  </li>
-<li>Frequently Asked Questions <a href="FAQ.html">FAQ</a>  </li>
-<li><a href="Prompting.html">Prompting</a>: what is the syntax and how to get the best results  </li>
-<li><a href="Parameters.html">Parameters</a>: list and explanation of all parameters  </li>
-<li><a href="Prompt-Enhance.html">Prompt enhancement</a>: use LLM to automatically enhance your prompts  </li>
-<li>Networks interface <a href="Networks.html">overview</a> and <a href="Networks-Search.html">search</a>  </li>
-<li>What is <a href="LoRA.html">LoRA</a> and how to use it  </li>
-<li><a href="Control-HowTo.html">Control</a> how-to, <a href="Control-Settings.html">settings</a> and <a href="Control-Technical.html">technical</a>: what is it and how to use it  </li>
-<li><a href="Detailer.html">Detailer</a> guide: how to use it</li>
-<li><a href="Styles.html">Styles</a> guide: how to use them  </li>
-<li><a href="Wildcards.html">Wildcards</a> how-to: use them to your advantage  </li>
-<li><a href="Outpaint.html">Outpainting</a> step-by-step  </li>
-<li><a href="Reprocess.html">Reprocess</a> workflow: why and how to use it  </li>
-<li><a href="XYZ-Grid.html">XYZ grid</a> how-to: expertiment with different parameters  </li>
-<li><a href="Process.html">Image processing</a> overview: postprocess your existing images  </li>
-<li><a href="Caption.html">Image captioning and interrogation</a> overview: caption and interrogate your existing images  </li>
-<li>What is <a href="CLiP-Skip.html">CLiP skip</a> and how to use it  </li>
-<li>Intro to <a href="IPAdapter.html">IP Adapters</a>: image guidance  </li>
-<li>Work with <a href="Models-Tab.html">Models</a>: validate, convert, download, etc.  </li>
-<li>Supported <a href="Video.html">Video</a> models: recommendations and limitations  </li>
-<li>Adding nudity detection and censorship with <a href="NudeNet.html">NudeNet</a>  </li>
-<li>Overview of built-in <a href="Scripts.html">scripts</a> that provide additional functionality  </li>
+<li>Can use local or remote models  </li>
+<li>Local model can be any valid path to safetensors file or folder with hf-style structure  </li>
+<li>Remote model can be any valid huggingface repo, with or without subfolder or full url to file hosted on huggingface  </li>
 </ul>
-<h3 id="advanced-model-handling">Advanced model handling</h3>
-<p>Some models may require additional access checks before they can be used: <a href="Gated.html">Gated access</a><br />
-Learn how to optimize your environemnt: <a href="Performance-Tuning.html">Performance tuning</a><br />
-Learn how you can manage your resources better:</p>
+<h3 id="dtype">Dtype</h3>
 <ul>
-<li><a href="Loader.html">Custom Loader</a><br />
-  how to load any known model with custom components  </li>
-<li><a href="Offload.html">Memory Offloading</a><br />
-  includes performance notes for different offload options  </li>
-<li><a href="Quantization.html">Model Quantization</a>  </li>
-<li><a href="VAE.html">Variational Autoencoder</a>  </li>
-<li><a href="Nunchaku.html">Nunchaku</a> how to use for faster inference  </li>
+<li>Can be used to override torch compute dtype when loading each individual component</li>
 </ul>
-<p>Plus collection of <a href="Benchmark.html">Benchmarks</a> to highlight what to expect using different compile and/or device settings: - Compile/device settings  </p>
-<h3 id="user-interface">User interface</h3>
+<h3 id="quant">Quant</h3>
 <ul>
-<li>Changing look &amp; feel using <a href="Themes.html">Themes</a>  </li>
-<li><a href="Locale.html">Localization</a> information</li>
-<li>List of <a href="Hotkeys.html">Keyboard shortcuts</a></li>
+<li>Can be used to enable quantization when loading each individual component</li>
+<li>Quant settings will be used from <em>settings -&gt; quantization</em>  </li>
 </ul>
-<h3 id="behind-the-scenes">Behind-the-scenes</h3>
-<p>If you want to use SD.Next via API or via CLI, check out
-- <a href="CLI-Tools.html">Tools examples</a></p>
-<p>If you want to understand more how Stable Diffusion works
-- <a href="SD-Pipeline-How-it-Works.html">Diffusion Pipeline: How it Works</a><br />
-- <a href="SD-Training-Methods.html">List of Training Methods</a>  </p>
-<p>And dig deep with advanced <a href="Profiling.html">Profiling</a> how-to  </p>
-<h2 id="step-4-contribute">Step 4: Contribute</h2>
-<ul>
-<li><a href="Docs.html">Improving wiki articles and docs</a></li>
-<li><a href="Hints.html">Adding hints</a>  </li>
-<li><a href="Extensions.html">Building custom extensions</a>  </li>
-<li><a href="Theme-User.html">Create user themes</a>  </li>
-</ul>
+<h2 id="receipe">Receipe</h2>
+<p>Model receipe can be saved to JSON file for later use</p>
+<blockquote>
+<p>[!WARNING] Load/Save receipe is not yet implemented</p>
+</blockquote>
 
 
 
@@ -3320,15 +3238,31 @@ Learn how you can manage your resources better:</p>
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="SDNQ-Quantization.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: SDNQ Quantization">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                SDNQ Quantization
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="Installation.html" class="md-footer__link md-footer__link--next" aria-label="Next: Install">
+          <a href="VAE.html" class="md-footer__link md-footer__link--next" aria-label="Next: Variable Auto-Encoder">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Install
+                Variable Auto-Encoder
               </div>
             </div>
             <div class="md-footer__button md-icon">
