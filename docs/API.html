@@ -2832,6 +2832,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#progress-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progress Reporting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#t2i-with-controlnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      T2I with ControlNet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3091,6 +3124,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#progress-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progress Reporting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#t2i-with-controlnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      T2I with ControlNet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3155,6 +3221,46 @@ Request for files outside of these folders will be rejected with <code>403 Forbi
 If you want to allow access to other folders, use <code>--allowed-paths</code> command line flag</p>
 </div>
 <p><img alt="Image" src="https://github.com/user-attachments/assets/6be67eb3-df90-4da0-9c51-58b40a3086c5" /></p>
+<h2 id="progress-reporting">Progress Reporting</h2>
+<p>While you have a task running, you can query the <code>/sdapi/v1/progress</code> endpoint using a <code>GET</code> request to see what the server is doing (since endpoints like <code>txt2img</code> block the call until the generation is completed). Optionally you can specify the paramerer <code>skip_current_image=true</code>: if not set, the server will send the preview image for the step of the generation it is at.</p>
+<p>You will get back a JSON dictionary with these keys:</p>
+<ul>
+<li><code>progress</code>: a number ranging from 0 (idle / generation not started) to 1 (generation completed)</li>
+<li><code>eta_relative</code>: an indication of time remaining relative to the current step of the generation</li>
+<li><code>images</code>: A list of base64-encoded images, one or more depending how many you generate in a single batch (if <code>skip_current_image</code> is <code>true</code>, this list is empty)</li>
+<li><code>state</code>: A JSON dictionary with the following keys. <ul>
+<li><code>job_count</code>: The number of jobs running, if 0, the server is idle; if &gt; 1, the server is running one or more job</li>
+<li><code>sampling_step</code>: The current sampling step of the current job</li>
+<li><code>sampling_steps</code>: The number of sampling steps in the current job</li>
+<li><code>skipped</code>: A boolean value, <code>true</code> if the current generation was skipped</li>
+<li><code>interrupted</code>: A boolean value, <code>true</code> if the current generation was interrupted</li>
+<li><code>job</code>: A string with the current job ID</li>
+<li><code>job_no</code>: The current job number</li>
+</ul>
+</li>
+</ul>
+<p>A typical use of this API would be to poll the progress endpoint while a generation is running, collecting information, and stopping while <code>progress</code> is 1. You may want also to check that <code>job_count</code> is 0, but you must be aware that it might be 0 right before a task starts.</p>
+<h2 id="examples_1">Examples</h2>
+<h3 id="t2i-with-controlnet">T2I with ControlNet</h3>
+<p>The <code>/sdapi/v1/control</code> endpoint supports doing the same operations as <code>txt2img</code> and <code>img2img</code> (with slightly different parameters), but in addition to that it supports specific operations like using ControlNet. ControlNet can be used in many different ways, but a very common usage is to generate an image with txt2img and have the ControlNet units and their specific images (called <code>override images</code> in SD.Next parlance) condition the generation.</p>
+<p>To do so with the API, you will first need:
+    - The number of ControlNet units to use (minimum 1)
+    - For each unit, the naeme of the specific ControlNet model to use (you can obtain a list by querying the <code>/sdapi/v1/controlnets</code> endpoint)
+    - The override image to use for each unit
+    - For each unit, the name of the specific preprocessor to apply to the image (a list can be obtained by querying the <code>/sdapi/v1/preprocessors</code> endpoint), or <code>None</code> if no preprocessing is required </p>
+<p>Then you need to prepare your payload to be sent via POST to the <code>/sdapi/v1/control</code> endpoint. You can refer to the documentation of the <code>/sdapi/v1/txt2img</code> endpoint for most of the parameters like sampler, steps, hires, and so on. Here are the ones that are specific of this one:</p>
+<pre><code>- `width_before`: The width of the generated image (use instead of `width`)
+- `height_before`: The height of the generated image (use instead of `height`)
+- `input_type`: The type of input you are supplying, set it to 0, which corresponds to "Control only" (aka txt2img + ControlNet)
+- `control`: This is a list of your ControlNet units, each one as follows:
+    - `process`: The ControlNet preprocessor to use, or `None`
+    - `model`: The name of the ControlNet model to use
+    - `strength`: The strength of the conditioning, ranging from 0 to 1
+    - `start`: A value ranging from 0 (generation start) to 1 (generation end), indicating when conditioning will be applied
+    - `end`: A value from ranging from 0 (generation start) to 1 (generation end), indicating when conditioning will be stopped
+    - `override`: A base64-encoded string of the image to be used as override image
+</code></pre>
+<p>After that, submit the entire request as POST to the server, and generation will start.</p>
 
 
 
