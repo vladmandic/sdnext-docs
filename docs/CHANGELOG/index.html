@@ -6096,6 +6096,7 @@
 <strong>Wiki</strong> search: uses github api to search online wiki pages  </li>
 <li>quicksettings reset button to restore all quicksettings to default values<br />
     because things do sometimes get wrong...  </li>
+<li>updated real-time hints, thanks @CalamitousFelicitousness  </li>
 <li>modernui checkbox/radio styling  </li>
 <li><strong>Offloading</strong></li>
 <li>changed <strong>default</strong> values for offloading based on detected gpu memory<br />
@@ -6106,6 +6107,8 @@
 <li>new <code>offload during pre-forward</code> option
     in <em>settings -&gt; model offloading</em>
     switches from explicit offloading to implicit offloading on module execution change  </li>
+<li>new <code>diffusers_offload_nonblocking</code> exerimental setting<br />
+    instructs torch to use non-blocking move operations when possible  </li>
 <li><strong>Features</strong>  </li>
 <li><strong>Wan</strong> select which stage to run: <em>first/second/both</em> with configurable <em>boundary ration</em> when running both stages<br />
     in settings -&gt; model options  </li>
@@ -6121,6 +6124,7 @@
 <li>fix api progress reporting endpoint  </li>
 <li>fix openvino backend failing to compile  </li>
 <li>fix nunchaku fallback on unsupported model  </li>
+<li>reapply offloading on ipadapter load  </li>
 <li>api set default script-name  </li>
 <li>avoid forced gc and rely on thresholds  </li>
 <li>add missing interrogate in output panel  </li>
