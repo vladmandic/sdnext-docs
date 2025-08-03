@@ -10,26 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Performance-Tuning/">
       
       
+        <link rel="prev" href="../Profiling/">
       
-        <link rel="next" href="Installation/">
+      
+        <link rel="next" href="../Offload/">
       
       
-      <link rel="icon" href="favicon.ico">
+      <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>SD.Next Documentation</title>
+        <title>Performance Tuning - SD.Next Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="sdnext.css">
+      <link rel="stylesheet" href="../sdnext.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="SD.Next Documentation" >
+        <meta  property="og:title"  content="Performance Tuning - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Performance-Tuning.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/Performance-Tuning/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="SD.Next Documentation" >
+        <meta  name="twitter:title"  content="Performance Tuning - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Performance-Tuning.png" >
       
     
     
@@ -102,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-sdnext" class="md-skip">
+        <a href="#performance-tuning" class="md-skip">
           Skip to content
         </a>
       
@@ -116,9 +118,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="SD.Next Documentation" class="md-header__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
+    <a href=".." title="SD.Next Documentation" class="md-header__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
       
-  <img src="favicon.ico" alt="logo">
+  <img src="../favicon.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -135,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Performance Tuning
             
           </span>
         </div>
@@ -261,11 +263,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -286,7 +286,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Installation/" class="md-tabs__link">
+        <a href="../Installation/" class="md-tabs__link">
           
   
   
@@ -308,7 +308,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Model-Support/" class="md-tabs__link">
+        <a href="../Model-Support/" class="md-tabs__link">
           
   
   
@@ -330,7 +330,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="WSL/" class="md-tabs__link">
+        <a href="../WSL/" class="md-tabs__link">
           
   
   
@@ -352,7 +352,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Getting-Started/" class="md-tabs__link">
+        <a href="../Getting-Started/" class="md-tabs__link">
           
   
   
@@ -374,7 +374,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Themes/" class="md-tabs__link">
+        <a href="../Themes/" class="md-tabs__link">
           
   
   
@@ -396,7 +396,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="SD-Pipeline-How-it-Works/" class="md-tabs__link">
+        <a href="../SD-Pipeline-How-it-Works/" class="md-tabs__link">
           
   
   
@@ -414,11 +414,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="Performance-Tuning/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -440,7 +442,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="API/" class="md-tabs__link">
+        <a href="../API/" class="md-tabs__link">
           
   
   
@@ -462,7 +464,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="FAQ/" class="md-tabs__link">
+        <a href="../FAQ/" class="md-tabs__link">
           
   
   
@@ -482,7 +484,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="CHANGELOG/" class="md-tabs__link">
+      <a href="../CHANGELOG/" class="md-tabs__link">
         
   
   
@@ -517,9 +519,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="SD.Next Documentation" class="md-nav__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
+    <a href=".." title="SD.Next Documentation" class="md-nav__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
       
-  <img src="favicon.ico" alt="logo">
+  <img src="../favicon.ico" alt="logo">
 
     </a>
     SD.Next Documentation
@@ -543,32 +545,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -579,113 +559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Experiment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides and tutorials
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Contribute
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -750,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Installation/" class="md-nav__link">
+      <a href="../Installation/" class="md-nav__link">
         
   
   
@@ -773,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Update/" class="md-nav__link">
+      <a href="../Update/" class="md-nav__link">
         
   
   
@@ -796,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Advanced-Install/" class="md-nav__link">
+      <a href="../Advanced-Install/" class="md-nav__link">
         
   
   
@@ -819,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CLI-Arguments/" class="md-nav__link">
+      <a href="../CLI-Arguments/" class="md-nav__link">
         
   
   
@@ -918,7 +791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Model-Support/" class="md-nav__link">
+      <a href="../Model-Support/" class="md-nav__link">
         
   
   
@@ -941,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Models/" class="md-nav__link">
+      <a href="../Models/" class="md-nav__link">
         
   
   
@@ -964,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Gated/" class="md-nav__link">
+      <a href="../Gated/" class="md-nav__link">
         
   
   
@@ -987,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SD-XL/" class="md-nav__link">
+      <a href="../SD-XL/" class="md-nav__link">
         
   
   
@@ -1010,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SD3/" class="md-nav__link">
+      <a href="../SD3/" class="md-nav__link">
         
   
   
@@ -1033,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Stable-Cascade/" class="md-nav__link">
+      <a href="../Stable-Cascade/" class="md-nav__link">
         
   
   
@@ -1056,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="FLUX/" class="md-nav__link">
+      <a href="../FLUX/" class="md-nav__link">
         
   
   
@@ -1079,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Using-LCM/" class="md-nav__link">
+      <a href="../Using-LCM/" class="md-nav__link">
         
   
   
@@ -1102,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="HiDream/" class="md-nav__link">
+      <a href="../HiDream/" class="md-nav__link">
         
   
   
@@ -1125,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Video/" class="md-nav__link">
+      <a href="../Video/" class="md-nav__link">
         
   
   
@@ -1148,7 +1021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="FramePack/" class="md-nav__link">
+      <a href="../FramePack/" class="md-nav__link">
         
   
   
@@ -1171,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="LTX/" class="md-nav__link">
+      <a href="../LTX/" class="md-nav__link">
         
   
   
@@ -1266,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="WSL/" class="md-nav__link">
+      <a href="../WSL/" class="md-nav__link">
         
   
   
@@ -1289,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Intel-ARC/" class="md-nav__link">
+      <a href="../Intel-ARC/" class="md-nav__link">
         
   
   
@@ -1312,7 +1185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="DirectML/" class="md-nav__link">
+      <a href="../DirectML/" class="md-nav__link">
         
   
   
@@ -1335,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="OpenVINO/" class="md-nav__link">
+      <a href="../OpenVINO/" class="md-nav__link">
         
   
   
@@ -1358,7 +1231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ONNX-Runtime/" class="md-nav__link">
+      <a href="../ONNX-Runtime/" class="md-nav__link">
         
   
   
@@ -1381,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ZLUDA/" class="md-nav__link">
+      <a href="../ZLUDA/" class="md-nav__link">
         
   
   
@@ -1404,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="AMD-ROCm/" class="md-nav__link">
+      <a href="../AMD-ROCm/" class="md-nav__link">
         
   
   
@@ -1427,7 +1300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="MacOS-Python/" class="md-nav__link">
+      <a href="../MacOS-Python/" class="md-nav__link">
         
   
   
@@ -1450,7 +1323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nVidia/" class="md-nav__link">
+      <a href="../nVidia/" class="md-nav__link">
         
   
   
@@ -1473,7 +1346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Docker/" class="md-nav__link">
+      <a href="../Docker/" class="md-nav__link">
         
   
   
@@ -1596,7 +1469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Getting-Started/" class="md-nav__link">
+      <a href="../Getting-Started/" class="md-nav__link">
         
   
   
@@ -1619,7 +1492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Features/" class="md-nav__link">
+      <a href="../Features/" class="md-nav__link">
         
   
   
@@ -1642,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Models-Tab/" class="md-nav__link">
+      <a href="../Models-Tab/" class="md-nav__link">
         
   
   
@@ -1665,7 +1538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Prompting/" class="md-nav__link">
+      <a href="../Prompting/" class="md-nav__link">
         
   
   
@@ -1688,7 +1561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Parameters/" class="md-nav__link">
+      <a href="../Parameters/" class="md-nav__link">
         
   
   
@@ -1711,7 +1584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Prompt-Enhance/" class="md-nav__link">
+      <a href="../Prompt-Enhance/" class="md-nav__link">
         
   
   
@@ -1734,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Networks/" class="md-nav__link">
+      <a href="../Networks/" class="md-nav__link">
         
   
   
@@ -1757,7 +1630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Networks-Search/" class="md-nav__link">
+      <a href="../Networks-Search/" class="md-nav__link">
         
   
   
@@ -1780,7 +1653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Detailer/" class="md-nav__link">
+      <a href="../Detailer/" class="md-nav__link">
         
   
   
@@ -1803,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="LoRA/" class="md-nav__link">
+      <a href="../LoRA/" class="md-nav__link">
         
   
   
@@ -1826,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Control-HowTo/" class="md-nav__link">
+      <a href="../Control-HowTo/" class="md-nav__link">
         
   
   
@@ -1849,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Control-Settings/" class="md-nav__link">
+      <a href="../Control-Settings/" class="md-nav__link">
         
   
   
@@ -1872,7 +1745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Control-Technical/" class="md-nav__link">
+      <a href="../Control-Technical/" class="md-nav__link">
         
   
   
@@ -1895,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Outpaint/" class="md-nav__link">
+      <a href="../Outpaint/" class="md-nav__link">
         
   
   
@@ -1918,7 +1791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Process/" class="md-nav__link">
+      <a href="../Process/" class="md-nav__link">
         
   
   
@@ -1941,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Caption/" class="md-nav__link">
+      <a href="../Caption/" class="md-nav__link">
         
   
   
@@ -1964,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Styles/" class="md-nav__link">
+      <a href="../Styles/" class="md-nav__link">
         
   
   
@@ -1987,7 +1860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Wildcards/" class="md-nav__link">
+      <a href="../Wildcards/" class="md-nav__link">
         
   
   
@@ -2010,7 +1883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CLiP-Skip/" class="md-nav__link">
+      <a href="../CLiP-Skip/" class="md-nav__link">
         
   
   
@@ -2033,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Reprocess/" class="md-nav__link">
+      <a href="../Reprocess/" class="md-nav__link">
         
   
   
@@ -2056,7 +1929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="IPAdapter/" class="md-nav__link">
+      <a href="../IPAdapter/" class="md-nav__link">
         
   
   
@@ -2079,7 +1952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="XYZ-Grid/" class="md-nav__link">
+      <a href="../XYZ-Grid/" class="md-nav__link">
         
   
   
@@ -2102,7 +1975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="NudeNet/" class="md-nav__link">
+      <a href="../NudeNet/" class="md-nav__link">
         
   
   
@@ -2125,7 +1998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Scripts/" class="md-nav__link">
+      <a href="../Scripts/" class="md-nav__link">
         
   
   
@@ -2206,7 +2079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Themes/" class="md-nav__link">
+      <a href="../Themes/" class="md-nav__link">
         
   
   
@@ -2229,7 +2102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Locale/" class="md-nav__link">
+      <a href="../Locale/" class="md-nav__link">
         
   
   
@@ -2252,7 +2125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Hotkeys/" class="md-nav__link">
+      <a href="../Hotkeys/" class="md-nav__link">
         
   
   
@@ -2343,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SD-Pipeline-How-it-Works/" class="md-nav__link">
+      <a href="../SD-Pipeline-How-it-Works/" class="md-nav__link">
         
   
   
@@ -2366,7 +2239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SD-Training-Methods/" class="md-nav__link">
+      <a href="../SD-Training-Methods/" class="md-nav__link">
         
   
   
@@ -2389,7 +2262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Hints/" class="md-nav__link">
+      <a href="../Hints/" class="md-nav__link">
         
   
   
@@ -2412,7 +2285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Docs/" class="md-nav__link">
+      <a href="../Docs/" class="md-nav__link">
         
   
   
@@ -2435,7 +2308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Extensions/" class="md-nav__link">
+      <a href="../Extensions/" class="md-nav__link">
         
   
   
@@ -2458,7 +2331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Theme-User/" class="md-nav__link">
+      <a href="../Theme-User/" class="md-nav__link">
         
   
   
@@ -2481,7 +2354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Backend/" class="md-nav__link">
+      <a href="../Backend/" class="md-nav__link">
         
   
   
@@ -2504,7 +2377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Profiling/" class="md-nav__link">
+      <a href="../Profiling/" class="md-nav__link">
         
   
   
@@ -2531,8 +2404,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2558,19 +2433,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -2583,7 +2461,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Advanced
@@ -2594,10 +2472,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="Performance-Tuning/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Performance Tuning
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2608,6 +2508,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compute-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compute Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compute Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Compile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Compile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stable-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stable-fast
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onediff" class="md-nav__link">
+    <span class="md-ellipsis">
+      OneDiff
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inference options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token-merging-tome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Merging (ToMe)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hypertile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypertile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2620,7 +2639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Offload/" class="md-nav__link">
+      <a href="../Offload/" class="md-nav__link">
         
   
   
@@ -2643,7 +2662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Malloc/" class="md-nav__link">
+      <a href="../Malloc/" class="md-nav__link">
         
   
   
@@ -2666,7 +2685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Quantization/" class="md-nav__link">
+      <a href="../Quantization/" class="md-nav__link">
         
   
   
@@ -2689,7 +2708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SDNQ-Quantization/" class="md-nav__link">
+      <a href="../SDNQ-Quantization/" class="md-nav__link">
         
   
   
@@ -2712,7 +2731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Loader/" class="md-nav__link">
+      <a href="../Loader/" class="md-nav__link">
         
   
   
@@ -2735,7 +2754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="VAE/" class="md-nav__link">
+      <a href="../VAE/" class="md-nav__link">
         
   
   
@@ -2758,7 +2777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Benchmark/" class="md-nav__link">
+      <a href="../Benchmark/" class="md-nav__link">
         
   
   
@@ -2781,7 +2800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Nunchaku/" class="md-nav__link">
+      <a href="../Nunchaku/" class="md-nav__link">
         
   
   
@@ -2860,7 +2879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="API/" class="md-nav__link">
+      <a href="../API/" class="md-nav__link">
         
   
   
@@ -2883,7 +2902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CLI-Tools/" class="md-nav__link">
+      <a href="../CLI-Tools/" class="md-nav__link">
         
   
   
@@ -2964,7 +2983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="FAQ/" class="md-nav__link">
+      <a href="../FAQ/" class="md-nav__link">
         
   
   
@@ -2987,7 +3006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Troubleshooting/" class="md-nav__link">
+      <a href="../Troubleshooting/" class="md-nav__link">
         
   
   
@@ -3010,7 +3029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Debug/" class="md-nav__link">
+      <a href="../Debug/" class="md-nav__link">
         
   
   
@@ -3040,7 +3059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CHANGELOG/" class="md-nav__link">
+      <a href="../CHANGELOG/" class="md-nav__link">
         
   
   
@@ -3082,73 +3101,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
+  <a href="#compute-settings" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Installation
+      Compute Settings
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Experiment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
+    <nav class="md-nav" aria-label="Compute Settings">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
+  <a href="#model-compile" class="md-nav__link">
     <span class="md-ellipsis">
-      Guides and tutorials
+      Model Compile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Compile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stable-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stable-fast
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
+  <a href="#onediff" class="md-nav__link">
     <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
+      OneDiff
     </span>
   </a>
   
@@ -3160,11 +3158,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
+  <a href="#inference-options" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Contribute
+      Inference options
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Inference options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token-merging-tome" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Merging (ToMe)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hypertile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypertile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3187,102 +3218,63 @@
   
 
 
-<p><img alt="Last update" src="https://img.shields.io/github/last-commit/vladmandic/sdnext?svg=true" />
-<img alt="License" src="https://img.shields.io/github/license/vladmandic/sdnext?svg=true" />
-<a href="https://discord.gg/VjvR2tabEX"><img alt="Discord" src="https://img.shields.io/discord/1101998836328697867?logo=Discord&amp;svg=true" /></a>
-<a href="https://github.com/sponsors/vladmandic"><img alt="Sponsors" src="https://img.shields.io/static/v1?label=Sponsor&amp;message=%E2%9D%A4&amp;logo=GitHub&amp;color=%23fe8e86" /></a></p>
-<h1 id="welcome-to-sdnext">Welcome to SD.Next</h1>
-<h2 id="sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation">SD.Next: All-in-one WebUI for AI generative image and video creation</h2>
-<div align="center">
-<img src="https://github.com/vladmandic/sdnext/raw/master/html/logo-transparent.png" width=320 alt="SD.Next">
-</div>
-
-<h2 id="step-1-installation">Step 1: Installation</h2>
-<ul>
-<li>Get started with <strong>SD.Next</strong> by following the <a href="Installation/">Installation instructions</a>  </li>
-<li>For more details, check out <a href="Advanced-Install/">Advanced installation</a> guide and <a href="Update/">Update and Branches</a> guide  </li>
-<li>List and explanation of <a href="CLI-Arguments/">Command line arguments</a></li>
-<li>Install walkthrough <a href="https://www.youtube.com/watch?v=nWTnTyFTuAs">Video</a></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>And for platform specific information, check out<br />
-<a href="WSL/">WSL</a> | <a href="Intel-ARC/">Intel Arc</a> | <a href="DirectML/">DirectML</a> | <a href="OpenVINO/">OpenVINO</a> | <a href="ONNX-Runtime/">ONNX &amp; Olive</a> | <a href="ZLUDA/">ZLUDA</a> | <a href="AMD-ROCm/">AMD ROCm</a> | <a href="MacOS-Python/">MacOS</a> | <a href="nVidia/">nVidia</a> | <a href="Docker/">Docker</a></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you run into issues, check out <a href="FAQ/">FAQ</a> as well as <a href="Troubleshooting/">Troubleshooting</a> and <a href="Debug/">Debugging</a> guides</p>
-</div>
-<h2 id="step-2-experiment">Step 2: Experiment</h2>
-<p>SD.Next supports broad range of models: <a href="Model-Support/">Supported models</a> and <a href="Models/">Model specs</a>  </p>
-<p>A good starting point is to use built-in Reference model list which includes a variety of models that will be auto-downloaded and configured on first access.</p>
-<p>Additionally, you can either download your own models or use built-in <a href="https://civitai.com/models">CivitAI</a> and <a href="https://huggingface.co/models?pipeline_tag=text-to-image&amp;sort=trending">HuggingFace</a> models downloader.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For additional model-specific information, check out<br />
-<a href="SD-XL/">Stable Diffusion XL</a> | <a href="SD3/">Stable Diffusion 3.x</a> | <a href="Stable-Cascade/">Stable Cascade</a> | <a href="FLUX/">FLUX.1</a> | <a href="HiDream/">HiDream</a> | <a href="Using-LCM/">LCM</a></p>
-</div>
-<h2 id="step-3-learn-more">Step 3: Learn more</h2>
-<h3 id="guides-and-tutorials">Guides and tutorials</h3>
-<ul>
-<li><a href="Getting-Started/">Getting started</a>  </li>
-<li>Overview of main <a href="Features/">features</a>  </li>
-<li>Frequently Asked Questions <a href="FAQ/">FAQ</a>  </li>
-<li><a href="Prompting/">Prompting</a>: what is the syntax and how to get the best results  </li>
-<li><a href="Parameters/">Parameters</a>: list and explanation of all parameters  </li>
-<li><a href="Prompt-Enhance/">Prompt enhancement</a>: use LLM to automatically enhance your prompts  </li>
-<li>Networks interface <a href="Networks/">overview</a> and <a href="Networks-Search/">search</a>  </li>
-<li>What is <a href="LoRA/">LoRA</a> and how to use it  </li>
-<li><a href="Control-HowTo/">Control</a> how-to, <a href="Control-Settings/">settings</a> and <a href="Control-Technical/">technical</a>: what is it and how to use it  </li>
-<li><a href="Detailer/">Detailer</a> guide: how to use it</li>
-<li><a href="Styles/">Styles</a> guide: how to use them  </li>
-<li><a href="Wildcards/">Wildcards</a> how-to: use them to your advantage  </li>
-<li><a href="Outpaint/">Outpainting</a> step-by-step  </li>
-<li><a href="Reprocess/">Reprocess</a> workflow: why and how to use it  </li>
-<li><a href="XYZ-Grid/">XYZ grid</a> how-to: expertiment with different parameters  </li>
-<li><a href="Process/">Image processing</a> overview: postprocess your existing images  </li>
-<li><a href="Caption/">Image captioning and interrogation</a> overview: caption and interrogate your existing images  </li>
-<li>What is <a href="CLiP-Skip/">CLiP skip</a> and how to use it  </li>
-<li>Intro to <a href="IPAdapter/">IP Adapters</a>: image guidance  </li>
-<li>Work with <a href="Models-Tab/">Models</a>: validate, convert, download, etc.  </li>
-<li>Supported <a href="Video/">Video</a> models: recommendations and limitations  </li>
-<li>Adding nudity detection and censorship with <a href="NudeNet/">NudeNet</a>  </li>
-<li>Overview of built-in <a href="Scripts/">scripts</a> that provide additional functionality  </li>
-</ul>
-<h3 id="advanced-model-handling">Advanced model handling</h3>
-<p>Some models may require additional access checks before they can be used: <a href="Gated/">Gated access</a><br />
-Learn how to optimize your environemnt: <a href="Performance-Tuning/">Performance tuning</a><br />
-Learn how you can manage your resources better:</p>
-<ul>
-<li><a href="Loader/">Custom Loader</a><br />
-  how to load any known model with custom components  </li>
-<li><a href="Offload/">Memory Offloading</a><br />
-  includes performance notes for different offload options  </li>
-<li><a href="Quantization/">Model Quantization</a>  </li>
-<li><a href="VAE/">Variational Autoencoder</a>  </li>
-<li><a href="Nunchaku/">Nunchaku</a> how to use for faster inference  </li>
-</ul>
-<p>Plus collection of <a href="Benchmark/">Benchmarks</a> to highlight what to expect using different compile and/or device settings: - Compile/device settings  </p>
-<h3 id="user-interface">User interface</h3>
-<ul>
-<li>Changing look &amp; feel using <a href="Themes/">Themes</a>  </li>
-<li><a href="Locale/">Localization</a> information</li>
-<li>List of <a href="Hotkeys/">Keyboard shortcuts</a></li>
-</ul>
-<h3 id="behind-the-scenes">Behind-the-scenes</h3>
-<p>If you want to use SD.Next via API or via CLI, check out
-- <a href="CLI-Tools/">Tools examples</a></p>
-<p>If you want to understand more how Stable Diffusion works
-- <a href="SD-Pipeline-How-it-Works/">Diffusion Pipeline: How it Works</a><br />
-- <a href="SD-Training-Methods/">List of Training Methods</a>  </p>
-<p>And dig deep with advanced <a href="Profiling/">Profiling</a> how-to  </p>
-<h2 id="step-4-contribute">Step 4: Contribute</h2>
-<ul>
-<li><a href="Docs/">Improving wiki articles and docs</a></li>
-<li><a href="Hints/">Adding hints</a>  </li>
-<li><a href="Extensions/">Building custom extensions</a>  </li>
-<li><a href="Theme-User/">Create user themes</a>  </li>
-</ul>
+<h1 id="performance-tuning">Performance Tuning</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Hi folks, it's your (moderately) friendly neighborhood Aptronym here!</p>
+<p>People are always asking me how to get the most <strong>it/s</strong> out of their GPUs, now... this is a complicated subject due to the current GPU landscape, the wide range of GPUs that can do stable diffusion just within each manufacturer, going back years (nvidia 1080s, 1050s, or RX500 series), as well as varying and often limited amounts of VRAM, possibly inside of a laptop.</p>
+<p>That's not even counting the complicated selection of inference platforms SDNext has available, everything from plain everyday CUDA and ROCm to Onnxruntime/Olive, and now ZLUDA.</p>
+<p>I can't promise you'll be able to use all of these options, I can't promise they won't crash your instance (or be buggy for that matter), that's going to vary wildly from GPU, OS, RAM, VRAM, current chosen inference platform, and backend, and some of these options will not work together, or at all, on some platforms. You will have to test that yourselves, but we are hoping to build a matrix of sorts showing what is available and what works with what, but that's going to take some user testing and feedback.</p>
+<p>If you help us by providing feedback (issues w/logs, screenshots, etc.), which we never have enough of, we will do our best to correct what we can and ensure that the experience of using SDNext is as optimized as it can be. Some limitations we won't be able to overcome purely do to things beyond our control, such as conflicts caused by the nature of the inference platform.</p>
+<p>Just as an added ray of sunshine to give you hope, there are plans in motion to create a more self-optimizing system that will not only configure itself for optimal performance based on your setup, but also react to what you're doing, what model you have loaded (SD15 v. SDXL is a huge difference), and specified preferences, so that it is always as performant as possible while sacrificing minimal quality loss. We would welcome any assistance with this, recently-laid-off-due-to-AI developers (Curse you Devin!) or any developers, or people with coding experience, at all.</p>
+<h2 id="compute-settings">Compute Settings</h2>
+<p><em>Note: Changing any of the settings on this page will require you to, at the least, unload the model and then reload it (after hitting apply!), as these settings are applied on model load, not in realtime.</em></p>
+<p>Generally speaking, for most GPUs our user-base has (mostly Nvidia on Windows judging by discord roles, so using CUDA), you are going to want the settings below (BF16 is possible too if using 30xx+).  </p>
+<p>Good settings:  </p>
+<p><img alt="Best-compute1" src="https://github.com/vladmandic/sdnext/assets/108482020/913a5a52-14a3-499f-ac67-0f19a3cb5b1e" />  </p>
+<p>Bad settings:  </p>
+<p><img alt="Bad-compute1" src="https://github.com/vladmandic/sdnext/assets/108482020/508d8da6-adf6-484e-a503-f640fa251e29" />  </p>
+<p>In general, using any of these selected "bad" settings is considered a bad thing, you only want to use any of these if necessary to make your card work with SD. They're slower and use up a lot more memory. <em>Unless you're on OpenVINO, things show up as fp32 there anyway due to how it works. Leave that alone</em></p>
+<p>That being said, if you are having strange issues with squares and whatnot and you're on something other than a newer Nvidia GPU (2000s and up?), you may wish to try these settings. Upcast sampling is the better version of --no-half, use it if at all possible.<br />
+Try these one by one, unload the model, reload the model, then test generate, hopefully you will find one, or a combination that works.  </p>
+<p><img alt="CopyQ lQSCVs" src="https://github.com/vladmandic/sdnext/assets/108482020/a9ef1145-8f51-4426-93d4-7ba621946417" /></p>
+<h3 id="model-compile">Model Compile</h3>
+<p>To use any of the model compile options, you must select via the checkboxes, at least one of these: Model, VAE, Text Encoder, Upscaler. It's probably pretty pointless to compile the text encoder, but Model and VAE will net you a large boost in speed. If you use upscalers a lot, by all means, select that too.</p>
+<h4 id="stable-fast">Stable-fast</h4>
+<p>Stable-fast is one of the model compiling options, and if you can use it with your setup (Nvidia GPUs, maybe Zluda), you should, as it's a big speed-up. First you will need to open a terminal, activate the venv for sdnext, and from the root sdnext folder (typically <em>automatic</em>), you will type <code>python cli\install-sf.py</code> and stand back while it hopefully works its magic, acquiring, or potentially compiling then installing the most recent version of stable-fast.  </p>
+<p>Note that you can do the install of stable-fast while SDNext is already running in another terminal, it will attempt to load the library when you select it, so there is no need to shut down or restart.</p>
+<h3 id="onediff">OneDiff</h3>
+<p>Linux (and perhaps Mac) users may also use <code>OneDiff</code>, which should be better/faster/stronger than <code>Stable-Fast</code>, though you will need to manually execute a <code>pip install -U onediff</code> from a venv console to install the necessary libraries.  </p>
+<p>NOTE: Do NOT compile the Text Encoder with OneDiff, it makes things slower.  </p>
+<p>If you want to thank anyone for OneDiff support, hit up @aifartist on our Discord.  </p>
+<h2 id="inference-options">Inference options</h2>
+<p>I'm skipping ahead here a bit since I want to get to the heart of the matter and expand later.</p>
+<p>These will be some of the easiest things you can do.</p>
+<h3 id="token-merging-tome">Token Merging (ToMe)</h3>
+<p><em>Sadly ToMe does not work at the same time as Hypertile. It will be disabled if Hypertile is enabled because Hypertile is faster. If hypertile works for you right now, don't even bother touching this.</em></p>
+<p>Token merging, aka ToMe, has been around for quite a while and still provides a performance gain if you desire to use it.<br />
+In short it merges tokens, saving memory and speeding up generations.
+You can easily use it at 0.3-0.4, performance goes up as the number does, going up higher is up to you but you can always do an xyz and test to see.</p>
+<p><strong>Default settings:</strong>  </p>
+<p><img alt="CopyQ blZizQ" src="https://github.com/vladmandic/sdnext/assets/108482020/81c04c4d-9810-45aa-8b24-e3c395a6ff00" />  </p>
+<p><strong>Suggested settings:</strong>  </p>
+<p><img alt="CopyQ HmmAXj" src="https://github.com/vladmandic/sdnext/assets/108482020/6741f100-50a5-4d75-9465-4bc8df374a65" />  </p>
+<p><strong>Honestly, 0.5 and up is the real performance gain, but you test and decide yourself.</strong>  </p>
+<p><strong>Bear in mind that it does have a quality impact on your image, greater the higher the setting, and will make perfect reproduction from the same seed and prompt impossible afaik.</strong></p>
+<p>There is a new implementation along the same lines as ToMe, called ToDo, but works far better. That's in our queue for the near future!</p>
+<h3 id="hypertile">Hypertile</h3>
+<p><em>Overrides and is incompatible with ToMe, also can cause issues with some platforms, so if you get errors after turning this on, that might be why. Using Hypertile VAE might also cause issues, so try on and off. Hypertile is a much preferable option to <code>Token Merging</code> at the moment.</em></p>
+<p>As long as you enable <code>Hypertile UNet</code> you're good to go, the default settings should suffice, as 0 is auto-adjusting the tile size, it adapts to be half the size of your shortest image side.  </p>
+<p>Just don't even mess with <code>Hypertile VAE</code>, tends to cause more issues than it could possibly be worth, which isn't much.</p>
+<p>You may of course screw with the <code>swap size</code> and <code>UNet depth</code> as you like, I did test them briefly but saw some little benefit.</p>
+<p><strong>Default settings:</strong>  </p>
+<p><img alt="CopyQ gwehbW" src="https://github.com/vladmandic/sdnext/assets/108482020/d1015926-3a64-43e5-b1f7-a9a3ed1064fc" /></p>
+<p><strong>Suggested settings:</strong>  </p>
+<p><img alt="Hypertile-Suggested" src="https://github.com/vladmandic/sdnext/assets/108482020/c2d1ae3e-5cd0-4b4e-8776-e9730f0278a4" /></p>
+<p><strong>Also has a quality impact, but I've never measured it personally</strong></p>
+<h3 id="other-settings">Other settings</h3>
+<p>Parallel process images in batch is intended for img2img batch mode.<br />
+If you set batch size=n, typically it generates n images for each input, with this setting, it will generate 1 image for each input, but process n in parallel.  </p>
+<p><img alt="CopyQ IARldt" src="https://github.com/vladmandic/sdnext/assets/108482020/dda83a13-a831-4a92-afed-c94a94ae7e0a" /></p>
 
 
 
@@ -3320,15 +3312,31 @@ Learn how you can manage your resources better:</p>
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../Profiling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Profiling">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Profiling
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="Installation/" class="md-footer__link md-footer__link--next" aria-label="Next: Install">
+          <a href="../Offload/" class="md-footer__link md-footer__link--next" aria-label="Next: Memory Offloading">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Install
+                Memory Offloading
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3391,10 +3399,10 @@ Learn how you can manage your resources better:</p>
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.preview", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.preview", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>

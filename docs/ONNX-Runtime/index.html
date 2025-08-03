@@ -10,26 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/ONNX-Runtime/">
       
       
+        <link rel="prev" href="../OpenVINO/">
       
-        <link rel="next" href="Installation/">
+      
+        <link rel="next" href="../ZLUDA/">
       
       
-      <link rel="icon" href="favicon.ico">
+      <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>SD.Next Documentation</title>
+        <title>ONNX & Olive - SD.Next Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="sdnext.css">
+      <link rel="stylesheet" href="../sdnext.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="SD.Next Documentation" >
+        <meta  property="og:title"  content="ONNX & Olive - SD.Next Documentation" >
       
         <meta  property="og:description"  content="SD.Next Documentation" >
       
-        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  property="og:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/ONNX-Runtime.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -71,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/" >
+        <meta  property="og:url"  content="https://vladmandic.github.io/sdnext-docs/ONNX-Runtime/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="SD.Next Documentation" >
+        <meta  name="twitter:title"  content="ONNX & Olive - SD.Next Documentation" >
       
         <meta  name="twitter:description"  content="SD.Next Documentation" >
       
-        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/index.png" >
+        <meta  name="twitter:image"  content="https://vladmandic.github.io/sdnext-docs/assets/images/social/ONNX-Runtime.png" >
       
     
     
@@ -102,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-sdnext" class="md-skip">
+        <a href="#onnx-runtime" class="md-skip">
           Skip to content
         </a>
       
@@ -116,9 +118,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="SD.Next Documentation" class="md-header__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
+    <a href=".." title="SD.Next Documentation" class="md-header__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
       
-  <img src="favicon.ico" alt="logo">
+  <img src="../favicon.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -135,7 +137,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              ONNX & Olive
             
           </span>
         </div>
@@ -261,11 +263,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -286,7 +286,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Installation/" class="md-tabs__link">
+        <a href="../Installation/" class="md-tabs__link">
           
   
   
@@ -308,7 +308,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Model-Support/" class="md-tabs__link">
+        <a href="../Model-Support/" class="md-tabs__link">
           
   
   
@@ -326,11 +326,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="WSL/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../WSL/" class="md-tabs__link">
           
   
   
@@ -352,7 +354,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Getting-Started/" class="md-tabs__link">
+        <a href="../Getting-Started/" class="md-tabs__link">
           
   
   
@@ -374,7 +376,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Themes/" class="md-tabs__link">
+        <a href="../Themes/" class="md-tabs__link">
           
   
   
@@ -396,7 +398,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="SD-Pipeline-How-it-Works/" class="md-tabs__link">
+        <a href="../SD-Pipeline-How-it-Works/" class="md-tabs__link">
           
   
   
@@ -418,7 +420,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Performance-Tuning/" class="md-tabs__link">
+        <a href="../Performance-Tuning/" class="md-tabs__link">
           
   
   
@@ -440,7 +442,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="API/" class="md-tabs__link">
+        <a href="../API/" class="md-tabs__link">
           
   
   
@@ -462,7 +464,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="FAQ/" class="md-tabs__link">
+        <a href="../FAQ/" class="md-tabs__link">
           
   
   
@@ -482,7 +484,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="CHANGELOG/" class="md-tabs__link">
+      <a href="../CHANGELOG/" class="md-tabs__link">
         
   
   
@@ -517,9 +519,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="SD.Next Documentation" class="md-nav__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
+    <a href=".." title="SD.Next Documentation" class="md-nav__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
       
-  <img src="favicon.ico" alt="logo">
+  <img src="../favicon.ico" alt="logo">
 
     </a>
     SD.Next Documentation
@@ -543,32 +545,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -579,113 +559,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
-    <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Experiment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides and tutorials
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced model handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      User interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behind-the-scenes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Contribute
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -750,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Installation/" class="md-nav__link">
+      <a href="../Installation/" class="md-nav__link">
         
   
   
@@ -773,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Update/" class="md-nav__link">
+      <a href="../Update/" class="md-nav__link">
         
   
   
@@ -796,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Advanced-Install/" class="md-nav__link">
+      <a href="../Advanced-Install/" class="md-nav__link">
         
   
   
@@ -819,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CLI-Arguments/" class="md-nav__link">
+      <a href="../CLI-Arguments/" class="md-nav__link">
         
   
   
@@ -918,7 +791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Model-Support/" class="md-nav__link">
+      <a href="../Model-Support/" class="md-nav__link">
         
   
   
@@ -941,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Models/" class="md-nav__link">
+      <a href="../Models/" class="md-nav__link">
         
   
   
@@ -964,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Gated/" class="md-nav__link">
+      <a href="../Gated/" class="md-nav__link">
         
   
   
@@ -987,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SD-XL/" class="md-nav__link">
+      <a href="../SD-XL/" class="md-nav__link">
         
   
   
@@ -1010,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SD3/" class="md-nav__link">
+      <a href="../SD3/" class="md-nav__link">
         
   
   
@@ -1033,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Stable-Cascade/" class="md-nav__link">
+      <a href="../Stable-Cascade/" class="md-nav__link">
         
   
   
@@ -1056,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="FLUX/" class="md-nav__link">
+      <a href="../FLUX/" class="md-nav__link">
         
   
   
@@ -1079,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Using-LCM/" class="md-nav__link">
+      <a href="../Using-LCM/" class="md-nav__link">
         
   
   
@@ -1102,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="HiDream/" class="md-nav__link">
+      <a href="../HiDream/" class="md-nav__link">
         
   
   
@@ -1125,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Video/" class="md-nav__link">
+      <a href="../Video/" class="md-nav__link">
         
   
   
@@ -1148,7 +1021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="FramePack/" class="md-nav__link">
+      <a href="../FramePack/" class="md-nav__link">
         
   
   
@@ -1171,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="LTX/" class="md-nav__link">
+      <a href="../LTX/" class="md-nav__link">
         
   
   
@@ -1198,8 +1071,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1227,19 +1102,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1252,7 +1130,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Platforms
@@ -1266,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="WSL/" class="md-nav__link">
+      <a href="../WSL/" class="md-nav__link">
         
   
   
@@ -1289,7 +1167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Intel-ARC/" class="md-nav__link">
+      <a href="../Intel-ARC/" class="md-nav__link">
         
   
   
@@ -1312,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="DirectML/" class="md-nav__link">
+      <a href="../DirectML/" class="md-nav__link">
         
   
   
@@ -1335,7 +1213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="OpenVINO/" class="md-nav__link">
+      <a href="../OpenVINO/" class="md-nav__link">
         
   
   
@@ -1355,10 +1233,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="ONNX-Runtime/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    ONNX & Olive
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1369,6 +1269,146 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Providers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execution Providers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpuexecutionprovider" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPUExecutionProvider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dmlexecutionprovider" class="md-nav__link">
+    <span class="md-ellipsis">
+      DmlExecutionProvider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cudaexecutionprovider" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDAExecutionProvider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rocmexecutionprovider" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚧 ROCMExecutionProvider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openvinoexecutionprovider" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚧 OpenVINOExecutionProvider
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#im-getting-onnxstablediffusionpipeline__init__-missing-4-required-positional-arguments-vae_encoder-vae_decoder-text_encoder-and-unet" class="md-nav__link">
+    <span class="md-ellipsis">
+      I'm getting OnnxStableDiffusionPipeline.__init__() missing 4 required positional arguments: 'vae_encoder', 'vae_decoder', 'text_encoder', and 'unet'.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1381,7 +1421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ZLUDA/" class="md-nav__link">
+      <a href="../ZLUDA/" class="md-nav__link">
         
   
   
@@ -1404,7 +1444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="AMD-ROCm/" class="md-nav__link">
+      <a href="../AMD-ROCm/" class="md-nav__link">
         
   
   
@@ -1427,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="MacOS-Python/" class="md-nav__link">
+      <a href="../MacOS-Python/" class="md-nav__link">
         
   
   
@@ -1450,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nVidia/" class="md-nav__link">
+      <a href="../nVidia/" class="md-nav__link">
         
   
   
@@ -1473,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Docker/" class="md-nav__link">
+      <a href="../Docker/" class="md-nav__link">
         
   
   
@@ -1596,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Getting-Started/" class="md-nav__link">
+      <a href="../Getting-Started/" class="md-nav__link">
         
   
   
@@ -1619,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Features/" class="md-nav__link">
+      <a href="../Features/" class="md-nav__link">
         
   
   
@@ -1642,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Models-Tab/" class="md-nav__link">
+      <a href="../Models-Tab/" class="md-nav__link">
         
   
   
@@ -1665,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Prompting/" class="md-nav__link">
+      <a href="../Prompting/" class="md-nav__link">
         
   
   
@@ -1688,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Parameters/" class="md-nav__link">
+      <a href="../Parameters/" class="md-nav__link">
         
   
   
@@ -1711,7 +1751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Prompt-Enhance/" class="md-nav__link">
+      <a href="../Prompt-Enhance/" class="md-nav__link">
         
   
   
@@ -1734,7 +1774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Networks/" class="md-nav__link">
+      <a href="../Networks/" class="md-nav__link">
         
   
   
@@ -1757,7 +1797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Networks-Search/" class="md-nav__link">
+      <a href="../Networks-Search/" class="md-nav__link">
         
   
   
@@ -1780,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Detailer/" class="md-nav__link">
+      <a href="../Detailer/" class="md-nav__link">
         
   
   
@@ -1803,7 +1843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="LoRA/" class="md-nav__link">
+      <a href="../LoRA/" class="md-nav__link">
         
   
   
@@ -1826,7 +1866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Control-HowTo/" class="md-nav__link">
+      <a href="../Control-HowTo/" class="md-nav__link">
         
   
   
@@ -1849,7 +1889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Control-Settings/" class="md-nav__link">
+      <a href="../Control-Settings/" class="md-nav__link">
         
   
   
@@ -1872,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Control-Technical/" class="md-nav__link">
+      <a href="../Control-Technical/" class="md-nav__link">
         
   
   
@@ -1895,7 +1935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Outpaint/" class="md-nav__link">
+      <a href="../Outpaint/" class="md-nav__link">
         
   
   
@@ -1918,7 +1958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Process/" class="md-nav__link">
+      <a href="../Process/" class="md-nav__link">
         
   
   
@@ -1941,7 +1981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Caption/" class="md-nav__link">
+      <a href="../Caption/" class="md-nav__link">
         
   
   
@@ -1964,7 +2004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Styles/" class="md-nav__link">
+      <a href="../Styles/" class="md-nav__link">
         
   
   
@@ -1987,7 +2027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Wildcards/" class="md-nav__link">
+      <a href="../Wildcards/" class="md-nav__link">
         
   
   
@@ -2010,7 +2050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CLiP-Skip/" class="md-nav__link">
+      <a href="../CLiP-Skip/" class="md-nav__link">
         
   
   
@@ -2033,7 +2073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Reprocess/" class="md-nav__link">
+      <a href="../Reprocess/" class="md-nav__link">
         
   
   
@@ -2056,7 +2096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="IPAdapter/" class="md-nav__link">
+      <a href="../IPAdapter/" class="md-nav__link">
         
   
   
@@ -2079,7 +2119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="XYZ-Grid/" class="md-nav__link">
+      <a href="../XYZ-Grid/" class="md-nav__link">
         
   
   
@@ -2102,7 +2142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="NudeNet/" class="md-nav__link">
+      <a href="../NudeNet/" class="md-nav__link">
         
   
   
@@ -2125,7 +2165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Scripts/" class="md-nav__link">
+      <a href="../Scripts/" class="md-nav__link">
         
   
   
@@ -2206,7 +2246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Themes/" class="md-nav__link">
+      <a href="../Themes/" class="md-nav__link">
         
   
   
@@ -2229,7 +2269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Locale/" class="md-nav__link">
+      <a href="../Locale/" class="md-nav__link">
         
   
   
@@ -2252,7 +2292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Hotkeys/" class="md-nav__link">
+      <a href="../Hotkeys/" class="md-nav__link">
         
   
   
@@ -2343,7 +2383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SD-Pipeline-How-it-Works/" class="md-nav__link">
+      <a href="../SD-Pipeline-How-it-Works/" class="md-nav__link">
         
   
   
@@ -2366,7 +2406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SD-Training-Methods/" class="md-nav__link">
+      <a href="../SD-Training-Methods/" class="md-nav__link">
         
   
   
@@ -2389,7 +2429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Hints/" class="md-nav__link">
+      <a href="../Hints/" class="md-nav__link">
         
   
   
@@ -2412,7 +2452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Docs/" class="md-nav__link">
+      <a href="../Docs/" class="md-nav__link">
         
   
   
@@ -2435,7 +2475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Extensions/" class="md-nav__link">
+      <a href="../Extensions/" class="md-nav__link">
         
   
   
@@ -2458,7 +2498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Theme-User/" class="md-nav__link">
+      <a href="../Theme-User/" class="md-nav__link">
         
   
   
@@ -2481,7 +2521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Backend/" class="md-nav__link">
+      <a href="../Backend/" class="md-nav__link">
         
   
   
@@ -2504,7 +2544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Profiling/" class="md-nav__link">
+      <a href="../Profiling/" class="md-nav__link">
         
   
   
@@ -2597,7 +2637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Performance-Tuning/" class="md-nav__link">
+      <a href="../Performance-Tuning/" class="md-nav__link">
         
   
   
@@ -2620,7 +2660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Offload/" class="md-nav__link">
+      <a href="../Offload/" class="md-nav__link">
         
   
   
@@ -2643,7 +2683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Malloc/" class="md-nav__link">
+      <a href="../Malloc/" class="md-nav__link">
         
   
   
@@ -2666,7 +2706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Quantization/" class="md-nav__link">
+      <a href="../Quantization/" class="md-nav__link">
         
   
   
@@ -2689,7 +2729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SDNQ-Quantization/" class="md-nav__link">
+      <a href="../SDNQ-Quantization/" class="md-nav__link">
         
   
   
@@ -2712,7 +2752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Loader/" class="md-nav__link">
+      <a href="../Loader/" class="md-nav__link">
         
   
   
@@ -2735,7 +2775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="VAE/" class="md-nav__link">
+      <a href="../VAE/" class="md-nav__link">
         
   
   
@@ -2758,7 +2798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Benchmark/" class="md-nav__link">
+      <a href="../Benchmark/" class="md-nav__link">
         
   
   
@@ -2781,7 +2821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Nunchaku/" class="md-nav__link">
+      <a href="../Nunchaku/" class="md-nav__link">
         
   
   
@@ -2860,7 +2900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="API/" class="md-nav__link">
+      <a href="../API/" class="md-nav__link">
         
   
   
@@ -2883,7 +2923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CLI-Tools/" class="md-nav__link">
+      <a href="../CLI-Tools/" class="md-nav__link">
         
   
   
@@ -2964,7 +3004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="FAQ/" class="md-nav__link">
+      <a href="../FAQ/" class="md-nav__link">
         
   
   
@@ -2987,7 +3027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Troubleshooting/" class="md-nav__link">
+      <a href="../Troubleshooting/" class="md-nav__link">
         
   
   
@@ -3010,7 +3050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Debug/" class="md-nav__link">
+      <a href="../Debug/" class="md-nav__link">
         
   
   
@@ -3040,7 +3080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CHANGELOG/" class="md-nav__link">
+      <a href="../CHANGELOG/" class="md-nav__link">
         
   
   
@@ -3082,73 +3122,73 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation" class="md-nav__link">
+  <a href="#how-to" class="md-nav__link">
     <span class="md-ellipsis">
-      SD.Next: All-in-one WebUI for AI generative image and video creation
+      How to
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-installation" class="md-nav__link">
+  <a href="#performance" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Installation
+      Performance
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-experiment" class="md-nav__link">
+  <a href="#execution-providers" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Experiment
+      Execution Providers
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Learn more
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Learn more">
+    <nav class="md-nav" aria-label="Execution Providers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#guides-and-tutorials" class="md-nav__link">
+  <a href="#cpuexecutionprovider" class="md-nav__link">
     <span class="md-ellipsis">
-      Guides and tutorials
+      CPUExecutionProvider
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#advanced-model-handling" class="md-nav__link">
+  <a href="#dmlexecutionprovider" class="md-nav__link">
     <span class="md-ellipsis">
-      Advanced model handling
+      DmlExecutionProvider
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
+  <a href="#cudaexecutionprovider" class="md-nav__link">
     <span class="md-ellipsis">
-      User interface
+      CUDAExecutionProvider
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#behind-the-scenes" class="md-nav__link">
+  <a href="#rocmexecutionprovider" class="md-nav__link">
     <span class="md-ellipsis">
-      Behind-the-scenes
+      🚧 ROCMExecutionProvider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openvinoexecutionprovider" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚧 OpenVINOExecutionProvider
     </span>
   </a>
   
@@ -3160,11 +3200,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-contribute" class="md-nav__link">
+  <a href="#supported" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Contribute
+      Supported
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#im-getting-onnxstablediffusionpipeline__init__-missing-4-required-positional-arguments-vae_encoder-vae_decoder-text_encoder-and-unet" class="md-nav__link">
+    <span class="md-ellipsis">
+      I'm getting OnnxStableDiffusionPipeline.__init__() missing 4 required positional arguments: 'vae_encoder', 'vae_decoder', 'text_encoder', and 'unet'.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3187,102 +3260,195 @@
   
 
 
-<p><img alt="Last update" src="https://img.shields.io/github/last-commit/vladmandic/sdnext?svg=true" />
-<img alt="License" src="https://img.shields.io/github/license/vladmandic/sdnext?svg=true" />
-<a href="https://discord.gg/VjvR2tabEX"><img alt="Discord" src="https://img.shields.io/discord/1101998836328697867?logo=Discord&amp;svg=true" /></a>
-<a href="https://github.com/sponsors/vladmandic"><img alt="Sponsors" src="https://img.shields.io/static/v1?label=Sponsor&amp;message=%E2%9D%A4&amp;logo=GitHub&amp;color=%23fe8e86" /></a></p>
-<h1 id="welcome-to-sdnext">Welcome to SD.Next</h1>
-<h2 id="sdnext-all-in-one-webui-for-ai-generative-image-and-video-creation">SD.Next: All-in-one WebUI for AI generative image and video creation</h2>
-<div align="center">
-<img src="https://github.com/vladmandic/sdnext/raw/master/html/logo-transparent.png" width=320 alt="SD.Next">
-</div>
-
-<h2 id="step-1-installation">Step 1: Installation</h2>
+<h1 id="onnx-runtime">ONNX Runtime</h1>
+<p>SD.Next includes support for ONNX Runtime.</p>
+<h2 id="how-to">How to</h2>
+<p>Currently, we can't use <code>--use-directml</code> because there's no release of <code>torch-directml</code> built with latest PyTorch. (this does not mean that you can't use DmlExecutionProvider)<br />
+Change <code>Diffusers pipeline</code> to <code>ONNX Stable Diffusion</code> on the <code>System</code> tab  </p>
+<h2 id="performance">Performance</h2>
+<p>The performance depends on the execution provider.</p>
+<h2 id="execution-providers">Execution Providers</h2>
+<p>Currently, <code>CUDAExecutionProvider</code> and <code>DmlExecutionProvider</code> are supported.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ONNX</th>
+<th>Olive</th>
+<th>GPU</th>
+<th>CPU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPUExecutionProvider</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>DmlExecutionProvider</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>CUDAExecutionProvider</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>ROCMExecutionProvider</td>
+<td>✅</td>
+<td>🚧</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>OpenVINOExecutionProvider</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cpuexecutionprovider">CPUExecutionProvider</h3>
+<p>Not recommended.</p>
+<p>Enabled by default.</p>
+<h3 id="dmlexecutionprovider">DmlExecutionProvider</h3>
+<p>You can select <code>DmlExecutionProvider</code> by installing <code>onnxruntime-directml</code>.</p>
+<p>DirectX 12 API is required. (Windows or WSL)</p>
+<h3 id="cudaexecutionprovider">CUDAExecutionProvider</h3>
+<p>You can select <code>CUDAExecutionProvider</code> by installing <code>onnxruntime-gpu</code>. (may have been automatically installed)</p>
+<h3 id="rocmexecutionprovider">🚧 ROCMExecutionProvider</h3>
+<p>Olive for ROCm is working in progress.</p>
+<h3 id="openvinoexecutionprovider">🚧 OpenVINOExecutionProvider</h3>
+<p>Under development.</p>
+<h2 id="supported">Supported</h2>
 <ul>
-<li>Get started with <strong>SD.Next</strong> by following the <a href="Installation/">Installation instructions</a>  </li>
-<li>For more details, check out <a href="Advanced-Install/">Advanced installation</a> guide and <a href="Update/">Update and Branches</a> guide  </li>
-<li>List and explanation of <a href="CLI-Arguments/">Command line arguments</a></li>
-<li>Install walkthrough <a href="https://www.youtube.com/watch?v=nWTnTyFTuAs">Video</a></li>
+<li>Models from huggingface</li>
+<li>Hires and second pass (without sdxl refiner)</li>
+<li>.safetensors VAE</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>And for platform specific information, check out<br />
-<a href="WSL/">WSL</a> | <a href="Intel-ARC/">Intel Arc</a> | <a href="DirectML/">DirectML</a> | <a href="OpenVINO/">OpenVINO</a> | <a href="ONNX-Runtime/">ONNX &amp; Olive</a> | <a href="ZLUDA/">ZLUDA</a> | <a href="AMD-ROCm/">AMD ROCm</a> | <a href="MacOS-Python/">MacOS</a> | <a href="nVidia/">nVidia</a> | <a href="Docker/">Docker</a></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you run into issues, check out <a href="FAQ/">FAQ</a> as well as <a href="Troubleshooting/">Troubleshooting</a> and <a href="Debug/">Debugging</a> guides</p>
-</div>
-<h2 id="step-2-experiment">Step 2: Experiment</h2>
-<p>SD.Next supports broad range of models: <a href="Model-Support/">Supported models</a> and <a href="Models/">Model specs</a>  </p>
-<p>A good starting point is to use built-in Reference model list which includes a variety of models that will be auto-downloaded and configured on first access.</p>
-<p>Additionally, you can either download your own models or use built-in <a href="https://civitai.com/models">CivitAI</a> and <a href="https://huggingface.co/models?pipeline_tag=text-to-image&amp;sort=trending">HuggingFace</a> models downloader.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For additional model-specific information, check out<br />
-<a href="SD-XL/">Stable Diffusion XL</a> | <a href="SD3/">Stable Diffusion 3.x</a> | <a href="Stable-Cascade/">Stable Cascade</a> | <a href="FLUX/">FLUX.1</a> | <a href="HiDream/">HiDream</a> | <a href="Using-LCM/">LCM</a></p>
-</div>
-<h2 id="step-3-learn-more">Step 3: Learn more</h2>
-<h3 id="guides-and-tutorials">Guides and tutorials</h3>
+<h2 id="known-issues">Known issues</h2>
 <ul>
-<li><a href="Getting-Started/">Getting started</a>  </li>
-<li>Overview of main <a href="Features/">features</a>  </li>
-<li>Frequently Asked Questions <a href="FAQ/">FAQ</a>  </li>
-<li><a href="Prompting/">Prompting</a>: what is the syntax and how to get the best results  </li>
-<li><a href="Parameters/">Parameters</a>: list and explanation of all parameters  </li>
-<li><a href="Prompt-Enhance/">Prompt enhancement</a>: use LLM to automatically enhance your prompts  </li>
-<li>Networks interface <a href="Networks/">overview</a> and <a href="Networks-Search/">search</a>  </li>
-<li>What is <a href="LoRA/">LoRA</a> and how to use it  </li>
-<li><a href="Control-HowTo/">Control</a> how-to, <a href="Control-Settings/">settings</a> and <a href="Control-Technical/">technical</a>: what is it and how to use it  </li>
-<li><a href="Detailer/">Detailer</a> guide: how to use it</li>
-<li><a href="Styles/">Styles</a> guide: how to use them  </li>
-<li><a href="Wildcards/">Wildcards</a> how-to: use them to your advantage  </li>
-<li><a href="Outpaint/">Outpainting</a> step-by-step  </li>
-<li><a href="Reprocess/">Reprocess</a> workflow: why and how to use it  </li>
-<li><a href="XYZ-Grid/">XYZ grid</a> how-to: expertiment with different parameters  </li>
-<li><a href="Process/">Image processing</a> overview: postprocess your existing images  </li>
-<li><a href="Caption/">Image captioning and interrogation</a> overview: caption and interrogate your existing images  </li>
-<li>What is <a href="CLiP-Skip/">CLiP skip</a> and how to use it  </li>
-<li>Intro to <a href="IPAdapter/">IP Adapters</a>: image guidance  </li>
-<li>Work with <a href="Models-Tab/">Models</a>: validate, convert, download, etc.  </li>
-<li>Supported <a href="Video/">Video</a> models: recommendations and limitations  </li>
-<li>Adding nudity detection and censorship with <a href="NudeNet/">NudeNet</a>  </li>
-<li>Overview of built-in <a href="Scripts/">scripts</a> that provide additional functionality  </li>
+<li>SD Inpaint may not work.</li>
+<li>SD Upscale pipeline is not tested.</li>
+<li>SDXL Refiner does not work. (due to onnxruntime's issue)</li>
 </ul>
-<h3 id="advanced-model-handling">Advanced model handling</h3>
-<p>Some models may require additional access checks before they can be used: <a href="Gated/">Gated access</a><br />
-Learn how to optimize your environemnt: <a href="Performance-Tuning/">Performance tuning</a><br />
-Learn how you can manage your resources better:</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="im-getting-onnxstablediffusionpipeline__init__-missing-4-required-positional-arguments-vae_encoder-vae_decoder-text_encoder-and-unet">I'm getting <code>OnnxStableDiffusionPipeline.__init__() missing 4 required positional arguments: 'vae_encoder', 'vae_decoder', 'text_encoder', and 'unet'</code>.</h3>
+<p>It's due to the broken model cache which was previously generated by failed conversion or Olive run. Find one in <code>models/ONNX/cache</code> and remove it. You can also use <code>ONNX</code> tab on UI. (You should enable it on settings to make it show up)</p>
+<h1 id="olive">Olive</h1>
+<p>Olive is an easy-to-use hardware-aware model optimization tool that composes industry-leading techniques across model compression, optimization, and compilation. (from <a href="https://pypi.org/project/olive-ai/">pypi</a>)</p>
+<h2 id="how-to_1">How to</h2>
+<p>As Olive optimizes the models in ONNX format, you should set up ONNX Runtime first.</p>
+<ol>
+<li>Go to <code>System</code> tab → <code>Compute Settings</code>.</li>
+<li>Select <code>Model</code>, <code>Text Encoder</code> and <code>VAE</code> in <code>Compile Model</code>.</li>
+<li>Set <code>Model compile backend</code> to <code>olive-ai</code>.</li>
+</ol>
+<p>Olive-specific settings are under <code>Olive</code> in <code>Compute Settings</code>.</p>
+<h3 id="how-to-switch-to-olive-from-torch-directml">How to switch to Olive from torch-directml</h3>
+<p>Run these commands using PowerShell.</p>
+<div class="highlight"><pre><span></span><code>.\venv\Scripts\activate
+pip uninstall torch-directml
+pip install torch torchvision --upgrade
+pip install onnxruntime-directml
+.\webui.bat
+</code></pre></div>
+<h3 id="from-checkpoint">From checkpoint</h3>
+<p>Model optimization occurs automatically before generation.</p>
+<p>Target models can be .safetensors, .ckpt, Diffusers pretrained model and the optimization progress takes time depending on your system and execution provider.</p>
+<p>The optimized models are automatically cached and used later to create images of the same size (height and width).</p>
+<h3 id="from-huggingface">From Huggingface</h3>
+<p>If your system memory is not enough to optimize model or you don't want to waste your time to optimize the model yourself, you can download optimized model from Huggingface.</p>
+<p>Go to <code>Models</code> → <code>Huggingface</code> tab and download optimized model.</p>
+<h2 id="advanced-usage">Advanced Usage</h2>
+<h3 id="customize-olive-workflow">Customize Olive workflow</h3>
+<p>TBA</p>
+<h2 id="performance_1">Performance</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prompt</td>
+<td>a castle, best quality</td>
+</tr>
+<tr>
+<td>Negative Prompt</td>
+<td>worst quality</td>
+</tr>
+<tr>
+<td>Sampler</td>
+<td>Euler</td>
+</tr>
+<tr>
+<td>Sampling Steps</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Device</td>
+<td>RX 7900 XTX 24GB</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>olive-ai(0.4.0) onnxruntime-directml(1.16.3) ROCm(5.6) torch(olive: 2.1.2, rocm: 2.1.0)</td>
+</tr>
+<tr>
+<td>Model</td>
+<td>runwayml/stable-diffusion-v1-5 (ROCm), lshqqytiger/stable-diffusion-v1-5-olive (Olive)</td>
+</tr>
+<tr>
+<td>Precision</td>
+<td>fp16</td>
+</tr>
+<tr>
+<td>Token Merging</td>
+<td>Olive(0, not supported) ROCm(0.5)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Olive with DmlExecutionProvider</th>
+<th>ROCm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Olive" src="https://github.com/vladmandic/sdnext/assets/39524005/4d440319-a0f1-44fe-9772-9c118fdf06ac" /></td>
+<td><img alt="ROCm" src="https://github.com/vladmandic/sdnext/assets/39524005/365eeae9-e666-4641-9333-0aa79dd43ddf" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pros-and-cons">Pros and Cons</h2>
+<h3 id="pros">Pros</h3>
 <ul>
-<li><a href="Loader/">Custom Loader</a><br />
-  how to load any known model with custom components  </li>
-<li><a href="Offload/">Memory Offloading</a><br />
-  includes performance notes for different offload options  </li>
-<li><a href="Quantization/">Model Quantization</a>  </li>
-<li><a href="VAE/">Variational Autoencoder</a>  </li>
-<li><a href="Nunchaku/">Nunchaku</a> how to use for faster inference  </li>
+<li>The generation is faster.</li>
+<li>Uses less graphics memory.</li>
 </ul>
-<p>Plus collection of <a href="Benchmark/">Benchmarks</a> to highlight what to expect using different compile and/or device settings: - Compile/device settings  </p>
-<h3 id="user-interface">User interface</h3>
+<h3 id="cons">Cons</h3>
 <ul>
-<li>Changing look &amp; feel using <a href="Themes/">Themes</a>  </li>
-<li><a href="Locale/">Localization</a> information</li>
-<li>List of <a href="Hotkeys/">Keyboard shortcuts</a></li>
+<li>Optimization is required for every models and image sizes.</li>
+<li>Some features are unavailable.</li>
 </ul>
-<h3 id="behind-the-scenes">Behind-the-scenes</h3>
-<p>If you want to use SD.Next via API or via CLI, check out
-- <a href="CLI-Tools/">Tools examples</a></p>
-<p>If you want to understand more how Stable Diffusion works
-- <a href="SD-Pipeline-How-it-Works/">Diffusion Pipeline: How it Works</a><br />
-- <a href="SD-Training-Methods/">List of Training Methods</a>  </p>
-<p>And dig deep with advanced <a href="Profiling/">Profiling</a> how-to  </p>
-<h2 id="step-4-contribute">Step 4: Contribute</h2>
-<ul>
-<li><a href="Docs/">Improving wiki articles and docs</a></li>
-<li><a href="Hints/">Adding hints</a>  </li>
-<li><a href="Extensions/">Building custom extensions</a>  </li>
-<li><a href="Theme-User/">Create user themes</a>  </li>
-</ul>
+<h2 id="faq_1">FAQ</h2>
+<h3 id="my-execution-provider-does-not-show-up-in-my-settings">My execution provider does not show up in my settings</h3>
+<p>After activating python venv, run this command and try again:</p>
+<div class="highlight"><pre><span></span><code>(venv) $ pip uninstall onnxruntime onnxruntime-... -y
+</code></pre></div>
 
 
 
@@ -3320,15 +3486,31 @@ Learn how you can manage your resources better:</p>
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../OpenVINO/" class="md-footer__link md-footer__link--prev" aria-label="Previous: OpenVINO">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                OpenVINO
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="Installation/" class="md-footer__link md-footer__link--next" aria-label="Next: Install">
+          <a href="../ZLUDA/" class="md-footer__link md-footer__link--next" aria-label="Next: ZLUDA">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Install
+                ZLUDA
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3391,10 +3573,10 @@ Learn how you can manage your resources better:</p>
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.preview", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.preview", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
