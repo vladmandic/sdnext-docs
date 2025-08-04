@@ -2961,9 +2961,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-02" class="md-nav__link">
+  <a href="#blockers" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-02
+      Blockers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-for-2025-08-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update for 2025-08-04
     </span>
   </a>
   
@@ -4528,9 +4537,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-02" class="md-nav__link">
+  <a href="#blockers" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-02
+      Blockers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-for-2025-08-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update for 2025-08-04
     </span>
   </a>
   
@@ -6080,27 +6098,44 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-08-02">Update for 2025-08-02</h2>
+<h2 id="blockers">Blockers</h2>
+<ul>
+<li>Qwen: <a href="https://github.com/huggingface/diffusers/issues/12066">https://github.com/huggingface/diffusers/issues/12066</a> </li>
+</ul>
+<h2 id="update-for-2025-08-04">Update for 2025-08-04</h2>
 <ul>
 <li><strong>Models</strong>  </li>
+<li><a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a><br />
+    new image foundational model with 20B params DiT and using Qwen-2.5 8B as text-encoder!<br />
+    available for text-to-image workflows, image-editing workflows will follow soon<br />
+<em>note</em>: this model is almost 2x the size of Flux, quantization and offloading are highly recommended!<br />
+    available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a><br />
     new 12B base model compatible with FLUX.1-Dev from <em>Black Forest Labs</em> with opinionated aesthetics and aesthetic preferences in mind<br />
-    simply select in <em>networks -&gt; models -&gt; reference</em>  </li>
+    available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><a href="https://huggingface.co/lodestones/Chroma">Chroma</a><br />
     great model based on FLUX.1 and then redesigned and retrained by <em>lodestones</em><br />
     update with latest <strong>v48</strong>, <strong>v48 Detail Calibrated</strong> and <strong>v46 Flash</strong> variants<br />
-    simply select in <em>networks -&gt; models -&gt; reference</em>  </li>
+    available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><strong>UI</strong>  </li>
 <li>new embedded docs/wiki search!<br />
 <strong>Docs</strong> search: fully-local and works in real-time on all document pages<br />
 <strong>Wiki</strong> search: uses github api to search online wiki pages  </li>
-<li>quicksettings reset button to restore all quicksettings to default values<br />
-    because things do sometimes get wrong...  </li>
 <li>updated real-time hints, thanks @CalamitousFelicitousness  </li>
-<li>updated <em>models -&gt; current</em> tab   </li>
+<li>rewritten <strong>CivitAI downloader</strong><br />
+    in <em>models -&gt; civitai</em>  </li>
+<li>updated <em>models -&gt; current</em> tab  </li>
 <li>updated <em>models -&gt; list models</em> tab  </li>
 <li>updated <em>models -&gt; metadata</em> tab  </li>
+<li>quicksettings reset button to restore all quicksettings to default values<br />
+    because things do sometimes get wrong...  </li>
+<li>redesign <em>settings -&gt; user interface</em>  </li>
+<li>gallery bypass browser cache for thumbnails  </li>
+<li>gallery safer delete operation  </li>
 <li>more css optimizations and styling  </li>
+<li><em>hint</em>: card layout<br />
+    card layout is used by networks, gallery, civitai search, etc.<br />
+    you can change card size in <em>settings -&gt; user interface</em>  </li>
 <li><strong>Offloading</strong></li>
 <li>changed <strong>default</strong> values for offloading based on detected gpu memory<br />
     see <a href="https://vladmandic.github.io/sdnext-docs/Offload/">offloading docs</a> for details  </li>
@@ -6129,6 +6164,7 @@
 <li>fix api progress reporting endpoint  </li>
 <li>fix openvino backend failing to compile  </li>
 <li>fix nunchaku fallback on unsupported model  </li>
+<li>fix nunchaku windows download links  </li>
 <li>reapply offloading on ipadapter load  </li>
 <li>api set default script-name  </li>
 <li>avoid forced gc and rely on thresholds  </li>
