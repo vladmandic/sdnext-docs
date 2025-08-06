@@ -2970,11 +2970,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-05" class="md-nav__link">
+  <a href="#update-for-2025-08-06" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-05
+      Update for 2025-08-06
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-08-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-08-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-08-06
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-08-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-08-06
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4546,11 +4570,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-05" class="md-nav__link">
+  <a href="#update-for-2025-08-06" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-05
+      Update for 2025-08-06
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-08-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-08-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-08-06
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-08-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-08-06
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6100,15 +6148,23 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="blockers">Blockers</h2>
 <ul>
-<li>Qwen: <a href="https://github.com/huggingface/diffusers/issues/12066">https://github.com/huggingface/diffusers/issues/12066</a> </li>
+<li>Qwen with offloading: <a href="https://github.com/huggingface/diffusers/issues/12066">https://github.com/huggingface/diffusers/issues/12066</a> </li>
 </ul>
-<h2 id="update-for-2025-08-05">Update for 2025-08-05</h2>
+<h2 id="update-for-2025-08-06">Update for 2025-08-06</h2>
+<h3 id="highlights-for-2025-08-06">Highlights for 2025-08-06</h3>
+<p>This time we have several new models: <a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a>, <a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a> and <a href="https://huggingface.co/lodestones/Chroma">Chroma</a><br />
+Continuing with major UI work, there is new embedded Docs/Wiki search, redesigned CivitAI integration and quite a few UI updates!<br />
+On the compute side, new profiles for high-vram GPUs and offloading improvements<br />
+And (<em>as always</em>) many bugfixes and improvements to existing features!  </p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
+<h3 id="details-for-2025-08-06">Details for 2025-08-06</h3>
 <ul>
 <li><strong>Models</strong>  </li>
 <li><a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a><br />
     new image foundational model with 20B params DiT and using Qwen2.5-VL-7B as the text-encoder!<br />
     available for text-to-image workflows, image-editing workflows will follow soon<br />
 <em>note</em>: this model is almost 2x the size of Flux, quantization and offloading are highly recommended!<br />
+    recommended params: <em>steps=50, attention-guidance=4</em><br />
     available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a><br />
     new 12B base model compatible with FLUX.1-Dev from <em>Black Forest Labs</em> with opinionated aesthetics and aesthetic preferences in mind<br />
@@ -6133,7 +6189,8 @@
 <li>redesign <em>settings -&gt; user interface</em>  </li>
 <li>gallery bypass browser cache for thumbnails  </li>
 <li>gallery safer delete operation  </li>
-<li>more css optimizations and styling  </li>
+<li>networks display indicator for currently active items<br />
+    styles, loras  </li>
 <li><em>hint</em>: card layout<br />
     card layout is used by networks, gallery, civitai search, etc.<br />
     you can change card size in <em>settings -&gt; user interface</em>  </li>
