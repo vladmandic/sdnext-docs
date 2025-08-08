@@ -6130,7 +6130,8 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-08-08">Update for 2025-08-08</h2>
 <h3 id="highlights-for-2025-08-08">Highlights for 2025-08-08</h3>
-<p>Several new and updated models: <a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a>, <a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a>, <a href="https://huggingface.co/lodestones/Chroma">Chroma</a>, <a href="https://huggingface.co/Skywork/SkyReels-V2-DF-14B-720P-Diffusers">SkyReels-V2</a>, <a href="https://huggingface.co/Wan-AI/Wan2.1-VACE-14B-diffusers">Wan-VACE</a><br />
+<p>Several new models: <a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a>, <a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a><br />
+And several updated models: <a href="https://huggingface.co/lodestones/Chroma">Chroma</a>, <a href="https://huggingface.co/Skywork/SkyReels-V2-DF-14B-720P-Diffusers">SkyReels-V2</a>, <a href="https://huggingface.co/Wan-AI/Wan2.1-VACE-14B-diffusers">Wan-VACE</a><br />
 Plus continuing with major <strong>UI</strong> work, there is new embedded <strong>Docs/Wiki</strong> search, redesigned real-time <strong>hints</strong>, built-in <strong>GPU monitor</strong>, <strong>CivitAI</strong> integration and more!<br />
 On the compute side, new profiles for high-vram GPUs and offloading improvements<br />
 And (<em>as always</em>) many bugfixes and improvements to existing features!  </p>
@@ -6149,7 +6150,7 @@ And (<em>as always</em>) many bugfixes and improvements to existing features!  <
     available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><a href="https://huggingface.co/lodestones/Chroma">Chroma</a><br />
     great model based on FLUX.1 and then redesigned and retrained by <em>lodestones</em><br />
-    update with latest <strong>v48</strong>, <strong>v48 Detail Calibrated</strong> and <strong>v46 Flash</strong> variants<br />
+    update with latest <strong>v50</strong>, <strong>v50 Annealed</strong>, <strong>v48</strong>, <strong>v48 Detail Calibrated</strong> and <strong>v46 Flash</strong> variants<br />
     available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><a href="https://huggingface.co/Skywork/SkyReels-V2-DF-14B-720P-Diffusers">SkyReels-V2</a><br />
     SkyReels-V2 is a genarative video model based on Wan-2.1 but with heavily modified execution to allow for infinite-length video generation<br />
@@ -6221,7 +6222,7 @@ And (<em>as always</em>) many bugfixes and improvements to existing features!  <
 <li><strong>Fixes</strong>  </li>
 <li>refactor legacy processing loop  </li>
 <li>fix settings components mismatch  </li>
-<li>fix Wan 2.2-5B I2V workflow  </li>
+<li>fix <em>Wan 2.2-5B I2V</em> workflow  </li>
 <li>fix OpenVINO  </li>
 <li>fix video model vs pipeline mismatch  </li>
 <li>fix video generic save frames  </li>
@@ -6230,8 +6231,9 @@ And (<em>as always</em>) many bugfixes and improvements to existing features!  <
 <li>fix progress bar with refine/detailer  </li>
 <li>fix api progress reporting endpoint  </li>
 <li>fix openvino backend failing to compile  </li>
-<li>fix nunchaku fallback on unsupported model  </li>
-<li>fix nunchaku windows download links  </li>
+<li>fix <code>nunchaku</code> fallback on unsupported model  </li>
+<li>fix <code>nunchaku</code> windows download links  </li>
+<li>fix <em>Flux.1-Kontext-Dev</em> with variable resolution  </li>
 <li>use <code>utf_16_be</code> as primary metadata decoding  </li>
 <li>reapply offloading on ipadapter load  </li>
 <li>api set default script-name  </li>
