@@ -2961,28 +2961,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-09" class="md-nav__link">
+  <a href="#update-for-2025-08-10" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-09
+      Update for 2025-08-10
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-08-09">
+    <nav class="md-nav" aria-label="Update for 2025-08-10">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-08-09" class="md-nav__link">
+  <a href="#highlights-for-2025-08-10" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-08-09
+      Highlights for 2025-08-10
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-08-09" class="md-nav__link">
+  <a href="#details-for-2025-08-10" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-08-09
+      Details for 2025-08-10
     </span>
   </a>
   
@@ -4552,28 +4552,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-09" class="md-nav__link">
+  <a href="#update-for-2025-08-10" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-09
+      Update for 2025-08-10
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-08-09">
+    <nav class="md-nav" aria-label="Update for 2025-08-10">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-08-09" class="md-nav__link">
+  <a href="#highlights-for-2025-08-10" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-08-09
+      Highlights for 2025-08-10
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-08-09" class="md-nav__link">
+  <a href="#details-for-2025-08-10" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-08-09
+      Details for 2025-08-10
     </span>
   </a>
   
@@ -6128,15 +6128,15 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-08-09">Update for 2025-08-09</h2>
-<h3 id="highlights-for-2025-08-09">Highlights for 2025-08-09</h3>
+<h2 id="update-for-2025-08-10">Update for 2025-08-10</h2>
+<h3 id="highlights-for-2025-08-10">Highlights for 2025-08-10</h3>
 <p>Several new models: <a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a> and <a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a><br />
 Several updated models: <a href="https://huggingface.co/lodestones/Chroma">Chroma</a>, <a href="https://huggingface.co/Skywork/SkyReels-V2-DF-14B-720P-Diffusers">SkyReels-V2</a> and <a href="https://huggingface.co/Wan-AI/Wan2.1-VACE-14B-diffusers">Wan-VACE</a><br />
 Plus continuing with major <strong>UI</strong> work, we have new embedded <strong>Docs/Wiki</strong> search, redesigned real-time <strong>hints</strong>, built-in <strong>GPU monitor</strong>, <strong>CivitAI</strong> integration and more!<br />
 On the compute side, new profiles for high-vram GPUs, offloading improvements and support for new <code>torch</code> release  <br />
 And (<em>as always</em>) many bugfixes and improvements to existing features!  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
-<h3 id="details-for-2025-08-09">Details for 2025-08-09</h3>
+<h3 id="details-for-2025-08-10">Details for 2025-08-10</h3>
 <ul>
 <li><strong>Models</strong>  </li>
 <li><a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a><br />
@@ -6243,7 +6243,9 @@ And (<em>as always</em>) many bugfixes and improvements to existing features!  <
 <li>fix <em>Flux.1-Kontext-Dev</em> with variable resolution  </li>
 <li>use <code>utf_16_be</code> as primary metadata decoding  </li>
 <li>fix <code>sd35</code> width/height alignment  </li>
-<li>fix <code>nudenet</code> api</li>
+<li>fix <code>nudenet</code> api  </li>
+<li>fix global state tracking  </li>
+<li>fix ui tab detection for networks  </li>
 <li>reapply offloading on ipadapter load  </li>
 <li>api set default script-name  </li>
 <li>avoid forced gc and rely on thresholds  </li>
@@ -6539,6 +6541,7 @@ Although upgrades and existing installations are tested and should work fine!</p
 <em>note</em>: you need to enable quantization and choose what it applies on, then xyz grid can change quantization mode<br />
 <em>note</em>: you can also enable 'add time info' to compare performance of different quantization modes  </li>
 <li><strong>API</strong></li>
+<li>Add <code>/sdapi/v1/network?page=&lt;page_name&gt;&amp;item=&lt;item_name&gt;</code> endpoint that returns full network info  </li>
 <li>Add <code>/sdapi/v1/lora?lora=&lt;lora_name&gt;</code> endpoint that returns full lora info and metadata  </li>
 <li>Add <code>/sdapi/v1/controlnets?model_type=&lt;model_type|all|None&gt;</code> endpoints that returns list of available controlnets for specific model type  </li>
 <li>Set default sampler to <code>Default</code>  </li>
