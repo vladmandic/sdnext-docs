@@ -6215,6 +6215,11 @@ And (<em>as always</em>) many bugfixes and improvements to existing features!  <
 <li>new <code>diffusers_offload_nonblocking</code> exerimental setting<br />
     instructs torch to use non-blocking move operations when possible  </li>
 <li><strong>Features</strong>  </li>
+<li>new <code>T5: Use shared instance of text encoder</code> option<br />
+    in <em>settings -&gt; text encoder</em><br />
+    since a lot of new models use T5 text encoder, this option allows to share<br />
+    the same instance across all models without duplicate downloads<br />
+<em>note</em> this will not reduce size of your already downloaded models, but will reduce size of future downloads  </li>
 <li><strong>Wan</strong> select which stage to run: <em>first/second/both</em> with configurable <em>boundary ration</em> when running both stages<br />
     in settings -&gt; model options  </li>
 <li>prompt parser allow explict <code>BOS</code> and <code>EOS</code> tokens in prompt  </li>
@@ -6227,6 +6232,8 @@ And (<em>as always</em>) many bugfixes and improvements to existing features!  <
 <li>remove <code>api-only</code> cli option  </li>
 <li><strong>API</strong></li>
 <li>add <code>/sdapi/v1/checkpoint</code> POST endpoint to simply load a model  </li>
+<li><strong>Refactor</strong></li>
+<li>new unified pipeline component loader in <code>pipelines/generic</code>  </li>
 <li><strong>Fixes</strong>  </li>
 <li>refactor legacy processing loop  </li>
 <li>fix settings components mismatch  </li>
@@ -6260,7 +6267,7 @@ And (<em>as always</em>) many bugfixes and improvements to existing features!  <
 - <a href="https://github.com/user-attachments/assets/6f156154-0b0a-4be2-94f0-979e9f679501">ModernUI</a> has quite some redesign which should make it more user friendly and easier to navigate plus several new UI themes<br />
   If you're still using <strong>StandardUI</strong>, give <a href="https://vladmandic.github.io/sdnext-docs/Themes/">ModernUI</a> a try!<br />
 - New models such as <a href="https://wan.video/">WanAI 2.2</a> in 5B and A14B variants for both <em>text-to-video</em> and <em>image-to-video</em> workflows as well as <em>text-to-image</em> workflow!<br />
-  and also <a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a>, <a href="https://huggingface.co/briaai/BRIA-3.2">Bria 3.2</a> and <a href="https://civitai.com/models/1789765?modelVersionId=2025412">bigASP 2.5</a><br />
+  and also <a href="https://huggingface.co/Freepik/F-Lite">FreePik F-Lite</a>, <a href="https://huggingface.co/briaai/BRIA-3.2">Bria 3.2</a> and <a href="https://civitai.com/models/1789765?modelVersionId=2025412">bigASP 2.5</a><br />
 - Redesigned <a href="https://vladmandic.github.io/sdnext-docs/Video">Video</a> interface with support for general video models plus optimized <a href="https://vladmandic.github.io/sdnext-docs/FramePack">FramePack</a> and <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTXVideo</a> support<br />
 - Fully integrated nudity detection and optional censorship with <a href="https://vladmandic.github.io/sdnext-docs/NudeNet">NudeNet</a><br />
 - New background replacement and relightning methods using <strong>Latent Bridge Matching</strong> and new <strong>PixelArt</strong> processing filter<br />
@@ -6300,7 +6307,7 @@ Although upgrades and existing installations are tested and should work fine!</p
     can also load unet/transformer fine-tunes in safetensors format using UNET loader<br />
     simply select in <em>networks -&gt; models -&gt; reference</em><br />
 <em>note</em> 1.3B model is a bit too small for good results and 14B is very large at 78GB even without second-stage so aggressive quantization and offloading are recommended  </li>
-<li><a href="https://huggingface.co/Freepik/F-Lite">FreePix F-Lite</a> in <em>7B, 10B and Texture</em> variants<br />
+<li><a href="https://huggingface.co/Freepik/F-Lite">FreePik F-Lite</a> in <em>7B, 10B and Texture</em> variants<br />
     F-Lite is a 7B/10B model trained exclusively on copyright-safe and SFW content, trained on internal dataset comprising approximately 80 million copyright-safe images<br />
     available via <em>networks -&gt; models -&gt; reference</em>  </li>
 <li><a href="https://huggingface.co/briaai/BRIA-3.2">Bria 3.2</a><br />
