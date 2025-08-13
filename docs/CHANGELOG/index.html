@@ -2961,28 +2961,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-12" class="md-nav__link">
+  <a href="#update-for-2025-08-13" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-12
+      Update for 2025-08-13
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-08-12">
+    <nav class="md-nav" aria-label="Update for 2025-08-13">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-08-12" class="md-nav__link">
+  <a href="#highlights-for-2025-08-13" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-08-12
+      Highlights for 2025-08-13
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-08-12" class="md-nav__link">
+  <a href="#details-for-2025-08-13" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-08-12
+      Details for 2025-08-13
     </span>
   </a>
   
@@ -4552,28 +4552,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-12" class="md-nav__link">
+  <a href="#update-for-2025-08-13" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-12
+      Update for 2025-08-13
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-08-12">
+    <nav class="md-nav" aria-label="Update for 2025-08-13">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-08-12" class="md-nav__link">
+  <a href="#highlights-for-2025-08-13" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-08-12
+      Highlights for 2025-08-13
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-08-12" class="md-nav__link">
+  <a href="#details-for-2025-08-13" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-08-12
+      Details for 2025-08-13
     </span>
   </a>
   
@@ -6128,22 +6128,23 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-08-12">Update for 2025-08-12</h2>
-<h3 id="highlights-for-2025-08-12">Highlights for 2025-08-12</h3>
+<h2 id="update-for-2025-08-13">Update for 2025-08-13</h2>
+<h3 id="highlights-for-2025-08-13">Highlights for 2025-08-13</h3>
 <p>Several new models: <a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a> (plus <em>Lightning</em> variant) and <a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a><br />
-Several updated models: <a href="https://huggingface.co/lodestones/Chroma">Chroma</a>, <a href="https://huggingface.co/Skywork/SkyReels-V2-DF-14B-720P-Diffusers">SkyReels-V2</a> and <a href="https://huggingface.co/Wan-AI/Wan2.1-VACE-14B-diffusers">Wan-VACE</a><br />
+Several updated models: <a href="https://huggingface.co/lodestones/Chroma">Chroma</a>, <a href="https://huggingface.co/Skywork/SkyReels-V2-DF-14B-720P-Diffusers">SkyReels-V2</a>, <a href="https://huggingface.co/Wan-AI/Wan2.1-VACE-14B-diffusers">Wan-VACE</a>, <a href="https://huggingface.co/Tencent-Hunyuan/HunyuanDiT-v1.2-Diffusers-Distilled">HunyuanDiT</a><br />
 Plus continuing with major <strong>UI</strong> work, we have new embedded <strong>Docs/Wiki</strong> search, redesigned real-time <strong>hints</strong>, built-in <strong>GPU monitor</strong>, <strong>CivitAI</strong> integration and more!<br />
-On the compute side, new profiles for high-vram GPUs, offloading improvements and support for new <code>torch</code> release  <br />
+On the compute side, new profiles for high-vram GPUs, offloading improvements, support for new <code>torch</code> release and improved quality when using low-bit quantization!    <br />
 And (<em>as always</em>) many bugfixes and improvements to existing features!  </p>
+<p><em>Note</em>: Change-in-behavior - locations of downloaded HuggingFace models and components are changed to allow for de-duplication of common modules and switched from using system default cache folder to <code>models/huggingface</code><br />
+SD.Next will warn on startup on unused cache entries that can be removed. Also, to take advantage of de-duplication, you'll need to delete models from your <code>models/Diffusers</code> folder and let SD.Next re-download them!  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
-<h3 id="details-for-2025-08-12">Details for 2025-08-12</h3>
+<h3 id="details-for-2025-08-13">Details for 2025-08-13</h3>
 <ul>
 <li><strong>Models</strong>  </li>
 <li><a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a><br />
     new image foundational model with <em>20B</em> params DiT and using <em>Qwen2.5-VL-7B</em> as the text-encoder!<br />
     available via <em>networks -&gt; models -&gt; reference</em><br />
 <em>note</em>: this model is almost 2x the size of Flux, quantization and offloading are highly recommended!<br />
-<em>note</em> qwen-image supports text-to-image workflows as image-editing model is not yet available<br />
 <em>recommended</em> params: <em>steps=50, attention-guidance=4</em><br />
     also available is pre-packaged <a href="https://huggingface.co/vladmandic/Qwen-Lightning">Qwen-Lightning</a><br />
     which is an unofficial merge of <a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a> with <a href="https://github.com/ModelTC/Qwen-Image-Lightning/">Qwen-Lightning-LoRA</a> to improve quality and allow for generating in 8-steps!  </li>
@@ -6163,7 +6164,9 @@ And (<em>as always</em>) many bugfixes and improvements to existing features!  <
 </li>
 <li><a href="https://huggingface.co/Wan-AI/Wan2.1-VACE-14B-diffusers">Wan-VACE</a><br />
     basic support for <em>Wan 2.1 VACE 1.3B</em> and <em>14B</em> variants<br />
-    optimized support with granular guidance control will follow soon<br />
+    optimized support with granular guidance control will follow soon  </li>
+<li><a href="https://huggingface.co/Tencent-Hunyuan/HunyuanDiT-v1.2-Diffusers-Distilled">HunyuanDiT-Distilled</a><br />
+    variant of HunyuanDiT with reduced steps and improved performance<br />
 <strong>Torch</strong>  </li>
 <li>Set default to <code>torch==2.8.0</code> for <em>CUDA, ROCm and OpenVINO</em>  </li>
 <li>Add support for <code>torch==2.9.0-nightly</code>  </li>
@@ -6228,15 +6231,19 @@ And (<em>as always</em>) many bugfixes and improvements to existing features!  <
 <li><strong>Nunchaku</strong> support for <em>FLUX.1-Fill</em> and <em>FLUX.1-Depth</em> models  </li>
 <li>update requirements/packages  </li>
 <li>use model vae scale-factor for image width/heigt calculations  </li>
-<li><strong>SDNQ</strong> add modules_dtype_dict to quantize <em>Qwen Image</em> with mixed dtype  </li>
-<li><strong>Other</strong></li>
-<li><strong>prompt enhance</strong> add <code>allura-org/Gemma-3-Glitter-4B</code>, <code>Qwen/Qwen3-4B-Instruct-2507</code>, <code>Qwen/Qwen2.5-VL-3B-Instruct</code> model support  </li>
-<li><strong>prompt enhance</strong> improve system prompt  </li>
+<li><strong>SDNQ</strong> add <code>modules_dtype_dict</code> to quantize <em>Qwen Image</em> with mixed dtype  </li>
+<li><strong>prompt enhance</strong>
+    add <code>allura-org/Gemma-3-Glitter-4B</code>, <code>Qwen/Qwen3-4B-Instruct-2507</code>, <code>Qwen/Qwen2.5-VL-3B-Instruct</code> model support<br />
+    improve system prompt  </li>
 <li><strong>schedulers</strong> add <strong>Flash FlowMatch</strong>  </li>
 <li><strong>API</strong></li>
 <li>add <code>/sdapi/v1/checkpoint</code> POST endpoint to simply load a model  </li>
 <li>add <code>/sdapi/v1/modules</code> GET endpoint to get info on model components/modules  </li>
+<li>all generate endpoints now support <code>sd_model_checkpoint</code> parameter<br />
+    this allows to specify which model to use for generation without needing to use additional endpoints  </li>
 <li><strong>Refactor</strong></li>
+<li>change default huggingface cache folder from system default to <code>models/huggingface</code><br />
+    sd.next will warn on startup on unused cache entries  </li>
 <li>new unified pipeline component loader in <code>pipelines/generic</code>  </li>
 <li>remove <strong>LDSR</strong>  </li>
 <li>remove <code>api-only</code> cli option  </li>
@@ -6261,6 +6268,9 @@ And (<em>as always</em>) many bugfixes and improvements to existing features!  <
 <li>fix <code>nudenet</code> api  </li>
 <li>fix global state tracking  </li>
 <li>fix ui tab detection for networks  </li>
+<li>fix ui checkbox/radio styling for non-default themes  </li>
+<li>fix loading custom transformers and t5 safetensors tunes  </li>
+<li>unified stat size/mtime calls  </li>
 <li>reapply offloading on ipadapter load  </li>
 <li>api set default script-name  </li>
 <li>avoid forced gc and rely on thresholds  </li>
