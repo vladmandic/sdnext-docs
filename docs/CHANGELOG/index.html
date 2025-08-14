@@ -6132,8 +6132,8 @@
 <h3 id="highlights-for-2025-08-13">Highlights for 2025-08-13</h3>
 <p>Several new models: <a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a> (plus <em>Lightning</em> variant) and <a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a><br />
 Several updated models: <a href="https://huggingface.co/lodestones/Chroma">Chroma</a>, <a href="https://huggingface.co/Skywork/SkyReels-V2-DF-14B-720P-Diffusers">SkyReels-V2</a>, <a href="https://huggingface.co/Wan-AI/Wan2.1-VACE-14B-diffusers">Wan-VACE</a>, <a href="https://huggingface.co/Tencent-Hunyuan/HunyuanDiT-v1.2-Diffusers-Distilled">HunyuanDiT</a><br />
-Plus continuing with major <strong>UI</strong> work, we have new embedded <strong>Docs/Wiki</strong> search, redesigned real-time <strong>hints</strong>, built-in <strong>GPU monitor</strong>, <strong>CivitAI</strong> integration and more!<br />
-On the compute side, new profiles for high-vram GPUs, offloading improvements, support for new <code>torch</code> release and improved quality when using low-bit quantization!    <br />
+Plus continuing with major <strong>UI</strong> work, we have new embedded <strong>Docs/Wiki</strong> search, redesigned real-time <strong>hints</strong>, <strong>wildcards</strong> UI selector, built-in <strong>GPU monitor</strong>, <strong>CivitAI</strong> integration and more!<br />
+On the compute side, new profiles for high-vram GPUs, offloading improvements, parallel-load for large models, support for new <code>torch</code> release and improved quality when using low-bit quantization!    <br />
 And (<em>as always</em>) many bugfixes and improvements to existing features!  </p>
 <p><em>Note</em>: Change-in-behavior - locations of downloaded HuggingFace models and components are changed to allow for de-duplication of common modules and switched from using system default cache folder to <code>models/huggingface</code><br />
 SD.Next will warn on startup on unused cache entries that can be removed. Also, to take advantage of de-duplication, you'll need to delete models from your <code>models/Diffusers</code> folder and let SD.Next re-download them!  </p>
@@ -6175,6 +6175,8 @@ SD.Next will warn on startup on unused cache entries that can be removed. Also, 
 <strong>Docs</strong> search: fully-local and works in real-time on all document pages<br />
 <strong>Wiki</strong> search: uses github api to search online wiki pages  </li>
 <li>updated real-time hints, thanks @CalamitousFelicitousness  </li>
+<li>add <strong>Wilcards</strong> UI<br />
+    in networks display  </li>
 <li>every heading element is collapsible!  </li>
 <li>quicksettings reset button to restore all quicksettings to default values<br />
     because things do sometimes get wrong...  </li>
@@ -6236,6 +6238,8 @@ SD.Next will warn on startup on unused cache entries that can be removed. Also, 
     add <code>allura-org/Gemma-3-Glitter-4B</code>, <code>Qwen/Qwen3-4B-Instruct-2507</code>, <code>Qwen/Qwen2.5-VL-3B-Instruct</code> model support<br />
     improve system prompt  </li>
 <li><strong>schedulers</strong> add <strong>Flash FlowMatch</strong>  </li>
+<li><strong>model loader</strong> add parallel loader option<br />
+    enabled by default, selectable in <em>settings -&gt; model loading</em></li>
 <li><strong>API</strong></li>
 <li>add <code>/sdapi/v1/checkpoint</code> POST endpoint to simply load a model  </li>
 <li>add <code>/sdapi/v1/modules</code> GET endpoint to get info on model components/modules  </li>
@@ -6270,6 +6274,8 @@ SD.Next will warn on startup on unused cache entries that can be removed. Also, 
 <li>fix ui tab detection for networks  </li>
 <li>fix ui checkbox/radio styling for non-default themes  </li>
 <li>fix loading custom transformers and t5 safetensors tunes  </li>
+<li>add mtime to reference models  </li>
+<li>patch torch version so 3rd party libraries can use expected format  </li>
 <li>unified stat size/mtime calls  </li>
 <li>reapply offloading on ipadapter load  </li>
 <li>api set default script-name  </li>
