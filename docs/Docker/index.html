@@ -3385,9 +3385,9 @@ If you make changes to <code>Dockerfile</code> or update <strong>SD.Next</strong
 <p>If you want to include any extensions in the docker image, install/clone them into <code>/extensions</code> folder before building the image</p>
 </div>
 <h3 id="cuda">CUDA</h3>
-<p>SD.Next docker template is based on <a href="https://hub.docker.com/r/pytorch/pytorch/tags">official base image</a> with <code>python==3.11.11</code>, <code>torch==2.6.0</code> and <code>cuda==12.6</code><br />
-Base image <code>pytorch/pytorch:2.6.0-cuda12.6-cudnn9-runtime</code> is 3.24GB<br />
-And full <strong>SD.Next</strong> resulting image is ~8.4GB and contains all required dependencies  </p>
+<p>SD.Next docker template is based on <a href="https://hub.docker.com/r/pytorch/pytorch/tags">official base image</a> with <code>python==3.11.11</code>, <code>torch==2.8.0</code> and <code>cuda==12.8</code><br />
+Base image <code>pytorch/pytorch:2.8.0-cuda12.8-cudnn9-runtime</code> is 3.99GB<br />
+And full <strong>SD.Next</strong> resulting image is ~11.0GB and contains all required dependencies  </p>
 <div class="highlight"><pre><span></span><code><span class="nv">SD_FOLDER</span><span class="o">=</span>/home/sdnext<span class="w"> </span><span class="c1"># path to sdnext home folder</span>
 docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--debug<span class="w"> </span><span class="se">\</span>
