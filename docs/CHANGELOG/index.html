@@ -6148,14 +6148,22 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-08-18">Update for 2025-08-18</h2>
 <ul>
+<li><strong>Models</strong></li>
+<li><a href="https://huggingface.co/Qwen/Qwen-Image-Edit">Qwen-Image-Edit</a><br />
+    Image editing using natural language prompting, similar to <code>Flux.1-Kontext</code>, but based on larger 20B <code>Qwen-Image</code> model  </li>
 <li><strong>Features</strong>  </li>
 <li>new setting -&gt; huggingface -&gt; download method<br />
     default is <code>rust</code> as new <code>xet</code> is known to cause issues  </li>
 <li>support for <code>flux.1-kontext</code> lora  </li>
+<li>support for <code>qwen-image</code> lora  </li>
 <li><strong>UI</strong>  </li>
-<li>new artwork for reference models in networks, thanks @liutyi  </li>
+<li>new artwork for reference models in networks<br />
+    thanks @liutyi  </li>
 <li>localization support for ModernUI  </li>
 <li>single-click on locale rotates current locale, double-click on locale resets locale to <code>en</code>  </li>
+<li><strong>Docs</strong></li>
+<li>Models and Video pages updated with links to original model repos, model licenses and original release dates<br />
+    thanks @alerikaisattera  </li>
 <li><strong>Fixes</strong>  </li>
 <li>fix OpenVINO with offloading  </li>
 <li>add explicit offload calls on prompt encode  </li>
