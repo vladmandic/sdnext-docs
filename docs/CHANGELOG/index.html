@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-16" class="md-nav__link">
+  <a href="#update-for-2025-08-18" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-16
+      Update for 2025-08-18
     </span>
   </a>
   
@@ -4561,9 +4561,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-16" class="md-nav__link">
+  <a href="#update-for-2025-08-18" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-16
+      Update for 2025-08-18
     </span>
   </a>
   
@@ -6146,12 +6146,17 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-08-16">Update for 2025-08-16</h2>
+<h2 id="update-for-2025-08-18">Update for 2025-08-18</h2>
 <ul>
-<li><strong>Features</strong></li>
+<li><strong>Features</strong>  </li>
 <li>new setting -&gt; huggingface -&gt; download method<br />
     default is <code>rust</code> as new <code>xet</code> is known to cause issues  </li>
-<li><strong>Fixes</strong></li>
+<li>support for <code>flux.1-kontext</code> lora  </li>
+<li><strong>UI</strong>  </li>
+<li>new artwork for reference models in networks, thanks @liutyi  </li>
+<li>localization support for ModernUI  </li>
+<li>single-click on locale rotates current locale, double-click on locale resets locale to <code>en</code>  </li>
+<li><strong>Fixes</strong>  </li>
 <li>fix OpenVINO with offloading  </li>
 <li>add explicit offload calls on prompt encode  </li>
 <li>error reporting on model load failure  </li>
@@ -6159,6 +6164,9 @@
 <li>remove extra cache clear  </li>
 <li>enable explicit sync calls for <code>rocm</code> on windows  </li>
 <li>note restart-needed on initial startup import error  </li>
+<li>bypass diffusers-lora-fuse on quantized models  </li>
+<li>monkey-patch diffusers to use original weights shape when loading lora  </li>
+<li>guard against null prompt  </li>
 </ul>
 <h2 id="update-for-2025-08-15">Update for 2025-08-15</h2>
 <h3 id="highlights-for-2025-08-15">Highlights for 2025-08-15</h3>
