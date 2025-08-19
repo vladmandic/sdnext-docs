@@ -6147,31 +6147,40 @@
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-08-18">Update for 2025-08-18</h2>
+<p>A quick service release with several important hotfixes, but also adding support for new Qwen variants...</p>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-Edit">Qwen-Image-Edit</a><br />
     Image editing using natural language prompting, similar to <code>Flux.1-Kontext</code>, but based on larger 20B <code>Qwen-Image</code> model  </li>
-<li><strong>Features</strong>  </li>
-<li>new setting -&gt; huggingface -&gt; download method<br />
+<li><a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image">Nunchaku-Qwen-Image</a><br />
+    if you have a compatible nVidia GPU, Nunchaku is the fastest quantization engine, currently available for Flux.1, SANA and Qwen-Image models<br />
+<em>note</em>: release version of <code>nunchaku==0.3.2</code> does NOT include support, so you need to build <a href="https://nunchaku.tech/docs/nunchaku/installation/installation.html">nunchaku</a> from source  </li>
+<li><a href="https://vladmandic.github.io/sd-samples/compare.html">SD.Next Model Samples Gallery</a>  </li>
+<li>updated with new models  </li>
+<li><strong>Features</strong></li>
+<li>new <em>setting -&gt; huggingface -&gt; download method</em><br />
     default is <code>rust</code> as new <code>xet</code> is known to cause issues  </li>
 <li>support for <code>flux.1-kontext</code> lora  </li>
 <li>support for <code>qwen-image</code> lora  </li>
-<li><strong>UI</strong>  </li>
+<li><strong>UI</strong></li>
 <li>new artwork for reference models in networks<br />
     thanks @liutyi  </li>
 <li>localization support for ModernUI  </li>
-<li>single-click on locale rotates current locale, double-click on locale resets locale to <code>en</code>  </li>
+<li>single-click on locale rotates current locale<br />
+    double-click on locale resets locale to <code>en</code>  </li>
 <li><strong>Docs</strong></li>
 <li>Models and Video pages updated with links to original model repos, model licenses and original release dates<br />
     thanks @alerikaisattera  </li>
-<li><strong>Fixes</strong>  </li>
+<li><strong>Fixes</strong></li>
+<li>nunchaku use new download links and default to <code>0.3.2</code><br />
+    nunchaku wheels: <a href="https://huggingface.co/nunchaku-tech/nunchaku/tree/main">https://huggingface.co/nunchaku-tech/nunchaku/tree/main</a>  </li>
 <li>fix OpenVINO with offloading  </li>
 <li>add explicit offload calls on prompt encode  </li>
 <li>error reporting on model load failure  </li>
 <li>fix torch version checks  </li>
 <li>remove extra cache clear  </li>
 <li>enable explicit sync calls for <code>rocm</code> on windows  </li>
-<li>note restart-needed on initial startup import error  </li>
+<li>note if restart-needed on initial startup import error  </li>
 <li>bypass diffusers-lora-fuse on quantized models  </li>
 <li>monkey-patch diffusers to use original weights shape when loading lora  </li>
 <li>guard against null prompt  </li>
