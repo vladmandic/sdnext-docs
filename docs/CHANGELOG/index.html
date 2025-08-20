@@ -6162,12 +6162,15 @@
     default is <code>rust</code> as new <code>xet</code> is known to cause issues  </li>
 <li>support for <code>flux.1-kontext</code> lora  </li>
 <li>support for <code>qwen-image</code> lora  </li>
+<li>add <code>sdnq_modules_to_not_convert</code> option to ui settings  </li>
 <li><strong>UI</strong></li>
 <li>new artwork for reference models in networks<br />
     thanks @liutyi  </li>
 <li>localization support for ModernUI  </li>
 <li>single-click on locale rotates current locale<br />
     double-click on locale resets locale to <code>en</code>  </li>
+<li>exclude ModernUI from list of extensions<br />
+    ModernUI is enabled in settings, not by manually enabling extension  </li>
 <li><strong>Docs</strong></li>
 <li>Models and Video pages updated with links to original model repos, model licenses and original release dates<br />
     thanks @alerikaisattera  </li>
@@ -6185,6 +6188,7 @@
 <li>monkey-patch diffusers to use original weights shape when loading lora  </li>
 <li>guard against null prompt  </li>
 <li>install <code>hf_transfter</code> and <code>hf_xet</code> when needed  </li>
+<li>enum reference models on startup  </li>
 </ul>
 <h2 id="update-for-2025-08-15">Update for 2025-08-15</h2>
 <h3 id="highlights-for-2025-08-15">Highlights for 2025-08-15</h3>

@@ -2732,6 +2732,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#modules-to-not-convert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules to not convert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#group-size" class="md-nav__link">
     <span class="md-ellipsis">
       Group size
@@ -3300,6 +3309,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#modules-to-not-convert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules to not convert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#group-size" class="md-nav__link">
     <span class="md-ellipsis">
       Group size
@@ -3513,6 +3531,11 @@ Symetric quants can store negative and positive values meaning they don't have e
 <h3 id="quantization-type-for-text-encoders">Quantization type for Text Encoders</h3>
 <p>Same as <code>Quantization type</code> but for the Text Encoders.<br />
 <code>default</code> option will use the same type as <code>Quantization type</code>.  </p>
+<h3 id="modules-to-not-convert">Modules to not convert</h3>
+<p>A comma separated list of module names to skip quantization.<br />
+Modules listed in this option will not be quantized and will be kept in full precision.<br />
+An example list: <code>transformer_blocks.0.img_mod.1.weight, transformer_blocks.0.*, img_in</code><br />
+Default is empty.  </p>
 <h3 id="group-size">Group size</h3>
 <p>Used to decide how many elements of a tensor will share the same quantization group.<br />
 Higher values have better performance but less quality.<br />
