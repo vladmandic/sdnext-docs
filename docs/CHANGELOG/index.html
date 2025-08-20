@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-19" class="md-nav__link">
+  <a href="#update-for-2025-08-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-19
+      Update for 2025-08-20
     </span>
   </a>
   
@@ -4561,9 +4561,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-19" class="md-nav__link">
+  <a href="#update-for-2025-08-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-19
+      Update for 2025-08-20
     </span>
   </a>
   
@@ -6146,7 +6146,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-08-19">Update for 2025-08-19</h2>
+<h2 id="update-for-2025-08-20">Update for 2025-08-20</h2>
 <p>A quick service release with several important hotfixes, but also adding support for new Qwen variants...</p>
 <ul>
 <li><strong>Models</strong></li>
@@ -6162,7 +6162,8 @@
     default is <code>rust</code> as new <code>xet</code> is known to cause issues  </li>
 <li>support for <code>flux.1-kontext</code> lora  </li>
 <li>support for <code>qwen-image</code> lora  </li>
-<li>add <code>sdnq_modules_to_not_convert</code> option to ui settings  </li>
+<li>new <em>setting -&gt; quantization -&gt; modules dtype dict</em><br />
+    used to manually override quant types per module  </li>
 <li><strong>UI</strong></li>
 <li>new artwork for reference models in networks<br />
     thanks @liutyi  </li>
@@ -6188,6 +6189,7 @@
 <li>monkey-patch diffusers to use original weights shape when loading lora  </li>
 <li>guard against null prompt  </li>
 <li>install <code>hf_transfter</code> and <code>hf_xet</code> when needed  </li>
+<li>fix ui cropped network tags  </li>
 <li>enum reference models on startup  </li>
 </ul>
 <h2 id="update-for-2025-08-15">Update for 2025-08-15</h2>

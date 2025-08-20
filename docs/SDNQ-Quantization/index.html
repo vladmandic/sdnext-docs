@@ -2741,6 +2741,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#modules-dtype-dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules dtype dict
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#group-size" class="md-nav__link">
     <span class="md-ellipsis">
       Group size
@@ -3318,6 +3327,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#modules-dtype-dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules dtype dict
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#group-size" class="md-nav__link">
     <span class="md-ellipsis">
       Group size
@@ -3536,6 +3554,18 @@ Symetric quants can store negative and positive values meaning they don't have e
 Modules listed in this option will not be quantized and will be kept in full precision.<br />
 An example list: <code>transformer_blocks.0.img_mod.1.weight, transformer_blocks.0.*, img_in</code><br />
 Default is empty.  </p>
+<h3 id="modules-dtype-dict">Modules dtype dict</h3>
+<p>A JSON dictionary of quantization types and module names list used to quantize the model with mixed quantization types.  </p>
+<p>Quantization types can be any valid quantization type supported by SDNQ or it can also be <code>minimum_Xbit</code>.<br />
+<code>minimum_Xbit</code> will quantize the specified modules into the specifed bit if the main quantization dtype has less precision.<br />
+For example, <code>minimum_6bit</code> will quantize the specified modules to <code>int6</code> if you are using <code>int5</code> or below but won't do anything if you are using <code>int6</code> or above.<br />
+Default is empty.  </p>
+<p>An example dict:<br />
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">&quot;int8&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;transformer_blocks.0.img_mod.1.weight&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;transformer_blocks.0.*&quot;</span><span class="p">],</span>
+<span class="nt">&quot;minimum_6bit&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;img_in&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
 <h3 id="group-size">Group size</h3>
 <p>Used to decide how many elements of a tensor will share the same quantization group.<br />
 Higher values have better performance but less quality.<br />
