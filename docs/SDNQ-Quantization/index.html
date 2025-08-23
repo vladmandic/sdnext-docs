@@ -3596,14 +3596,10 @@ Disabled by default.  </p>
   Requires RDNA3 (RX 7000) or newer GPUs for INT8 matmul.<br />
   Requires MI300X for FP8 matmul.<br />
   - RDNA3 supports INT8 matmul but runs at the same speed as FP16.<br />
-  - Vega, RDNA and RDNA2 supports INT8 on hardware but not supported in PyTorch.<br />
-    Those GPUs will require AMD to add INT8 support to PyTorch for them to work.<br />
   - RDNA4 (RX 9000) supports fast INT8 and FP8 matmul but software support isn't ready yet.<br />
     FP8 matmul will work with RX 9000 when AMD adds FP8 matmul support to PyTorch.<br />
 - <strong>Intel</strong><br />
-  Intel technically support FP8 and INT8 with Alchemist (Arc A770) or newer GPUs but software support isn't ready yet.<br />
-  Intel GPUs will work with quantized matmul when Intel merges INT8 and FP8 matmul support to PyTorch 2.8 or 2.9.<br />
-  See https://github.com/pytorch/pytorch/pull/157769 and https://github.com/pytorch/pytorch/pull/140972  </p>
+  Intel supports INT8 with Alchemist (Arc A770) or newer GPUs but software support isn't ready yet.  </p>
 <p>Quantized INT8 MatMul is only compatible with symmetric <code>int</code> quant types.<br />
 Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> quant type on GPUs. CPUs and some GPUs can use the other FP8 types too.  </p>
 <p>Recommended quant type to use with this option is <code>int8</code> for quality and INT8 matmul tends to be faster than FP8. 
