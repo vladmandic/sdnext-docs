@@ -805,6 +805,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Supported Models
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -816,6 +829,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2963,6 +3004,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2993,14 +3051,14 @@ See <a href="../Models/">models overview</a> for details on each model, includin
 <li><a href="https://blackforestlabs.ai/announcing-black-forest-labs/">Black Forest Labs FLUX.1</a> Kontext-Dev  </li>
 <li><a href="https://blackforestlabs.ai/announcing-black-forest-labs/">Black Forest Labs FLUX.1</a> Krea-Dev  </li>
 <li><a href="https://huggingface.co/lodestones/Chroma">lodestones Chroma</a> Standard, Detail Calibrated and Flash  </li>
-<li><a href="https://huggingface.co/Freepik/F-Lite">FreePik F-Lite</a>  </li>
+<li><a href="https://huggingface.co/Freepik/F-Lite">FreePik F-Lite</a> Standard, Texture and 7B   </li>
 <li><a href="https://nvlabs.github.io/Sana/">NVLabs Sana</a> 1.0 and 1.5  </li>
 <li><a href="https://research.nvidia.com/labs/dir/cosmos-predict2/">nVidia Cosmos-Predict2 T2I</a> 2B and 14B  </li>
-<li><a href="https://huggingface.co/fal/AuraFlow">AuraFlow</a>  </li>
+<li><a href="https://huggingface.co/fal/AuraFlow">AuraFlow</a> 0.3 and 0.2  </li>
 <li><a href="https://huggingface.co/Alpha-VLLM/Lumina-Next-SFT-diffusers">AlphaVLLM Lumina-Next-SFT</a>  </li>
 <li><a href="https://github.com/Alpha-VLLM/Lumina-Image-2.0">AlphaVLLM Lumina 2</a>  </li>
 <li><a href="https://huggingface.co/playgroundai/playground-v2-256px-base">Playground AI</a> v1, v2 256, v2 512, v2 1024 and latest v2.5</li>
-<li><a href="https://github.com/Tencent/HunyuanDiT">Tencent HunyuanDiT</a>  </li>
+<li><a href="https://github.com/Tencent/HunyuanDiT">Tencent HunyuanDiT</a> 1.2 and 1.1  </li>
 <li><a href="https://arxiv.org/pdf/2409.11340">OmniGen</a>  </li>
 <li><a href="https://github.com/viiika/Meissonic">Meissonic</a>  </li>
 <li><a href="https://huggingface.co/Kwai-Kolors/Kolors">Kwai Kolors</a>  </li>
@@ -3023,8 +3081,15 @@ See <a href="../Models/">models overview</a> for details on each model, includin
 <li><a href="https://huggingface.co/ByteDance/Hyper-SD">Hyper-SD</a>  </li>
 <li><a href="https://huggingface.co/HiDream-ai/HiDream-I1-Full">HiDream-I1</a> <em>Full, Dev, Fast</em>  </li>
 <li><a href="https://wan.video/">Wan 2.1</a> 1.3B and 14B T2V models for T2I workflows  </li>
+<li><a href="https://wan.video/">Wan 2.2</a> 5B and A14B T2V models for T2I workflows  </li>
 <li><a href="https://huggingface.co/briaai/BRIA-3.2">Bria 3.2</a>  </li>
 <li><a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a>  </li>
+<li><a href="https://qwenlm.github.io/blog/qwen-image-edit/">Qwen-Image-Edit</a>  </li>
+</ul>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>HunyuanDit models requires explicit <code>float16</code> precision<br />
+<em>set in settings -&gt; compute settings -&gt; model precision -&gt; fp16</em>  </li>
 </ul>
 
 
