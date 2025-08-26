@@ -846,9 +846,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#support-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes
+      Support Notes
     </span>
   </a>
   
@@ -3011,9 +3011,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#support-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes
+      Support Notes
     </span>
   </a>
   
@@ -3066,7 +3066,7 @@ See <a href="../Models/">models overview</a> for details on each model, includin
 <li><a href="https://huggingface.co/THUDM/CogView3-Plus-3B">CogView 3+</a>  </li>
 <li><a href="https://github.com/openai/consistency_models">LCM: Latent Consistency Models</a>  </li>
 <li><a href="https://huggingface.co/amused/amused-256">aMUSEd</a> 256 and 512  </li>
-<li><a href="https://huggingface.co/segmind/Segmind-Vega">Segmind Vega</a>, <a href="https://huggingface.co/segmind/SSD-1B">Segmind SSD-1B</a>, [Segmind SegMoE]  (https://github.com/segmind/segmoe) <em>SD and SD-XL</em>, <a href="https://huggingface.co/blog/sd_distillation">Segmind SD Distilled</a> <em>(all variants)</em>  </li>
+<li><a href="https://huggingface.co/segmind/Segmind-Vega">Segmind Vega</a>, <a href="https://huggingface.co/segmind/SSD-1B">Segmind SSD-1B</a>, <a href="https://github.com/segmind/segmoe">Segmind SegMoE</a> <em>SD and SD-XL</em>, <a href="https://huggingface.co/blog/sd_distillation">Segmind SD Distilled</a> <em>(all variants)</em>  </li>
 <li><a href="https://github.com/ai-forever/Kandinsky-2">Kandinsky</a> 2.1, 2.2, 3.0  </li>
 <li><a href="https://github.com/PixArt-alpha/PixArt-alpha">PixArt-α XL 2</a> Medium and Large</li>
 <li><a href="https://github.com/PixArt-alpha/PixArt-sigma">PixArt-Σ</a>  </li>
@@ -3086,10 +3086,12 @@ See <a href="../Models/">models overview</a> for details on each model, includin
 <li><a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a>  </li>
 <li><a href="https://qwenlm.github.io/blog/qwen-image-edit/">Qwen-Image-Edit</a>  </li>
 </ul>
-<h2 id="notes">Notes</h2>
+<h2 id="support-notes">Support Notes</h2>
 <ul>
-<li>HunyuanDit models requires explicit <code>float16</code> precision<br />
+<li><strong>HunyuanDit</strong> models requires explicit <code>float16</code> precision<br />
 <em>set in settings -&gt; compute settings -&gt; model precision -&gt; fp16</em>  </li>
+<li><strong>aMUSEd</strong> models require explicit noise generator device to be unset<br />
+<em>set in settings -&gt; compute settings -&gt; generator device -&gt; unset</em>  </li>
 </ul>
 
 
