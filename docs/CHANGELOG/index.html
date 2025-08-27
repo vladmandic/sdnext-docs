@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-25" class="md-nav__link">
+  <a href="#update-for-2025-08-27" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-25
+      Update for 2025-08-27
     </span>
   </a>
   
@@ -4570,9 +4570,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-08-25" class="md-nav__link">
+  <a href="#update-for-2025-08-27" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-08-25
+      Update for 2025-08-27
     </span>
   </a>
   
@@ -6164,11 +6164,15 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-08-25">Update for 2025-08-25</h2>
+<h2 id="update-for-2025-08-27">Update for 2025-08-27</h2>
 <ul>
 <li><strong>Models</strong>  </li>
 <li><strong>Chroma</strong> final versions: <a href="https://huggingface.co/lodestones/Chroma1-HD">Chroma1-HD</a>, <a href="https://huggingface.co/lodestones/Chroma1-Base">Chroma1-Base</a> and <a href="https://huggingface.co/lodestones/Chroma1-Flash">Chroma1-Flash</a>  </li>
-<li><strong>Qwen-Image</strong> <a href="https://huggingface.co/InstantX/Qwen-Image-ControlNet-Union">InstantX ControlNet Union</a> support  </li>
+<li><strong>Qwen-Image</strong> <a href="https://huggingface.co/InstantX/Qwen-Image-ControlNet-Union">InstantX ControlNet Union</a> support<br />
+<em>note</em> qwen-image is already a very large model and controlnet adds 3.5GB on top of that so quantization and offloading are highly recommended!  </li>
+<li><a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image">Nunchaku-Qwen-Image-Lightning</a><br />
+    if you have a compatible nVidia GPU, Nunchaku is the fastest quantization engine, currently available for Flux.1, SANA and Qwen-Image models<br />
+<em>note</em>: release version of <code>nunchaku==0.3.2</code> does NOT include support, so you need to build <a href="https://nunchaku.tech/docs/nunchaku/installation/installation.html">nunchaku</a> from source  </li>
 <li>updated <a href="https://vladmandic.github.io/sd-samples/compare.html">SD.Next Model Samples Gallery</a>  </li>
 <li><strong>Core</strong></li>
 <li>enable offload during pre-forward by default  </li>
@@ -6178,6 +6182,7 @@
 <li>improved image scaling in img2img and control interfaces  </li>
 <li>add base model type to networks display, thanks @Artheriax  </li>
 <li>additional hints to ui, thanks @Artheriax  </li>
+<li>add video support to gallery, thanks @CalamitousFelicitousness  </li>
 <li>additional artwork for reference models in networks, thanks @liutyi  </li>
 <li><strong>Fixes</strong></li>
 <li>normalize path hanlding when deleting images  </li>
@@ -6187,6 +6192,7 @@
 <li>fix <code>wan</code> use correct pipeline for i2v models  </li>
 <li>fix <code>qwen-image</code> with hires  </li>
 <li>fix <code>omnigen-2</code>  </li>
+<li>fix ui hints display  </li>
 </ul>
 <h2 id="update-for-2025-08-20">Update for 2025-08-20</h2>
 <p>A quick service release with several important hotfixes, improved localization support and adding new <strong>Qwen</strong> model variants...</p>
