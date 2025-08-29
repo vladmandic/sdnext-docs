@@ -3573,6 +3573,8 @@ Default is <code>0</code>, meaning it will decide the group size based on your q
 Linear layers will use this formula to find the group size: <code>2 ** (2 + number_of_bits)</code><br />
 Convolutions will use this formula to find the group size: <code>2 ** (1 + number_of_bits)</code><br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
+<p>Using Quantized MatMul with FP8 quant types will disable group sizes.<br />
+Using Quantized Matmul with <code>int</code> and <code>uint</code> quant types will continue to use Group Sizes by default if the number of bits is less than 6.  </p>
 <h3 id="quantize-convolutional-layers">Quantize convolutional layers</h3>
 <p>Enabling this option will quantize convolutional layers in UNet models too.<br />
 Has much better memory savings but lower quality.<br />
@@ -3600,11 +3602,10 @@ Disabled by default.  </p>
     FP8 matmul will work with RX 9000 when AMD adds FP8 matmul support to PyTorch.<br />
 - <strong>Intel</strong><br />
   Intel supports INT8 with Alchemist (Arc A770) or newer GPUs but software support isn't ready yet.  </p>
-<p>Quantized INT8 MatMul is only compatible with symmetric <code>int</code> quant types.<br />
-Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> quant type on GPUs. CPUs and some GPUs can use the other FP8 types too.  </p>
+<p>Quantized INT8 MatMul is compatible with any <code>int</code> or <code>uint</code> quant type.<br />
+Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> quant type on most GPUs. CPUs and some GPUs can use the other FP8 types too.  </p>
 <p>Recommended quant type to use with this option is <code>int8</code> for quality and INT8 matmul tends to be faster than FP8. 
 Recommended quant type for FP8 matmul is <code>float8_e4m3fn</code> for quality and better hardware support.  </p>
-<p>Groups sizes will be disabled when Quantized MatMul is enabled.  </p>
 <h3 id="use-quantized-matmul-with-convolutional-layers">Use Quantized MatMul with convolutional layers</h3>
 <p>Same as <code>Use Quantized MatMul</code> but for the convolutional layers with UNets like SDXL.<br />
 Disabled by default.  </p>
