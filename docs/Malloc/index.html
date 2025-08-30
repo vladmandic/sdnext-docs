@@ -2530,6 +2530,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Memory Allocation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2541,6 +2554,100 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcmalloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      tcmalloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jemalloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      jemalloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mimalloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      mimalloc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mimalloc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      mimalloc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compare
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2963,6 +3070,89 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcmalloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      tcmalloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jemalloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      jemalloc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mimalloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      mimalloc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mimalloc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      mimalloc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compare
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2981,34 +3171,86 @@
 
 
 <h1 id="memory-allocator">Memory Allocator</h1>
-<p>Combination of Linux default memory allocator <code>malloc</code> with Python's default memory allocator is pessimistic when it comes to system memory garbage collection and it will sometimes hold on to allocated memory longer than necessary even if GC is triggered explicitly.<br />
-This appears to user as a memory leak as process memory usage grows over time.<br />
-This is especially noticeable when frequently loading/unloading large objects such as models or LoRAs.  </p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For Linux deployments you can switch out memory allocator to <code>tcmalloc</code> or <code>jemalloc</code><br />
-which are more efficient and have better memory management.</p>
-</div>
+<p>Combination of OS default memory allocator <code>malloc</code> with Python's default memory allocator is pessimistic when it comes to system memory garbage collection and it will sometimes hold on to allocated memory longer than necessary even if GC is triggered explicitly <br />
+This appears to user as a memory leak as process memory usage grows over time<br />
+This is especially noticeable when frequently loading/unloading large objects such as models or LoRAs  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This applies to system memory only and has no impact on GPU memory management</p>
 </div>
-<blockquote>
-<p>tcmalloc</p>
-</blockquote>
+<h2 id="linux">Linux</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For Linux deployments you can switch out memory allocator to <code>tcmalloc</code>, <code>jemalloc</code> or <code>mimalloc</code><br />
+which are more efficient and have better memory management</p>
+</div>
+<h3 id="tcmalloc">tcmalloc</h3>
 <pre><code>sudo apt install google-perftools  
 sudo ldconfig  
 export LD_PRELOAD=libtcmalloc.so.4  
 ./webui.sh --debug
 </code></pre>
-<blockquote>
-<p>jemalloc</p>
-</blockquote>
+<h3 id="jemalloc">jemalloc</h3>
 <pre><code>sudo apt install libjemalloc2
 sudo ldconfig  
 export LD_PRELOAD=libjemalloc.so.2  
 ./webui.sh --debug
 </code></pre>
+<h3 id="mimalloc">mimalloc</h3>
+<pre><code>sudo apt install libmimalloc2.0
+sudo ldconfig  
+export LD_PRELOAD=libmimalloc.so.2  
+./webui.sh --debug
+</code></pre>
+<h2 id="windows">Windows</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For Windows deployments you can switch out memory allocator to <code>mimalloc</code><br />
+which is more efficient and has better memory management</p>
+</div>
+<h3 id="mimalloc_1">mimalloc</h3>
+<p><code>mimalloc</code> for windows requires custom compiled library<br />
+Full instructions can be found here: <a href="https://microsoft.github.io/mimalloc/index.html">https://microsoft.github.io/mimalloc/index.html</a>  </p>
+<h2 id="compare">Compare</h2>
+<p>Using Ubuntu 24.04 and after executing 10 batches of 1024px images using SDXL model  </p>
+<table>
+<thead>
+<tr>
+<th>manager</th>
+<th>reserved memory</th>
+<th>note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>malloc</td>
+<td>9345 MB</td>
+<td>baseline</td>
+</tr>
+<tr>
+<td>tcmaloc</td>
+<td>8423 MB</td>
+<td>very performant and stable over long runs</td>
+</tr>
+<tr>
+<td>jemalloc</td>
+<td>5468 MB</td>
+<td>best memory savings</td>
+</tr>
+<tr>
+<td>mimalloc</td>
+<td>6132 MB</td>
+<td>new contender</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Results will vary based on system and usage pattern<br />
+What matters is that memory allocator is can intelligently free up memory that is marked as available by SD.Next over time<br />
+while maintaining low memory fragmentation and allowing low-latency allocations<br />
+For example, when unloading LoRAs or switching models</p>
+</div>
 
 
 
