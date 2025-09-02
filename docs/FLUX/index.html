@@ -3309,9 +3309,9 @@ For more information see <a href="../Quantization/">Quantization Wiki</a></p>
 <p class="admonition-title">Tip</p>
 <p>Use reference models<br />
 Use of reference models is recommended over manually downloaded models!<br />
-Simply select it from <em>Networks -&gt; Models -&gt; Reference</em></p>
+Simply select it from <em>Networks -&gt; Models -&gt; Reference</em><br />
+and the model will be auto-downloaded on first use</p>
 </div>
-<p>and model will be auto-downloaded on first use  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Do not attempt to assemble a full model by loading all individual components<br />
@@ -3368,9 +3368,8 @@ T5 enhances text rendering and some details, but its otherwise very lightly used
 Loading lighter T5 will greatly decrease model resource usage, but may not be compatible with all offloading modes  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To use <strong>prompt attention</strong> syntax with FLUX.1, set</p>
+<p>To use <strong>prompt attention</strong> syntax with FLUX.1, set <em>Settings -&gt; Execution -&gt; Prompt attention to </em><em>xhinker</em>**</p>
 </div>
-<p><em>Settings -&gt; Execution -&gt; Prompt attention to </em><em>xhinker</em>**</p>
 <p><em>Example image with different encoder quantization options</em><br />
 <img alt="flux-encoder" src="https://github.com/user-attachments/assets/afdf6ead-a591-48ae-9eef-f2dd778a645f" /></p>
 <h3 id="vae">VAE</h3>
@@ -3378,9 +3377,9 @@ Loading lighter T5 will greatly decrease model resource usage, but may not be co
 There are no alternative VAE models released, so this setting is mostly for future use  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To enable <strong>image previews</strong> during generate, set <em>Settings -&gt; Live Preview -&gt; Method to </em><em>TAESD</em>**</p>
+<p>To enable <strong>image previews</strong> during generate, set <em>Settings -&gt; Live Preview -&gt; Method to </em><em>TAESD</em>**<br />
+To further speed up generation, you can disable "full quality" which triggers use of TAESD instead of full VAE to decode final image</p>
 </div>
-<p>To further speed up generation, you can disable "full quality" which triggers use of TAESD instead of full VAE to decode final image  </p>
 <h3 id="scheduler">Scheduler</h3>
 <p>Due to specifics of flow-matching methods, number of steps also has strong influence on the image composition, not just on the way how its resolved</p>
 <p><em>Example image at different steps</em><br />

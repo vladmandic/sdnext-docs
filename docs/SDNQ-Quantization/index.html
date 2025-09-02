@@ -3574,7 +3574,7 @@ Linear layers will use this formula to find the group size: <code>2 ** (2 + numb
 Convolutions will use this formula to find the group size: <code>2 ** (1 + number_of_bits)</code><br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
 <p>Using Quantized MatMul with FP8 quant types will disable group sizes.<br />
-Using Quantized Matmul with <code>int</code> and <code>uint</code> quant types will continue to use Group Sizes by default if the number of bits is less than 6.  </p>
+Using Quantized Matmul with <code>int</code> or <code>uint</code> quant types will continue to use Group Sizes by default if the number of bits is less than 6.  </p>
 <h3 id="quantize-convolutional-layers">Quantize convolutional layers</h3>
 <p>Enabling this option will quantize convolutional layers in UNet models too.<br />
 Has much better memory savings but lower quality.<br />
@@ -3610,8 +3610,8 @@ Recommended quant type for FP8 matmul is <code>float8_e4m3fn</code> for quality 
 <p>Same as <code>Use Quantized MatMul</code> but for the convolutional layers with UNets like SDXL.<br />
 Disabled by default.  </p>
 <h3 id="quantize-using-gpu">Quantize using GPU</h3>
-<p>Enabling this option will use the GPU with the quantization calculations on model load.<br />
-Can be faster with weak CPUs but can also be slower because of GPU to CPU communication overhead.<br />
+<p>Enabling this option will use the GPU for quantization calculations on model load.<br />
+Can be faster with weak CPUs but can also be slower because of the GPU to CPU communication overhead.<br />
 Enabled by default.  </p>
 <p>When <code>Model load device map</code> in the <code>Models &amp; Loading</code> settings is set to <code>default</code> or <code>cpu</code> this option will send a part of the model weights to the GPU and quantize it, then will send it back to the CPU right away.<br />
 If device map is set to <code>gpu</code>, model weights will be loaded directly into GPU and the quantized model weights will be kept in the GPU until the quantization of the current model part is over.  </p>
