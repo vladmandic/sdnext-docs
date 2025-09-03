@@ -3590,8 +3590,9 @@ On the other hand, for best performance during generation (but slower startup on
 Setting <code>fp16</code> has also a noticeable improvement on performance. </p>
 <h3 id="composable-kernel-ck-flash-attention">Composable Kernel (CK) Flash attention</h3>
 <p>On RDNA3 hardware (RX 7000 series), you can set the option to use CK Flash Attention for improved performance in <em>Compute Settings &gt; Cross Attention &gt; SDP Options</em> by toggling <code>CK Flash attention</code> and restarting SD.Next. Notice that enabling this option requires <code>rocm-hip-sdk</code> installed as it will download and compile an additional Python package from source on startup. </p>
-<p>In case you want to install it manually, activate the virtual environment then run <code>pip</code>:</p>
-<p><code>pip install git+https://github.com/Disty0/flash-attention@navi_rotary_fix</code></p>
+<p>In case you want to install it manually, activate the virtual environment then run <code>pip</code>:<br />
+<div class="highlight"><pre><span></span><code>pip install --no-build-isolation git+https://github.com/Disty0/flash-attention@navi_rotary_fix
+</code></pre></div></p>
 <h2 id="rocm-windows-support">ROCm Windows Support</h2>
 <p>This is a guide to build rocBLAS based on the ROCm Official Documentations.</p>
 <p>You may have an AMD GPU without official support on ROCm <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">HIP SDK</a>
