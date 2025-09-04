@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-02" class="md-nav__link">
+  <a href="#update-for-2025-09-03" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-02
+      Update for 2025-09-03
     </span>
   </a>
   
@@ -4570,9 +4570,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-02" class="md-nav__link">
+  <a href="#update-for-2025-09-03" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-02
+      Update for 2025-09-03
     </span>
   </a>
   
@@ -6164,7 +6164,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-09-02">Update for 2025-09-02</h2>
+<h2 id="update-for-2025-09-03">Update for 2025-09-03</h2>
 <ul>
 <li><strong>Models</strong>  </li>
 <li><strong>Chroma</strong> final versions: <a href="https://huggingface.co/lodestones/Chroma1-HD">Chroma1-HD</a>, <a href="https://huggingface.co/lodestones/Chroma1-Base">Chroma1-Base</a> and <a href="https://huggingface.co/lodestones/Chroma1-Flash">Chroma1-Flash</a>  </li>
@@ -6192,6 +6192,7 @@
 <li>restyled all toolbuttons to be modernui native  </li>
 <li>reodered system settings  </li>
 <li>dynamic direction of dropdowns  </li>
+<li>improve process tab layout</li>
 <li>configurable horizontal vs vertical panel layout<br />
     in settings -&gt; user interface -&gt; panel min width<br />
 <em>example</em>: if panel width is less than specified value, layout switches to verical  </li>
@@ -6207,10 +6208,12 @@
 <li><strong>Other</strong></li>
 <li>refactor reuse-seed and add functionality to all tabs  </li>
 <li>refactor modernui js codebase  </li>
-<li>move zluda flash attenion to <code>Triton Flash attention</code> option  </li>
+<li>move zluda flash attenion to <em>Triton Flash attention</em> option  </li>
+<li>remove samplers filtering  </li>
 <li><strong>Fixes</strong></li>
 <li>normalize path hanlding when deleting images  </li>
-<li>remove samplers filtering  </li>
+<li>unified compile upscalers  </li>
+<li>fix OpenVINO with ControlNet  </li>
 <li>fix hidden model tags in networks display  </li>
 <li>fix networks reference models display on windows  </li>
 <li>fix handling of pre-quantized <code>flux</code> models  </li>
@@ -6222,6 +6225,7 @@
 <li>fix <code>infiniteyou</code> pipeline offloading  </li>
 <li>fix <code>skyreels-v2</code> image-to-video  </li>
 <li>fix <code>flex2</code> img2img denoising strength  </li>
+<li>fix <code>flex2</code> contronet vs inpaint image selection, thanks @alerikaisattera  </li>
 <li>fix some use cases with access via reverse-proxy  </li>
 <li>fix segfault on startup with <code>rocm==6.4.3</code> and <code>torch==2.8</code>  </li>
 <li>fix wildcards folders traversal, thanks @dymil  </li>
@@ -6240,14 +6244,14 @@
 <em>note</em>: release version of <code>nunchaku==0.3.2</code> does NOT include support, so you need to build <a href="https://nunchaku.tech/docs/nunchaku/installation/installation.html">nunchaku</a> from source  </li>
 <li><a href="https://vladmandic.github.io/sd-samples/compare.html">SD.Next Model Samples Gallery</a>  </li>
 <li>updated with new models  </li>
-<li><strong>Features</strong></li>
+<li><strong>Features</strong>  </li>
 <li>new <em>setting -&gt; huggingface -&gt; download method</em><br />
     default is <code>rust</code> as new <code>xet</code> is known to cause issues  </li>
 <li>support for <code>flux.1-kontext</code> lora  </li>
 <li>support for <code>qwen-image</code> lora  </li>
 <li>new <em>setting -&gt; quantization -&gt; modules dtype dict</em><br />
     used to manually override quant types per module  </li>
-<li><strong>UI</strong></li>
+<li><strong>UI</strong>  </li>
 <li>new artwork for reference models in networks<br />
     thanks @liutyi  </li>
 <li>updated <a href="https://vladmandic.github.io/sdnext-docs/Locale/">localization</a> for all 8 languages  </li>
@@ -6256,10 +6260,10 @@
     double-click on locale resets locale to <code>en</code>  </li>
 <li>exclude ModernUI from list of extensions<br />
     ModernUI is enabled in settings, not by manually enabling extension  </li>
-<li><strong>Docs</strong></li>
+<li><strong>Docs</strong>  </li>
 <li>Models and Video pages updated with links to original model repos, model licenses and original release dates<br />
     thanks @alerikaisattera  </li>
-<li><strong>Fixes</strong></li>
+<li><strong>Fixes</strong>  </li>
 <li>nunchaku use new download links and default to <code>0.3.2</code><br />
     nunchaku wheels: <a href="https://huggingface.co/nunchaku-tech/nunchaku/tree/main">https://huggingface.co/nunchaku-tech/nunchaku/tree/main</a>  </li>
 <li>fix OpenVINO with offloading  </li>
