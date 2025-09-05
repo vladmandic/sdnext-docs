@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-03" class="md-nav__link">
+  <a href="#update-for-2025-09-05" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-03
+      Update for 2025-09-05
     </span>
   </a>
   
@@ -4570,9 +4570,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-03" class="md-nav__link">
+  <a href="#update-for-2025-09-05" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-03
+      Update for 2025-09-05
     </span>
   </a>
   
@@ -6164,21 +6164,21 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-09-03">Update for 2025-09-03</h2>
+<h2 id="update-for-2025-09-05">Update for 2025-09-05</h2>
 <ul>
-<li><strong>Models</strong>  </li>
+<li><strong>Models</strong></li>
 <li><strong>Chroma</strong> final versions: <a href="https://huggingface.co/lodestones/Chroma1-HD">Chroma1-HD</a>, <a href="https://huggingface.co/lodestones/Chroma1-Base">Chroma1-Base</a> and <a href="https://huggingface.co/lodestones/Chroma1-Flash">Chroma1-Flash</a>  </li>
 <li><strong>Qwen-Image</strong> <a href="https://huggingface.co/InstantX/Qwen-Image-ControlNet-Union">InstantX ControlNet Union</a> support<br />
 <em>note</em> qwen-image is already a very large model and controlnet adds 3.5GB on top of that so quantization and offloading are highly recommended!  </li>
-<li><a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image">Nunchaku-Qwen-Image-Lightning</a><br />
-    if you have a compatible nVidia GPU, Nunchaku is the fastest quantization engine, currently available for Flux.1, SANA and Qwen-Image models<br />
-<em>note</em>: release version of <code>nunchaku==0.3.2</code> does NOT include support, so you need to build <a href="https://nunchaku.tech/docs/nunchaku/installation/installation.html">nunchaku</a> from source  </li>
+<li><a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image">Nunchaku-Qwen-Image-Lightning</a> and <a href="https://huggingface.co/nunchaku-tech/nunchaku-flux.1-krea-dev">Nunchaku-Flux.1-Krea-Dev</a><br />
+    if you have a compatible nVidia GPU, Nunchaku is the fastest quantization engine,  </li>
 <li><a href="https://huggingface.co/Tencent-Hunyuan/HYDiT-ControlNet-v1.2">HunyuanDiT ControlNet</a> Canny, Depth, Pose  </li>
 <li><a href="https://huggingface.co/KBlueLeaf/HDM-xut-340M-anime">KBlueLeaf/HDM-xut-340M-anime</a><br />
-    highly experimental: HDM <em>Home-made-Diffusion-Model</em> is a project to investigate specialized training recipe/scheme for pretraining T2I model at home based on super-light architecture<br />
+    highly experimental: HDM <em>Home-made-Diffusion-Model</em> is a project to investigate specialized training recipe/scheme<br />
+    for pretraining T2I model at home based on super-light architecture<br />
     requires: generator=cpu, dtype=float16, offload=none  </li>
 <li>updated <a href="https://vladmandic.github.io/sd-samples/compare.html">SD.Next Model Samples Gallery</a>  </li>
-<li><strong>UI</strong>  </li>
+<li><strong>UI</strong></li>
 <li>default to <strong>ModernUI</strong><br />
     standard ui is still available via <em>settings -&gt; user interface -&gt; theme type</em>  </li>
 <li>mobile-friendly!  </li>
@@ -6205,8 +6205,14 @@
 <li>improve offloading of models with impliciy vae processing  </li>
 <li>improve offloading of models with controlnet  </li>
 <li>more aggressive offloading of controlnets with lowvram flag  </li>
-<li><strong>SDNQ</strong></li>
-<li>add quantized matmul support for all quantization types and group sizes  </li>
+<li><strong>Quantization</strong></li>
+<li><strong>sdnq</strong>: add quantized matmul support for all quantization types and group sizes  </li>
+<li><strong>nunchaku</strong>: update to <code>nunchaku==1.0.0</code><br />
+<em>note</em>: nunchaku updated the repo which will trigger re-download of nunchaku models when first used<br />
+    nunchaku is currently available for: <em>Flux.1 Dev/Schnell/Kontext/Krea/Depth/Fill</em>, <em>Qwen-Image/Qwen-Lightning</em>, <em>SANA-1.6B</em>  </li>
+<li><strong>tensorrt</strong>: new quantization engine from nvidia<br />
+<em>experimental</em>: requires new pydantic package which <em>may</em> break other things, to enable start sdnext with <code>--new</code> flag<br />
+<em>note</em>: this is model quantization only, no support for tensorRT inference yet  </li>
 <li><strong>Other</strong></li>
 <li>refactor reuse-seed and add functionality to all tabs  </li>
 <li>refactor modernui js codebase  </li>
@@ -6214,6 +6220,10 @@
 <li>remove samplers filtering  </li>
 <li>allow both flow-matching and discrete samplers for sdxl models  </li>
 <li>cleanup command line parameters  </li>
+<li>add <code>--new</code> command line flag to enable testing of new packages without breaking existing installs  </li>
+<li><strong>OpenVINO</strong></li>
+<li>update to <code>openvino==2025.3.0</code>  </li>
+<li>add deprecation warning for Python 3.9  </li>
 <li><strong>Fixes</strong></li>
 <li>normalize path hanlding when deleting images  </li>
 <li>unified compile upscalers  </li>
