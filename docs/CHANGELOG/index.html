@@ -2961,28 +2961,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-07" class="md-nav__link">
+  <a href="#update-for-2025-09-08" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-07
+      Update for 2025-09-08
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-09-07">
+    <nav class="md-nav" aria-label="Update for 2025-09-08">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-09-07" class="md-nav__link">
+  <a href="#highlights-for-2025-09-08" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-09-07
+      Highlights for 2025-09-08
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-09-07" class="md-nav__link">
+  <a href="#details-for-2025-09-08" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-09-07
+      Details for 2025-09-08
     </span>
   </a>
   
@@ -4594,28 +4594,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-07" class="md-nav__link">
+  <a href="#update-for-2025-09-08" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-07
+      Update for 2025-09-08
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-09-07">
+    <nav class="md-nav" aria-label="Update for 2025-09-08">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-09-07" class="md-nav__link">
+  <a href="#highlights-for-2025-09-08" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-09-07
+      Highlights for 2025-09-08
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-09-07" class="md-nav__link">
+  <a href="#details-for-2025-09-08" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-09-07
+      Details for 2025-09-08
     </span>
   </a>
   
@@ -6212,14 +6212,14 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-09-07">Update for 2025-09-07</h2>
-<h3 id="highlights-for-2025-09-07">Highlights for 2025-09-07</h3>
+<h2 id="update-for-2025-09-08">Update for 2025-09-08</h2>
+<h3 id="highlights-for-2025-09-08">Highlights for 2025-09-08</h3>
 <p><em>What's new</em>? Big one is that we're (finally) switching the default UI to <strong>ModernUI</strong>!<br />
 StandardUI is still available and can be selected in settings, but ModernUI is now the default for new installs<br />
 <em>What's else</em>? <strong>Chroma</strong> is in its final form, there are several new <strong>Qwen-Image</strong> variants and <strong>Nunchaku</strong> hit version 1.0!<br />
 Also, there are quite a few offloading improvements and many quality-of-life changes to UI and overal workflows  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a></p>
-<h3 id="details-for-2025-09-07">Details for 2025-09-07</h3>
+<h3 id="details-for-2025-09-08">Details for 2025-09-08</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><strong>Chroma</strong> final versions: <a href="https://huggingface.co/lodestones/Chroma1-HD">Chroma1-HD</a>, <a href="https://huggingface.co/lodestones/Chroma1-Base">Chroma1-Base</a> and <a href="https://huggingface.co/lodestones/Chroma1-Flash">Chroma1-Flash</a>  </li>
@@ -6264,7 +6264,11 @@ Also, there are quite a few offloading improvements and many quality-of-life cha
 <li>improve offloading of models with controlnet  </li>
 <li>more aggressive offloading of controlnets with lowvram flag  </li>
 <li><strong>Quantization</strong></li>
-<li><strong>sdnq</strong>: add quantized matmul support for all quantization types and group sizes  </li>
+<li><strong>sdnq</strong><ul>
+<li>add quantized matmul support for all quantization types and group sizes  </li>
+<li>improve the performance of low bit quants  </li>
+</ul>
+</li>
 <li><strong>nunchaku</strong>: update to <code>nunchaku==1.0.0</code><br />
 <em>note</em>: nunchaku updated the repo which will trigger re-download of nunchaku models when first used<br />
     nunchaku is currently available for: <em>Flux.1 Dev/Schnell/Kontext/Krea/Depth/Fill</em>, <em>Qwen-Image/Qwen-Lightning</em>, <em>SANA-1.6B</em>  </li>
@@ -6282,9 +6286,8 @@ Also, there are quite a few offloading improvements and many quality-of-life cha
 <li>downgrade rocm to <code>torch==2.7.1</code>  </li>
 <li>set the minimum supported rocm version on linux to <code>rocm==6.0</code>  </li>
 <li>disallow <code>zluda</code> and <code>directml</code> on non-windows platforms  </li>
-<li><strong>OpenVINO</strong></li>
-<li>update to <code>openvino==2025.3.0</code>  </li>
-<li>add deprecation warning for Python 3.9  </li>
+<li>update openvino to <code>openvino==2025.3.0</code>  </li>
+<li>add deprecation warning for <code>python==3.9</code>  </li>
 <li><strong>Fixes</strong></li>
 <li>normalize path hanlding when deleting images  </li>
 <li>unified compile upscalers  </li>
@@ -6308,6 +6311,7 @@ Also, there are quite a few offloading improvements and many quality-of-life cha
 <li>fix <code>wan a14b</code> quantization  </li>
 <li>fix reprocess workflow for control with hires  </li>
 <li>fix samplers set timesteps vs sigmas  </li>
+<li>fix <code>detailer</code> missing metadata  </li>
 </ul>
 <h2 id="update-for-2025-08-20">Update for 2025-08-20</h2>
 <p>A quick service release with several important hotfixes, improved localization support and adding new <strong>Qwen</strong> model variants...</p>
