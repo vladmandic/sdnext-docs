@@ -6260,12 +6260,23 @@ Also, there are quite a few offloading improvements and many quality-of-life cha
     in <em>settings -&gt; user interface -&gt; grid image size</em>  </li>
 <li>gallery now includes reference model images  </li>
 <li><strong>Offloading</strong></li>
+<li><strong>balanced</strong><ul>
 <li>enable offload during pre-forward by default  </li>
 <li>improve offloading of models with multiple dits  </li>
 <li>improve offloading of models with impliciy vae processing  </li>
 <li>improve offloading of models with controlnet  </li>
 <li>more aggressive offloading of controlnets with lowvram flag  </li>
+</ul>
+</li>
+<li><strong>group</strong><ul>
+<li>new offloading method, using <em>type=leaf</em> works on a similar level as sequential offloading<br />
+  and can present siginificant savings on low-vram gpus, but comes at the higher performace cost  </li>
+</ul>
+</li>
 <li><strong>Quantization</strong></li>
+<li>option to specify models types not to quantize: <em>settings -&gt; quantization</em><br />
+    allows for having quantization enabled, but skipping specific model types that do not need it<br />
+<em>example</em>: <code>sd, sdxl</code>  </li>
 <li><strong>sdnq</strong><ul>
 <li>add quantized matmul support for all quantization types and group sizes  </li>
 <li>improve the performance of low bit quants  </li>
