@@ -2961,28 +2961,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-11" class="md-nav__link">
+  <a href="#update-for-2025-09-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-11
+      Update for 2025-09-12
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-09-11">
+    <nav class="md-nav" aria-label="Update for 2025-09-12">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-09-11" class="md-nav__link">
+  <a href="#highlights-for-2025-09-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-09-11
+      Highlights for 2025-09-12
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-09-11" class="md-nav__link">
+  <a href="#details-for-2025-09-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-09-11
+      Details for 2025-09-12
     </span>
   </a>
   
@@ -4594,28 +4594,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-11" class="md-nav__link">
+  <a href="#update-for-2025-09-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-11
+      Update for 2025-09-12
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-09-11">
+    <nav class="md-nav" aria-label="Update for 2025-09-12">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-09-11" class="md-nav__link">
+  <a href="#highlights-for-2025-09-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-09-11
+      Highlights for 2025-09-12
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-09-11" class="md-nav__link">
+  <a href="#details-for-2025-09-12" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-09-11
+      Details for 2025-09-12
     </span>
   </a>
   
@@ -6212,14 +6212,14 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-09-11">Update for 2025-09-11</h2>
-<h3 id="highlights-for-2025-09-11">Highlights for 2025-09-11</h3>
+<h2 id="update-for-2025-09-12">Update for 2025-09-12</h2>
+<h3 id="highlights-for-2025-09-12">Highlights for 2025-09-12</h3>
 <p><em>What's new</em>? Big one is that we're (finally) switching the default UI to <strong>ModernUI</strong>!<br />
 StandardUI is still available and can be selected in settings, but ModernUI is now the default for new installs  </p>
 <p><em>What's else</em>? <strong>Chroma</strong> is in its final form, there are several new <strong>Qwen-Image</strong> variants and <strong>Nunchaku</strong> hit version 1.0!<br />
 Also, there are quite a few offloading improvements and many quality-of-life changes to UI and overal workflows  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2025-09-11">Details for 2025-09-11</h3>
+<h3 id="details-for-2025-09-12">Details for 2025-09-12</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><strong>Chroma</strong> final versions: <a href="https://huggingface.co/lodestones/Chroma1-HD">Chroma1-HD</a>, <a href="https://huggingface.co/lodestones/Chroma1-Base">Chroma1-Base</a> and <a href="https://huggingface.co/lodestones/Chroma1-Flash">Chroma1-Flash</a>  </li>
@@ -6301,6 +6301,8 @@ Also, there are quite a few offloading improvements and many quality-of-life cha
 <li>disallow <code>zluda</code> and <code>directml</code> on non-windows platforms  </li>
 <li>update openvino to <code>openvino==2025.3.0</code>  </li>
 <li>add deprecation warning for <code>python==3.9</code>  </li>
+<li>allow setting denoise strength to 0 in control/img2img<br />
+    this allows to run workflows which only refine or detail existing image without changing it   </li>
 <li><strong>Detailer</strong> allow manually setting processing resolution<br />
 <em>note</em>: this does not impact the actual image resolution, only the resolution at which detailer internally operates  </li>
 <li><strong>Fixes</strong></li>
