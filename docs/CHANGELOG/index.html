@@ -2961,6 +2961,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#update-for-2025-09-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update for 2025-09-17
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update-for-2025-09-15" class="md-nav__link">
     <span class="md-ellipsis">
       Update for 2025-09-15
@@ -4594,6 +4603,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#update-for-2025-09-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update for 2025-09-17
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update-for-2025-09-15" class="md-nav__link">
     <span class="md-ellipsis">
       Update for 2025-09-15
@@ -6212,6 +6230,20 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
+<h2 id="update-for-2025-09-17">Update for 2025-09-17</h2>
+<ul>
+<li><strong>Models</strong></li>
+<li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
+    available for <em>text-to-image</em> and <em>text-to-video</em> and <em>image-to-video</em> workflows  </li>
+<li><strong>Offloading</strong></li>
+<li>improve offloading for pipelines with multiple stages such as <em>wan-2.2-14b</em>  </li>
+<li>add timers to measure onload/offload times during generate  </li>
+<li>experimental offloading using <code>torch.streams</code><br />
+    enable in settings -&gt; model offloading  </li>
+<li><strong>Other</strong></li>
+<li><strong>logging</strong> enable <code>debug</code>, <code>docs</code> and <code>api-docs</code> by default  </li>
+<li>refactor to use new libraries  </li>
+</ul>
 <h2 id="update-for-2025-09-15">Update for 2025-09-15</h2>
 <h3 id="highlights-for-2025-09-15">Highlights for 2025-09-15</h3>
 <p><em>What's new</em>? Big one is that we're (<em>finally</em>) switching the default UI to <strong>ModernUI</strong>, for both desktop and mobile use!<br />
