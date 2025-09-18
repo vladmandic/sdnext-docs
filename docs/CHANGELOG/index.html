@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-17" class="md-nav__link">
+  <a href="#update-for-2025-09-18" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-17
+      Update for 2025-09-18
     </span>
   </a>
   
@@ -4603,9 +4603,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-17" class="md-nav__link">
+  <a href="#update-for-2025-09-18" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-17
+      Update for 2025-09-18
     </span>
   </a>
   
@@ -6230,7 +6230,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-09-17">Update for 2025-09-17</h2>
+<h2 id="update-for-2025-09-18">Update for 2025-09-18</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
@@ -6240,9 +6240,18 @@
 <li>add timers to measure onload/offload times during generate  </li>
 <li>experimental offloading using <code>torch.streams</code><br />
     enable in settings -&gt; model offloading  </li>
+<li><strong>Extensions</strong></li>
+<li><strong>agent-scheduler</strong> was a high-value built-in extension, but it has not been maintained for 1.5 years<br />
+    it also does not work with control and video tabs which are the core of sdnext nowadays<br />
+    so it has been removed from built-in extensions: manual installation is still possible  </li>
 <li><strong>Other</strong></li>
+<li>server will note when restart is recommended due to package updates  </li>
 <li><strong>logging</strong> enable <code>debug</code>, <code>docs</code> and <code>api-docs</code> by default  </li>
+<li><strong>ipex</strong> simplify internal implementation  </li>
 <li>refactor to use new libraries  </li>
+<li><strong>Fixes</strong></li>
+<li>add explicit hf-login before framepack load  </li>
+<li>remove forced sampler from system info benchmark  </li>
 </ul>
 <h2 id="update-for-2025-09-15">Update for 2025-09-15</h2>
 <h3 id="highlights-for-2025-09-15">Highlights for 2025-09-15</h3>
