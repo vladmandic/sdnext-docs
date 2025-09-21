@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-20" class="md-nav__link">
+  <a href="#update-for-2025-09-21" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-20
+      Update for 2025-09-21
     </span>
   </a>
   
@@ -4603,9 +4603,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-20" class="md-nav__link">
+  <a href="#update-for-2025-09-21" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-20
+      Update for 2025-09-21
     </span>
   </a>
   
@@ -6230,7 +6230,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-09-20">Update for 2025-09-20</h2>
+<h2 id="update-for-2025-09-21">Update for 2025-09-21</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
@@ -6242,6 +6242,8 @@
     note that nunchaku optimized and prequantized unet is replacement for base unet, so its only applicable to base models, not any of finetunes<br />
 <em>how to use</em>: enable nunchaku in settings -&gt; quantization and then load either sdxl-base or sdxl-base-turbo reference models<br />
 <em>note</em>: sdxl support for nunchaku is not in released version of <code>nunchaku==1.0.0</code>, so you need to build <a href="https://nunchaku.tech/docs/nunchaku/installation/installation.html">nunchaku</a> from source</li>
+<li><a href="https://nunchaku.tech/docs/nunchaku/python_api/nunchaku.pipeline.pipeline_flux_pulid.html">Nunchaku Flux.1 PulID</a><br />
+    automatically enabled if loaded model is FLUX.1 with Nunchaku engine enabled and when PulID script is enabled  </li>
 <li><strong>Offloading</strong></li>
 <li>improve offloading for pipelines with multiple stages such as <em>wan-2.2-14b</em>  </li>
 <li>add timers to measure onload/offload times during generate  </li>
