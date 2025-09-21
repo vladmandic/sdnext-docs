@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-19" class="md-nav__link">
+  <a href="#update-for-2025-09-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-19
+      Update for 2025-09-20
     </span>
   </a>
   
@@ -4603,9 +4603,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-09-19" class="md-nav__link">
+  <a href="#update-for-2025-09-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-09-19
+      Update for 2025-09-20
     </span>
   </a>
   
@@ -6230,13 +6230,18 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-09-19">Update for 2025-09-19</h2>
+<h2 id="update-for-2025-09-20">Update for 2025-09-20</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
     available for <em>text-to-image</em> and <em>text-to-video</em> and <em>image-to-video</em> workflows  </li>
 <li><a href="https://huggingface.co/tencent/SRPO">Tencent FLUX.1 Dev SRPO</a><br />
-    SRPO is trained by with specific technique: Directly Aligning the Full Diffusion Trajectory with Fine-Grained Human Preference  </li>
+    SRPO is trained by Tencent with specific technique: Directly Aligning the Full Diffusion Trajectory with Fine-Grained Human Preference  </li>
+<li><a href="https://huggingface.co/nunchaku-tech/nunchaku-sdxl">Nunchaku SDXL</a> and <a href="https://huggingface.co/nunchaku-tech/nunchaku-sdxl-turbo">Nunchaku SDXL Turbo</a><br />
+    impact of nunchaku engine on unet-based model such as sdxl is much less than on a dit-based models, but its still significantly faster than baseline<br />
+    note that nunchaku optimized and prequantized unet is replacement for base unet, so its only applicable to base models, not any of finetunes<br />
+<em>how to use</em>: enable nunchaku in settings -&gt; quantization and then load either sdxl-base or sdxl-base-turbo reference models<br />
+<em>note</em>: sdxl support for nunchaku is not in released version of <code>nunchaku==1.0.0</code>, so you need to build <a href="https://nunchaku.tech/docs/nunchaku/installation/installation.html">nunchaku</a> from source</li>
 <li><strong>Offloading</strong></li>
 <li>improve offloading for pipelines with multiple stages such as <em>wan-2.2-14b</em>  </li>
 <li>add timers to measure onload/offload times during generate  </li>
@@ -6257,6 +6262,7 @@
 <li>framepack: add explicit hf-login before framepack load  </li>
 <li>benchmark: remove forced sampler from system info benchmark  </li>
 <li>xyz-grid: fix xyz grid with random seeds  </li>
+<li>fix download for sd15/sdxl reference models  </li>
 </ul>
 <h2 id="update-for-2025-09-15">Update for 2025-09-15</h2>
 <h3 id="highlights-for-2025-09-15">Highlights for 2025-09-15</h3>
