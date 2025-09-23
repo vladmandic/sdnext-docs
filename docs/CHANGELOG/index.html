@@ -6360,6 +6360,13 @@ And check out new <strong>history</strong> tab in the right panel, it now shows 
 <em>experimental</em>: requires new pydantic package which <em>may</em> break other things, to enable start sdnext with <code>--new</code> flag<br />
 <em>note</em>: this is model quantization only, no support for tensorRT inference yet  </li>
 <li><strong>Other</strong></li>
+<li><strong>LoRA</strong> allow specifying module to apply lora on<br />
+<em>example</em>: <code>&lt;lora:mylora:1.0:module=unet&gt;</code> would apply lora <em>only</em> on unet regardless of lora content<br />
+    this is particularly useful when you have multiple loras and you want to apply them on different parts of the model<br />
+<em>example</em>: <code>&lt;lora:firstlora:1.0:high&gt;</code> and <code>&lt;lora:secondlora:1.0:low&gt;</code><br />
+<em>note</em>: <code>low</code> is shorthand for <code>module=transformer_2</code> and <code>high</code> is shortcut for <code>module=transformer</code>  </li>
+<li><strong>Detailer</strong> allow manually setting processing resolution<br />
+<em>note</em>: this does not impact the actual image resolution, only the resolution at which detailer internally operates  </li>
 <li>refactor reuse-seed and add functionality to all tabs  </li>
 <li>refactor modernui js codebase  </li>
 <li>move zluda flash attenion to <em>Triton Flash attention</em> option  </li>
@@ -6374,8 +6381,6 @@ And check out new <strong>history</strong> tab in the right panel, it now shows 
 <li>add deprecation warning for <code>python==3.9</code>  </li>
 <li>allow setting denoise strength to 0 in control/img2img<br />
     this allows to run workflows which only refine or detail existing image without changing it   </li>
-<li><strong>Detailer</strong> allow manually setting processing resolution<br />
-<em>note</em>: this does not impact the actual image resolution, only the resolution at which detailer internally operates  </li>
 <li><strong>Fixes</strong></li>
 <li>normalize path hanlding when deleting images  </li>
 <li>unified compile upscalers  </li>
