@@ -6235,7 +6235,7 @@
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
     available for <em>text-to-image</em> and <em>text-to-video</em> and <em>image-to-video</em> workflows  </li>
-<li><a href="https://huggingface.co/Qwen/Qwen-Image-Edit-2509">Qwen Image Edit 2509</a><br />
+<li><a href="https://huggingface.co/Qwen/Qwen-Image-Edit-2509">Qwen Image Edit 2509</a> and <a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image-edit-2509">Nunchaku Qwen Image Edit 2509</a><br />
     updated version of Qwen Image Edit with improved image consistency  </li>
 <li><a href="https://huggingface.co/tencent/SRPO">Tencent FLUX.1 Dev SRPO</a><br />
     SRPO is trained by Tencent with specific technique: directly aligning the full diffusion trajectory with fine-grained human preference  </li>
@@ -6251,10 +6251,14 @@
     enable in <em>settings -&gt; pipeline modifers -&gt; cache-dit</em>  </li>
 <li><a href="https://nunchaku.tech/docs/nunchaku/python_api/nunchaku.pipeline.pipeline_flux_pulid.html">Nunchaku Flux.1 PulID</a><br />
     automatically enabled if loaded model is FLUX.1 with Nunchaku engine enabled and when PulID script is enabled  </li>
-<li><strong>Extensions</strong></li>
-<li><strong>agent-scheduler</strong> was a high-value built-in extension, but it has not been maintained for 1.5 years<br />
+<li><strong>Extensions</strong>  </li>
+<li><a href="https://github.com/SipherAGI/sd-webui-agent-scheduler">Agent-Scheduler</a><br />
+    was a high-value built-in extension, but it has not been maintained for 1.5 years<br />
     it also does not work with control and video tabs which are the core of sdnext nowadays<br />
     so it has been removed from built-in extensions: manual installation is still possible  </li>
+<li><a href="https://github.com/castorini/daam">DAAM: Diffusion Attentive Attribution Maps</a><br />
+    create heatmap visualizations of which parts of the prompt influenced which parts of the image<br />
+    available in scripts for sdxl text-to-image workflows  </li>
 <li><strong>Offloading</strong></li>
 <li>improve offloading for pipelines with multiple stages such as <em>wan-2.2-14b</em>  </li>
 <li>add timers to measure onload/offload times during generate  </li>
