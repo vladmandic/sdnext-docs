@@ -1449,6 +1449,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="ROCm on Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-pytorch-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows PyTorch Preview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#therock-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      TheRock PyTorch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3239,6 +3263,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="ROCm on Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-pytorch-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows PyTorch Preview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#therock-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      TheRock PyTorch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3393,6 +3441,7 @@ Setting <code>fp16</code> has also a noticeable improvement on performance. </p>
 <div class="highlight"><pre><span></span><code>pip install --no-build-isolation git+https://github.com/Disty0/flash-attention@navi_rotary_fix
 </code></pre></div></p>
 <h2 id="rocm-on-windows">ROCm on Windows</h2>
+<h3 id="windows-pytorch-preview">Windows PyTorch Preview</h3>
 <p>AMD <a href="https://www.amd.com/en/resources/support-articles/release-notes/RN-AMDGPU-WINDOWS-PYTORCH-PREVIEW.html">released</a> the first official preview version of PyTorch.</p>
 <ol>
 <li>Install <a href="https://git-scm.com/downloads/win">Git</a> and <a href="https://www.python.org/downloads/release/python-3137/">Python <strong>3.12</strong></a>.</li>
@@ -3410,7 +3459,33 @@ Setting <code>fp16</code> has also a noticeable improvement on performance. </p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull
 </code></pre></div></li>
 <li>Run SD.Next with this command:
-<div class="highlight"><pre><span></span><code>./webui.bat<span class="w"> </span>--use-rocm<span class="w"> </span>--experimental
+<div class="highlight"><pre><span></span><code>./webui.bat<span class="w"> </span>--use-rocm
+</code></pre></div></li>
+</ol>
+<h3 id="therock-pytorch">TheRock PyTorch</h3>
+<ol>
+<li>Install <a href="https://git-scm.com/downloads/win">Git</a> and <a href="https://www.python.org/downloads/release/python-3137/">Python 3.12</a>.</li>
+<li>Open the terminal in a folder you want to install SD.Next and install SD.Next from GitHub with this command:
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/sdnext
+</code></pre></div></li>
+<li>Enter into the sdnext folder:
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>sdnext
+</code></pre></div></li>
+<li>Create Python virtual environment.
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</code></pre></div></li>
+<li>Install ROCm SDK package. Replace <code>[REPLACE_THIS]</code> with gfx110X-dgpu, gfx1151, gfx120X-all, gfx94X-dcgpu, or gfx950-dcgpu depending on your card.
+<div class="highlight"><pre><span></span><code>./venv/Scripts/activate
+pip3<span class="w"> </span>install<span class="w"> </span>rocm<span class="w"> </span>rocm-sdk-core<span class="w"> </span>rocm-sdk-libraries-<span class="o">[</span>REPLACE_THIS<span class="o">]</span><span class="w"> </span>--index-url<span class="w"> </span>https://rocm.nightlies.amd.com/v2-staging/<span class="o">[</span>REPLACE_THIS<span class="o">]</span>
+</code></pre></div></li>
+<li>Switch to dev branch:
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>dev
+</code></pre></div></li>
+<li>Make sure that you are up to date.
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull
+</code></pre></div></li>
+<li>Run SD.Next with this command:
+<div class="highlight"><pre><span></span><code>./webui.bat<span class="w"> </span>--use-rocm
 </code></pre></div></li>
 </ol>
 
