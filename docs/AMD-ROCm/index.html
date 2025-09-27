@@ -3472,11 +3472,11 @@ Setting <code>fp16</code> has also a noticeable improvement on performance. </p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>sdnext
 </code></pre></div></li>
 <li>Create Python virtual environment.
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
 </code></pre></div></li>
-<li>Install ROCm SDK package. Replace <code>[REPLACE_THIS]</code> with gfx110X-dgpu, gfx1151, gfx120X-all, gfx94X-dcgpu, or gfx950-dcgpu depending on your card.
+<li>Install PyTorch. Replace <code>[REPLACE_THIS]</code> with gfx110X-dgpu, gfx1151, gfx120X-all, gfx94X-dcgpu, or gfx950-dcgpu depending on your card.
 <div class="highlight"><pre><span></span><code>./venv/Scripts/activate
-pip3<span class="w"> </span>install<span class="w"> </span>rocm<span class="w"> </span>rocm-sdk-core<span class="w"> </span>rocm-sdk-libraries-<span class="o">[</span>REPLACE_THIS<span class="o">]</span><span class="w"> </span>--index-url<span class="w"> </span>https://rocm.nightlies.amd.com/v2-staging/<span class="o">[</span>REPLACE_THIS<span class="o">]</span>
+pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>--index-url<span class="w"> </span>https://rocm.nightlies.amd.com/v2-staging/<span class="o">[</span>REPLACE_THIS<span class="o">]</span>
 </code></pre></div></li>
 <li>Switch to dev branch:
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>dev
