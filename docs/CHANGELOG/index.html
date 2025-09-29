@@ -6237,6 +6237,8 @@
     available for <em>text-to-image</em> and <em>text-to-video</em> and <em>image-to-video</em> workflows  </li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-Edit-2509">Qwen Image Edit 2509</a> and <a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image-edit-2509">Nunchaku Qwen Image Edit 2509</a><br />
     updated version of Qwen Image Edit with improved image consistency  </li>
+<li><a href="https://huggingface.co/HiDream-ai/HiDream-E1-1">HiDream E1.1</a><br />
+    updated version of E1 image editing model  </li>
 <li><a href="https://huggingface.co/tencent/SRPO">Tencent FLUX.1 Dev SRPO</a><br />
     SRPO is trained by Tencent with specific technique: directly aligning the full diffusion trajectory with fine-grained human preference  </li>
 <li><a href="https://huggingface.co/nunchaku-tech/nunchaku-sdxl">Nunchaku SDXL</a> and <a href="https://huggingface.co/nunchaku-tech/nunchaku-sdxl-turbo">Nunchaku SDXL Turbo</a><br />
@@ -6251,6 +6253,14 @@
     enable in <em>settings -&gt; pipeline modifers -&gt; cache-dit</em>  </li>
 <li><a href="https://nunchaku.tech/docs/nunchaku/python_api/nunchaku.pipeline.pipeline_flux_pulid.html">Nunchaku Flux.1 PulID</a><br />
     automatically enabled if loaded model is FLUX.1 with Nunchaku engine enabled and when PulID script is enabled  </li>
+<li><strong>Compute</strong></li>
+<li><strong>ROCm</strong> for Windows<br />
+    support for both official torch preview release of <code>torch-rocm</code> for windows and <strong>TheRock</strong> unoffical <code>torch-rocm</code> builds for windows<br />
+    note that rocm for windows is still in preview and has limited gpu support, please check rocm docs for details  </li>
+<li><strong>DirectML</strong> warn as end-of-life<br />
+<code>torch-directml</code> received no updates in over 1 year and its currently superceded by <code>rocm</code> or <code>zluda</code>  </li>
+<li>command line params <code>--use-zluda</code> and <code>--use-rocm</code> will attempt desired operation or fail if not possible<br />
+    previously sdnext was performing a fallback to <code>torch-cpu</code> which is not desired  </li>
 <li><strong>Extensions</strong>  </li>
 <li><a href="https://github.com/SipherAGI/sd-webui-agent-scheduler">Agent-Scheduler</a><br />
     was a high-value built-in extension, but it has not been maintained for 1.5 years<br />
@@ -6280,11 +6290,22 @@
 <li><strong>api</strong> new endpoint POST <code>/sdapi/v1/civitai</code> to trigger civitai models metadata update<br />
     accepts optional <code>page</code> parameter to search specific networks page  </li>
 <li><strong>reference models</strong> additional example images, thanks @liutyi  </li>
+<li><strong>reference models</strong> add model size and release date, thanks @alerikaisattera  </li>
 <li><strong>video</strong> support for configurable multi-stage models such as WAN-2.2-14B  </li>
 <li><strong>video</strong> new LTX model selection  </li>
 <li>replace <code>pynvml</code> with <code>nvidia-ml-py</code> for gpu monitoring  </li>
 <li>update <strong>loopback</strong> script with radon seed option, thanks @rabanti  </li>
-<li><strong>vae</strong> slicing enable for lowvram/medvram, tiling for lowvram, both disabled otherwise    </li>
+<li><strong>vae</strong> slicing enable for lowvram/medvram, tiling for lowvram, both disabled otherwise  </li>
+<li><strong>attention</strong> remove split-attention and add explicitly attention slicing enable/disable option<br />
+    enable in <em>settings -&gt; compute settings</em><br />
+    can be combined with sdp, enabling may improve stability when used on iGPU or shared memory systems  </li>
+<li><strong>Experimental</strong></li>
+<li><code>new</code> command line flag enables new <code>pydantic</code> and <code>albumentations</code> packages  </li>
+<li><strong>modular pipelines</strong>: enable in <em>settings -&gt; model options</em><br />
+    only compatible with some pipelines, invalidates preview generation  </li>
+<li><strong>modular guiders</strong>: automatically used for compatible pipelines when <em>modular pipelines</em> is enabled<br />
+    allows for using many different guidance methods:<br />
+<em>CFG, CFGZero, PAG, APG, SLG, SEG, TCFG, FDG</em>  </li>
 <li><strong>Fixes</strong></li>
 <li>ui: fix image metadata display when switching selected image in control tab  </li>
 <li>framepack: add explicit hf-login before framepack load  </li>
