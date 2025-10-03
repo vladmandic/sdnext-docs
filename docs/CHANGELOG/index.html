@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-02" class="md-nav__link">
+  <a href="#update-for-2025-10-03" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-02
+      Update for 2025-10-03
     </span>
   </a>
   
@@ -4603,9 +4603,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-02" class="md-nav__link">
+  <a href="#update-for-2025-10-03" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-02
+      Update for 2025-10-03
     </span>
   </a>
   
@@ -6230,13 +6230,15 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-10-02">Update for 2025-10-02</h2>
+<h2 id="update-for-2025-10-03">Update for 2025-10-03</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
     available for <em>text-to-image</em> and <em>text-to-video</em> and <em>image-to-video</em> workflows  </li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-Edit-2509">Qwen Image Edit 2509</a> and <a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image-edit-2509">Nunchaku Qwen Image Edit 2509</a><br />
     updated version of Qwen Image Edit with improved image consistency  </li>
+<li><a href="https://huggingface.co/OPPOer/Qwen-Image-Pruning">Qwen Image Pruning</a> and <a href="https://huggingface.co/OPPOer/Qwen-Image-Edit-Pruning">Qwen Image Edit Pruning</a><br />
+    pruned versions of Qwen with 13B params instead of 20B, with some quality tradeoff  </li>
 <li><a href="https://huggingface.co/HiDream-ai/HiDream-E1-1">HiDream E1.1</a><br />
     updated version of E1 image editing model  </li>
 <li><a href="https://huggingface.co/tencent/SRPO">Tencent FLUX.1 Dev SRPO</a><br />
@@ -6244,8 +6246,7 @@
 <li><a href="https://huggingface.co/nunchaku-tech/nunchaku-sdxl">Nunchaku SDXL</a> and <a href="https://huggingface.co/nunchaku-tech/nunchaku-sdxl-turbo">Nunchaku SDXL Turbo</a><br />
     impact of nunchaku engine on unet-based model such as sdxl is much less than on a dit-based models, but its still significantly faster than baseline<br />
     note that nunchaku optimized and prequantized unet is replacement for base unet, so its only applicable to base models, not any of finetunes<br />
-<em>how to use</em>: enable nunchaku in settings -&gt; quantization and then load either sdxl-base or sdxl-base-turbo reference models<br />
-<em>note</em>: sdxl support for nunchaku is not in released version of <code>nunchaku==1.0.0</code>, so you need to build <a href="https://nunchaku.tech/docs/nunchaku/installation/installation.html">nunchaku</a> from source</li>
+<em>how to use</em>: enable nunchaku in settings -&gt; quantization and then load either sdxl-base or sdxl-base-turbo reference models  </li>
 <li><strong>Features</strong></li>
 <li><a href="https://github.com/vipshop/cache-dit">Cache-DiT</a><br />
     cache-dit is a unified, flexible and training-free cache acceleration framework<br />
@@ -6304,6 +6305,7 @@
 <li><strong>attention</strong> remove split-attention and add explicitly attention slicing enable/disable option<br />
     enable in <em>settings -&gt; compute settings</em><br />
     can be combined with sdp, enabling may improve stability when used on iGPU or shared memory systems  </li>
+<li><strong>nunchaku</strong> update to <code>1.0.1</code> and enhance installer    </li>
 <li><strong>Experimental</strong></li>
 <li><code>new</code> command line flag enables new <code>pydantic</code> and <code>albumentations</code> packages  </li>
 <li><strong>modular pipelines</strong>: enable in <em>settings -&gt; model options</em><br />
