@@ -3594,12 +3594,9 @@ Disabled by default.  </p>
   Requires Turing (RTX 2000) or newer GPUs for INT8 matmul.<br />
   Requires Ada (RTX 4000) or newer GPUs for FP8 matmul.<br />
 - <strong>AMD</strong><br />
-  Requires ROCm, not supported with Zluda.<br />
-  Requires RDNA3 (RX 7000) or newer GPUs for INT8 matmul.<br />
-  Requires MI300X for FP8 matmul.<br />
-  - RDNA3 supports INT8 matmul but runs at the same speed as FP16.<br />
-  - RDNA4 (RX 9000) supports fast INT8 and FP8 matmul but software support isn't ready yet.<br />
-    FP8 matmul will work with RX 9000 when AMD adds FP8 matmul support to PyTorch.<br />
+  Requires RDNA2 (RX 6000) or newer GPUs for INT8 matmul.<br />
+  Requires MI300X or RDNA4 (RX 9000) for FP8 matmul.<br />
+  - RDNA3 (RX 7000) supports INT8 matmul but runs at the same speed as FP16.<br />
 - <strong>Intel</strong><br />
   Requires Alchemist (Arc A) or newer GPUs for INT8 matmul.<br />
   Intel doesn't support FP8 matmul.  </p>
