@@ -3588,7 +3588,7 @@ Enabled by default if Triton is available.  </p>
 <h3 id="use-quantized-matmul">Use Quantized MatMul</h3>
 <p>Enabling this option will use quantized INT8 or FP8 MatMul instead of BF16 / FP16.<br />
 Has significantly higher performance on GPUs with INT8 or FP8 support. <br />
-Disabled by default.  </p>
+Requires Triton. Disabled by default.  </p>
 <p><strong>Supported GPUs</strong><br />
 - <strong>Nvidia</strong><br />
   Requires Turing (RTX 2000) or newer GPUs for INT8 matmul.<br />
@@ -3597,6 +3597,7 @@ Disabled by default.  </p>
   Requires RDNA2 (RX 6000) or newer GPUs for INT8 matmul.<br />
   Requires MI300X or RDNA4 (RX 9000) for FP8 matmul.<br />
   - RDNA3 (RX 7000) supports INT8 matmul but runs at the same speed as FP16.<br />
+  - RDNA2 (RX 6000) and older GPUs are supported via Triton.<br />
 - <strong>Intel</strong><br />
   Requires Alchemist (Arc A) or newer GPUs for INT8 matmul.<br />
   Intel doesn't support FP8 matmul.  </p>
