@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-03" class="md-nav__link">
+  <a href="#update-for-2025-10-04" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-03
+      Update for 2025-10-04
     </span>
   </a>
   
@@ -4603,9 +4603,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-03" class="md-nav__link">
+  <a href="#update-for-2025-10-04" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-03
+      Update for 2025-10-04
     </span>
   </a>
   
@@ -6230,7 +6230,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-10-03">Update for 2025-10-03</h2>
+<h2 id="update-for-2025-10-04">Update for 2025-10-04</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
@@ -6248,6 +6248,11 @@
     note that nunchaku optimized and prequantized unet is replacement for base unet, so its only applicable to base models, not any of finetunes<br />
 <em>how to use</em>: enable nunchaku in settings -&gt; quantization and then load either sdxl-base or sdxl-base-turbo reference models  </li>
 <li><strong>Features</strong></li>
+<li>[Qwen Image-Edit] multi-image editing
+    requires qwen-image-edit-2509 or its variant as multi-image edits are not available in original qwen-image<br />
+    in ui control tab: inputs -&gt; separate init image<br />
+    add image for <em>input media</em> and <em>control media</em><br />
+    can be </li>
 <li><a href="https://github.com/vipshop/cache-dit">Cache-DiT</a><br />
     cache-dit is a unified, flexible and training-free cache acceleration framework<br />
     compatible with many dit-based models such as FLUX.1, Qwen, HunyuanImage, Wan2.2, Chroma, etc.<br />
@@ -6311,7 +6316,8 @@
 <li><strong>attention</strong> remove split-attention and add explicitly attention slicing enable/disable option<br />
     enable in <em>settings -&gt; compute settings</em><br />
     can be combined with sdp, enabling may improve stability when used on iGPU or shared memory systems  </li>
-<li><strong>nunchaku</strong> update to <code>1.0.1</code> and enhance installer    </li>
+<li><strong>nunchaku</strong> update to <code>1.0.1</code> and enhance installer  </li>
+<li><strong>xyz-grid</strong> add guidance section  </li>
 <li><strong>Experimental</strong></li>
 <li><code>new</code> command line flag enables new <code>pydantic</code> and <code>albumentations</code> packages  </li>
 <li><strong>modular pipelines</strong>: enable in <em>settings -&gt; model options</em><br />
@@ -6319,6 +6325,8 @@
 <li><strong>modular guiders</strong>: automatically used for compatible pipelines when <em>modular pipelines</em> is enabled<br />
     allows for using many different guidance methods:<br />
 <em>CFG, CFGZero, PAG, APG, SLG, SEG, TCFG, FDG</em>  </li>
+<li><strong>Wiki</strong></li>
+<li>updates to <em>AMD-ROCm, ZLUDA, LoRA, DirectML, SDNQ</em> pages</li>
 <li><strong>Fixes</strong></li>
 <li><strong>Microsoft Florence 2</strong> both base and large variants<br />
 <em>note</em> this will trigger download of the new variant of the model, feel free to delete older variant in <code>huggingface</code> folder  </li>
