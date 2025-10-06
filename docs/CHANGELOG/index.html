@@ -6239,14 +6239,16 @@
     updated version of Qwen Image Edit with improved image consistency  </li>
 <li><a href="https://huggingface.co/OPPOer/Qwen-Image-Pruning">Qwen Image Pruning</a> and <a href="https://huggingface.co/OPPOer/Qwen-Image-Edit-Pruning">Qwen Image Edit Pruning</a><br />
     pruned versions of Qwen with 13B params instead of 20B, with some quality tradeoff  </li>
-<li><a href="https://huggingface.co/HiDream-ai/HiDream-E1-1">HiDream E1.1</a><br />
-    updated version of E1 image editing model  </li>
 <li><a href="https://huggingface.co/tencent/SRPO">Tencent FLUX.1 Dev SRPO</a><br />
     SRPO is trained by Tencent with specific technique: directly aligning the full diffusion trajectory with fine-grained human preference  </li>
 <li><a href="https://huggingface.co/nunchaku-tech/nunchaku-sdxl">Nunchaku SDXL</a> and <a href="https://huggingface.co/nunchaku-tech/nunchaku-sdxl-turbo">Nunchaku SDXL Turbo</a><br />
     impact of nunchaku engine on unet-based model such as sdxl is much less than on a dit-based models, but its still significantly faster than baseline<br />
     note that nunchaku optimized and prequantized unet is replacement for base unet, so its only applicable to base models, not any of finetunes<br />
 <em>how to use</em>: enable nunchaku in settings -&gt; quantization and then load either sdxl-base or sdxl-base-turbo reference models  </li>
+<li><a href="https://x-omni-team.github.io/">X-Omni SFT</a><br />
+<em>experimental</em>: X-omni is a transformer-only discrete autoregressive image generative model trained with reinforcement learning  </li>
+<li><a href="https://huggingface.co/HiDream-ai/HiDream-E1-1">HiDream E1.1</a><br />
+<em>experimental</em>: updated version of E1 image editing model  </li>
 <li><strong>Features</strong></li>
 <li>[Qwen Image-Edit] multi-image editing
     requires qwen-image-edit-2509 or its variant as multi-image edits are not available in original qwen-image<br />
@@ -6288,6 +6290,7 @@
     main logo in top-left corner now indicates server connection status and hovering over it shows connection details  </li>
 <li>separate guidance and detail sections  </li>
 <li>networks ability to filter lora by base model version  </li>
+<li>add interrogate button to input images  </li>
 <li><strong>SDNQ</strong><ul>
 <li>add <code>SVDQuant</code> quantization method support  </li>
 <li>make sdnq scales compatible with balanced offload  </li>
@@ -6319,6 +6322,15 @@
     can be combined with sdp, enabling may improve stability when used on iGPU or shared memory systems  </li>
 <li><strong>nunchaku</strong> update to <code>1.0.1</code> and enhance installer  </li>
 <li><strong>xyz-grid</strong> add guidance section  </li>
+<li><strong>Video</strong></li>
+<li>use shared T5 text encoder for video models when possible  </li>
+<li>unified video save code across all video models<br />
+    also avoids creation of temporary files for each frame unless user wants to save them  </li>
+<li>unified prompt enhance code across all video models  </li>
+<li>add job state tracking for video generation  </li>
+<li>fix quantization not being applied on load for some models  </li>
+<li>improve offloading for <strong>ltx</strong> and <strong>wan</strong>  </li>
+<li>fix model selection in <strong>ltx</strong> tab  </li>
 <li><strong>Experimental</strong></li>
 <li><code>new</code> command line flag enables new <code>pydantic</code> and <code>albumentations</code> packages  </li>
 <li><strong>modular pipelines</strong>: enable in <em>settings -&gt; model options</em><br />
@@ -6340,9 +6352,6 @@
 <li>reference: fix download for sd15/sdxl reference models  </li>
 <li>fix checks in init/mask image decode  </li>
 <li>fix hf token with extra chars  </li>
-<li><strong>FramePack</strong> job state tracking  </li>
-<li><strong>LTXVideo</strong> with offloading  </li>
-<li><strong>WAN</strong> with offloading  </li>
 </ul>
 <h2 id="update-for-2025-09-15">Update for 2025-09-15</h2>
 <h3 id="highlights-for-2025-09-15">Highlights for 2025-09-15</h3>
