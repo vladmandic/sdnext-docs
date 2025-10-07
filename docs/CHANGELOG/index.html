@@ -6269,6 +6269,7 @@
 <code>torch-directml</code> received no updates in over 1 year and its currently superceded by <code>rocm</code> or <code>zluda</code>  </li>
 <li>command line params <code>--use-zluda</code> and <code>--use-rocm</code> will attempt desired operation or fail if not possible<br />
     previously sdnext was performing a fallback to <code>torch-cpu</code> which is not desired  </li>
+<li>if <code>--use-cuda</code> or <code>--use-rocm</code> are specified and <code>torch-cpu</code> is installed, installer will attempt to reinstall correct torch package  </li>
 <li><strong>installer</strong>: warn if cuda or rocm are available and <code>torch-cpu</code> is installed  </li>
 <li><strong>Extensions</strong>  </li>
 <li><a href="https://github.com/SipherAGI/sd-webui-agent-scheduler">Agent-Scheduler</a><br />
@@ -6291,13 +6292,11 @@
 <li>separate guidance and detail sections  </li>
 <li>networks ability to filter lora by base model version  </li>
 <li>add interrogate button to input images  </li>
-<li><strong>SDNQ</strong><ul>
+<li><strong>SDNQ</strong></li>
 <li>add <code>SVDQuant</code> quantization method support  </li>
 <li>make sdnq scales compatible with balanced offload  </li>
 <li>add int8 matmul support for RDNA2 GPUs via triton  </li>
 <li>improve int8 mamtul performance on Intel GPUs  </li>
-</ul>
-</li>
 <li><strong>Other</strong></li>
 <li>server will note when restart is recommended due to package updates  </li>
 <li><strong>interrrupt</strong> will now show last known preview image<br />
@@ -6322,6 +6321,7 @@
     can be combined with sdp, enabling may improve stability when used on iGPU or shared memory systems  </li>
 <li><strong>nunchaku</strong> update to <code>1.0.1</code> and enhance installer  </li>
 <li><strong>xyz-grid</strong> add guidance section  </li>
+<li><strong>preview</strong> implement configurable layers for WAN, Qwen, HV  </li>
 <li><strong>Video</strong></li>
 <li>use shared T5 text encoder for video models when possible  </li>
 <li>unified video save code across all video models<br />
@@ -6352,6 +6352,7 @@
 <li>reference: fix download for sd15/sdxl reference models  </li>
 <li>fix checks in init/mask image decode  </li>
 <li>fix hf token with extra chars  </li>
+<li>image viewer refocus on gallery after returning from full screen mode  </li>
 </ul>
 <h2 id="update-for-2025-09-15">Update for 2025-09-15</h2>
 <h3 id="highlights-for-2025-09-15">Highlights for 2025-09-15</h3>
