@@ -2759,6 +2759,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#svdquant-rank-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      SVDQuant Rank size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-svdquant-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use SVDQuant quantization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantize-convolutional-layers" class="md-nav__link">
     <span class="md-ellipsis">
       Quantize convolutional layers
@@ -3345,6 +3363,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#svdquant-rank-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      SVDQuant Rank size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-svdquant-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use SVDQuant quantization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantize-convolutional-layers" class="md-nav__link">
     <span class="md-ellipsis">
       Quantize convolutional layers
@@ -3568,13 +3604,23 @@ Default is empty.  </p>
 </code></pre></div></p>
 <h3 id="group-size">Group size</h3>
 <p>Used to decide how many elements of a tensor will share the same quantization group.<br />
-Higher values have better performance but less quality.<br />
+Higher values have better performance and less memory usage but with less quality.<br />
 Default is <code>0</code>, meaning it will decide the group size based on your quantization type setting.<br />
 Linear layers will use this formula to find the group size: <code>2 ** (2 + number_of_bits)</code><br />
 Convolutions will use this formula to find the group size: <code>2 ** (1 + number_of_bits)</code><br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
 <p>Using Quantized MatMul with FP8 quant types will disable group sizes.<br />
 Using Quantized Matmul with <code>int</code> or <code>uint</code> quant types will continue to use Group Sizes by default if the number of bits is less than 6.  </p>
+<h3 id="svdquant-rank-size">SVDQuant Rank size</h3>
+<p>The rank size to use for SVDQuant quantization.<br />
+Higher values have better quality but with less performance and more memory usage.<br />
+Default is <code>32</code>.  </p>
+<h3 id="use-svdquant-quantization">Use SVDQuant quantization</h3>
+<p>Enabling this option will apply SVDQuant on top of SDNQ quantization.<br />
+SVDQuant has much higher quality but runs slower.<br />
+SVDQuant also makes Loras usable with 4 bit quantization.<br />
+More info on SVDQuant: https://arxiv.org/abs/2411.05007<br />
+Disabled by default.  </p>
 <h3 id="quantize-convolutional-layers">Quantize convolutional layers</h3>
 <p>Enabling this option will quantize convolutional layers in UNet models too.<br />
 Has much better memory savings but lower quality.<br />
