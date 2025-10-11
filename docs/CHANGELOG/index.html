@@ -2961,9 +2961,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-09" class="md-nav__link">
+  <a href="#update-for-2025-10-11" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-09
+      Update for 2025-10-11
     </span>
   </a>
   
@@ -4603,9 +4603,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-09" class="md-nav__link">
+  <a href="#update-for-2025-10-11" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-09
+      Update for 2025-10-11
     </span>
   </a>
   
@@ -6230,7 +6230,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-10-09">Update for 2025-10-09</h2>
+<h2 id="update-for-2025-10-11">Update for 2025-10-11</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
@@ -6245,10 +6245,10 @@
     impact of nunchaku engine on unet-based model such as sdxl is much less than on a dit-based models, but its still significantly faster than baseline<br />
     note that nunchaku optimized and prequantized unet is replacement for base unet, so its only applicable to base models, not any of finetunes<br />
 <em>how to use</em>: enable nunchaku in settings -&gt; quantization and then load either sdxl-base or sdxl-base-turbo reference models  </li>
+<li><a href="https://huggingface.co/HiDream-ai/HiDream-E1-1">HiDream E1.1</a><br />
+    updated version of E1 image editing model  </li>
 <li><a href="https://x-omni-team.github.io/">X-Omni SFT</a><br />
 <em>experimental</em>: X-omni is a transformer-only discrete autoregressive image generative model trained with reinforcement learning  </li>
-<li><a href="https://huggingface.co/HiDream-ai/HiDream-E1-1">HiDream E1.1</a><br />
-<em>experimental</em>: updated version of E1 image editing model  </li>
 <li><strong>Features</strong></li>
 <li><strong>Model save</strong>: ability to save currently loaded model as a new standalone model<br />
     why? SD.Next always prefers to start with full model and quantize on-demand during load<br />
@@ -6332,6 +6332,7 @@
 <li><strong>preview</strong> implement configurable layers for WAN, Qwen, HV  </li>
 <li>update swagger <code>/docs</code> endpoint style  </li>
 <li>add <code>[epoch]</code> to filename template  </li>
+<li>starting <code>[seq]</code> for filename template is now higher of largest previous sequence or number of files in folder  </li>
 <li><strong>Video</strong></li>
 <li>use shared <strong>T5</strong> text encoder for video models when possible  </li>
 <li>use shared <strong>LLama</strong> text encoder for video models when possible  </li>
