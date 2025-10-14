@@ -3493,6 +3493,15 @@ This makes model "steer away" from terms in negative prompt, but to do so it fir
   If you're trying to steer away from something that doesn't exist in the first place, it might introduce opposite of what you're trying to do.</li>
 </ul>
 <p>All-in-all, negative prompts are useful to steer model away from certain concepts, but should not be used as a <em>"general purpose long negative prompt"</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Negative prompting availability depends on the model</p>
+</div>
+<p>Negative prompting requires models with both positive and negative guidance.
+For example, SD-XL will first perform positive guidance and then modify it with negative guidance for each generation step.
+However, if negative guidance is <em>disabled</em> or model does not have negative guidance, negative prompts will not be taked into effect.</p>
+<p>Examples of models where negative guidance can be disabled by setting guidance scale to 0 or 1: <em>SD 1.5, SD-XL</em><br />
+Examples of models where negative guidance is not available by default: <em>FLUX.1, Flex, OmniGen</em>  </p>
 <h3 id="prompt-attention_1">Prompt attention</h3>
 <p>First, nothing wrong with wanting to add extra attention to certain parts of the prompt. But it should be used sparingly and only when needed and keep in mind that overall prompt should be balanced.</p>
 <p>E.g, If your prompt has 10 words and you're raising attention to 5 of them, you're basically telling the model average weight of the prompt is massive. Common result? Overbaked images.</p>
