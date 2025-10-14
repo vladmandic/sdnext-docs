@@ -2961,11 +2961,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-12" class="md-nav__link">
+  <a href="#update-for-2025-10-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-12
+      Update for 2025-10-14
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-10-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-10-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-10-14
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-10-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-10-14
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4603,11 +4627,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-12" class="md-nav__link">
+  <a href="#update-for-2025-10-14" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-12
+      Update for 2025-10-14
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-10-14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-10-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-10-14
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-10-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-10-14
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6230,7 +6278,19 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-10-12">Update for 2025-10-12</h2>
+<h2 id="update-for-2025-10-14">Update for 2025-10-14</h2>
+<h3 id="highlights-for-2025-10-14">Highlights for 2025-10-14</h3>
+<p>It's been a month since the last release and number of changes is yet again massive with over 250 commits!<br />
+Highlight are:<br />
+- <strong>Torch</strong>: ROCm on Windows for AMD GPUs<br />
+  if you have a compatible GPU, performance gains are significant!<br />
+- <strong>Models</strong>:<br />
+  new WAN variants, a lot of new stuff with Qwen Image Edit including multi-image edits, expanded Nunchaku support and new SOTA upscaler with SeedVR2<br />
+  plus improved video support in general, including new methods of video encoding<br />
+- <strong>Quantization</strong>:<br />
+  new <strong>SVD</strong>-style quantization using SDNQ ofers almost zero loss even with <strong>4bit</strong> quantization<br />
+  and now you can also test your favorite quantization on-the-fly and then save/load model for future use  </p>
+<h3 id="details-for-2025-10-14">Details for 2025-10-14</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
@@ -6249,10 +6309,9 @@
     updated version of E1 image editing model  </li>
 <li><a href="https://iceclear.github.io/projects/seedvr/">SeedVR2</a><br />
     originally designed for video restoration, seedvr works great for image detailing and upscaling!<br />
-    available in 3B, 7B and 7B-sharp variants<br />
-    use as any other upscaler!<br />
-    note: seedvr is a very large model (6.4GB and 16GB respectively) and not designed for lower-end hardware<br />
-    note: seedvr is highly sensitive to its cfg scale (set in settings -&gt; postprocessing),<br />
+    available in 3B, 7B and 7B-sharp variants, use as any other upscaler!<br />
+    note: seedvr is a very large model (6.4GB and 16GB respectively) and not designed for lower-end hardware, quantization is highly recommended<br />
+    note: seedvr is highly sensitive to its cfg scale, set in <em>settings -&gt; postprocessing</em><br />
     lower values will result in smoother output while higher values add details  </li>
 <li><a href="https://x-omni-team.github.io/">X-Omni SFT</a><br />
 <em>experimental</em>: X-omni is a transformer-only discrete autoregressive image generative model trained with reinforcement learning  </li>
@@ -6331,7 +6390,7 @@
 <li><strong>video</strong> new LTX model selection  </li>
 <li>replace <code>pynvml</code> with <code>nvidia-ml-py</code> for gpu monitoring  </li>
 <li>update <strong>loopback</strong> script with radon seed option, thanks @rabanti  </li>
-<li><strong>vae</strong> slicing enable for lowvram/medvram, tiling for lowvram, both disabled otherwise  </li>
+<li><strong>vae</strong> slicing enable for <em>lowvram/medvram</em>, tiling for <em>lowvram</em>, both disabled otherwise  </li>
 <li><strong>attention</strong> remove split-attention and add explicitly attention slicing enable/disable option<br />
     enable in <em>settings -&gt; compute settings</em><br />
     can be combined with sdp, enabling may improve stability when used on iGPU or shared memory systems  </li>
@@ -6364,6 +6423,7 @@
 <li><strong>Microsoft Florence 2</strong> both base and large variants<br />
 <em>note</em> this will trigger download of the new variant of the model, feel free to delete older variant in <code>huggingface</code> folder  </li>
 <li><strong>MiaoshouAI PromptGen</strong> 1.5/2.0 in both base and large variants  </li>
+<li>fix prompt scheduling, thanks @nolbert82  </li>
 <li>ui: fix image metadata display when switching selected image in control tab  </li>
 <li>framepack: add explicit hf-login before framepack load  </li>
 <li>framepack: patch solver for unsupported gpus  </li>

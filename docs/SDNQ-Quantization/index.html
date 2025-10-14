@@ -2759,18 +2759,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#svdquant-rank-size" class="md-nav__link">
+  <a href="#svd-rank-size" class="md-nav__link">
     <span class="md-ellipsis">
-      SVDQuant Rank size
+      SVD rank size
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#use-svdquant-quantization" class="md-nav__link">
+  <a href="#svd-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Use SVDQuant quantization
+      SVD steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-svd-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use SVD quantization
     </span>
   </a>
   
@@ -3363,18 +3372,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#svdquant-rank-size" class="md-nav__link">
+  <a href="#svd-rank-size" class="md-nav__link">
     <span class="md-ellipsis">
-      SVDQuant Rank size
+      SVD rank size
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#use-svdquant-quantization" class="md-nav__link">
+  <a href="#svd-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Use SVDQuant quantization
+      SVD steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-svd-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use SVD quantization
     </span>
   </a>
   
@@ -3611,16 +3629,22 @@ Convolutions will use this formula to find the group size: <code>2 ** (1 + numbe
 Setting the group size to <code>-1</code> will disable grouping.  </p>
 <p>Using Quantized MatMul with FP8 quant types will disable group sizes.<br />
 Using Quantized Matmul with <code>int</code> or <code>uint</code> quant types will continue to use Group Sizes by default if the number of bits is less than 6.  </p>
-<h3 id="svdquant-rank-size">SVDQuant Rank size</h3>
-<p>The rank size to use for SVDQuant quantization.<br />
+<h3 id="svd-rank-size">SVD rank size</h3>
+<p>The rank size to use for SVD quantization.<br />
 Higher values have better quality but with less performance and more memory usage.<br />
 Default is <code>32</code>.  </p>
-<h3 id="use-svdquant-quantization">Use SVDQuant quantization</h3>
-<p>Enabling this option will apply SVDQuant on top of SDNQ quantization.<br />
-SVDQuant has much higher quality but runs slower.<br />
-SVDQuant also makes Loras usable with 4 bit quantization.<br />
-More info on SVDQuant: https://arxiv.org/abs/2411.05007<br />
+<h3 id="svd-steps">SVD steps</h3>
+<p>The number of steps to use in the lowrank SVD estimation.<br />
+Higher values have better quality but takes longer to quantize.<br />
+Default is <code>8</code>.  </p>
+<h3 id="use-svd-quantization">Use SVD quantization</h3>
+<p>Enabling this option will apply SVD quantization on top of SDNQ quantization.<br />
+SVD has much higher quality but runs slower.<br />
+SVD also makes Loras usable with 4 bit quantization.<br />
+More info on SVD quantization: https://arxiv.org/abs/2411.05007<br />
 Disabled by default.  </p>
+<p>Note: SVD lowrank used by SDNQ is not deterministic.<br />
+Meaning that you will get slightly different quantization results every time.  </p>
 <h3 id="quantize-convolutional-layers">Quantize convolutional layers</h3>
 <p>Enabling this option will quantize convolutional layers in UNet models too.<br />
 Has much better memory savings but lower quality.<br />
