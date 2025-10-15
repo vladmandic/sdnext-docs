@@ -2961,28 +2961,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-14" class="md-nav__link">
+  <a href="#update-for-2025-10-15" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-14
+      Update for 2025-10-15
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-10-14">
+    <nav class="md-nav" aria-label="Update for 2025-10-15">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-10-14" class="md-nav__link">
+  <a href="#highlights-for-2025-10-15" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-10-14
+      Highlights for 2025-10-15
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-10-14" class="md-nav__link">
+  <a href="#details-for-2025-10-15" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-10-14
+      Details for 2025-10-15
     </span>
   </a>
   
@@ -4627,28 +4627,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-14" class="md-nav__link">
+  <a href="#update-for-2025-10-15" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-14
+      Update for 2025-10-15
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-10-14">
+    <nav class="md-nav" aria-label="Update for 2025-10-15">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-10-14" class="md-nav__link">
+  <a href="#highlights-for-2025-10-15" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-10-14
+      Highlights for 2025-10-15
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-10-14" class="md-nav__link">
+  <a href="#details-for-2025-10-15" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-10-14
+      Details for 2025-10-15
     </span>
   </a>
   
@@ -6278,19 +6278,20 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-10-14">Update for 2025-10-14</h2>
-<h3 id="highlights-for-2025-10-14">Highlights for 2025-10-14</h3>
-<p>It's been a month since the last release and number of changes is yet again massive with over 250 commits!<br />
+<h2 id="update-for-2025-10-15">Update for 2025-10-15</h2>
+<h3 id="highlights-for-2025-10-15">Highlights for 2025-10-15</h3>
+<p>It's been a month since the last release and number of changes is yet again massive with over 300 commits!<br />
 Highlight are:<br />
 - <strong>Torch</strong>: ROCm on Windows for AMD GPUs<br />
   if you have a compatible GPU, performance gains are significant!<br />
 - <strong>Models</strong>:<br />
-  new WAN variants, a lot of new stuff with Qwen Image Edit including multi-image edits, expanded Nunchaku support and new SOTA upscaler with SeedVR2<br />
+  a lot of new stuff with <strong>Qwen-Image-Edit</strong> including multi-image edits and distilled variants,<br />
+  new <strong>Flux</strong>, <strong>WAN</strong>, <strong>HiDream</strong> variants, expanded <strong>Nunchaku</strong> support and new SOTA upscaler with <strong>SeedVR2</strong><br />
   plus improved video support in general, including new methods of video encoding<br />
 - <strong>Quantization</strong>:<br />
-  new <strong>SVD</strong>-style quantization using SDNQ ofers almost zero loss even with <strong>4bit</strong> quantization<br />
+  new <strong>SVD</strong>-style quantization using SDNQ offers almost zero-loss even with <strong>4bit</strong> quantization<br />
   and now you can also test your favorite quantization on-the-fly and then save/load model for future use  </p>
-<h3 id="details-for-2025-10-14">Details for 2025-10-14</h3>
+<h3 id="details-for-2025-10-15">Details for 2025-10-15</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
@@ -6303,7 +6304,7 @@ Highlight are:<br />
     SRPO is trained by Tencent with specific technique: directly aligning the full diffusion trajectory with fine-grained human preference  </li>
 <li><a href="https://huggingface.co/nunchaku-tech/nunchaku-sdxl">Nunchaku SDXL</a> and <a href="https://huggingface.co/nunchaku-tech/nunchaku-sdxl-turbo">Nunchaku SDXL Turbo</a><br />
     impact of nunchaku engine on unet-based model such as sdxl is much less than on a dit-based models, but its still significantly faster than baseline<br />
-    note that nunchaku optimized and prequantized unet is replacement for base unet, so its only applicable to base models, not any of finetunes<br />
+    note that nunchaku optimized and pre-quantized unet is replacement for base unet, so its only applicable to base models, not any of fine-tunes<br />
 <em>how to use</em>: enable nunchaku in settings -&gt; quantization and then load either sdxl-base or sdxl-base-turbo reference models  </li>
 <li><a href="https://huggingface.co/HiDream-ai/HiDream-E1-1">HiDream E1.1</a><br />
     updated version of E1 image editing model  </li>
@@ -6314,13 +6315,13 @@ Highlight are:<br />
     note: seedvr is highly sensitive to its cfg scale, set in <em>settings -&gt; postprocessing</em><br />
     lower values will result in smoother output while higher values add details  </li>
 <li><a href="https://x-omni-team.github.io/">X-Omni SFT</a><br />
-<em>experimental</em>: X-omni is a transformer-only discrete autoregressive image generative model trained with reinforcement learning  </li>
+<em>experimental</em>: X-omni is a transformer-only discrete auto-regressive image generative model trained with reinforcement learning  </li>
 <li><strong>Features</strong></li>
 <li><strong>Model save</strong>: ability to save currently loaded model as a new standalone model<br />
     why? SD.Next always prefers to start with full model and quantize on-demand during load<br />
     however, when you find your exact preferred quantization settings that work well for you,<br />
     saving such model as a new model allows for faster loads and reduced disk space usage<br />
-    so its best of both worlds: you can experiment and test different quantizations and once you find the one that works for you, save it as a new model<br />
+    so its best of both worlds: you can experiment and test different quantization methods and once you find the one that works for you, save it as a new model<br />
     saved models appear in network tab as normal models and can be loaded as such<br />
     available in <em>models</em> tab  </li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-Edit-2509">Qwen Image-Edit</a> multi-image editing
@@ -6331,15 +6332,15 @@ Highlight are:<br />
 <li><a href="https://github.com/vipshop/cache-dit">Cache-DiT</a><br />
     cache-dit is a unified, flexible and training-free cache acceleration framework<br />
     compatible with many dit-based models such as FLUX.1, Qwen, HunyuanImage, Wan2.2, Chroma, etc.<br />
-    enable in <em>settings -&gt; pipeline modifers -&gt; cache-dit</em>  </li>
+    enable in <em>settings -&gt; pipeline modifiers -&gt; cache-dit</em>  </li>
 <li><a href="https://nunchaku.tech/docs/nunchaku/python_api/nunchaku.pipeline.pipeline_flux_pulid.html">Nunchaku Flux.1 PulID</a><br />
     automatically enabled if loaded model is FLUX.1 with Nunchaku engine enabled and when PulID script is enabled  </li>
 <li><strong>Compute</strong></li>
 <li><strong>ROCm</strong> for Windows<br />
-    support for both official torch preview release of <code>torch-rocm</code> for windows and <strong>TheRock</strong> unoffical <code>torch-rocm</code> builds for windows<br />
+    support for both official torch preview release of <code>torch-rocm</code> for windows and <strong>TheRock</strong> unofficial <code>torch-rocm</code> builds for windows<br />
     note that rocm for windows is still in preview and has limited gpu support, please check rocm docs for details  </li>
 <li><strong>DirectML</strong> warn as <em>end-of-life</em><br />
-<code>torch-directml</code> received no updates in over 1 year and its currently superceded by <code>rocm</code> or <code>zluda</code>  </li>
+<code>torch-directml</code> received no updates in over 1 year and its currently superseded by <code>rocm</code> or <code>zluda</code>  </li>
 <li>command line params <code>--use-zluda</code> and <code>--use-rocm</code> will attempt desired operation or fail if not possible<br />
     previously sdnext was performing a fallback to <code>torch-cpu</code> which is not desired  </li>
 <li><strong>installer</strong> if <code>--use-cuda</code> or <code>--use-rocm</code> are specified and <code>torch-cpu</code> is installed, installer will attempt to reinstall correct torch package  </li>
@@ -6370,11 +6371,11 @@ Highlight are:<br />
 <li><strong>SDNQ</strong></li>
 <li>add <code>SVDQuant</code> quantization method support  </li>
 <li>make sdnq scales compatible with balanced offload  </li>
-<li>add int8 matmul support for RDNA2 GPUs via triton  </li>
-<li>improve int8 mamtul performance on Intel GPUs  </li>
+<li>add int8 <code>matmul</code> support for RDNA2 GPUs via triton  </li>
+<li>improve int8 <code>matmul</code> performance on Intel GPUs  </li>
 <li><strong>Other</strong></li>
 <li>server will note when restart is recommended due to package updates  </li>
-<li><strong>interrrupt</strong> will now show last known preview image<br />
+<li><strong>interrupt</strong> will now show last known preview image<br />
 <em>keep incomplete</em> setting is now <em>save interrupted</em>  </li>
 <li><strong>logging</strong> enable <code>debug</code>, <code>docs</code> and <code>api-docs</code> by default  </li>
 <li><strong>logging</strong> add detailed ram/vram utilization info to log<br />
@@ -6418,7 +6419,8 @@ Highlight are:<br />
     allows for using many different guidance methods:<br />
 <em>CFG, CFGZero, PAG, APG, SLG, SEG, TCFG, FDG</em>  </li>
 <li><strong>Wiki</strong></li>
-<li>updates to <em>AMD-ROCm, ZLUDA, LoRA, DirectML, SDNQ</em> pages</li>
+<li>updates to <em>AMD-ROCm, ZLUDA, LoRA, DirectML, SDNQ, Quantization, Prompting, LoRA</em> pages  </li>
+<li>new <em>Stability-Matrix</em> page  </li>
 <li><strong>Fixes</strong></li>
 <li><strong>Microsoft Florence 2</strong> both base and large variants<br />
 <em>note</em> this will trigger download of the new variant of the model, feel free to delete older variant in <code>huggingface</code> folder  </li>
@@ -6440,7 +6442,7 @@ Highlight are:<br />
 <p><em>What's new</em>? Big one is that we're (<em>finally</em>) switching the default UI to <strong>ModernUI</strong>, for both desktop and mobile use!<br />
 <strong>StandardUI</strong> is still available and can be selected in settings, but ModernUI is now the default for new installs  </p>
 <p><em>What's else</em>? <strong>Chroma</strong> is in its final form, there are several new <strong>Qwen-Image</strong> variants and <strong>Nunchaku</strong> hit version 1.0!<br />
-Also, there are quite a few offloading improvements and many quality-of-life changes to UI and overal workflows<br />
+Also, there are quite a few offloading improvements and many quality-of-life changes to UI and overall workflows<br />
 And check out new <strong>history</strong> tab in the right panel, it now shows visualization of entire processing timeline!  </p>
 <p><img alt="Screenshot" src="https://github.com/user-attachments/assets/d6119a63-6ee5-4597-95f6-29ed0701d3b5" /></p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
@@ -6451,13 +6453,13 @@ And check out new <strong>history</strong> tab in the right panel, it now shows 
 <li><strong>Qwen-Image</strong> <a href="https://huggingface.co/InstantX/Qwen-Image-ControlNet-Union">InstantX ControlNet Union</a> support<br />
 <em>note</em> qwen-image is already a very large model and controlnet adds 3.5GB on top of that so quantization and offloading are highly recommended!  </li>
 <li><a href="https://huggingface.co/vladmandic/Qwen-Lightning-Edit">Qwen-Lightning-Edit</a> and <a href="https://huggingface.co/SahilCarterr/Qwen-Image-Distill-Full">Qwen-Image-Distill</a> variants  </li>
-<li><strong>Nuchaku</strong> variants of <a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image">Qwen-Image-Lightning</a>, <a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image-edit">Qwen-Image-Edit</a>, <a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image-edit">Nunchaku-Qwen-Image-Edit-Lightning</a></li>
+<li><strong>Nunchaku</strong> variants of <a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image">Qwen-Image-Lightning</a>, <a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image-edit">Qwen-Image-Edit</a>, <a href="https://huggingface.co/nunchaku-tech/nunchaku-qwen-image-edit">Nunchaku-Qwen-Image-Edit-Lightning</a></li>
 <li><strong>Nunchaku</strong> variant of <a href="https://huggingface.co/nunchaku-tech/nunchaku-flux.1-krea-dev">Flux.1-Krea-Dev</a><br />
     if you have a compatible nVidia GPU, Nunchaku is the fastest quantization &amp; inference engine  </li>
 <li><a href="https://huggingface.co/Tencent-Hunyuan/HYDiT-ControlNet-v1.2">HunyuanDiT ControlNet</a> Canny, Depth, Pose  </li>
 <li><a href="https://huggingface.co/KBlueLeaf/HDM-xut-340M-anime">KBlueLeaf/HDM-xut-340M-anime</a><br />
     highly experimental: HDM <em>Home-made-Diffusion-Model</em> is a project to investigate specialized training recipe/scheme<br />
-    for pretraining T2I model at home based on super-light architecture<br />
+    for pre-training T2I model at home based on super-light architecture<br />
 <em>requires</em>: generator=cpu, dtype=float16, offload=none, both positive and negative prompts are required and must be long &amp; detailed  </li>
 <li><a href="https://huggingface.co/apple/FastVLM-0.5B">Apple FastVLM</a> in 0.5B, 1.5B and 7B variants<br />
     available in captioning tab  </li>
@@ -6476,13 +6478,13 @@ And check out new <strong>history</strong> tab in the right panel, it now shows 
 <li>additional artwork for reference models in networks, thanks @liutyi  </li>
 <li>improve ui hints display  </li>
 <li>restyled all toolbuttons to be modernui native  </li>
-<li>reodered system settings  </li>
+<li>reordered system settings  </li>
 <li>dynamic direction of dropdowns  </li>
 <li>improve process tab layout  </li>
 <li>improve detection of active tab  </li>
 <li>configurable horizontal vs vertical panel layout<br />
     in settings -&gt; user interface -&gt; panel min width<br />
-<em>example</em>: if panel width is less than specified value, layout switches to verical  </li>
+<em>example</em>: if panel width is less than specified value, layout switches to vertical  </li>
 <li>configurable grid images size<br />
     in <em>settings -&gt; user interface -&gt; grid image size</em>  </li>
 <li>gallery now includes reference model images  </li>
@@ -6493,12 +6495,12 @@ And check out new <strong>history</strong> tab in the right panel, it now shows 
 <li>improve offloading of models with multiple dits  </li>
 <li>improve offloading of models with impliciy vae processing  </li>
 <li>improve offloading of models with controlnet  </li>
-<li>more aggressive offloading of controlnets with lowvram flag  </li>
+<li>more aggressive offloading of controlnet with lowvram flag  </li>
 </ul>
 </li>
 <li><strong>group</strong><ul>
 <li>new offloading method, using <em>type=leaf</em> works on a similar level as sequential offloading<br />
-  and can present siginificant savings on low-vram gpus, but comes at the higher performace cost  </li>
+  and can present significant savings on low-vram gpus, but comes at the higher performance cost  </li>
 </ul>
 </li>
 <li><strong>Quantization</strong></li>
