@@ -2961,28 +2961,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-15" class="md-nav__link">
+  <a href="#update-for-2025-10-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-15
+      Update for 2025-10-16
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-10-15">
+    <nav class="md-nav" aria-label="Update for 2025-10-16">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-10-15" class="md-nav__link">
+  <a href="#highlights-for-2025-10-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-10-15
+      Highlights for 2025-10-16
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-10-15" class="md-nav__link">
+  <a href="#details-for-2025-10-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-10-15
+      Details for 2025-10-16
     </span>
   </a>
   
@@ -4627,28 +4627,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-15" class="md-nav__link">
+  <a href="#update-for-2025-10-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-15
+      Update for 2025-10-16
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-10-15">
+    <nav class="md-nav" aria-label="Update for 2025-10-16">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-10-15" class="md-nav__link">
+  <a href="#highlights-for-2025-10-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-10-15
+      Highlights for 2025-10-16
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-10-15" class="md-nav__link">
+  <a href="#details-for-2025-10-16" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-10-15
+      Details for 2025-10-16
     </span>
   </a>
   
@@ -6278,8 +6278,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-10-15">Update for 2025-10-15</h2>
-<h3 id="highlights-for-2025-10-15">Highlights for 2025-10-15</h3>
+<h2 id="update-for-2025-10-16">Update for 2025-10-16</h2>
+<h3 id="highlights-for-2025-10-16">Highlights for 2025-10-16</h3>
 <p>It's been a month since the last release and number of changes is yet again massive with over 300 commits!<br />
 Highlight are:<br />
 - <strong>Torch</strong>: ROCm on Windows for AMD GPUs<br />
@@ -6290,8 +6290,9 @@ Highlight are:<br />
   plus improved video support in general, including new methods of video encoding<br />
 - <strong>Quantization</strong>:<br />
   new <strong>SVD</strong>-style quantization using SDNQ offers almost zero-loss even with <strong>4bit</strong> quantization<br />
-  and now you can also test your favorite quantization on-the-fly and then save/load model for future use  </p>
-<h3 id="details-for-2025-10-15">Details for 2025-10-15</h3>
+  and now you can also test your favorite quantization on-the-fly and then save/load model for future use<br />
+- Other: support for <strong>Huggingface</strong> mirrors, changes to installer to prevent unwanted <code>torch-cpu</code> operations, improved previews, etc.  </p>
+<h3 id="details-for-2025-10-16">Details for 2025-10-16</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/alibaba-pai/Wan2.2-VACE-Fun-A14B">WAN 2.2 14B VACE</a><br />
@@ -6337,6 +6338,9 @@ Highlight are:<br />
     enable in <em>settings -&gt; pipeline modifiers -&gt; cache-dit</em>  </li>
 <li><a href="https://nunchaku.tech/docs/nunchaku/python_api/nunchaku.pipeline.pipeline_flux_pulid.html">Nunchaku Flux.1 PulID</a><br />
     automatically enabled if loaded model is FLUX.1 with Nunchaku engine enabled and when PulID script is enabled  </li>
+<li><strong>Huggingface mirror</strong> in <em>settings -&gt; huggingface</em><br />
+    if you're working from location with limited access to huggingface, you can now specify a mirror site<br />
+    for example enter, <code>https://hf-mirror.com</code>  </li>
 <li><strong>Compute</strong></li>
 <li><strong>ROCm</strong> for Windows<br />
     support for both official torch preview release of <code>torch-rocm</code> for windows and <strong>TheRock</strong> unofficial <code>torch-rocm</code> builds for windows<br />
