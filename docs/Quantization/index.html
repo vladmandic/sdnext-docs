@@ -3714,24 +3714,10 @@ batch==1  </p>
 <p>Many quantization schemes rely on <a href="https://github.com/triton-lang/triton/">Triton</a> compiler for Torch which is not available on all platforms
 If your installation fails, you can try building <code>triton</code> from sources or find pre-build binary wheels</p>
 <h3 id="triton-for-windows">Triton for Windows</h3>
-<p>A Triton fork is available for Windows and can be installed by running the following PowerShell script from your SD.Next installation folder:</p>
-<blockquote>
-<p>install-triton.ps1</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="nv">$ErrorActionPreference</span> <span class="p">=</span> <span class="s2">&quot;Stop&quot;</span>
-
-<span class="nv">$VENV_DIR</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$env:VENV_DIR</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$env:VENV_DIR</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="nb">Resolve-Path</span> <span class="s2">&quot;venv&quot;</span> <span class="p">}</span>
-<span class="nv">$PYTHON</span> <span class="p">=</span> <span class="s2">&quot;$VENV_DIR\Scripts\python&quot;</span>
-<span class="nv">$PIP</span> <span class="p">=</span> <span class="s2">&quot;$VENV_DIR\Scripts\pip&quot;</span>
-
-<span class="nv">$sys_ver</span> <span class="p">=</span> <span class="p">&amp;</span> <span class="nv">$PYTHON</span> <span class="n">-VV</span>
-<span class="nv">$sys_ver_major</span><span class="p">,</span> <span class="nv">$sys_ver_minor</span> <span class="p">=</span> <span class="nv">$sys_ver</span><span class="p">.</span><span class="n">Split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="n">1</span><span class="p">].</span><span class="n">Split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="n">0</span><span class="p">,</span> <span class="n">1</span><span class="p">]</span>
-<span class="nv">$filename</span> <span class="p">=</span> <span class="s2">&quot;triton-3.2.0-cp$sys_ver_major$sys_ver_minor-cp$sys_ver_major$sys_ver_minor-win_amd64.whl&quot;</span>
-<span class="nv">$url</span> <span class="p">=</span> <span class="s2">&quot;https://github.com/woct0rdho/triton-windows/releases/download/v3.2.0-windows.post10/$filename&quot;</span>
-
-<span class="nb">Invoke-WebRequest</span> <span class="nv">$url</span> <span class="n">-OutFile</span> <span class="nv">$filename</span>
-<span class="p">&amp;</span> <span class="nv">$PIP</span> <span class="n">install</span> <span class="nv">$filename</span>
-<span class="nb">Remove-Item</span> <span class="nv">$filename</span>
+<p>A Triton fork is available for Windows and can be installed on Nvidia GPUs.<br />
+Open a CMD window from your SD.Next installation folder and install Triton Windows with these commands:</p>
+<div class="highlight"><pre><span></span><code>venv\Scripts\activate
+pip install triton-windows
 </code></pre></div>
 
 
