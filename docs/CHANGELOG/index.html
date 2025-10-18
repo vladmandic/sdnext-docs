@@ -2986,16 +2986,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-17" class="md-nav__link">
+  <a href="#update-for-2025-10-18" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-17
+      Update for 2025-10-18
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-17_1" class="md-nav__link">
+  <a href="#update-for-2025-10-17" class="md-nav__link">
     <span class="md-ellipsis">
       Update for 2025-10-17
     </span>
@@ -4661,16 +4661,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-17" class="md-nav__link">
+  <a href="#update-for-2025-10-18" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-17
+      Update for 2025-10-18
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-17_1" class="md-nav__link">
+  <a href="#update-for-2025-10-17" class="md-nav__link">
     <span class="md-ellipsis">
       Update for 2025-10-17
     </span>
@@ -6321,14 +6321,25 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
+<h2 id="update-for-2025-10-18">Update for 2025-10-18</h2>
+<ul>
+<li><strong>Models</strong>
+  <a href="https://huggingface.co/ai-forever/Kandinsky-5.0-T2V-Lite-sft-5s-Diffusers'">Kandinsky 5 Lite</a> in <em>SFT, CFG-distilled and Steps-distilled</em> variants<br />
+  first model in Kandinsky5 series is T2V model optimized for 5sec videos and uses Qwen2.5 text encoder  </li>
+<li><strong>Fixes</strong></li>
+<li>ROCm-on-Windows additional checks  </li>
+<li>SDNQ-SVD fallback on incompatible layers  </li>
+<li>Huggingface model download  </li>
+<li>Video implement dynamic and manual sampler shift  </li>
+<li>Fix interrupt batch processing  </li>
+<li>Delay import of control processors until used  </li>
+<li>Fix tiny VAE with batched results  </li>
+<li><strong>Other</strong></li>
+<li>Video enable VAE slicing and framewise decoding when possible  </li>
+<li>Detect and log <code>flash-attn</code> and <code>sageattention</code> if installed  </li>
+<li>Remove unused UI settings  </li>
+</ul>
 <h2 id="update-for-2025-10-17">Update for 2025-10-17</h2>
-<p>Post-release fixes:
-- ROCm-on-Windows additional checks<br />
-- SDNQ-SVD fallback on incompatible layers<br />
-- Huggingface model download<br />
-- Remove unused UI settings<br />
-- Video implement dynamic and manual sampler shift  </p>
-<h2 id="update-for-2025-10-17_1">Update for 2025-10-17</h2>
 <h3 id="highlights-for-2025-10-17">Highlights for 2025-10-17</h3>
 <p>It's been a month since the last release and number of changes is yet again massive with over 300 commits!<br />
 Highlight are:<br />
