@@ -6343,7 +6343,8 @@
 <ul>
 <li><strong>Features</strong></li>
 <li><strong>offline mode</strong>: enable in <em>settings -&gt; hugginface</em><br />
-    enables fully offline mode where previously downloaded models are used as-is  </li>
+    enables fully offline mode where previously downloaded models are used as-is<br />
+<em>note</em>: must be enabled only after all packages have been installed and model has been run online at least once  </li>
 <li><strong>Backend</strong></li>
 <li>switch to <code>torch==2.9</code> for <em>ipex, rocm and openvino</em>  </li>
 <li>switch to <code>rocm==7.0</code> for nightlies  </li>
@@ -6353,6 +6354,7 @@
 <li><strong>scheduler</strong> add base and max shift parameters for flow-matching samplers  </li>
 <li><strong>Fixes</strong></li>
 <li>startup error with <code>--profile</code> enabled if using <code>--skip</code>  </li>
+<li>restore orig init image for each batch sequence  </li>
 </ul>
 <h2 id="update-for-2025-10-18">Update for 2025-10-18</h2>
 <ul>
