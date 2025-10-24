@@ -6343,8 +6343,10 @@
 <ul>
 <li><strong>Features</strong></li>
 <li><strong>offline mode</strong>: enable in <em>settings -&gt; hugginface</em><br />
-    enables fully offline mode where previously downloaded models are used as-is<br />
+    enables fully offline mode where previously downloaded models can be used as-is<br />
 <em>note</em>: must be enabled only after all packages have been installed and model has been run online at least once  </li>
+<li><strong>networks</strong>: add additional sections for <strong>Reference</strong> models:
+    <strong>Distilled</strong> which shows distilled variants of base models and <strong>Community</strong> which shows community highlights  </li>
 <li><strong>Backend</strong></li>
 <li>switch to <code>torch==2.9</code> for <em>ipex, rocm and openvino</em>  </li>
 <li>switch to <code>rocm==7.0</code> for nightlies  </li>
@@ -6365,6 +6367,7 @@
 <li>video tab create <code>params.txt</code> with metadata  </li>
 <li>fix full-screen image-viewer toolbar actions with control tab  </li>
 <li>improve filename sanitization  </li>
+<li>fix networks display with extended characters, thanks @awsr  </li>
 </ul>
 <h2 id="update-for-2025-10-18">Update for 2025-10-18</h2>
 <ul>
