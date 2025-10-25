@@ -6344,12 +6344,13 @@
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/tencent/HunyuanImage-2.1">Tencent HunyuanImage 2.1</a> in <em>full</em>, <em>distilled</em> and <em>refiner</em> variants<br />
     HunyuanImage-2.1 is a large (51GB) T2I model capable of natively generating 2K images and uses Qwen2.5 + T5 text-encoders and 32x VAE  </li>
-<li>networks reference section is now split into actual <strong>Reference</strong> <em>Base</em> models plus:  <ul>
-<li><strong>Distilled</strong>: distilled variants of base models, for example <em>Turbo or Lightning</em>  </li>
-<li><strong>Quantized</strong>: pre-quantized variants of the base models using SDNQ-SVD quantization for optimal quality and smallest possible resource usage  </li>
-<li><strong>Community</strong>: community highlights, for example, <em>Illustrious, Pony, NoobAI</em>  </li>
-</ul>
-</li>
+<li><strong>Reference</strong> networks section is now split into actual <em>Base</em> models plus:  </li>
+<li><strong>Quantized</strong>: pre-quantized variants of the base models using SDNQ-SVD quantization for optimal quality and smallest possible resource usage<br />
+    examples: <em>FLUX.1-Dev/Krea/Kontext/Schnell, Qwen-Image/Edit/2509, Chroma1-HD, WAN-2.2-A44B, etc.</em>  </li>
+<li><strong>Distilled</strong>: distilled variants of base models<br />
+    examples: <em>Turbo, Lightning, Lite, SRPO, Distill, Pruning, etc.</em>  </li>
+<li><strong>Community</strong>: community highlights<br />
+    examples: <em>Tempest, Juggernaut, Illustrious, Pony, NoobAI, etc.</em>  </li>
 <li><strong>Features</strong></li>
 <li><strong>offline mode</strong>: enable in <em>settings -&gt; hugginface</em><br />
     enables fully offline mode where previously downloaded models can be used as-is<br />
@@ -6358,7 +6359,7 @@
 <li>switch to <code>torch==2.9</code> for <em>ipex, rocm and openvino</em>  </li>
 <li>switch to <code>rocm==7.0</code> for nightlies  </li>
 <li><strong>Quantization</strong></li>
-<li>improved SDNQ SVD and low-bit matmul performance  </li>
+<li>improved <strong>SDNQ SVD</strong> and low-bit matmul performance  </li>
 <li><strong>Other</strong></li>
 <li>change default <strong>schedulers</strong> for sdxl  </li>
 <li>warn on <code>python==3.9</code> end-of-life and <code>python==3.10</code> not actively supported  </li>
@@ -6366,6 +6367,7 @@
 <li>enhance <code>--optional</code> flag to pre-install optional packages  </li>
 <li>add <code>[lora]</code> to recognized filename patterns  </li>
 <li>add <strong>Apple DepthPro</strong> controlnet processor, thanks @nolbert82  </li>
+<li>when using <strong>shared-t5</strong> <em>(default)</em>, it will load standard or pre-quant depending on model  </li>
 <li><strong>Fixes</strong></li>
 <li>startup error with <code>--profile</code> enabled if using <code>--skip</code>  </li>
 <li>restore orig init image for each batch sequence  </li>
@@ -6380,6 +6382,7 @@
 <li>lora disable fuse on partially applied network  </li>
 <li>fix networks display with extended characters, thanks @awsr  </li>
 <li>installer handle different <code>opencv</code> package variants  </li>
+<li>fix using pre-quantized shared-t5  </li>
 </ul>
 <h2 id="update-for-2025-10-18">Update for 2025-10-18</h2>
 <ul>
