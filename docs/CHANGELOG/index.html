@@ -2986,11 +2986,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-25" class="md-nav__link">
+  <a href="#update-for-2025-10-26" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-25
+      Update for 2025-10-26
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-10-26">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-10-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-10-26
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-10-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-10-26
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4670,11 +4694,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-10-25" class="md-nav__link">
+  <a href="#update-for-2025-10-26" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-10-25
+      Update for 2025-10-26
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-10-26">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-10-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-10-26
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-10-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-10-26
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6339,11 +6387,16 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-10-25">Update for 2025-10-25</h2>
+<h2 id="update-for-2025-10-26">Update for 2025-10-26</h2>
+<h3 id="highlights-for-2025-10-26">Highlights for 2025-10-26</h3>
 <ul>
-<li><strong>Models</strong></li>
-<li><a href="https://huggingface.co/tencent/HunyuanImage-2.1">Tencent HunyuanImage 2.1</a> in <em>full</em>, <em>distilled</em> and <em>refiner</em> variants<br />
-    HunyuanImage-2.1 is a large (51GB) T2I model capable of natively generating 2K images and uses Qwen2.5 + T5 text-encoders and 32x VAE  </li>
+<li>Reorganization of <strong>Reference Models</strong> into <em>Base, Quantized, Distilled and Community</em> sections for easier navigation</li>
+<li>New <strong>Tencent HunyuanImage 2.1</strong> model capable of generating 2K images natively</li>
+<li>New <strong>offline mode</strong> to use previously downloaded models without internet connection  </li>
+<li>Fixes, fixes, fixes... too many to list here!</li>
+</ul>
+<h3 id="details-for-2025-10-26">Details for 2025-10-26</h3>
+<ul>
 <li><strong>Reference</strong> networks section is now split into actual <em>Base</em> models plus:  </li>
 <li><strong>Quantized</strong>: pre-quantized variants of the base models using SDNQ-SVD quantization for optimal quality and smallest possible resource usage<br />
     examples: <em>FLUX.1-Dev/Krea/Kontext/Schnell, Qwen-Image/Edit/2509, Chroma1-HD, WAN-2.2-A44B, etc.</em>  </li>
@@ -6351,6 +6404,9 @@
     examples: <em>Turbo, Lightning, Lite, SRPO, Distill, Pruning, etc.</em>  </li>
 <li><strong>Community</strong>: community highlights<br />
     examples: <em>Tempest, Juggernaut, Illustrious, Pony, NoobAI, etc.</em>  </li>
+<li><strong>Models</strong></li>
+<li><a href="https://huggingface.co/tencent/HunyuanImage-2.1">Tencent HunyuanImage 2.1</a> in <em>full</em>, <em>distilled</em> and <em>refiner</em> variants<br />
+    HunyuanImage-2.1 is a large (51GB) T2I model capable of natively generating 2K images and uses Qwen2.5 + T5 text-encoders and 32x VAE  </li>
 <li><strong>Features</strong></li>
 <li><strong>offline mode</strong>: enable in <em>settings -&gt; hugginface</em><br />
     enables fully offline mode where previously downloaded models can be used as-is<br />
@@ -6358,6 +6414,7 @@
 <li><strong>Backend</strong></li>
 <li>switch to <code>torch==2.9</code> for <em>ipex, rocm and openvino</em>  </li>
 <li>switch to <code>rocm==7.0</code> for nightlies  </li>
+<li>log <code>triton</code> availability on startup  </li>
 <li><strong>Quantization</strong></li>
 <li>improved <strong>SDNQ SVD</strong> and low-bit matmul performance  </li>
 <li><strong>Other</strong></li>
@@ -6367,6 +6424,8 @@
 <li>enhance <code>--optional</code> flag to pre-install optional packages  </li>
 <li>add <code>[lora]</code> to recognized filename patterns  </li>
 <li>add <strong>Apple DepthPro</strong> controlnet processor, thanks @nolbert82  </li>
+<li>add <strong>Qwen 3-VL</strong> llm for interrogate and prompt enhance, thanks @CalamitousFelicitousness<br />
+    this includes <em>2B, 4B and 8B</em> variants  </li>
 <li>when using <strong>shared-t5</strong> <em>(default)</em>, it will load standard or pre-quant depending on model  </li>
 <li><strong>Fixes</strong></li>
 <li>startup error with <code>--profile</code> enabled if using <code>--skip</code>  </li>
@@ -6383,6 +6442,8 @@
 <li>fix networks display with extended characters, thanks @awsr  </li>
 <li>installer handle different <code>opencv</code> package variants  </li>
 <li>fix using pre-quantized shared-t5  </li>
+<li>catch <code>xet</code> warnings  </li>
+<li>validate pipelines on import  </li>
 </ul>
 <h2 id="update-for-2025-10-18">Update for 2025-10-18</h2>
 <ul>
