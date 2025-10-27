@@ -6407,6 +6407,8 @@
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/tencent/HunyuanImage-2.1">Tencent HunyuanImage 2.1</a> in <em>full</em>, <em>distilled</em> and <em>refiner</em> variants<br />
     HunyuanImage-2.1 is a large (51GB) T2I model capable of natively generating 2K images and uses Qwen2.5 + T5 text-encoders and 32x VAE  </li>
+<li><a href="https://huggingface.co/purplesmartai/pony-v7-base">Pony 7</a><br />
+    Pony 7 steps in a different direction from previous Pony models and is based on AuraFlow architecture and UMT5 encoder  </li>
 <li><strong>Features</strong></li>
 <li><strong>offline mode</strong>: enable in <em>settings -&gt; hugginface</em><br />
     enables fully offline mode where previously downloaded models can be used as-is<br />
@@ -6415,6 +6417,7 @@
 <li>switch to <code>torch==2.9</code> for <em>ipex, rocm and openvino</em>  </li>
 <li>switch to <code>rocm==7.0</code> for nightlies  </li>
 <li>log <code>triton</code> availability on startup  </li>
+<li>add <code>xpu</code> stats in gpu monitor  </li>
 <li><strong>Quantization</strong></li>
 <li>improved <strong>SDNQ SVD</strong> and low-bit matmul performance  </li>
 <li><strong>Other</strong></li>
