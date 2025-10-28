@@ -6389,14 +6389,18 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-10-28">Update for 2025-10-28</h2>
 <h3 id="highlights-for-2025-10-28">Highlights for 2025-10-28</h3>
-<ul>
-<li>Reorganization of <strong>Reference Models</strong> into <em>Base, Quantized, Distilled and Community</em> sections for easier navigation  </li>
-<li>New models: <strong>HunyuanImage 2.1</strong> capable of generating 2K images natively, <strong>Pony 7</strong> based on AuraFlow architecture and <strong>Kandinsky 5</strong> 10s video models  </li>
-<li>New <strong>offline mode</strong> to use previously downloaded models without internet connection  </li>
-<li>New SOTA model loader using <strong>Run:ai streamer</strong>  </li>
-<li>Updates to <code>rocm</code> and <code>xpu</code> backends  </li>
-<li>Fixes, fixes, fixes... too many to list here!  </li>
-</ul>
+<p>Less than 2 weeks since last release, here's a service-pack style update with a lot of fixes and improvements:
+- Reorganization of <strong>Reference Models</strong> into <em>Base, Quantized, Distilled and Community</em> sections for easier navigation<br />
+  and introduction of optimized <strong>pre-quantized</strong> variants for many popular models - use this as your quick start!<br />
+- New models: <strong>HunyuanImage 2.1</strong> capable of 2K images natively, <strong>Pony 7</strong> based on AuraFlow architecture, <strong>Kandinsky 5</strong> 10s video models<br />
+- New <strong>offline mode</strong> to use previously downloaded models without internet connection<br />
+- Optimizations to <strong>WAN-2.2</strong> given its popularity<br />
+  plus addition of native <strong>VAE Upscaler</strong> and optimized <strong>pre-quantized</strong> variants<br />
+- New SOTA model loader using <strong>Run:ai streamer</strong><br />
+- Updates to <code>rocm</code> and <code>xpu</code> backends<br />
+- Fixes, fixes, fixes... too many to list here!  </p>
+<p><img alt="Screenshot" src="https://github.com/user-attachments/assets/d6119a63-6ee5-4597-95f6-29ed0701d3b5" /></p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
 <h3 id="details-for-2025-10-28">Details for 2025-10-28</h3>
 <ul>
 <li><strong>Reference</strong> networks section is now split into actual <em>Base</em> models plus:  </li>
@@ -6415,11 +6419,14 @@
     second series of models in <em>Kandinsky5</em> series is T2V model optimized for 10sec videos and uses Qwen2.5 text encoder  </li>
 <li><a href="https://huggingface.co/purplesmartai/pony-v7-base">Pony 7</a><br />
     Pony 7 steps in a different direction from previous Pony models and is based on AuraFlow architecture and UMT5 encoder  </li>
-<li><strong>Models Auxiliary</strong></li>
-<li>add <strong>Qwen 3-VL</strong> VLM for interrogate and prompt enhance, thanks @CalamitousFelicitousness<br />
+<li><strong>Models Auxiliary</strong>  </li>
+<li><a href="https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct">Qwen 3-VL</a> VLM for interrogate and prompt enhance, thanks @CalamitousFelicitousness<br />
     this includes <em>2B, 4B and 8B</em> variants  </li>
-<li>add <strong>Apple DepthPro</strong> controlnet processor, thanks @nolbert82  </li>
-<li>add <strong>LibreFlux</strong> segmentation controlnet for FLUX.1  </li>
+<li><a href="https://huggingface.co/spacepxl/Wan2.1-VAE-upscale2x">WAN Asymettric Upscale</a><br />
+    available as general purpose upscaler that can be used during standard workflow or process tab<br />
+    available as VAE for compatible video models: <em>WAN-2.x-14B, SkyReels-v2</em> models  </li>
+<li><a href="https://huggingface.co/apple/DepthPro">Apple DepthPro</a> controlnet processor, thanks @nolbert82  </li>
+<li><a href="https://huggingface.co/neuralvfx/LibreFlux-ControlNet">LibreFlux controlnet</a> segmentation controlnet for FLUX.1  </li>
 <li><strong>Features</strong></li>
 <li><strong>offline mode</strong>: enable in <em>settings -&gt; hugginface</em><br />
     enables fully offline mode where previously downloaded models can be used as-is<br />
@@ -6443,6 +6450,7 @@
 <li>when using <strong>shared-t5</strong> <em>(default)</em>, it will load standard or pre-quant depending on model  </li>
 <li>enhanced LoRA support for <strong>Wan-2.2-14B</strong>  </li>
 <li>log available attention mechanisms on startup  </li>
+<li>support for switching back-and-forth <strong>t2i</strong> and <strong>t2v</strong> for <em>wan-2.x</em> models  </li>
 <li><strong>Fixes</strong></li>
 <li>startup error with <code>--profile</code> enabled if using <code>--skip</code>  </li>
 <li>restore orig init image for each batch sequence  </li>
@@ -6461,8 +6469,10 @@
 <li>fix <code>wan-2.2-14b-vace</code> single-stage exectution  </li>
 <li>fix <code>wan-2.2-5b</code> tiled vae decode  </li>
 <li>fix <code>controlnet</code> loading with quantization  </li>
+<li>video use pre-quantized text-encoder if selected model is pre-quantized  </li>
 <li>handle sparse <code>controlnet</code> models  </li>
 <li>catch <code>xet</code> warnings  </li>
+<li>avoid unnecessary pipe variant switching  </li>
 <li>validate pipelines on import  </li>
 </ul>
 <h2 id="update-for-2025-10-18">Update for 2025-10-18</h2>
