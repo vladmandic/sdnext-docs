@@ -6412,9 +6412,12 @@
     optional include detection image to output results<br />
     optional sort detection objects left-to-right for improved prompt consistency<br />
     enable multi-subject and multi-model prompts  </li>
-<li>add inline wildcards using curly braces syntax  </li>
+<li><strong>wildcards</strong>: add inline processing using curly braces syntax  </li>
 <li>add setting to control <code>cudnn</code> enable/disable  </li>
+<li>change <code>vlm</code> beams to 1 by default for faster response  </li>
 <li><strong>Fixes</strong></li>
+<li>fix: rocm possible endless loop during hip detection  </li>
+<li>fix: rocm auto-disable miopen for gfx120x</li>
 <li>fix: better handling of detailer settings, thanks @awsr</li>
 <li>fix: cleanup <code>--optional</code> installer  </li>
 <li>fix: guard against multi-controlnet in hires  </li>
