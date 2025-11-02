@@ -1746,10 +1746,25 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#multiple-detailers" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Multiple Detailers
+      Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separating-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Separating prompts
     </span>
   </a>
   
@@ -3141,10 +3156,25 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#multiple-detailers" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Multiple Detailers
+      Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separating-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Separating prompts
     </span>
   </a>
   
@@ -3226,8 +3256,21 @@ Settings that apply are:
 <p>If detailer prompt is specified, it will be used, otherwise primary prompt will be used.
 In case you want to add detailer-specific prompts but also keep the primary prompt, you can use <code>[prompt]</code> in the detailer prompt text box to refer to it.</p>
 <p>For example, <code>[prompt]. blue eyes</code></p>
-<h3 id="multiple-detailers">Multiple Detailers</h3>
-<p>If you're using multiple detailer models, you can specify prompt for each model separately by placing them on separate lines: 1st model will use prompt from 1st line, etc.  </p>
+<h2 id="advanced-usage">Advanced Usage</h2>
+<h3 id="separating-prompts">Separating prompts</h3>
+<p>If detailer prompt is specified and contains multiple lines with linebreaks, each line will be used separately:
+- For each detailer model (in order)
+- For each detected object (in order)</p>
+<p>Example with single model and 3 detected objects:</p>
+<div class="highlight"><pre><span></span><code>Base Prompt:
+  three woman walking down the city street  
+Detailer prompt:  
+  pink makeup and red lipstick  
+  green eyeshadow  
+  blue eye contacts  
+</code></pre></div>
+<p>And if you have 2 models and 3 detected objects, first model will use first 3 lines of the prompt (one per object) and second model will use next 3 lines of the prompt (one per object)  </p>
+<p>Same goes for negative prompts.</p>
 <h3 id="multi-class-models">Multi-class models</h3>
 <p>Most object detection models are trained on a single class of objects, e.g. <em>face</em> or <em>hands</em><br />
 Some models are trained on multiple classes in which case you can specify which <strong>classes</strong> to detect<br />

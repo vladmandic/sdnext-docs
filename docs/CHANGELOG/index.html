@@ -6407,15 +6407,23 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-11-01">Update for 2025-11-01</h2>
 <ul>
-<li>feature: add inline wildcards using curly braces syntax  </li>
-<li>feature: guard against multi-controlnet in hires  </li>
-<li>feature: add setting to control <code>cudnn</code> enable/disable  </li>
-<li>feature: cleanup <code>--optional</code> installer  </li>
+<li><strong>Features</strong></li>
+<li><strong>detailer</strong>
+    optional include detection image to output results<br />
+    optional sort detection objects left-to-right for improved prompt consistency<br />
+    enable multi-subject and multi-model prompts  </li>
+<li>add inline wildcards using curly braces syntax  </li>
+<li>add setting to control <code>cudnn</code> enable/disable  </li>
+<li><strong>Fixes</strong></li>
+<li>fix: cleanup <code>--optional</code> installer  </li>
+<li>fix: guard against multi-controlnet in hires  </li>
 <li>fix: update diffusers  </li>
 <li>fix: inpaint  </li>
 <li>fix: model type detection  </li>
 <li>fix: version detection when cloned with <code>.git</code> suffix  </li>
 <li>fix: init <code>sdnq</code> on video model load  </li>
+<li>fix: add vae scale override for chrono  </li>
+<li>fix: add tracing to model detection  </li>
 <li>ui: fix full-screen image viewer buttons with non-standard ui theme  </li>
 <li>ui: control tab show override section  </li>
 </ul>
