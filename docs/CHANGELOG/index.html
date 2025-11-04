@@ -6408,7 +6408,8 @@
 <h2 id="update-for-2025-11-04">Update for 2025-11-04</h2>
 <ul>
 <li><strong>Features</strong></li>
-<li><strong>detailer</strong>
+<li><strong>ROCm for Windows</strong> switch to using <strong>TheRock</strong> <code>torch</code> builds when available  </li>
+<li><strong>detailer</strong><br />
     optional include detection image to output results<br />
     optional sort detection objects left-to-right for improved prompt consistency<br />
     enable multi-subject and multi-model prompts  </li>
@@ -6424,32 +6425,35 @@
 </ul>
 </li>
 <li><strong>wildcards</strong>: add inline processing using curly braces syntax  </li>
-<li>add setting to control <code>cudnn</code> enable/disable  </li>
+<li>add setting to control <code>cudnn</code> enable/disable<br />
+<em>note</em>: this can also be used to enable/disable <code>MIOpen</code> on ROCm backends  </li>
 <li>change <code>vlm</code> beams to 1 by default for faster response  </li>
-<li>update diffusers  </li>
+<li><strong>controlnet</strong> allow processor to keep aspect-ratio for override images based on i2i or t2i resolution  </li>
+<li><strong>networks</strong> info details now displays image metadata from preview image  </li>
 <li><strong>Fixes</strong></li>
-<li><code>qwen</code> improve lora compatibility  </li>
-<li><code>chrono</code> transformers handling  </li>
-<li><code>chrono</code> extract last frame  </li>
-<li><code>chrono</code> add vae scale override, thanks @CalamitousFelicitousness  </li>
-<li><code>runai</code> improve streamer integration  </li>
-<li><code>transformers</code> dtype use new syntax  </li>
-<li><code>rocm</code> possible endless loop during hip detection  </li>
-<li><code>rocm</code> auto-disable miopen for gfx120x  </li>
-<li><code>detailer</code> better handling of settings, thanks @awsr  </li>
-<li><code>installer</code> cleanup <code>--optional</code>  </li>
-<li><code>hires</code> guard against multi-controlnet  </li>
-<li><code>inpaint</code> handling  </li>
-<li><code>version</code> detection when cloned with <code>.git</code> suffix, thanks @awsr  </li>
-<li><code>sdnq</code> init on video model load  </li>
-<li><code>model type</code> detection  </li>
-<li><code>model type</code> add tracing to model detection  </li>
-<li><code>settings</code> guard against non-string values, thanks @awsr  </li>
-<li><code>ui</code> fix full-screen image viewer buttons with non-standard ui theme  </li>
-<li><code>ui</code> control tab show override section  </li>
-<li><code>ui</code> mobile layout for video tab  </li>
-<li><code>video</code> save to subfolder  </li>
-<li><code>taesd</code> warn on long decode times  </li>
+<li>qwen: improve lora compatibility  </li>
+<li>chrono: transformers handling  </li>
+<li>chrono: extract last frame  </li>
+<li>chrono: add vae scale override, thanks @CalamitousFelicitousness  </li>
+<li>runai: improve streamer integration  </li>
+<li>transformers: <code>dtype</code> use new syntax  </li>
+<li>rocm: possible endless loop during hip detection  </li>
+<li>rocm: auto-disable <code>miopen</code> for gfx120x  </li>
+<li>detailer: better handling of settings, thanks @awsr  </li>
+<li>installer: cleanup <code>--optional</code>  </li>
+<li>hires: guard against multi-controlnet  </li>
+<li>inpaint: fix init  </li>
+<li>version: detection when cloned with .git suffix, thanks @awsr  </li>
+<li>sdnq: init on video model load  </li>
+<li>model type: detection  </li>
+<li>model type: add tracing to model detection  </li>
+<li>settings: guard against non-string values, thanks @awsr  </li>
+<li>ui: fix full-screen image viewer buttons with non-standard ui theme  </li>
+<li>ui: control tab show override section  </li>
+<li>ui: mobile layout for video tab  </li>
+<li>video: save to subfolder  </li>
+<li>taesd: warn on long decode times  </li>
+<li>metadata: keep exif on thumbnail generation  </li>
 </ul>
 <h2 id="update-for-2025-10-31">Update for 2025-10-31</h2>
 <h3 id="highlights-for-2025-10-31">Highlights for 2025-10-31</h3>
