@@ -6425,6 +6425,17 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2025-11-03">Update for 2025-11-03</h2>
 <ul>
+<li><strong>Features</strong></li>
+<li>ability to disable parts of the app<br />
+    useful for custom deployments where some features are not desired<br />
+<em>note</em>: this doesn't just hide it from user, it completely disables the code paths<br />
+    use <code>--disable x,y,z</code><br />
+    possible values:  <ul>
+<li>main tabs: <em>control,txt2img,img2img,video,extras,caption,gallery</em>  </li>
+<li>aside tabs: <em>extensions,models,info,update,history,monitor,onnx,system,networks,logs</em>  </li>
+<li>special: <em>settings,config</em>  </li>
+</ul>
+</li>
 <li><strong>Fixes</strong></li>
 <li>video save to subfolder  </li>
 <li><code>taesd</code> warn on long decode times  </li>
