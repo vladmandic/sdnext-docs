@@ -2986,18 +2986,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-11-03" class="md-nav__link">
+  <a href="#update-for-2025-11-04" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-11-03
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-for-2025-11-02" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update for 2025-11-02
+      Update for 2025-11-04
     </span>
   </a>
   
@@ -4712,18 +4703,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-11-03" class="md-nav__link">
+  <a href="#update-for-2025-11-04" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-11-03
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-for-2025-11-02" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update for 2025-11-02
+      Update for 2025-11-04
     </span>
   </a>
   
@@ -6423,10 +6405,15 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-11-03">Update for 2025-11-03</h2>
+<h2 id="update-for-2025-11-04">Update for 2025-11-04</h2>
 <ul>
 <li><strong>Features</strong></li>
-<li>ability to disable parts of the app<br />
+<li><strong>detailer</strong>
+    optional include detection image to output results<br />
+    optional sort detection objects left-to-right for improved prompt consistency<br />
+    enable multi-subject and multi-model prompts  </li>
+<li><strong>disable modules</strong><br />
+    ability to disable parts of the app<br />
     useful for custom deployments where some features are not desired<br />
 <em>note</em>: this doesn't just hide it from user, it completely disables the code paths<br />
     use <code>--disable x,y,z</code><br />
@@ -6436,22 +6423,12 @@
 <li>special: <em>settings,config</em>  </li>
 </ul>
 </li>
-<li><strong>Fixes</strong></li>
-<li>video save to subfolder  </li>
-<li><code>taesd</code> warn on long decode times  </li>
-</ul>
-<h2 id="update-for-2025-11-02">Update for 2025-11-02</h2>
-<ul>
-<li><strong>Features</strong></li>
-<li><strong>detailer</strong>
-    optional include detection image to output results<br />
-    optional sort detection objects left-to-right for improved prompt consistency<br />
-    enable multi-subject and multi-model prompts  </li>
 <li><strong>wildcards</strong>: add inline processing using curly braces syntax  </li>
 <li>add setting to control <code>cudnn</code> enable/disable  </li>
 <li>change <code>vlm</code> beams to 1 by default for faster response  </li>
 <li>update diffusers  </li>
 <li><strong>Fixes</strong></li>
+<li><code>qwen</code> improve lora compatibility  </li>
 <li><code>chrono</code> transformers handling  </li>
 <li><code>chrono</code> extract last frame  </li>
 <li><code>chrono</code> add vae scale override, thanks @CalamitousFelicitousness  </li>
@@ -6467,9 +6444,12 @@
 <li><code>sdnq</code> init on video model load  </li>
 <li><code>model type</code> detection  </li>
 <li><code>model type</code> add tracing to model detection  </li>
+<li><code>settings</code> guard against non-string values, thanks @awsr  </li>
 <li><code>ui</code> fix full-screen image viewer buttons with non-standard ui theme  </li>
 <li><code>ui</code> control tab show override section  </li>
 <li><code>ui</code> mobile layout for video tab  </li>
+<li><code>video</code> save to subfolder  </li>
+<li><code>taesd</code> warn on long decode times  </li>
 </ul>
 <h2 id="update-for-2025-10-31">Update for 2025-10-31</h2>
 <h3 id="highlights-for-2025-10-31">Highlights for 2025-10-31</h3>
