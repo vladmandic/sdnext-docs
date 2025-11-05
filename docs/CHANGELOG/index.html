@@ -2986,11 +2986,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-11-04" class="md-nav__link">
+  <a href="#update-for-2025-11-05" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-11-04
+      Update for 2025-11-05
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-11-05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-11-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-11-05
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-11-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-11-05
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4703,11 +4727,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-11-04" class="md-nav__link">
+  <a href="#update-for-2025-11-05" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-11-04
+      Update for 2025-11-05
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-11-05">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-11-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlights for 2025-11-05
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-11-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details for 2025-11-05
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6405,7 +6453,13 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-11-04">Update for 2025-11-04</h2>
+<h2 id="update-for-2025-11-05">Update for 2025-11-05</h2>
+<h3 id="highlights-for-2025-11-05">Highlights for 2025-11-05</h3>
+<p>Service pack release that handles critical issues and improvements for <strong>ROCm-on-Windows</strong> and <strong>ZLUDA</strong> backends<br />
+Also included are several new features, notably improvements to <strong>detailer</strong> and ability to run <a href="https://github.com/vladmandic/sdnext">SD.Next</a> with specific modules disabled  </p>
+<p><img alt="Screenshot" src="https://github.com/user-attachments/assets/d6119a63-6ee5-4597-95f6-29ed0701d3b5" /></p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
+<h3 id="details-for-2025-11-05">Details for 2025-11-05</h3>
 <ul>
 <li><strong>Features</strong></li>
 <li><strong>ROCm for Windows</strong> switch to using <strong>TheRock</strong> <code>torch</code> builds when available  </li>
@@ -6421,7 +6475,7 @@
     possible values:  <ul>
 <li>main tabs: <em>control,txt2img,img2img,video,extras,caption,gallery</em>  </li>
 <li>aside tabs: <em>extensions,models,info,update,history,monitor,onnx,system,networks,logs</em>  </li>
-<li>special: <em>settings,config</em>  </li>
+<li>special: <em>settings,config</em> (hidden instead of disabled)  </li>
 </ul>
 </li>
 <li><strong>wildcards</strong>: add inline processing using curly braces syntax  </li>
@@ -6431,6 +6485,7 @@
 <li><strong>controlnet</strong> allow processor to keep aspect-ratio for override images based on i2i or t2i resolution  </li>
 <li><strong>networks</strong> info details now displays image metadata from preview image  </li>
 <li><strong>Fixes</strong></li>
+<li>zluda: test and disable MIOpen as needed  </li>
 <li>qwen: improve lora compatibility  </li>
 <li>chrono: transformers handling  </li>
 <li>chrono: extract last frame  </li>
@@ -6448,6 +6503,7 @@
 <li>model type: detection  </li>
 <li>model type: add tracing to model detection  </li>
 <li>settings: guard against non-string values, thanks @awsr  </li>
+<li>ui: wait for server options to be ready before initializing ui  </li>
 <li>ui: fix full-screen image viewer buttons with non-standard ui theme  </li>
 <li>ui: control tab show override section  </li>
 <li>ui: mobile layout for video tab  </li>
@@ -6456,6 +6512,7 @@
 <li>taesd: warn on long decode times  </li>
 <li>metadata: keep exif on thumbnail generation  </li>
 <li>wildcard: obey seed for reproducible results  </li>
+<li>sageattention: handle possible triton issues on some nvidia gpus, thanks @CalamitousFelicitousness  </li>
 </ul>
 <h2 id="update-for-2025-10-31">Update for 2025-10-31</h2>
 <h3 id="highlights-for-2025-10-31">Highlights for 2025-10-31</h3>
