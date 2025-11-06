@@ -2986,28 +2986,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-11-05" class="md-nav__link">
+  <a href="#update-for-2025-11-06" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-11-05
+      Update for 2025-11-06
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-11-05">
+    <nav class="md-nav" aria-label="Update for 2025-11-06">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-11-05" class="md-nav__link">
+  <a href="#highlights-for-2025-11-06" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-11-05
+      Highlights for 2025-11-06
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-11-05" class="md-nav__link">
+  <a href="#details-for-2025-11-06" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-11-05
+      Details for 2025-11-06
     </span>
   </a>
   
@@ -4727,28 +4727,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-11-05" class="md-nav__link">
+  <a href="#update-for-2025-11-06" class="md-nav__link">
     <span class="md-ellipsis">
-      Update for 2025-11-05
+      Update for 2025-11-06
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-11-05">
+    <nav class="md-nav" aria-label="Update for 2025-11-06">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-11-05" class="md-nav__link">
+  <a href="#highlights-for-2025-11-06" class="md-nav__link">
     <span class="md-ellipsis">
-      Highlights for 2025-11-05
+      Highlights for 2025-11-06
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-11-05" class="md-nav__link">
+  <a href="#details-for-2025-11-06" class="md-nav__link">
     <span class="md-ellipsis">
-      Details for 2025-11-05
+      Details for 2025-11-06
     </span>
   </a>
   
@@ -6453,16 +6453,23 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-11-05">Update for 2025-11-05</h2>
-<h3 id="highlights-for-2025-11-05">Highlights for 2025-11-05</h3>
+<h2 id="update-for-2025-11-06">Update for 2025-11-06</h2>
+<h3 id="highlights-for-2025-11-06">Highlights for 2025-11-06</h3>
 <p>Service pack release that handles critical issues and improvements for <strong>ROCm-on-Windows</strong> and <strong>ZLUDA</strong> backends<br />
-Also included are several new features, notably improvements to <strong>detailer</strong> and ability to run <a href="https://github.com/vladmandic/sdnext">SD.Next</a> with specific modules disabled  </p>
+Also included are several new features, notably improvements to <strong>detailer</strong> and ability to run <a href="https://github.com/vladmandic/sdnext">SD.Next</a> with specific modules disabled<br />
+And new video model, <strong>nVidia SANA 2B</strong>  </p>
 <p><img alt="Screenshot" src="https://github.com/user-attachments/assets/d6119a63-6ee5-4597-95f6-29ed0701d3b5" /></p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2025-11-05">Details for 2025-11-05</h3>
+<h3 id="details-for-2025-11-06">Details for 2025-11-06</h3>
 <ul>
+<li><strong>Models</strong></li>
+<li><a href="https://huggingface.co/Efficient-Large-Model/SANA-Video_2B_480p_diffusers">SANA Video_2B_480p T2V</a> is a small 2B ultra-efficient diffusion model<br />
+    designed for rapid generation of high-quality videos and uses Gemma2 text encoder  </li>
 <li><strong>Features</strong></li>
-<li><strong>ROCm for Windows</strong> switch to using <strong>TheRock</strong> <code>torch</code> builds when available  </li>
+<li><strong>ROCm for Windows</strong> switch to using <strong>TheRock</strong> <code>torch</code> builds when available<br />
+    recommended to run: <code>webui --use-rocm --reinstall</code>  </li>
+<li><strong>ZLUDA</strong> improve detection and handling of unsupported GPUs<br />
+    recommended to run: <code>webui --use-zluda --reinstall</code>  </li>
 <li><strong>detailer</strong><br />
     optional include detection image to output results<br />
     optional sort detection objects left-to-right for improved prompt consistency<br />
@@ -6484,6 +6491,7 @@ Also included are several new features, notably improvements to <strong>detailer
 <li>change <code>vlm</code> beams to 1 by default for faster response  </li>
 <li><strong>controlnet</strong> allow processor to keep aspect-ratio for override images based on i2i or t2i resolution  </li>
 <li><strong>networks</strong> info details now displays image metadata from preview image  </li>
+<li><strong>networks</strong> new model previews, thanks @liutyi  </li>
 <li><strong>Fixes</strong></li>
 <li>zluda: test and disable MIOpen as needed  </li>
 <li>qwen: improve lora compatibility  </li>
