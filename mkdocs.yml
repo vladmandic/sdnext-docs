@@ -131,6 +131,7 @@ nav:
     - Built-in Scripts: Scripts.md
   - User Interface:
     - Themes: Themes.md
+    - Kanvas: Kanvas.md
     - Localization: Locale.md
     - Shortcuts: Hotkeys.md
   - Behind-the-Scenes:
