@@ -2247,9 +2247,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#moveresize" class="md-nav__link">
+  <a href="#move-resize" class="md-nav__link">
     <span class="md-ellipsis">
-      Move/Resize
+      Move / Resize
     </span>
   </a>
   
@@ -2295,6 +2295,15 @@
   <a href="#text" class="md-nav__link">
     <span class="md-ellipsis">
       Text
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zoom-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zoom / Scale
     </span>
   </a>
   
@@ -3259,9 +3268,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#moveresize" class="md-nav__link">
+  <a href="#move-resize" class="md-nav__link">
     <span class="md-ellipsis">
-      Move/Resize
+      Move / Resize
     </span>
   </a>
   
@@ -3307,6 +3316,15 @@
   <a href="#text" class="md-nav__link">
     <span class="md-ellipsis">
       Text
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zoom-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zoom / Scale
     </span>
   </a>
   
@@ -3391,6 +3409,10 @@ Kanvas allows you to work with any object on either layer: each object can be se
 This may result in pixel-offset between mouse pointer and actual object position<br />
 To perform precise editing, use <em>zoom lock</em> button to disable auto-scaling and work at 1:1 pixel ratio</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To pan entire stage when its zoomed in, hold <em>control</em> and drag with mouse or touch gestures</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Size indicator in the toolbar shows current stage size</p>
@@ -3403,6 +3425,10 @@ To perform precise editing, use <em>zoom lock</em> button to disable auto-scalin
 - If image is empty, SD.Next will use standard <em>text-to-image</em> workflows
 - If image is not empty, SD.Next will use <em>image-to-image</em> workflows
 - If mask is not empty, SD.Next will use <em>inpainting</em> workflows</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before sending Kanvas to SD.Next processing, make sure to deselect any selected objects</p>
+</div>
 <h3 id="toolbar">Toolbar</h3>
 <p><img width="760" height="37" alt="Image" src="https://github.com/user-attachments/assets/f6ef598d-aa32-4f9c-bc07-58e6b95b9971" /></p>
 <h3 id="layer-selection">Layer Selection</h3>
@@ -3413,7 +3439,7 @@ Use <em>remove</em> button to remove any selected object from the active layer<b
 Use <em>reset</em> button to clear all objects from both layers and reset the stage  </p>
 <h3 id="opacity">Opacity</h3>
 <p>Use <em>opacity</em> slider to adjust opacity of any selected object on either image or mask layer depending on the current selection  </p>
-<h3 id="moveresize">Move/Resize</h3>
+<h3 id="move-resize">Move / Resize</h3>
 <p>Use <em>move/resize</em> tool to move or resize any selected object on either image or mask layer depending on the current selection.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -3439,6 +3465,10 @@ To use filter tool:<br />
 and then dragging a text box on the stage from top-left to bottom-right<br />
 Kanvas will auto-size text to fit inside the box<br />
 Note that text will be drawn on the active layer (image or mask) depending on the current selection  </p>
+<h3 id="zoom-scale">Zoom / Scale</h3>
+<p>Zoom in/out using mouse wheel, toolbar buttons or touch gestures<br />
+Use <em>zoom lock</em> button to toggle auto-scaling of the stage to fit viewable area<br />
+When <em>zoom lock</em> is enabled, stage will remain at 1:1 pixel ratio for precise editing  </p>
 <h3 id="settings">Settings</h3>
 <p><img width="318" height="356" alt="Image" src="https://github.com/user-attachments/assets/1453e193-3108-4833-94fc-09359c75b68a" /></p>
 <h3 id="disable-kanvas">Disable Kanvas</h3>
@@ -3448,7 +3478,8 @@ Note that text will be drawn on the active layer (image or mask) depending on th
 <code>SD_DISABLE_KANVAS=true</code></p>
 </div>
 <h3 id="implementation">Implementation</h3>
-<p>Kanvas is built using <a href="https://www.typescriptlang.org/">TypeScript</a> and leveraging the power of <a href="https://konvajs.org/">Konva.js</a> library for canvas manipulation  </p>
+<p>Kanvas is maintained in a separate repository: <a href="https://github.com/vladmandic/sdnext-kanvas">sdnext-kanvas</a> and is included as a submodule in the main SD.Next repository<br />
+Kanvas is built using <a href="https://www.typescriptlang.org/">TypeScript</a> and leveraging the power of <a href="https://konvajs.org/">Konva.js</a> library for canvas manipulation  </p>
 
 
 
