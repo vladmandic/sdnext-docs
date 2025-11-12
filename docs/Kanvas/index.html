@@ -4046,8 +4046,21 @@ Simply double-click on an empty area to automatically resize the stage to fit al
 1. Uploading an image to image layer<br />
 2. Selecting <em>move/resize</em> tool and moving the image so the stage increases<br />
    Place the image how you want it to appear in the final output<br />
-3. Optionall resize image, although that is not required<br />
-4. Click on <em>outpaint</em> button to create the outpainting pattern and mask in the blank areas of the stage around the image  </p>
+3. Optionally resize image, although that is not required<br />
+4. Click on <em>outpaint</em> button to enter outpaint mode<br />
+5. Set outpaint expand and blur parameters as necessary<br />
+6. click on <em>outpaint</em> button again to apply outpainting<br />
+7. Start processing  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Larger the expand value, more overlap will be between existing image and outpainted area so model can blend them better</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>For outpainting to take effect, it is necessary <em>input -&gt; denoising strength</em> in SD.Next processing settings<br />
+Recommended values are 0.65-0.85<br />
+You may need to re-roll a few times to get desired results</p>
+</div>
 <h3 id="filters">Filters</h3>
 <p>Use <em>filter</em> tool to apply various filters to any selected object on either image or mask layer<br />
 depending on the current selection<br />
@@ -4056,11 +4069,6 @@ To use filter tool:<br />
 2. Click on <em>filter</em> button
 3. Select desired filter from the dropdown menu and adjust filter parameters as needed
 4. Click on <em>filter</em> button again to apply the filter  </p>
-<blockquote>
-<p>[TIP]
-For outpainting to take effect, its recommended to increase denoising strength in SD.Next processing settings<br />
-Recommended values are 0.65-0.85  </p>
-</blockquote>
 <h3 id="text">Text</h3>
 <p>Use <em>text</em> tool to add text objects by specifying font, color, brush mode and text content in the toolbar<br />
 and then dragging a text box on the stage from top-left to bottom-right<br />
