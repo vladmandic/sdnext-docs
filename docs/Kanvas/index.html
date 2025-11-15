@@ -2658,6 +2658,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#server-side-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server-side Masking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disable-kanvas" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3874,6 +3885,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#server-side-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server-side Masking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disable-kanvas" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4044,9 +4066,9 @@ Simply double-click on an empty area to automatically resize the stage to fit al
 <h3 id="outpaint">Outpaint</h3>
 <p>Outpaint is achieved by<br />
 1. Uploading an image to image layer<br />
-2. Selecting <em>move/resize</em> tool and moving the image so the stage increases<br />
-   Place the image how you want it to appear in the final output<br />
-3. Optionally resize image, although that is not required<br />
+2. Resize image by changing its resolution to desired size
+3. Select <em>move/resize</em> tool and move the image to a desired position on the stage<br />
+   Optionally resize image, although that is not required<br />
 4. Click on <em>outpaint</em> button to enter outpaint mode<br />
 5. Set outpaint expand and blur parameters as necessary<br />
 6. click on <em>outpaint</em> button again to apply outpainting<br />
@@ -4080,6 +4102,15 @@ Use <em>zoom lock</em> button to toggle auto-scaling of the stage to fit viewabl
 When <em>zoom lock</em> is enabled, stage will remain at 1:1 pixel ratio for precise editing  </p>
 <h3 id="settings">Settings</h3>
 <p><img width="318" height="356" alt="Image" src="https://github.com/user-attachments/assets/1453e193-3108-4833-94fc-09359c75b68a" /></p>
+<h3 id="server-side-masking">Server-side Masking</h3>
+<p>SD.Next further enhances Kanvas capabilities by providing advanced masking options in the input panel<br />
+For example, you can skip drawing a mask in the Kanvas mask layer and instead use <em>Auto-segment</em> or <em>Auto-mask</em> in the <em>Input</em> panel to generate a mask based on the uploaded image  </p>
+<p><em>Example</em> auto-mask using <code>BEN2</code> model:</p>
+<p><img width="1024" alt="Image" src="https://github.com/user-attachments/assets/85d44d3e-9a6f-4d7c-b88d-c8ebc61f8d41" /></p>
+<p>Aditionaly, any server options are automatically applied to Kanvas mask when processing images:
+- Blur: applies Gaussian blur to the Kanvas mask
+- Dilate / Erode: shrinks or expands the Kanvas mask</p>
+<p>Any server-side mask options can be rendered to preview panel before processing</p>
 <h3 id="disable-kanvas">Disable Kanvas</h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
