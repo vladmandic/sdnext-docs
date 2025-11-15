@@ -7753,14 +7753,16 @@ And a first cloud model with <strong>Google's Nano Banana</strong></p>
 <li><strong>auth</strong>: strong-enforce auth check on all api endpoints  </li>
 <li><strong>amdgpu</strong>: prefer rocm-on-windows over zluda  </li>
 <li><strong>Internal</strong></li>
-<li>refactor attention handling  </li>
-<li>remove obsolete video scripts  </li>
-<li>update global lint rules  </li>
+<li>torch: update to <code>torch==2.9.1</code> for cuda and ipex backends</li>
+<li>attention: refactor attention handling  </li>
+<li>scripts: remove obsolete video scripts  </li>
+<li>lint: update global lint rules  </li>
 <li>chrono: switch to official pipeline  </li>
 <li>pipeline: add optional preprocess and postprocess hooks  </li>
 <li>auth: wrap all internal api calls with auth check and use token when possible  </li>
 <li>installer: reduce requirements  </li>
 <li>installer: auto-restart on self-update  </li>
+<li>server: set correct mime-types  </li>
 <li><strong>Fixes</strong></li>
 <li>hires: strength save/load in metadata, thanks @awsr  </li>
 <li>imgi2img: fix initial scale tab, thanks @awsr  </li>
