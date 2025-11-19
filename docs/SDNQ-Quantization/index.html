@@ -4154,8 +4154,8 @@
 <h2 id="features">Features</h2>
 <ul>
 <li>SDNQ is fully cross-platform, supports all GPUs and CPUs and includes many quantization methods:  </li>
-<li><em>8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit int and uint</em>  </li>
-<li><em>8-bit e5, e4 and fnuz float</em>  </li>
+<li><em>16-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit int and uint</em>  </li>
+<li><em>16-bit, 8-bit e5, e4 and fnuz float</em>  </li>
 <li><em>note</em>: <code>int8</code> is very close to the original 16 bit quality  </li>
 <li>Supports nearly all model types  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
@@ -4246,6 +4246,7 @@ Symmetric types: <code>int8</code>, <code>int7</code>, <code>int6</code>, <code>
 Symmetric quants can store negative and positive values meaning they don't have extra zero point value and they run faster than unsigned quants because of this.  </p>
 <p>Quality difference between asymmetric and symmetric quantization is very small for 8 to 6 bits but you should use asymmetric methods below 5 bits.  </p>
 <ul>
+<li><code>int16</code> uses int16 and has -32768 to 32767 range.  </li>
 <li><code>int8</code> uses int8 and has -128 to 127 range.  </li>
 <li><code>int7</code> uses eight int7 values packed into seven uint8 values and has -64 to 63 range.  </li>
 <li><code>int6</code> uses four int6 values packed into three uint8 values and has -32 to 31 range.  </li>
@@ -4253,6 +4254,7 @@ Symmetric quants can store negative and positive values meaning they don't have 
 <li><code>int4</code> uses two int4 values packed into a single uint8 value and has -8 to 7 range.  </li>
 <li><code>int3</code> uses eight int3 values packed into a three uint8 values and has -4 to 3 range.  </li>
 <li><code>int2</code> uses four int2 values packed into a single uint8 value and has -2 to 1 range.  </li>
+<li><code>uint16</code> uses uint16 and has 0 to 65535 range.  </li>
 <li><code>uint8</code> uses uint8 and has 0 to 255 range.  </li>
 <li><code>uint7</code> uses eight uint7 values packed into seven uint8 values and has 0 to 127 range.  </li>
 <li><code>uint6</code> uses four uint6 values packed into three uint8 values and has 0 to 63 range.  </li>
@@ -4261,6 +4263,7 @@ Symmetric quants can store negative and positive values meaning they don't have 
 <li><code>uint3</code> uses eight uint3 values packed into a three uint8 value and has 0 to 7 range.  </li>
 <li><code>uint2</code> uses four uint2 values packed into a single uint8 value and has 0 to 3 range.  </li>
 <li><code>uint1</code> uses eight uint1 values packed into a single uint8 value and has 0 to 1 range.  </li>
+<li><code>float16</code> uses float16 and has -65504 to 65504 range.  </li>
 <li><code>float8_e4m3fn</code> uses float8_e4m3fn and has -448 to 448 range.  </li>
 <li><code>float8_e5m2</code> uses float8_e5m2 and has -57344 to 57344 range.  </li>
 <li><code>float8_e4m3fnuz</code> uses float8_e4m3fnuz and has -240 to 240 range.  </li>
