@@ -3481,15 +3481,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-11-23" class="md-nav__link">
+  <a href="#update-for-2025-11-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-11-23
+        Update for 2025-11-26
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-11-23">
+    <nav class="md-nav" aria-label="Update for 2025-11-26">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3504,10 +3504,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-11-23" class="md-nav__link">
+  <a href="#highlights-for-2025-11-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2025-11-23
+        Highlights for 2025-11-26
       
     </span>
   </a>
@@ -3515,10 +3515,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-11-23" class="md-nav__link">
+  <a href="#details-for-2025-11-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2025-11-23
+        Details for 2025-11-26
       
     </span>
   </a>
@@ -5606,15 +5606,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-11-23" class="md-nav__link">
+  <a href="#update-for-2025-11-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-11-23
+        Update for 2025-11-26
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-11-23">
+    <nav class="md-nav" aria-label="Update for 2025-11-26">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5629,10 +5629,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-11-23" class="md-nav__link">
+  <a href="#highlights-for-2025-11-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2025-11-23
+        Highlights for 2025-11-26
       
     </span>
   </a>
@@ -5640,10 +5640,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-11-23" class="md-nav__link">
+  <a href="#details-for-2025-11-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2025-11-23
+        Details for 2025-11-26
       
     </span>
   </a>
@@ -7725,17 +7725,23 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-11-23">Update for 2025-11-23</h2>
+<h2 id="update-for-2025-11-26">Update for 2025-11-26</h2>
 <h3 id="tbd">TBD</h3>
 <p>Merge commit: <code>f903a36d9</code></p>
-<h3 id="highlights-for-2025-11-23">Highlights for 2025-11-23</h3>
+<h3 id="highlights-for-2025-11-26">Highlights for 2025-11-26</h3>
 <p>New native <a href="https://vladmandic.github.io/sdnext-docs/Kanvas/">kanvas</a> module for image manipulation that fully replaces img2img, inpaint and outpaint controls<br />
-And a first cloud model with <strong>Google's Nano Banana</strong> <em>2.5 Flash and 3.0 Pro</em> plus new <strong>Photoroom PRX</strong> model  </p>
+New generation of <strong>Flux.2</strong> large image model and a first cloud model with <strong>Google's Nano Banana</strong> <em>2.5 Flash and 3.0 Pro</em> plus new <strong>Photoroom PRX</strong> model  </p>
 <p><img alt="Screenshot" src="https://github.com/user-attachments/assets/54b25586-b611-4d70-a28f-ee3360944034" /></p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2025-11-23">Details for 2025-11-23</h3>
+<h3 id="details-for-2025-11-26">Details for 2025-11-26</h3>
 <ul>
 <li><strong>Models</strong></li>
+<li><a href="https://bfl.ai/blog/flux-2">Black Forest Labs FLUX.2 Dev</a> and prequantized variation <a href="https://huggingface.co/Disty0/FLUX.2-dev-SDNQ-uint4-svd-r32">SDNQ-SVD-Uint4</a><br />
+<strong>FLUX.2-Dev</strong> is a brand new model from BFL and uses large 32B DiT together with Mistral 24B as text encoder<br />
+    model is available for text, image and edit tasks and can optionally use control input as second input image<br />
+    this is a very large model at ~100GB, so use of prequantized model at ~32GB is strongly advised
+    using prequant version and default offloading, model runs on GPUs with ~20GB<br />
+<em>note</em>: model is <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated</a>  </li>
 <li><strong>Google Gemini Nano Banana</strong> <a href="https://blog.google/products/gemini/gemini-nano-banana-examples/">2.5 Flash</a> and <a href="https://deepmind.google/models/gemini-image/pro/">3.0 Pro</a> 
     first cloud-based model directly supported in SD.Next UI<br />
 <em>note</em>: need to set <code>GOOGLE_API_KEY</code> environment variable with your key to use this model  </li>
