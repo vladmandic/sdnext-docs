@@ -3726,8 +3726,12 @@ blue
 <li>Wildcards can be nested<br />
   Line inside wildcard file can also have a wildcard referrring to another wildcard, etc.  </li>
 <li>Supports filename-only and path-based wildcards with full subfolder support<br />
-  If wildcard is refered as <code>__color__</code> then it will look for file <code>color.txt</code> in wildcards folder and <em>any</em> subfoldrer<br />
-  If wildcard is refered as <code>__nsp/color__</code> then it will look for <code>color.txt</code> <em>only</em> in <code>nsp</code> folder inside wildcards folder  </li>
+  If wildcard is refered as <code>__color__</code> then it will look for  </li>
+<li>file <code>color.txt</code> in <em>any</em> subfolders<br />
+  If wildcard is refered as <code>__color/__</code> then it will look for  </li>
+<li>folder <code>color</code> with any wildcard files inside it<br />
+  If wildcard is refered as <code>__nsp/color__</code> then it will look for  </li>
+<li><code>color.txt</code> <em>only</em> in <code>nsp</code> folder inside wildcards folder  </li>
 <li>Wildcards files can be in one-choice per line or multiple choices per line separated by <code>|</code> format  </li>
 </ul>
 <h3 id="validation">Validation</h3>
