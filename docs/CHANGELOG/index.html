@@ -7733,6 +7733,9 @@
 <li><strong>Features</strong></li>
 <li>Google models support for both <em>Dev</em> and <em>Vertex</em> access methods<br />
     see <a href="https://vladmandic.github.io/sdnext-docs/Google-GenAI/">docs</a> for details  </li>
+<li>Z-Image support loading transformer file-tunes in safetensors format<br />
+    as with any transformers/unet finetunes, place them then <code>models/unet</code><br />
+    and use <strong>UNET Model</strong> to load safetensors file as they are not complete models  </li>
 <li><strong>Internal</strong></li>
 <li>update nightlies to <code>rocm==7.1</code>  </li>
 <li>mark <code>python==3.9</code> as deprecated  </li>
@@ -7741,6 +7744,7 @@
 <li><strong>Fixes</strong>  </li>
 <li>generate forever fix loop checks, thanks @awsr  </li>
 <li>tokenizer expclit use for flux2, thanks @CalamitousFelicitousness  </li>
+<li>torch.compile skip offloading steps  </li>
 </ul>
 <h2 id="update-for-2025-12-11">Update for 2025-12-11</h2>
 <h3 id="highlights-for-2025-12-11">Highlights for 2025-12-11</h3>
