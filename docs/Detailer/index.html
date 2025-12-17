@@ -1993,6 +1993,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segmentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#multi-class-models" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3706,6 +3717,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segmentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#multi-class-models" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3851,6 +3873,15 @@ Detailer prompt:
 </code></pre></div>
 <p>And if you have 2 models and 3 detected objects, first model will use first 3 lines of the prompt (one per object) and second model will use next 3 lines of the prompt (one per object)  </p>
 <p>Same goes for negative prompts.</p>
+<h3 id="segmentation">Segmentation</h3>
+<p>Some detailer models can detect segmentation mask of the detected object, not just bounding box<br />
+To use segmentation mask, enable <strong>Use segmentation</strong> option<br />
+If selected detailer model does not have segmentation capabilities,<br />
+SD.Next will automatically fall-back to using normal bounding boxes for detected objects</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Models that have segmentation capabilities often have <code>seg</code> in the name</p>
+</div>
 <h3 id="multi-class-models">Multi-class models</h3>
 <p>Most object detection models are trained on a single class of objects, e.g. <em>face</em> or <em>hands</em><br />
 Some models are trained on multiple classes in which case you can specify which <strong>classes</strong> to detect<br />
