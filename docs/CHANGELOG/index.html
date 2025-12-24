@@ -3481,10 +3481,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-12-23" class="md-nav__link">
+  <a href="#update-for-2025-12-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-12-23
+        Update for 2025-12-24
       
     </span>
   </a>
@@ -5606,10 +5606,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-12-23" class="md-nav__link">
+  <a href="#update-for-2025-12-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-12-23
+        Update for 2025-12-24
       
     </span>
   </a>
@@ -7725,12 +7725,14 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-12-23">Update for 2025-12-23</h2>
+<h2 id="update-for-2025-12-24">Update for 2025-12-24</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://github.com/meituan-longcat/LongCat-Image">LongCat Image</a> in <em>Image</em> and <em>Image Edit</em> variants<br />
     LongCat is a new 8B diffusion base model using Qwen-2.5 as text encoder  </li>
-<li><a href="https://huggingface.co/Qwen/Qwen-Image-Layered">Qwen Image Layered</a> in <em>base</em> and <em>pre-quantized</em> variants 
+<li><a href="Qwen/Qwen-Image-Edit-2511">Qwen-Image-Edit 2511</a> in <em>base</em> and <em>pre-quantized</em> variants<br />
+    Key enhancements: mitigate image drift, improved character consistency, enhanced industrial design generation, and strengthened geometric reasoning ability  </li>
+<li><a href="https://huggingface.co/Qwen/Qwen-Image-Layered">Qwen-Image-Layered</a> in <em>base</em> and <em>pre-quantized</em> variants 
     Qwen-Image-Layered, a model capable of decomposing an image into multiple RGBA layers<br />
 <em>note</em>: set number of desired output layers in <em>settings -&gt; model options</em>  </li>
 <li><strong>Features</strong></li>
@@ -7739,6 +7741,8 @@
 <li><strong>Z-Image</strong> support loading transformer file-tunes in safetensors format<br />
     as with any transformers/unet finetunes, place them then <code>models/unet</code><br />
     and use <strong>UNET Model</strong> to load safetensors file as they are not complete models  </li>
+<li><strong>Z-Image</strong> support for <strong>ControlNet Union</strong><br />
+    includes 1.0, 2.0 and 2.1 variants  </li>
 <li><strong>Detailer</strong> support for segmentation models<br />
     some detection models can produce exact segmentation mask and not just box<br />
     to enable, set <code>use segmentation</code> option<br />
@@ -7748,8 +7752,9 @@
 <li>mark <code>python==3.9</code> as deprecated  </li>
 <li>extensions improved status indicators, thanks @awsr  </li>
 <li>additional type-safety checks, thanks @awsr  </li>
-<li><strong>Wiki</strong>  </li>
+<li><strong>Wiki/Docs/Illustrations</strong>  </li>
 <li>update models page, thanks @alerikaisattera  </li>
+<li>update reference models samples, thanks @liutyi  </li>
 <li><strong>Fixes</strong>  </li>
 <li>generate forever fix loop checks, thanks @awsr  </li>
 <li>tokenizer expclit use for flux2, thanks @CalamitousFelicitousness  </li>
