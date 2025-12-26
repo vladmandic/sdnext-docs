@@ -3481,24 +3481,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
+  <a href="#update-for-2025-12-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Known issues
+        Update for 2025-12-26
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-12-26">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-12-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2025-12-26
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#update-for-2025-12-25" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-12-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-12-25
+        Details for 2025-12-26
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5617,24 +5634,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
+  <a href="#update-for-2025-12-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Known issues
+        Update for 2025-12-26
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-12-26">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-12-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2025-12-26
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#update-for-2025-12-25" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-12-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-12-25
+        Details for 2025-12-26
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7747,14 +7781,13 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="known-issues">Known issues</h2>
-<ul>
-<li>z-image-turbo controlnet device mismatch: <a href="https://github.com/huggingface/diffusers/pull/12886">https://github.com/huggingface/diffusers/pull/12886</a></li>
-<li>z-image-turbo safetensors loader: <a href="https://github.com/huggingface/diffusers/issues/12887">https://github.com/huggingface/diffusers/issues/12887</a></li>
-<li>kandinsky-image-5 hardcoded cuda: <a href="https://github.com/huggingface/diffusers/pull/12814">https://github.com/huggingface/diffusers/pull/12814</a></li>
-<li>peft lora with torch-rocm-windows: <a href="https://github.com/huggingface/peft/pull/2963">https://github.com/huggingface/peft/pull/2963</a></li>
-</ul>
-<h2 id="update-for-2025-12-25">Update for 2025-12-25</h2>
+<h2 id="update-for-2025-12-26">Update for 2025-12-26</h2>
+<h3 id="highlights-for-2025-12-26">Highlights for 2025-12-26</h3>
+<p>End of year release update, just two weeks after previous one, with several new models and features:
+- Several new models including highly anticipated <strong>Qwen-Image-Edit 2511</strong> as well as <strong>Qwen-Image-Layered</strong>, <strong>LongCat Image</strong> and <strong>Ovis Image</strong><br />
+- New features including support for <strong>Z-Image</strong> <em>ControlNets</em> and <em>fine-tunes</em> and <strong>Detailer</strong> segmentation support  </p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
+<h3 id="details-for-2025-12-26">Details for 2025-12-26</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://github.com/meituan-longcat/LongCat-Image">LongCat Image</a> in <em>Image</em> and <em>Image Edit</em> variants<br />
@@ -7764,6 +7797,8 @@
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-Layered">Qwen-Image-Layered</a> in <em>base</em> and <em>pre-quantized</em> variants<br />
     Qwen-Image-Layered, a model capable of decomposing an image into multiple RGBA layers<br />
 <em>note</em>: set number of desired output layers in <em>settings -&gt; model options</em>  </li>
+<li><a href="https://huggingface.co/AIDC-AI/Ovis-Image-7B">Ovis Image 7B</a><br />
+    Ovis Image is a new text-to-image base model based on Qwen3 text-encoder and optimized for text-rendering  </li>
 <li><strong>Features</strong></li>
 <li>Google <strong>Gemini</strong> and <strong>Veo</strong> models support for both <em>Dev</em> and <em>Vertex</em> access methods<br />
     see <a href="https://vladmandic.github.io/sdnext-docs/Google-GenAI/">docs</a> for details  </li>
@@ -7781,6 +7816,7 @@
 <li>mark <code>python==3.9</code> as deprecated  </li>
 <li>extensions improved status indicators, thanks @awsr  </li>
 <li>additional type-safety checks, thanks @awsr  </li>
+<li>add model info to ui overlay  </li>
 <li><strong>Wiki/Docs/Illustrations</strong>  </li>
 <li>update models page, thanks @alerikaisattera  </li>
 <li>update reference models samples, thanks @liutyi  </li>
@@ -7792,6 +7828,8 @@
 <li>control input media with non-english locales  </li>
 <li>handle embeds when on meta device  </li>
 <li>improve offloading when model has manual modules  </li>
+<li>ui section colapsible state, thanks @awsr  </li>
+<li>ui filter by model type  </li>
 </ul>
 <h2 id="update-for-2025-12-11">Update for 2025-12-11</h2>
 <h3 id="highlights-for-2025-12-11">Highlights for 2025-12-11</h3>
