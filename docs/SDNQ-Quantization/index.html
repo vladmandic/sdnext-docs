@@ -3102,6 +3102,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quantized-matmul-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantized MatMul type
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#triton" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3831,6 +3842,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quantized-matmul-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantized MatMul type
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#triton" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4154,8 +4176,9 @@
 <h2 id="features">Features</h2>
 <ul>
 <li>SDNQ is fully cross-platform, supports all GPUs and CPUs and includes many quantization methods:  </li>
+<li>Supports <em>19</em> int-based and <em>69</em> float-based quantization schemes in total  </li>
 <li><em>16-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit int and uint</em>  </li>
-<li><em>16-bit, 8-bit e5, e4 and fnuz float</em>  </li>
+<li><em>16-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit float and their variant</em>  </li>
 <li><em>note</em>: <code>int8</code> is very close to the original 16 bit quality  </li>
 <li>Supports nearly all model types  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
@@ -4179,6 +4202,9 @@
   You can use <code>INT6</code> with little quality loss to save more memory and <code>UINT4</code> to save even more memory<br />
 <code>float8_e4m3fn</code> is another option for fast speed and high quality but <code>FP8</code> has slightly lower quality and performance than <code>INT8</code>  </li>
 </ul>
+<h2 id="quantized-matmul-type">Quantized MatMul type</h2>
+<p>Overrides the Quantized MatMul type.<br />
+Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types and will use FP8 matmul with FP types.  </p>
 <h2 id="triton">Triton</h2>
 <p>Triton enables the use of optimized kernels for much better performance.<br />
 Triton is not required for SDNQ but it is highly recommended for much better performance.<br />
@@ -4265,9 +4291,13 @@ Symmetric quants can store negative and positive values meaning they don't have 
 <li><code>uint1</code> uses eight uint1 values packed into a single uint8 value and has 0 to 1 range.  </li>
 <li><code>float16</code> uses float16 and has -65504 to 65504 range.  </li>
 <li><code>float8_e4m3fn</code> uses float8_e4m3fn and has -448 to 448 range.  </li>
-<li><code>float8_e5m2</code> uses float8_e5m2 and has -57344 to 57344 range.  </li>
-<li><code>float8_e4m3fnuz</code> uses float8_e4m3fnuz and has -240 to 240 range.  </li>
-<li><code>float8_e5m2fnuz</code> uses float8_e5m2fnuz and has -57344 to 57344 range.  </li>
+<li><code>float7_e3m3fn</code> uses float7_e3m3fn packed into uint7 and has -30 to 30 range.  </li>
+<li><code>float6_e2m3fn</code> uses float6_e2m3fn packed into uint6 and has -7.5 to 7.5 range.  </li>
+<li><code>float5_e2m2fn</code> uses float5_e2m2fn packed into uint5 and has -7.0 to 7.0 range.  </li>
+<li><code>float4_e2m1fn</code> uses float4_e2m1fn packed into uint4 and has -6.0 to 6.0 range.  </li>
+<li><code>float3_e1m1fn</code> uses float3_e1m1fn packed into uint3 and has -3.0 to 3.0 range.  </li>
+<li><code>float2_e1m0fn</code> uses float2_e1m0fn packed into uint2 and has -2.0 to 2.0 range.  </li>
+<li><code>float1_e1m0fnu</code> uses float1_e1m0fnu packed into uint1 and has 0 to 2.0 range.  </li>
 </ul>
 <h3 id="quantization-type-for-text-encoders">Quantization type for Text Encoders</h3>
 <p>Same as <code>Quantization type</code> but for the Text Encoders.<br />
