@@ -4178,7 +4178,7 @@
 <li>SDNQ is fully cross-platform, supports all GPUs and CPUs and includes many quantization methods:  </li>
 <li>Supports <em>19</em> int-based and <em>69</em> float-based quantization schemes in total  </li>
 <li><em>16-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit int and uint</em>  </li>
-<li><em>16-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit float and their variant</em>  </li>
+<li><em>16-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit float and their variants</em>  </li>
 <li><em>note</em>: <code>int8</code> is very close to the original 16 bit quality  </li>
 <li>Supports nearly all model types  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
@@ -4292,7 +4292,7 @@ Symmetric quants can store negative and positive values meaning they don't have 
 <li><code>float16</code> uses float16 and has -65504 to 65504 range.  </li>
 <li><code>float8_e4m3fn</code> uses float8_e4m3fn and has -448 to 448 range.  </li>
 <li><code>float7_e3m3fn</code> uses float7_e3m3fn packed into uint7 and has -30 to 30 range.  </li>
-<li><code>float6_e2m3fn</code> uses float6_e2m3fn packed into uint6 and has -7.5 to 7.5 range.  </li>
+<li><code>float6_e3m2fn</code> uses float6_e3m2fn packed into uint6 and has -28 to 28 range.  </li>
 <li><code>float5_e2m2fn</code> uses float5_e2m2fn packed into uint5 and has -7.0 to 7.0 range.  </li>
 <li><code>float4_e2m1fn</code> uses float4_e2m1fn packed into uint4 and has -6.0 to 6.0 range.  </li>
 <li><code>float3_e1m1fn</code> uses float3_e1m1fn packed into uint3 and has -3.0 to 3.0 range.  </li>
