@@ -4259,15 +4259,13 @@ Default is <code>auto</code>.  </p>
 <p><code>Pre</code> mode is compatible with DiT and Video models like Flux but older UNet models like SDXL are only compatible with <code>post</code> mode.  </p>
 <h3 id="quantization-type">Quantization type</h3>
 <p>Used to decide the data type used to store the model weights.<br />
-Recommended types are <code>int8</code> for 8 bit, <code>int6</code> for 6 bit, <code>float8_e4m3fn</code> for fp8 and <code>uint4</code> for 4 bit.<br />
+Recommended types are <code>int8</code> for 8 bit, <code>int6</code> for 6 bit and <code>uint4</code> for 4 bit.<br />
 Default is <code>int8</code>.  </p>
 <p>INT8 quants have very similar quality to the full 16 bit precision while using 2 times less memory.<br />
 INT6 quants are the middle ground. Similar quality to to the full 16 bit precision while using 2.7 times less memory.<br />
-INT4 quants have lower quality and less performance but uses 3.6 times less memory.<br />
+UINT4 quants have lower quality and less performance but uses 3.6 times less memory.<br />
 FP8 quants have similar quality to INT6 but with the same memory usage as INT8.  </p>
-<p>Unsigned quants have the extra <code>u</code> added to the start of their name while the symmetric quants don't have any prefix.<br />
-Unsigned (asymmetric) types: <code>uint8</code>, <code>uint7</code>, <code>uint6</code>, <code>uint5</code>, <code>uint4</code>, <code>uint3</code>, <code>uint2</code> and <code>uint1</code><br />
-Symmetric types: <code>int8</code>, <code>int7</code>, <code>int6</code>, <code>int5</code>, <code>int4</code>, <code>int3</code>, <code>int2</code>, <code>float8_e4m3fn</code>, <code>float8_e5m2</code>, <code>float8_e4m3fnuz</code> and <code>float8_e5m2fnuz</code>  </p>
+<p>Unsigned quants have the extra <code>u</code> added to the start of their name while the symmetric quants don't have any prefix.  </p>
 <p>Asymmetric quants uses unsigned integers, meaning they can't store negative values and will use another variable called zero point for this purpose.<br />
 Symmetric quants can store negative and positive values meaning they don't have extra zero point value and they run faster than unsigned quants because of this.  </p>
 <p>Quality difference between asymmetric and symmetric quantization is very small for 8 to 6 bits but you should use asymmetric methods below 5 bits.  </p>
@@ -4326,8 +4324,7 @@ Default is <code>0</code>, meaning it will decide the group size based on your q
 Linear layers will use this formula to find the group size: <code>2 ** (2 + number_of_bits)</code><br />
 Convolutions will use this formula to find the group size: <code>2 ** (1 + number_of_bits)</code><br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
-<p>Using Quantized MatMul with FP8 quant types will disable group sizes.<br />
-Using Quantized Matmul with <code>int</code> or <code>uint</code> quant types will continue to use Group Sizes by default if the number of bits is less than 6.  </p>
+<p>Using Quantized MatMul will disable group sizes if the number of bits is a 6 or more and group size is set to 0.  </p>
 <h3 id="svd-rank-size">SVD rank size</h3>
 <p>The rank size to use for SVD quantization.<br />
 Higher values have better quality but with less performance and more memory usage.<br />
@@ -4346,9 +4343,7 @@ Disabled by default.  </p>
 Meaning that you will get slightly different quantization results every time.  </p>
 <h3 id="quantize-convolutional-layers">Quantize convolutional layers</h3>
 <p>Enabling this option will quantize convolutional layers in UNet models too.<br />
-Has much better memory savings but lower quality.<br />
-Convolutions will use <code>uint4</code> when using quants with less than 4 bits.<br />
-Disabled by default.  </p>
+Has much better memory savings but lower quality.  </p>
 <h3 id="dequantize-using-torchcompile">Dequantize using torch.compile</h3>
 <p>Uses Triton via <code>torch.compile</code> on the dequantization step.<br />
 Has significantly higher performance.<br />
@@ -4370,10 +4365,9 @@ Requires Triton. Disabled by default.  </p>
 - <strong>Intel</strong><br />
   Requires Alchemist (Arc A) or newer GPUs for INT8 matmul.<br />
   Intel doesn't support FP8 matmul.  </p>
-<p>Quantized INT8 MatMul is compatible with any <code>int</code> or <code>uint</code> quant type.<br />
-Quantized FP8 MatMul is only compatible with <code>float8_e4m3fn</code> quant type on most GPUs. CPUs and some GPUs can use the other FP8 types too.  </p>
-<p>Recommended quant type to use with this option is <code>int8</code> for quality and INT8 matmul tends to be faster than FP8.<br />
-Recommended quant type for FP8 matmul is <code>float8_e4m3fn</code> for quality and better hardware support.  </p>
+<p>Recommended quant type to use with this option is <code>int8</code> for quality and better hardware compatibility.<br />
+INT8 matmul is also significantly faster than FP8 matmul on consumer Nvidia GPUs.<br />
+Recommended quant type for FP8 matmul is <code>float8_e4m3fn</code>.  </p>
 <h3 id="use-quantized-matmul-with-convolutional-layers">Use Quantized MatMul with convolutional layers</h3>
 <p>Same as <code>Use Quantized MatMul</code> but for the convolutional layers with UNets like SDXL.<br />
 Disabled by default.  </p>
