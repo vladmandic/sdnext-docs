@@ -3481,10 +3481,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-05" class="md-nav__link">
+  <a href="#update-for-2025-01-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-05
+        Update for 2025-01-06
       
     </span>
   </a>
@@ -5645,10 +5645,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-05" class="md-nav__link">
+  <a href="#update-for-2025-01-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-05
+        Update for 2025-01-06
       
     </span>
   </a>
@@ -7803,11 +7803,12 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-05">Update for 2025-01-05</h2>
+<h2 id="update-for-2025-01-06">Update for 2025-01-06</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-2512">Qwen-Image-2512</a><br />
-    Qwen-Image successor, significantly reduces the AI-generated look and adds finer natural detailils and improved text rendering  </li>
+    Qwen-Image successor, significantly reduces the AI-generated look and adds finer natural detailils and improved text rendering<br />
+    available in both <em>original</em> and sdnq <em>prequantized</em> variants  </li>
 <li><strong>Feaures</strong></li>
 <li><strong>SDNQ</strong> now has <em>19 int</em> based and <em>69 float</em> based quantization types<br />
 <em>note</em>: not all are exposed via ui purely for simplicity, but all are available via api and scripts  </li>
@@ -7823,7 +7824,8 @@
 <li>update models specs page, thanks @alerikaisattera  </li>
 <li>sdnq improvements  </li>
 <li>startup sequence optimizations  </li>
-<li>new env variable <code>SD_VAE_DEFAULT</code> to force default vae processing    </li>
+<li>rocm/hip/hipblast detection and initialization improvements  </li>
+<li>new env variable <code>SD_VAE_DEFAULT</code> to force default vae processing  </li>
 <li><strong>Fixes</strong></li>
 <li>extension tab: update checker, date handling, formatting etc., thanks @awsr  </li>
 <li>controlnet with non-english ui locales  </li>
