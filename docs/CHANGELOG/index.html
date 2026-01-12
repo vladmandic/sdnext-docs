@@ -3481,10 +3481,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-10" class="md-nav__link">
+  <a href="#update-for-2025-01-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-10
+        Update for 2025-01-12
       
     </span>
   </a>
@@ -5645,10 +5645,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-10" class="md-nav__link">
+  <a href="#update-for-2025-01-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-10
+        Update for 2025-01-12
       
     </span>
   </a>
@@ -7803,7 +7803,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-10">Update for 2025-01-10</h2>
+<h2 id="update-for-2025-01-12">Update for 2025-01-12</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-2512">Qwen-Image-2512</a><br />
@@ -7817,9 +7817,13 @@
 <li><strong>Feaures</strong></li>
 <li><strong>SDNQ</strong> now has <em>19 int</em> based and <em>69 float</em> based quantization types<br />
 <em>note</em>: not all are exposed via ui purely for simplicity, but all are available via api and scripts  </li>
-<li>allow weights for wildcards, thanks @Tillerz  </li>
-<li>sampler: add laplace beta schedule<br />
+<li><strong>wildcards</strong>: allow weights, thanks @Tillerz  </li>
+<li><strong>sampler</strong>: add laplace beta schedule<br />
     results in better prompt adherence and smoother infills  </li>
+<li><strong>prompt enhance</strong>: improve handling and refresh ui, thanks @CalamitousFelicitousness<br />
+    new models such moondream-3 and xiaomo-mimo
+    add support for <em>thinking</em> mode where model can reason about the prompt<br />
+    add support for <em>vision</em> processing where prompt enhance can also optionally analyze input image  </li>
 <li><strong>UI</strong></li>
 <li>kanvas add send-to functionality  </li>
 <li>kanvas improve support for standardui  </li>
@@ -7855,6 +7859,7 @@
 <li>lora loading when using torch without distributed support  </li>
 <li>google-genai auth, thanks @CalamitousFelicitousness  </li>
 <li>reduce triton test verbosity  </li>
+<li>improve qwen i2i handling  </li>
 </ul>
 <h2 id="update-for-2025-12-26">Update for 2025-12-26</h2>
 <h3 id="highlights-for-2025-12-26">Highlights for 2025-12-26</h3>
