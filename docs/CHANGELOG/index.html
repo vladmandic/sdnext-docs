@@ -3481,10 +3481,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-12" class="md-nav__link">
+  <a href="#update-for-2025-01-13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-12
+        Update for 2025-01-13
       
     </span>
   </a>
@@ -5645,10 +5645,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-12" class="md-nav__link">
+  <a href="#update-for-2025-01-13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-12
+        Update for 2025-01-13
       
     </span>
   </a>
@@ -7803,7 +7803,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-12">Update for 2025-01-12</h2>
+<h2 id="update-for-2025-01-13">Update for 2025-01-13</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-2512">Qwen-Image-2512</a><br />
@@ -7821,9 +7821,10 @@
 <li><strong>sampler</strong>: add laplace beta schedule<br />
     results in better prompt adherence and smoother infills  </li>
 <li><strong>prompt enhance</strong>: improve handling and refresh ui, thanks @CalamitousFelicitousness<br />
-    new models such moondream-3 and xiaomo-mimo
+    new models such moondream-3 and xiaomo-mimo<br />
     add support for <em>thinking</em> mode where model can reason about the prompt<br />
-    add support for <em>vision</em> processing where prompt enhance can also optionally analyze input image  </li>
+    add support for <em>vision</em> processing where prompt enhance can also optionally analyze input image<br />
+    add support for <em>pre-fill</em> mode where prompt enhance can continue from existing caption  </li>
 <li><strong>UI</strong></li>
 <li>kanvas add send-to functionality  </li>
 <li>kanvas improve support for standardui  </li>
@@ -7857,6 +7858,7 @@
 <li>force model move on offload=none  </li>
 <li>kandinsky-5 image and video on non-cuda platforms  </li>
 <li>lora loading when using torch without distributed support  </li>
+<li>generate slowdown when consequtive lora-diffusers enabled  </li>
 <li>google-genai auth, thanks @CalamitousFelicitousness  </li>
 <li>reduce triton test verbosity  </li>
 <li>improve qwen i2i handling  </li>
