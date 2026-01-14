@@ -3274,10 +3274,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dynamic-loss-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic loss threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#use-svd-quantization" class="md-nav__link">
     <span class="md-ellipsis">
       
         Use SVD quantization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-dynamic-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Dynamic quantization
       
     </span>
   </a>
@@ -4014,10 +4036,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dynamic-loss-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic loss threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#use-svd-quantization" class="md-nav__link">
     <span class="md-ellipsis">
       
         Use SVD quantization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-dynamic-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Dynamic quantization
       
     </span>
   </a>
@@ -4333,6 +4377,15 @@ Default is <code>32</code>.  </p>
 <p>The number of steps to use in the lowrank SVD estimation.<br />
 Higher values have better quality but takes longer to quantize.<br />
 Default is <code>8</code>.  </p>
+<h3 id="dynamic-loss-threshold">Dynamic loss threshold</h3>
+<p>The target threshold to use with <code>Dynamic quantization</code>.<br />
+SDNQ uses STD normalized MSE loss to calculate its quantization loss and this option will be used as the loss target for it.  </p>
+<p>Some recommended target presets are:</p>
+<p>8 bit: <code>2e-4</code><br />
+6 bit: <code>1e-3</code><br />
+4 bit: <code>1e-2</code>  </p>
+<p>These targets are not set in stone and might require some trial and error depending on the model.<br />
+Default is <code>1e-2</code> </p>
 <h3 id="use-svd-quantization">Use SVD quantization</h3>
 <p>Enabling this option will apply SVD quantization on top of SDNQ quantization.<br />
 SVD has much higher quality but runs slower.<br />
@@ -4341,6 +4394,16 @@ More info on SVD quantization: https://arxiv.org/abs/2411.05007<br />
 Disabled by default.  </p>
 <p>Note: SVD lowrank used by SDNQ is not deterministic.<br />
 Meaning that you will get slightly different quantization results every time.  </p>
+<h3 id="use-dynamic-quantization">Use Dynamic quantization</h3>
+<p>Enabling this option will dynamically select a per layer quantization type based on the <code>Dynamic loss threshold</code>.<br />
+And the current <code>Quantization type</code> will be used as the minimum allowed quantization type when this option is enabled.<br />
+This option takes longer to quantize but has much higher quality depending on your settings.  </p>
+<p>Simplified version of what this option does is:<br />
+If the minimum allowed quantization type can't achieve good quantization loss on a specific layer, then it will increase the quantization type just for that layer until it achieves a good quantization loss.<br />
+This will take time to test on quantization and the end model might be slightly larger but the resulting model will have much higher quality.  </p>
+<p>This option should be preferred over SVD first.<br />
+If you can't get good enough results with <code>Dynamic quantization</code> alone, then you can combine it with SVD too.<br />
+Disabled by default.  </p>
 <h3 id="quantize-convolutional-layers">Quantize convolutional layers</h3>
 <p>Enabling this option will quantize convolutional layers in UNet models too.<br />
 Has much better memory savings but lower quality.  </p>
