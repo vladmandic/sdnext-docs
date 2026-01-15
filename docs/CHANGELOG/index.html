@@ -7816,7 +7816,9 @@
 <li><a href="https://huggingface.co/zai-org/GLM-Image">GLM-Image</a><br />
     GLM-image is a new image generation model that adopts a hybrid autoregressive with diffusion decoder architecture<br />
     available in both <em>original</em> and <em>sdnq-dynamic prequantized</em> variants, thanks @CalamitousFelicitousness<br />
-<em>note</em>: model requires usage of <code>--new</code> flag to install pre-release versions of required package  </li>
+<em>note</em>: model requires pre-release versions of <code>transformers</code> package:<br />
+    &gt; pip install --upgrade git+https://github.com/huggingface/transformers.git<br />
+    &gt; ./webui.sh --experimental  </li>
 <li><a href="https://huggingface.co/nunchaku-tech/nunchaku-z-image-turbo">Nunchaku Z-Image Turbo</a>  </li>
 <li><strong>Feaures</strong></li>
 <li><strong>SDNQ</strong>: add <em>dynamic</em> quantization method<br />
@@ -7852,6 +7854,7 @@
 <li>update <code>nunchaku==1.1.0</code>  </li>
 <li>lora switch logic from force-diffusers to allow-native  </li>
 <li>split <code>reference.json</code>  </li>
+<li>print system env on startup  </li>
 <li><strong>Fixes</strong></li>
 <li>extension tab: update checker, date handling, formatting etc., thanks @awsr  </li>
 <li>controlnet with non-english ui locales  </li>
