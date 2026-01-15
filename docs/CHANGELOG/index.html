@@ -3481,10 +3481,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-14" class="md-nav__link">
+  <a href="#update-for-2025-01-15" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-14
+        Update for 2025-01-15
       
     </span>
   </a>
@@ -4215,7 +4215,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-15" class="md-nav__link">
+  <a href="#update-for-2025-01-15_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Update for 2025-01-15
@@ -5645,10 +5645,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-14" class="md-nav__link">
+  <a href="#update-for-2025-01-15" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-14
+        Update for 2025-01-15
       
     </span>
   </a>
@@ -6379,7 +6379,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-15" class="md-nav__link">
+  <a href="#update-for-2025-01-15_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Update for 2025-01-15
@@ -7803,7 +7803,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-14">Update for 2025-01-14</h2>
+<h2 id="update-for-2025-01-15">Update for 2025-01-15</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-2512">Qwen-Image-2512</a><br />
@@ -7813,8 +7813,15 @@
     LTX-2 is a new very large 19B parameter video generation model from Lightricks using Gemma-3 text encoder<br />
     available for T2I/I2I workflows in original and SDNQ prequantized variants<br />
 <em>note</em>: audio generation and upsampling are not yet supported (soon)  </li>
+<li><a href="https://huggingface.co/zai-org/GLM-Image">GLM-Image</a><br />
+    GLM-image is a new image generation model that adopts a hybrid autoregressive with diffusion decoder architecture<br />
+    available in both <em>original</em> and <em>sdnq-dynamic prequantized</em> variants, thanks @CalamitousFelicitousness<br />
+<em>note</em>: model requires usage of <code>--new</code> flag to install pre-release versions of required package  </li>
 <li><a href="https://huggingface.co/nunchaku-tech/nunchaku-z-image-turbo">Nunchaku Z-Image Turbo</a>  </li>
 <li><strong>Feaures</strong></li>
+<li><strong>SDNQ</strong>: add <em>dynamic</em> quantization method<br />
+    sdnq can dynamically determine best quantization method for each module layer<br />
+    slower to quantize on-the-fly, but results in better quality with minimal resource usage  </li>
 <li><strong>SDNQ</strong> now has <em>19 int</em> based and <em>69 float</em> based quantization types<br />
 <em>note</em>: not all are exposed via ui purely for simplicity, but all are available via api and scripts  </li>
 <li><strong>wildcards</strong>: allow weights, thanks @Tillerz  </li>
@@ -7825,6 +7832,7 @@
     add support for <em>thinking</em> mode where model can reason about the prompt<br />
     add support for <em>vision</em> processing where prompt enhance can also optionally analyze input image<br />
     add support for <em>pre-fill</em> mode where prompt enhance can continue from existing caption  </li>
+<li><strong>chroma</strong>: add inpaint pipeline support  </li>
 <li><strong>UI</strong></li>
 <li>kanvas add send-to functionality  </li>
 <li>kanvas improve support for standardui  </li>
@@ -7843,6 +7851,7 @@
 <li>new env variable <code>SD_VAE_DEFAULT</code> to force default vae processing  </li>
 <li>update <code>nunchaku==1.1.0</code>  </li>
 <li>lora switch logic from force-diffusers to allow-native  </li>
+<li>split <code>reference.json</code>  </li>
 <li><strong>Fixes</strong></li>
 <li>extension tab: update checker, date handling, formatting etc., thanks @awsr  </li>
 <li>controlnet with non-english ui locales  </li>
@@ -10034,7 +10043,7 @@ Models...And support for new models: <strong>CogView-4</strong>, <strong>SANA 1.
 <li>rocm do not override triton installation  </li>
 <li>port streaming model load to diffusers  </li>
 </ul>
-<h2 id="update-for-2025-01-15">Update for 2025-01-15</h2>
+<h2 id="update-for-2025-01-15_1">Update for 2025-01-15</h2>
 <h3 id="highlights-for-2025-01-15">Highlights for 2025-01-15</h3>
 <p>Two weeks since last release, time for update!<br />
 This time a bit shorter highligh reel as this is primarily a service release, but still there is more than few updates<br />
