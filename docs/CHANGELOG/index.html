@@ -7879,7 +7879,7 @@ Plus some significant under-the-hood changes to improve code coverage and qualit
 <li><a href="https://ltx.io/model/ltx-2">LTX-2 19B Dev</a><br />
     LTX-2 is a new very large 19B parameter video generation model from Lightricks using Gemma-3 text encoder<br />
     available for T2I/I2I workflows in original and sdnq prequantized variants<br />
-<em>note</em>: audio generation and upsampling are not yet supported (soon)  </li>
+<em>note</em>: model is very sensitive to input params and will result in errors otherwise  </li>
 <li><a href="https://z.ai/blog/glm-image">GLM-Image</a><br />
     GLM-image is a new image generation model that adopts a hybrid autoregressive with diffusion decoder architecture<br />
     available in both <em>original</em> and <em>sdnq-dynamic prequantized</em> variants<br />
@@ -7905,6 +7905,7 @@ Plus some significant under-the-hood changes to improve code coverage and qualit
     add support for <em>pre-fill</em> mode where prompt enhance can continue from existing caption  </li>
 <li><strong>chroma</strong>: add inpaint pipeline support  </li>
 <li><strong>taesd preview</strong>: support for more models, thanks @alerikaisattera  </li>
+<li><strong>image ouput paths</strong>: better handling of relative/absolute paths, thanks @CalamitousFelicitousness  </li>
 <li><strong>UI</strong></li>
 <li>kanvas add send-to functionality  </li>
 <li>kanvas improve support for standardui  </li>
