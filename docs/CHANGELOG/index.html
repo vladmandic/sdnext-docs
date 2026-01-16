@@ -3481,13 +3481,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-15" class="md-nav__link">
+  <a href="#update-for-2025-01-16" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-15
+        Update for 2025-01-16
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-01-16">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-01-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2025-01-16
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-01-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details for 2025-01-16
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4215,7 +4243,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-15_1" class="md-nav__link">
+  <a href="#update-for-2025-01-15" class="md-nav__link">
     <span class="md-ellipsis">
       
         Update for 2025-01-15
@@ -5645,13 +5673,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-15" class="md-nav__link">
+  <a href="#update-for-2025-01-16" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-15
+        Update for 2025-01-16
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2025-01-16">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2025-01-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2025-01-16
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2025-01-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details for 2025-01-16
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6379,7 +6435,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-15_1" class="md-nav__link">
+  <a href="#update-for-2025-01-15" class="md-nav__link">
     <span class="md-ellipsis">
       
         Update for 2025-01-15
@@ -7803,23 +7859,36 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-15">Update for 2025-01-15</h2>
+<h2 id="update-for-2025-01-16">Update for 2025-01-16</h2>
+<h3 id="highlights-for-2025-01-16">Highlights for 2025-01-16</h3>
+<p>First release of 2026 brings quite a few new models: <strong>Flux.2-Klein, Qwen-Image-2512, LTX-2-Dev, GLM-Image</strong><br />
+There are also improvements to SDNQ quantization engine, updated Prompt Enhance and many others<br />
+Plus some significant under-the-hood changes to improve code coverage and quality which resulted in more than usual levels of bug-fixes!  </p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
+<h3 id="details-for-2025-01-16">Details for 2025-01-16</h3>
 <ul>
 <li><strong>Models</strong></li>
-<li><a href="https://huggingface.co/Qwen/Qwen-Image-2512">Qwen-Image-2512</a><br />
+<li><a href="https://bfl.ai/blog/flux2-klein-towards-interactive-visual-intelligence">Flux.2 Klein</a><br />
+    Flux.2-Klein is a new family of compact models from BFL in <em>4B and 9B sizes</em> and avaialable as <em>destilled and base</em> variants<br />
+    also includes are <em>sdnq prequantized variants</em><br />
+<em>note</em>: 9B variant is <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated</a>  </li>
+<li><a href="https://qwen.ai/blog?id=qwen-image-2512">Qwen-Image-2512</a><br />
     Qwen-Image successor, significantly reduces the AI-generated look and adds finer natural detailils and improved text rendering<br />
-    available in both <em>original</em>, <em>sdnq-svd prequantized</em> and <em>sdnq-dynamic prequantized</em>  variants  </li>
-<li><a href="https://huggingface.co/Lightricks/LTX-2">LTX-2 19B Dev</a><br />
+    available in both <em>original</em>, <em>sdnq-svd prequantized</em> and <em>sdnq-dynamic prequantized</em>  variants<br />
+    thanks @CalamitousFelicitousness  </li>
+<li><a href="https://ltx.io/model/ltx-2">LTX-2 19B Dev</a><br />
     LTX-2 is a new very large 19B parameter video generation model from Lightricks using Gemma-3 text encoder<br />
-    available for T2I/I2I workflows in original and SDNQ prequantized variants<br />
+    available for T2I/I2I workflows in original and sdnq prequantized variants<br />
 <em>note</em>: audio generation and upsampling are not yet supported (soon)  </li>
-<li><a href="https://huggingface.co/zai-org/GLM-Image">GLM-Image</a><br />
+<li><a href="https://z.ai/blog/glm-image">GLM-Image</a><br />
     GLM-image is a new image generation model that adopts a hybrid autoregressive with diffusion decoder architecture<br />
-    available in both <em>original</em> and <em>sdnq-dynamic prequantized</em> variants, thanks @CalamitousFelicitousness<br />
+    available in both <em>original</em> and <em>sdnq-dynamic prequantized</em> variants<br />
+    thanks @CalamitousFelicitousness<br />
 <em>note</em>: model requires pre-release versions of <code>transformers</code> package:<br />
     &gt; pip install --upgrade git+https://github.com/huggingface/transformers.git<br />
     &gt; ./webui.sh --experimental  </li>
-<li><a href="https://huggingface.co/nunchaku-tech/nunchaku-z-image-turbo">Nunchaku Z-Image Turbo</a>  </li>
+<li><a href="https://huggingface.co/nunchaku-tech/nunchaku-z-image-turbo">Nunchaku Z-Image Turbo</a><br />
+    nunchaku optimized z-image turbo  </li>
 <li><strong>Feaures</strong></li>
 <li><strong>SDNQ</strong>: add <em>dynamic</em> quantization method<br />
     sdnq can dynamically determine best quantization method for each module layer<br />
@@ -7856,6 +7925,7 @@
 <li>lora switch logic from force-diffusers to allow-native  </li>
 <li>split <code>reference.json</code>  </li>
 <li>print system env on startup  </li>
+<li>disable fallback on models with custom loaders  </li>
 <li><strong>Fixes</strong></li>
 <li>extension tab: update checker, date handling, formatting etc., thanks @awsr  </li>
 <li>controlnet with non-english ui locales  </li>
@@ -10047,7 +10117,7 @@ Models...And support for new models: <strong>CogView-4</strong>, <strong>SANA 1.
 <li>rocm do not override triton installation  </li>
 <li>port streaming model load to diffusers  </li>
 </ul>
-<h2 id="update-for-2025-01-15_1">Update for 2025-01-15</h2>
+<h2 id="update-for-2025-01-15">Update for 2025-01-15</h2>
 <h3 id="highlights-for-2025-01-15">Highlights for 2025-01-15</h3>
 <p>Two weeks since last release, time for update!<br />
 This time a bit shorter highligh reel as this is primarily a service release, but still there is more than few updates<br />
