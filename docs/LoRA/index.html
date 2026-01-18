@@ -2064,11 +2064,50 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#lora-loader" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-loader-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoRA Loader
+        LoRA Loader Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoRA Loader Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fuse-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuse Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Settings
       
     </span>
   </a>
@@ -3771,11 +3810,50 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#lora-loader" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lora-loader-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoRA Loader
+        LoRA Loader Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoRA Loader Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fuse-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuse Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Settings
       
     </span>
   </a>
@@ -3953,31 +4031,38 @@ Example:</p>
 - start SD.Next as usual and run it until problem occurs
 - create <a href="https://github.com/vladmandic/sdnext/issues">GitHub issue</a>
 - upload full <code>sdnext.log</code> as well as any console exception messages  </p>
-<h3 id="lora-loader">LoRA Loader</h3>
-<p>SD.Next has multiple ways that address how LoRA is loaded and applied, all available in <em>"Settings -&gt; Networks"</em>:<br />
-You must pick only one of the below methods:<br />
-- <strong>LoRA fuse directly to model</strong>: <em>enabled</em> (default)
-  - Apply LoRA first time its needed without maintaining model weights as backup<br />
-  - Unapply works by subtracting LoRA from model weights<br />
-  - This can result in numerical instabilities and/or model degradation when switching LoRAs<br />
-    if LoRA numerical range is not normalized or badly trained,<br />
-    but saves 2x memory compared to older load/apply/unapply methods<br />
-- <strong>LoRA load using legacy method</strong>: <em>disabled</em>
-  - Apply LoRA first time its needed and create model backup weights in system memory<br />
-  - Unapply works by restoring model weights<br />
-  - Most stable method, but can use up to 2x sysem memory<br />
-- <strong>LoRA load using legacy method</strong>: <em>enabled</em>
-  - Apply LoRA on-the-fly during model execution and create model backup weights in system memory
-  - Unapply works by restoring model weights<br />
-  - This was default method prior to 12/2024 release<br />
-- <strong>LoRA load using Diffusers method</strong>: <em>enabled</em><br />
-  - Do not use SD.Next native LoRA processing and rely on underlying <code>diffusers</code> library for all LoRA actions<br />
-  - Does not support all LoRA types  </p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you see visual model degradation after unapplying LoRA,<br />
-you can restore model weights using <em>"System -&gt; Reload Model"</em></p>
+<h2 id="lora-loader-settings">LoRA Loader Settings</h2>
+<p>SD.Next provides several options for how LoRAs are loaded and applied.
+All settings are available in <em>Settings -&gt; Extra Networks -&gt; LoRA</em>.</p>
+<h3 id="loading-method">Loading Method</h3>
+<p><strong>LoRA load using Diffusers method</strong> (<code>lora_force_diffusers</code>)
+- When <em>disabled</em> (default): Uses SD.Next's native LoRA implementation
+- When <em>enabled</em>: Uses HuggingFace Diffusers' built-in LoRA support</p>
+<h3 id="fuse-options">Fuse Options</h3>
+<p>Fusing merges LoRA weights directly into the model instead of applying them on-the-fly.
+This reduces memory usage since no backup weights are stored.</p>
+<p><strong>LoRA native fuse with model</strong> (<code>lora_fuse_native</code>)
+- Applies when using the native loading method
+- Default: <em>enabled</em></p>
+<p><strong>LoRA diffusers fuse with model</strong> (<code>lora_fuse_diffusers</code>)
+- Applies when using the Diffusers loading method
+- Enables torch.compile compatibility
+- Default: <em>disabled</em></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Fused LoRA effects can persist after removal</strong>
+After removing or switching a LoRA while fusing is enabled, you may still see its style in generated images.
+To fully restore the original model, use <em>System -&gt; Reload Model</em>.</p>
 </div>
+<h3 id="other-settings">Other Settings</h3>
+<p><strong>LoRA force reload always</strong> (<code>lora_force_reload</code>)
+- Forces LoRA to reload from storage on every generation
+- Useful for debugging or when LoRA files are being modified externally
+- Default: <em>disabled</em></p>
+<p><strong>LoRA memory cache</strong> (<code>lora_in_memory_limit</code>)
+- Number of LoRAs to keep cached in memory
+- Reduces reload time when switching between frequently used LoRAs
+- Default: 1</p>
 
 
 
