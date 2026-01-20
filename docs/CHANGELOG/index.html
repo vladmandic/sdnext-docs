@@ -3481,22 +3481,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-19" class="md-nav__link">
+  <a href="#update-for-2026-01-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-19
+        Update for 2026-01-20
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-01-19">
+    <nav class="md-nav" aria-label="Update for 2026-01-20">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-01-19" class="md-nav__link">
+  <a href="#highlights-for-2026-01-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2025-01-19
+        Highlights for 2026-01-20
       
     </span>
   </a>
@@ -3504,10 +3504,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-01-19" class="md-nav__link">
+  <a href="#details-for-2026-01-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2025-01-19
+        Details for 2026-01-20
       
     </span>
   </a>
@@ -5673,22 +5673,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2025-01-19" class="md-nav__link">
+  <a href="#update-for-2026-01-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2025-01-19
+        Update for 2026-01-20
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2025-01-19">
+    <nav class="md-nav" aria-label="Update for 2026-01-20">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2025-01-19" class="md-nav__link">
+  <a href="#highlights-for-2026-01-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2025-01-19
+        Highlights for 2026-01-20
       
     </span>
   </a>
@@ -5696,10 +5696,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2025-01-19" class="md-nav__link">
+  <a href="#details-for-2026-01-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2025-01-19
+        Details for 2026-01-20
       
     </span>
   </a>
@@ -7859,14 +7859,14 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2025-01-19">Update for 2025-01-19</h2>
-<h3 id="highlights-for-2025-01-19">Highlights for 2025-01-19</h3>
+<h2 id="update-for-2026-01-20">Update for 2026-01-20</h2>
+<h3 id="highlights-for-2026-01-20">Highlights for 2026-01-20</h3>
 <p>First release of 2026 brings quite a few new models: <strong>Flux.2-Klein, Qwen-Image-2512, LTX-2-Dev, GLM-Image</strong><br />
-There are also improvements to SDNQ quantization engine, updated Prompt Enhance and many others.<br />
-Plus some significant under-the-hood changes to improve code coverage and quality which resulted in more than usual levels of bug-fixes and some ~300 commits!<br />
+There are also improvements to <em>SDNQ</em> quantization engine, updated <em>Prompt Enhance</em>, <em>Image Preview</em> and many others.<br />
+Plus some significant under-the-hood changes to improve code coverage and quality which resulted in more than usual levels of bug-fixes and some ~330 commits!<br />
 For full list of changes, see full changelog.</p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2025-01-19">Details for 2025-01-19</h3>
+<h3 id="details-for-2026-01-20">Details for 2026-01-20</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://bfl.ai/blog/flux2-klein-towards-interactive-visual-intelligence">Flux.2 Klein</a><br />
@@ -7914,10 +7914,13 @@ For full list of changes, see full changelog.</p>
 <li>indicate collapsed/hidden sections  </li>
 <li>persistent panel minimize/maximize state  </li>
 <li>gallery improve sorting behavior  </li>
+<li>gallery implement prev/next navigation in full screen viewer, thanks @ryanmeador  </li>
 <li><strong>Internal</strong></li>
 <li><strong>lora</strong> native support by default will now skip text-encoder<br />
     can be enabled in <em>settings -&gt; networks</em></li>
-<li>update js linting to <code>eslint9</code>, thanks @awsr  </li>
+<li>update core js linting to <code>eslint9</code>, thanks @awsr  </li>
+<li>update modernui js linting to <code>eslint9</code>, thanks @awsr  </li>
+<li>update kanvas js linting to <code>eslint9</code>, thanks @awsr  </li>
 <li>update strong typing checks, thanks @awsr  </li>
 <li>update reference models previews, thanks @liutyi  </li>
 <li>update models specs page, thanks @alerikaisattera  </li>
@@ -7935,31 +7938,32 @@ For full list of changes, see full changelog.</p>
 <li>refactor handling of seeds  </li>
 <li>allow unsafe ssl context for downloads  </li>
 <li><strong>Fixes</strong></li>
+<li>controlnet: controlnet with non-english ui locales  </li>
+<li>core: add skip_keys to offloading logic, fixes wan frames mismatch, thanks @ryanmeador  </li>
+<li>core: force model move on offload=none  </li>
+<li>core: hidiffusion tracing  </li>
+<li>core: hip device name detection  </li>
+<li>core: reduce triton test verbosity  </li>
+<li>core: switch processing class not restoring params  </li>
 <li>extension tab: update checker, date handling, formatting etc., thanks @awsr  </li>
-<li>controlnet with non-english ui locales  </li>
-<li>update civitai base models, thanks @trojaner  </li>
-<li>wildards with folder specification  </li>
-<li>z-image single-file loader  </li>
-<li>hip device name detection  </li>
-<li>force align width/height to vae scale factor  </li>
-<li>meituan-longca-image-edit missing image param  </li>
-<li>mobile auto-collapse when using side panel, thanks @awsr  </li>
-<li>switch processing class not restoring params  </li>
-<li>hidiffusion tracing  </li>
-<li>add skip_keys to offloading logic, fixes wan frames mismatch, thanks @ryanmeador  </li>
-<li>wan 2.2 i2v  </li>
-<li>force model move on offload=none  </li>
-<li>kandinsky-5 image and video on non-cuda platforms  </li>
-<li>lora loading when using torch without distributed support  </li>
-<li>generate slowdown when consequtive lora-diffusers enabled  </li>
-<li>google-genai auth, thanks @CalamitousFelicitousness  </li>
-<li>reduce triton test verbosity  </li>
-<li>improve qwen i2i handling  </li>
-<li>networks filter by model type  </li>
-<li>netoworks icon/list view type switch, thanks @awsr  </li>
-<li>lora skip with strength zero  </li>
 <li>lora force unapply on change  </li>
 <li>lora handle null description, thanks @CalamitousFelicitousness  </li>
+<li>lora loading when using torch without distributed support  </li>
+<li>lora skip with strength zero  </li>
+<li>lora: generate slowdown when consequtive lora-diffusers enabled  </li>
+<li>model: google-genai auth, thanks @CalamitousFelicitousness  </li>
+<li>model: improve qwen i2i handling  </li>
+<li>model: kandinsky-5 image and video on non-cuda platforms  </li>
+<li>model: meituan-longca-image-edit missing image param  </li>
+<li>model: wan 2.2 i2v  </li>
+<li>model: z-image single-file loader  </li>
+<li>other: update civitai base models, thanks @trojaner  </li>
+<li>ui: gallery save/delete  </li>
+<li>ui: mobile auto-collapse when using side panel, thanks @awsr  </li>
+<li>ui: networks filter by model type  </li>
+<li>ui: networks icon/list view type switch, thanks @awsr  </li>
+<li>vae: force align width/height to vae scale factor  </li>
+<li>wildards with folder specification  </li>
 </ul>
 <h2 id="update-for-2025-12-26">Update for 2025-12-26</h2>
 <h3 id="highlights-for-2025-12-26">Highlights for 2025-12-26</h3>
