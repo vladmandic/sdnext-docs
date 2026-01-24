@@ -7945,8 +7945,13 @@
 <strong>xpu</strong>: update to <code>torch==2.10.0</code><br />
 <strong>openvino</strong>: update to <code>torch==2.10.0</code> and <code>openvino==2025.4.1</code><br />
 <strong>rocm/linux</strong>: update to <code>torch==2.10.0</code>  </li>
+<li>relocate all json data files to <code>data/</code> folder<br />
+    existing data files are auto-migrated on startup  </li>
 <li>further work on type consistency and type checking, thanks @awsr  </li>
+<li>log captured exceptions  </li>
 <li>add ui placeholders for future agent-scheduler work, thanks @ryanmeador  </li>
+<li>implement abort system on repeated errors, thanks @awsr<br />
+    currently used by lora and textual-inversion loaders  </li>
 <li>update package requirements  </li>
 <li><strong>Fixes</strong></li>
 <li>add video ui elem_ids, thanks @ryanmeador  </li>
