@@ -3492,10 +3492,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-01-25" class="md-nav__link">
+  <a href="#update-for-2026-01-27" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-01-25
+        Update for 2026-01-27
       
     </span>
   </a>
@@ -5717,10 +5717,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-01-25" class="md-nav__link">
+  <a href="#update-for-2026-01-27" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-01-25
+        Update for 2026-01-27
       
     </span>
   </a>
@@ -7927,16 +7927,20 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="todo">Todo</h2>
 <ul>
-<li>upstream <code>torch/rocm</code> slowdown</li>
-<li>update <code>rocm/windows</code></li>
+<li><strong>rocm/linux</strong>: update to <code>torch==2.10.0</code>  </li>
+<li><strong>rocm/windows</strong>: update to <code>torch==2.10.0</code>  </li>
 </ul>
-<h2 id="update-for-2026-01-25">Update for 2026-01-25</h2>
+<h2 id="update-for-2026-01-27">Update for 2026-01-27</h2>
 <ul>
 <li><strong>Features</strong></li>
 <li><strong>caption</strong> tab support for Booru tagger models, thanks @CalamitousFelicitousness  </li>
 <li>add SmilingWolf WD14/WaifuDiffusion tagger models, thanks @CalamitousFelicitousness  </li>
 <li>support comments in wildcard files, using <code>#</code>  </li>
 <li>support aliases in metadata skip params, thanks @CalamitousFelicitousness  </li>
+<li>ui gallery add manual cache cleanup, thanks @awsr  </li>
+<li><strong>Schedulers</strong>  </li>
+<li>add <em>CogXDDIM, DDIMParallel, DDPMParallel</em><br />
+    not originally intended to be a general purpose schedulers, but they work quite nicely and produce good results  </li>
 <li><strong>Internal</strong></li>
 <li>tagged release history: <a href="https://github.com/vladmandic/sdnext/tags">https://github.com/vladmandic/sdnext/tags</a><br />
     each major for the past year is now tagged for easier reference  </li>
@@ -7944,8 +7948,7 @@
     <em>note</em>: may cause slow first startup/generate<br />
 <strong>cuda</strong>: update to <code>torch==2.10.0</code><br />
 <strong>xpu</strong>: update to <code>torch==2.10.0</code><br />
-<strong>openvino</strong>: update to <code>torch==2.10.0</code> and <code>openvino==2025.4.1</code><br />
-<strong>rocm/linux</strong>: update to <code>torch==2.10.0</code>  </li>
+<strong>openvino</strong>: update to <code>torch==2.10.0</code> and <code>openvino==2025.4.1</code>  </li>
 <li>relocate all json data files to <code>data/</code> folder<br />
     existing data files are auto-migrated on startup  </li>
 <li>further work on type consistency and type checking, thanks @awsr  </li>
