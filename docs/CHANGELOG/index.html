@@ -769,6 +769,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -885,6 +889,34 @@
     
   
     Gated Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HuggingFace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HuggingFace Tokens
   
 
     
@@ -1137,6 +1169,34 @@
     
   
     LTXVideo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Google-GenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google-GenAI
   
 
     
@@ -1577,6 +1637,8 @@
       
         
       
+        
+      
     
     
     
@@ -1833,6 +1895,34 @@
     
   
     Networks Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Schedulers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedulers
   
 
     
@@ -7907,7 +7997,7 @@
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://tongyi-mai.github.io/Z-Image-blog/">Tongyi-MAI Z-Image Base</a><br />
-    yup, its finally here, the full base model of Z-Image Turbo  </li>
+    yup, its finally here, the full base model of <strong>Z-Image</strong>  </li>
 <li><strong>Features</strong></li>
 <li><strong>caption</strong> tab support for Booru tagger models, thanks @CalamitousFelicitousness  </li>
 <li>add SmilingWolf WD14/WaifuDiffusion tagger models, thanks @CalamitousFelicitousness  </li>
@@ -7915,10 +8005,17 @@
 <li>support aliases in metadata skip params, thanks @CalamitousFelicitousness  </li>
 <li>ui gallery add manual cache cleanup, thanks @awsr  </li>
 <li><strong>Schedulers</strong></li>
-<li>total of <strong>34* new schedulers</strong>!</li>
-<li><em>ABNorsett (3), Lawson (3), ETD-RK (4), RES (8), DEIS (2), PEC (2), Sigma (5), Langevin (1), Flow (4)</em><br />
-    inspired by <a href="https://github.com/ClownsharkBatwing/RES4LYF">res4lyf</a> library and rewritten from scratch  </li>
-<li><em>CogXDDIM, DDIMParallel, DDPMParallel</em><br />
+<li>schedulers documentation has new home: <a href="https://vladmandic.github.io/sdnext-docs/Schedulers/">https://vladmandic.github.io/sdnext-docs/Schedulers/</a></li>
+<li>add 13(!) new scheduler families
+    not a port, but more of inspired-by <a href="https://github.com/ClownsharkBatwing/RES4LYF">res4lyf</a> library<br />
+<em>note</em>: each family may have multiple actual schedulers, so the list total is 56(!) new schedulers  <ul>
+<li>core family: <em>RES</em></li>
+<li>exponential: <em>DEIS, ETD, Lawson, ABNorsett</em></li>
+<li>integrators: <em>Runge-Kutta, Linear-RK, Specialized-RK, Lobatto, Radau-IIA, Gauss-Legendre</em></li>
+<li>flow: <em>PEC, Riemannian, Euclidean, Hyperbolic, Lorentzian, Langevin-Dynamics</em></li>
+</ul>
+</li>
+<li>add 3 additional schedulers: <em>CogXDDIM, DDIMParallel, DDPMParallel</em><br />
     not originally intended to be a general purpose schedulers, but they work quite nicely and produce good results  </li>
 <li><strong>Internal</strong></li>
 <li>tagged release history: <a href="https://github.com/vladmandic/sdnext/tags">https://github.com/vladmandic/sdnext/tags</a><br />
@@ -7943,6 +8040,7 @@
 <li>use base steps as-is for non sd/sdxl models  </li>
 <li>ui css fixes for modernui  </li>
 <li>support lora inside prompt selector  </li>
+<li>framepack video save  </li>
 </ul>
 <h2 id="update-for-2026-01-22">Update for 2026-01-22</h2>
 <p>Bugfix refresh</p>

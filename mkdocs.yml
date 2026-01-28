@@ -83,6 +83,7 @@ nav:
     - Supported Models: Model-Support.md
     - Model Specs: Models.md
     - Gated Access: Gated.md
+    - HuggingFace Tokens: HuggingFace.md
     - StableDiffusion XL: SD-XL.md
     - StableDiffusion 3.x: SD3.md
     - StableCascade: Stable-Cascade.md
@@ -92,6 +93,7 @@ nav:
     - Video: Video.md
     - FramePack: FramePack.md
     - LTXVideo: LTX.md
+    - Google-GenAI: Google-GenAI.md
   - Platforms:
     - WSL: WSL.md
     - Intel-ARC: Intel-ARC.md
@@ -112,6 +114,7 @@ nav:
     - Prompt Enhacement: Prompt-Enhance.md
     - Networks Interface: Networks.md
     - Networks Search: Networks-Search.md
+    - Schedulers: Schedulers.md
     - Detailer Guide: Detailer.md
     - LoRA Guide: LoRA.md
     - Control Guide: Control-HowTo.md
