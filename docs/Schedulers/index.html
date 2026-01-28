@@ -4277,24 +4277,30 @@
 <p>While the <strong>model</strong> provides the "intelligence" to recognize patterns in noise, the <strong>scheduler</strong> provides the "roadmap" for how to navigate from chaos to clarity.</p>
 <p>Diffusion models are trained by gradually adding noise to an image until it becomes unrecognizable. To generate a new image, the model performs this process in reverse. However, the neural network doesn't "jump" to the final image in one step. Instead, it predicts the noise present in its current input, and the <strong>scheduler</strong> calculates how to subtract that noise to move one step closer to the final result.</p>
 <h3 id="speed-vs-quality-trade-offs">Speed vs Quality Trade-offs</h3>
-<p>The choice of scheduler significantly impacts the final result:
-- <strong>Efficiency</strong>: Schedulers like <strong>UniPC</strong>, <strong>LCM</strong>, or <strong>TCD</strong> are optimized for speed, producing high-quality images in just 4–8 steps.
-- <strong>Precision</strong>: Schedulers like <strong>DPM++ 2M</strong> or <strong>Heun</strong> provide high mathematical accuracy and smoother gradients, typically requiring 20–30 steps for optimal results.
-- <strong>Consistency</strong>: Deterministic schedulers (<strong>ODE</strong>-based) will always produce the same image for the same seed, while stochastic schedulers (<strong>SDE</strong>-based) may vary slightly even with the same seed.</p>
+<p>The choice of scheduler significantly impacts the final result:</p>
+<ul>
+<li><strong>Efficiency</strong>: Schedulers like <strong>UniPC</strong>, <strong>LCM</strong>, or <strong>TCD</strong> are optimized for speed, producing high-quality images in just 4–8 steps  </li>
+<li><strong>Precision</strong>: Schedulers like <strong>DPM++ 2M</strong> or <strong>Heun</strong> provide high mathematical accuracy and smoother gradients, typically requiring 20–30 steps for optimal results  </li>
+<li><strong>Consistency</strong>: Deterministic schedulers (<strong>ODE</strong>-based) will always produce the same image for the same seed, while stochastic schedulers (<strong>SDE</strong>-based) may vary slightly even with the same seed  </li>
+</ul>
 <h3 id="model-compatibility">Model Compatibility</h3>
-<p>For a scheduler to work correctly, it must match the <strong>prediction type</strong> the model was trained with:
-- <strong>Epsilon</strong>: The standard for most models (e.g., SD 1.5, SDXL). The model predicts the noise added to the image.
-- <strong>V-Prediction</strong>: Used in models like SD 2.1-v and certain SDXL refinements. The model predicts a velocity vector that balances noise and signal, which helps avoid color shifts at very high/low noise levels.
-- <strong>Flow Matching</strong>: The modern standard for models like <strong>Flux</strong> and <strong>SD3</strong>. The model predicts a constant-speed linear path ("flow") between pure noise and pure data. This typically results in much faster convergence and higher detail retention.</p>
+<p>For a scheduler to work correctly, it must match the <strong>prediction type</strong> the model was trained with:</p>
+<ul>
+<li><strong>Epsilon</strong>: The standard for most models (e.g., SD 1.5, SDXL). The model predicts the noise added to the image  </li>
+<li><strong>V-Prediction</strong>: Used in models like SD 2.1-v and certain SDXL refinements. The model predicts a velocity vector that balances noise and signal, which helps avoid color shifts at very high/low noise levels  </li>
+<li><strong>Flow Matching</strong>: The modern standard for models like <strong>Flux</strong> and <strong>SD3</strong>. The model predicts a constant-speed linear path ("flow") between pure noise and pure data. This typically results in much faster convergence and higher detail retention  </li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Using mismatched scheduler/precition-type will result in pure noise or artifacts</p>
 </div>
 <h2 id="list">List</h2>
-<p>List of schedulers available in SD.Next is broken down into 3 groups:
-- Schedulers present in core <a href="./#diffusers">Diffusers Library</a>
-- Additional schedulers ported by <a href="./#sdnext">SDNext Extensions</a>
-- Collection of <a href="./#res4lyf">RES4LYF Custom Suite</a></p>
+<p>List of schedulers available in SD.Next is broken down into 3 groups:  </p>
+<ul>
+<li>Schedulers present in core <a href="./#diffusers">Diffusers Library</a>  </li>
+<li>Additional schedulers ported by <a href="./#sdnext">SDNext Extensions</a>  </li>
+<li>Collection of <a href="./#res4lyf">RES4LYF Custom Suite</a>  </li>
+</ul>
 <h2 id="diffusers">Diffusers</h2>
 <h3 id="1-foundational-gaussian-schedulers">1. Foundational Gaussian Schedulers</h3>
 <p>The original samplers that defined the diffusion era, focusing on iterative denoising through Markovian and non-Markovian processes.
@@ -4312,17 +4318,17 @@
 <tr>
 <td style="text-align: left;"><strong>DDPMScheduler</strong></td>
 <td style="text-align: left;">Denoising Diffusion Probabilistic Models; the standard for training and original inference.</td>
-<td style="text-align: left;">3 (PT, Parallel)</td>
+<td style="text-align: left;">2 (PT, Parallel)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>DDIMScheduler</strong></td>
 <td style="text-align: left;">Denoising Diffusion Implicit Models; enables faster, non-Markovian sampling and inversion.</td>
-<td style="text-align: left;">5 (PT, Parallel, CogVideoX, Inverse)</td>
+<td style="text-align: left;">4 (PT, Parallel, CogVideoX, Inverse)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>PNDMScheduler</strong></td>
 <td style="text-align: left;">Pseudo Numerical Methods for Diffusion Models; uses multi-step Runge-Kutta logic.</td>
-<td style="text-align: left;">2 (PT, Flax)</td>
+<td style="text-align: left;">1</td>
 </tr>
 </tbody>
 </table>
@@ -4342,7 +4348,7 @@
 <tr>
 <td style="text-align: left;"><strong>DPMSolverMultistepScheduler</strong></td>
 <td style="text-align: left;">Efficient high-order multistep solver; the standard recommendation for Stable Diffusion.</td>
-<td style="text-align: left;">5 (PT, Inverse, CogVideoX, Cosine)</td>
+<td style="text-align: left;">4 (PT, Inverse, CogVideoX, Cosine)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>DPMSolverSinglestepScheduler</strong></td>
