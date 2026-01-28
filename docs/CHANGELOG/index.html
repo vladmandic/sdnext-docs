@@ -3481,21 +3481,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#todo" class="md-nav__link">
+  <a href="#update-for-2026-01-28" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Todo
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-for-2026-01-27" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update for 2026-01-27
+        Update for 2026-01-28
       
     </span>
   </a>
@@ -5706,21 +5695,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#todo" class="md-nav__link">
+  <a href="#update-for-2026-01-28" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Todo
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-for-2026-01-27" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update for 2026-01-27
+        Update for 2026-01-28
       
     </span>
   </a>
@@ -7925,14 +7903,9 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="todo">Todo</h2>
+<h2 id="update-for-2026-01-28">Update for 2026-01-28</h2>
 <ul>
-<li><strong>rocm/linux</strong>: update to <code>torch==2.10.0</code>  </li>
-<li><strong>rocm/windows</strong>: update to <code>torch==2.10.0</code>  </li>
-</ul>
-<h2 id="update-for-2026-01-27">Update for 2026-01-27</h2>
-<ul>
-<li>*<em>Models</em></li>
+<li><strong>Models</strong></li>
 <li><a href="https://tongyi-mai.github.io/Z-Image-blog/">Tongyi-MAI Z-Image Base</a><br />
     yup, its finally here, the full base model of Z-Image Turbo  </li>
 <li><strong>Features</strong></li>
@@ -7941,8 +7914,11 @@
 <li>support comments in wildcard files, using <code>#</code>  </li>
 <li>support aliases in metadata skip params, thanks @CalamitousFelicitousness  </li>
 <li>ui gallery add manual cache cleanup, thanks @awsr  </li>
-<li><strong>Schedulers</strong>  </li>
-<li>add <em>CogXDDIM, DDIMParallel, DDPMParallel</em><br />
+<li><strong>Schedulers</strong></li>
+<li>total of <strong>34* new schedulers</strong>!</li>
+<li><em>ABNorsett (3), Lawson (3), ETD-RK (4), RES (8), DEIS (2), PEC (2), Sigma (5), Langevin (1), Flow (4)</em><br />
+    inspired by <a href="https://github.com/ClownsharkBatwing/RES4LYF">res4lyf</a> library and rewritten from scratch  </li>
+<li><em>CogXDDIM, DDIMParallel, DDPMParallel</em><br />
     not originally intended to be a general purpose schedulers, but they work quite nicely and produce good results  </li>
 <li><strong>Internal</strong></li>
 <li>tagged release history: <a href="https://github.com/vladmandic/sdnext/tags">https://github.com/vladmandic/sdnext/tags</a><br />
@@ -7953,6 +7929,7 @@
 <strong>xpu</strong>: update to <code>torch==2.10.0</code><br />
 <strong>rocm</strong>: update to <code>torch==2.10.0</code><br />
 <strong>openvino</strong>: update to <code>torch==2.10.0</code> and <code>openvino==2025.4.1</code>  </li>
+<li>rocm: set <code>MIOPEN_FIND_MODE=2</code> by default, thanks @crashingalexsan  </li>
 <li>relocate all json data files to <code>data/</code> folder<br />
     existing data files are auto-migrated on startup  </li>
 <li>further work on type consistency and type checking, thanks @awsr  </li>
