@@ -3571,10 +3571,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-01-28" class="md-nav__link">
+  <a href="#update-for-2026-01-30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-01-28
+        Update for 2026-01-30
       
     </span>
   </a>
@@ -5785,10 +5785,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-01-28" class="md-nav__link">
+  <a href="#update-for-2026-01-30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-01-28
+        Update for 2026-01-30
       
     </span>
   </a>
@@ -7993,7 +7993,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-01-28">Update for 2026-01-28</h2>
+<h2 id="update-for-2026-01-30">Update for 2026-01-30</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://tongyi-mai.github.io/Z-Image-blog/">Tongyi-MAI Z-Image Base</a><br />
@@ -8003,7 +8003,9 @@
 <li>add SmilingWolf WD14/WaifuDiffusion tagger models, thanks @CalamitousFelicitousness  </li>
 <li>support comments in wildcard files, using <code>#</code>  </li>
 <li>support aliases in metadata skip params, thanks @CalamitousFelicitousness  </li>
-<li>ui gallery add manual cache cleanup, thanks @awsr  </li>
+<li>ui gallery improve cache cleanup and add manual option, thanks @awsr  </li>
+<li>selectable options to add system info to metadata, thanks @Athari<br />
+    see <em>settings -&gt; image metadata</em>  </li>
 <li><strong>Schedulers</strong></li>
 <li>schedulers documentation has new home: <a href="https://vladmandic.github.io/sdnext-docs/Schedulers/">https://vladmandic.github.io/sdnext-docs/Schedulers/</a></li>
 <li>add 13(!) new scheduler families
@@ -8026,9 +8028,11 @@
 <strong>xpu</strong>: update to <code>torch==2.10.0</code><br />
 <strong>rocm</strong>: update to <code>torch==2.10.0</code><br />
 <strong>openvino</strong>: update to <code>torch==2.10.0</code> and <code>openvino==2025.4.1</code>  </li>
+<li>rocm: expand available gfx archs, thanks @crashingalexsan  </li>
 <li>rocm: set <code>MIOPEN_FIND_MODE=2</code> by default, thanks @crashingalexsan  </li>
 <li>relocate all json data files to <code>data/</code> folder<br />
     existing data files are auto-migrated on startup  </li>
+<li>refactor and improve connection monitor, thanks @awsr  </li>
 <li>further work on type consistency and type checking, thanks @awsr  </li>
 <li>log captured exceptions  </li>
 <li>improve temp folder handling and cleanup  </li>
