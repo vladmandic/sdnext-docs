@@ -2253,6 +2253,23 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schedulers-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schedulers Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schedulers Capabilities">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#credits" class="md-nav__link">
     <span class="md-ellipsis">
@@ -4171,6 +4188,23 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schedulers-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schedulers Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schedulers Capabilities">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#credits" class="md-nav__link">
     <span class="md-ellipsis">
@@ -4270,6 +4304,7 @@
 <li><a href="./#res4lyf">RES4LYF Custom Suite</a></li>
 </ul>
 </li>
+<li><a href="./#schedulers-capabilities">Table with Capabilities</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
 <p>In the context of diffusion models, a <strong>scheduler</strong> (also known as a <strong>sampler</strong>) is the algorithm responsible for managing the iterative process of turning pure noise into a clean, coherent image.</p>
@@ -4784,6 +4819,1440 @@
 <td style="text-align: left;"><strong>SigmaSmoothScheduler</strong></td>
 <td style="text-align: left;">Smoothstep-based profile for consistent noise transitions.</td>
 <td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="schedulers-capabilities">Schedulers Capabilities</h2>
+<p>Following table lists all supported schedulers with their capabilities<br />
+Legend:
+- <em>Epsilon</em>: supports model trained with epsilon prediction type
+- <em>VPred</em>: supports model trained with v-prediction prediction type
+- <em>Flow</em>: supports model trained with flow matching prediction type
+- <em>Sigmas</em>: supports custom sigmas noise schedule
+- <em>Timesteps</em>: supports custom timesteps noise schedule
+- <em>Karras</em>: supports karras-style sigma schedule
+- <em>Beta</em>: supports beta-style sigma schedule
+- <em>Exponential</em>: supports exponential-style sigma schedule</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Class</th>
+<th>Origin</th>
+<th>Epsilon</th>
+<th>VPred</th>
+<th>Flow</th>
+<th>Sigmas</th>
+<th>Timesteps</th>
+<th>Karras</th>
+<th>Beta</th>
+<th>Exponential</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UniPC</td>
+<td>UniPCMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DDIM</td>
+<td>DDIMScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Euler</td>
+<td>EulerDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Euler a</td>
+<td>EulerAncestralDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Euler SGM</td>
+<td>EulerDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Euler EDM</td>
+<td>EDMEulerScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Euler FlowMatch</td>
+<td>FlowMatchEulerDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++</td>
+<td>DPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 2M</td>
+<td>DPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 3M</td>
+<td>DPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 1S</td>
+<td>DPMSolverSinglestepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ SDE</td>
+<td>DPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 2M SDE</td>
+<td>DPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 2M EDM</td>
+<td>EDMDPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM++ Cosine</td>
+<td>CosineDPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM SDE</td>
+<td>DPMSolverSDEScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ Inverse</td>
+<td>DPMSolverMultistepInverseScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 2M Inverse</td>
+<td>DPMSolverMultistepInverseScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 3M Inverse</td>
+<td>DPMSolverMultistepInverseScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>UniPC FlowMatch</td>
+<td>FlowUniPCMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2 FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2a FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2++ 2M FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2++ 2S FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2++ SDE FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2++ 2M SDE FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2++ 3M SDE FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Heun</td>
+<td>HeunDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Heun FlowMatch</td>
+<td>FlowMatchHeunDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Flash FlowMatch</td>
+<td>FlashFlowMatchEulerDiscreteScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DEIS</td>
+<td>DEISMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES DEIS</td>
+<td>RESDEISMultistepScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>SA Solver</td>
+<td>SASolverScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DC Solver</td>
+<td>DCSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DDPM</td>
+<td>DDPMScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DDPM Parallel</td>
+<td>DDPMParallelScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DDIM Parallel</td>
+<td>DDIMParallelScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>PNDM</td>
+<td>PNDMScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>IPNDM</td>
+<td>IPNDMScheduler</td>
+<td>Diffusers</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>LMSD</td>
+<td>LMSDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>KDPM2</td>
+<td>KDPM2DiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>KDPM2 a</td>
+<td>KDPM2AncestralDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>CMSI</td>
+<td>CMStochasticIterativeScheduler</td>
+<td>Diffusers</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>VDM Solver</td>
+<td>VDMScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>BDIA DDIM</td>
+<td>BDIA_DDIMScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>LCM</td>
+<td>LCMScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>LCM FlowMatch</td>
+<td>FlowMatchLCMScheduler</td>
+<td>Diffusers</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>TCD</td>
+<td>TCDScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>TDD</td>
+<td>TDDScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>PeRFlow</td>
+<td>PeRFlowScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>UFOGen</td>
+<td>UFOGenScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>CogX DDIM</td>
+<td>CogVideoXDDIMScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>ABNorsett 2M</td>
+<td>ABNorsettScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ABNorsett 3M</td>
+<td>ABNorsettScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ABNorsett 4M</td>
+<td>ABNorsettScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lawson 2S A</td>
+<td>LawsonScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lawson 2S B</td>
+<td>LawsonScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lawson 4S</td>
+<td>LawsonScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ETD-RK 2S</td>
+<td>ETDRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ETD-RK 3S A</td>
+<td>ETDRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ETD-RK 3S B</td>
+<td>ETDRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ETD-RK 4S A</td>
+<td>ETDRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ETD-RK 4S B</td>
+<td>ETDRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>PEC 423</td>
+<td>PECScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>PEC 433</td>
+<td>PECScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Unified 2S</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Unified 3S</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Unified 2M</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Unified 3M</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Singlestep 2S</td>
+<td>RESSinglestepScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Singlestep 3S</td>
+<td>RESSinglestepScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Multistep 2M</td>
+<td>RESMultistepScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Multistep 3M</td>
+<td>RESMultistepScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-SDE 2S</td>
+<td>RESSinglestepSDEScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-SDE 3S</td>
+<td>RESSinglestepSDEScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DEIS-Multistep</td>
+<td>DEISMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DEIS-Unified 1S</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DEIS-Unified 2M</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Sigmoid Sigma</td>
+<td>CommonSigmaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Sine Sigma</td>
+<td>CommonSigmaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Easing Sigma</td>
+<td>CommonSigmaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Arcsine Sigma</td>
+<td>CommonSigmaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Smoothstep Sigma</td>
+<td>CommonSigmaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Langevin Dynamics</td>
+<td>LangevinDynamicsScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Euclidean Flow</td>
+<td>RiemannianFlowScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Hyperbolic Flow</td>
+<td>RiemannianFlowScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Spherical Flow</td>
+<td>RiemannianFlowScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lorentzian Flow</td>
+<td>RiemannianFlowScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK 2</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK 3</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK 4</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK Euler</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK Heun</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK Ralston</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lobatto 2</td>
+<td>LobattoScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lobatto 3</td>
+<td>LobattoScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lobatto 4</td>
+<td>LobattoScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Radau IIA 2</td>
+<td>RadauIIAScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Radau IIA 3</td>
+<td>RadauIIAScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Radau IIA 4</td>
+<td>RadauIIAScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Gauss-Legendre 2S</td>
+<td>GaussLegendreScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Gauss-Legendre 3S</td>
+<td>GaussLegendreScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Gauss-Legendre 4S</td>
+<td>GaussLegendreScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Specialized-RK 3S</td>
+<td>SpecializedRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Specialized-RK 4S</td>
+<td>SpecializedRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Runge-Kutta 4/4</td>
+<td>RungeKuttaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Runge-Kutta 5/7</td>
+<td>RungeKuttaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Runge-Kutta 6/7</td>
+<td>RungeKuttaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
 </tr>
 </tbody>
 </table>
