@@ -3571,13 +3571,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-02-02" class="md-nav__link">
+  <a href="#update-for-2026-02-04" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-02-02
+        Update for 2026-02-04
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2026-02-04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2026-02-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2026-02-04
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2026-02-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details for 2026-02-04
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5785,13 +5813,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-02-02" class="md-nav__link">
+  <a href="#update-for-2026-02-04" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-02-02
+        Update for 2026-02-04
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2026-02-04">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2026-02-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2026-02-04
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2026-02-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details for 2026-02-04
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7993,7 +8049,13 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-02-02">Update for 2026-02-02</h2>
+<h2 id="update-for-2026-02-04">Update for 2026-02-04</h2>
+<h3 id="highlights-for-2026-02-04">Highlights for 2026-02-04</h3>
+<p>Refresh release two weeks after prior release, yet we still somehow managed to pack in <em>~150 commits</em>!<br />
+Highlights would be two new models: <strong>Z-Image-Base</strong> and <strong>Anima</strong>, <em>captioning</em> support for <strong>tagger</strong> models and a massive addition of new <strong>schedulers</strong><br />
+Also here are updates to <code>torch</code> and additional GPU archs support for <code>ROCm</code> backends, plus a lot of internal improvements and fixes.</p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
+<h3 id="details-for-2026-02-04">Details for 2026-02-04</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://tongyi-mai.github.io/Z-Image-blog/">Tongyi-MAI Z-Image Base</a><br />
@@ -8022,9 +8084,13 @@
 </li>
 <li>add 3 additional schedulers: <em>CogXDDIM, DDIMParallel, DDPMParallel</em><br />
     not originally intended to be a general purpose schedulers, but they work quite nicely and produce good results  </li>
+<li>image metadata: always log scheduler class used  </li>
 <li><strong>API</strong>  </li>
 <li>add <code>/sdapi/v1/xyz-grid</code> to enumerate xyz-grid axis options and their choices<br />
     see <code>/cli/api-xyzenum.py</code> for example usage  </li>
+<li>add <code>/sdapi/v1/sampler</code> to get current sampler config  </li>
+<li>modify <code>/sdapi/v1/samplers</code> to enumerate available samplers possible options<br />
+    see <code>/cli/api-samplers.py</code> for example usage  </li>
 <li><strong>Internal</strong></li>
 <li>tagged release history: <a href="https://github.com/vladmandic/sdnext/tags">https://github.com/vladmandic/sdnext/tags</a><br />
     each major for the past year is now tagged for easier reference  </li>
