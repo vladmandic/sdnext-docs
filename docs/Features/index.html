@@ -4225,26 +4225,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <p><br>
 <br>
 <br></p>
-<h1 id="face-restore">Face restore</h1>
-<h2 id="introduction_2">Introduction</h2>
-<p>Face restore will try to detect a face or multiple faces in a generated image, then it will do a seperate pass over the face which makes the face have an higher resolution and more detailed.</p>
-<h2 id="models">Models</h2>
-<p>SD.NEXT has 3 different choices for face restoration:</p>
-<ul>
-<li>Codeformer</li>
-<li>GFPGAN</li>
-<li>Detailer</li>
-</ul>
-<h3 id="codeformer">Codeformer</h3>
-<p>CodeFormer, created by sczhou, is a robust face restoration algorithm designed to work with both old photos and AI-generated faces. The underlying technology of CodeFormer is based on a Transformer-based prediction network, which models global composition and context for code prediction. This allows the model to discover natural faces that closely approximate the target faces, even when the inputs are severely degraded. A controllable feature transformation module is also included, which enables a flexible trade-off between fidelity and quality. More here: <a href="https://shangchenzhou.com/projects/CodeFormer/">Codeformer</a>.</p>
-<p>The CodeFormer weight parameter:</p>
-<!-- Add image here -->
-<p>0 = Maximum effect; 1 = Minimum effect.</p>
-<h3 id="gfpgan">GFPGAN</h3>
-<p>GFPGAN stands for "Generative Facial Prior Generative Adversarial Network". It is an artificial intelligence model developed for the purpose of real-world face restoration. The model is designed to repair and enhance faces in photos, particularly useful for restoring old or damaged photographs. GFPGAN leverages generative adversarial networks (GANs), specifically utilizing facial priors encapsulated in a pre-trained face GAN like StyleGAN2, to restore realistic and faithful facial details. More here: <a href="https://github.com/TencentARC/GFPGAN">GFPGAN</a>.</p>
-<!-- Add image here -->
-
-<h3 id="detailer">Detailer</h3>
+<h2 id="detailer">Detailer</h2>
 <p>Face Hires is a feature that aims to improve the details of faces in generated images. It draws inspiration from the popular Adetailer extension, but simplifies the workflow to a single checkbox, making it easy to enable or disable.</p>
 <p>Here's what Face Hires does:</p>
 <ul>
@@ -4271,7 +4252,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <br>
 <br></p>
 <h1 id="second-pass">Second pass</h1>
-<h2 id="introduction_3">Introduction</h2>
+<h2 id="introduction_2">Introduction</h2>
 <p>Second pass means that after an image is finished with it's first pass, it has the function to do another pass, Second pass.</p>
 <h2 id="usage_1">Usage</h2>
 <p>You can enable the second pass on the refine tab in ther generation settings. <br></p>
@@ -4296,7 +4277,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <br>
 <br></p>
 <h1 id="styles">Styles</h1>
-<h2 id="introduction_4">Introduction</h2>
+<h2 id="introduction_3">Introduction</h2>
 <p>Styles are prompt presets you can enable, it saves both headaches and time, because it adds a specific style to your prompt without you having to type it yourself.</p>
 <h2 id="usage_2">Usage</h2>
 <p>You can select a style under the generation controls:</p>
@@ -4308,7 +4289,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <br>
 <br></p>
 <h1 id="clip-skip">Clip skip</h1>
-<h2 id="introduction_5">Introduction</h2>
+<h2 id="introduction_4">Introduction</h2>
 <p>Clip Skip plays a significant role in stable diffusion models. It is a technique used to improve the performance of image and video compression in stable diffusion algorithms. By allowing the skipping of certain pixels or blocks, Clip Skip reduces the amount of data that needs to be processed, resulting in faster and more efficient compression. This technique also helps to reduce artifacts and enhance the overall quality of compressed images and videos.</p>
 <h2 id="usage_3">Usage</h2>
 <p>You can enable clip skip in the advanced tab in the image generation settings. The default is 1, but also a very popular value is 2 and lots of models are compatible with it. <br></p>
@@ -4318,7 +4299,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <br>
 <br></p>
 <h1 id="embedding">Embedding</h1>
-<h2 id="introduction_6">Introduction</h2>
+<h2 id="introduction_5">Introduction</h2>
 <p>Embedding, also called textual inversion, is an alternative way to control the style of your images in Stable Diffusion. Embedding is the result of textual inversion, a method to define new keywords in a model without modifying it. The method has gained attention because its capable of injecting new styles or objects to a model with as few as 3 -5 sample images.</p>
 <h2 id="usage_4">Usage</h2>
 <p>You can either access the embedding in the networks menu or you can type it yourself by writing the embedding name without the file extensions.<br>
@@ -4331,7 +4312,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <br>
 <br></p>
 <h1 id="upscaling">Upscaling</h1>
-<h2 id="introduction_7">Introduction</h2>
+<h2 id="introduction_6">Introduction</h2>
 <p>Upscaling is when an image is upscaled using stable diffusion, the algorithm analyzes the image's pixel values to determine the diffusion rate. The rate calculated is then used to expand the pixels in higher resolution, resulting in a sharper and clearer image without compromising its quality.</p>
 <h2 id="usage_5">Usage</h2>
 <p>In SD.NEXT there are 2 ways to use upscaling, you can either enable it in the second pass(<strong>this will not upscale the end results from the second pass, it will only upscale the image or latent from the first pass</strong>) or you can use it in the process tab under the upscaling menu in the image generation settings.</p>
@@ -4367,7 +4348,7 @@ You can find these directories in <code>.\*Your SD.NEXT directory*\models</code>
 <br>
 <br></p>
 <h1 id="samplers">Samplers</h1>
-<h2 id="introduction_8">Introduction</h2>
+<h2 id="introduction_7">Introduction</h2>
 <p>To produce an image, Stable Diffusion first generates a completely random image in the latent space. The noise predictor then estimates the noise of the image. The predicted noise is subtracted from the image. This process is repeated a dozen times. In the end, you get a clean image.</p>
 <p>This denoising process is called sampling because Stable Diffusion generates a new sample image in each step. The method used in sampling is called the sampler or sampling method.</p>
 <p>For more information you can click on the links below:</p>
@@ -4383,7 +4364,7 @@ You can find these directories in <code>.\*Your SD.NEXT directory*\models</code>
 <br>
 <br></p>
 <h1 id="pag">PAG</h1>
-<h2 id="introduction_9">Introduction</h2>
+<h2 id="introduction_8">Introduction</h2>
 <p>PAG or Pertubed Attention Guidance is like a modern/better version of CFG scale, although less universal as it cannot be applied in all circumstances. If it's applied, it will be added to image metadata and you'll see it in the log as <code>StableDiffusionPAGPipeline</code>. <br></p>
 <p>You can find more information about PAG by clicking on <a href="https://github.com/KU-CVLAB/Perturbed-Attention-Guidance">this</a>.</p>
 <h2 id="usage_6">Usage</h2>
@@ -4394,7 +4375,7 @@ You can find these directories in <code>.\*Your SD.NEXT directory*\models</code>
 <br>
 <br></p>
 <h1 id="interrogate">Interrogate</h1>
-<h2 id="introduction_10">Introduction</h2>
+<h2 id="introduction_9">Introduction</h2>
 <p>Interrogation, or captioning helps us refine the prompts we use, enabling us to see how the AI system tags and classifies, and what terms it uses. By looking at these we can further refine our images to attain the concept we have in mind, or remove them via negative prompts.</p>
 <h2 id="usage_7">Usage</h2>
 <p>You can find the interrogate option on the process tab under "Interrogate image" or "Interrogate batch" if you want to interrogate a batch of images, then select the CLIP Model you want to use to interrogate the image(s).
@@ -4405,7 +4386,7 @@ You can find these directories in <code>.\*Your SD.NEXT directory*\models</code>
 <br>
 <br></p>
 <h1 id="vae">VAE</h1>
-<h2 id="introduction_11">Introduction</h2>
+<h2 id="introduction_10">Introduction</h2>
 <p>VAE or Variational Auto Encoder encodes an image into a latent space, which is a lower-dimensional representation of the image. The latent space is then decoded into a new image, which is typically of higher quality than the original image.
 <br>
 <br>
@@ -4418,7 +4399,7 @@ You can add the VAE's in <code>.\*Your SD.NEXT directory*\models\VAE</code>.</p>
 <br>
 <br></p>
 <h1 id="cfg-scale">CFG scale</h1>
-<h2 id="introduction_12">Introduction</h2>
+<h2 id="introduction_11">Introduction</h2>
 <p>the CFG scale (classifier-free guidance scale) or guidance scale is a parameter that controls how much the image generation process follows the text prompt. The higher the value, the more the image sticks to a given text input.
 <br>
 <br>
@@ -4431,7 +4412,7 @@ But this does not mean that the value should always be set to maximum, as more g
 <br>
 <br></p>
 <h1 id="live-preview">Live Preview</h1>
-<h2 id="introduction_13">Introduction</h2>
+<h2 id="introduction_12">Introduction</h2>
 <p>The live preview feature allows you to see the image before it is fully generated, so in other words you can see the progress of the image while it is generating.</p>
 <h2 id="usage_10">Usage</h2>
 <p>You can modify the live preview settings to your liking in settings &gt; Live Previews. <br></p>
