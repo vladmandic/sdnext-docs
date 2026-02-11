@@ -3571,10 +3571,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-02-09" class="md-nav__link">
+  <a href="#update-for-2026-02-11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-02-09
+        Update for 2026-02-11
       
     </span>
   </a>
@@ -5824,10 +5824,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-02-09" class="md-nav__link">
+  <a href="#update-for-2026-02-11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-02-09
+        Update for 2026-02-11
       
     </span>
   </a>
@@ -8071,13 +8071,15 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-02-09">Update for 2026-02-09</h2>
+<h2 id="update-for-2026-02-11">Update for 2026-02-11</h2>
 <ul>
-<li><strong>Upscalers</strong></li>
+<li><strong>Image manipulation</strong></li>
+<li>use high-quality <a href="https://github.com/drhead/Sharpfin">sharpfin</a> accelerated library<br />
+    when available (cuda-only), thanks @CalamitousFelicitousness  </li>
 <li>add support for <a href="https://github.com/chaiNNer-org/spandrel">spandrel</a><br />
-    upscaling engine with suport for new upscaling model families  </li>
+<strong>upscaling</strong> engine with suport for new upscaling model families  </li>
 <li>add two new ai upscalers: <em>RealPLKSR NomosWebPhoto</em> and <em>RealPLKSR AnimeSharpV2</em>  </li>
-<li>add two new interpolation methods: <em>HQX</em> and <em>ICB</em>  </li>
+<li>add two new <strong>interpolation</strong> methods: <em>HQX</em> and <em>ICB</em>  </li>
 <li><strong>Features</strong></li>
 <li>pipelines: add <strong>ZImageInpaint</strong>, thanks @CalamitousFelicitousness  </li>
 <li>add <code>--remote</code> command line flag that reduces client/server chatter and improves link stability<br />
@@ -8089,6 +8091,7 @@
 <li>ui: <strong>themes</strong> add <em>CTD-NT64Light</em> and <em>CTD-NT64Dark</em>, thanks @resonantsky  </li>
 <li>ui: <strong>gallery</strong> add option to auto-refresh gallery, thanks @awsr  </li>
 <li><strong>Internal</strong></li>
+<li>refactor: to/from image/tensor logic, thanks @CalamitousFelicitousness  </li>
 <li>refactor: switch to <code>pyproject.toml</code> for tool configs  </li>
 <li>refactor: reorganize <code>cli</code> scripts  </li>
 <li>refactor: move tests to dedicated <code>/test/</code>  </li>
