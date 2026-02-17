@@ -1703,7 +1703,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Notes">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operating-system-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating System Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating System Support">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3897,7 +3908,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Notes">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operating-system-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating System Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating System Support">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4167,6 +4189,13 @@ docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</s
 - <a href="https://hub.docker.com/r/disty0/sdnext-openvino/tags">OpenVINO</a><br />
   tag: <code>disty0/sdnext-openvino:latest</code> compressed size: 0.4GB  </p>
 <h3 id="notes">Notes</h3>
+<h3 id="operating-system-support">Operating System Support</h3>
+<p>The SD.Next container can be run on any OS that supports Docker and provides GPU routing to the container  </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Note that some OS may further limit the access to hardware resources<br />
+In which case, it is recommented to add <code>--priviledged</code> flag to provide docker container full access to system resources</p>
+</div>
 <h4 id="log-example">Log Example</h4>
 <div class="highlight"><pre><span></span><code>[+] Building 54.1s (12/12) FINISHED                                                                   docker:default
  =&gt; [internal] load build definition from Dockerfile.cuda                                                   0.0s
