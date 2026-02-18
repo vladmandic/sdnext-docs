@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Python/">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/AMD-MIOpen/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>Python - SD.Next Documentation</title>
+        <title>Making Your SD.Next Faster with MIOpen Tuning - SD.Next Documentation</title>
       
     
     
@@ -59,17 +59,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Python - SD.Next Documentation" />
+<meta property="og:title" content="Making Your SD.Next Faster with MIOpen Tuning - SD.Next Documentation" />
 <meta property="og:description" content="SD.Next Documentation" />
-<meta property="og:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Python.png" />
+<meta property="og:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/AMD-MIOpen.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://vladmandic.github.io/sdnext-docs/Python/" />
+<meta property="og:url" content="https://vladmandic.github.io/sdnext-docs/AMD-MIOpen/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Python - SD.Next Documentation" />
+<meta property="twitter:title" content="Making Your SD.Next Faster with MIOpen Tuning - SD.Next Documentation" />
 <meta property="twitter:description" content="SD.Next Documentation" />
-<meta property="twitter:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Python.png" />
+<meta property="twitter:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/AMD-MIOpen.png" />
 </head>
   
   
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#making-your-sdnext-faster-with-miopen-tuning" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python
+              Making Your SD.Next Faster with MIOpen Tuning
             
           </span>
         </div>
@@ -3544,6 +3544,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3552,10 +3554,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
+  <a href="#what-is-miopen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Python
+        What is MIOpen?
       
     </span>
   </a>
@@ -3563,10 +3565,127 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compile-required" class="md-nav__link">
+  <a href="#how-miopen-selects-an-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compile Required
+        How MIOpen Selects an Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How MIOpen Selects an Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-solver-selection-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solver Selection Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-expect-before-and-after" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Expect: Before and After
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What to Expect: Before and After">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-run-cold-start-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Run (Cold Start — Slow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-first-run-warm-cache-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After First Run (Warm Cache — Fast)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-enable-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Enable Tuning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Enable Tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#miopen_find_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIOPEN_FIND_MODE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miopen_find_enforce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIOPEN_FIND_ENFORCE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-tuning-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Tuning Cache
       
     </span>
   </a>
@@ -3574,10 +3693,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#missing-features" class="md-nav__link">
+  <a href="#when-does-re-tuning-happen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Missing Features
+        When Does Re-Tuning Happen?
       
     </span>
   </a>
@@ -3585,10 +3704,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backend-compatibility" class="md-nav__link">
+  <a href="#mode-comparison" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Backend Compatibility
+        Mode Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
       
     </span>
   </a>
@@ -3623,39 +3764,281 @@
   
 
 
-  <h1>Python</h1>
-
-<h2 id="python">Python</h2>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Recommended Python version by SD.Next is <code>python==3.12</code></p>
-</div>
-<p>SD.Next supports pretty much all current versions of Python, but with some disclaimers:<br />
-- <code>python==3.9</code> is end-of-life and no longer validated by SD.Next, so compatibility is limited<br />
-- <code>python==3.10</code> is end-of-support and not recommended<br />
-- <code>python==3.11</code> is fully supported<br />
-- <code>python==3.12</code> is fully supported and is the recommended version as most package dependencies come pre-compiled for it<br />
-- <code>python==3.13</code> is supported, but some packages used by specific features are not available<br />
-- <code>python==3.14</code> is in early stages of support and marked as experimental  </p>
-<h2 id="compile-required">Compile Required</h2>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Python 3.13 and 3.14 are not recommended for general use due to limited package compatibility</p>
-</div>
-<p>Python 3.13 and 3.14 require many packages to be built from source which requires additional build tools and much longer installation times<br />
-At the very minimum, you will need a C++ compiler toolchain and Python development headers installed on your system  </p>
-<h2 id="missing-features">Missing Features</h2>
-<p>Known missing functionality with python 3.13 and 3.14 includes:
-- <code>insightface</code> no longer maintained and only provides pre-compiled wheels for up to <code>python==3.12</code>,<br />
-   so all face swapping features will not work on <code>python==3.13</code> until a compatible version of <code>insightface</code> is released<br />
-- <code>rembg</code> background removal depends on number of packages that do not provide compatible wheels<br />
-- <em>beta sampling</em> when used with some samplers may fail due to incompatible <code>torchsde</code> package  </p>
-<h2 id="backend-compatibility">Backend Compatibility</h2>
-<p>Compute backends such as <code>torch</code> and <code>onnxruntime</code> also have varying levels of support for different Python versions<br />
-- For <code>cuda</code> and <code>rocm</code> which are under active development,<br />
-  support for all python versions is generally good<br />
-- For older and less actively developed backends such as <code>zluda</code> and <code>directml</code>,<br />
-  support for newer python versions is often delayed or non-existent  </p>
+<h1 id="making-your-sdnext-faster-with-miopen-tuning">Making Your SD.Next Faster with MIOpen Tuning</h1>
+<p>If you're running SD.Next on an AMD GPU, this guide will help you unlock speed improvements that make your image generation noticeably faster. It also explains what MIOpen is and how it works under the hood, so the tuning process makes sense rather than feeling like magic.</p>
+<hr />
+<h2 id="what-is-miopen">What is MIOpen?</h2>
+<p>MIOpen is AMD's open-source library for deep learning primitives — AMD's equivalent of NVIDIA's cuDNN. It provides optimized implementations of the operations that neural networks rely on: convolutions, pooling, normalization, activations, and more.</p>
+<p>When SD.Next generates an image, it doesn't talk to your GPU directly. The request travels through several layers:</p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────┐
+│   SD.Next                       │  ← User Interface
+└────────────┬────────────────────┘
+             │
+┌────────────▼────────────────────┐
+│   PyTorch (with ROCm backend)   │  ← Deep Learning Framework
+└────────────┬────────────────────┘
+             │
+┌────────────▼────────────────────┐
+│   MIOpen Library                │  ← Optimized GPU Kernels
+└────────────┬────────────────────┘
+             │
+┌────────────▼────────────────────┐
+│   AMD GPU (7900 XTX, 9070 XT…)  │  ← Hardware
+└─────────────────────────────────┘
+</code></pre></div>
+<p>MIOpen sits between PyTorch and your GPU. Every time a convolution runs in the U-Net or VAE, MIOpen is the one deciding <em>how</em> to execute it.</p>
+<hr />
+<h2 id="how-miopen-selects-an-algorithm">How MIOpen Selects an Algorithm</h2>
+<p>For any given operation, MIOpen has multiple <strong>solvers</strong> (algorithm implementations) that can produce the same result, but at very different speeds. For example, a single 3×3 convolution might be handled by:</p>
+<ul>
+<li><strong>Winograd</strong> — fast for small kernels, low memory usage</li>
+<li><strong>Implicit GEMM</strong> — very fast on modern AMD GPUs using matrix cores</li>
+<li><strong>Direct GEMM</strong> — general purpose, moderate speed</li>
+<li><strong>Naive Direct</strong> — always works, extremely slow (100× slower in some cases)</li>
+</ul>
+<p>The "right" choice depends on your specific GPU, the tensor dimensions, and the data type. MIOpen's job is to pick the fastest one.</p>
+<h3 id="the-solver-selection-flow">The Solver Selection Flow</h3>
+<div class="highlight"><pre><span></span><code>                 You generate an image
+                          │
+                          ▼
+         ┌────────────────────────────────┐
+         │  MIOpen receives GPU operation  │
+         │  (e.g. U-Net convolution)       │
+         └────────────────┬───────────────┘
+                          │
+                          ▼
+         ┌────────────────────────────────┐
+         │    Check local tuning cache    │
+         │    (~/.miopen/ or AppData)     │
+         └──────────┬─────────────────────┘
+                    │
+         ┌──────────┴──────────┐
+         │                     │
+     FOUND ✓               NOT FOUND ✗
+   (warm run)              (cold run)
+         │                     │
+         ▼                     ▼
+┌─────────────────┐   ┌────────────────────────────┐
+│  Load optimal   │   │  Benchmark all solvers:    │
+│  algorithm from │   │                            │
+│  cache instantly│   │  Winograd:      0.12 ms ✓  │
+└────────┬────────┘   │  Implicit GEMM: 0.15 ms    │
+         │            │  Direct GEMM:   2.15 ms    │
+         │            │  Naive Direct: 156.30 ms   │
+         │            │                            │
+         │            │  → Save winner to cache    │
+         │            └────────────────┬───────────┘
+         │                             │
+         └─────────────┬───────────────┘
+                       │
+                       ▼
+         ┌─────────────────────────────┐
+         │  Execute optimal GPU kernel │
+         └─────────────────────────────┘
+</code></pre></div>
+<p><strong>This is why the first run is slow.</strong> MIOpen has to benchmark every solver for every unique convolution it encounters — and a single image generation touches hundreds of different convolution configurations across the text encoder, U-Net, and VAE. Each benchmark takes a fraction of a second, but they add up.</p>
+<p>Once the cache is built, every subsequent run skips benchmarking entirely and jumps straight to the winner.</p>
+<hr />
+<h2 id="what-to-expect-before-and-after">What to Expect: Before and After</h2>
+<h3 id="first-run-cold-start-slow">First Run (Cold Start — Slow)</h3>
+<ul>
+<li>Your first generation will be <strong>much slower than usual</strong> — potentially several minutes</li>
+<li>The GPU will be active but no image progress is visible yet</li>
+<li>SD.Next may appear "stuck"</li>
+<li>Console messages like <code>Find Start</code>, <code>Evaluating Solver</code>, or <code>compiling kernels</code> are normal</li>
+</ul>
+<p><strong>This only happens once per unique operation shape.</strong> A "shape" is defined by the combination of:
+- The model (SD 1.5, SDXL, Flux, etc.)
+- The image resolution (512×512 and 768×768 each need their own tuning)
+- The batch size</p>
+<h3 id="after-first-run-warm-cache-fast">After First Run (Warm Cache — Fast)</h3>
+<ul>
+<li>Image generation is noticeably faster</li>
+<li>Performance is consistent</li>
+<li>The cache is reused automatically on every subsequent launch — you don't need to redo it</li>
+</ul>
+<hr />
+<h2 id="how-to-enable-tuning">How to Enable Tuning</h2>
+<p>Set these two environment variables before launching SD.Next:</p>
+<h3 id="miopen_find_mode">MIOPEN_FIND_MODE</h3>
+<p>Controls <em>how</em> MIOpen searches for the best solver:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Mode</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2</code></td>
+<td>Fast</td>
+<td>Uses heuristics — guesses a good solver without testing. Fast startup, suboptimal performance.</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>Hybrid</td>
+<td>Checks the cache first; if not found, benchmarks all solvers and saves the winner. <strong>Recommended.</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="miopen_find_enforce">MIOPEN_FIND_ENFORCE</h3>
+<p>Controls <em>when</em> MIOpen is allowed to update the cache:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code></td>
+<td>Never update the cache (read-only)</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>Update the cache when new results are found. <strong>Recommended for tuning.</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="commands">Commands</h3>
+<p><strong>Linux — temporary (current session only):</strong>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">MIOPEN_FIND_MODE</span><span class="o">=</span><span class="m">3</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MIOPEN_FIND_ENFORCE</span><span class="o">=</span><span class="m">3</span>
+</code></pre></div></p>
+<p><strong>Linux — permanent (add to <code>~/.bashrc</code> or <code>~/.profile</code>):</strong>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export MIOPEN_FIND_MODE=3&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export MIOPEN_FIND_ENFORCE=3&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+</code></pre></div></p>
+<p><strong>Windows — Command Prompt (temporary):</strong>
+<div class="highlight"><pre><span></span><code>set MIOPEN_FIND_MODE=3
+set MIOPEN_FIND_ENFORCE=3
+</code></pre></div></p>
+<p><strong>Windows — PowerShell (temporary):</strong>
+<div class="highlight"><pre><span></span><code><span class="nv">$env:MIOPEN_FIND_MODE</span> <span class="p">=</span> <span class="s2">&quot;3&quot;</span>
+<span class="nv">$env:MIOPEN_FIND_ENFORCE</span> <span class="p">=</span> <span class="s2">&quot;3&quot;</span>
+</code></pre></div></p>
+<p><strong>Windows — Permanent (System Environment Variables):</strong></p>
+<ol>
+<li>Open <strong>Start</strong> → search <strong>"Edit the system environment variables"</strong></li>
+<li>Click <strong>Environment Variables</strong></li>
+<li>Under <strong>User variables</strong>, click <strong>New</strong></li>
+<li>Add <code>MIOPEN_FIND_MODE</code> = <code>3</code>, then repeat for <code>MIOPEN_FIND_ENFORCE</code> = <code>3</code></li>
+</ol>
+<p><strong>Windows — Alternatively, edit <code>webui.bat</code></strong> and add the <code>set</code> lines before the launch command:
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">MIOPEN_FIND_MODE</span><span class="p">=</span>3
+<span class="k">set</span> <span class="nv">MIOPEN_FIND_ENFORCE</span><span class="p">=</span>3
+.\python_embeded\python.exe -m streamlit run ...
+</code></pre></div></p>
+<p>Then launch SD.Next as normal. On Windows with ROCm:
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">webui</span><span class="p">.</span><span class="n">bat</span> <span class="p">-</span><span class="n">-use-rocm</span>
+</code></pre></div></p>
+<hr />
+<h2 id="the-tuning-cache">The Tuning Cache</h2>
+<p>MIOpen stores its results in a local database so tuning survives across restarts.</p>
+<p><strong>Default cache location:</strong>
+- <strong>Linux:</strong> <code>~/.config/miopen/</code>
+- <strong>Windows:</strong> <code>%USERPROFILE%\.config\miopen\</code></p>
+<p>The cache contains two file types:
+- <strong><code>.udb</code></strong> (User Database) — stores the winning solver per operation. Used for fast lookup on every run.
+- <strong><code>.ufdb</code></strong> (User Find Database) — stores full benchmark results for all tested solvers. Used for analysis.</p>
+<p><strong>You can override the cache location</strong> with:
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">MIOPEN_USER_DB_PATH</span><span class="o">=</span>/path/to/your/cache
+</code></pre></div></p>
+<p>This is useful if you want to share a pre-built cache across multiple installs, or keep it on a fast drive.</p>
+<p><strong>To reset the cache</strong> (forces re-tuning from scratch), delete the <code>.udb</code> and <code>.ufdb</code> files in the cache directory.</p>
+<hr />
+<h2 id="when-does-re-tuning-happen">When Does Re-Tuning Happen?</h2>
+<p>MIOpen caches results per unique operation shape. You'll see a slow first run again when:</p>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New model (SD 1.5 → SDXL)</td>
+<td>Different layer sizes = new convolution shapes</td>
+</tr>
+<tr>
+<td>Different resolution</td>
+<td>Tensor dimensions change</td>
+</tr>
+<tr>
+<td>Different batch size</td>
+<td>Affects solver selection</td>
+</tr>
+<tr>
+<td>Cache was deleted</td>
+<td>Fresh start</td>
+</tr>
+<tr>
+<td>Model updated/modified</td>
+<td>Some shapes may differ</td>
+</tr>
+</tbody>
+</table>
+<p>Switching between two resolutions you've already tuned (e.g. 512 and 1024) will not re-tune — results for both are already cached.</p>
+<hr />
+<h2 id="mode-comparison">Mode Comparison</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Find Mode 2 (Fast)</th>
+<th>Find Mode 3 + Enforce 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>First run speed</strong></td>
+<td>Normal</td>
+<td>Slow (benchmarking)</td>
+</tr>
+<tr>
+<td><strong>Subsequent speed</strong></td>
+<td>Suboptimal</td>
+<td>Optimal</td>
+</tr>
+<tr>
+<td><strong>Cache written</strong></td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Debugging, stability issues</td>
+<td>Production use</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use Mode 2 if:</strong> you're seeing crashes, driver timeouts, or unusually long hangs during the first run. Mode 2 never benchmarks, so it can work around instability.</p>
+<p><strong>Use Mode 3 if:</strong> you want the best possible performance and can tolerate a slow first run per model/resolution.</p>
+<hr />
+<h2 id="tips">Tips</h2>
+<ul>
+<li><strong>Be patient on first run.</strong> With larger models (SDXL, Flux), the cold start can take 5–20 minutes. As long as GPU activity is visible in Task Manager or <code>rocm-smi</code>, it's working.</li>
+<li><strong>Tune at the resolution you actually use.</strong> If you mostly generate at 1024×1024, run your first image at that size. A cache built at 512×512 won't cover the larger shapes.</li>
+<li><strong>Back up your cache.</strong> Once built, the cache is reusable across SD.Next updates. Copy the <code>miopen/</code> directory somewhere safe.</li>
+<li><strong>Enable logging to watch progress.</strong> Add <code>MIOPEN_LOG_LEVEL=4</code> temporarily to see solver benchmarking in the console. Remove it afterward to reduce noise.</li>
+</ul>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p><strong>"It's been 10+ minutes and nothing's happening!"</strong>
+This is normal for the first run with large models. Check that your GPU is active (<code>rocm-smi</code> on Linux, Task Manager on Windows). As long as GPU load or memory usage is nonzero, MIOpen is working.</p>
+<p><strong>"Second run is still slow"</strong>
+The cache may not have been written. Verify <code>MIOPEN_FIND_ENFORCE=3</code> is set (not just <code>MIOPEN_FIND_MODE</code>). Check that the cache directory exists and is writable.</p>
+<p><strong>"Performance got worse after a driver update"</strong>
+Driver updates can invalidate cached kernels. Delete the <code>.udb</code>/<code>.ufdb</code> files to force a fresh tuning session.</p>
+<p><strong>"It crashes during the first run"</strong>
+Switch to <code>MIOPEN_FIND_MODE=2</code> to skip benchmarking entirely. This avoids the long solver search that can trigger driver timeouts on some systems.</p>
+<p><strong>"I switched resolutions and it's slow again"</strong>
+Expected — each resolution has its own set of convolution shapes that need tuning. Run one generation at the new resolution to build the cache for it.</p>
 
 
 

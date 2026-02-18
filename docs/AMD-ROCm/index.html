@@ -3977,7 +3977,8 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>Currently, PyTorch support on Windows is not officially maintained by PyTorch team. See <a href="https://www.amd.com/en/resources/support-articles/release-notes/RN-AMDGPU-WINDOWS-PYTORCH-PREVIEW.html">AMD's announcement</a> for more information.</p>
+<p>Currently, PyTorch support on Windows is not officially maintained by PyTorch team.<br />
+See <a href="https://www.amd.com/en/resources/support-articles/release-notes/RN-AMDGPU-WINDOWS-PYTORCH-PREVIEW.html">AMD's announcement</a> for more information.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -4088,6 +4089,7 @@ sudo docker run -it \
 Resulting docker image will use 3.2 GB disk space (uncompressed) for the docker image and 20 GB for the venv.</p>
 </div>
 <h2 id="rocm-performance-tuning-on-linux">ROCm performance tuning on Linux</h2>
+<p>For more details, see <a href="../AMD-MIOpen/">AMD-MIOpen Guide</a> page.</p>
 <h3 id="miopen-database-tuning">MIOpen database tuning</h3>
 <p>On first use, when using a resolution for the first time, or when upgrading Pytorch versions, ROCm runs a series of benchmarks to select the most efficient approach. This can lead to slow (up to 5-8 minutes) startup times, in particular if you use a refine pass at high resolution, but it only happens once per resolution (subsequent runs are much faster). If for any case this is undesirable, you can set the environment variable <code>MIOPEN_FIND_MODE</code> to <code>FAST</code>. This will reduce a lot the startup time on first use at the price of worse performance when generating.
 On the other hand, for best performance during generation (but slower startup on first use), you can set the variable <code>MIOPEN_FIND_ENFORCE</code> to <code>SEARCH</code>. </p>
