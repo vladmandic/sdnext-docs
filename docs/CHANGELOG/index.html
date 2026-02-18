@@ -8161,6 +8161,9 @@
 <li>ui: <strong>themes</strong> add <em>CTD-NT64Light</em>, <em>CTD-NT64Medium</em> and <em>CTD-NT64Dark</em>, thanks @resonantsky  </li>
 <li>ui: <strong>gallery</strong> add option to auto-refresh gallery, thanks @awsr  </li>
 <li><strong>Internal</strong></li>
+<li><code>python==3.14</code> initial support<br />
+    see <a href="https://vladmandic.github.io/sdnext-docs/Python/">docs</a> for details  </li>
+<li>remove hard-dependnecies: <code>clip</code>, <code>numba</code>, <code>skimage</code>, <code>torchsde</code>  </li>
 <li>refactor: to/from image/tensor logic, thanks @CalamitousFelicitousness  </li>
 <li>refactor: switch to <code>pyproject.toml</code> for tool configs  </li>
 <li>refactor: reorganize <code>cli</code> scripts  </li>
@@ -8211,7 +8214,7 @@ Also here are updates to <code>torch</code> and additional GPU archs support for
 <li>add 13(!) new scheduler families
     not a port, but more of inspired-by <a href="https://github.com/ClownsharkBatwing/RES4LYF">res4lyf</a> library<br />
     all schedulers should be compatible with both <code>epsilon</code> and <code>flow</code> prediction style!<br />
-<em>note</em>: each family may have multiple actual schedulers, so the list total is 56(!) new schedulers     <ul>
+<em>note</em>: each family may have multiple actual schedulers, so the list total is 56(!) new schedulers<ul>
 <li>core family: <em>RES</em></li>
 <li>exponential: <em>DEIS, ETD, Lawson, ABNorsett</em></li>
 <li>integrators: <em>Runge-Kutta, Linear-RK, Specialized-RK, Lobatto, Radau-IIA, Gauss-Legendre</em></li>
@@ -8297,7 +8300,7 @@ For full list of changes, see full changelog.</p>
     available in both <em>original</em> and <em>sdnq-dynamic prequantized</em> variants<br />
     thanks @CalamitousFelicitousness<br />
 <em>note</em>: model requires pre-release versions of <code>transformers</code> package:<br />
-    &gt; pip install --upgrade git+https://github.com/huggingface/transformers.git<br />
+    &gt; pip install --upgrade git+<a href="https://github.com/huggingface/transformers.git">https://github.com/huggingface/transformers.git</a><br />
     &gt; ./webui.sh --experimental  </li>
 <li><a href="https://huggingface.co/nunchaku-tech/nunchaku-z-image-turbo">Nunchaku Z-Image Turbo</a><br />
     nunchaku optimized z-image turbo  </li>
@@ -8449,9 +8452,9 @@ Plus a lot of internal improvements and fixes  </p>
 <strong>Z-Image</strong> is a powerful and highly efficient image generation model with 6B parameters and using Qwen-3 as text encoder<br />
     unlike most of new models that are far larger, Z-Image architecture allows it to run with good performance even on mid-range hardware<br />
 <em>note</em>: initial release is <em>Turbo</em> variant only with <em>Base</em> and <em>Edit</em> variants to follow  </li>
-<li><a href="">Kandinsky 5.0 Lite</a> is a new 6B model using Qwen-2.5 as text encoder<br />
+<li><a href="https://huggingface.co/kandinskylab/Kandinsky-5.0-I2V-Lite-5s-Diffusers">Kandinsky 5.0 Lite</a> is a new 6B model using Qwen-2.5 as text encoder<br />
     it comes in text-to-image and image-edit variants  </li>
-<li><strong>Google Gemini Nano Banana</strong> <a href="https://blog.google/products/gemini/gemini-nano-banana-examples/">2.5 Flash</a> and <a href="https://deepmind.google/models/gemini-image/pro/">3.0 Pro</a> 
+<li><strong>Google Gemini Nano Banana</strong> <a href="https://blog.google/products/gemini/gemini-nano-banana-examples/">2.5 Flash</a> and <a href="https://deepmind.google/models/gemini-image/pro/">3.0 Pro</a>
     first cloud-based model directly supported in SD.Next UI<br />
 <em>note</em>: need to set <code>GOOGLE_API_KEY</code> environment variable with your key to use this model  </li>
 <li><a href="https://huggingface.co/Photoroom/prx-1024-t2i-beta">Photoroom PRX 1024 Beta</a><br />
@@ -8483,7 +8486,7 @@ Plus a lot of internal improvements and fixes  </p>
 <li>ui indicator of model capabilities  </li>
 <li>support for <em>prefill</em> style of prompting/answering  </li>
 <li>support for <em>reasoning</em> mode for supported models<br />
-    with option to output answer-only or reasoning-process   </li>
+    with option to output answer-only or reasoning-process</li>
 <li>additional debug logging  </li>
 <li><strong>Other Features</strong></li>
 <li><strong>wildcards</strong>: allow recursive inline wildcards using curly braces syntax  </li>
@@ -8794,7 +8797,7 @@ Highlight are:<br />
     requires qwen-image-edit-2509 or its variant as multi-image edits are not available in original qwen-image<br />
     in ui control tab: inputs -&gt; separate init image<br />
     add image for <em>input media</em> and <em>control media</em><br />
-    can be </li>
+    can be</li>
 <li><a href="https://github.com/vipshop/cache-dit">Cache-DiT</a><br />
     cache-dit is a unified, flexible and training-free cache acceleration framework<br />
     compatible with many dit-based models such as FLUX.1, Qwen, HunyuanImage, Wan2.2, Chroma, etc.<br />
@@ -9009,7 +9012,7 @@ And check out new <strong>history</strong> tab in the right panel, it now shows 
 <li>update openvino to <code>openvino==2025.3.0</code>  </li>
 <li>add deprecation warning for <code>python==3.9</code>  </li>
 <li>allow setting denoise strength to 0 in control/img2img<br />
-    this allows to run workflows which only refine or detail existing image without changing it   </li>
+    this allows to run workflows which only refine or detail existing image without changing it</li>
 <li><strong>Fixes</strong></li>
 <li>normalize path hanlding when deleting images  </li>
 <li>unified compile upscalers  </li>
@@ -9091,7 +9094,7 @@ And check out new <strong>history</strong> tab in the right panel, it now shows 
 - Several new models: <a href="https://qwenlm.github.io/blog/qwen-image/">Qwen-Image</a> (plus <em>Lightning</em> variant) and <a href="https://www.krea.ai/blog/flux-krea-open-source-release">FLUX.1-Krea-Dev</a><br />
 - Several updated models: <a href="https://huggingface.co/lodestones/Chroma">Chroma</a>, <a href="https://huggingface.co/Skywork/SkyReels-V2-DF-14B-720P-Diffusers">SkyReels-V2</a>, <a href="https://huggingface.co/Wan-AI/Wan2.1-VACE-14B-diffusers">Wan-VACE</a>, <a href="https://huggingface.co/Tencent-Hunyuan/HunyuanDiT-v1.2-Diffusers-Distilled">HunyuanDiT</a><br />
 - Plus continuing with major <strong>UI</strong> work with new embedded <strong>Docs/Wiki</strong> search, redesigned real-time <strong>hints</strong>, <strong>wildcards</strong> UI selector, built-in <strong>GPU monitor</strong>, <strong>CivitAI</strong> integration and more!<br />
-- On the compute side, new profiles for high-vram GPUs, offloading improvements, parallel-load for large models, support for new <code>torch</code> release and improved quality when using low-bit quantization!    <br />
+- On the compute side, new profiles for high-vram GPUs, offloading improvements, parallel-load for large models, support for new <code>torch</code> release and improved quality when using low-bit quantization!
 - <a href="https://vladmandic.github.io/sd-samples/compare.html">SD.Next Model Samples Gallery</a>: pre-generated image gallery with 60 models (45 base and 15 finetunes) and 40 different styles resulting in 2,400 high resolution images!<br />
   gallery additionally includes model details such as typical load and inference times as well as sizes and types of each model component (<em>e.g. unet, transformer, text-encoder, vae</em>)<br />
 - And (<em>as always</em>) many bugfixes and improvements to existing features!  </p>
