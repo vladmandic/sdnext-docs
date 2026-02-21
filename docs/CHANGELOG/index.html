@@ -3571,22 +3571,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-02-18" class="md-nav__link">
+  <a href="#update-for-2026-02-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-02-18
+        Update for 2026-02-21
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-02-18">
+    <nav class="md-nav" aria-label="Update for 2026-02-21">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-02-18" class="md-nav__link">
+  <a href="#highlights-for-2026-02-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-02-18
+        Highlights for 2026-02-21
       
     </span>
   </a>
@@ -3594,10 +3594,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-02-18" class="md-nav__link">
+  <a href="#details-for-2026-02-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-02-18
+        Details for 2026-02-21
       
     </span>
   </a>
@@ -5852,22 +5852,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-02-18" class="md-nav__link">
+  <a href="#update-for-2026-02-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-02-18
+        Update for 2026-02-21
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-02-18">
+    <nav class="md-nav" aria-label="Update for 2026-02-21">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-02-18" class="md-nav__link">
+  <a href="#highlights-for-2026-02-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-02-18
+        Highlights for 2026-02-21
       
     </span>
   </a>
@@ -5875,10 +5875,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-02-18" class="md-nav__link">
+  <a href="#details-for-2026-02-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-02-18
+        Details for 2026-02-21
       
     </span>
   </a>
@@ -8127,10 +8127,10 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-02-18">Update for 2026-02-18</h2>
-<h3 id="highlights-for-2026-02-18">Highlights for 2026-02-18</h3>
+<h2 id="update-for-2026-02-21">Update for 2026-02-21</h2>
+<h3 id="highlights-for-2026-02-21">Highlights for 2026-02-21</h3>
 <p>TBD</p>
-<h3 id="details-for-2026-02-18">Details for 2026-02-18</h3>
+<h3 id="details-for-2026-02-21">Details for 2026-02-21</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.0">FireRed Image Edit</a><br />
@@ -8169,18 +8169,33 @@
     see <a href="https://vladmandic.github.io/sdnext-docs/Python/">docs</a> for details  </li>
 <li>remove hard-dependnecies:<br />
 <code>clip, numba, skimage, torchsde, omegaconf, antlr, patch-ng, patch-ng, astunparse, addict, inflection, jsonmerge, kornia</code>,<br />
-<code>resize-right, voluptuous, yapf, sqlalchemy, invisible-watermark, pi-heif, ftfy, blendmodes, PyWavelets</code><br />
+<code>resize-right, voluptuous, yapf, sqlalchemy, invisible-watermark, pi-heif, ftfy, blendmodes, PyWavelets, imp</code><br />
     these are now installed on-demand when needed  </li>
-<li>refactor: to/from image/tensor logic, thanks @CalamitousFelicitousness  </li>
-<li>refactor: switch to <code>pyproject.toml</code> for tool configs  </li>
-<li>refactor: reorganize <code>cli</code> scripts  </li>
-<li>refactor: move tests to dedicated <code>/test/</code>  </li>
-<li>refactor: all image handling to <code>modules/image/</code>  </li>
-<li>refactor: captioning part-2, thanks @CalamitousFelicitousness  </li>
-<li>refactor: remove face restoration, thanks @CalamitousFelicitousness  </li>
-<li>update <code>lint</code> rules, thanks @awsr  </li>
+<li>refactor to/from <em>image/tensor</em> logic, thanks @CalamitousFelicitousness  </li>
+<li>refactor reorganize <code>cli</code> scripts  </li>
+<li>refactor move tests to dedicated <code>/test/</code>  </li>
+<li>refactor all image handling to <code>modules/image/</code>  </li>
+<li>remove face restoration, thanks @CalamitousFelicitousness  </li>
+<li>unified command line parsing  </li>
+<li>launch use threads to async execute non-critical tasks  </li>
+<li>switch from deprecated <code>pkg_resources</code> to <code>importlib</code>  </li>
+<li>modernize typing and type annotations  </li>
+<li>improve <code>pydantic==2.x</code> compatibility  </li>
+<li>refactor entire logging into separate <code>modules/logger</code>  </li>
+<li>replace <code>timestamp</code> based startup checks with state caching  </li>
+<li>split monolithic <code>shared</code> module and introduce <code>ui_definitions</code>  </li>
+<li>modularize all imports and avoid re-imports  </li>
+<li>use <code>threading</code> for deferable operatios  </li>
+<li>use <code>threading</code> for io-independent parallel operations  </li>
 <li>remove requirements: <code>clip</code>, <code>open-clip</code>  </li>
-<li>update <code>requirements</code>  </li>
+<li>remove <code>normalbae</code> pre-processor  </li>
+<li>captioning part-2, thanks @CalamitousFelicitousness  </li>
+<li>add new build of <code>insightface</code>, thanks @hameerabbasi  </li>
+<li><strong>Checks</strong></li>
+<li>switch to <code>pyproject.toml</code> for tool configs  </li>
+<li>update <code>lint</code> rules, thanks @awsr  </li>
+<li>add <code>ty</code> to optional lint tooling  </li>
+<li>add <code>pyright</code> to optional lint tooling  </li>
 <li><strong>Fixes</strong></li>
 <li>handle <code>clip</code> installer doing unwanted <code>setuptools</code> update  </li>
 <li>cleanup for <code>uv</code> installer fallback  </li>
