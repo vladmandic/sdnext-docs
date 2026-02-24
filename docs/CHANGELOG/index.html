@@ -3571,22 +3571,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-02-22" class="md-nav__link">
+  <a href="#update-for-2026-02-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-02-22
+        Update for 2026-02-24
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-02-22">
+    <nav class="md-nav" aria-label="Update for 2026-02-24">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-02-22" class="md-nav__link">
+  <a href="#highlights-for-2026-02-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-02-22
+        Highlights for 2026-02-24
       
     </span>
   </a>
@@ -3594,10 +3594,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-02-22" class="md-nav__link">
+  <a href="#details-for-2026-02-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-02-22
+        Details for 2026-02-24
       
     </span>
   </a>
@@ -5852,22 +5852,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-02-22" class="md-nav__link">
+  <a href="#update-for-2026-02-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-02-22
+        Update for 2026-02-24
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-02-22">
+    <nav class="md-nav" aria-label="Update for 2026-02-24">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-02-22" class="md-nav__link">
+  <a href="#highlights-for-2026-02-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-02-22
+        Highlights for 2026-02-24
       
     </span>
   </a>
@@ -5875,10 +5875,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-02-22" class="md-nav__link">
+  <a href="#details-for-2026-02-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-02-22
+        Details for 2026-02-24
       
     </span>
   </a>
@@ -8127,10 +8127,14 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-02-22">Update for 2026-02-22</h2>
-<h3 id="highlights-for-2026-02-22">Highlights for 2026-02-22</h3>
-<p>TBD</p>
-<h3 id="details-for-2026-02-22">Details for 2026-02-22</h3>
+<h2 id="update-for-2026-02-24">Update for 2026-02-24</h2>
+<h3 id="highlights-for-2026-02-24">Highlights for 2026-02-24</h3>
+<p>This release brings massive code refactoring to modernize codebase and removal of some obsolete features. Leaner &amp; Faster!<br />
+And since its a bit quieter period when it comes to new models, so we have two deep fine-tunes: <em>FireRed-Image-Edit</em> and <em>SkyWorks-UniPic-3</em><br />
+What else? Updated localization with new languages and improved translations, several new upscalers, futher improvements to captioning, some new UI themes<br />
+But also many smaller quality-of-life improvements - for full details, see <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a>  </p>
+<p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
+<h3 id="details-for-2026-02-24">Details for 2026-02-24</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.0">FireRed Image Edit</a><br />
@@ -8151,7 +8155,6 @@
 <li>hires: allow using different lora in refiner prompt  </li>
 <li><strong>nunchaku</strong> models are now listed in networks tab as reference models<br />
     instead of being used implicitly via quantization, thanks @CalamitousFelicitousness  </li>
-<li>removed: old <code>codeformer</code> and <code>gfpgan</code> face restorers, thanks @CalamitousFelicitousness  </li>
 <li><strong>Compute</strong></li>
 <li><strong>ROCm</strong> support for additional AMD GPUs: <code>gfx103X</code>, thanks @crashingalexsan  </li>
 <li><strong>Cuda</strong> <code>torch==2.10</code> removed support for <code>rtx1000</code> series, use following before first startup:<br />
@@ -8194,6 +8197,9 @@
 <li><strong>Obsolete</strong></li>
 <li>remove <code>normalbae</code> pre-processor  </li>
 <li>remove <code>dwpose</code> pre-processor  </li>
+<li>remove <code>hdm</code> model support  </li>
+<li>remove <code>xadapter</code> script  </li>
+<li>remove <code>codeformer</code> and <code>gfpgan</code> face restorers, thanks @CalamitousFelicitousness  </li>
 <li><strong>Checks</strong></li>
 <li>switch to <code>pyproject.toml</code> for tool configs  </li>
 <li>update <code>lint</code> rules, thanks @awsr  </li>
@@ -8213,6 +8219,7 @@
 <li>ltx2-i2v  </li>
 <li>handle missing preview image  </li>
 <li>ui connection monitor  </li>
+<li>kandinsky 5 t2i/i2i model type detection  </li>
 </ul>
 <h2 id="update-for-2026-02-04">Update for 2026-02-04</h2>
 <h3 id="highlights-for-2026-02-04">Highlights for 2026-02-04</h3>
