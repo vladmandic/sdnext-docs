@@ -8143,17 +8143,16 @@ But also many smaller quality-of-life improvements - for full details, see <a hr
 <li><a href="https://huggingface.co/Skywork/Unipic3">Skyworks UniPic-3</a>, <em>Consistency and DMD</em> variants to reference/community section<br />
 <em>Note</em>: UniPic-3 is a fine-tune of Qwen-Image-Edit with new distillation regardless of its claim of major changes  </li>
 <li><strong>Image manipulation</strong></li>
-<li>use high-quality <a href="https://github.com/drhead/Sharpfin">sharpfin</a> accelerated library<br />
-    when available (cuda-only), thanks @CalamitousFelicitousness  </li>
 <li>add support for <a href="https://github.com/chaiNNer-org/spandrel">spandrel</a><br />
 <strong>upscaling</strong> engine with suport for new upscaling model families  </li>
 <li>add two new ai upscalers: <em>RealPLKSR NomosWebPhoto</em> and <em>RealPLKSR AnimeSharpV2</em>  </li>
 <li>add two new <strong>interpolation</strong> methods: <em>HQX</em> and <em>ICB</em>  </li>
+<li>use high-quality <a href="https://github.com/drhead/Sharpfin">sharpfin</a> accelerated library<br />
+    when available (<em>cuda-only</em>), thanks @CalamitousFelicitousness  </li>
 <li><strong>Features</strong></li>
 <li>pipelines: add <strong>ZImageInpaint</strong>, thanks @CalamitousFelicitousness  </li>
-<li>add <code>--remote</code> command line flag that reduces client/server chatter and improves link stability<br />
-    for long-running generates, useful when running on remote servers  </li>
-<li>hires: allow using different lora in refiner prompt  </li>
+<li><strong>captioning</strong> and <strong>prompt enhance</strong>: add support for cloud-based Gemini models <code>flash-3.0</code> and <code>pro-3.1</code>  </li>
+<li><strong>hires</strong>: allow using different lora in refiner prompt  </li>
 <li><strong>nunchaku</strong> models are now listed in networks tab as reference models<br />
     instead of being used implicitly via quantization, thanks @CalamitousFelicitousness  </li>
 <li><strong>Compute</strong></li>
