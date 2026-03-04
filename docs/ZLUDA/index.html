@@ -4356,9 +4356,13 @@
 
 
 <h1 id="zluda">ZLUDA</h1>
-<p><strong>ZLUDA</strong> is a CUDA Wrapper that allows to run applications using normally unsupported GPUS such as AMD GPUs in Windows  </p>
+<p><strong>ZLUDA</strong> is a CUDA Wrapper that allows to run applications using normally unsupported GPUS such as AMD GPUs in Windows.  </p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>If you are looking for the official ROCm support through AMD's <a href="https://github.com/ROCm/TheRock">TheRock</a> project, please refer to <a href="https://github.com/vladmandic/sdnext/wiki/AMD-ROCm#rocm-on-windows">ROCm on Windows</a> section of <a href="https://github.com/vladmandic/sdnext/wiki/AMD-ROCm">AMD ROCm</a> page.</p>
+</div>
 <h2 id="warning">Warning</h2>
-<p>ZLUDA support is unofficial and support is limited at this time  </p>
+<p>ZLUDA support is unofficial and support is limited at this time.  </p>
 <ul>
 <li>For unofficial instructions on how to manually build ROCm libraries, see <a href="./#rocm-custom-build">ROCm Custom Build</a> section  </li>
 <li>For unofficial instructions on how to install ROCm for older GPUs such as Polaris and Vega, see <a href="https://github.com/vladmandic/sdnext/issues/3898">ROCm for Polaris and Vega</a> post  </li>
@@ -4384,8 +4388,12 @@ If you get the options to Repair or Uninstall, then you already have it installe
 <h3 id="install-zluda">Install ZLUDA</h3>
 <p>ZLUDA is now auto-installed, and automatically added to PATH, when starting webui.bat with <code>--use-zluda</code>.</p>
 <h3 id="install-hip-sdk">Install HIP SDK</h3>
-<p>Install HIP SDK 6.2 from <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html</a><br />
+<p>Install HIP SDK 6.2 (or 6.4) from <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html</a><br />
 So long as your regular AMD GPU driver is up to date, you don't need to install the PRO driver HIP SDK suggests.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>HIP SDK 7.x is NOT supported at the moment.</p>
+</div>
 <h3 id="replace-hip-sdk-library-files-for-unsupported-gpu-architectures">Replace HIP SDK library files for unsupported GPU architectures</h3>
 <p>Go to <a href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html">https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html</a> and find your GPU model.<br />
 If your GPU model has a ✅ in both columns then skip to <a href="./#install-sdnext">Install SD.Next</a>.<br />
