@@ -4310,10 +4310,9 @@
 <h2 id="features">Features</h2>
 <ul>
 <li>SDNQ is fully cross-platform, supports all GPUs and CPUs and includes many quantization methods:  </li>
-<li>Supports <em>19</em> int-based and <em>69</em> float-based quantization schemes in total  </li>
-<li><em>16-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit int and uint</em>  </li>
-<li><em>16-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit float and their variants</em>  </li>
-<li><em>note</em>: <code>int8</code> is very close to the original 16 bit quality  </li>
+<li>Supports <em>25</em> int-based and <em>103</em> float-based quantization schemes totaling to <em>128</em> supported quantization schemes  </li>
+<li><em>16-bit, 14-bit, 12-bit, 10-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit int and uint</em>  </li>
+<li><em>16-bit, 14-bit, 12-bit, 10-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit float and their variants</em>  </li>
 <li>Supports nearly all model types  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
 <li>Supports Quantized MatMul with significant speedups on INT8 or FP8 supported GPUs  </li>
@@ -4405,24 +4404,53 @@ Symmetric quants can store negative and positive values meaning they don't have 
 <p>Quality difference between asymmetric and symmetric quantization is very small for 8 to 6 bits but you should use asymmetric methods below 5 bits.  </p>
 <ul>
 <li><code>int16</code> uses int16 and has -32768 to 32767 range.  </li>
-<li><code>int8</code> uses int8 and has -128 to 127 range.  </li>
+<li><code>int14</code> uses eight int14 values packed into seven int16 values and has -8192 to 8191 range.  </li>
+<li><code>int12</code> uses four int12 values packed into three int16 values and has -2048 to 2047 range.  </li>
+<li>
+<p><code>int10</code> uses eight int10 values packed into five int16 values and has -512 to 511 range.  </p>
+</li>
+<li>
+<p><code>int8</code> uses int8 and has -128 to 127 range.  </p>
+</li>
 <li><code>int7</code> uses eight int7 values packed into seven uint8 values and has -64 to 63 range.  </li>
 <li><code>int6</code> uses four int6 values packed into three uint8 values and has -32 to 31 range.  </li>
 <li><code>int5</code> uses eight int5 values packed into five uint8 values and has -16 to 15 range.  </li>
 <li><code>int4</code> uses two int4 values packed into a single uint8 value and has -8 to 7 range.  </li>
 <li><code>int3</code> uses eight int3 values packed into a three uint8 values and has -4 to 3 range.  </li>
-<li><code>int2</code> uses four int2 values packed into a single uint8 value and has -2 to 1 range.  </li>
-<li><code>uint16</code> uses uint16 and has 0 to 65535 range.  </li>
-<li><code>uint8</code> uses uint8 and has 0 to 255 range.  </li>
+<li>
+<p><code>int2</code> uses four int2 values packed into a single uint8 value and has -2 to 1 range.  </p>
+</li>
+<li>
+<p><code>uint16</code> uses uint16 and has 0 to 65535 range.  </p>
+</li>
+<li><code>uint14</code> uses eight uint14 values packed into seven int16 values and has 0 to 16384 range.  </li>
+<li><code>uint12</code> uses four uint12 values packed into three int16 values and has 0 to 4096 range.  </li>
+<li>
+<p><code>uint10</code> uses eight uint10 values packed into five int16 values and has 0 to 1024 range.  </p>
+</li>
+<li>
+<p><code>uint8</code> uses uint8 and has 0 to 255 range.  </p>
+</li>
 <li><code>uint7</code> uses eight uint7 values packed into seven uint8 values and has 0 to 127 range.  </li>
 <li><code>uint6</code> uses four uint6 values packed into three uint8 values and has 0 to 63 range.  </li>
 <li><code>uint5</code> uses eight uint5 values packed into five uint8 values and has 0 to 31 range.  </li>
 <li><code>uint4</code> uses two uint4 values packed into a single uint8 value and has 0 to 15 range.  </li>
 <li><code>uint3</code> uses eight uint3 values packed into a three uint8 value and has 0 to 7 range.  </li>
 <li><code>uint2</code> uses four uint2 values packed into a single uint8 value and has 0 to 3 range.  </li>
-<li><code>uint1</code> uses eight uint1 values packed into a single uint8 value and has 0 to 1 range.  </li>
-<li><code>float16</code> uses float16 and has -65504 to 65504 range.  </li>
-<li><code>float8_e4m3fn</code> uses float8_e4m3fn and has -448 to 448 range.  </li>
+<li>
+<p><code>uint1</code> uses eight uint1 values packed into a single uint8 value and has 0 to 1 range.  </p>
+</li>
+<li>
+<p><code>float16</code> uses float16 and has -65504 to 65504 range.  </p>
+</li>
+<li><code>float14_e5m8fn</code> uses float14_e5m8fn packed into uint14 and has -130816 to 130816 range.  </li>
+<li><code>float12_e5m6fn</code> uses float12_e5m6fn packed into uint12 and has -130048 to 130048 range.  </li>
+<li>
+<p><code>float10_e5m4fn</code> uses float10_e5m4fn packed into uint10 and has -126976 to 126976 range.  </p>
+</li>
+<li>
+<p><code>float8_e4m3fn</code> uses float8_e4m3fn and has -448 to 448 range.  </p>
+</li>
 <li><code>float7_e3m3fn</code> uses float7_e3m3fn packed into uint7 and has -30 to 30 range.  </li>
 <li><code>float6_e3m2fn</code> uses float6_e3m2fn packed into uint6 and has -28 to 28 range.  </li>
 <li><code>float5_e2m2fn</code> uses float5_e2m2fn packed into uint5 and has -7.0 to 7.0 range.  </li>
