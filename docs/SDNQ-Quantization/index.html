@@ -3192,17 +3192,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quantized-matmul-type" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quantized MatMul type
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#triton" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3307,6 +3296,23 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantized-matmul-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantized MatMul type
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantized MatMul type">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#modules-to-not-convert" class="md-nav__link">
@@ -3954,17 +3960,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quantized-matmul-type" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quantized MatMul type
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#triton" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4069,6 +4064,23 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantized-matmul-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantized MatMul type
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantized MatMul type">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#modules-to-not-convert" class="md-nav__link">
@@ -4335,9 +4347,6 @@
   You can use <code>INT6</code> with little quality loss to save more memory and <code>UINT4</code> to save even more memory<br />
 <code>float8_e4m3fn</code> is another option for fast speed and high quality but <code>FP8</code> has slightly lower quality and performance than <code>INT8</code>  </li>
 </ul>
-<h2 id="quantized-matmul-type">Quantized MatMul type</h2>
-<p>Overrides the Quantized MatMul type.<br />
-Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types, FP8 MatMul with FP types below 12 bits and Quantized FP16 MatMul with FP types above 12 bits.  </p>
 <h2 id="triton">Triton</h2>
 <p>Triton enables the use of optimized kernels for much better performance.<br />
 Triton is not required for SDNQ but it is highly recommended for much better performance.<br />
@@ -4474,6 +4483,9 @@ Symmetric quants can store negative and positive values meaning they don't have 
 <h3 id="quantization-type-for-text-encoders">Quantization type for Text Encoders</h3>
 <p>Same as <code>Quantization type</code> but for the Text Encoders.<br />
 <code>default</code> option will use the same type as <code>Quantization type</code>.  </p>
+<h2 id="quantized-matmul-type">Quantized MatMul type</h2>
+<p>Overrides the Quantized MatMul type.<br />
+Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types, FP8 MatMul with FP types below 16 bits and Quantized FP16 MatMul with FP types above 16 bits.  </p>
 <h3 id="modules-to-not-convert">Modules to not convert</h3>
 <p>A comma separated list of module names to skip quantization.<br />
 Modules listed in this option will not be quantized and will be kept in full precision.<br />
@@ -4511,9 +4523,14 @@ Default is <code>8</code>.  </p>
 <p>The target threshold to use with <code>Dynamic quantization</code>.<br />
 SDNQ uses STD normalized MSE loss to calculate its quantization loss and this option will be used as the loss target for it.  </p>
 <p>Some recommended target presets are:</p>
-<p>8 bit: <code>2e-4</code><br />
+<p>16 bit: <code>1e-8</code><br />
+14 bit: <code>1e-7</code><br />
+12 bit: <code>1e-6</code><br />
+10 bit: <code>1e-5</code><br />
+8 bit: <code>1e-4</code><br />
 6 bit: <code>1e-3</code><br />
-4 bit: <code>1e-2</code>  </p>
+4 bit: <code>1e-2</code><br />
+2 bit: <code>1e-1</code>  </p>
 <p>These targets are not set in stone and might require some trial and error depending on the model.<br />
 Default is <code>1e-2</code> </p>
 <h3 id="use-svd-quantization">Use SVD quantization</h3>
@@ -4575,7 +4592,7 @@ If <code>Model offload mode</code> is set to <code>model</code>, quantized model
 <h3 id="dequantize-using-full-precision">Dequantize using full precision</h3>
 <p>Enabling this option will use <code>FP32</code> on the dequantization step and will keep the scales, zero points and svd in FP32.<br />
 Has higher quality outputs but lower performance.<br />
-Disabled by default.  </p>
+Enabled by default.  </p>
 
 
 
