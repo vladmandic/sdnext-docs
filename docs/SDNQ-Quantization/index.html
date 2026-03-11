@@ -4310,12 +4310,12 @@
 <h2 id="features">Features</h2>
 <ul>
 <li>SDNQ is fully cross-platform, supports all GPUs and CPUs and includes many quantization methods:  </li>
-<li>Supports <em>25</em> int-based and <em>103</em> float-based quantization schemes totaling to <em>128</em> supported quantization schemes  </li>
-<li><em>16-bit, 14-bit, 12-bit, 10-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit int and uint</em>  </li>
-<li><em>16-bit, 14-bit, 12-bit, 10-bit, 8-bit, 7-bit, 6-bit, 5-bit, 4-bit, 3-bit, 2-bit and 1-bit float and their variants</em>  </li>
+<li>Supports bit rates all the way from 1-bit to 16-bit  </li>
+<li>Supports <em>integer</em>, <em>unsigned integer</em>, <em>floating point</em>, <em>unsigned floating point</em> formats and their variants  </li>
+<li>Supports 33 int-based and 143 float-based quantization schemes totaling to 176 supported quantization schemes  </li>
 <li>Supports nearly all model types  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
-<li>Supports Quantized MatMul with significant speedups on INT8 or FP8 supported GPUs  </li>
+<li>Supports Quantized MatMul with significant speedups on INT8, FP8 or FP16 supported GPUs  </li>
 <li>Supports on the fly quantization during model load with little to no overhead (called as <code>pre</code> mode)  </li>
 <li>Supports quantization for the convolutional layers with UNet models  </li>
 <li>Supports post load quantization for any model  </li>
@@ -4337,7 +4337,7 @@
 </ul>
 <h2 id="quantized-matmul-type">Quantized MatMul type</h2>
 <p>Overrides the Quantized MatMul type.<br />
-Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types and will use FP8 matmul with FP types.  </p>
+Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types, FP8 MatMul with FP types below 12 bits and Quantized FP16 MatMul with FP types above 12 bits.  </p>
 <h2 id="triton">Triton</h2>
 <p>Triton enables the use of optimized kernels for much better performance.<br />
 Triton is not required for SDNQ but it is highly recommended for much better performance.<br />
@@ -4404,10 +4404,14 @@ Symmetric quants can store negative and positive values meaning they don't have 
 <p>Quality difference between asymmetric and symmetric quantization is very small for 8 to 6 bits but you should use asymmetric methods below 5 bits.  </p>
 <ul>
 <li><code>int16</code> uses int16 and has -32768 to 32767 range.  </li>
+<li><code>int15</code> uses sixteen int15 values packed into fifteen int16 values and has -16384 to 16383 range.  </li>
 <li><code>int14</code> uses eight int14 values packed into seven int16 values and has -8192 to 8191 range.  </li>
+<li><code>int13</code> uses sixteen int13 values packed into thirteen int16 values and has -4096 to 4095 range.  </li>
 <li><code>int12</code> uses four int12 values packed into three int16 values and has -2048 to 2047 range.  </li>
+<li><code>int11</code> uses sixteen int11 values packed into eleven int16 values and has -1024 to 1023 range.  </li>
+<li><code>int10</code> uses eight int10 values packed into five int16 values and has -512 to 511 range.  </li>
 <li>
-<p><code>int10</code> uses eight int10 values packed into five int16 values and has -512 to 511 range.  </p>
+<p><code>int9</code> uses sixteen int9 values packed into nine int16 values and has -256 to 255 range.  </p>
 </li>
 <li>
 <p><code>int8</code> uses int8 and has -128 to 127 range.  </p>
@@ -4423,10 +4427,14 @@ Symmetric quants can store negative and positive values meaning they don't have 
 <li>
 <p><code>uint16</code> uses uint16 and has 0 to 65535 range.  </p>
 </li>
+<li><code>uint15</code> uses sixteen uint15 values packed into fifteen int16 values and has 0 to 32768 range.  </li>
 <li><code>uint14</code> uses eight uint14 values packed into seven int16 values and has 0 to 16384 range.  </li>
+<li><code>uint13</code> uses sixteen uint13 values packed into thirteen int16 values and has 0 to 8192 range.  </li>
 <li><code>uint12</code> uses four uint12 values packed into three int16 values and has 0 to 4096 range.  </li>
+<li><code>uint11</code> uses sixteen uint11 values packed into eleven int16 values and has 0 to 2048 range.  </li>
+<li><code>uint10</code> uses eight uint10 values packed into five int16 values and has 0 to 1024 range.  </li>
 <li>
-<p><code>uint10</code> uses eight uint10 values packed into five int16 values and has 0 to 1024 range.  </p>
+<p><code>uint9</code> uses sixteen uint9 values packed into nine int16 values and has 0 to 512 range.  </p>
 </li>
 <li>
 <p><code>uint8</code> uses uint8 and has 0 to 255 range.  </p>
@@ -4443,10 +4451,14 @@ Symmetric quants can store negative and positive values meaning they don't have 
 <li>
 <p><code>float16</code> uses float16 and has -65504 to 65504 range.  </p>
 </li>
+<li><code>float15_e5m9fn</code> uses float15_e5m9fn packed into uint15 and has -130944 to 130944 range.  </li>
 <li><code>float14_e5m8fn</code> uses float14_e5m8fn packed into uint14 and has -130816 to 130816 range.  </li>
+<li><code>float13_e5m7fn</code> uses float13_e5m7fn packed into uint13 and has -130560 to 130560 range.  </li>
 <li><code>float12_e5m6fn</code> uses float12_e5m6fn packed into uint12 and has -130048 to 130048 range.  </li>
+<li><code>float11_e5m5fn</code> uses float11_e5m5fn packed into uint11 and has -129024 to 129024 range.  </li>
+<li><code>float10_e5m4fn</code> uses float10_e5m4fn packed into uint10 and has -126976 to 126976 range.  </li>
 <li>
-<p><code>float10_e5m4fn</code> uses float10_e5m4fn packed into uint10 and has -126976 to 126976 range.  </p>
+<p><code>float9_e4m4fn</code> uses float9_e4m4fn packed into uint9 and has -496 to 496 range.  </p>
 </li>
 <li>
 <p><code>float8_e4m3fn</code> uses float8_e4m3fn and has -448 to 448 range.  </p>
