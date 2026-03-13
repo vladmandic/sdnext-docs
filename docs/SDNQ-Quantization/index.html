@@ -4485,7 +4485,8 @@ Symmetric quants can store negative and positive values meaning they don't have 
 <code>default</code> option will use the same type as <code>Quantization type</code>.  </p>
 <h2 id="quantized-matmul-type">Quantized MatMul type</h2>
 <p>Overrides the Quantized MatMul type.<br />
-Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types, FP8 MatMul with FP types below 16 bits and Quantized FP16 MatMul with FP types above 16 bits.  </p>
+Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types, FP8 MatMul with FP types below 16 bits and Quantized FP16 MatMul with FP types above 16 bits.<br />
+This option has no effect if <code>Use Quantized MatMul</code> options is disabled.  </p>
 <h3 id="modules-to-not-convert">Modules to not convert</h3>
 <p>A comma separated list of module names to skip quantization.<br />
 Modules listed in this option will not be quantized and will be kept in full precision.<br />
