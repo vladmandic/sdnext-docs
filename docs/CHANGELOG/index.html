@@ -3571,22 +3571,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-03-09" class="md-nav__link">
+  <a href="#update-for-2026-03-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-03-09
+        Update for 2026-03-20
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-03-09">
+    <nav class="md-nav" aria-label="Update for 2026-03-20">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-03-09" class="md-nav__link">
+  <a href="#highlights-for-2026-03-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-03-09
+        Highlights for 2026-03-20
       
     </span>
   </a>
@@ -3594,10 +3594,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-03-09" class="md-nav__link">
+  <a href="#details-for-2026-03-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-03-09
+        Details for 2026-03-20
       
     </span>
   </a>
@@ -5852,22 +5852,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-03-09" class="md-nav__link">
+  <a href="#update-for-2026-03-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-03-09
+        Update for 2026-03-20
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-03-09">
+    <nav class="md-nav" aria-label="Update for 2026-03-20">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-03-09" class="md-nav__link">
+  <a href="#highlights-for-2026-03-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-03-09
+        Highlights for 2026-03-20
       
     </span>
   </a>
@@ -5875,10 +5875,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-03-09" class="md-nav__link">
+  <a href="#details-for-2026-03-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-03-09
+        Details for 2026-03-20
       
     </span>
   </a>
@@ -8127,14 +8127,16 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-03-09">Update for 2026-03-09</h2>
-<h3 id="highlights-for-2026-03-09">Highlights for 2026-03-09</h3>
+<h2 id="update-for-2026-03-20">Update for 2026-03-20</h2>
+<h3 id="highlights-for-2026-03-20">Highlights for 2026-03-20</h3>
 <p>This release brings massive code refactoring to modernize codebase and removal of some obsolete features. Leaner &amp; Faster!<br />
-And since its a bit quieter period when it comes to new models, so we have two deep fine-tunes: <em>FireRed-Image-Edit</em> and <em>SkyWorks-UniPic-3</em><br />
-What else? Updated localization with new languages and improved translations, several new upscalers, futher improvements to captioning, some new UI themes<br />
+And since its a bit quieter period when it comes to new models, notable additions would be : <em>FireRed-Image-Edit</em> <em>SkyWorks-UniPic-3</em> and <em>Anima-Preview-2</em>  </p>
+<p><em>What else</em>? Really a lot!<br />
+New color grading module, updated localization with new languages and improved translations, new civitai integration module, several new upscalers, improvements to LLM/VLM in captioning and prompt enhance, a lot of new control preprocessors, new realtime server info panel, some new UI themes<br />
+And major work on API hardening: security, rate limits, secrets handling, new endpoints, etc.<br />
 But also many smaller quality-of-life improvements - for full details, see <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a>  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2026-03-09">Details for 2026-03-09</h3>
+<h3 id="details-for-2026-03-20">Details for 2026-03-20</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://ai.google.dev/gemini-api/docs/models/gemini-3-flash-preview">Google Flash 3.1 Image</a> a.k.a. <em>Nano Banana 2</em>  </li>
@@ -8142,36 +8144,61 @@ But also many smaller quality-of-life improvements - for full details, see <a hr
 <em>Note</em>: FireRed is a fine-tune of Qwen-Image-Edit regardless of its claim as a new base-model  </li>
 <li><a href="https://huggingface.co/Skywork/Unipic3">Skyworks UniPic-3</a>, <em>Consistency and DMD</em> variants to reference/community section<br />
 <em>Note</em>: UniPic-3 is a fine-tune of Qwen-Image-Edit with new distillation regardless of its claim of major changes  </li>
+<li><a href="https://huggingface.co/circlestone-labs/Anima">Anima Preview-v2</a>  </li>
 <li><strong>Image manipulation</strong></li>
+<li>new <strong>color grading</strong> module  </li>
+<li>update <strong>latent corrections</strong> <em>(former HDR Corrections)</em> and expand allowed models  </li>
 <li>add support for <a href="https://github.com/chaiNNer-org/spandrel">spandrel</a><br />
 <strong>upscaling</strong> engine with suport for new upscaling model families  </li>
 <li>add two new ai upscalers: <em>RealPLKSR NomosWebPhoto</em> and <em>RealPLKSR AnimeSharpV2</em>  </li>
 <li>add two new <strong>interpolation</strong> methods: <em>HQX</em> and <em>ICB</em>  </li>
 <li>use high-quality <a href="https://github.com/drhead/Sharpfin">sharpfin</a> accelerated library<br />
-    when available (<em>cuda-only</em>), thanks @CalamitousFelicitousness  </li>
-<li><strong>Features</strong></li>
-<li>pipelines: add <strong>ZImageInpaint</strong>, thanks @CalamitousFelicitousness  </li>
+    when available (<em>cuda-only</em>)  </li>
+<li><strong>upscalers</strong>: extend chainner support for additional models  </li>
+<li><strong>Captioning / Prompt Enhance</strong></li>
+<li>new models: <strong>Qwen-3.5</strong>, <strong>Mistral-3</strong> in multiple variations  </li>
+<li>new models: multiple <em>heretic</em> and <em>abliterated</em> finetunes for <strong>Qwen, Gemma, Mistral</strong>  </li>
 <li><strong>captioning</strong> and <strong>prompt enhance</strong>: add support for all cloud-based Gemini models<br />
 <em>3.1/3.0/2.5 pro/flash/flash-lite</em>  </li>
+<li>improve captioning and prompt enhance memory handling/offloading  </li>
+<li><strong>Control</strong></li>
+<li>new <strong>pre-processors</strong>:<br />
+<em>anyline, depth_anything v2, dsine, lotus, marigold normals, oneformer, rtmlib pose, sam2, stablenormal, teed, vitpose</em>  </li>
+<li><strong>Features</strong></li>
+<li><strong>secrets</strong> handling: new <code>secrets.json</code> and special handling for tokens/keys/passwords<br />
+    used to be treated like any other <code>config.json</code> param which can cause security issues  </li>
+<li>pipelines: add <strong>ZImageInpaint</strong>  </li>
+<li>rewritten <strong>civitai</strong> module<br />
+    browse/discover mode with sort, period, type/base dropdowns; URL paste; subfolder sorting; auto-browse; dynamic dropdowns  </li>
 <li><strong>hires</strong>: allow using different lora in refiner prompt  </li>
 <li><strong>nunchaku</strong> models are now listed in networks tab as reference models<br />
-    instead of being used implicitly via quantization, thanks @CalamitousFelicitousness  </li>
+    instead of being used implicitly via quantization  </li>
+<li>improve image <strong>metadata</strong> parser for foreign metadata (e.g. XMP)  </li>
 <li><strong>Compute</strong></li>
 <li><strong>ROCm</strong> support for additional AMD GPUs: <code>gfx103X</code>, thanks @crashingalexsan  </li>
 <li><strong>Cuda</strong> <code>torch==2.10</code> removed support for <code>rtx1000</code> series, use following before first startup:<br />
     &gt; <code>set TORCH_COMMAND='torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cu126'</code>  </li>
 <li><strong>UI</strong></li>
+<li>new panel: <strong>server info</strong> with detailed runtime informaton  </li>
 <li><strong>localization</strong> improved translation quality and new translations locales:<br />
 <em>en, en1, en2, en3, en4, hr, es, it, fr, de, pt, ru, zh, ja, ko, hi, ar, bn, ur, id, vi, tr, sr, po, he, xx, yy, qq, tlh</em><br />
     yes, this now includes stuff like <em>latin, esperanto, arabic, hebrew, klingon</em> and a lot more!<br />
     and also intruce some pseudo-locales such as: <em>techno-babbel</em>, <em>for-n00bs</em><br />
 <em>hint</em>: click on locale icon in bottom-left corner to cycle through available locales, or set default in <em>settings -&gt; ui</em>  </li>
-<li><strong>kanvas</strong>: add paste image from clipboard</li>
+<li><strong>server settings</strong> new section in <em>settings</em>  </li>
+<li><strong>kanvas</strong> add paste image from clipboard  </li>
 <li><strong>themes</strong> add <em>CTD-NT64Light</em>, <em>CTD-NT64Medium</em> and <em>CTD-NT64Dark</em>, thanks @resonantsky  </li>
 <li><strong>themes</strong> add <em>Vlad-Neomorph</em>  </li>
 <li><strong>gallery</strong> add option to auto-refresh gallery, thanks @awsr  </li>
+<li><strong>token counters</strong> add per-section display for supported models, thanks @awsr  </li>
 <li><strong>API</strong></li>
+<li><strong>rate limiting</strong>: global for all endpoints, guards against abuse and denial-of-service type of attacks<br />
+    configurable in <em>settings -&gt; server settings</em>  </li>
 <li>new <code>/sdapi/v1/upload</code> endpoint with support for both POST with form-data or PUT using raw-bytes  </li>
+<li>new <code>/sdapi/v1/torch</code> endpoint for torch info (backend, version, etc.)  </li>
+<li>new <code>/sdapi/v1/gpu</code> endpoint for GPU info  </li>
+<li>new <code>/sdapi/v1/rembg</code> endpoint for background removal  </li>
+<li>use rate limiting for api logging  </li>
 <li><strong>Internal</strong></li>
 <li><code>python==3.13</code> full support  </li>
 <li><code>python==3.14</code> initial support<br />
@@ -8180,12 +8207,19 @@ But also many smaller quality-of-life improvements - for full details, see <a hr
 <code>clip, numba, skimage, torchsde, omegaconf, antlr, patch-ng, patch-ng, astunparse, addict, inflection, jsonmerge, kornia</code>,<br />
 <code>resize-right, voluptuous, yapf, sqlalchemy, invisible-watermark, pi-heif, ftfy, blendmodes, PyWavelets, imp</code><br />
     these are now installed on-demand when needed  </li>
-<li>refactor to/from <em>image/tensor</em> logic, thanks @CalamitousFelicitousness  </li>
+<li>bump <code>huggingface_hub==1.5.0</code>  </li>
+<li>bump <code>transformers==5.3.0</code>  </li>
+<li>refactor to/from <em>image/tensor</em> logic  </li>
 <li>refactor reorganize <code>cli</code> scripts  </li>
 <li>refactor move tests to dedicated <code>/test/</code>  </li>
 <li>refactor all image handling to <code>modules/image/</code>  </li>
-<li>remove face restoration, thanks @CalamitousFelicitousness  </li>
+<li>refactor: many params that were server-global are now ui params that are handled per-request<br />
+<em>schedulers, todo, tome, etc.</em>  </li>
+<li>refactor: error handling during <code>torch.compile</code>  </li>
+<li>refactor: move <code>rebmg</code> to core instead of extensions  </li>
+<li>remove face restoration  </li>
 <li>unified command line parsing  </li>
+<li>use explcit image references in <code>gallery</code>, thanks @awsr  </li>
 <li>launch use threads to async execute non-critical tasks  </li>
 <li>switch from deprecated <code>pkg_resources</code> to <code>importlib</code>  </li>
 <li>modernize typing and type annotations  </li>
@@ -8197,7 +8231,6 @@ But also many smaller quality-of-life improvements - for full details, see <a hr
 <li>use <code>threading</code> for deferable operatios  </li>
 <li>use <code>threading</code> for io-independent parallel operations  </li>
 <li>remove requirements: <code>clip</code>, <code>open-clip</code>  </li>
-<li>captioning part-2, thanks @CalamitousFelicitousness  </li>
 <li>add new build of <code>insightface</code>, thanks @hameerabbasi  </li>
 <li>reduce use of generators with ui interactor  </li>
 <li>better subprocess execute, thanks @awsr  </li>
@@ -8207,29 +8240,35 @@ But also many smaller quality-of-life improvements - for full details, see <a hr
 <li>remove <code>dwpose</code> pre-processor  </li>
 <li>remove <code>hdm</code> model support  </li>
 <li>remove <code>xadapter</code> script  </li>
-<li>remove <code>codeformer</code> and <code>gfpgan</code> face restorers, thanks @CalamitousFelicitousness  </li>
+<li>remove <code>codeformer</code> and <code>gfpgan</code> face restorers  </li>
 <li><strong>Checks</strong></li>
 <li>switch to <code>pyproject.toml</code> for tool configs  </li>
 <li>update <code>lint</code> rules, thanks @awsr  </li>
 <li>add <code>ty</code> to optional lint tooling  </li>
 <li>add <code>pyright</code> to optional lint tooling  </li>
 <li><strong>Fixes</strong></li>
+<li>ui <code>gallery</code> cache recursive cleanup, thanks @awsr  </li>
+<li>ui main results pane sizing  </li>
+<li>ui connection monitor  </li>
 <li>handle <code>clip</code> installer doing unwanted <code>setuptools</code> update  </li>
 <li>cleanup for <code>uv</code> installer fallback  </li>
-<li>add metadata restore to always-on scripts  </li>
-<li>improve wildcard weights parsing, thanks @Tillerz  </li>
-<li>ui gallery cache recursive cleanup, thanks @awsr  </li>
-<li>main results pane sizing  </li>
+<li>add <code>metadata</code> restore to always-on scripts  </li>
+<li>improve <code>wildcard</code> weights parsing, thanks @Tillerz  </li>
 <li>model detection for <code>anima</code>  </li>
-<li>lora unwanted unload  </li>
-<li>improve preview error handler  </li>
-<li>gallery over remote/unsecure connections  </li>
+<li>handle <code>lora</code> unwanted unload  </li>
+<li>improve <code>preview</code> error handler  </li>
+<li>handle <code>gallery</code> over remote/unsecure connections  </li>
 <li>fix <code>ltx2-i2v</code>  </li>
-<li>handle missing preview image  </li>
-<li>ui connection monitor  </li>
+<li>handle missing <code>preview</code> image  </li>
 <li>kandinsky 5 t2i/i2i model type detection  </li>
 <li>kanvas notify core on image size change  </li>
 <li>command arg <code>--reinstall</code> stricter enforcement  </li>
+<li>handle <code>api</code> state reset  </li>
+<li>processing upscaler refresh button  </li>
+<li>simplify and validate <code>rembg</code> dependencies  </li>
+<li>improve video generation progress tracking</li>
+<li>handle startup with bad <code>scripts</code> more gracefully  </li>
+<li>thread-safety for <code>error-limiter</code>, thanks @awsr  </li>
 </ul>
 <h2 id="update-for-2026-02-04">Update for 2026-02-04</h2>
 <h3 id="highlights-for-2026-02-04">Highlights for 2026-02-04</h3>
