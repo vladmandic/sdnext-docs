@@ -79,6 +79,7 @@ nav:
   - Install:
     - Install: Installation.md
     - Update: Update.md
+    - Launcher: Launcher.md
     - Python Notes: Python.md
     - Advanced Install: Advanced-Install.md
     - CLI Arguments: CLI-Arguments.md
