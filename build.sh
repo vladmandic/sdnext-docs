@@ -42,8 +42,10 @@ fi
 cd "${WIKI}"
 rm index.md >/dev/null 2>&1
 rm CHANGELOG.md >/dev/null 2>&1
+rm Notes.md >/dev/null 2>&1
 git pull
 wget https://raw.githubusercontent.com/vladmandic/automatic/refs/heads/dev/CHANGELOG.md
+wget https://raw.githubusercontent.com/vladmandic/automatic/refs/heads/dev/README.md -O Notes.md
 cp Home.md index.md
 cp ../sdnext.css .
 cd ..

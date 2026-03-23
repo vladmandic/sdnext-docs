@@ -73,10 +73,13 @@ exclude_docs: |
   _*
   Home.md
 nav:
-  - Home: index.md
+  - Home:
+    - Quick Start: index.md
+    - Quick Notes: Notes.md
   - Install:
     - Install: Installation.md
     - Update: Update.md
+    - Python Notes: Python.md
     - Advanced Install: Advanced-Install.md
     - CLI Arguments: CLI-Arguments.md
   - Models:
@@ -95,16 +98,17 @@ nav:
     - LTXVideo: LTX.md
     - Google-GenAI: Google-GenAI.md
   - Platforms:
+    - nVidia-CUDA: nVidia.md
     - WSL: WSL.md
     - Intel-ARC: Intel-ARC.md
-    - DirectML: DirectML.md
+    - AMD-ROCm: AMD-ROCm.md
+    - AMD-MIOpen: AMD-MIOpen.md
+    - ZLUDA: ZLUDA.md
     - OpenVINO: OpenVINO.md
     - ONNX & Olive: ONNX-Runtime.md
-    - ZLUDA: ZLUDA.md
-    - AMD-ROCm: AMD-ROCm.md
     - MacOS-Python: MacOS-Python.md
-    - nVidia-CUDA: nVidia.md
     - Docker: Docker.md
+    - DirectML: DirectML.md
   - Guides:
     - Getting Started: Getting-Started.md
     - Features Overview: Features.md
