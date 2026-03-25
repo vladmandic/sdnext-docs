@@ -4651,7 +4651,9 @@ Default is <code>8</code>.  </p>
 <h3 id="dynamic-loss-threshold">Dynamic loss threshold</h3>
 <p>The target threshold to use with <code>Dynamic quantization</code>.<br />
 SDNQ uses STD normalized MSE loss to calculate its quantization loss and this option will be used as the loss target for it.  </p>
-<p>Some recommended target presets are:</p>
+<p>Setting the loss threshold to a negative value or the value <code>None</code> will make SDNQ auto-select a threshold based on the weights dtype.<br />
+The formula used to calculate the threshold is: <code>10 ** -(num_bits / 2)</code>  </p>
+<p>Some recommended target presets are:  </p>
 <p>16 bit: <code>1e-8</code><br />
 14 bit: <code>1e-7</code><br />
 12 bit: <code>1e-6</code><br />
@@ -4661,7 +4663,7 @@ SDNQ uses STD normalized MSE loss to calculate its quantization loss and this op
 4 bit: <code>1e-2</code><br />
 2 bit: <code>1e-1</code>  </p>
 <p>These targets are not set in stone and might require some trial and error depending on the model.<br />
-Default is <code>1e-2</code> </p>
+Default is <code>None</code> </p>
 <h3 id="use-svd-quantization">Use SVD quantization</h3>
 <p>Enabling this option will apply SVD quantization on top of SDNQ quantization.<br />
 SVD has much higher quality but runs slower.<br />

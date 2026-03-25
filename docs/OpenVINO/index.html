@@ -1747,30 +1747,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#quantization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quantization
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-compression" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Model Compression
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3976,30 +3954,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#quantization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quantization
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-compression" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Model Compression
-      
-    </span>
-  </a>
   
 </li>
       
@@ -4056,10 +4012,10 @@
 <em> Compiles models for your hardware.<br />
 </em> Supports <strong>Linux and Windows</strong><br />
 <em> Supports </em>CPU<em> / </em>GPU<em> / </em>iGPU<em> / </em>NPU<em><br />
-</em> Supports <strong>AMD</strong> GPUs on <strong>Windows</strong> with <strong>FP16</strong> support.<br />
-<em> Supports </em><em>INTEL</em><em> dGPUs and iGPUs.<br />
+</em> Supports <strong>INTEL</strong> dGPUs, iGPUs and NPUs.<br />
+<em> Supports </em><em>AMD</em><em> dGPUs and iGPUs on </em><em>Windows</em><em> with </em><em>FP16</em><em> support.<br />
 </em> Supports <strong>NVIDIA</strong> GPUs.<br />
-<em> Supports </em><em>CPUs</em><em> with </em><em>BF16</em><em> and </em><em>INT8</em><em> support.<br />
+<em> Supports </em><em>CPUs</em><em> with </em><em>BF16</em><em> or </em><em>FP32</em><em> support.<br />
 </em> Supports multiple devices at the same time using <strong>Hetero Device</strong>.  </p>
 <p>It is basically a TensorRT / Olive competitor that works with any hardware.  </p>
 <h2 id="installation">Installation</h2>
@@ -4117,21 +4073,6 @@ Resulting docker image will use 1.1 GB disk space (uncompressed) for the docker 
 <li>Compilation takes a few minutes and using LoRas will trigger recompilation.   </li>
 <li>Attention Slicing and HyperTile will not work.  </li>
 </ul>
-<h3 id="quantization">Quantization</h3>
-<p>Quantization enables 8 bit support without autocast.<br />
-Enable <code>OpenVINO Quantize Models with NNCF</code> option in Compute Settings to use it.  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Quantization has noticeable quality impact and generally not recommended.</p>
-</div>
-<h2 id="model-compression">Model Compression</h2>
-<p>Enable <code>Compress Model weights with NNCF</code> option in Compute Settings to use it.<br />
-Select a 4 bit mode from <code>OpenVINO compress mode for NNCF</code> to use 4 bit.<br />
-For GPUs; select both CPU and GPU from the device selection if you want to use GPU with Model Compression.  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>VAE will still be compressed to INT8 if you use a 4 bit mode.</p>
-</div>
 <h2 id="custom-devices">Custom Devices</h2>
 <p>Use the <code>OpenVINO devices to use</code> option in <code>Compute Settings</code> if you want to specify a device.<br />
 Selecting multiple devices will use multiple devices as a single <code>HETERO</code> device.  </p>
