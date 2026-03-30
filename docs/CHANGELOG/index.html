@@ -8298,8 +8298,8 @@
 <h2 id="update-for-2026-03-30">Update for 2026-03-30</h2>
 <h3 id="highlights-for-2026-03-30">Highlights for 2026-03-30</h3>
 <p>This release brings massive code refactoring to modernize codebase and removal of some obsolete features. Leaner &amp; Faster!<br />
-And since its a bit quieter period when it comes to new models, notable additions would be : <em>FireRed-Image-Edit</em>, <em>SkyWorks-UniPic-3</em> and new versions of <em>Anima-Preview</em>, <em>Flux-Klein-KV</em>  </p>
-<p>If you're on Windows platform, we have a brand new <a href="https://github.com/vladmandic/sdnext-launcher">All-in-one Installer &amp; Launcher</a>: simply download <a href="https://github.com/vladmandic/sdnext-launcher/releases">exe or zip</a> and done!</p>
+And since its a bit quieter period when it comes to new models, notable additions would be : <em>FireRed-Image-Edit</em>, <em>SkyWorks-UniPic-3</em> and new versions of <em>Anima-Preview</em>, <em>Flux-Klein-KV</em> image models and <em>LTX 2.3</em> video model  </p>
+<p>If you're on Windows platform, we have a brand new <a href="https://github.com/vladmandic/sdnext-launcher">All-in-one Installer &amp; Launcher</a>: simply download <a href="https://github.com/vladmandic/sdnext-launcher/releases">exe or zip</a> and done!  </p>
 <p><em>What else</em>? Really a lot!<br />
 New color grading module, updated localization with new languages and improved translations, new civitai integration module, new finetunes loader, several new upscalers, improvements to LLM/VLM in captioning and prompt enhance, a lot of new control preprocessors, new realtime server info panel, some new UI themes<br />
 And major work on API hardening: security, rate limits, secrets handling, new endpoints, etc.<br />
@@ -8317,6 +8317,8 @@ Just how big? Some stats: <em>~530 commits over 880 files</em>  </p>
 <em>Note</em>: UniPic-3 is a fine-tune of Qwen-Image-Edit with new distillation regardless of its claim of major changes  </li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">Anima Preview-v2</a>  </li>
 <li><a href="https://huggingface.co/black-forest-labs/FLUX.2-klein-9b-kv">FLUX.2-Klein-KV</a>, thanks @liutyi  </li>
+<li><a href="https://huggingface.co/Lightricks/LTX-2.3">LTX-Video 2.3</a> in <em>Full and Distilled</em> variants and in both original <em>FP16 and SDNQ-4bit</em> quantiztion<br />
+<em>note</em> ltx-2.3 is a massive 22B parameters and full model is very large (72GB) so use of pre-quantized variant (32GB) is highly recommended  </li>
 <li><strong>Image manipulation</strong></li>
 <li>new <strong>Color grading</strong> module<br />
     apply basic corrections to your images: brightness,contrast,saturation,shadows,highlights<br />
@@ -8364,6 +8366,9 @@ Just how big? Some stats: <em>~530 commits over 880 files</em>  </p>
 <li><em>note</em> <strong>Cuda</strong> <code>torch==2.10</code> removed support for <code>rtx1000</code> series and older GPUs<br />
     use following before first startup to force installation of <code>torch==2.9.1</code> with <code>cuda==12.6</code>:<br />
     &gt; <code>set TORCH_COMMAND='torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cu126'</code>  </li>
+<li><em>note</em> <strong>Cuda</strong> <code>cuda==13.0</code> requires newer nVidia drivers<br />
+      use following before first startup to force installation of <code>torch==2.11.0</code> with <code>cuda==12.68</code>:<br />
+    &gt; <code>set TORCH_COMMAND='torch torchvision --index-url https://download.pytorch.org/whl/cu128</code>  </li>
 <li>update installer and support <code>nunchaku==1.2.1</code></li>
 <li><strong>UI</strong></li>
 <li>legacy panels <strong>T2I</strong> and <strong>I2I</strong> are disabled by default<br />
@@ -8382,6 +8387,9 @@ Just how big? Some stats: <em>~530 commits over 880 files</em>  </p>
 <li><strong>Themes</strong> add <em>Vlad-Neomorph</em>  </li>
 <li><strong>Gallery</strong> add option to auto-refresh gallery, thanks @awsr  </li>
 <li><strong>Token counters</strong> add per-section display for supported models, thanks @awsr  </li>
+<li><strong>Docs / Wiki</strong>  </li>
+<li>updates to to compute sections: <em>AMD-ROCm, AMD-MIOpen, ZLUDA, OpenVINO, nVidia</em>  </li>
+<li>updates to core sections: <em>Installation, Python, Schedulers, Launcher, SDNQ, Video</em>  </li>
 <li><strong>API</strong></li>
 <li><strong>rate limiting</strong>: global for all endpoints, guards against abuse and denial-of-service type of attacks<br />
     configurable in <em>settings -&gt; server settings</em>  </li>
