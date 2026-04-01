@@ -8371,7 +8371,11 @@ Just how big? Some stats: <em>~530 commits over 880 files</em>  </p>
     &gt; <code>set TORCH_COMMAND='torch torchvision --index-url https://download.pytorch.org/whl/cu128</code>  </li>
 <li>update installer and support <code>nunchaku==1.2.1</code></li>
 <li><strong>UI</strong></li>
-<li>legacy panels <strong>T2I</strong> and <strong>I2I</strong> are disabled by default<br />
+<li><strong>Enso</strong> new React-based UI with WYSIWYG infinite canvas workspace, command palette, and numerous quality of life improvements across the board <em>(work-in-progress alpha)</em>.<br />
+    enable using <code>--enso</code> flag, and use on <code>/enso</code> endpoint.<br />
+<strong>Separate installation of SD.Next recommended</strong><br />
+    see wiki page and Enso repo README for details.</li>
+<li>legacy panels <strong>T2I</strong> and <strong>I2I</strong> are disabled by default
     you can re-enable them in <em>settings -&gt; ui -&gt; hide legacy tabs</em>  </li>
 <li>new panel: <strong>Server Info</strong> with detailed runtime informaton  </li>
 <li>rename <strong>Scripts</strong> to <strong>Extras</strong> and reorganize to split internal functionality vs external extensions  </li>
@@ -8387,11 +8391,15 @@ Just how big? Some stats: <em>~530 commits over 880 files</em>  </p>
 <li><strong>Themes</strong> add <em>Vlad-Neomorph</em>  </li>
 <li><strong>Gallery</strong> add option to auto-refresh gallery, thanks @awsr  </li>
 <li><strong>Token counters</strong> add per-section display for supported models, thanks @awsr  </li>
+<li><strong>Colour grading</strong> add hints for all the functions</li>
 <li><strong>Docs / Wiki</strong>  </li>
 <li>updates to to compute sections: <em>AMD-ROCm, AMD-MIOpen, ZLUDA, OpenVINO, nVidia</em>  </li>
-<li>updates to core sections: <em>Installation, Python, Schedulers, Launcher, SDNQ, Video</em>  </li>
+<li>updates to core sections: <em>Installation, Python, Schedulers, Launcher, SDNQ, Video</em></li>
+<li>added Enso page</li>
 <li><strong>API</strong></li>
-<li><strong>rate limiting</strong>: global for all endpoints, guards against abuse and denial-of-service type of attacks<br />
+<li>new <strong>v2 API</strong> (<code>/sdapi/v2/</code>): job-based generation with queue, per-job WebSocket progress, file uploads with TTL, model/network enumeration, and a plethora of other improvements <em>(work-in-progress)</em><br />
+  for the time being ships with Enso, which must be enabled wih <code>--enso</code> flag on startup for v2 API to be available.</li>
+<li><strong>rate limiting</strong>: global for all endpoints, guards against abuse and denial-of-service type of attacks
     configurable in <em>settings -&gt; server settings</em>  </li>
 <li>new <code>/sdapi/v1/upload</code> endpoint with support for both POST with form-data or PUT using raw-bytes  </li>
 <li>new <code>/sdapi/v1/torch</code> endpoint for torch info (backend, version, etc.)  </li>
