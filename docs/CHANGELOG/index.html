@@ -3771,10 +3771,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-04-07" class="md-nav__link">
+  <a href="#update-for-2026-04-08" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-04-07
+        Update for 2026-04-08
       
     </span>
   </a>
@@ -6063,10 +6063,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-04-07" class="md-nav__link">
+  <a href="#update-for-2026-04-08" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-04-07
+        Update for 2026-04-08
       
     </span>
   </a>
@@ -8347,7 +8347,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-04-07">Update for 2026-04-07</h2>
+<h2 id="update-for-2026-04-08">Update for 2026-04-08</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/AiArtLab/sdxs-1b">AiArtLab SDXS-1B</a> Simple Diffusion XS <em>(training still in progress)</em><br />
@@ -8356,6 +8356,10 @@
 <li><strong>ROCm</strong> futher work on advanced configuration and tuning, thanks @resonantsky<br />
     now covers both ROCm on Windows and Linux<br />
     see <em>main interface -&gt; scripts -&gt; rocm advanced config</em>  </li>
+<li><strong>Features</strong></li>
+<li>enhanced filename pattern processing<br />
+    allows for any <em>processing</em> property name (as defined in <code>modules/processing_class.py</code> and saved to <code>ui-config.json</code>)<br />
+    allows for any <em>settings</em> property name (as defined in <code>modules/ui_definitions.py</code> and saved to <code>config.json</code>)  </li>
 <li><strong>Obsoleted</strong></li>
 <li>remove <em>system-info</em> from <em>extensions-builtin</em></li>
 <li><strong>Internal</strong></li>
@@ -8370,6 +8374,7 @@
 <li>improve torch nvidia arch detection</li>
 <li>add torch amd arch detection</li>
 <li>fix prompt weighted lists and internal wildcards</li>
+<li>improve <code>path_to_repo</code> handling for custom paths</li>
 </ul>
 <h2 id="update-for-2026-04-01">Update for 2026-04-01</h2>
 <h3 id="highlights-for-2026-04-01">Highlights for 2026-04-01</h3>
