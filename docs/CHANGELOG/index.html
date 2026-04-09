@@ -3771,10 +3771,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-04-08" class="md-nav__link">
+  <a href="#update-for-2026-04-09" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-04-08
+        Update for 2026-04-09
       
     </span>
   </a>
@@ -6063,10 +6063,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-04-08" class="md-nav__link">
+  <a href="#update-for-2026-04-09" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-04-08
+        Update for 2026-04-09
       
     </span>
   </a>
@@ -8347,16 +8347,20 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-04-08">Update for 2026-04-08</h2>
+<h2 id="update-for-2026-04-09">Update for 2026-04-09</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/AiArtLab/sdxs-1b">AiArtLab SDXS-1B</a> Simple Diffusion XS <em>(training still in progress)</em><br />
     this model combines Qwen3.5-1.8B text encoder with SDXL-style UNET with only 1.6B parameters and custom 32ch VAE  </li>
+<li><a href="https://huggingface.co/circlestone-labs/Anima">Anima Preview-v3</a> new version of Anima</li>
+<li><strong>Caption &amp; Prompt Enhance</strong></li>
+<li>[Google Gemma 4] in <em>E2B</em> and <em>E4B</em> variants  </li>
 <li><strong>Compute</strong></li>
 <li><strong>ROCm</strong> futher work on advanced configuration and tuning, thanks @resonantsky<br />
     now covers both ROCm on Windows and Linux<br />
     see <em>main interface -&gt; scripts -&gt; rocm advanced config</em>  </li>
 <li><strong>Features</strong></li>
+<li>installer auto-restart on upgrade</li>
 <li>enhanced filename pattern processing<br />
     allows for any <em>processing</em> property name (as defined in <code>modules/processing_class.py</code> and saved to <code>ui-config.json</code>)<br />
     allows for any <em>settings</em> property name (as defined in <code>modules/ui_definitions.py</code> and saved to <code>config.json</code>)  </li>
