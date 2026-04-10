@@ -3614,6 +3614,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantize-embedding-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantize embedding layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dequantize-using-torchcompile" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4382,6 +4393,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantize-embedding-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantize embedding layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dequantize-using-torchcompile" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4488,6 +4510,7 @@
 <li>Supports Quantized MatMul with significant speedups on INT8, FP8 or FP16 supported GPUs  </li>
 <li>Supports on the fly quantization during model load with little to no overhead (called as <code>pre</code> mode)  </li>
 <li>Supports quantization for the convolutional layers with UNet models  </li>
+<li>Supports quantization for the embedding layers with Text models  </li>
 <li>Supports post load quantization for any model  </li>
 <li>Supports on the fly usage of LoRa models  </li>
 <li>Supports SVD Quantization  </li>
@@ -4667,7 +4690,7 @@ Default is empty.  </p>
 Higher values have better performance and less memory usage but with less quality.<br />
 Default is <code>0</code>, meaning it will decide the group size based on your quantization type setting.<br />
 Linear layers will use this formula to find the group size: <code>2 ** (2 + number_of_bits)</code><br />
-Convolutions will use this formula to find the group size: <code>2 ** (1 + number_of_bits)</code><br />
+Convolutions and Embeddings will use this formula to find the group size: <code>2 ** (1 + number_of_bits)</code><br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
 <p>Using Quantized MatMul will disable group sizes if the number of bits is a 6 or more and group size is set to 0.  </p>
 <h3 id="svd-rank-size">SVD rank size</h3>
@@ -4715,6 +4738,9 @@ Disabled by default.  </p>
 <h3 id="quantize-convolutional-layers">Quantize convolutional layers</h3>
 <p>Enabling this option will quantize convolutional layers in UNet models too.<br />
 Has much better memory savings but lower quality.  </p>
+<h3 id="quantize-embedding-layers">Quantize embedding layers</h3>
+<p>Enabling this option will quantize embedding layers in Text models too.<br />
+Has better memory savings but lower quality.  </p>
 <h3 id="dequantize-using-torchcompile">Dequantize using torch.compile</h3>
 <p>Uses Triton via <code>torch.compile</code> on the dequantization step.<br />
 Has significantly higher performance.<br />
