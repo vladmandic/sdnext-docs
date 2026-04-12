@@ -4045,7 +4045,7 @@
 </em> Supports <strong>INTEL</strong> dGPUs, iGPUs and NPUs.<br />
 <em> Supports </em><em>AMD</em><em> dGPUs and iGPUs on </em><em>Windows</em><em> with </em><em>FP16</em><em> support.<br />
 </em> Supports <strong>NVIDIA</strong> GPUs.<br />
-<em> Supports </em><em>CPUs</em><em> with </em><em>BF16</em><em> or </em><em>FP32</em><em> support.<br />
+<em> Supports </em><em>CPUs</em><em> with </em><em>BF16</em><em>, </em><em>FP16</em><em> or </em><em>FP32</em><em> support.<br />
 </em> Supports multiple devices at the same time using <strong>Hetero Device</strong>.  </p>
 <p>It is basically a TensorRT / Olive competitor that works with any hardware.  </p>
 <h2 id="installation">Installation</h2>
@@ -4104,15 +4104,12 @@ Resulting docker image will use 1.1 GB disk space (uncompressed) for the docker 
 <li>Attention Slicing and HyperTile will not work.  </li>
 </ul>
 <h2 id="custom-devices">Custom Devices</h2>
-<p>Use the <code>OpenVINO devices to use</code> option in <code>Compute Settings</code> if you want to specify a device.<br />
+<p>Use the <code>OpenVINO devices</code> option in <code>Backend Settings</code> if you want to specify a device.<br />
 Selecting multiple devices will use multiple devices as a single <code>HETERO</code> device.  </p>
-<p>Using <code>--device-id</code> cli argument with the WebUI will use a <strong>GPU</strong> with the specified <strong>Device ID</strong>.<br />
-Using <code>--use-cpu openvino</code> cli argument with the WebUI will use the <strong>CPU</strong>.  </p>
-<p>If no device is specified, then the default device that will be used with OpenVINO will be auto detected with the following priority:<br />
-<code>GPU</code> -&gt; <code>GPU.1</code> -&gt; <code>GPU.0</code> -&gt; Last device in the OpenVINO available devices list (<code>CPU</code>)</p>
+<p>If no device is specified, then the default device will be auto selected by OpenVINO.  </p>
 <h2 id="model-caching">Model Caching</h2>
 <p>OpenVINO can save compiled models to cache folder so you won't have to compile them again.<br />
-<code>OpenVINO disable model caching</code> option in <strong>Compute Settings</strong> will disable caching. Disable this option to enable caching.<br />
+<code>OpenVINO disable model caching</code> option in <strong>Backend Settings</strong> will disable caching. Disable this option to enable caching.<br />
 <code>Directory for OpenVINO cache</code> option in <strong>System Paths</strong> will set a new location for saving OpenVINO caches.  </p>
 
 
