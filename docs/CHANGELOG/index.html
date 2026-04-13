@@ -3771,10 +3771,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-04-12" class="md-nav__link">
+  <a href="#update-for-2026-04-13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-04-12
+        Update for 2026-04-13
       
     </span>
   </a>
@@ -6063,10 +6063,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-04-12" class="md-nav__link">
+  <a href="#update-for-2026-04-13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-04-12
+        Update for 2026-04-13
       
     </span>
   </a>
@@ -8347,7 +8347,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-04-12">Update for 2026-04-12</h2>
+<h2 id="update-for-2026-04-13">Update for 2026-04-13</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/lodestones/Zeta-Chroma">Zeta-Chroma</a> pixel-space diffusion transformer image model<br />
@@ -8368,8 +8368,6 @@
     integrates Qwen2.5-VL text encoder and Flow Matching scheduler for high-quality in-context edits<br />
     enables multimodal understanding and conditional image refinement<br />
     category: <em>base</em>  </li>
-<li><strong>Caption &amp; Prompt Enhance</strong></li>
-<li>[Google Gemma 4] in <em>E2B</em> and <em>E4B</em> variants as well as <em>heretic</em> fine-tune</li>
 <li><strong>Compute</strong></li>
 <li><strong>ROCm</strong> futher work on advanced configuration and tuning, thanks @resonantsky<br />
     now covers both ROCm on Windows and Linux<br />
@@ -8377,6 +8375,7 @@
 <li><strong>OpenVINO</strong><br />
     update to <code>openvino==2026.1.0</code><br />
     default device is now <code>AUTO</code>, override which devices are allowed to be used in <em>settings -&gt; backend settings</em><br />
+    perform detection of fp16 capabilities instead of forcing fp32 by default<br />
     add <em>experimental</em> support for <code>NPU</code> devices, typically available on AI-PC/Copilot-PC devices  </li>
 <li><strong>SDNQ</strong> add quant support to <code>nn.Embedding</code> type  </li>
 <li><strong>Features</strong></li>
@@ -8387,6 +8386,10 @@
 <li>enhanced filename pattern processing<br />
     allows for any <em>processing</em> property name (as defined in <code>modules/processing_class.py</code> and saved to <code>ui-config.json</code>)<br />
     allows for any <em>settings</em> property name (as defined in <code>modules/ui_definitions.py</code> and saved to <code>config.json</code>)  </li>
+<li><strong>UI</strong></li>
+<li><code>gallery</code> send-to button advanced options with right-click</li>
+<li><strong>Caption &amp; Prompt Enhance</strong></li>
+<li>[Google Gemma 4] in <em>E2B</em> and <em>E4B</em> variants as well as <em>heretic</em> fine-tune</li>
 <li><strong>Agents</strong>
   framework for AI agent based work in <code>.github/</code><br />
 <em>note</em>: all skills are agent-model agnostic  </li>
