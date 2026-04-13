@@ -8368,6 +8368,17 @@
     integrates Qwen2.5-VL text encoder and Flow Matching scheduler for high-quality in-context edits<br />
     enables multimodal understanding and conditional image refinement<br />
     category: <em>base</em>  </li>
+<li><strong>Features</strong></li>
+<li><strong>Tag Autocomplete</strong> native implementation!<br />
+    select and activate any number of different auto-complete databases<br />
+    see <em>Extras -&gt; Autocomplete</em> for all settings  </li>
+<li><strong>NudeNet</strong> add <code>LlavaGuard</code> and <code>QwenGuard</code> as image safety evaulation models  </li>
+<li><strong>schedulers</strong> add <code>ER-SDE</code> solver<br />
+    with with <em>1S, 2M, 3M</em> variants in both <em>EPS</em> and <em>FlowMatch</em> flavors  </li>
+<li><strong>installer</strong> auto-restart on upgrade</li>
+<li>enhanced <strong>filename</strong> pattern processing<br />
+    allows for any <em>processing</em> property name (as defined in <code>modules/processing_class.py</code> and saved to <code>ui-config.json</code>)<br />
+    allows for any <em>settings</em> property name (as defined in <code>modules/ui_definitions.py</code> and saved to <code>config.json</code>)  </li>
 <li><strong>Compute</strong></li>
 <li><strong>ROCm</strong> futher work on advanced configuration and tuning, thanks @resonantsky<br />
     now covers both ROCm on Windows and Linux<br />
@@ -8378,16 +8389,9 @@
     perform detection of fp16 capabilities instead of forcing fp32 by default<br />
     add <em>experimental</em> support for <code>NPU</code> devices, typically available on AI-PC/Copilot-PC devices  </li>
 <li><strong>SDNQ</strong> add quant support to <code>nn.Embedding</code> type  </li>
-<li><strong>Features</strong></li>
-<li><strong>nudenet</strong> add <code>LlavaGuard</code> and <code>QwenGuard</code> as image safety evaulation models</li>
-<li><strong>schedulers</strong> add <code>ER-SDE</code> solver<br />
-    with with <em>1S, 2M, 3M</em> variants in both <em>EPS</em> and <em>FlowMatch</em> flavors  </li>
-<li>installer auto-restart on upgrade</li>
-<li>enhanced filename pattern processing<br />
-    allows for any <em>processing</em> property name (as defined in <code>modules/processing_class.py</code> and saved to <code>ui-config.json</code>)<br />
-    allows for any <em>settings</em> property name (as defined in <code>modules/ui_definitions.py</code> and saved to <code>config.json</code>)  </li>
 <li><strong>UI</strong></li>
 <li><code>gallery</code> send-to button advanced options with right-click</li>
+<li><code>tag autocomplete</code> quick toggle in main prompt area</li>
 <li><strong>Caption &amp; Prompt Enhance</strong></li>
 <li>[Google Gemma 4] in <em>E2B</em> and <em>E4B</em> variants as well as <em>heretic</em> fine-tune</li>
 <li><strong>Agents</strong>
@@ -8428,6 +8432,7 @@
 <li>controlnet processor error handling</li>
 <li>error handling for same-device check</li>
 <li>error handling for undefined pipeline</li>
+<li>patch <code>z-image</code> for fp16 compatibility, thanks @resonantsky</li>
 </ul>
 <h2 id="update-for-2026-04-01">Update for 2026-04-01</h2>
 <h3 id="highlights-for-2026-04-01">Highlights for 2026-04-01</h3>
