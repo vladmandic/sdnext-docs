@@ -3771,10 +3771,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-04-13" class="md-nav__link">
+  <a href="#update-for-2026-04-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-04-13
+        Update for 2026-04-14
       
     </span>
   </a>
@@ -6063,10 +6063,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-04-13" class="md-nav__link">
+  <a href="#update-for-2026-04-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-04-13
+        Update for 2026-04-14
       
     </span>
   </a>
@@ -8347,24 +8347,20 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-04-13">Update for 2026-04-13</h2>
+<h2 id="update-for-2026-04-14">Update for 2026-04-14</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/lodestones/Zeta-Chroma">Zeta-Chroma</a> pixel-space diffusion transformer image model<br />
     generates images directly in RGB space using NextDiT-style architecture  </li>
-<li><a href="https://huggingface.co/AiArtLab/sdxs-1b">AiArtLab SDXS-1B</a> Simple Diffusion XS <em>(training still in progress)</em><br />
-    this model combines Qwen3.5-1.8B text encoder with SDXL-style UNET with only 1.6B parameters and custom 32ch VAE  </li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">Anima Preview-v3</a> new version of Anima</li>
 <li><a href="https://huggingface.co/briaai/FIBO">Bria FIBO</a> 8B parameter text-to-image model using Flow Matching<br />
     includes <em>Normal</em>, <em>Edit</em>, and <em>Lite</em> (distilled) variants<br />
     features lightweight SmolLM3-3B text encoder with efficient inference<br />
-<em>note</em>: this is a <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated model</a>  </li>
-<li><a href="https://huggingface.co/iitolstykh/VIBE-Image-Edit">VIBE Image Edit</a> visual instruction based image editing model<br />
-    combines <em>Sana1.5-1.6B</em> diffusion backbone with <em>Qwen3-VL-2B</em> multimodal conditioning  </li>
-<li><a href="https://huggingface.co/stepfun-ai/Step1X-Edit-v1p2">Step1X-Edit v1.2</a> image editing model using Step1X transformer<br />
-    integrates Qwen2.5-VL text encoder and Flow Matching scheduler for high-quality in-context edits<br />
-    enables multimodal understanding and conditional image refinement<br />
-    category: <em>base</em>  </li>
+<em>note</em>: this is a <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated model</a><br />
+<em>note</em>: requires verbose JSON prompts, simple text prompt suboptimial  </li>
+<li><a href="https://huggingface.co/AiArtLab/sdxs-1b">AiArtLab SDXS-1B</a> Simple Diffusion XS <em>(training still in progress)</em><br />
+    this model combines Qwen3.5-1.8B text encoder with SDXL-style UNET with only 1.6B parameters and custom 32ch VAE<br />
+<em>note</em>: more of an experimental model and doesn't support offloading  </li>
 <li><strong>Features</strong></li>
 <li><strong>Tag Autocomplete</strong> native implementation!<br />
     select and activate any number of different auto-complete databases<br />
@@ -8376,6 +8372,8 @@
 <li>enhanced <strong>filename</strong> pattern processing<br />
     allows for any <em>processing</em> property name (as defined in <code>modules/processing_class.py</code> and saved to <code>ui-config.json</code>)<br />
     allows for any <em>settings</em> property name (as defined in <code>modules/ui_definitions.py</code> and saved to <code>config.json</code>)  </li>
+<li><strong>preview</strong> add explicit <code>method=None</code><br />
+    if you want to skip preview, but show finished images, works with batch progression  </li>
 <li><strong>Compute</strong></li>
 <li><strong>ROCm</strong> futher work on advanced configuration and tuning, thanks @resonantsky<br />
     now covers both ROCm on Windows and Linux<br />
@@ -8409,6 +8407,7 @@
 <li><strong>Obsoleted</strong></li>
 <li>removed <em>system-info</em> from <em>extensions-builtin</em></li>
 <li><strong>Internal</strong></li>
+<li><code>history</code> accepts both latent and pixel entries</li>
 <li>additional typing and typechecks, thanks @awsr</li>
 <li>wrap hf download methods</li>
 <li><strong>Fixes</strong></li>
