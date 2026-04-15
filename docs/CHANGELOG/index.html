@@ -8410,7 +8410,7 @@
 - New models! <strong>Zeta-Chroma</strong>, <strong>ERNIE</strong>, <strong>Nucleus</strong>, <strong>Bria-FIBO</strong>, <strong>Anima-v3</strong>, <strong>SDXS-1B</strong>
 - Additional Schedulers, updates to NudeNet, OpenVINO and ROCm and other features</p>
 <p>And tons of <em>quality-of-life</em> improvements and <em>bug-fixes</em>!
-In addtion, to jump on a bandwagon, we're now fully <strong>AI agent</strong> ready with detailed instructions and skills!</p>
+In addition, to jump on a bandwagon, we're now fully <strong>AI agent</strong> ready with detailed instructions and skills!</p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
 <h3 id="details-for-2026-04-15">Details for 2026-04-15</h3>
 <ul>
@@ -8435,12 +8435,14 @@ In addtion, to jump on a bandwagon, we're now fully <strong>AI agent</strong> re
 <li><strong>Tag Autocomplete</strong> native implementation!<br />
     select and activate any number of different auto-complete databases<br />
     see <em>Extras -&gt; Autocomplete</em> for all settings  </li>
-<li><strong>NudeNet</strong> add <code>LlavaGuard</code> and <code>QwenGuard</code> as image safety evaulation models  </li>
+<li><strong>NudeNet</strong> add image safety evaluation models<br />
+    supports <code>LlavaGuard</code> and <code>QwenGuard</code>  </li>
 <li><strong>schedulers</strong> add <code>ER-SDE</code> solver<br />
-    with with <em>1S, 2M, 3M</em> variants in both <em>EPS</em> and <em>FlowMatch</em> flavors  </li>
+    with <em>1S, 2M, 3M</em> variants in both <em>EPS</em> and <em>FlowMatch</em> flavors  </li>
 <li><strong>LoRA</strong> rewrite <code>z-image</code> support and add all known variants</li>
 <li><strong>installer</strong> auto-restart on upgrade</li>
 <li>enhanced <strong>filename</strong> pattern processing<br />
+<em>settings -&gt; image paths -&gt; directory/filename pattern</em><br />
     allows for any <em>processing</em> property name (as defined in <code>modules/processing_class.py</code> and saved to <code>ui-config.json</code>)<br />
     allows for any <em>settings</em> property name (as defined in <code>modules/ui_definitions.py</code> and saved to <code>config.json</code>)  </li>
 <li><strong>preview</strong> add explicit <code>method=None</code><br />
@@ -11374,7 +11376,7 @@ All-in-all, we're around ~180 commits worth of updates, check the changelog for 
 <li>control: add stats</li>
 <li>settings: reorganized and simplified  </li>
 <li>browser -&gt; server logging framework  </li>
-<li>add addtional themes: <code>black-reimagined</code>, thanks @Artheriax  </li>
+<li>add additional themes: <code>black-reimagined</code>, thanks @Artheriax  </li>
 <li><strong>Batch</strong></li>
 <li>image batch processing will use caption files if they exist instead of default prompt  </li>
 </ul>
@@ -11857,7 +11859,7 @@ their respective parameters and architecture overview: <a href="https://github.c
 <p><a href="https://arxiv.org/pdf/2410.02416">APG: Adaptive Projected Guidance</a></p>
 </li>
 <li>latest algo to provide better guidance for image generation, can be used instead of existing guidance rescale and/or PAG  </li>
-<li>in addtion to stronger guidance and reduction of burn at high guidance values, it can also increase image details  </li>
+<li>in addition to stronger guidance and reduction of burn at high guidance values, it can also increase image details  </li>
 <li>compatible with <em>sd15/sdxl/sc</em>  </li>
 <li>select in scripts -&gt; apg  </li>
 <li>for low    cfg scale, use positive momentum: e.g. cfg=2 =&gt; momentum=0.6</li>
