@@ -3887,10 +3887,8 @@
 <p class="admonition-title">Important</p>
 <p>Do not manually install CUDA on your system as <code>torch</code> will install the appropriate CUDA version in its own environment<br />
 System-wide installation of CUDA may cause conflicts and is not required for SD.Next to utilize nVidia GPUs.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Disable system memory fallback to avoid massive performance degradation when exhausting GPU memory: <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5490">Instructions</a></p>
+<p>[!TIP]
+Disable system memory fallback to avoid massive performance degradation when exhausting GPU memory: <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5490">Instructions</a></p>
 </div>
 <h2 id="older-gpus">Older GPUs</h2>
 <p>If you have older nVidia GPU that is not supported by latest <code>torch</code> releases, you may need to install specific older version of <code>torch</code> with appropriate CUDA version that supports your GPU.</p>

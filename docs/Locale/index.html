@@ -2819,9 +2819,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Editing Localization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#supported-languages" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2831,8 +2832,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#selecting-locale" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2840,6 +2841,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3853,9 +3859,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Editing Localization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#supported-languages" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3865,8 +3872,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#selecting-locale" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3874,6 +3881,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3906,22 +3918,22 @@
 <h1 id="localization">Localization</h1>
 <p>SD.Next localization system is based on the single JSON file: <a href="https://github.com/vladmandic/sdnext/blob/dev/html/locale_en.json">html/locale_en.json</a>  </p>
 <p>Structure of the file is simple: For each visible UI label, there is a corresponding hint that is displayed when user hovers over the label.  </p>
-<p><em>Example</em>: generate button:
+<p><em>Example</em>: generate button:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;Generate&quot;</span><span class="p">,</span><span class="nt">&quot;localized&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;hint&quot;</span><span class="p">:</span><span class="s2">&quot;Start processing&quot;</span><span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>See <a href="../Hints/">Hints</a> document for more details</p>
 </div>
-<p>This file which is then auto-translated using LLM model to other languages and saved as separate files in a format <code>hmtl/locale_{locale}.json</code><br />
+<p>This file is then auto-translated using an LLM model to other languages and saved as separate files in the format <code>html/locale_{locale}.json</code>.<br />
 Those files should not be edited directly as they are auto-generated and will be overwritten on the next update, but if you have suggestions for improvements, please contact us  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Translation is performed using <code>cli/localize.js</code> script</p>
 </div>
-<h3 id="editing-localization">Editing Localization</h3>
-<p>In case of bad ML translation or you just want to provide a better alternernative,<br />
-you can create/edit <code>hmtl/override_{locale}.json</code> which only needs to include specific items you want to override  </p>
+<h2 id="editing-localization">Editing Localization</h2>
+<p>In case of a bad ML translation, or if you want to provide a better alternative,<br />
+you can create/edit <code>html/override_{locale}.json</code>, which only needs to include specific items you want to override.  </p>
 <h3 id="supported-languages">Supported Languages</h3>
 <ul>
 <li><code>en</code>: English</li>

@@ -4309,7 +4309,7 @@ git version 2.43.0
 <p>Also, required NV libs are already present and linked which makes using nVidia GPU with this distro very easy  </p>
 <h3 id="memory">Memory</h3>
 <p>By default WSL allocates 50% of total memory on Windows<br />
-If you want to give WSL option to use more memory, increase memory limits  </p>
+If you want to allow WSL to use more memory, increase its memory limits.  </p>
 <p>For example, edit WSL configuration</p>
 <blockquote>
 <p><code>C:\Users\&lt;username&gt;\.wslconfig</code></p>
@@ -4361,7 +4361,7 @@ wsl --set-default MyUbuntu  </p>
 <p>And then from <em>bash</em>:</p>
 <blockquote>
 <p>cd<br />
-git clone https://github.com/vladmandic/sdnext/ sdnext<br />
+git clone <a href="https://github.com/vladmandic/sdnext/">https://github.com/vladmandic/sdnext/</a> sdnext<br />
 cd sdnext<br />
 ./webui.sh --debug  </p>
 </blockquote>
@@ -4393,7 +4393,7 @@ between different SD.Next installations, start SD.Next with <code>--data-dir</co
 <p>If you're using some other distro than recommended one,<br />
 you may need to install additional packages such as:</p>
 <ul>
-<li>upgrade python (if its below 3.9) or downgrade pthon (if its above 3.12)</li>
+<li>upgrade Python (if it is below 3.9) or downgrade Python (if it is above 3.12)</li>
 </ul>
 <blockquote>
 <p>sudo apt install python3.11 python3.11-venv python3-pip<br />
@@ -4430,22 +4430,24 @@ Optionally install SMB client (<code>samba</code>) in Ubuntu, export models fold
 <p>sudo apt install cifs-utils</p>
 </blockquote>
 <ol>
-<li>Create credentials file <code>.cred</code> in your home folder (e.g. <code>/home/myuser/.cred</code>) with the following content:</li>
+<li>
+<p>Create credentials file <code>.cred</code> in your home folder (e.g. <code>/home/myuser/.cred</code>) with the following content:</p>
+<p>touch .cred
+chmod 600 .cred
+echo "username=yourwindowsusername" &gt;&gt; .cred
+echo "password=yourwindowspassword" &gt;&gt; .cred</p>
+</li>
 </ol>
-<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>.cred
-chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>.cred
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;username=yourwindowsusername&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.cred
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;password=yourwindowspassword&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.cred
-</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">How to get internal-loopback IP of your Window host?</p>
 <p><code>ip route show | grep -i default | awk '{ print $3}'</code></p>
 </div>
 <ol>
-<li>Then mount the folder in WSL:</li>
+<li>
+<p>Then mount the folder in WSL:</p>
+<p>sudo mount -t cifs -o async,noatime,rw,mfsymlinks,iocharset=utf8,uid=1000,vers=3.1.1,cache=loose,nostrictsync,resilienthandles,cred=/home/myuser/.cred //$HOST_IP/Models /mnt/models</p>
+</li>
 </ol>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>cifs<span class="w"> </span>-o<span class="w"> </span>async,noatime,rw,mfsymlinks,iocharset<span class="o">=</span>utf8,uid<span class="o">=</span><span class="m">1000</span>,vers<span class="o">=</span><span class="m">3</span>.1.1,cache<span class="o">=</span>loose,nostrictsync,resilienthandles,cred<span class="o">=</span>/home/myuser/.cred<span class="w"> </span>//<span class="nv">$HOST_IP</span>/Models<span class="w"> </span>/mnt/models
-</code></pre></div>
 
 
 

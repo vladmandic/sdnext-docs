@@ -4343,23 +4343,23 @@
 </tbody>
 </table>
 <h3 id="commands">Commands</h3>
-<p><strong>Linux — temporary (current session only):</strong>
+<p><strong>Linux — temporary (current session only):</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">MIOPEN_FIND_MODE</span><span class="o">=</span><span class="m">3</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">MIOPEN_FIND_ENFORCE</span><span class="o">=</span><span class="m">3</span>
-</code></pre></div></p>
-<p><strong>Linux — permanent (add to <code>~/.bashrc</code> or <code>~/.profile</code>):</strong>
+</code></pre></div>
+<p><strong>Linux — permanent (add to <code>~/.bashrc</code> or <code>~/.profile</code>):</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export MIOPEN_FIND_MODE=3&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export MIOPEN_FIND_ENFORCE=3&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <span class="nb">source</span><span class="w"> </span>~/.bashrc
-</code></pre></div></p>
-<p><strong>Windows — Command Prompt (temporary):</strong>
+</code></pre></div>
+<p><strong>Windows — Command Prompt (temporary):</strong></p>
 <div class="highlight"><pre><span></span><code>set MIOPEN_FIND_MODE=3
 set MIOPEN_FIND_ENFORCE=3
-</code></pre></div></p>
-<p><strong>Windows — PowerShell (temporary):</strong>
+</code></pre></div>
+<p><strong>Windows — PowerShell (temporary):</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nv">$env:MIOPEN_FIND_MODE</span> <span class="p">=</span> <span class="s2">&quot;3&quot;</span>
 <span class="nv">$env:MIOPEN_FIND_ENFORCE</span> <span class="p">=</span> <span class="s2">&quot;3&quot;</span>
-</code></pre></div></p>
+</code></pre></div>
 <p><strong>Windows — Permanent (System Environment Variables):</strong></p>
 <ol>
 <li>Open <strong>Start</strong> → search <strong>"Edit the system environment variables"</strong></li>
@@ -4367,14 +4367,14 @@ set MIOPEN_FIND_ENFORCE=3
 <li>Under <strong>User variables</strong>, click <strong>New</strong></li>
 <li>Add <code>MIOPEN_FIND_MODE</code> = <code>3</code>, then repeat for <code>MIOPEN_FIND_ENFORCE</code> = <code>3</code></li>
 </ol>
-<p><strong>Windows — Alternatively, edit <code>webui.bat</code></strong> and add the <code>set</code> lines before the launch command:
+<p><strong>Windows — Alternatively, edit <code>webui.bat</code></strong> and add the <code>set</code> lines before the launch command:</p>
 <div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">MIOPEN_FIND_MODE</span><span class="p">=</span>3
 <span class="k">set</span> <span class="nv">MIOPEN_FIND_ENFORCE</span><span class="p">=</span>3
 .\python_embeded\python.exe -m streamlit run ...
-</code></pre></div></p>
-<p>Then launch SD.Next as normal. On Windows with ROCm:
+</code></pre></div>
+<p>Then launch SD.Next as normal. On Windows with ROCm:</p>
 <div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">webui</span><span class="p">.</span><span class="n">bat</span> <span class="p">-</span><span class="n">-use-rocm</span>
-</code></pre></div></p>
+</code></pre></div>
 <hr />
 <h2 id="the-tuning-cache">The Tuning Cache</h2>
 <p>MIOpen stores its results in a local database so tuning survives across restarts.</p>
@@ -4384,9 +4384,9 @@ set MIOPEN_FIND_ENFORCE=3
 <p>The cache contains two file types:
 - <strong><code>.udb</code></strong> (User Database) — stores the winning solver per operation. Used for fast lookup on every run.
 - <strong><code>.ufdb</code></strong> (User Find Database) — stores full benchmark results for all tested solvers. Used for analysis.</p>
-<p><strong>You can override the cache location</strong> with:
+<p><strong>You can override the cache location</strong> with:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">MIOPEN_USER_DB_PATH</span><span class="o">=</span>/path/to/your/cache
-</code></pre></div></p>
+</code></pre></div>
 <p>This is useful if you want to share a pre-built cache across multiple installs, or keep it on a fast drive.</p>
 <p><strong>To reset the cache</strong> (forces re-tuning from scratch), delete the <code>.udb</code> and <code>.ufdb</code> files in the cache directory.</p>
 <hr />

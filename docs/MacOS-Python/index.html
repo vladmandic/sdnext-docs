@@ -3865,7 +3865,7 @@
 <p>Most sources online will tell you to use Homebrew as a package manager for MacOS, so it is a natural conclusion to consider using Homebrew for Python -- and it's common to discover that you already have Python installed through Homebrew as a dependency for something else.  However, this isn't the correct solution either -- it's really the same problem as the MacOS problem, but with a coat of paint.</p>
 <p>Homebrew's Python is there to support other packages.  Importantly, Homebrew deletes old versions of packages after 30 days.  So, if you are using, say, python 3.12 for random scripting and other tasks, but need version 3.10 for, say, SD.Next, Homebrew will delete 3.10, since it doesn't know that you need it for something (since you didn't install SD.Next via Homebrew).  </p>
 <p>The solution is to use another way to manage the Python version(s) that you use on your own.  I use <a href="https://asdf-vm.com/">asdf</a>, which has a <a href="https://github.com/asdf-community/asdf-python">Python plugin</a>, but there are others if you prefer something else.</p>
-<p>Sources / Further Reading: 
+<p>Sources / Further Reading:
 - <a href="https://justinmayer.com/posts/homebrew-python-is-not-for-you/">https://justinmayer.com/posts/homebrew-python-is-not-for-you/</a>
 - <a href="https://hackercodex.com/guide/python-development-environment-on-mac-osx/">https://hackercodex.com/guide/python-development-environment-on-mac-osx/</a>
 - <a href="https://github.com/asdf-community/asdf-python">https://github.com/asdf-community/asdf-python</a>

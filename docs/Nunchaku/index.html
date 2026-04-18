@@ -4044,11 +4044,9 @@ Nunchaku uses novel 4-bit <a href="https://github.com/mit-han-lab/deepcompressor
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Nunchaku is supported <em>only</em> on <strong>CUDA</strong> platforms using <strong>Turing/Ampere/Ada/Blackwell</strong> GPUs<br />
-Nunchaku requires Python <strong>3.11</strong> or <strong>3.12</strong></p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>On Blackweel GPUs, Nunchaku will default to <code>FP4</code> methods<br />
+Nunchaku requires Python <strong>3.11</strong> or <strong>3.12</strong>  </p>
+<p>[!NOTE]
+On Blackweel GPUs, Nunchaku will default to <code>FP4</code> methods<br />
 while on other GPU generations it will use <code>INT4</code> methods</p>
 </div>
 <h2 id="install">Install</h2>
@@ -4074,11 +4072,9 @@ but if you encounter issues, see <a href="./#manual-build">Manual build</a> sect
 <p class="admonition-title">Important</p>
 <p>SD.Next will auto-download Nunchaku's prequantized modules as needed on first access<br />
 Nunchaku replaces model's DiT module with a custom pre-quantized one,<br />
-Any model fine-tune will be ignored</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For FLUX.1 Nunchaku supports multiple base modeles:
+Any model fine-tune will be ignored  </p>
+<p>[!NOTE]
+For FLUX.1 Nunchaku supports multiple base modeles:
 - Black-Forrest FLUX.1 Dev and Schnell<br />
 - Shuttle Jaguar finetune</p>
 </div>
@@ -4130,7 +4126,8 @@ Processing dependencies for nunchaku==0.2.0+torch2.6
 Finished processing dependencies for nunchaku==0.2.0+torch2.6
 </code></pre></div>
 <blockquote>
-<p>python
+<p>python</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>import<span class="w"> </span>sys
 &gt;&gt;&gt;<span class="w"> </span>import<span class="w"> </span>platform
 &gt;&gt;&gt;<span class="w"> </span>import<span class="w"> </span>torch
@@ -4147,8 +4144,7 @@ sys.version_info<span class="o">(</span><span class="nv">major</span><span class
 &gt;&gt;&gt;<span class="w"> </span>import<span class="w"> </span>nunchaku
 &gt;&gt;&gt;<span class="w"> </span>nunchaku.__path__
 <span class="o">[</span><span class="s1">&#39;/home/vlado/dev/nunchaku/nunchaku&#39;</span><span class="o">]</span>
-</code></pre></div></p>
-</blockquote>
+</code></pre></div>
 
 
 

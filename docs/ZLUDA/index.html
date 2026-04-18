@@ -1878,7 +1878,7 @@
   <a href="#downloading-the-source-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Downloading the Source Code:
+        Downloading the Source Code
       
     </span>
   </a>
@@ -1900,7 +1900,7 @@
   <a href="#determine-your-rocm-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Determine Your ROCm Version:
+        Determine Your ROCm Version
       
     </span>
   </a>
@@ -1911,19 +1911,19 @@
   <a href="#patches-for-tensile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Patches for Tensile:
+        Patches for Tensile
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Patches for Tensile:">
+    <nav class="md-nav" aria-label="Patches for Tensile">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#for-hip-570" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For hip 5.7.0:
+        For hip 5.7.0
       
     </span>
   </a>
@@ -1934,7 +1934,7 @@
   <a href="#for-hip-612" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For hip 6.1.2:
+        For hip 6.1.2
       
     </span>
   </a>
@@ -1961,7 +1961,7 @@
   <a href="#build-with-rdeps-and-rmake" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build with rdeps and rmake:
+        Build with rdeps and rmake
       
     </span>
   </a>
@@ -4381,7 +4381,7 @@
   <a href="#downloading-the-source-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Downloading the Source Code:
+        Downloading the Source Code
       
     </span>
   </a>
@@ -4403,7 +4403,7 @@
   <a href="#determine-your-rocm-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Determine Your ROCm Version:
+        Determine Your ROCm Version
       
     </span>
   </a>
@@ -4414,19 +4414,19 @@
   <a href="#patches-for-tensile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Patches for Tensile:
+        Patches for Tensile
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Patches for Tensile:">
+    <nav class="md-nav" aria-label="Patches for Tensile">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#for-hip-570" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For hip 5.7.0:
+        For hip 5.7.0
       
     </span>
   </a>
@@ -4437,7 +4437,7 @@
   <a href="#for-hip-612" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For hip 6.1.2:
+        For hip 6.1.2
       
     </span>
   </a>
@@ -4464,7 +4464,7 @@
   <a href="#build-with-rdeps-and-rmake" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build with rdeps and rmake:
+        Build with rdeps and rmake
       
     </span>
   </a>
@@ -4530,10 +4530,8 @@
 <p class="admonition-title">Note</p>
 <p>This guide assumes you have <a href="../Installation/#install-python-and-git">Git and Python</a> installed,<br />
 and are comfortable using the command prompt, navigating Windows Explorer, renaming files and folders, and working with zip files.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>If you have an integrated AMD GPU (iGPU), you may need to disable it,<br />
+<p>[!IMPORTANT]
+If you have an integrated AMD GPU (iGPU), you may need to disable it,<br />
 or use the <code>HIP_VISIBLE_DEVICES</code> environment variable.</p>
 </div>
 <h3 id="install-visual-c-runtime">Install Visual C++ Runtime</h3>
@@ -4567,7 +4565,7 @@ gfx1031: RX 6700, RX 6700 XT, RX 6750 XT<br />
 gfx1032: RX 6600, RX 6600 XT, RX 6650 XT<br />
 gfx1103: Radeon 780M<br />
 gfx803: RX 570, RX 580<br />
-<a href="https://llvm.org/docs/AMDGPUUsage.html#processors">More...</a></li>
+<a href="https://llvm.org/docs/AMDGPUUsage.html#processors">AMD GPU processor list</a></li>
 <li>Open the zip file.</li>
 <li>Drag and drop the <code>library</code> folder from zip file into <code>%HIP_PATH%bin\rocblas</code> (The folder you opened in step 1).</li>
 <li>Reboot PC</li>
@@ -4611,7 +4609,7 @@ Compatible with: Navi cards</p>
 <p>This section describes how to enable cuDNN.</p>
 <ol>
 <li>Install HIP SDK 6.2. If you already have older HIP SDK, uninstall it before installing 6.2.  </li>
-<li>Download and install HIP SDK extension from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
+<li>Download and install HIP SDK extension from the <a href="https://github.com/lshqqytiger/ZLUDA/releases">ZLUDA releases page</a>.<br />
 (unzip and paste folders upon <code>path/to/AMD/ROCm/6.2</code>)  </li>
 <li>Remove <code>.zluda</code> folder if exists.  </li>
 <li>Launch WebUI with command line arguments <code>--use-zluda --use-nightly</code>.  </li>
@@ -4628,7 +4626,7 @@ Compatible with: gfx1100, or CDNA accelerators</p>
 <p>This section describes how to enable cuBLASLt.</p>
 <ol>
 <li>Install HIP SDK 6.2. If you already have older HIP SDK, uninstall it before installing 6.2.  </li>
-<li>Download and install HIP SDK extension from <a href="https://github.com/lshqqytiger/ZLUDA/releases">here</a>.<br />
+<li>Download and install HIP SDK extension from the <a href="https://github.com/lshqqytiger/ZLUDA/releases">ZLUDA releases page</a>.<br />
 (unzip and paste folders upon <code>path/to/AMD/ROCm/6.2</code>)  </li>
 <li>Remove <code>.zluda</code> folder if exists.  </li>
 <li>Launch WebUI with command line arguments <code>--use-zluda --use-nightly</code>.  </li>
@@ -4640,12 +4638,12 @@ Stability: ★★★★☆<br />
 Compatible with: Navi cards</p>
 <ol>
 <li>Prepare Python 3.11 (or 3.12) environment.  </li>
-<li>Download a triton wheel that matches your Python version from <a href="https://github.com/lshqqytiger/triton/releases">here</a>.<br />
+<li>Download a triton wheel that matches your Python version from the <a href="https://github.com/lshqqytiger/triton/releases">Triton releases page</a>.<br />
    (cp312 is Python 3.12, cp311 is Python 3.11 and cp310 is Python 3.10)  </li>
 <li>Open a PowerShell Windows in the SDNext folder and install via pip.  </li>
 </ol>
-<div class="highlight"><pre><span></span><code>venv\scripts\python -m pip install --upgrade setuptools
-venv\scripts\python -m pip install --upgrade path/to/downloaded/triton.whl
+<div class="highlight"><pre><span></span><code>venv<span class="se">\s</span>cripts<span class="se">\p</span>ython<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>setuptools
+venv<span class="se">\s</span>cripts<span class="se">\p</span>ython<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>path/to/downloaded/triton.whl
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -4672,7 +4670,7 @@ venv\scripts\python -m pip install --upgrade path/to/downloaded/triton.whl
 <table>
 <thead>
 <tr>
-<th></th>
+<th>Feature</th>
 <th>DirectML</th>
 <th>ZLUDA</th>
 </tr>
@@ -4694,7 +4692,7 @@ venv\scripts\python -m pip install --upgrade path/to/downloaded/triton.whl
 <td>✅</td>
 </tr>
 <tr>
-<td>Traning</td>
+<td>Training</td>
 <td>*</td>
 <td>✅</td>
 </tr>
@@ -4733,7 +4731,7 @@ venv\scripts\python -m pip install --upgrade path/to/downloaded/triton.whl
 <thead>
 <tr>
 <th>DTYPE</th>
-<th></th>
+<th>Support</th>
 </tr>
 </thead>
 <tbody>
@@ -4817,7 +4815,7 @@ You may follow the guide below to build your rocBLAS.</p>
 <h2 id="rocm-custom-build">ROCm Custom Build</h2>
 <p>This guide will walk you through building rocBLAS using the official ROCm documentation.</p>
 <p>This guide is for users with AMD GPUs lacking official ROCm/<a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">HIP SDK</a> support, or those wanting to enable HIP SDK support for hip sdk 5.7 and 6.1.2  on Windows for integrated AMD GPUs(iGPUs)."</p>
-<p>If you already have the libraries, you can skip this section! </p>
+<p>If you already have the libraries, you can skip this section!</p>
 <p><strong>Prerequisites:</strong> Ensure the following software is installed on your PC. <code>python</code>, <code>git</code>, and the <code>HIP SDK</code>are
 essential.  The script <code>rdeps.py</code> will automatically download any missing dependencies when you run it.</p>
 <ul>
@@ -4829,16 +4827,14 @@ essential.  The script <code>rdeps.py</code> will automatically download any mis
 <li><strong>Git:</strong> (Download from <a href="https://git-scm.com/">https://git-scm.com/</a>)</li>
 <li><strong>HIP SDK:</strong> (Download from <a href="https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html">https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html</a>)</li>
 </ul>
-<h3 id="downloading-the-source-code">Downloading the Source Code:</h3>
+<h3 id="downloading-the-source-code">Downloading the Source Code</h3>
 <ol>
 <li><strong>rocBLAS:</strong> Download the latest version (<a href="https://github.com/ROCm/rocBLAS/releases">https://github.com/ROCm/rocBLAS</a>).</li>
+<li><strong>ROCm 5.7.0:</strong>  Download <code>rocBLAS 3.1.0</code>
+<a href="https://github.com/ROCm/rocBLAS/releases/tag/rocm-5.7.0">rocBLAS 3.1.0 for ROCm 5.7.0</a></li>
 <li>
-<p><strong>ROCm 5.7.0:</strong>  Download <code>rocBLAS 3.1.0</code>
-<a href="https://github.com/ROCm/rocBLAS/releases/tag/rocm-5.7.0">rocBLAS 3.1.0 for ROCm 5.7.0</a></p>
-<ul>
-<li><strong>ROCm 6.1.2:</strong> Download <code>rocBLAS 4.1.2</code>
-<a href="https://github.com/ROCm/rocBLAS/releases/tag/rocm-6.1.2">rocBLAS 4.1.2 for ROCm 6.1.2</a></li>
-</ul>
+<p><strong>ROCm 6.1.2:</strong> Download <code>rocBLAS 4.1.2</code>
+<a href="https://github.com/ROCm/rocBLAS/releases/tag/rocm-6.1.2">rocBLAS 4.1.2 for ROCm 6.1.2</a></p>
 </li>
 <li>
 <p><strong>Tensile:</strong> Download the appropriate version:(<a href="https://github.com/ROCm/Tensile/releases">https://github.com/ROCm/Tensile</a>)</p>
@@ -4854,14 +4850,14 @@ essential.  The script <code>rdeps.py</code> will automatically download any mis
 </ol>
 <h3 id="patching-tensile-for-rocm-for-advanced-users-not-a-must-do">Patching Tensile for ROCm (For Advanced Users, Not-a-must-Do)</h3>
 <p>These steps are necessary for specific configurations of ROCm and may not be required in all cases.
-If you had a optimized logic for you gpu arche,you may skip this steps.Especily build libs for xnack- features.</p>
-<h3 id="determine-your-rocm-version">Determine Your ROCm Version:</h3>
+If you already have optimized logic for your GPU architecture, you may skip these steps, especially when building libraries for <code>xnack-</code> features.</p>
+<h3 id="determine-your-rocm-version">Determine Your ROCm Version</h3>
 <ul>
 <li><strong>ROCm 5.7.0:</strong> Follow the instructions for "<strong>For hip 5.7</strong>" below.</li>
 <li><strong>ROCm 6.1.2:</strong> Follow the instructions for "<strong>For hip 6.1.2</strong>" below.</li>
 </ul>
-<h3 id="patches-for-tensile">Patches for Tensile:</h3>
-<h4 id="for-hip-570">For hip 5.7.0:</h4>
+<h3 id="patches-for-tensile">Patches for Tensile</h3>
+<h4 id="for-hip-570">For hip 5.7.0</h4>
 <ol>
 <li>
 <p>Download
@@ -4874,14 +4870,16 @@ If you had a optimized logic for you gpu arche,you may skip this steps.Especily 
 <p>Open a terminal within the <code>Tensile</code> folder.</p>
 </li>
 <li>
-<p>Apply the patch:
-   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>apply<span class="w"> </span>Tensile-fix-fallback-arch-build.patch
-</code></pre></div></p>
+<p>Apply the patch:</p>
 </li>
+</ol>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>apply<span class="w"> </span>Tensile-fix-fallback-arch-build.patch
+</code></pre></div>
+<ul>
 <li>If nothing appears after applying, it's patched successfully. Otherwise, you may need to manually add the
 patch content to <code>TensileCreateLibrary.py</code>, you may also skip this steps if you have optimized logic available.</li>
-</ol>
-<h4 id="for-hip-612">For hip 6.1.2:</h4>
+</ul>
+<h4 id="for-hip-612">For hip 6.1.2</h4>
 <ol>
 <li>
 <p>Download
@@ -4894,44 +4892,43 @@ patch content to <code>TensileCreateLibrary.py</code>, you may also skip this st
 <p>Open a terminal within the <code>Tensile</code> folder.</p>
 </li>
 <li>
-<p>Apply the patch:
-   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>apply<span class="w"> </span>Tensile-fix-fallback-arch-build-hip-6.1.2.patch
-</code></pre></div></p>
-</li>
-<li>
-<p>If nothing appears after applying, it's patched successfully. Otherwise, you may need to manually add the
-patch content to <code>TensileCreateLibrary.py</code>.</p>
+<p>Apply the patch:</p>
 </li>
 </ol>
-<h3 id="skip-this-step-for-rocm-612">( Skip this step for ROCm 6.1.2 )</h3>
-<p>Note: edit the line 41 in file rdeps.py for rocBLAS  ,The old repo has an outdated vckpg, which will lead to fail build.update the vcpkg ,by replace with the following line 
-<div class="highlight"><pre><span></span><code>git clone -b 2024.02.14 https://github.com/microsoft/vcpkg
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>apply<span class="w"> </span>Tensile-fix-fallback-arch-build-hip-6.1.2.patch
 </code></pre></div>
-to udpate the vckpg version.</p>
+<ul>
+<li>If nothing appears after applying, it's patched successfully. Otherwise, you may need to manually add the
+patch content to <code>TensileCreateLibrary.py</code>.</li>
+</ul>
+<h3 id="skip-this-step-for-rocm-612">( Skip this step for ROCm 6.1.2 )</h3>
+<p>Note: edit the line 41 in file rdeps.py for rocBLAS  ,The old repo has an outdated vckpg, which will lead to fail build.update the vcpkg ,by replace with the following line</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span><span class="m">2024</span>.02.14<span class="w"> </span>https://github.com/microsoft/vcpkg
+</code></pre></div>
+<p>to update the <code>vcpkg</code> version.</p>
 <ul>
 <li><strong>vcpkg Version:</strong> If your vcpkg version was built after April 2023, replace <code>CMakeLists.txt</code> in
 <code>Tensile/tree/develop/Tensile/Source/lib/CMakeLists.txt</code> with this
-<a href="https://github.com/ROCm/Tensile/tree/develop/Tensile/Source/lib/CMakeLists.txt">version</a> and place it in the same
+<a href="https://github.com/ROCm/Tensile/tree/develop/Tensile/Source/lib/CMakeLists.txt">Tensile CMakeLists.txt replacement</a> and place it in the same
 folder (e.g., <code>rocm</code>).</li>
 <li>For more information, see the <a href="https://rocmdocs.amd.com/projects/rocBLAS/en/latest/install/Windows_Install_Guide.html#windows-install">official ROCm
 guide</a>.</li>
 </ul>
-<h3 id="build-with-rdeps-and-rmake">Build with rdeps and rmake:</h3>
+<h3 id="build-with-rdeps-and-rmake">Build with rdeps and rmake</h3>
 <ol>
 <li>Navigate to the <code>rocm/rocBLAS</code> directory in your terminal.</li>
-<li>
-<p>Run <code>python rdeps.py</code>. This script will configure your environment and download necessary packages.
- <code>python rdeps.py</code>
-( using <code>install.sh -d</code> in linux , if you encounter any mistakes , try to google and fix with it or try it again  )
-after done . try next step</p>
-</li>
-<li>
-<p>After <code>rdeps.py</code> completes, run 
-<div class="highlight"><pre><span></span><code>python rmake.py -a &quot;gfx1101;gfx1103&quot; --lazy-library-loading--no-merge-architectures -t &quot;C:\rocm\Tensile-rocm-5.7.0&quot;
-</code></pre></div>
-(adjust paths and architectures as needed).</p>
-</li>
+<li>Run <code>python rdeps.py</code>. This script will configure your environment and download necessary packages.</li>
 </ol>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>rdeps.py
+</code></pre></div>
+<p>( using <code>install.sh -d</code> in linux , if you encounter any mistakes , try to google and fix with it or try it again  )
+after done . try next step</p>
+<ol>
+<li>After <code>rdeps.py</code> completes, run</li>
+</ol>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>rmake.py<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;gfx1101;gfx1103&quot;</span><span class="w"> </span>--lazy-library-loading--no-merge-architectures<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;C:\rocm\Tensile-rocm-5.7.0&quot;</span>
+</code></pre></div>
+<p>(adjust paths and architectures as needed).</p>
 <p><strong>Important:</strong></p>
 <ul>
 <li>Replace <code>"gfx1101;gfx1103"</code> with the correct GPU or APU architecture names for your system.Make sure sepearte with ";"if you have more than one arches build .</li>
@@ -5039,23 +5036,19 @@ your desired GPU architecture (e.g., <code>gfx1031</code>).</li>
 </ul>
 <p><strong>Important Files to Modify:</strong></p>
 <ul>
-<li>
-<p><strong>Tensile:</strong> Within the Tensile folder, make changes to:</p>
-<ul>
+<li><strong>Tensile:</strong> Within the Tensile folder, make changes to:</li>
 <li><code>CMakeLists.txt</code>: This file configures the build process and needs adjustments for new architectures.</li>
 <li><code>AMDGPU.hpp</code>: Defines the architecture-specific interface.</li>
-<li><code>PlaceholderLibrary.hpp</code>, <code>Predicaters.hpp</code>, <code>OclUtiles.cpp</code>: These files contain code related to specific
-functionalities, which might require modifications for your target GPU.</li>
-</ul>
+<li>
+<p><code>PlaceholderLibrary.hpp</code>, <code>Predicaters.hpp</code>, <code>OclUtiles.cpp</code>: These files contain code related to specific
+functionalities, which might require modifications for your target GPU.</p>
 </li>
 <li>
 <p><strong>rocBLAS:</strong> In the rocBLAS folder:</p>
-<ul>
+</li>
 <li><code>CMakeLists.txt</code>: Similar to Tensile, update this file for your new architecture.</li>
 <li><code>handle.cpp</code>, <code>tensile_host.cpp</code>, <code>handle.hpp</code>: These files are likely involved in communication and
 interactions between rocBLAS and the GPU.</li>
-</ul>
-</li>
 </ul>
 <p><strong>Caution:</strong></p>
 <ul>
@@ -5069,7 +5062,7 @@ fine-tune these logic files specifically for your target hardware.The <a href="h
 Guide</a> provides practical guidance and techniques for start this process. Keep in mind that the tuning process requires patience, time, and a willingness to delve into Tensile's inner workings.</p>
 <p>More detail can be found in <a href="https://github.com/ROCm/Tensile/tree/develop/tuning">tuning</a> ,
 and tensile <a href="https://github.com/ROCm/Tensile/blob/develop/tuning_docs/tensile_tuning.tex">tuning .tex</a> ,
-A pdf version available in <a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/blob/main/tensile_tuning.pdf">here</a></p>
+A PDF version is available in the <a href="https://github.com/likelovewant/ROCmLibs-for-gfx1103-AMD780M-APU/blob/main/tensile_tuning.pdf">tensile tuning guide</a></p>
 <p>Please feel welcome to edit this post and contribute optimized logic links. Remember to carefully consider the
 impact of any edits or additions.</p>
 

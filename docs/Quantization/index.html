@@ -4265,7 +4265,7 @@ and can be configured in <em>Settings -&gt; Quantization Settings</em>  </p>
 <li><strong>LLM</strong><br />
   Applies to VLM models during captioning and interrogate and prompt enhance features  </li>
 <li><strong>Control</strong><br />
-  Applies to ControlNets    </li>
+  Applies to ControlNets</li>
 <li><strong>VAE</strong><br />
   Applies to VAE, quantization of VAE module is not recommended  </li>
 </ul>
@@ -4285,11 +4285,9 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 <p class="admonition-title">Important</p>
 <p>Not all quantization engines are available on all platforms, see notes below for details!<br />
 Using any quantization engine for the first time may result in failure as required libraries are downloaded and installed<br />
-Restart SD.Next and try again if you encounter any issues</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you're on Windows with a compatible GPU, you may try <strong>WSL2</strong> for broader feature compatibiliy<br />
+Restart SD.Next and try again if you encounter any issues  </p>
+<p>[!TIP]
+If you're on Windows with a compatible GPU, you may try <strong>WSL2</strong> for broader feature compatibiliy<br />
 See <a href="../WSL/">WSL Wiki</a> for more details</p>
 </div>
 <h3 id="sdnq">SDNQ</h3>
@@ -4320,8 +4318,8 @@ See <a href="../WSL/">WSL Wiki</a> for more details</p>
 <li><code>bitsandbytes</code> relies on <code>triton</code> packages which are not available on windows unless manually compiled/installed<br />
   without them, performance is significantly reduced  </li>
 <li>for nVidia: automatically installed as needed  </li>
-<li>for AMD/ROCm: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=AMD+ROCm#amd-gpu">link</a> </li>
-<li>for Intel/IPEX: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=Intel+CPU+%2B+GPU#multi-backend">link</a>  </li>
+<li>for AMD/ROCm: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=AMD+ROCm#amd-gpu">BitsAndBytes AMD ROCm installation guide</a></li>
+<li>for Intel/IPEX: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=Intel+CPU+%2B+GPU#multi-backend">BitsAndBytes Intel backend installation guide</a>  </li>
 </ul>
 <h3 id="optimum-quanto">Optimum-Quanto</h3>
 <p>Typical models pre-quantized with <code>optimum.quanto</code> would have look like <code>*qint.safetensors</code>.</p>
@@ -4593,8 +4591,8 @@ If your installation fails, you can try building <code>triton</code> from source
 <h3 id="triton-for-windows">Triton for Windows</h3>
 <p>A Triton fork is available for Windows and can be installed on Nvidia GPUs.<br />
 Open a CMD window from your SD.Next installation folder and install Triton Windows with these commands:</p>
-<div class="highlight"><pre><span></span><code>venv\Scripts\activate
-pip install triton-windows
+<div class="highlight"><pre><span></span><code>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+pip<span class="w"> </span>install<span class="w"> </span>triton-windows
 </code></pre></div>
 
 

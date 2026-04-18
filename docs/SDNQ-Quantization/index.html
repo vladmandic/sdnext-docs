@@ -4679,12 +4679,12 @@ Default is empty.  </p>
 <code>minimum_Xbit</code> will quantize the specified modules into the specifed bit if the main quantization dtype has less precision.<br />
 For example, <code>minimum_6bit</code> will quantize the specified modules to <code>int6</code> if you are using <code>int5</code> or below but won't do anything if you are using <code>int6</code> or above.<br />
 Default is empty.  </p>
-<p>An example dict:<br />
+<p>An example dict:  </p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="nt">&quot;int8&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;transformer_blocks.0.img_mod.1.weight&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;transformer_blocks.0.*&quot;</span><span class="p">],</span>
 <span class="nt">&quot;minimum_6bit&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;img_in&quot;</span><span class="p">]</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="group-size">Group size</h3>
 <p>Used to decide how many elements of a tensor will share the same quantization group.<br />
 Higher values have better performance and less memory usage but with less quality.<br />
@@ -4716,12 +4716,12 @@ The formula used to calculate the threshold is: <code>10 ** -(num_bits / 2)</cod
 4 bit: <code>1e-2</code><br />
 2 bit: <code>1e-1</code>  </p>
 <p>These targets are not set in stone and might require some trial and error depending on the model.<br />
-Default is <code>None</code> </p>
+Default is <code>None</code></p>
 <h3 id="use-svd-quantization">Use SVD quantization</h3>
 <p>Enabling this option will apply SVD quantization on top of SDNQ quantization.<br />
 SVD has much higher quality but runs slower.<br />
 SVD also makes Loras usable with 4 bit quantization.<br />
-More info on SVD quantization: https://arxiv.org/abs/2411.05007<br />
+More info on SVD quantization: <a href="https://arxiv.org/abs/2411.05007">https://arxiv.org/abs/2411.05007</a><br />
 Disabled by default.  </p>
 <p>Note: SVD lowrank used by SDNQ is not deterministic.<br />
 Meaning that you will get slightly different quantization results every time.  </p>
@@ -4748,7 +4748,7 @@ This setting requires a full restart of the webui to apply.<br />
 Enabled by default if Triton is available.  </p>
 <h3 id="use-quantized-matmul">Use Quantized MatMul</h3>
 <p>Enabling this option will use quantized INT8 or FP8 MatMul instead of BF16 / FP16 when running the model.<br />
-Has significantly higher performance on GPUs with INT8 or FP8 support. <br />
+Has significantly higher performance on GPUs with INT8 or FP8 support.
 Requires Triton. Disabled by default.  </p>
 <p><strong>Supported GPUs</strong><br />
 - <strong>Nvidia</strong><br />

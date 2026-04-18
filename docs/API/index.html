@@ -3586,10 +3586,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
+  <a href="#control-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Examples
+        Control Examples
       
     </span>
   </a>
@@ -3630,7 +3630,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples_1" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
         Examples
@@ -3928,10 +3928,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
+  <a href="#control-examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Examples
+        Control Examples
       
     </span>
   </a>
@@ -3972,7 +3972,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples_1" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
         Examples
@@ -4038,7 +4038,7 @@ All Public API endpoints start with <code>/sdapi/</code>  </p>
 <p class="admonition-title">Warning</p>
 <p>Internal API endpoints are not intended for public use and are subject to change without notice</p>
 </div>
-<h2 id="examples">Examples</h2>
+<h2 id="control-examples">Control Examples</h2>
 <p>SD.Next includes several examples of how to use the API via <code>Python</code> or <code>JavaScript</code><br />
 All examples are located in <code>/cli/</code> folder:</p>
 <ul>
@@ -4077,7 +4077,7 @@ If you want to allow access to other folders, use <code>--allowed-paths</code> c
 <li><code>progress</code>: a number ranging from 0 (idle / generation not started) to 1 (generation completed)</li>
 <li><code>eta_relative</code>: an indication of time remaining relative to the current step of the generation</li>
 <li><code>images</code>: A list of base64-encoded images, one or more depending how many you generate in a single batch (if <code>skip_current_image</code> is <code>true</code>, this list is empty)</li>
-<li><code>state</code>: A JSON dictionary with the following keys. <ul>
+<li><code>state</code>: A JSON dictionary with the following keys.</li>
 <li><code>job_count</code>: The number of jobs running, if 0, the server is idle; if &gt; 1, the server is running one or more job</li>
 <li><code>sampling_step</code>: The current sampling step of the current job</li>
 <li><code>sampling_steps</code>: The number of sampling steps in the current job</li>
@@ -4086,17 +4086,15 @@ If you want to allow access to other folders, use <code>--allowed-paths</code> c
 <li><code>job</code>: A string with the current job ID</li>
 <li><code>job_no</code>: The current job number</li>
 </ul>
-</li>
-</ul>
 <p>A typical use of this API would be to poll the progress endpoint while a generation is running, collecting information, and stopping while <code>progress</code> is 1. You may want also to check that <code>job_count</code> is 0, but you must be aware that it might be 0 right before a task starts.</p>
-<h2 id="examples_1">Examples</h2>
+<h2 id="examples">Examples</h2>
 <h3 id="t2i-with-controlnet">T2I with ControlNet</h3>
-<p>The <code>/sdapi/v1/control</code> endpoint supports doing the same operations as <code>txt2img</code> and <code>img2img</code> (with slightly different parameters), but in addition to that it supports specific operations like using ControlNet. ControlNet can be used in many different ways, but a very common usage is to generate an image with txt2img and have the ControlNet units and their specific images (called <code>override images</code> in SD.Next parlance) condition the generation.</p>
+<p>The <code>/sdapi/v1/control</code> endpoint supports the same operations as <code>txt2img</code> and <code>img2img</code> (with slightly different parameters), but it also supports ControlNet-specific operations. A common pattern is to generate an image with txt2img while using ControlNet units and their specific images (called <code>override images</code> in SD.Next parlance) to condition the generation.</p>
 <p>To do so with the API, you will first need:
     - The number of ControlNet units to use (minimum 1)
     - For each unit, the naeme of the specific ControlNet model to use (you can obtain a list by querying the <code>/sdapi/v1/controlnets</code> endpoint)
     - The override image to use for each unit
-    - For each unit, the name of the specific preprocessor to apply to the image (a list can be obtained by querying the <code>/sdapi/v1/preprocessors</code> endpoint), or <code>None</code> if no preprocessing is required </p>
+    - For each unit, the name of the specific preprocessor to apply to the image (a list can be obtained by querying the <code>/sdapi/v1/preprocessors</code> endpoint), or <code>None</code> if no preprocessing is required</p>
 <p>Then you need to prepare your payload to be sent via POST to the <code>/sdapi/v1/control</code> endpoint. You can refer to the documentation of the <code>/sdapi/v1/txt2img</code> endpoint for most of the parameters like sampler, steps, hires, and so on. Here are the ones that are specific of this one:</p>
 <pre><code>- `width_before`: The width of the generated image (use instead of `width`)
 - `height_before`: The height of the generated image (use instead of `height`)

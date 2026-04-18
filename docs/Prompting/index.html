@@ -4368,7 +4368,7 @@ Later fine-tuning introduces additional data (e.g. Pony uses heavily tagged data
 1woman greg rutkowski painting of a woman happy front portrait on a beach as photorealism, sharp focus, artstation</p>
 </blockquote>
 <h3 id="negative-prompt">Negative prompt</h3>
-<p>When you add negative prompt, what happens is that its basically appended to prompt just using negative weights.
+<p>When you add a negative prompt, it is basically appended to the prompt using negative weights.
 This makes model "steer away" from terms in negative prompt, but to do so it first has to INTRODUCE them to the context.</p>
 <p>So by adding negative prompt, you're:</p>
 <ul>
@@ -4413,8 +4413,8 @@ Examples of models where negative guidance is not available by default: <em>FLUX
 </ul>
 <p>Result?</p>
 <ul>
-<li>Its almost like model was "lobotomized".<br />
-  E.g. For concept of "topless", its not like it just doesn't have sample data for it, it was "burned out" of the model.
+<li>It's almost like the model was "lobotomized".<br />
+  E.g. for the concept of "topless", it is not just missing sample data. It was effectively "burned out" of the model.
   So to add concepts that model did not understand it takes massive effort, almost close to retraining. Fail.</li>
 </ul>
 <h3 id="sdxl">SDXL</h3>
@@ -4442,9 +4442,9 @@ Examples of models where negative guidance is not available by default: <em>FLUX
 </ul>
 <p>Result?</p>
 <ul>
-<li>Model that <em>thinks-it-knows-everything</em> and now it's up to you to prove it wrong.<br />
-  E.g., it knows what a topless person looks like, and its "certain" that nipples should be presented as blank.<br />
-  Which means it would like take a massive effort to retrain what it learned in the wrong way.<br />
+<li>Model that <em>thinks-it-knows-everything</em> and now it is up to you to prove it wrong.<br />
+  E.g., it knows what a topless person looks like, and it is "certain" that nipples should be presented as blank.<br />
+  Which means it would take a massive effort to retrain what it learned the wrong way.<br />
   I hope to be proven wrong, but this looks like a fail.</li>
 <li><strong>How to prompt</strong>? Use of long LLM-generated captions means that model should be prompted using very descriptive language and completely stop using using styles, keywords and attention-modifiers. And since LLM generated captions do not include styles as we know them, we need to replace them with detailed descriptions - it's almost like we need to think like LLM to prompt it - how would LLM describe the image I'm trying to create?</li>
 </ul>

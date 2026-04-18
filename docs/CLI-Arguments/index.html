@@ -4387,20 +4387,20 @@ Logging:
 <li><code>--tls-keyfile</code>: Enable TLS and specify the key file. TLS is a cryptographic protocol that ensures the secure transmission of data over a network. Enabling TLS in your application secures the communication between the client and the server. The <code>--tls-keyfile</code> option allows you to specify the path to the private key file used for encryption. This private key file should be in PEM format.</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code>--tls-keyfile<span class="w"> </span>/path/to/private-key.pem
-</code></pre></div>
+<pre><code>--tls-keyfile /path/to/private-key.pem
+</code></pre>
 <ul>
 <li><code>--tls-certfile</code>: Enable TLS and specify the cert file. Along with the private key, you need to specify the TLS certificate file. The certificate file contains the public key and information about the server. It should be in PEM format.</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code>--tls-certfile<span class="w"> </span>/path/to/certificate.pem
-</code></pre></div>
+<pre><code>--tls-certfile /path/to/certificate.pem
+</code></pre>
 <ul>
 <li><code>--tls-selfsign</code>: Enable TLS with self-signed certificates. If you don't have a certificate issued by a Certificate Authority (CA), you can enable this option to create self-signed certificates. Self-signed certificates are useful for development and testing but should not be used in production environments where security is crucial.</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code>--tls-selfsign<span class="w"> </span>/path/to/self-signed-certificate.pem
-</code></pre></div>
+<pre><code>--tls-selfsign /path/to/self-signed-certificate.pem
+</code></pre>
 
 
 

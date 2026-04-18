@@ -1614,17 +1614,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dont-use-linux-kernel-68-or-69-with-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Don't use Linux Kernel 6.8 or 6.9 with Linux!
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#install-guide-for-ubuntu-linux-or-ubuntu-with-wsl" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3985,17 +3974,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dont-use-linux-kernel-68-or-69-with-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Don't use Linux Kernel 6.8 or 6.9 with Linux!
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#install-guide-for-ubuntu-linux-or-ubuntu-with-wsl" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4089,15 +4067,15 @@
 <li>Install <a href="../Installation/#install-python-and-git">Git and Python</a></li>
 </ul>
 <h3 id="running-sdnext-on-windows">Running SD.Next on Windows</h3>
-<p>Open the CMD in a folder you want to install SD.Next and install SD.Next from Github with this command:<br />
+<p>Open the CMD in a folder you want to install SD.Next and install SD.Next from Github with this command:  </p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/sdnext
-</code></pre></div></p>
-<p>Then enter into the sdnext folder:<br />
+</code></pre></div>
+<p>Then enter into the sdnext folder:  </p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>sdnext
-</code></pre></div></p>
-<p>Then run SD.Next with this command:<br />
-<div class="highlight"><pre><span></span><code>.\webui.bat --use-ipex
-</code></pre></div></p>
+</code></pre></div>
+<p>Then run SD.Next with this command:  </p>
+<div class="highlight"><pre><span></span><code>.<span class="se">\w</span>ebui.bat<span class="w"> </span>--use-ipex
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
@@ -4105,16 +4083,16 @@
 <h2 id="install-guide-for-linux-or-wsl">Install Guide for Linux or WSL</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<h4 id="dont-use-linux-kernel-68-or-69-with-linux">Don't use Linux Kernel 6.8 or 6.9 with Linux!</h4>
+<p><strong>Do not use Linux Kernel 6.8 or 6.9 with Linux.</strong>  </p>
 <p><a href="https://github.com/intel/compute-runtime/issues/726">https://github.com/intel/compute-runtime/issues/726</a><br />
 Update your kernel to at least 6.10 or update to the latest available kernel.  </p>
-<p>*Updating kernel is not necessary for WSL as it is using the Windows GPU drivers instead.</p>
+<p><em>Updating the kernel is not necessary for WSL because it uses Windows GPU drivers instead.</em></p>
 </div>
 <h3 id="install-guide-for-ubuntu-linux-or-ubuntu-with-wsl">Install Guide for Ubuntu Linux or Ubuntu with WSL</h3>
 <p>Following Ubuntu instructions are for Ubuntu 24.04.<br />
-Install the base packages:
+Install the base packages:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>software-properties-common<span class="w"> </span>build-essential<span class="w"> </span>ca-certificates<span class="w"> </span>wget<span class="w"> </span>gpg<span class="w"> </span>git
-</code></pre></div></p>
+</code></pre></div>
 <p>Add the package lists for Intel Level Zero Drivers:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO<span class="w"> </span>-<span class="w"> </span>https://repositories.intel.com/gpu/intel-graphics.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--yes<span class="w"> </span>--dearmor<span class="w"> </span>--output<span class="w"> </span>/usr/share/keyrings/intel-graphics.gpg
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu noble client&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/intel-gpu-noble.list
@@ -4127,41 +4105,41 @@ sudo<span class="w"> </span>apt<span class="w"> </span>update
 <p>Install the necessary packages for Arch Linux:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>intel-compute-runtime<span class="w"> </span>level-zero-headers<span class="w"> </span>level-zero-loader<span class="w"> </span>base-devel<span class="w"> </span>git<span class="w"> </span>python-pip<span class="w"> </span>python-virtualenv
 </code></pre></div>
-<p>Install Python 3.12 (or anything between 3.10 and 3.13):
+<p>Install Python 3.12 (or anything between 3.10 and 3.13):</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/python312.git
 <span class="nb">cd</span><span class="w"> </span>python312
 makepkg<span class="w"> </span>-si
 <span class="nb">cd</span><span class="w"> </span>..
 <span class="nb">export</span><span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python3.12
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="running-sdnext-on-linux">Running SD.Next on Linux</h3>
-<p>Open the terminal in a folder you want to install SD.Next and install SD.Next from Github with this command:<br />
+<p>Open the terminal in a folder you want to install SD.Next and install SD.Next from Github with this command:  </p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/sdnext
-</code></pre></div></p>
-<p>Then enter into the sdnext folder:<br />
+</code></pre></div>
+<p>Then enter into the sdnext folder:  </p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>sdnext
-</code></pre></div></p>
-<p>Then run SD.Next with this command:<br />
+</code></pre></div>
+<p>Then run SD.Next with this command:  </p>
 <div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-ipex
-</code></pre></div></p>
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
 </div>
 <h2 id="running-sdnext-with-docker">Running SD.Next with Docker</h2>
-<p>Checkout the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
+<p>Check out the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
 <p>Using Docker with a prebuilt image:  </p>
-<div class="highlight"><pre><span></span><code>export SDNEXT_DOCKER_ROOT_FOLDER=~/sdnext
-sudo docker run -it \
-  --name sdnext-ipex \
-  --device /dev/dri \
-  -p 7860:7860 \
-  -v $SDNEXT_DOCKER_ROOT_FOLDER/app:/app \
-  -v $SDNEXT_DOCKER_ROOT_FOLDER/python:/mnt/python \
-  -v $SDNEXT_DOCKER_ROOT_FOLDER/data:/mnt/data \
-  -v $SDNEXT_DOCKER_ROOT_FOLDER/models:/mnt/models \
-  -v $SDNEXT_DOCKER_ROOT_FOLDER/huggingface:/root/.cache/huggingface \
-  disty0/sdnext-ipex:latest
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SDNEXT_DOCKER_ROOT_FOLDER</span><span class="o">=</span>~/sdnext
+sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>sdnext-ipex<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--device<span class="w"> </span>/dev/dri<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">7860</span>:7860<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="nv">$SDNEXT_DOCKER_ROOT_FOLDER</span>/app:/app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="nv">$SDNEXT_DOCKER_ROOT_FOLDER</span>/python:/mnt/python<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="nv">$SDNEXT_DOCKER_ROOT_FOLDER</span>/data:/mnt/data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="nv">$SDNEXT_DOCKER_ROOT_FOLDER</span>/models:/mnt/models<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="nv">$SDNEXT_DOCKER_ROOT_FOLDER</span>/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>disty0/sdnext-ipex:latest
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

@@ -3905,21 +3905,24 @@
 
 <h1 id="advanced-install">Advanced Install</h1>
 <h2 id="start-scripts">Start Scripts</h2>
-<p>Start scripts <code>webui.bat</code> or <code>webui.sh</code> are provided to create and activate VENV and immediately start launcher.<br />
-No other work is performed in the shell scripts.  </p>
-<p>Actual launcher is started using <code>python launch.py</code> command.</p>
-<p>If you start launcher manually without creating &amp; activating VENV first, it will install packages system wide.<br />
-This may be desired when running <strong>SD.Next</strong> in a dedicated container where there is no benefits of running additional isolation provided by <strong>VEVN</strong>.</p>
+<p>Start scripts <code>webui.bat</code> and <code>webui.sh</code> create and activate <code>venv</code> (a Python virtual environment), then start the launcher.<br />
+The scripts do not perform any other setup tasks.  </p>
+<p>The launcher itself is started with <code>python launch.py</code>.</p>
+<p>If you start the launcher manually without creating and activating <code>venv</code> first, dependencies are installed system-wide.<br />
+This can be intentional when running <strong>SD.Next</strong> in a dedicated container where extra virtual-environment isolation is not needed.</p>
 <h2 id="venv">VENV</h2>
-<p>SD.Next by default uses <code>venv</code> to install all dependencies<br />
-Usage of <code>venv</code> is not required, but it is recommended to avoid library version conflicts with other applications</p>
-<p>You can also pre-create <code>venv</code> to use specific settings, for example:</p>
-<blockquote>
-<p>python -m venv venv --system-site-packages</p>
-</blockquote>
-<p>This will instruct <strong>VENV</strong> to use system site packages where available and only install missing/incorrect packages inside <strong>VENV</strong></p>
+<p>By default, SD.Next uses <code>venv</code> to install dependencies.<br />
+Using <code>venv</code> is optional, but recommended to avoid dependency conflicts with other applications.</p>
+<p>You can pre-create <code>venv</code> with specific options. For example:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv<span class="w"> </span>--system-site-packages
+</code></pre></div>
+<p>This setup uses system site packages where available and installs only missing or incompatible packages inside <code>venv</code>.</p>
 <h2 id="upgrades">Upgrades</h2>
-<p><strong>SD.Next</strong> has built-in upgrade mechanism when using <code>--upgrade</code> command line flag, but its fully supported to run manual upgrades using <code>git pull</code> as well.  </p>
+<p><strong>SD.Next</strong> includes a built-in upgrade path with the <code>--upgrade</code> flag, and manual upgrades with <code>git pull</code> are also supported.  </p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>If you use manual upgrades with <code>git pull</code>, also update all <strong>submodules</strong>.</p>
+</div>
 
 
 

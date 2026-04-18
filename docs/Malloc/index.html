@@ -3337,10 +3337,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mimalloc" class="md-nav__link">
+  <a href="#linux-mimalloc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mimalloc
+        Linux mimalloc
       
     </span>
   </a>
@@ -3365,10 +3365,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mimalloc_1" class="md-nav__link">
+  <a href="#windows-mimalloc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mimalloc
+        Windows mimalloc
       
     </span>
   </a>
@@ -3935,10 +3935,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mimalloc" class="md-nav__link">
+  <a href="#linux-mimalloc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mimalloc
+        Linux mimalloc
       
     </span>
   </a>
@@ -3963,10 +3963,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mimalloc_1" class="md-nav__link">
+  <a href="#windows-mimalloc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mimalloc
+        Windows mimalloc
       
     </span>
   </a>
@@ -4016,7 +4016,7 @@
 
 
 <h1 id="memory-allocator">Memory Allocator</h1>
-<p>Combination of OS default memory allocator <code>malloc</code> with Python's default memory allocator is pessimistic when it comes to system memory garbage collection and it will sometimes hold on to allocated memory longer than necessary even if GC is triggered explicitly <br />
+<p>Combination of OS default memory allocator <code>malloc</code> with Python's default memory allocator is pessimistic when it comes to system memory garbage collection and it will sometimes hold on to allocated memory longer than necessary even if GC is triggered explicitly
 This appears to user as a memory leak as process memory usage grows over time<br />
 This is especially noticeable when frequently loading/unloading large objects such as models or LoRAs  </p>
 <div class="admonition note">
@@ -4041,7 +4041,7 @@ sudo ldconfig
 export LD_PRELOAD=libjemalloc.so.2  
 ./webui.sh --debug
 </code></pre>
-<h3 id="mimalloc">mimalloc</h3>
+<h3 id="linux-mimalloc">Linux mimalloc</h3>
 <pre><code>sudo apt install libmimalloc2.0
 sudo ldconfig  
 export LD_PRELOAD=libmimalloc.so.2  
@@ -4053,7 +4053,7 @@ export LD_PRELOAD=libmimalloc.so.2
 <p>For Windows deployments you can switch out memory allocator to <code>mimalloc</code><br />
 which is more efficient and has better memory management</p>
 </div>
-<h3 id="mimalloc_1">mimalloc</h3>
+<h3 id="windows-mimalloc">Windows mimalloc</h3>
 <p><code>mimalloc</code> for windows requires custom compiled library<br />
 Full instructions can be found here: <a href="https://microsoft.github.io/mimalloc/index.html">https://microsoft.github.io/mimalloc/index.html</a>  </p>
 <h2 id="compare">Compare</h2>
