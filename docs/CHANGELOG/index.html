@@ -8407,7 +8407,7 @@
 <h3 id="highlights-for-2026-04-19">Highlights for 2026-04-19</h3>
 <p><em>What's New?</em>
 - New models! <strong>Zeta-Chroma</strong>, <strong>ERNIE</strong>, <strong>Nucleus</strong>, <strong>Bria-FIBO</strong>, <strong>Anima-v3</strong>, <strong>SDXS-1B</strong>, <strong>LTX 2.3 v1.1</strong>
-- Major <strong>Kanvas</strong> update for enhanced inpaint/outpaint
+- Major <strong>Kanvas</strong> update for enhanced inpaint/outpaint and overal more responsive <strong>UI</strong>
 - Built-in <strong>Tag-Autocomplete</strong> with support for <em>10+</em> tag databases
 - Additional Schedulers, updates to NudeNet, OpenVINO and ROCm and other features</p>
 <p>And tons of <em>quality-of-life</em> improvements and <em>bug-fixes</em>!
@@ -8474,6 +8474,8 @@ In addition, to jump on a bandwagon, we're now fully <strong>AI agent</strong> r
 <li><strong>UI</strong></li>
 <li><code>gallery</code> send-to button advanced options with right-click</li>
 <li><code>tag autocomplete</code> quick toggle in main prompt area</li>
+<li>a lot of small performance optimizations that add up to faster load times and more responsive ui</li>
+<li>add ui <code>log</code> during startup</li>
 <li><strong>Caption &amp; Prompt Enhance</strong></li>
 <li>[Google Gemma 4] in <em>E2B</em> and <em>E4B</em> variants as well as <em>heretic</em> fine-tune</li>
 <li><strong>Agents</strong>
@@ -8505,6 +8507,9 @@ In addition, to jump on a bandwagon, we're now fully <strong>AI agent</strong> r
 <li>refactor <code>hash-cache</code> management, thanks @awsr</li>
 <li>validate all <code>reference</code> jsons and backfill all fields  </li>
 <li>sticter <code>js</code> linting, thanks @awsr</li>
+<li>ui: remove non-passive event listeners</li>
+<li>ui: add debounce to ui updates</li>
+<li>ui: utilize requestanimationframe for paint optimizations</li>
 <li><strong>Fixes</strong></li>
 <li>Prohibit <code>python==3.14</code> unless <code>--experimental</code></li>
 <li>UI CSS fixes, thanks @awsr</li>
