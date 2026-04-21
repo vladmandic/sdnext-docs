@@ -3771,22 +3771,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-04-19" class="md-nav__link">
+  <a href="#update-for-2026-04-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-04-19
+        Update for 2026-04-21
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-04-19">
+    <nav class="md-nav" aria-label="Update for 2026-04-21">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-04-19" class="md-nav__link">
+  <a href="#highlights-for-2026-04-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-04-19
+        Highlights for 2026-04-21
       
     </span>
   </a>
@@ -3794,10 +3794,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-04-19" class="md-nav__link">
+  <a href="#details-for-2026-04-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-04-19
+        Details for 2026-04-21
       
     </span>
   </a>
@@ -6091,22 +6091,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-04-19" class="md-nav__link">
+  <a href="#update-for-2026-04-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-04-19
+        Update for 2026-04-21
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-04-19">
+    <nav class="md-nav" aria-label="Update for 2026-04-21">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-04-19" class="md-nav__link">
+  <a href="#highlights-for-2026-04-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-04-19
+        Highlights for 2026-04-21
       
     </span>
   </a>
@@ -6114,10 +6114,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-04-19" class="md-nav__link">
+  <a href="#details-for-2026-04-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-04-19
+        Details for 2026-04-21
       
     </span>
   </a>
@@ -8403,8 +8403,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-04-19">Update for 2026-04-19</h2>
-<h3 id="highlights-for-2026-04-19">Highlights for 2026-04-19</h3>
+<h2 id="update-for-2026-04-21">Update for 2026-04-21</h2>
+<h3 id="highlights-for-2026-04-21">Highlights for 2026-04-21</h3>
 <p><em>What's New?</em>
 - New models! <strong>Zeta-Chroma</strong>, <strong>ERNIE</strong>, <strong>Nucleus</strong>, <strong>Bria-FIBO</strong>, <strong>Anima-v3</strong>, <strong>SDXS-1B</strong>, <strong>LTX 2.3 v1.1</strong>
 - Major <strong>Kanvas</strong> update for enhanced inpaint/outpaint and overal more responsive <strong>UI</strong>
@@ -8414,7 +8414,7 @@
 In addition, to jump on a bandwagon, we're now fully <strong>AI agent</strong> ready with detailed instructions and skills!</p>
 <p>For full details, see <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a>  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2026-04-19">Details for 2026-04-19</h3>
+<h3 id="details-for-2026-04-21">Details for 2026-04-21</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/lodestones/Zeta-Chroma">Zeta-Chroma</a> pixel-space diffusion transformer image model<br />
@@ -8501,6 +8501,7 @@ In addition, to jump on a bandwagon, we're now fully <strong>AI agent</strong> r
 <li><strong>Obsoleted</strong></li>
 <li>removed <em>system-info</em> from <em>extensions-builtin</em></li>
 <li><strong>Internal</strong></li>
+<li>sync <code>kanvas</code> branch with core branch</li>
 <li><code>history</code> accepts both latent and pixel entries</li>
 <li>wrap <code>hf-download</code> methods</li>
 <li>additional <em>typing</em> and <em>typechecks</em>, thanks @awsr</li>
@@ -8511,6 +8512,8 @@ In addition, to jump on a bandwagon, we're now fully <strong>AI agent</strong> r
 <li>ui: add debounce to ui updates</li>
 <li>ui: utilize requestanimationframe for paint optimizations</li>
 <li>ui: profile callbacks</li>
+<li>ui: validate callbacks before use, thanks @awsr</li>
+<li>ui: log formatting  </li>
 <li><strong>Fixes</strong></li>
 <li>Prohibit <code>python==3.14</code> unless <code>--experimental</code></li>
 <li>UI CSS fixes, thanks @awsr</li>
@@ -8532,7 +8535,6 @@ In addition, to jump on a bandwagon, we're now fully <strong>AI agent</strong> r
 <li>patch <code>z-image</code> for fp16 compatibility, thanks @resonantsky</li>
 <li>patch <code>unipc</code> for timesteps device placement, thanks @resonantsky</li>
 <li><code>civitai</code> search and base-model discovery improvements</li>
-<li>ui log formatting  </li>
 <li>auto-masking with <code>rembg</code></li>
 </ul>
 <h2 id="update-for-2026-04-01">Update for 2026-04-01</h2>
