@@ -3771,17 +3771,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#todo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TODO
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#update-for-2026-05-02" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6113,17 +6102,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#todo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TODO
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#update-for-2026-05-02" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8447,18 +8425,18 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="todo">TODO</h2>
-<ul>
-<li>Tag multi-image pipes with <code>use_images_direct</code> and allow UI override</li>
-</ul>
 <h2 id="update-for-2026-05-02">Update for 2026-05-02</h2>
 <ul>
 <li><strong>Features</strong></li>
 <li><strong>Multi-image</strong> workflows!
     for models that support multiple images as inputs, you can now add multiple stages in Kanvas<br />
     prompts like "<em>place character from first image, add background from second image, render in style from third image</em>" are now possible  </li>
+<li>option <em>inputs -&gt; skip processing</em> to force images to passed to model as-is without any pre-processing<br />
+    examples of models that support multi-inputs: <em>qwen-image-edit, flux.2, google-gemini</em>  </li>
 <li><strong>Anima</strong> support for <em>img2img</em> and <em>inpaint</em> workflows</li>
-<li>option <em>inputs -&gt; skip processing</em> to force images to passed to model as-is without any pre-processing</li>
+<li>custom <strong>VAE</strong> loader for all pipelines<br />
+<em>note</em>: vae still needs to be compatible with the model  </li>
+<li>add prompt enhance info to image metadata  </li>
 <li><strong>UI</strong></li>
 <li>add button to manually reorient input/output panels</li>
 <li>all ui panels can be minimized/maximized by clicking on their header<br />
@@ -8473,9 +8451,11 @@
 <li><strong>Internal</strong></li>
 <li>refactor <code>pip</code> installer, thanks @awsr</li>
 <li><strong>Fixes</strong></li>
+<li>add missing <code>jquery</code> and <code>sparkline</code> js scripts</li>
 <li>save handle already decoded images</li>
 <li>ernie-image preview</li>
 <li>lora false deactivate</li>
+<li>kandinsky-5 t2i/i2i workflows</li>
 </ul>
 <h2 id="update-for-2026-04-28">Update for 2026-04-28</h2>
 <h3 id="highlights-for-2026-04-28">Highlights for 2026-04-28</h3>
