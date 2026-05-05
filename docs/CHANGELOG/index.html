@@ -8436,8 +8436,12 @@
 <li><strong>Anima</strong> support for <em>img2img</em> and <em>inpaint</em> workflows</li>
 <li><strong>Ernie-Image</strong> add <em>LoRA</em> support, <em>img2img</em> and <em>inpaint</em> workflows</li>
 <li><strong>LTX</strong> support for <em>audio</em> generation</li>
+<li><strong>Chroma</strong> add <em>LoRA</em> support</li>
 <li><a href="https://huggingface.co/stepfun-ai/Step1X-Edit-v1p1-diffusers">StepFun Step1X-Edit v1.1</a> image edit model support<br />
     step1x is a large dedicated image edit model combining qwen-2.5 8B encoder with custom 12.4B transformer  </li>
+<li><a href="https://huggingface.co/iitolstykh/VIBE-Image-Edit">VIBE Image Edit</a> text-guided image editing model<br />
+    built on Sana1.5-1.6B diffusion backbone with Qwen3-VL-2B multimodal conditioning<br />
+    supports both image editing and text-to-image generation; uses multi-scale resolution binning up to 2048px  </li>
 <li><strong>Prompt enhance</strong> add info to image metadata  </li>
 <li>custom <strong>VAE</strong> loader for all pipelines<br />
 <em>note</em>: vae still needs to be compatible with the model  </li>
@@ -8458,6 +8462,8 @@
 <li><strong>Internal</strong></li>
 <li>refactor <code>pip</code> installer, thanks @awsr</li>
 <li>remove obsolete <code>lora</code> stepwise and functional code, thanks @awsr</li>
+<li>interrupt model loading between components</li>
+<li>patch <code>rich</code> for cleaner exception logging</li>
 <li><strong>Fixes</strong></li>
 <li>add missing <code>jquery</code> and <code>sparkline</code> js scripts</li>
 <li>save handle already decoded images</li>
