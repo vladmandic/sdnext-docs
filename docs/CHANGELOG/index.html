@@ -8509,7 +8509,11 @@
     step1x is a large dedicated image edit model combining qwen-2.5 8B encoder with custom 12.4B transformer  </li>
 <li><a href="https://huggingface.co/iitolstykh/VIBE-Image-Edit">VIBE Image Edit</a> text-guided image editing model<br />
     built on Sana1.5-1.6B diffusion backbone with Qwen3-VL-2B multimodal conditioning<br />
-    supports both image editing and text-to-image generation; uses multi-scale resolution binning up to 2048px  </li>
+    supports both <em>T2I</em> and <em>I2I</em> workflows, uses multi-scale resolution binning up to 2048px  </li>
+<li><a href="https://huggingface.co/Alpha-VLLM/Lumina-DiMOO">AlphaVLLM Lumina-DiMOO</a> unified multimodal diffusion model<br />
+    includes <em>T2I</em>, <em>I2I edit</em>, and <em>MMU</em> capabilities in a single pipeline<br />
+<em>note</em> in addition to normal prompt-based image editing, model also supports special prompts: <em>dense, canny_pred, control, subject, edit, ref_transfer, multi_view</em>
+    <em>note</em> as with most multi-modal/unified models, it needs higher step count (recommended is 64 steps) and uses quite a lot of VRAM, so use with caution!</li>
 <li><a href="https://huggingface.co/Owen777/UltraFlux-v1">Owen777 UltraFlux-v1</a> native 4K text-to-image model based on FLUX.1-dev<br />
 <em>note</em>: UltraFlux is capable of rendering images up to 4K resolution, but it doesnt mean it will do that on any hardware - it will depend on your VRAM!</li>
 <li><strong>UI</strong></li>
