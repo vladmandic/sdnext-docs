@@ -8485,14 +8485,14 @@
 <h3 id="highlights-for-2026-05-08">Highlights for 2026-05-08</h3>
 <p><em>What's New?</em>
 - Image editing models now can work with multiple image inputs!<br />
-- New models: <em>Step1X-Edit</em>, <em>VIBE Image Edit</em> and <em>UltraFlux</em> plus enhanced capabilities for <em>Anima</em>, <em>Ernie-Image</em>, <em>LTX</em> and <em>Chroma</em> models<br />
+- New models: <em>JoyAI Image Edit</em>, <em>Step1X-Edit</em>, <em>VIBE Image Edit</em> and <em>UltraFlux</em> plus enhanced capabilities for <em>Anima</em>, <em>Ernie-Image</em>, <em>LTX</em> and <em>Chroma</em> models<br />
 - UI improvements accross the board: <em>Main panels</em>, <em>Gallery</em>, <em>Kanvas</em>, and more</p>
 <p>For full details, see <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a>  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
 <h3 id="details-for-2026-05-08">Details for 2026-05-08</h3>
 <ul>
 <li><strong>Features</strong></li>
-<li><strong>Multi-image</strong> workflows!
+<li><strong>Multi-image</strong> workflows!<br />
     for models that support multiple images as inputs, you can now add multiple stages in Kanvas<br />
     prompts like "<em>place character from first image, add background from second image, render in style from third image</em>" are now possible  </li>
 <li>option <em>inputs -&gt; skip processing</em> to force images to passed to model as-is without any pre-processing<br />
@@ -8508,26 +8508,32 @@
     still a popular method for upscaling, but has not been updated nor maintained for a while<br />
     so now its modernized and fully integrated as a built-in script!  </li>
 <li><strong>Models</strong></li>
-<li><a href="https://huggingface.co/stepfun-ai/Step1X-Edit-v1p1-diffusers">StepFun Step1X-Edit v1.1</a> image edit model support<br />
+<li><a href="https://huggingface.co/jdopensource/JoyAI-Image-Edit-Diffusers">JoyAI Image Edit</a> image-editing model support<br />
+    includes multimodal conditioning using <em>Qwen3-VL</em> with a dedicated <em>JoyImageEdit</em> diffusion transformer<br />
+<em>note</em> this is a large model at 50GB so use of agressive quantization is recommended  </li>
+<li><a href="https://huggingface.co/stepfun-ai/Step1X-Edit-v1p1-diffusers">StepFun Step1X-Edit v1.1</a> image-editing model support<br />
     step1x is a large dedicated image edit model combining qwen-2.5 8B encoder with custom 12.4B transformer  </li>
-<li><a href="https://huggingface.co/iitolstykh/VIBE-Image-Edit">VIBE Image Edit</a> text-guided image editing model<br />
+<li><a href="https://huggingface.co/iitolstykh/VIBE-Image-Edit">VIBE Image Edit</a> image-editing model support<br />
     built on Sana1.5-1.6B diffusion backbone with Qwen3-VL-2B multimodal conditioning<br />
-    supports both <em>T2I</em> and <em>I2I</em> workflows, uses multi-scale resolution binning up to 2048px  </li>
+    primarily image-editing model, but supports t2i as well, uses multi-scale resolution binning up to 2048px  </li>
 <li><a href="https://huggingface.co/Alpha-VLLM/Lumina-DiMOO">AlphaVLLM Lumina-DiMOO</a> unified multimodal diffusion model<br />
     includes <em>T2I</em>, <em>I2I edit</em>, and <em>MMU</em> capabilities in a single pipeline<br />
-<em>note</em> in addition to normal prompt-based image editing, model also supports special prompts: <em>dense, canny_pred, control, subject, edit, ref_transfer, multi_view</em>
-    <em>note</em> as with most multi-modal/unified models, it needs higher step count (recommended is 64 steps) and uses quite a lot of VRAM, so use with caution!</li>
-<li><a href="https://huggingface.co/Owen777/UltraFlux-v1">Owen777 UltraFlux-v1</a> native 4K text-to-image model based on FLUX.1-dev<br />
-<em>note</em>: UltraFlux is capable of rendering images up to 4K resolution, but it doesnt mean it will do that on any hardware - it will depend on your VRAM!</li>
+<em>note</em> in addition to normal prompt-based image editing, model also supports special prompts: <em>dense, canny_pred, control, subject, edit, ref_transfer, multi_view</em><br />
+<em>note</em> as with most multi-modal/unified models, it needs higher step count (recommended is 64 steps) and uses quite a lot of VRAM, so use with caution!  </li>
+<li><a href="https://huggingface.co/Owen777/UltraFlux-v1">Owen777 UltraFlux-v1</a> native 4K text-to-image model based on <em>FLUX.1-dev</em><br />
+<em>note</em>: UltraFlux is capable of rendering images up to 4K resolution, but it doesnt mean it will do that on any hardware - it will depend on your VRAM!  </li>
 <li><strong>UI</strong></li>
-<li>add button to manually reorient input/output panels</li>
-<li>all ui panels can be minimized/maximized by clicking on their header<br />
+<li><strong>Networks</strong> using networks to load model or auto-download a reference model will now be reflected in the UI  </li>
+<li>ability to manually reorient <em>input/output</em> panels</li>
+<li>all ui panels can be <em>minimized/maximized</em> by clicking on their header<br />
     state is preserved across sessions and can be used to hide rarely used panels and declutter the workspace  </li>
 <li><strong>Kanvas</strong> re-order stages by clicking on active stage<br />
     order of stages detemines order of images passed to model  </li>
 <li><strong>Kanvas</strong> <em>magic-wand</em> tool now works on mask layer and auto-creates mask based on perceptual tolerance  </li>
 <li><strong>Gallery</strong> add thumbnail size slider</li>
 <li><strong>Gallery</strong> add quick info/download/delete buttons on thumbnail hover</li>
+<li><strong>Models</strong> sortable columns, ability to remove a model<br />
+    applies to models as well as huggingface cache entries  </li>
 <li><strong>Control</strong></li>
 <li>remove buttons: <em>input/control/process</em></li>
 <li>move params <em>control input type</em> to control menu section</li>
@@ -8553,6 +8559,7 @@
 <li><code>ipex</code> invalid device type</li>
 <li>cache network thumbnails</li>
 <li><code>scripts</code> corrupting control ui state</li>
+<li>avoid <code>callback</code> duplicate registrations</li>
 </ul>
 <h2 id="update-for-2026-04-28">Update for 2026-04-28</h2>
 <h3 id="highlights-for-2026-04-28">Highlights for 2026-04-28</h3>
