@@ -3038,6 +3038,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#typography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typography
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typography">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-references
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translation-propagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Translation propagation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3889,6 +3950,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#typography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typography
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typography">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-references
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translation-propagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Translation propagation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3943,6 +4065,57 @@ Save it locally and run <code>python cli/validate-locale.py</code>  </p>
 <p>Best way to submit additions/changes is to create GitHub PR with changes to that file<br />
 Alternatively, you can use discussions or issue tracker to suggest changes and they will be applied manually<br />
 Or reach out via <a href="https://discord.com/channels/1101998836328697867/1126522089487208560">Discord server - #Contribute channel</a>  </p>
+<h2 id="typography">Typography</h2>
+<p>Hint strings render as HTML. A small set of inline tags is used to keep hints scannable.</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Meaning</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;b&gt;</code></td>
+<td>A <strong>value</strong>: default, dropdown enum, or specific numeric</td>
+<td><code>&lt;b&gt;0.30&lt;/b&gt;</code>, <code>&lt;b&gt;Karras&lt;/b&gt;</code>, <code>&lt;b&gt;v_prediction&lt;/b&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;b&gt;&lt;i&gt;</code></td>
+<td>A <strong>cross-reference</strong> to another label in the UI</td>
+<td><code>&lt;b&gt;&lt;i&gt;Denoising strength&lt;/i&gt;&lt;/b&gt;</code>, <code>&lt;b&gt;&lt;i&gt;Use init image&lt;/i&gt;&lt;/b&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;i&gt;</code></td>
+<td>A <strong>proper noun</strong>: model family, dataset, or example value being discussed</td>
+<td><code>&lt;i&gt;SDXL&lt;/i&gt;</code>, <code>&lt;i&gt;danbooru&lt;/i&gt;</code>, <code>&lt;i&gt;long hair&lt;/i&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;code&gt;</code></td>
+<td>A <strong>literal</strong>: type or use this verbatim</td>
+<td><code>&lt;code&gt;[PROMPT]&lt;/code&gt;</code>, <code>&lt;code&gt;face-yolo8n:conf=0.5:strength=0.4&lt;/code&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="cross-references">Cross-references</h3>
+<p>Use <code>&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;</code> whenever a hint refers to another control by its exact visible label. This includes setting names, tab names, and named buttons. Match the label exactly, including capitalization and spacing. Readers will look for the same string in the UI.</p>
+<p>Generic concept references (<code>the model</code>, <code>the prompt</code>, <code>the scheduler</code>) are not cross-references and stay unstyled.</p>
+<h3 id="structure">Structure</h3>
+<ul>
+<li><code>&lt;br&gt;</code> for a line break within a paragraph</li>
+<li><code>&lt;br&gt;&lt;br&gt;</code> for a paragraph break</li>
+<li><code>&lt;br&gt;- &lt;b&gt;key&lt;/b&gt;: description</code> for a keyed bullet list, used for short enumerations of dropdown values, modes, or numeric brackets</li>
+</ul>
+<p>Do not use <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, Markdown asterisks, or unicode bullets; none of those are used elsewhere in the file.</p>
+<h3 id="common-pitfalls">Common pitfalls</h3>
+<ul>
+<li>Do not bold ad-hoc emphasis. <code>&lt;b&gt;</code> is reserved for values and, combined with <code>&lt;i&gt;</code>, for cross-references; overusing it makes the genuine signal blend in.</li>
+<li>Do not use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> separately for cross-references; always combined as <code>&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;</code>.</li>
+<li>Do not reword the inside of <code>&lt;code&gt;</code> blocks; they are literal user-facing strings.</li>
+</ul>
+<h3 id="translation-propagation">Translation propagation</h3>
+<p><code>html/locale_en.json</code> is the source of truth. Other <code>locale_*.json</code> files are auto-generated by <code>cli/localize.js</code>, so formatting changes in English propagate forward on the next translation run. Per-locale corrections live in <code>html/override_{locale}.json</code> (see <a href="../Locale/">Localization</a>).</p>
 
 
 

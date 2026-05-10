@@ -8484,30 +8484,20 @@
 <h2 id="update-for-2026-05-10">Update for 2026-05-10</h2>
 <h3 id="highlights-for-2026-05-10">Highlights for 2026-05-10</h3>
 <p><em>What's New?</em>
-- Image editing models now can work with multiple image inputs!<br />
-- New models: <em>JoyAI Image Edit</em>, <em>Step1X-Edit</em>, <em>VIBE Image Edit</em> and <em>UltraFlux</em> plus enhanced capabilities for <em>Anima</em>, <em>Ernie-Image</em>, <em>LTX</em> and <em>Chroma</em> models<br />
-- UI improvements accross the board: <em>Main panels</em>, <em>Gallery</em>, <em>Kanvas</em>, and more</p>
+- Image editing models now can work with multiple image inputs!
+- New models: <em>HiDream-O1 Image</em>, <em>JoyAI Image Edit</em>, <em>Step1X-Edit</em>, <em>VIBE Image Edit</em> and <em>UltraFlux</em>
+- Enhanced capabilities for <em>Anima</em>, <em>Ernie-Image</em>, <em>LTX</em>, <em>Flux.2</em> and <em>Chroma</em> models
+- UI improvements accross the board: <em>Main panels</em>, <em>Gallery</em>, <em>Kanvas</em>, and more...</p>
 <p>For full details, see <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a>  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
 <h3 id="details-for-2026-05-10">Details for 2026-05-10</h3>
 <ul>
-<li><strong>Features</strong></li>
-<li><strong>Multi-image</strong> workflows!<br />
-    for models that support multiple images as inputs, you can now add multiple stages in Kanvas<br />
-    prompts like "<em>place character from first image, add background from second image, render in style from third image</em>" are now possible  </li>
-<li>option <em>inputs -&gt; skip processing</em> to force images to passed to model as-is without any pre-processing<br />
-    examples of models that support multi-inputs: <em>qwen-image-edit, flux.2, google-gemini</em>  </li>
-<li><strong>Anima</strong> support for <em>img2img</em> and <em>inpaint</em> workflows</li>
-<li><strong>Ernie-Image</strong> add <em>LoRA</em> support, <em>img2img</em> and <em>inpaint</em> workflows</li>
-<li><strong>LTX</strong> support for <em>audio</em> generation</li>
-<li><strong>Chroma</strong> add <em>LoRA</em> support</li>
-<li><strong>Prompt enhance</strong> add info to image metadata  </li>
-<li>custom <strong>VAE</strong> loader for all pipelines<br />
-<em>note</em>: vae still needs to be compatible with the model  </li>
-<li><a href="https://github.com/Coyote-A/ultimate-upscale-for-automatic1111">SD Ultimate Upscale</a><br />
-    still a popular method for upscaling, but has not been updated nor maintained for a while<br />
-    so now its modernized and fully integrated as a built-in script!  </li>
 <li><strong>Models</strong></li>
+<li><a href="https://huggingface.co/HiDream-ai/HiDream-O1-Image">HiDream-O1-Image</a> pixel-level unified transformer model support<br />
+    HiDream-O1 is based on a single custom <em>Qwen3-VL</em> 8.8B 35GB component<br />
+    includes both <strong>HiDream-O1-Image</strong> <em>(base)</em> and <strong>HiDream-O1-Image-Dev</strong> <em>(distilled</em>)<em> variants<br />
+    includes </em>T2I<em> and </em>I2I edit<em> capabilities and resolutions up to 2048px <br />
+</em>note*: use steps:50 for base and steps:28 for dev variants  </li>
 <li><a href="https://huggingface.co/jdopensource/JoyAI-Image-Edit-Diffusers">JoyAI Image Edit</a> image-editing model support<br />
     includes multimodal conditioning using <em>Qwen3-VL</em> with a dedicated <em>JoyImageEdit</em> diffusion transformer<br />
 <em>note</em> this is a large model at 50GB so use of agressive quantization is recommended  </li>
@@ -8522,6 +8512,24 @@
 <em>note</em> as with most multi-modal/unified models, it needs higher step count (recommended is 64 steps) and uses quite a lot of VRAM, so use with caution!  </li>
 <li><a href="https://huggingface.co/Owen777/UltraFlux-v1">Owen777 UltraFlux-v1</a> native 4K text-to-image model based on <em>FLUX.1-dev</em><br />
 <em>note</em>: UltraFlux is capable of rendering images up to 4K resolution, but it doesnt mean it will do that on any hardware - it will depend on your VRAM!  </li>
+<li><strong>Features</strong></li>
+<li><strong>Multi-image</strong> workflows!<br />
+    for models that support multiple images as inputs, you can now add multiple stages in Kanvas<br />
+    prompts like "<em>place character from first image, add background from second image, render in style from third image</em>" are now possible  </li>
+<li>option <em>inputs -&gt; skip processing</em> to force images to passed to model as-is without any pre-processing<br />
+    examples of models that support multi-inputs: <em>qwen-image-edit, flux.2, google-gemini</em>  </li>
+<li><a href="https://github.com/Coyote-A/ultimate-upscale-for-automatic1111">SD Ultimate Upscale</a><br />
+    still a popular method for upscaling, but has not been updated nor maintained for a while<br />
+    so now its modernized and fully integrated as a built-in script!  </li>
+<li><strong>LTX</strong> support for <em>audio</em> generation</li>
+<li><strong>Anima</strong> support for <em>img2img</em> and <em>inpaint</em> workflows</li>
+<li><strong>Ernie-Image</strong> add native <em>LoRA</em> support, <em>img2img</em> and <em>inpaint</em> workflows</li>
+<li><strong>Chroma</strong> add native <em>LoRA</em> support</li>
+<li><strong>Flux.2</strong> add native <em>LoRA</em> support</li>
+<li><strong>Prompt enhance</strong> add info to image metadata  </li>
+<li>custom <strong>VAE</strong> loader for all pipelines<br />
+<em>note</em>: vae still needs to be compatible with the model  </li>
+<li><strong>CivitAI</strong> downloaded thumbnails now include metadata  </li>
 <li><strong>UI</strong></li>
 <li><strong>Networks</strong> using networks to load model or auto-download a reference model will now be reflected in the UI  </li>
 <li>ability to manually reorient <em>input/output</em> panels</li>
