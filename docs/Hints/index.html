@@ -4045,26 +4045,26 @@
 </code></pre></div>
 <p>See <a href="../Locale/">Localization</a> document for more details since same file is used for langugage localizations as well as providing hints  </p>
 <h2 id="editing">Editing</h2>
-<p>By editing the hints file, you can add or modify hints displayed in the UI for each item  </p>
+<p>You can add or modify hints displayed in the UI by editing the hints file.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not change any of the other fields in the file, only the <code>hint</code> field should be modified</p>
+<p>Only modify the <code>hint</code> field in the file. Do not change any other fields.</p>
 <p>[!IMPORTANT]
-Items that are part of <em>"missing"</em> section are auto-created items with default hint only<br />
-If you want to customize/improve them, move them to the correct section and add your hint,<br />
-do not leave them in missing section as it will be overwritten on the next update</p>
+Items in the <em>"missing"</em> section are auto-created with default hints only. To customize them, move them to the correct section and add your hint. Do not leave them in the missing section, as they will be overwritten on the next update.</p>
 </div>
 <h3 id="validation">Validation</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>All <strong>hints</strong> updates should be validated before submitting</p>
 </div>
-<p>Before submitting updates, validate your edits:<br />
-Save it locally and run <code>python cli/validate-locale.py</code>  </p>
+<p>Before submitting updates, validate your edits by saving the file locally and running:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>cli/validate-locale.py
+</code></pre></div>
 <h3 id="contribution">Contribution</h3>
-<p>Best way to submit additions/changes is to create GitHub PR with changes to that file<br />
-Alternatively, you can use discussions or issue tracker to suggest changes and they will be applied manually<br />
-Or reach out via <a href="https://discord.com/channels/1101998836328697867/1126522089487208560">Discord server - #Contribute channel</a>  </p>
+<p>The best way to submit additions or changes is to create a GitHub PR with changes to the file.</p>
+<p>Alternatively:
+- Create a GitHub discussion or issue to suggest changes
+- Reach out via the <a href="https://discord.com/channels/1101998836328697867/1126522089487208560">Discord server - #Contribute channel</a></p>
 <h2 id="typography">Typography</h2>
 <p>Hint strings render as HTML. A small set of inline tags is used to keep hints scannable.</p>
 <table>

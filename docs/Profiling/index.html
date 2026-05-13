@@ -3882,27 +3882,27 @@
 
 
 <h1 id="profiling">Profiling</h1>
-<p>SD.Next has built-in support for both Python and Torch profiling  </p>
-<p>Profiling can be started for the entire session using <code>--profile</code> command line flag<br />
-Or it can be started/stopped on-demand using <em>UI -&gt; System -&gt; Start/Stop profiling</em>  </p>
-<p>When profiling is enabled, analysis is performed  </p>
+<p>SD.Next has built-in support for both Python and Torch profiling.</p>
+<p>You can start profiling for the full session with the <code>--profile</code> command line flag.
+You can also start and stop profiling on demand from <strong>UI -&gt; System -&gt; Start/Stop profiling</strong>.</p>
+<p>When profiling is enabled, analysis runs:</p>
 <ul>
-<li>As a last step of server startup to see performance and bottlenecks of the startup process  </li>
-<li>As the last step of any generate workflow  </li>
+<li>at the end of server startup, to identify startup bottlenecks</li>
+<li>at the end of each generation workflow</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Collecting profile information may take significant resources and time</p>
 </div>
 <h2 id="saving">Saving</h2>
-<p>Full <code>torch</code> profiling dump can be saved for analysis using external tools by setting env variable to location where to save profiling info:</p>
+<p>You can save a full <code>torch</code> profiling dump for external analysis by setting an environment variable with the output path:</p>
 <blockquote>
 <p><code>SD_PROFILE_FOLDER=/tmp/profile</code></p>
 </blockquote>
-<p>Each profiling run will create a JSON file in the specified folder<br />
-File can be loaded for further analysis in tools such as:  </p>
+<p>Each profiling run creates a JSON file in the specified folder.
+You can open it in tools such as:</p>
 <ul>
-<li><chrome://tracing/>&gt;</li>
+<li><chrome://tracing/></li>
 <li><a href="https://ui.perfetto.dev/">https://ui.perfetto.dev/</a></li>
 </ul>
 <div class="admonition warning">
@@ -3910,7 +3910,7 @@ File can be loaded for further analysis in tools such as:  </p>
 <p>Each profile trace file is over 100MB in size</p>
 </div>
 <h2 id="advanced">Advanced</h2>
-<p>Profiling details can be further increased by setting additional environment variables:</p>
+<p>You can increase profiling detail with additional environment variables:</p>
 <ul>
 <li><code>SD_PROFILE_STACK=true</code>: enable torch stack information</li>
 <li><code>SD_PROFILE_FLOPS=true</code>: enable torch flops calculations</li>

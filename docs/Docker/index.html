@@ -1837,17 +1837,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#operating-system-support" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4100,17 +4089,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#operating-system-support" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4258,16 +4236,16 @@
 
 
 <h1 id="docker">Docker</h1>
-<p>SD.Next includes basic <strong>Dockerfiles</strong> for use with for use with following platforms:<br />
+<p>SD.Next includes base Dockerfiles for these platforms:<br />
 - <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.cuda">nVidia CUDA</a><br />
 - <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.rocm">AMD ROCm</a><br />
 - <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.ipex">Intel IPEX</a><br />
 - <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.openvino">OpenVINO</a>  </p>
-<p>Other system may require different configurations and base images, but principle remains the same  </p>
-<p>Goal of containerized <strong>SD.Next</strong> is to provide a fully stateless environment that can be easily deployed and scaled  </p>
-<p>It is recommended to build your own docker image to include any customizations or extensions you may require</p>
-<p>Build process is very simple and fast, typically around ~1min for initial build (plus time required to download base image and any dependencies which can take a while depending on your internet connection) to just couple of seconds for any incremental builds using previously cached images  </p>
-<p>If you want to skip the build process, you can use <a href="./#prebuilt">Prebuilt images</a> provided by community members which are offered on best-effort basis  </p>
+<p>Other systems may require different base images or configuration, but the overall approach is the same.  </p>
+<p>The goal of containerized <strong>SD.Next</strong> is a stateless environment that is easy to deploy and scale.  </p>
+<p>It is recommended to build your own image if you need custom extensions or local changes.</p>
+<p>The build process is usually fast: around 1 minute for incremental builds and longer for the first build while base images and dependencies download.  </p>
+<p>If you want to skip local builds, use <a href="./#prebuilt">Prebuilt images</a> from community members (best effort support).  </p>
 <h2 id="prerequisites">Prerequisites</h2>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
@@ -4344,13 +4322,12 @@ docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</s
   tag: <code>disty0/sdnext-ipex:latest</code> compressed size: 0.4GB<br />
 - <a href="https://hub.docker.com/r/disty0/sdnext-openvino/tags">OpenVINO</a><br />
   tag: <code>disty0/sdnext-openvino:latest</code> compressed size: 0.4GB  </p>
-<h3 id="notes">Notes</h3>
 <h3 id="operating-system-support">Operating System Support</h3>
 <p>The SD.Next container can be run on any OS that supports Docker and provides GPU routing to the container  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Note that some OS may further limit the access to hardware resources<br />
-In which case, it is recommented to add <code>--priviledged</code> flag to provide docker container full access to system resources</p>
+In that case, it is recommended to add <code>--privileged</code> to give the container full access to system resources.</p>
 </div>
 <h4 id="log-example">Log Example</h4>
 <div class="highlight"><pre><span></span><code>[+] Building 54.1s (12/12) FINISHED                                                                   docker:default
@@ -4374,19 +4351,19 @@ In which case, it is recommented to add <code>--priviledged</code> flag to provi
  =&gt; =&gt; naming to docker.io/sdnext/sdnext-cuda                                                               0.0s
 </code></pre></div>
 <h4 id="state">State</h4>
-<p>As mentioned, the goal of SD.Next docker deployment is fully stateless operations.<br />
-By default, SD.Next docker containers is stateless: any data stored inside the container is lost when the container stops.  </p>
+<p>As noted above, SD.Next Docker deployment is designed for stateless operation.<br />
+By default, any data stored inside the container is lost when the container stops.  </p>
 <p>All state items and outputs will be read from and written to <code>/server/data</code><br />
 This includes:
 - Configuration files: <code>config.json</code>, <code>ui-config.json</code>
 - Cache information: <code>cache.json</code>, <code>metadata.json</code>
 - Outputs of all generated images: <code>outputs/</code></p>
 <h4 id="persistence">Persistence</h4>
-<p>If you plan to customize SD.Next deployment with additional extensions,<br />
-you may want to create and map docker volume to avoid constaint reinstalls on each startup.  </p>
+<p>If you plan to customize SD.Next with additional extensions,<br />
+create and mount a Docker volume to avoid repeated reinstall steps on each startup.  </p>
 <h4 id="healthchecks">Healthchecks</h4>
 <p>By default, SD.Next docker container does not include <em>Docker healthchecks</em>, but they can be enabled.
-Simply remove comment from <code>HEALTHCHECK</code> line in <code>Dockerfile</code> and rebuild the image.  </p>
+Remove the comment from the <code>HEALTHCHECK</code> line in <code>Dockerfile</code> and rebuild the image.  </p>
 <h2 id="run-local">Run Local</h2>
 <p>Containers built using above commands are local and can be used directly on the host system  </p>
 <div class="admonition note">
@@ -4422,15 +4399,15 @@ For example, AMD uses <code>--device /dev/dri</code> and <code>--device /dev/kfd
 Param <code>--detach</code> will run container in background<br />
 If you want troubleshoot startup and see logs in the console directly, remove <code>--detach</code> parameter</p>
 </div>
-<p>Typical SDNext container will start in ~6sec and will be ready to accept connections on port <code>7860</code></p>
+<p>Typical SDNext container will start in ~6sec and will be ready to accept connections on port <code>7860</code>
+Typical SD.Next container startup is around 6 seconds, then it is ready on port <code>7860</code>.</p>
 <h2 id="publish">Publish</h2>
-<p>If you want to share the containers with others or deploy it on some cloud compute platform,<br />
-you will need to publish the container to a container registry  </p>
-<p>There are many container registries with <a href="https://hub.docker.com/">Docker Hub</a> being the most popular and widely used<br />
-Alternatively, check out <a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry">GitHub Packages</a>, <a href="https://aws.amazon.com/ecr/">AWS ECR</a>, <a href="https://learn.microsoft.com/en-us/azure/container-registry/">Azure ACR</a>, <a href="https://cloud.google.com/artifact-registry/docs">Google AR</a>, <a href="https://www.projectquay.io/">Quay</a>, etc  </p>
+<p>If you want to share an image or deploy it on a cloud platform, publish it to a container registry.  </p>
+<p>There are many registries. <a href="https://hub.docker.com/">Docker Hub</a> is the most common.<br />
+Other options include <a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry">GitHub Packages</a>, <a href="https://aws.amazon.com/ecr/">AWS ECR</a>, <a href="https://learn.microsoft.com/en-us/azure/container-registry/">Azure ACR</a>, <a href="https://cloud.google.com/artifact-registry/docs">Google AR</a>, and <a href="https://www.projectquay.io/">Quay</a>.  </p>
 <p>Example using <a href="https://hub.docker.com/">Docker Hub</a>
 1. Create an account on <a href="https://hub.docker.com/">Docker Hub</a>
-2. Create a <a href="https://hub.docker.com/settings/security">peronal access token</a> in your Docker Hub account<br />
+2. Create a <a href="https://hub.docker.com/settings/security">personal access token</a> in your Docker Hub account<br />
 3. Login to Docker Hub from your terminal  </p>
 <blockquote>
 <p>docker login --username <username> --password <token><br />
@@ -4442,8 +4419,8 @@ docker push <username>/sdnext-cuda</p>
 <p>Your container is now available on Docker Hub and can be seen on<br />
 <a href="https://hub.docker.com/repository/docker/_username_/sdnext-cuda/">https://hub.docker.com/repository/docker/_username_/sdnext-cuda/</a>!  </p>
 <h2 id="run-cloud">Run Cloud</h2>
-<p>Once your container is published, you can run it on any cloud compute platform that supports Docker containers<br />
-For example <a href="https://runpod.io/">RunPod</a> or <a href="https://aws.amazon.com/ecs/">AWS ECS</a></p>
+<p>Once your container is published, run it on any cloud platform that supports Docker containers,<br />
+for example <a href="https://runpod.io/">RunPod</a> or <a href="https://aws.amazon.com/ecs/">AWS ECS</a>.</p>
 <p>Example using <a href="https://runpod.io/">RunPod</a>:<br />
 1. Login to RunPod<br />
 2. Create Pod<br />
@@ -4456,7 +4433,7 @@ For example <a href="https://runpod.io/">RunPod</a> or <a href="https://aws.amaz
 4. Connect to Pod<br />
    RunPod will provide with a public hostname over which you can access your SD.Next instance  </p>
 <h2 id="extra">Extra</h2>
-<p>Additional docker commands that may be useful</p>
+<p>Additional Docker commands that may be useful:</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Inspect image</p>
@@ -4482,13 +4459,13 @@ docker<span class="w"> </span>ps<span class="w"> </span>--all
 <p class="admonition-title">Tip</p>
 <p>View Log</p>
 </div>
-<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>logs<span class="w"> </span>--follow<span class="w"> </span>&lt;id&gt;
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>container<span class="w"> </span>logs<span class="w"> </span>--follow<span class="w"> </span>&lt;id&gt;
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Stop Container</p>
 </div>
-<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>stop<span class="w"> </span>&lt;id&gt;
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>container<span class="w"> </span>stop<span class="w"> </span>&lt;id&gt;
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

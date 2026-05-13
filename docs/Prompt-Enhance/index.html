@@ -3923,33 +3923,33 @@ For details, see <a href="../Prompting/#model-specific-tips">Prompting</a> model
 </div>
 <p>SD.Next includes built-in prompt enhancer that uses LLM to enhance your prompts:</p>
 <ul>
-<li>Can be used to manually or automatically enhance prompts<br />
-  Automatic enhancement is done during normal generation without user intervention  </li>
+<li>Can be used for manual or automatic prompt enhancement.<br />
+  Automatic enhancement runs during normal generation without user intervention.  </li>
 <li>Built-in presets for:<br />
 <strong>Gemma-3, Qwen-2.5, Phi-4, Llama-3.2, SmolLM2, Dolphin-3</strong>  </li>
-<li>Support for custom system prompt  </li>
-<li>Support for custom models  </li>
+<li>Supports custom system prompts.  </li>
+<li>Supports custom models.  </li>
 <li>Load any models hosted on <a href="https://huggingface.co/models?pipeline_tag=text-generation">huggingface</a>  </li>
-<li>Supports models in <code>huggingface</code> format</li>
-<li>Supports models in <code>gguf</code> format  </li>
-<li>Models are auto-downloaded on first use  </li>
-<li>Support quantization and offloading  </li>
-<li>Advanced options: <code>max tokens, sampling, temperature, repetition penalty</code></li>
+<li>Supports models in <code>huggingface</code> format.  </li>
+<li>Supports models in <code>gguf</code> format.  </li>
+<li>Models are auto-downloaded on first use.  </li>
+<li>Supports quantization and offloading.  </li>
+<li>Advanced options: <code>max tokens</code>, <code>sampling</code>, <code>temperature</code>, <code>repetition penalty</code>.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If SD.Next detected censored output, it will print warning in the log file and return original prompt  </p>
+<p>If SD.Next detects censored output, it logs a warning and returns the original prompt.  </p>
 <p>[!NOTE]
-Any model hosted on huggingface in original format should work<br />
-as long as it implements standard <code>transformers.AutoModelForCausalLM</code> interface</p>
+Any model hosted on Hugging Face in original format should work<br />
+as long as it implements standard <code>transformers.AutoModelForCausalLM</code> interface.  </p>
 <p>[!NOTE]
-Not all model architecture are supported for <code>gguf</code> format<br />
-Typically <code>gguf</code> support is added slightly later than <code>transformers</code> support  </p>
+Not all model architectures are supported for <code>gguf</code> format.<br />
+Typically, <code>gguf</code> support is added slightly later than <code>transformers</code> support.  </p>
 <p>[!TIP]
-Debug logging can be enabled using <code>SD_LLM_DEBUG=true</code> env variable</p>
+Debug logging can be enabled using <code>SD_LLM_DEBUG=true</code> environment variable.</p>
 </div>
 <h2 id="custom-models">Custom models</h2>
-<p>Can be used to define any model that is not included in predefined list</p>
+<p>Can be used to define any model that is not included in the predefined list.</p>
 <h3 id="example-standard-huggingface-model">Example: standard huggingface model</h3>
 <ul>
 <li>Model repo: <code>nidum/Nidum-Gemma-3-4B-it-Uncensored</code></li>
@@ -3957,17 +3957,17 @@ Debug logging can be enabled using <code>SD_LLM_DEBUG=true</code> env variable</
 <h3 id="example-gguf-model-hosted-on-huggingface">Example: gguf model hosted on huggingface</h3>
 <ul>
 <li>Model repo: <code>meta-llama/Llama-3.2-1B-Instruct</code><br />
-  Link to original model repo on huggingface, required so that SD.Next can download components not present in <code>gguf</code> file such as tokenizer  </li>
+  Link to the original model repo on Hugging Face, required so SD.Next can download components not present in the <code>gguf</code> file, such as the tokenizer.  </li>
 <li>Model GGUF: <code>mradermacher/Llama-3.2-1B-Instruct-Uncensored-i1-GGUF</code><br />
-  Link to repo on huggingface that is hosting the <code>gguf</code> file(s)  </li>
+  Link to the repo on Hugging Face that hosts the <code>gguf</code> file(s).  </li>
 <li>Model type: <code>llama</code><br />
-  Model type, required for SD.Next to know how to load the model  </li>
+  Model type, required so SD.Next knows how to load the model.  </li>
 <li>Model name: <code>Llama-3.2-1B-Instruct-Uncensored.i1-Q4_0.gguf</code><br />
-  Name of the <code>gguf</code> file inside gguf repo  </li>
+  Name of the <code>gguf</code> file inside the GGUF repo.  </li>
 </ul>
 <p>Supported GGUF model types: <em>llama, mistral, qwen2, qwen2moe, falcon, tokenizer, phi3, bloom, t5, stablelm, gpt2, starcoder2, mamba, nemotron, gemma2</em>
-Supported Transformer model types is a superset of GGUF model types and includes model types such as latest <em>gemma3</em><br />
-In case of unsupported model type, SD.Next will print currently supported model types in the log file  </p>
+Supported Transformer model types are a superset of GGUF model types and include newer types such as <em>gemma3</em>.<br />
+If a model type is unsupported, SD.Next prints the currently supported types in the log file.  </p>
 
 
 

@@ -3938,34 +3938,29 @@
 
 
 <h1 id="sdnext-via-stability-matrix">SD.Next via Stability Matrix</h1>
-<p><a href="https://github.com/LykosAI/StabilityMatrix">Stability Matrix</a> is a Multi-Platform Package Manager and Inference UI for Stable Diffusion  </p>
-<p>Installing and using <strong>SD.Next</strong> via Stability Matrix is <em>supported</em></p>
+<p><a href="https://github.com/LykosAI/StabilityMatrix">Stability Matrix</a> is a multi-platform package manager and inference UI for Stable Diffusion.</p>
+<p>Installing and using <strong>SD.Next</strong> via Stability Matrix is supported.</p>
 <h2 id="installation">Installation</h2>
-<p>Stability Matrix installs basic requirements <em>before</em> starting <strong>SD.Next</strong> for the first time<br />
-Typically <strong>SD.Next</strong> has its own installation process, but when using Stability Matrix this step is skipped because it detects already installed requirements.  </p>
+<p>Stability Matrix installs basic requirements before starting <strong>SD.Next</strong> for the first time. Typically, <strong>SD.Next</strong> has its own installation process, but Stability Matrix skips this step if it detects already installed requirements.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This can result in incorrect dependencies, specifically incorrect version of <code>torch</code> so SD.Next is not able to use GPU acceleration<br />
-To fix this, you need to re-run <strong>SD.Next</strong> installation process manually after Stability Matrix has installed everything</p>
+<p>This can result in incorrect dependencies, particularly an incorrect version of <code>torch</code>, so SD.Next cannot use GPU acceleration.</p>
 </div>
 <h3 id="windows">Windows</h3>
-<blockquote>
-<p>webui.bat --use-cuda --reinstall # for nVidia CUDA<br />
-webui.bat --use-rocm --reinstall # for AMD ROCm<br />
-webui.bat --use-ipex --reinstall  # for Intel XPU</p>
-</blockquote>
+<div class="highlight"><pre><span></span><code>webui.bat<span class="w"> </span>--use-cuda<span class="w"> </span>--reinstall<span class="w">      </span><span class="c1"># for nVidia CUDA</span>
+webui.bat<span class="w"> </span>--use-rocm<span class="w"> </span>--reinstall<span class="w">      </span><span class="c1"># for AMD ROCm</span>
+webui.bat<span class="w"> </span>--use-ipex<span class="w"> </span>--reinstall<span class="w">      </span><span class="c1"># for Intel XPU</span>
+</code></pre></div>
 <h3 id="linux">Linux</h3>
-<blockquote>
-<p>./webui.sh --use-cuda --reinstall # for nVidia CUDA<br />
-./webui.sh --use-rocm --reinstall # for AMD ROCm<br />
-./webui.sh --use-ipex --reinstall  # for Intel XPU</p>
-</blockquote>
+<div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-cuda<span class="w"> </span>--reinstall<span class="w">      </span><span class="c1"># for nVidia CUDA</span>
+./webui.sh<span class="w"> </span>--use-rocm<span class="w"> </span>--reinstall<span class="w">      </span><span class="c1"># for AMD ROCm</span>
+./webui.sh<span class="w"> </span>--use-ipex<span class="w"> </span>--reinstall<span class="w">      </span><span class="c1"># for Intel XPU</span>
+</code></pre></div>
 <h2 id="user-interface">User Interface</h2>
-<p>Stability Matrix provides its own user interface that is different from the default <strong>SD.Next ModernUI</strong></p>
+<p>Stability Matrix provides its own user interface, different from the default <strong>SD.Next ModernUI</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>StabilityMatrix supports all basic features of <strong>SD.Next</strong><br />
-Advanced features that are <strong>SD.Next</strong> exclusive may not be supported as they are not exposed in Stability Matrix UI</p>
+<p>Stability Matrix supports all basic features of <strong>SD.Next</strong>. Advanced features exclusive to <strong>SD.Next</strong> may not be exposed in the Stability Matrix UI.</p>
 </div>
 
 

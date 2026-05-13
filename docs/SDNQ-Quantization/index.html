@@ -4508,11 +4508,11 @@
 <li>Supports nearly all model types  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
 <li>Supports Quantized MatMul with significant speedups on INT8, FP8 or FP16 supported GPUs  </li>
-<li>Supports on the fly quantization during model load with little to no overhead (called as <code>pre</code> mode)  </li>
+<li>Supports on-the-fly quantization during model load with little to no overhead (<code>pre</code> mode)  </li>
 <li>Supports quantization for the convolutional layers with UNet models  </li>
 <li>Supports quantization for the embedding layers with Text models  </li>
 <li>Supports post load quantization for any model  </li>
-<li>Supports on the fly usage of LoRa models  </li>
+<li>Supports on-the-fly usage of LoRA models  </li>
 <li>Supports SVD Quantization  </li>
 <li>Supports balanced offload  </li>
 </ul>
@@ -4531,7 +4531,8 @@
 <h2 id="triton">Triton</h2>
 <p>Triton enables the use of optimized kernels for much better performance.<br />
 Triton is not required for SDNQ but it is highly recommended for much better performance.<br />
-SDNQ will use Triton by default via torch.compile if Triton is available. You can override this with dequantize using torch.compile option.  </p>
+SDNQ uses Triton by default via <code>torch.compile</code> when Triton is available.
+You can override this with the <code>Dequantize using torch.compile</code> option.  </p>
 <h3 id="triton-with-nvidia">Triton with Nvidia</h3>
 <ul>
 <li><strong>Linux</strong>  </li>
@@ -4560,7 +4561,7 @@ SDNQ will use Triton by default via torch.compile if Triton is available. You ca
 Recommended options are <code>Model</code> and <code>TE</code>.<br />
 Default is none.  </p>
 <ul>
-<li><code>Model</code> is used quantize the Diffusion Models.  </li>
+<li><code>Model</code> is used to quantize Diffusion models.  </li>
 <li><code>TE</code> is used to quantize the Text Encoders.  </li>
 <li><code>LLM</code> is used to quantize the LLMs with Prompt Enhance.  </li>
 <li><code>Control</code> is used to quantize ControlNets.  </li>
@@ -4586,11 +4587,11 @@ Recommended types are <code>int8</code> for 8 bit, <code>int6</code> for 6 bit a
 Default is <code>int8</code>.  </p>
 <p>INT8 quants have very similar quality to the full 16 bit precision while using 2 times less memory.<br />
 INT6 quants are the middle ground. Similar quality to to the full 16 bit precision while using 2.7 times less memory.<br />
-UINT4 quants have lower quality and less performance but uses 3.6 times less memory.<br />
+UINT4 quants have lower quality and lower performance but use 3.6 times less memory.<br />
 FP8 quants have similar quality to INT6 but with the same memory usage as INT8.  </p>
 <p>Unsigned quants have the extra <code>u</code> added to the start of their name while the symmetric quants don't have any prefix.  </p>
-<p>Asymmetric quants uses unsigned integers, meaning they can't store negative values and will use another variable called zero point for this purpose.<br />
-Symmetric quants can store negative and positive values meaning they don't have extra zero point value and they run faster than unsigned quants because of this.  </p>
+<p>Asymmetric quants use unsigned integers, so they cannot store negative values directly and rely on an extra zero-point value.<br />
+Symmetric quants can store negative and positive values, so they do not need a zero-point value and usually run faster than unsigned quants.  </p>
 <p>Quality difference between asymmetric and symmetric quantization is very small for 8 to 6 bits but you should use asymmetric methods below 5 bits.  </p>
 <ul>
 <li><code>int16</code> uses int16 and has -32768 to 32767 range.  </li>
@@ -4676,7 +4677,7 @@ Default is empty.  </p>
 <h3 id="modules-dtype-dict">Modules dtype dict</h3>
 <p>A JSON dictionary of quantization types and module names list used to quantize the model with mixed quantization types.  </p>
 <p>Quantization types can be any valid quantization type supported by SDNQ or it can also be <code>minimum_Xbit</code>.<br />
-<code>minimum_Xbit</code> will quantize the specified modules into the specifed bit if the main quantization dtype has less precision.<br />
+<code>minimum_Xbit</code> quantizes specified modules to the specified bit width if the main quantization dtype has lower precision.<br />
 For example, <code>minimum_6bit</code> will quantize the specified modules to <code>int6</code> if you are using <code>int5</code> or below but won't do anything if you are using <code>int6</code> or above.<br />
 Default is empty.  </p>
 <p>An example dict:  </p>
@@ -4686,7 +4687,7 @@ Default is empty.  </p>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="group-size">Group size</h3>
-<p>Used to decide how many elements of a tensor will share the same quantization group.<br />
+<p>Used to set how many tensor elements share the same quantization group.<br />
 Higher values have better performance and less memory usage but with less quality.<br />
 Default is <code>0</code>, meaning it will decide the group size based on your quantization type setting.<br />
 Linear layers will use this formula to find the group size: <code>2 ** (2 + number_of_bits)</code><br />
@@ -4720,7 +4721,7 @@ Default is <code>None</code></p>
 <h3 id="use-svd-quantization">Use SVD quantization</h3>
 <p>Enabling this option will apply SVD quantization on top of SDNQ quantization.<br />
 SVD has much higher quality but runs slower.<br />
-SVD also makes Loras usable with 4 bit quantization.<br />
+SVD also makes LoRAs usable with 4-bit quantization.<br />
 More info on SVD quantization: <a href="https://arxiv.org/abs/2411.05007">https://arxiv.org/abs/2411.05007</a><br />
 Disabled by default.  </p>
 <p>Note: SVD lowrank used by SDNQ is not deterministic.<br />
@@ -4729,7 +4730,7 @@ Meaning that you will get slightly different quantization results every time.  <
 <p>Enabling this option will dynamically select a per layer quantization type based on the <code>Dynamic loss threshold</code>.<br />
 And the current <code>Quantization type</code> will be used as the minimum allowed quantization type when this option is enabled.<br />
 This option takes longer to quantize but has much higher quality depending on your settings.  </p>
-<p>Simplified version of what this option does is:<br />
+<p>In simplified terms:<br />
 If the minimum allowed quantization type can't achieve good quantization loss on a specific layer, then it will increase the quantization type just for that layer until it achieves a good quantization loss.<br />
 This will take time to test on quantization and the end model might be slightly larger but the resulting model will have much higher quality.  </p>
 <p>This option should be preferred over SVD first.<br />
@@ -4747,7 +4748,7 @@ Has significantly higher performance.<br />
 This setting requires a full restart of the webui to apply.<br />
 Enabled by default if Triton is available.  </p>
 <h3 id="use-quantized-matmul">Use Quantized MatMul</h3>
-<p>Enabling this option will use quantized INT8 or FP8 MatMul instead of BF16 / FP16 when running the model.<br />
+<p>Enabling this option uses quantized INT8 or FP8 MatMul instead of BF16/FP16 during model execution.<br />
 Has significantly higher performance on GPUs with INT8 or FP8 support.
 Requires Triton. Disabled by default.  </p>
 <p><strong>Supported GPUs</strong><br />

@@ -2261,7 +2261,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Advanced">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#component-selection" class="md-nav__link">
@@ -2316,6 +2317,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4037,7 +4043,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Advanced">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#component-selection" class="md-nav__link">
@@ -4092,6 +4099,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4183,42 +4195,41 @@
 
 <h1 id="lora">LoRA</h1>
 <h2 id="what-is-lora">What is LoRA?</h2>
-<p>LoRA, short for Low-Rank Adaptation, is a method used in Generative AI models to fine-tune the model with specific styles or concepts while keeping the process efficient and lightweight.</p>
+<p>LoRA (Low-Rank Adaptation) is a method for fine-tuning generative AI models with specific styles or concepts while keeping the process efficient and lightweight.</p>
 <p><strong>Here’s how it works in simple terms:</strong><br />
-- The Problem:<br />
-  Fine-tuning a huge model like Stable Diffusion to recognize or replicate new styles or concepts (e.g., making it draw in the style of a specific artist or recognize unique objects) usually requires a lot of computational power and storage.</p>
+- <strong>The problem</strong>: Fine-tuning a large model like Stable Diffusion to learn new styles or concepts usually needs significant compute and storage.</p>
 <p><strong>The LoRA Solution:</strong><br />
-- Instead of tweaking all the internal parameters of the Generative AI model, LoRA focuses only on a small subset of them. Think of it as adding a "style filter" to the model that can be applied or removed as needed.<br />
-  It reduces the complexity by breaking down large changes into smaller, simpler steps.<br />
-  These smaller steps don’t interfere with the original model, meaning you don’t lose the model’s core abilities.  </p>
+- Instead of changing all model parameters, LoRA trains a small subset.
+- Think of it as a removable style layer that can be applied only when needed.
+- This keeps the base model behavior intact while enabling targeted customization.</p>
 <p><strong>Why it’s Cool:</strong>
 - Efficient: It uses way less memory and is faster than traditional fine-tuning methods.
 - Flexible: You can train multiple LoRA "filters" for different styles or concepts and swap them in and out without modifying the base model.
 - Compatible: LoRA modules can be shared or reused easily, so artists and developers can collaborate or try out others’ custom styles.</p>
 <p><strong>Example Use Case</strong><br />
-- Say you want to teach Generative AI models to draw in the style of a fictional artist.<br />
-  You can train a LoRA on a handful of sample images in that style.<br />
-  Once trained, the LoRA module acts like a plug-in—you just load it into Generative AI models, and the model starts generating images in that style!</p>
-<p>In short, LoRA makes it easy to teach models new tricks without overwhelming your computer or altering the original model. It’s a user-friendly way to get customized results!  </p>
+- Say you want to teach a model to draw in the style of a fictional artist.
+- You can train a LoRA on a small set of sample images in that style.
+- Once trained, load the LoRA module and the model can generate images in that style.</p>
+<p>In short, LoRA helps you teach models new behavior without changing the original model or requiring heavy hardware.</p>
 <h2 id="lora-types">LoRA Types</h2>
-<p>There are many LoRA types, here are some of the most common ones: LoRA, DoRA, LoCon, HaDa, gLoRA, LoKR, LyCoris<br />
-They vary in:
-- Which model components are being trained. Typically UNET, but can be TE as well
-- Which layers of the model are being trained. Each LoRA type trains different layers of the model
-- Math algorithm to extrach LoRA weights for the specific trained layers</p>
+<p>There are many LoRA types. Common ones include LoRA, DoRA, LoCon, HaDa, gLoRA, LoKR, and LyCORIS.</p>
+<p>They differ in:
+- Which model components are trained (typically UNet, sometimes text encoder)
+- Which layers are trained
+- Which algorithm is used to extract LoRA weights</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>LoRA must always match base model used for its training<br />
 For example, you cannot use SD1.5 LoRA with SD-XL model  </p>
 <p>[!WARNING]
 SD.Next attempts to automatically detect and apply the correct LoRA type.<br />
-However, new LoRA types are popping up all the time
+However, new LoRA types appear regularly.
 If you find LoRA that is not compatible, please report it so we can add support for it.</p>
 </div>
 <h2 id="how-to-use">How to use?</h2>
 <ul>
-<li>Using UI: go to the networks tab and go to the lora's and select the lora you want and it will be added to the prompt.</li>
-<li>Manually: you can also add the lora manually by adding <code>&lt;lora:lora_name:strength&gt;</code> to the prompt and then selecting the lora you want to use.</li>
+<li>UI: Open the Networks tab, select a LoRA, and it is added to the prompt.</li>
+<li>Manual: Add <code>&lt;lora:lora_name:strength&gt;</code> to the prompt, then select the LoRA to use.</li>
 </ul>
 <h3 id="trigger-words">Trigger words</h3>
 <p>Some (not all) LoRAs associate specific words during training so same words can be used to trigger specific behavior from the LoRA.<br />
@@ -4233,7 +4244,8 @@ You can change the strength of the lora by changing the number <code>&lt;lora:na
 If you're combining multiple LoRAs, you can also "export" that as a single lora via <em>"Models -&gt; Extract LoRA"</em></p>
 </div>
 <h3 id="advanced">Advanced</h3>
-<h3 id="component-selection">Component selection</h3>
+<p>Advanced options let you control where and how LoRA is applied.</p>
+<h4 id="component-selection">Component selection</h4>
 <p>By default, LoRA is applied to all model components it was trained on.
 However, you can also specify which component to apply LoRA to by adding <code>:module=xxx</code> to the LoRA tag.</p>
 <p>Example:</p>
@@ -4241,33 +4253,33 @@ However, you can also specify which component to apply LoRA to by adding <code>:
 <p><code>&lt;lora:test_lora:1.0:module=unet&gt;</code></p>
 </blockquote>
 <p>would apply LoRA <em>only</em> on unet regardless of LoRA content.  </p>
-<p>This is particularly useful when you have multiple LoRAs and you want to apply them on different parts of the model.  </p>
+<p>This is useful when you have multiple LoRAs and want to apply each one to different parts of the model.</p>
 <p>Example:</p>
 <blockquote>
 <p><code>&lt;lora:firstlora:1.0:low&gt;</code> and <code>&lt;lora:secondlora:1.0:high&gt;</code>  </p>
 </blockquote>
-<p><em>note</em>: <code>low</code> is shorthand for <code>module=transformer_2</code> and <code>high</code> is shortcut for <code>module=transformer</code></p>
-<h4 id="component-weights">Component weights</h4>
+<p><em>Note</em>: <code>low</code> is shorthand for <code>module=transformer_2</code> and <code>high</code> is shorthand for <code>module=transformer</code>.</p>
+<h5 id="component-weights">Component weights</h5>
 <p>Typically <code>:strength</code> is applied uniformly for all components of the LoRA.<br />
 However, you can also specify individual component weights by adding <code>:comp=x.x</code> to the LoRA tag.  </p>
 <p>Example:</p>
 <blockquote>
 <p><code>&lt;lora:test_lora:te=0.5:unet=1.5&gt;</code>  </p>
 </blockquote>
-<h4 id="block-weights">Block weights</h4>
+<h5 id="block-weights">Block weights</h5>
 <p>Instead of using simple <code>:strength</code>, you can specify individual block weights for LoRA by adding <code>:in=x.x:mid=y.y:out=z.z</code> to the LoRA tag.<br />
 Example:</p>
 <blockquote>
 <p><code>&lt;lora:test_lora:1.0:in=0:mid=1:out=0&gt;</code>  </p>
 </blockquote>
-<h4 id="stepwise-weights">Stepwise weights</h4>
-<p>LoRA can also be applied will full per-step control by adding step-specific instuctions to the LoRA tag.<br />
+<h5 id="stepwise-weights">Stepwise weights</h5>
+<p>LoRA can also be applied with full per-step control by adding step-specific instructions to the LoRA tag.
 Example:</p>
 <blockquote>
 <p><code>&lt;lora:test_lora:te=0.1@1,0.6@6&gt;</code>  </p>
 </blockquote>
 <p>Would mean apply LoRA to text-encoder with strength 0.1 on step 1 and then switch to strength 0.6 on step 6.  </p>
-<h4 id="troubleshooting">Troubleshooting</h4>
+<h5 id="troubleshooting">Troubleshooting</h5>
 <p>For any LoRA related issues, please follow the below procedure:
 - set environment variable <code>SD_LORA_DEBUG=true</code>
 - start SD.Next as usual and run it until problem occurs

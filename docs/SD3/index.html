@@ -4059,24 +4059,24 @@
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Allow gated access<br />
-This is a gated model, you need to accept the terms and conditions to use it<br />
+This is a gated model; you must accept terms and conditions to use it.<br />
 For more information see <a href="../Gated/">Gated Access Wiki</a></p>
 <p>[!IMPORTANT]
 Set offloading<br />
-Set appropriate offloading setting before loading the model to avoid out-of-memory errors<br />
+Set an appropriate offloading mode before loading the model to avoid out-of-memory errors.<br />
 For more information see <a href="../Offload/">Offloading Wiki</a>  </p>
 <p>[!IMPORTANT]
 Choose quantization<br />
 Check compatibility of different quantizations with your platform and GPU!<br />
 For more information see <a href="../Quantization/">Quantization Wiki</a>  </p>
 <p>[!WARNING]
-Regardless of offloading settings, the entire model must be loaded into RAM before it can be used
-Look at the total model size in the table and make sure you have enough RAM to load the model  </p>
+Regardless of offloading settings, the full model must load into RAM before use.
+Check total model size in the table and make sure your system has enough RAM.  </p>
 <p>[!TIP] Use reference models<br />
-Use of reference models is recommended over manually downloaded models!<br />
-Simply select it from <em>Networks -&gt; Models -&gt; Reference</em></p>
+Use of reference models is recommended over manually downloaded models.<br />
+Simply select it from <em>Networks -&gt; Models -&gt; Reference</em><br />
+and model will be auto-downloaded on first use.</p>
 </div>
-<p>and model will be auto-downloaded on first use  </p>
 <h2 id="components">Components</h2>
 <p><strong>SD3.x</strong> model consists of:</p>
 <ul>
@@ -4086,20 +4086,20 @@ Simply select it from <em>Networks -&gt; Models -&gt; Reference</em></p>
 <li>Text encoder 3: <a href="https://huggingface.co/google/t5-v1_1-xxl">T5-XXL Version 1.1</a>  </li>
 <li>VAE</li>
 </ul>
-<p>When using reference models, all components will be loaded as needed.<br />
-If using manually downloaded model, you need to ensure that all components are correctly configured and available.<br />
-Note that majority of available downloads are not actually all-in-one models and are instead just a part of the full model with individual components.</p>
+<p>When using reference models, all components are loaded as needed.<br />
+If using a manually downloaded model, ensure all components are correctly configured and available.<br />
+Note that most available downloads are not all-in-one models; they are individual components of the full model.</p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Do not attempt to assemble a full model by loading all individual components<br />
 That may be how some other apps are designed to work, but it is not how SD.Next works.<br />
-Always load full model and then replace individual components as needed  </p>
+Always load a full model first, then replace individual components as needed.  </p>
 <p>[!WARNING]
 If you're getting error message during model load: <code>file=xxx is not a complete model</code><br />
-It means exactly that - you're trying to load a model component instead of full model  </p>
+It means exactly that: you are trying to load a model component instead of a full model.  </p>
 <p>[!TIP]
 For convenience, you can add settings that allow quick replacement of model components to your<br />
-<strong>quicksettings</strong> by adding <em>Settings -&gt; User Interface -&gt; Quicksettings  list -&gt; sd_unet, sd_vae, sd_text_encoder</em></p>
+<strong>quicksettings</strong> by adding <em>Settings -&gt; User Interface -&gt; Quicksettings list -&gt; sd_unet, sd_vae, sd_text_encoder</em>.</p>
 </div>
 <p><img alt="image" src="https://github.com/user-attachments/assets/37a6b28f-2b80-4981-bf98-29290352733e" /></p>
 <h2 id="fine-tunes">Fine-tunes</h2>
@@ -4107,12 +4107,12 @@ For convenience, you can add settings that allow quick replacement of model comp
 <p>N/A: Currently there are no known diffusers fine-tunes of SD3.0 or SD3.5 models</p>
 <h3 id="loras">LoRAs</h3>
 <p>SD.Next includes support for SD3 LoRAs  </p>
-<p>Since LoRA keys vary significantly between tools used to train LoRA as well as LoRA types,<br />
-support for additional LoRAs will be added as needed - please report any non-functional LoRAs!</p>
-<p>Also note that compatibility of LoRA depends on the quantization type!
-If you have issues loading LoRA, try switching your SD3 base model to different quantization type  </p>
+<p>Since LoRA keys vary significantly across training tools and LoRA types,<br />
+support for additional LoRAs will be added as needed. Please report any non-functional LoRAs.</p>
+<p>Also note that LoRA compatibility depends on quantization type.<br />
+If you have issues loading LoRA, try switching your SD3 base model to a different quantization type.  </p>
 <h3 id="all-in-one">All-in-one</h3>
-<p>Since text encoders and VAE are same between all SD3 models, <em>using all-in-one safetensors is not recommended</em> due to large duplication of data  </p>
+<p>Since text encoders and VAE are the same across SD3 models, <em>using all-in-one safetensors is not recommended</em> due to large data duplication.  </p>
 <h3 id="unettransformer">Unet/Transformer</h3>
 <p>Unet/Transformer component is a typical model fine-tune and is around 11GB in size  </p>
 <p>To load a Unet/Transformer safetensors file:  </p>
@@ -4123,13 +4123,13 @@ If you have issues loading LoRA, try switching your SD3 base model to different 
 <em>Settings -&gt; Execution &amp; Models -&gt; UNet</em>  </li>
 </ol>
 <h3 id="text-encoder">Text Encoder</h3>
-<p>SD.Next allows changing optional text encoder on-the-fly  </p>
-<p>Go to <em>Settings -&gt; Models -&gt; Text encoder</em> and select the desired text encoder<br />
+<p>SD.Next allows changing optional text encoders on-the-fly.  </p>
+<p>Go to <em>Settings -&gt; Models -&gt; Text encoder</em> and select the desired text encoder.<br />
 T5 enhances text rendering and some details, but it is otherwise lightly used and optional.<br />
-Loading lighter T5 will greatly decrease model resource usage, but may not be compatible with all offloading modes  </p>
+Loading a lighter T5 can greatly reduce model resource usage, but may not be compatible with all offloading modes.  </p>
 <h3 id="vae">VAE</h3>
-<p>SD.Next allows changing VAE model used by SD3 on-the-fly<br />
-There are no alternative VAE models released, so this setting is mostly for future use  </p>
+<p>SD.Next allows changing the VAE used by SD3 on-the-fly.<br />
+There are no alternative VAE models released, so this setting is mostly for future use.  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To enable <strong>image previews</strong> during generate, set <em>Settings -&gt; Live Preview -&gt; Method to </em><em>TAESD</em>**</p>

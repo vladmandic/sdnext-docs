@@ -3917,20 +3917,21 @@
 
 <h1 id="networks-search">Networks Search</h1>
 <p>Search input for the extra networks accepts additional search syntax.
-This allows to do more complicated searches, in addition to the searches which were previously available.</p>
+This allows more advanced queries in addition to basic search.</p>
 <h2 id="search-syntax">Search Syntax</h2>
-<p>In a normal search, there are 3 special symbols which can be used to modify the search:</p>
+<p>In a normal search, three special symbols can modify the query:</p>
 <ul>
-<li><code>|</code> - <em>Or</em>, it allows to search for one of multiple terms at once (or exclude multiple terms, if prefixed with <code>-</code>)</li>
-<li><code>-</code> - <em>Exclude</em>, terms or phrases prefixed with this symbol will be excluded from the search</li>
+<li><code>|</code> - <em>Or</em>, search for one of multiple terms at once (or exclude multiple terms when prefixed with <code>-</code>)</li>
+<li><code>-</code> - <em>Exclude</em>, terms or phrases prefixed with this symbol are excluded from the search</li>
 <li><code>&amp;</code> - <em>And</em>, require all terms to be present (or not present, if prefixed with <code>-</code>) in the search results</li>
 </ul>
-<p>These symbols are parsed in the order of <code>|</code>, <code>&amp;</code>, <code>-</code>. This means that <code>a|b&amp;c</code> is equivalent to "<em>a</em> or [<em>b</em> and <em>c</em>]" and <code>a&amp;b|c</code> is equivalent to "[<em>a</em> and <em>b</em>] or <em>c</em>".
+<p>These symbols are parsed in this order: <code>|</code>, <code>&amp;</code>, <code>-</code>.
+That means <code>a|b&amp;c</code> is equivalent to "<em>a</em> or [<em>b</em> and <em>c</em>]" and <code>a&amp;b|c</code> is equivalent to "[<em>a</em> and <em>b</em>] or <em>c</em>".
 It is not possible to modify the order of operations with parentheses or other symbols.</p>
-<p>Whitespace (this means spaces, tabs, newlines, etc.) is trimmed from individual terms.
-This means that <code>a |    b</code> is equivalent to <code>a|b</code>.
-Also <code>a|-b</code> is equivalent to <code>a| -   b</code>.</p>
-<p>Search is case-insensitive, this means that <code>a</code> is equivalent to <code>A</code>.</p>
+<p>Whitespace (spaces, tabs, newlines, and so on) is trimmed from individual terms.
+So <code>a |    b</code> is equivalent to <code>a|b</code>.
+Also, <code>a|-b</code> is equivalent to <code>a| -   b</code>.</p>
+<p>Search is case-insensitive, so <code>a</code> is equivalent to <code>A</code>.</p>
 <p>However this concept might be clearer with a few examples based on a list of networks.</p>
 <h3 id="examples">Examples</h3>
 <p>Assume the following folder structure for your networks:</p>
@@ -3975,7 +3976,7 @@ Also <code>a|-b</code> is equivalent to <code>a| -   b</code>.</p>
 <li><code>clothing &amp; SDXL</code> - Search for everything which contains the word <code>clothing</code> and the word <code>SDXL</code>, meaning in this case all networks in the <code>Clothing</code> folder of the <code>SDXL</code> folder.</li>
 <li><code>-SD1.5</code> - Search for everything which does not contain the word <code>SD1.5</code>, meaning in this case all networks in the <code>SDXL</code> folder.</li>
 <li><code>gown | dress</code> - Search for everything which contains the word <code>gown</code> or the word <code>dress</code>, meaning in this case <code>Evening Gown.safetensor</code> in <code>SD1.5</code> and <code>Elegant Gown.safetensor, Summer Dress.safetensor</code> in <code>SDXL</code>.</li>
-<li><code>SDXL &amp; gown | SDXL &amp; dress</code> - Search for everything which contains the word <code>gown</code> or the word <code>dress</code> and the word <code>SDXL</code>, meaning in this just case <code>Elegant Gown.safetensor, Summer Dress.safetensor</code> in <code>SDXL</code>.</li>
+<li><code>SDXL &amp; gown | SDXL &amp; dress</code> - Search for everything which contains <code>gown</code> or <code>dress</code> and <code>SDXL</code>, meaning in this case <code>Elegant Gown.safetensor, Summer Dress.safetensor</code> in <code>SDXL</code>.</li>
 <li><code>clothing | - Casual Wear</code> - Search for everything which contains the word <code>clothing</code>, as long as it does not contain the phrase <code>Casual Wear</code>, meaning in this case <code>Casual Winter-Wear.safetensor, Elegant Gown.safetensor, Vintage Suit.safetensor, Summer Dress.safetensor, Sports Attire.safetensor</code> in <code>SDXL</code> and <code>Evening Gown.safetensor, Vintage Suit.safetensor, Winter Coat</code> in <code>SD1.5</code>.</li>
 <li><code>clothing | - Casual &amp; Wear</code> - Search for everything which contains the word <code>clothing</code>, as long as it does not contain <strong>both</strong> the word <code>casual</code> and the word <code>wear</code>, meaning in this case <code>Elegant Gown.safetensor, Vintage Suit.safetensor, Summer Dress.safetensor, Sports Attire.safetensor</code> in <code>SDXL</code> and <code>Evening Gown.safetensor, Vintage Suit.safetensor, Winter Coat.safetensor</code> in <code>SD1.5</code> <em>(Note that <code>Casual Winter-Wear.safetensor</code> is excluded from the search results)</em>.</li>
 <li><code>clothing | -black | - gray | -white</code> - Search for everything which contains the word <code>clothing</code>, as long as it does not contain the words <code>black</code>, <code>gray</code> or <code>white</code>.</li>
@@ -3994,20 +3995,20 @@ RegEx searches are case-insensitive too.</p>
 <p>Considering the RegEx search, the field which is searched is structured in the following way:</p>
 <div class="highlight"><pre><span></span><code><span class="sb">`filename: </span><span class="si">${</span><span class="nx">filename</span><span class="si">}</span><span class="sb">|name: </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">|tags: </span><span class="si">${</span><span class="nx">tags</span><span class="si">}</span><span class="sb">`</span>
 </code></pre></div>
-<p>As of writing this, the fields represent the following:</p>
+<p>As of writing this, these fields represent:</p>
 <ul>
 <li><code>name</code> - The relative path to the network, not including filetype (also shows when hovering the network card for a longer time)</li>
-<li><code>filename</code> - The absolute path to the network. (This does not resolve symlinks, so the path shown is the path to the symlink if one is used, not the path to the file the symlink points to)</li>
+<li><code>filename</code> - The absolute path to the network. (This does not resolve symlinks, so if a symlink is used, the shown path is the symlink path, not the target file path)</li>
 <li><code>tags</code> - The tags the network has, separated by <code>|</code>. Not all networks necessarily have tags, and they can be either keywords used when prompting, or the keyword to trigger the network specifically.</li>
 </ul>
-<p>This allows to exclude (or include) certain strings only in specific fields.
+<p>This allows you to exclude (or include) certain strings only in specific fields.
 For example a negative lookahead can be used to exclude certain tags from the search, while still searching for them in the title.</p>
 <p>An example RegEx would be the following for this use case:</p>
 <div class="highlight"><pre><span></span><code>r#^(?!.*\|tags:.*(1girl|woman|girl)).*$
 </code></pre></div>
 <p>This search excludes every network which has tags which contain either <code>1girl</code>, <code>woman</code> or <code>girl</code>.</p>
-<p>Another usecase would be searching in just the filename, but not in the entire path.
-For example requiring the network to contain <code>SDXL</code>, with it not mattering whether it is in a folder called <code>SDXL</code> or not:</p>
+<p>Another use case is searching only in the filename, not the full path.
+For example, require the network name to contain <code>SDXL</code>, whether or not it is in an <code>SDXL</code> folder:</p>
 <div class="highlight"><pre><span></span><code>r#^.*\|name:[^|]*([^\/\\]*SDXL[^\/\\]*)$(?&lt;![\/\\]).*$
 </code></pre></div>
 <p>As this is already advanced usage, the assumption is made that the user knows how to use RegEx, so no further examples or explanations of the provided RegEx are given here.

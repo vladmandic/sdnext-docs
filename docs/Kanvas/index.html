@@ -4401,26 +4401,44 @@
 
 <h1 id="kanvas">Kanvas</h1>
 <p><a href="https://github.com/vladmandic/sdnext-kanvas">Kanvas</a> is an advanced image editing module for <a href="https://github.com/vladmandic/sdnext">SD.Next</a><br />
-with tools for upload, paste, paint, resize, crop, filters, text, outpaint, masking, and multi-stage workflows.</p>
+with tools for upload, paste, paint, resize, crop, filters, text, outpainting, masking, and multi-stage workflows.</p>
 <h2 id="at-a-glance">At a Glance</h2>
 <ul>
 <li>Edit on either the <strong>image layer</strong> or <strong>mask layer</strong>.</li>
 <li>Work in up to 10 stages, each with independent image and mask content.</li>
-<li>Export/processing always uses the <strong>currently active stage</strong>.</li>
-<li>SD.Next workflow is chosen automatically from available inputs (text/image/mask).</li>
+<li>Export and processing use the <strong>currently active stage</strong>.</li>
+<li>SD.Next automatically selects the workflow based on available inputs (text, image, mask).</li>
 </ul>
 <h2 id="quick-navigation">Quick Navigation</h2>
 <ul>
+<li><a href="./#kanvas">Kanvas</a></li>
+<li><a href="./#at-a-glance">At a Glance</a></li>
+<li><a href="./#quick-navigation">Quick Navigation</a><ul>
 <li><a href="./#stages">Stages</a></li>
 <li><a href="./#working-with-objects">Working with Objects</a></li>
+<li><a href="./#shapes-list">Shapes List</a></li>
 <li><a href="./#text-vs-image-vs-inpaint">Text vs Image vs Inpaint</a></li>
 <li><a href="./#toolbar">Toolbar</a></li>
 <li><a href="./#overlay">Overlay</a></li>
+<li><a href="./#layer-selection">Layer Selection</a></li>
+<li><a href="./#upload--paste--remove--reset">Upload / Paste / Remove / Reset</a></li>
+<li><a href="./#undo--redo">Undo / Redo</a></li>
+<li><a href="./#opacity">Opacity</a></li>
+<li><a href="./#move--resize">Move / Resize</a></li>
+<li><a href="./#crop">Crop</a></li>
+<li><a href="./#paint">Paint</a></li>
 <li><a href="./#magic-wand">Magic Wand</a></li>
 <li><a href="./#outpaint">Outpaint</a></li>
+<li><a href="./#filters">Filters</a></li>
+<li><a href="./#text">Text</a></li>
+<li><a href="./#zoom--scale">Zoom / Scale</a></li>
+<li><a href="./#practical-tips">Practical Tips</a></li>
 <li><a href="./#settings">Settings</a></li>
 <li><a href="./#server-side-masking">Server-side Masking</a></li>
 <li><a href="./#disable-kanvas">Disable Kanvas</a></li>
+<li><a href="./#implementation">Implementation</a></li>
+</ul>
+</li>
 </ul>
 <p><img alt="Image" src="https://github.com/user-attachments/assets/6a857a2c-313a-4bf6-9f64-b2f2b716e2fe" /></p>
 <div class="admonition tip">
@@ -4501,13 +4519,13 @@ For precise edits, enable <em>Zoom lock</em> and work at 1:1 scale.</p>
 <p>To pan while zoomed in, hold <em>Ctrl</em> and drag.</p>
 </div>
 <h3 id="shapes-list">Shapes List</h3>
-<p>Kanvas shows a live shapes list for the active layer:
-- Title shows active layer and shape count
-- Every shape entry shows type and size
-- Click a shape entry to select it on canvas</p>
+<p>Kanvas displays a live shapes list for the active layer:
+- The title shows the active layer and shape count
+- Each entry displays the shape type and size
+- Click an entry to select it on the canvas</p>
 <p>This is useful when shapes overlap and are hard to select directly.</p>
 <h3 id="text-vs-image-vs-inpaint">Text vs Image vs Inpaint</h3>
-<p>When processing starts, Kanvas rasterizes the <strong>active stage</strong> layers and SD.Next picks workflow by available inputs:
+<p>When processing starts, Kanvas rasterizes the <strong>active stage</strong> layers, and SD.Next selects the workflow based on available inputs:
 - If image is empty, SD.Next uses <em>text-to-image</em>
 - If image exists, SD.Next uses <em>image-to-image</em>
 - If mask contains content, SD.Next uses <em>inpainting</em></p>
@@ -4551,19 +4569,16 @@ For precise edits, enable <em>Zoom lock</em> and work at 1:1 scale.</p>
 <h3 id="layer-selection">Layer Selection</h3>
 <p>Use <em>image layer</em> or <em>mask layer</em> button to choose the active editing layer.</p>
 <h3 id="upload-paste-remove-reset">Upload / Paste / Remove / Reset</h3>
-<p>Use <em>upload</em> to add images to the active layer.<br />
-Use <em>paste</em> to insert image content from clipboard.<br />
-You can also drag-and-drop image files onto Kanvas.</p>
-<p>Each uploaded image becomes a separate object.</p>
-<p>Use <em>remove</em> to delete the currently selected object.</p>
+<p>Use <strong>Upload</strong> to add images to the active layer or drag and drop image files onto Kanvas. Each uploaded image becomes a separate object.</p>
+<p>Use <strong>Paste</strong> to insert content from the clipboard.</p>
+<p>Use <strong>Remove</strong> to delete the selected object.</p>
 <h3 id="undo-redo">Undo / Redo</h3>
-<p>Kanvas keeps a history of stage edits and supports both toolbar and keyboard undo/redo:
-- Use toolbar buttons: <em>Undo</em> (<code>⟲</code>) and <em>Redo</em> (<code>⟳</code>)
-- Keyboard:
-    - Undo: <code>Ctrl+Z</code> (or <code>Cmd+Z</code> on macOS)
-    - Redo: <code>Ctrl+Shift+Z</code>, <code>Cmd+Shift+Z</code>, or <code>Ctrl+Y</code></p>
-<p>History tracks structural edits (for example upload, remove, resize, filters, text, outpaint, stage operations),
-as well as paint and wand operations.</p>
+<p>Kanvas maintains edit history and supports both toolbar and keyboard undo/redo:
+- <strong>Toolbar</strong>: Undo (<code>⟲</code>) and Redo (<code>⟳</code>)
+- <strong>Keyboard</strong>:
+  - Undo: <code>Ctrl+Z</code> (or <code>Cmd+Z</code> on macOS)
+  - Redo: <code>Ctrl+Shift+Z</code>, <code>Cmd+Shift+Z</code>, or <code>Ctrl+Y</code></p>
+<p>History tracks structural edits (upload, remove, resize, filters, text, outpainting, stage operations) and paint/wand operations.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Magic wand drag is treated as a single history step, so one continuous drag can be undone in one action.</p>
@@ -4572,24 +4587,20 @@ as well as paint and wand operations.</p>
 <h3 id="opacity">Opacity</h3>
 <p>Use the opacity slider to change opacity of the selected object.</p>
 <h3 id="move-resize">Move / Resize</h3>
-<p>Use <em>Move/Resize</em> to transform selected objects.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you move objects and leave large empty space, double-click an empty canvas area to fit stage size to content bounds.</p>
-</div>
+<p>Use <strong>Move/Resize</strong> to transform selected objects. Double-click an empty canvas area to fit the stage size to content bounds.</p>
 <h3 id="crop">Crop</h3>
-<p>Use <em>crop</em> to crop selected image objects.</p>
+<p>Use <strong>Crop</strong> to crop selected image objects.</p>
 <h3 id="paint">Paint</h3>
-<p>Use <em>free paint</em> to draw on the active layer with brush settings.</p>
+<p>Use <strong>Free Paint</strong> to draw on the active layer with customizable brush settings.</p>
 <h3 id="magic-wand">Magic Wand</h3>
-<p>Use <em>Magic Wand</em> to fill contiguous regions in the active layer based on color similarity:
+<p>Use <strong>Magic Wand</strong> to fill contiguous regions based on color similarity:
 - Works in both image and mask layers
 - Uses the current brush color, opacity, and blend mode
 - For mask layer painting, color is converted to grayscale
 - Tolerance controls how broadly similar pixels are included</p>
-<p>Wand matching source:
-- Default: samples colors from the active layer
-- Optional: enable <em>merged</em> to sample from combined image+mask view</p>
+<p>Wand matching sources:
+- <strong>Default</strong>: Samples from the active layer
+- <strong>Merged</strong> (optional): Samples from the combined image and mask view</p>
 <p>Typical flow:
 1. Select active layer (<em>image</em> or <em>mask</em>).
 2. Click <em>Magic Wand</em>.
@@ -4613,26 +4624,24 @@ as well as paint and wand operations.</p>
 <p>Outpainting requires suitable <em>Input -&gt; Denoising strength</em> in SD.Next (typically 0.65-0.85).</p>
 </div>
 <h3 id="filters">Filters</h3>
-<p>Use <em>Filters</em> on selected objects:
-1. Select object.
-2. Click <em>Filters</em>.
-3. Pick filter and adjust value.
-4. Click <em>Filters</em> again to apply.</p>
+<p>Use <strong>Filters</strong> on selected objects:
+1. Select the object
+2. Click <strong>Filters</strong>
+3. Choose a filter and adjust its value
+4. Click <strong>Filters</strong> again to apply</p>
 <h3 id="text">Text</h3>
-<p>Use <em>Text</em> by setting font and text value, then dragging a text box on the stage.<br />
-Text is created on the active layer.</p>
+<p>Use <strong>Text</strong> to add text: Set the font and value, then drag to create a text box on the active layer.</p>
 <h3 id="zoom-scale">Zoom / Scale</h3>
-<p>Zoom with mouse wheel, touch gestures, or toolbar buttons.<br />
-<em>Zoom lock</em> toggles auto-fit behavior to keep manual zoom/1:1 workflow.</p>
+<p>Zoom using the mouse wheel, touch gestures, or toolbar buttons. <strong>Zoom Lock</strong> toggles auto-fit to enable manual zoom and 1:1 workflows.</p>
 <h3 id="practical-tips">Practical Tips</h3>
 <ul>
-<li>Deselect active transform handles before processing to avoid accidental edits.</li>
-<li>Use <em>Zoom lock</em> for precise 1:1 work.</li>
-<li>Hold <em>Ctrl</em> and drag to pan when zoomed in.</li>
-<li>For outpainting, set SD.Next <em>Input -&gt; Denoising strength</em> appropriately (typically 0.65-0.85).</li>
+<li>Deselect active transform handles before processing to avoid accidental edits</li>
+<li>Use <strong>Zoom Lock</strong> for precise 1:1 work</li>
+<li>Hold <code>Ctrl</code> and drag to pan while zoomed in</li>
+<li>For outpainting, set SD.Next <strong>Input → Denoising Strength</strong> appropriately (typically 0.65–0.85)</li>
 </ul>
 <h3 id="settings">Settings</h3>
-<p>Use <em>Settings</em> to tune Kanvas behavior and UI defaults. Settings are stored in browser local storage and reused across sessions.</p>
+<p>Use <strong>Settings</strong> to customize Kanvas behavior and UI defaults. Settings persist in browser local storage across sessions.</p>
 <p>Available options:
 - <strong>Toolbar size</strong>: changes toolbar icon/button size.
 - <strong>Toolbar hue</strong>: adjusts the toolbar color theme hue.
@@ -4644,25 +4653,22 @@ Text is created on the active layer.</p>
 - <strong>Outpaint fill</strong>: toggles fill behavior for outpaint operations.
 - <strong>Show messages</strong>: enables/disables status toast messages.
 - <strong>Message timeout</strong>: controls how long status messages stay visible.</p>
-<p>Use <em>Reset</em> in the settings panel to return all settings to default values.</p>
+<p>Click <strong>Reset</strong> in settings to restore all defaults.</p>
 <p><img width="318" height="356" alt="Image" src="https://github.com/user-attachments/assets/1453e193-3108-4833-94fc-09359c75b68a" /></p>
 <h3 id="server-side-masking">Server-side Masking</h3>
-<p>SD.Next can generate masks server-side from input image (for example <em>Auto-segment</em> or <em>Auto-mask</em>), even when Kanvas mask layer is empty.</p>
+<p>SD.Next can generate masks server-side from input images (e.g., Auto-Segment or Auto-Mask) even when the Kanvas mask layer is empty.</p>
 <p>Example auto-mask using <code>BEN2</code> model:</p>
 <p><img width="1024" alt="Image" src="https://github.com/user-attachments/assets/85d44d3e-9a6f-4d7c-b88d-c8ebc61f8d41" /></p>
-<p>Additionally, server options can post-process Kanvas masks:
-- Blur: Gaussian blur
-- Dilate/Erode: expand or shrink mask</p>
+<p>Server options can also post-process Kanvas masks:
+- <strong>Blur</strong>: Apply Gaussian blur
+- <strong>Dilate/Erode</strong>: Expand or shrink the mask</p>
 <p>These options can be previewed before processing.</p>
 <h3 id="disable-kanvas">Disable Kanvas</h3>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>To disable Kanvas and use standard Gradio image handling, set:<br />
-<code>SD_DISABLE_KANVAS=true</code></p>
-</div>
+<p>To disable Kanvas and use standard Gradio image handling:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">SD_DISABLE_KANVAS</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
 <h3 id="implementation">Implementation</h3>
-<p>Kanvas is maintained in <a href="https://github.com/vladmandic/sdnext-kanvas">sdnext-kanvas</a> and included as a submodule in SD.Next.<br />
-It is built with <a href="https://www.typescriptlang.org/">TypeScript</a> and <a href="https://konvajs.org/">Konva.js</a> for canvas operations.</p>
+<p>Kanvas is maintained in the <a href="https://github.com/vladmandic/sdnext-kanvas">sdnext-kanvas</a> repository and included as a submodule in SD.Next. It uses <a href="https://www.typescriptlang.org/">TypeScript</a> and <a href="https://konvajs.org/">Konva.js</a> for canvas operations.</p>
 
 
 

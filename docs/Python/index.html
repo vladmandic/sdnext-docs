@@ -866,10 +866,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compile-required" class="md-nav__link">
+  <a href="#compilation-required" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compile Required
+        Compilation Required
       
     </span>
   </a>
@@ -3861,10 +3861,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compile-required" class="md-nav__link">
+  <a href="#compilation-required" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compile Required
+        Compilation Required
       
     </span>
   </a>
@@ -3924,39 +3924,34 @@
 <h2 id="python">Python</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Recommended Python version by SD.Next is <code>python==3.12</code></p>
+<p>The recommended Python version for SD.Next is <code>python==3.12</code></p>
 </div>
-<p>SD.Next supports pretty much all current versions of Python, but with some disclaimers:  </p>
+<p>SD.Next supports most current Python versions with some caveats:</p>
 <ul>
-<li><code>python==3.9</code> is end-of-life and no longer validated by SD.Next, so compatibility is limited  </li>
-<li><code>python==3.10</code> is end-of-support and not recommended  </li>
-<li><code>python==3.11</code> is fully supported  </li>
-<li><code>python==3.12</code> is fully supported and is the recommended version as most package dependencies come pre-compiled for it  </li>
-<li><code>python==3.13</code> is supported, but some packages used by specific features are not available  </li>
-<li><code>python==3.14</code> is in early stages of support and marked as experimental  </li>
+<li><code>python==3.9</code>: End-of-life; compatibility is limited and not validated</li>
+<li><code>python==3.10</code>: End-of-support; not recommended</li>
+<li><code>python==3.11</code>: Fully supported</li>
+<li><code>python==3.12</code>: Fully supported and recommended (most dependencies have pre-compiled wheels)</li>
+<li><code>python==3.13</code>: Supported, but some packages lack compatible wheels</li>
+<li><code>python==3.14</code>: Supported experimentally with limited package compatibility</li>
 </ul>
-<h2 id="compile-required">Compile Required</h2>
+<h2 id="compilation-required">Compilation Required</h2>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>Python 3.13 and 3.14 are not recommended for general use due to limited package compatibility</p>
+<p>Python 3.13 and 3.14 require many packages to be built from source, which requires additional build tools and much longer installation times.</p>
 </div>
-<p>Python 3.13 and 3.14 require many packages to be built from source which requires additional build tools and much longer installation times<br />
-At the very minimum, you will need a C++ compiler toolchain and Python development headers installed on your system  </p>
 <h2 id="missing-features">Missing Features</h2>
-<p>Known missing functionality with python 3.13 and 3.14 includes:</p>
+<p>Known missing features with Python 3.13 and 3.14:</p>
 <ul>
-<li><code>insightface</code> no longer maintained and only provides pre-compiled wheels for up to <code>python==3.12</code>,<br />
-   so all face swapping features will not work on <code>python==3.13</code> until a compatible version of <code>insightface</code> is released  </li>
-<li><code>rembg</code> background removal depends on number of packages that do not provide compatible wheels  </li>
-<li><em>beta sampling</em> when used with some samplers may fail due to incompatible <code>torchsde</code> package  </li>
+<li><code>insightface</code>: No longer maintained; only provides pre-compiled wheels up to <code>python==3.12</code>. Face swapping features are unavailable until a compatible version is released.</li>
+<li><code>rembg</code>: Background removal depends on packages without compatible wheels</li>
+<li><strong>Beta sampling</strong>: May fail with some samplers due to incompatible <code>torchsde</code> package</li>
 </ul>
 <h2 id="backend-compatibility">Backend Compatibility</h2>
-<p>Compute backends such as <code>torch</code> and <code>onnxruntime</code> also have varying levels of support for different Python versions  </p>
+<p>Compute backends like <code>torch</code> and <code>onnxruntime</code> have varying support for different Python versions:</p>
 <ul>
-<li>For <code>cuda</code> and <code>rocm</code> which are under active development,<br />
-  support for all python versions is generally good  </li>
-<li>For older and less actively developed backends such as <code>zluda</code> and <code>directml</code>,<br />
-  support for newer python versions is often delayed or non-existent  </li>
+<li><strong>CUDA and ROCm</strong>: Under active development; generally good support for all Python versions</li>
+<li><strong>ZLUDA and DirectML</strong>: Older and less actively maintained; support for newer Python versions is often delayed or unavailable</li>
 </ul>
 
 

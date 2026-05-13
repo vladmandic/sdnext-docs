@@ -4272,9 +4272,9 @@
 
 
 <h1 id="benchmark">Benchmark</h1>
-<p>To run standardized benchmark, you can use UI -&gt; System -&gt; Benchmark feature
-or via CLI using <code>cli/run-benchmark.py</code> script.</p>
-<p>It runs identical tests, but often CLI is faster due to lower overhead.</p>
+<p>To run a standardized benchmark, use <strong>UI -&gt; System -&gt; Benchmark</strong>
+or run <code>cli/run-benchmark.py</code> from the CLI.</p>
+<p>Both paths run the same test logic, but the CLI is often faster because it has lower UI overhead.</p>
 <h2 id="environment">Environment</h2>
 <ul>
 <li>Hardware: nVidia RTX 4090 with i9-13900KF</li>
@@ -4390,24 +4390,22 @@ or via CLI using <code>cli/run-benchmark.py</code> script.</p>
 </table>
 <h3 id="notes-options">Notes: Options</h3>
 <ul>
-<li>All numbers are in <strong>it/s</strong> and higher is better  </li>
-<li>Test matrix is not full as some options can be combined together <em>(e.g. cuDNN + HyperTile)</em><br />
-  while others cannot <em>(e.g. HyperTile + ToMe)</em></li>
-<li>Results may differ on different GPU/CPU combinations<br />
-  For example, pairing better CPU with older GPU may benefit from more processing done on CPU and leaving GPU to do only core ML tasks while paring high-end GPU with older CPU may result in lower results since CPU cannot feed enough tasks to GPU</li>
-<li>Running quick tasks such as single image generate at low steps may not be sufficient to fully saturate high-end GPU so results will be lower</li>
-<li>xFormers have a slight performance advantage over SDP<br />
-  However, SDP is a built-in in Torch and "just works" while xFormers needs manual install and its highly version dependent  </li>
-<li>Some extensions can add significant overhead to pre/post processing even if they are not used</li>
+<li>All numbers are in <strong>it/s</strong>. Higher is better.</li>
+<li>The test matrix is not exhaustive. Some options can be combined <em>(for example, cuDNN + HyperTile)</em>, while others cannot <em>(for example, HyperTile + ToMe)</em>.</li>
+<li>Results vary by CPU/GPU pairing. A stronger CPU can help feed an older GPU, while a weaker CPU can bottleneck a high-end GPU.</li>
+<li>Short runs (single image, low step count) may not saturate high-end GPUs, so reported throughput can be lower.</li>
+<li>xFormers usually has a small performance edge over SDP.
+  SDP is built into Torch and usually works out of the box, while xFormers requires manual install and is version-sensitive.</li>
+<li>Some extensions add measurable pre/post-processing overhead even when not actively used.</li>
 <li>Not worth consideration: <em>cuDNN</em>, <em>NHWC</em>, <em>inference mode</em>, <em>eval</em></li>
 <li>cuDNN full bench finds best math algorithm for specific GPU, but default is nearly identical</li>
-<li>channels-last should better trigger utilization of tensor cores, but in practise result is nearly identical</li>
-<li>inference-mode should have more optimizations than default no_grad, but in practise result is nearly identical</li>
-<li>eval mode should allow for removal of some params in the model, but in pracise result is nearly identical</li>
-<li>Benefit of <em>BF16</em> vs <em>FP16</em> is not performance as much, its ability to run higher numerical ranges so it can perform calculations where <em>FP16</em> may result in <em>NaN</em></li>
-<li>Running in <em>FP32</em> results in 60% performance drop - if you need <em>FP32</em>, you're leaving a lot on the table</li>
-<li>Cost of using lowvram is very high as it needs to swap parts of model in-memory. Even using medvram comes at noticeable cost</li>
-<li>Best: xFormers, FP16, HyperTile, no-model-move, no-slicing/tiling</li>
+<li>channels-last should better trigger tensor core utilization, but in practice results are nearly identical</li>
+<li>inference mode should offer more optimization than default <code>no_grad</code>, but in practice results are nearly identical</li>
+<li>eval mode should allow removal of some model parameters, but in practice results are nearly identical</li>
+<li>The main benefit of <em>BF16</em> over <em>FP16</em> is numerical range, not raw performance. BF16 can avoid cases where FP16 produces <em>NaN</em>.</li>
+<li>Running in <em>FP32</em> causes a large performance drop (about 60%).</li>
+<li><code>lowvram</code> has a high cost because model parts are swapped in memory. <code>medvram</code> also has a noticeable cost.</li>
+<li>Best observed setup: xFormers, FP16, HyperTile, no-model-move, no-slicing/tiling.</li>
 </ul>
 <h2 id="compile">Compile</h2>
 <table>
@@ -4468,11 +4466,11 @@ or via CLI using <code>cli/run-benchmark.py</code> script.</p>
 </table>
 <h3 id="notes-compile">Notes: Compile</h3>
 <ul>
-<li>Performance numbers is in <strong>it/s</strong> and higher is better  </li>
-<li>Overhead is time in seconds needed to optimize a model with specific params and lower is better<br />
-  Model needs compile on initial generate, but it may also need a recompile if params such as resolution of batch size change</li>
-<li>Model compile may not be compatible with any method that modifies underlying model,<br />
-  including loading Lora weights on top of a model  </li>
+<li>Performance numbers are in <strong>it/s</strong>. Higher is better.</li>
+<li>Overhead is the time in seconds needed to optimize a model with specific parameters. Lower is better.
+  A model is compiled on first generation and may require recompilation when parameters change (for example, resolution or batch size).</li>
+<li>Model compilation may not be compatible with methods that modify underlying model weights,
+  including loading LoRA weights on top of a model.</li>
 <li><a href="https://github.com/chengzeyi/stable-fast">stable-fast</a> compile backend requires that package is manually installed on the system</li>
 </ul>
 <h2 id="intel-arc">Intel ARC</h2>
@@ -4725,10 +4723,10 @@ or via CLI using <code>cli/run-benchmark.py</code> script.</p>
 2024-02-08 18:53:51,700 INFO: {&#39;batch&#39;: 16, &#39;its&#39;: 54.08, &#39;img&#39;: 0.92, &#39;wall&#39;: 14.79, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
 </code></pre></div>
 <h3 id="onnx-runtime-api-benchmarks">ONNX Runtime API Benchmarks</h3>
-<p>Using latest version of <strong>SD.Next</strong> with <strong>Torch 2.2.0</strong>, <strong>CUDA 12.1</strong><br />
-<em>Note</em>: Usage of SD.Next via API is faster than via UI due to lower overhead.</p>
-<p>Environment: <strong>Intel i9-13900KF</strong> platform with <strong>nVidia RTX 4090 GPU</strong>  </p>
-<p>As you can see, we're reaching peak performance of <strong>~110 it/s</strong> using simple settings:  </p>
+<p>Using latest version of <strong>SD.Next</strong> with <strong>Torch 2.2.0</strong> and <strong>CUDA 12.1</strong>.
+<em>Note</em>: API usage is faster than UI usage because of lower overhead.</p>
+<p>Environment: <strong>Intel i9-13900KF</strong> with <strong>NVIDIA RTX 4090</strong>.</p>
+<p>With simple settings, peak performance reaches about <strong>110 it/s</strong>:</p>
 <div class="highlight"><pre><span></span><code>vlado@wsl:~/dev/sdnext-dev $ python cli/run-benchmark.py --maxbatch 32
 2024-02-07 11:19:53,026 INFO: {&#39;run-benchmark&#39;}
 2024-02-07 11:19:53,027 INFO: {&#39;options&#39;: {&#39;prompt&#39;: &#39;photo of two dice on a table&#39;, &#39;negative_prompt&#39;: &#39;foggy, blurry&#39;, &#39;steps&#39;: 50, &#39;sampler_name&#39;: &#39;Euler a&#39;, &#39;width&#39;: 512, &#39;height&#39;: 512, &#39;full_quality&#39;: True, &#39;cfg_scale&#39;: 0, &#39;batch_size&#39;: 1, &#39;n_iter&#39;: 1, &#39;seed&#39;: -1}}
@@ -4746,10 +4744,13 @@ or via CLI using <code>cli/run-benchmark.py</code> script.</p>
 2024-02-07 11:20:46,236 INFO: {&#39;batch&#39;: 16, &#39;its&#39;: 110.37, &#39;img&#39;: 0.45, &#39;wall&#39;: 7.25, &#39;peak&#39;: 7.18, &#39;oom&#39;: False}
 2024-02-07 11:21:09,338 INFO: {&#39;batch&#39;: 24, &#39;its&#39;: 109.75, &#39;img&#39;: 0.46, &#39;wall&#39;: 10.93, &#39;peak&#39;: 7.18, &#39;oom&#39;: False}
 2024-02-07 11:21:39,623 INFO: {&#39;batch&#39;: 32, &#39;its&#39;: 111.38, &#39;img&#39;: 0.45, &#39;wall&#39;: 14.37, &#39;peak&#39;: 7.18, &#39;oom&#39;: False}
-</code></pre></div>
-<p>With a full optimizations and custom compiled <strong>Stable-Fast</strong>:<br />
-We're reaching peak performance of <strong>~150 it/s</strong> (and <strong>~165 it/s</strong> using <em>TAESD</em> instead of full <em>VAE</em>):  </p>
-<div class="highlight"><pre><span></span><code>vlado@wsl:~/dev/sdnext-dev $ python cli/run-benchmark.py --maxbatch 32
+```text
+
+With full optimizations and custom-compiled **Stable-Fast**,
+peak performance reaches about **150 it/s** (and about **165 it/s** with *TAESD* instead of full *VAE*):
+
+```log
+vlado@wsl:~/dev/sdnext-dev $ python cli/run-benchmark.py --maxbatch 32
 2024-02-07 11:29:23,431 INFO: {&#39;run-benchmark&#39;}
 2024-02-07 11:29:23,432 INFO: {&#39;options&#39;: {&#39;prompt&#39;: &#39;photo of two dice on a table&#39;, &#39;negative_prompt&#39;: &#39;foggy, blurry&#39;, &#39;steps&#39;: 50, &#39;sampler_name&#39;: &#39;Euler a&#39;, &#39;width&#39;: 512, &#39;height&#39;: 512, &#39;full_quality&#39;: True, &#39;cfg_scale&#39;: 0, &#39;batch_size&#39;: 1, &#39;n_iter&#39;: 1, &#39;seed&#39;: -1}}
 2024-02-07 11:29:23,451 INFO: {&#39;version&#39;: {&#39;app&#39;: &#39;sd.next&#39;, &#39;updated&#39;: &#39;2024-02-07&#39;, &#39;hash&#39;: &#39;d967bd03&#39;, &#39;url&#39;: &#39;https://github.com/vladmandic/sdnext/tree/dev&#39;}}
@@ -4767,8 +4768,8 @@ We're reaching peak performance of <strong>~150 it/s</strong> (and <strong>~165 
 2024-02-07 11:30:33,534 INFO: {&#39;batch&#39;: 24, &#39;its&#39;: 144.65, &#39;img&#39;: 0.35, &#39;wall&#39;: 8.3, &#39;peak&#39;: 7.11, &#39;oom&#39;: False}
 2024-02-07 11:30:56,914 INFO: {&#39;batch&#39;: 32, &#39;its&#39;: 150.59, &#39;img&#39;: 0.33, &#39;wall&#39;: 10.63, &#39;peak&#39;: 7.11, &#39;oom&#39;: False}
 </code></pre></div>
-<p>Additional performance may be reached by experimenting with different settings, but combination of such may lead to unstable results<br />
-For example: <em>channels-last, hyper-tile, tomesd, fused-projections</em>  </p>
+<p>Additional gains are possible by combining more settings, but some combinations can become unstable.
+Examples: <em>channels-last, hyper-tile, tomesd, fused-projections</em>.</p>
 
 
 

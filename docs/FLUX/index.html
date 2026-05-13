@@ -4148,7 +4148,7 @@
 
 
 <h1 id="black-forest-labs-flux1">Black Forest Labs FLUX.1</h1>
-<p><strong>FLUX.1</strong> family consists of 3 variations:<br />
+<p>The <strong>FLUX.1</strong> family has three variants:
 - <a href="https://blackforestlabs.ai/announcing-black-forest-labs/">Pro</a><br />
   Model weights are NOT released, model is available only via Black Forest Labs<br />
 - <a href="https://huggingface.co/spaces/black-forest-labs/FLUX.1-dev">Dev</a><br />
@@ -4183,14 +4183,14 @@ If you're getting error message during model load: <code>file=xxx is not a compl
 It means exactly that - you're trying to load a model component instead of full model</p>
 </div>
 <h2 id="components">Components</h2>
-<p><strong>FLUX.1</strong> model consists of:<br />
-- Unet/Transformer: MMDiT<br />
+<p><strong>FLUX.1</strong> models include:
+- UNet/Transformer: MMDiT
 - Text encoder 1: <a href="https://huggingface.co/openai/clip-vit-large-patch14">CLIP-ViT/L</a>,
 - Text encoder 2: <a href="https://huggingface.co/google/t5-v1_1-xxl">T5-XXL Version 1.1</a><br />
 - VAE</p>
-<p>When using reference models, all components will be loaded as needed.<br />
-If using manually downloaded model, you need to ensure that all components are correctly configured and available.<br />
-Note that majority of available downloads are not actually all-in-one models and are instead just a part of the full model with individual components.</p>
+<p>When using reference models, components load automatically as needed.
+If you use manually downloaded models, make sure all required components are configured and available.
+Most available downloads are not all-in-one models; they are usually individual components.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>For convenience, you can add settings that allow quick replacement of model components<br />
@@ -4200,31 +4200,31 @@ to your <strong>quicksettings</strong> by adding<br />
 <p><img alt="image" src="https://github.com/user-attachments/assets/37a6b28f-2b80-4981-bf98-29290352733e" /></p>
 <h2 id="fine-tunes">Fine-tunes</h2>
 <h3 id="diffusers">Diffusers</h3>
-<p>There are already many <strong>FLUX.1</strong> unofficial variations available<br />
-Any Diffuser-based variation can be downloaded and loaded into SD.Next using Models -&gt; Huggingface -&gt; Download<br />
-For example, interesting variation is a merge of Dev and Schnell variations by sayakpaul: <a href="https://huggingface.co/sayakpaul/flux.1-merged">sayakpaul/FLUX.1-merged</a>  </p>
+<p>Many unofficial <strong>FLUX.1</strong> variants are already available.
+Any Diffusers-based variant can be downloaded in SD.Next from <em>Models -&gt; Huggingface -&gt; Download</em>.
+Example: a Dev/Schnell merge by sayakpaul: <a href="https://huggingface.co/sayakpaul/flux.1-merged">sayakpaul/FLUX.1-merged</a></p>
 <h3 id="loras">LoRAs</h3>
 <p>SD.Next includes support for FLUX.1 LoRAs  </p>
-<p>Since LoRA keys vary significantly between tools used to train LoRA as well as LoRA types,<br />
-support for additional LoRAs will be added as needed - please report any non-functional LoRAs!</p>
-<p>Also note that compatibility of LoRA depends on the quantization type!
-If you have issues loading LoRA, try switching your FLUX.1 base model to different quantization type  </p>
+<p>LoRA key formats vary across training tools and LoRA types.
+Additional compatibility support is added as needed, so please report non-working LoRAs.</p>
+<p>LoRA compatibility also depends on quantization type.
+If loading fails, try a different FLUX.1 base model quantization.</p>
 <h3 id="all-in-one">All-in-one</h3>
-<p>Typical all-in-one safetensors file is over 20GB in size and contains full model with transformer, both text-encoders and VAE<br />
-Since text encoders and VAE are same between all FLUX.1 models, <em>using all-in-one safetensors is not recommended</em> due to large duplication of data  </p>
+<p>Typical all-in-one safetensors files are over 20 GB and include transformer, both text encoders, and VAE.
+Since text encoders and VAE are shared across FLUX.1 variants, <em>all-in-one safetensors are generally not recommended</em> due to duplicated data.</p>
 <h3 id="unettransformer">Unet/Transformer</h3>
-<p>Unet/Transformer component of FLUX.1 is a typical model fine-tune and is around 11GB in size  </p>
-<p>To load a Unet/Transformer safetensors file:<br />
+<p>UNet/Transformer fine-tunes for FLUX.1 are typically around 11 GB.</p>
+<p>To load a UNet/Transformer safetensors file:
 1. Download <code>safetensors</code> or <code>gguf</code> file from desired source and place it in <code>models/UNET</code> folder<br />
    example: <a href="https://civitai.com/models/671478?modelVersionId=751723">FastFlux Unchained</a><br />
 2. Load FLUX.1 model as usual and then<br />
 3. Replace transformer with one in desired safetensors file using:<br />
 <em>Settings -&gt; Execution &amp; Models -&gt; UNet</em>  </p>
 <h3 id="text-encoder">Text Encoder</h3>
-<p>SD.Next allows changing optional text encoder on-the-fly  </p>
+<p>SD.Next allows changing the optional text encoder on-the-fly.</p>
 <p>Go to <em>Settings -&gt; Models -&gt; Text encoder</em> and select the desired text encoder<br />
-T5 enhances text rendering and some details, but it is otherwise lightly used and optional.<br />
-Loading lighter T5 will greatly decrease model resource usage, but may not be compatible with all offloading modes  </p>
+T5 can improve text rendering and some fine details, but it is optional.
+Using a lighter T5 can reduce resource usage, but may not be compatible with all offloading modes.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To use <strong>prompt attention</strong> syntax with FLUX.1, set <em>Settings -&gt; Execution -&gt; Prompt attention to </em><em>xhinker</em>**</p>
@@ -4232,32 +4232,32 @@ Loading lighter T5 will greatly decrease model resource usage, but may not be co
 <p><em>Example image with different encoder quantization options</em><br />
 <img alt="flux-encoder" src="https://github.com/user-attachments/assets/afdf6ead-a591-48ae-9eef-f2dd778a645f" /></p>
 <h3 id="vae">VAE</h3>
-<p>SD.Next allows changing VAE model used by FLUX.1 on-the-fly<br />
-There are no alternative VAE models released, so this setting is mostly for future use  </p>
+<p>SD.Next allows changing the VAE used by FLUX.1 on-the-fly.
+There are currently no alternative VAE releases, so this setting is mostly future-facing.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To enable <strong>image previews</strong> during generate, set <em>Settings -&gt; Live Preview -&gt; Method to </em><em>TAESD</em>**<br />
 To further speed up generation, you can disable "full quality" which triggers use of TAESD instead of full VAE to decode final image</p>
 </div>
 <h3 id="scheduler">Scheduler</h3>
-<p>Due to specifics of flow-matching methods, number of steps also has strong influence on the image composition, not just on the way how its resolved</p>
+<p>With flow-matching methods, step count strongly affects image composition, not only final refinement quality.</p>
 <p><em>Example image at different steps</em><br />
 <img alt="flux-steps" src="https://github.com/user-attachments/assets/943b584d-40eb-4cde-abf3-0cbf1b7adb38" /></p>
-<p>Additionally, sampler can be tuned with <em>shift</em> parameter which roughly modifies how long does model spend on composition vs actual diffusion  </p>
+<p>You can also tune the sampler with the <em>shift</em> parameter, which changes how long the model spends on composition versus diffusion.</p>
 <p><em>Example image with different sampler shift values</em>
 <img alt="flux-shift" src="https://github.com/user-attachments/assets/2c810977-a69a-4760-bad0-5e80abb3a1d6" /></p>
 <h3 id="controlnet">ControlNet</h3>
 <p>Support for all <strong>InstantX/Shakker-Labs</strong> models including <a href="https://huggingface.co/InstantX/FLUX.1-dev-Controlnet-Union">Union-Pro</a></p>
 <p>FLUX.1 ControlNets are large at over 6GB on top of already very large FLUX.1 model<br />
-as such, you may need to use offloading:sequential which is not as fast, but uses far less memory  </p>
-<p>When using union model, you must also select control mode in the control unit  </p>
+As a result, you may need <code>offloading:sequential</code>, which is slower but uses much less memory.</p>
+<p>When using the Union model, also select a control mode in the Control unit.</p>
 <h2 id="flux-tools">Flux Tools</h2>
 <p>Link to <a href="https://blackforestlabs.ai/flux-1-tools/">Flux Tools</a> announcement<br />
 - Redux is actually a tool<br />
 - Fill is inpaint/outpaint optimized version of Flux-dev<br />
-- Canny/Depth are optimized versions of Flux-dev for their respective tasks: they are <em>not</em> ControlNets that work on top of a model  </p>
-<p>To use, go to image or control interface and select <em>Flux Tools</em> in scripts<br />
-All models are auto-downloaded on first use<br />
+- Canny/Depth are optimized Flux-dev variants for their tasks: they are <em>not</em> ControlNets that run on top of another model  </p>
+<p>To use them, open the image or control interface and select <em>Flux Tools</em> in scripts.
+All models are auto-downloaded on first use.
 <em>note</em>: All models are <a href="../Gated/">gated</a> and require acceptance of terms and conditions via web page<br />
 <em>recommended</em>: Enable on-the-fly <a href="../Quantization/">quantization</a> to reduce resource usage<br />
 - <a href="https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev">Redux</a>: ~0.1GB<br />
@@ -4275,116 +4275,116 @@ All models are auto-downloaded on first use<br />
 <table>
 <thead>
 <tr>
-<th>dtype</th>
-<th>time (sec)</th>
-<th>performance</th>
-<th>memory</th>
-<th>offload</th>
-<th>note</th>
+<th style="text-align: left;">dtype</th>
+<th style="text-align: left;">time (sec)</th>
+<th style="text-align: left;">performance</th>
+<th style="text-align: left;">memory</th>
+<th style="text-align: left;">offload</th>
+<th style="text-align: left;">note</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>bf16</td>
-<td></td>
-<td></td>
-<td>&gt;32 GB</td>
-<td>none</td>
-<td>*1</td>
+<td style="text-align: left;">bf16</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">&gt;32 GB</td>
+<td style="text-align: left;">none</td>
+<td style="text-align: left;">*1</td>
 </tr>
 <tr>
-<td>bf16</td>
-<td>50.47</td>
-<td>0.40 it/s</td>
-<td></td>
-<td>balanced</td>
-<td>*2</td>
+<td style="text-align: left;">bf16</td>
+<td style="text-align: left;">50.47</td>
+<td style="text-align: left;">0.40 it/s</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">balanced</td>
+<td style="text-align: left;">*2</td>
 </tr>
 <tr>
-<td>bf16</td>
-<td>94.28</td>
-<td>0.21 it/s</td>
-<td>1.89 GB</td>
-<td>sequential</td>
-<td></td>
+<td style="text-align: left;">bf16</td>
+<td style="text-align: left;">94.28</td>
+<td style="text-align: left;">0.21 it/s</td>
+<td style="text-align: left;">1.89 GB</td>
+<td style="text-align: left;">sequential</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
-<td>nf4</td>
-<td>14.69</td>
-<td>1.36 it/s</td>
-<td>17.92 GB</td>
-<td>none</td>
-<td></td>
+<td style="text-align: left;">nf4</td>
+<td style="text-align: left;">14.69</td>
+<td style="text-align: left;">1.36 it/s</td>
+<td style="text-align: left;">17.92 GB</td>
+<td style="text-align: left;">none</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
-<td>nf4</td>
-<td>21.02</td>
-<td>0.95 it/s</td>
-<td></td>
-<td>balanced</td>
-<td>*2</td>
+<td style="text-align: left;">nf4</td>
+<td style="text-align: left;">21.02</td>
+<td style="text-align: left;">0.95 it/s</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">balanced</td>
+<td style="text-align: left;">*2</td>
 </tr>
 <tr>
-<td>nf4</td>
-<td></td>
-<td></td>
-<td></td>
-<td>sequential</td>
-<td>err</td>
+<td style="text-align: left;">nf4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">sequential</td>
+<td style="text-align: left;">err</td>
 </tr>
 <tr>
-<td>qint8</td>
-<td>15.42</td>
-<td>1.30 it/s</td>
-<td>18.85 GB</td>
-<td>none</td>
-<td></td>
+<td style="text-align: left;">qint8</td>
+<td style="text-align: left;">15.42</td>
+<td style="text-align: left;">1.30 it/s</td>
+<td style="text-align: left;">18.85 GB</td>
+<td style="text-align: left;">none</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
-<td>qint8</td>
-<td></td>
-<td></td>
-<td></td>
-<td>balanced</td>
-<td>err</td>
+<td style="text-align: left;">qint8</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">balanced</td>
+<td style="text-align: left;">err</td>
 </tr>
 <tr>
-<td>qint8</td>
-<td></td>
-<td></td>
-<td></td>
-<td>sequential</td>
-<td>err</td>
+<td style="text-align: left;">qint8</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">sequential</td>
+<td style="text-align: left;">err</td>
 </tr>
 <tr>
-<td>qint4</td>
-<td>18.37</td>
-<td>1.09 it/s</td>
-<td>11.38 GB</td>
-<td>none</td>
-<td></td>
+<td style="text-align: left;">qint4</td>
+<td style="text-align: left;">18.37</td>
+<td style="text-align: left;">1.09 it/s</td>
+<td style="text-align: left;">11.38 GB</td>
+<td style="text-align: left;">none</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
-<td>qint4</td>
-<td></td>
-<td></td>
-<td></td>
-<td>balanced</td>
-<td>err</td>
+<td style="text-align: left;">qint4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">balanced</td>
+<td style="text-align: left;">err</td>
 </tr>
 <tr>
-<td>qint4</td>
-<td></td>
-<td></td>
-<td></td>
-<td>sequential</td>
-<td>err</td>
+<td style="text-align: left;">qint4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">sequential</td>
+<td style="text-align: left;">err</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Notes</strong>:
-- <em>1: Memory usage exceeeds 32GB and is not recommended<br />
-- </em>2: Balanced offload VRAM usage is not included since it depends on desired threshold  </p>
+- <em>1: Memory usage exceeds 32 GB and is not recommended.
+- </em>2: Balanced offload VRAM usage is not included because it depends on the selected threshold.</p>
 
 
 

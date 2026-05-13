@@ -3882,7 +3882,7 @@
 
 
 <h1 id="nvidia-gpu-and-cuda-notes">Nvidia GPU and CUDA Notes</h1>
-<p><strong>SD.Next</strong> will auto-detect <strong>nVidia GPUs</strong> and attempt to install latest stable <code>torch</code> with CUDA support on launch  </p>
+<p><strong>SD.Next</strong> auto-detects <strong>nVidia GPUs</strong> and attempts to install a stable CUDA-enabled <code>torch</code> build at launch.  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Do not manually install CUDA on your system as <code>torch</code> will install the appropriate CUDA version in its own environment<br />
@@ -3891,19 +3891,19 @@ System-wide installation of CUDA may cause conflicts and is not required for SD.
 Disable system memory fallback to avoid massive performance degradation when exhausting GPU memory: <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5490">Instructions</a></p>
 </div>
 <h2 id="older-gpus">Older GPUs</h2>
-<p>If you have older nVidia GPU that is not supported by latest <code>torch</code> releases, you may need to install specific older version of <code>torch</code> with appropriate CUDA version that supports your GPU.</p>
-<p><em>Example</em>: <strong>Pascal</strong> architecture (e.g., RTX 10xx series) or older require <code>torch==2.9</code> with <code>cuda==12.6</code>
-Use following before first startup to force installation of specific torch/cuda version:  </p>
+<p>If you have an older nVidia GPU that is not supported by recent <code>torch</code> releases, you may need an older <code>torch</code> and CUDA combination.</p>
+<p><em>Example</em>: <strong>Pascal</strong> architecture (for example, RTX 10xx series) or older may require <code>torch==2.9</code> with <code>cuda==12.6</code>.<br />
+Use the following before first startup to force a specific torch/CUDA combination:  </p>
 <blockquote>
 <p><code>set TORCH_COMMAND='torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cu126'</code>  </p>
 </blockquote>
 <h2 id="older-drivers">Older Drivers</h2>
-<p>If you're attempting to run on a system with older nVidia drivers that do not support latest CUDA versions, you may need to install specific older version of <code>torch</code> with appropriate CUDA version that is compatible with your drivers.</p>
+<p>If your system has older nVidia drivers that do not support newer CUDA versions, you may need an older <code>torch</code>/CUDA pair compatible with those drivers.</p>
 <p>This is common when running on cloud instances which do not update drivers frequently.</p>
-<p><em>Example</em>: <code>cuda==13.0</code> requires newer nVidia drivers<br />
-Use following before first startup to force installation of <code>torch==2.11.0</code> with <code>cuda==12.68</code>:  </p>
+<p><em>Example</em>: <code>cuda==13.0</code> requires newer nVidia drivers.<br />
+Use the following before first startup to force installation from CUDA 12.8 wheels:  </p>
 <blockquote>
-<p><code>set TORCH_COMMAND='torch torchvision --index-url https://download.pytorch.org/whl/cu128</code>  </p>
+<p><code>set TORCH_COMMAND='torch torchvision --index-url https://download.pytorch.org/whl/cu128'</code>  </p>
 </blockquote>
 
 

@@ -3970,22 +3970,23 @@
 
 
 <h1 id="styles">Styles</h1>
-<p>Styles are powerful feature in SD.Next that allow to apply various modifications to your generation parameters:</p>
+<p>Styles are a powerful SD.Next feature that can apply reusable changes to generation settings:</p>
 <ul>
-<li>Prompt: both postive and negative  </li>
+<li>Prompt: both positive and negative</li>
 <li>Parameters: all generation parameters  </li>
 <li>Wildcards  </li>
 </ul>
 <p><img alt="image" src="https://github.com/user-attachments/assets/9b147274-24db-4dbc-a27a-75072a6d2aaa" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Styles wildcards are separate feature that standard <a href="../Wildcards/">wildcards</a> which can also be used in parallel</p>
+<p>Style wildcards are separate from standard <a href="../Wildcards/">wildcards</a>, and both can be used together.</p>
 </div>
-<p>Styles can be selected via Networks interface -&gt; Styles<br />
-or via shortcut combo-box control below generate buttons  </p>
-<p>There can be any number of styles selected and each style will be applied in order they are selected.</p>
+<p>Styles can be selected through Networks -&gt; Styles,
+or from the shortcut combo box below the Generate buttons.</p>
+<p>You can select any number of styles, and they are applied in selection order.</p>
 <p>Each style is a separate JSON file that can be edited manually or via UI.
-Location of styles is specified in Settings -&gt; System Paths -&gt; Styles folder, default is <code>models\styles</code>  </p>
+Set style location in <em>Settings -&gt; System Paths -&gt; Styles folder</em>.
+Default path: <code>models\styles</code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Button ↶ "<em>Apply selected style to prompt</em>" will apply currently selected styles to current prompt as-is and remove style from being applied during runtime</p>
@@ -3993,31 +3994,32 @@ Location of styles is specified in Settings -&gt; System Paths -&gt; Styles fold
 Button ↷ "<em>Save current prompt to style</em>" will simply save current prompt to named style. Such style can be later edited for more fine-tuning</p>
 </div>
 <h2 id="migration">Migration</h2>
-<p>Old A1111 style concept was a flat file in CSV format and SD.Next supports migration of such styles to new JSON format<br />
-Simply put a full path to the CSV file in <em>Settings -&gt; System Paths -&gt; Styles</em> and restart server at which point<br />
-server will migrate found styles into individual JSON files.</p>
+<p>Legacy A1111 styles use a single CSV file, and SD.Next can migrate them to JSON.
+Set the full CSV path in <em>Settings -&gt; System Paths -&gt; Styles</em> and restart the server.
+SD.Next migrates discovered styles into individual JSON files.</p>
 <h2 id="prompt">Prompt</h2>
-<p>Prompt specified in style will be either used to replace a placeholder <code>{prompt}</code> in the current prompt or if there is no placeholder, it will be appeneded at the end of the current prompt  </p>
+<p>The style prompt either replaces the <code>{prompt}</code> placeholder in the current prompt,
+or is appended to the end when no placeholder is present.</p>
 <p>Example:</p>
 <blockquote>
 <p>"national geographic style photo shot on sony a7 camera"  </p>
 </blockquote>
 <h2 id="parameters">Parameters</h2>
-<p>In addition to prompt, you can also specify any generation parameters in the style<br />
-List of parameters is comma-separated and each parameter is a key-value pair indicated by colon <code>:</code>  </p>
+<p>In addition to prompt text, a style can define generation parameters.
+Parameters are comma-separated key-value pairs using <code>:</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Recognized parameters are all parameters that can be typically found in image metadata,<br />
-but they can also include and of the generation parameters and any of the server settings!</p>
+but they can also include any generation parameters and any server settings.</p>
 </div>
 <p>Example:</p>
 <blockquote>
 <p>Model: PrometheusV1, Size: 1152x864, Sampler: DPM++ 2M SDE, CFG scale: 5, Steps: 30, Seed: 3849770518, Refine: True, Hires: True, Refiner steps: 20, hr_upscaler: ESRGAN 4x NMKD Siax, hr_scale: 1.5, hr_denoising_strength: 0.3, save_to_dirs: True</p>
 </blockquote>
 <h2 id="wildcards">Wildcards</h2>
-<p>Both prompt and parameters can be modified using wildcards section inside the style<br />
-List of wildcards is comma-separated and each wildcard is a key-value pair indicated by <code>=</code><br />
-Multiple wildcards can be listed and separated by semi-colon <code>;</code>  </p>
+<p>Both prompt and parameters can be modified using the style wildcards section.
+Wildcards are key-value pairs using <code>=</code>.
+Multiple wildcard entries are separated by <code>;</code>.</p>
 <p>Example#1:</p>
 <blockquote>
 <p>Prompt: "a woman wearing a {color} dress"<br />

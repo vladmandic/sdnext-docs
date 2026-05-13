@@ -4260,24 +4260,24 @@
 
 
 <h1 id="prompting-with-different-models">Prompting with different models</h1>
-<p>This is not in-depth technical article, but instead intended to demystify the process of prompting with different models - and importantly - why.</p>
-<p>Basically, effectiveness prompting depends on:</p>
+<p>This is not an in-depth technical article. It is meant to make prompting with different models easier to understand, including why behavior differs.</p>
+<p>Prompting effectiveness depends on:</p>
 <ul>
 <li>Text encoder used in the model</li>
 <li>Dataset used to train the model</li>
-<li>Structure prompt and negative prompt</li>
+<li>Prompt and negative prompt structure</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Different models have different prompting best practices<br />
-When in doubt, refer to model specific notes on CivitiAI website</p>
+<p>Different models have different prompting best practices.
+When in doubt, refer to model-specific notes on the Civitai website.</p>
 </div>
-<p>For example: standard <strong>SD15/SDXL</strong> models are prompted very differently vs <strong>Pony</strong>-derived models vs <strong>SD35</strong> or <strong>Flux.1</strong> derived models - it all comes down to which text enocder is used and how it was trained.  </p>
+<p>For example, standard <strong>SD15/SDXL</strong> models are prompted very differently from <strong>Pony</strong>-derived models and from <strong>SD35</strong> or <strong>Flux.1</strong> models. A big reason is which text encoder is used and how it was trained.</p>
 <h2 id="prompt-parser">Prompt Parser</h2>
 <p>SDNext supports multiple prompt parsers:</p>
 <ul>
 <li><strong>Native</strong>: Default  </li>
-<li><strong>A1111</strong>: Included with compatibility with A1111 original implementation  </li>
+<li><strong>A1111</strong>: Compatible with the A1111 implementation  </li>
 <li><strong>Compel</strong>: Use compel-style attention syntax, e.g. <code>dog++</code> or <code>dog--</code>  </li>
 <li><strong>xHinker</strong>: Alternative engine compatible with <code>T5</code> text-encoder  </li>
 </ul>
@@ -4290,12 +4290,12 @@ When in doubt, refer to model specific notes on CivitiAI website</p>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Multiple attentions are multiplied, not added:<br />
+<p>Multiple attention modifiers are multiplied, not added:<br />
 <code>((a dog:1.5) with a (bone:1.5)1.5)</code> is the same as (a dog:3.375) (with a bone:2.25)</p>
 </div>
 <h3 id="other-prompt-syntax">Other Prompt Syntax</h3>
 <ul>
-<li><code>\(x\)</code>: Escapes the parentheses, this is how you'd use parenthesis without it causing the parser to add emphasis</li>
+<li><code>\(x\)</code>: Escapes parentheses so they are treated as plain text</li>
 </ul>
 <h3 id="prompt-scheduling">Prompt Scheduling</h3>
 <ul>
@@ -4303,8 +4303,7 @@ When in doubt, refer to model specific notes on CivitiAI website</p>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>number can be <code>int</code> in which case it's considered exact step count,<br />
-or <code>float</code> in which case it's considered percentage of total steps</p>
+<p><code>number</code> can be an <code>int</code> (exact step count) or a <code>float</code> (percentage of total steps).</p>
 </div>
 <h2 id="components">Components</h2>
 <h3 id="text-encoder">Text encoder</h3>
@@ -4313,25 +4312,25 @@ or <code>float</code> in which case it's considered percentage of total steps</p
 <li>SDXL adds second encoder: <a href="https://huggingface.co/laion/CLIP-ViT-bigG-14-laion2B-39B-b160k">OpenCLIP-ViT/G</a></li>
 <li>SD3 adds third (optional) encoder: <a href="https://huggingface.co/google/t5-v1_1-xxl">T5 Version 1.1</a></li>
 </ul>
-<p>And other models are following similar approach - replace early simple encoders with only basic understanding of English language with more advanced models.
+<p>Other model families follow a similar path by replacing simpler early encoders with more advanced ones.
 For example: <a href="https://pixart-alpha.github.io/PixArt-sigma-project/">PixArt-Σ</a> and <a href="https://github.com/Tencent/HunyuanDiT">Tencent HunyuanDiT</a></p>
-<p>Unfortunately, in StabilityAI models, text encoder results are concatenated one after each other so oldest <code>CLIP-ViT/L</code> still has biggest impact.</p>
+<p>In StabilityAI models, text encoder outputs are concatenated, so the oldest <code>CLIP-ViT/L</code> encoder still has major impact.</p>
 <h3 id="dataset">Dataset</h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Nearly all modern models are trained on subset of <a href="https://laion.ai/blog/laion-5b/">laion-5b</a> dataset<br />
-Later fine-tuning introduces additional data (e.g. Pony uses heavily tagged dataset)</p>
+Later fine-tuning introduces additional data (for example, Pony uses a heavily tagged dataset).</p>
 </div>
 <h2 id="prompting-tips">Prompting tips</h2>
 <h3 id="prompt-engineering">Prompt Engineering</h3>
-<p>Know your model: different models were trained on different datasets, some may understand terms other models don't  </p>
+<p>Know your model: different models were trained on different datasets, so some terms work better on some models than others.</p>
 <p><strong>Main groups</strong></p>
 <ul>
 <li><strong>Mediums</strong>: best starting a prompt with it after specifying artist<br />
   Examples: <em>painting, photograph, drawing, sketch</em></li>
 <li><strong>Flavors</strong>: best left as separate token at the end of the prompt<br />
   Examples: <em>ray tracing, fine art, black and white, pixiv, artstation</em></li>
-<li><strong>Movements</strong>: best added to prompt with as keyword<br />
+<li><strong>Movements</strong>: best added as keywords<br />
   Examples: <em>pop art, photorealism</em>  </li>
 <li><strong>Artists</strong>: best starting a prompt with it<br />
   Examples: <em>greg rutkowski, artgerm, dc comics, picasso</em>  </li>
@@ -4348,13 +4347,12 @@ Later fine-tuning introduces additional data (e.g. Pony uses heavily tagged data
 <li>Any keyword can be specified in a negative prompt as well
   Examples: <em>watermark</em></li>
 </ul>
-<p><strong>Advanced Prompt Modifiers</strong>  </p>
 <p><strong>Hints</strong></p>
 <ul>
 <li>Use either artists or movements<br />
-  Using both may result in one overpowering the other, or in unexpected outcome  </li>
+  Using both may result in one overpowering the other, or in unexpected outcomes.</li>
 <li>Select medium that fits artist<br />
-  It helps model a lot to know which medium to use when styling  </li>
+  It helps the model to know which medium to use when styling.</li>
 <li>Add action after subject<br />
   Examples: portrait, standing, sitting</li>
 <li>Moving things to the front of prompt may increase its emphasis<br />
@@ -4368,30 +4366,30 @@ Later fine-tuning introduces additional data (e.g. Pony uses heavily tagged data
 1woman greg rutkowski painting of a woman happy front portrait on a beach as photorealism, sharp focus, artstation</p>
 </blockquote>
 <h3 id="negative-prompt">Negative prompt</h3>
-<p>When you add a negative prompt, it is basically appended to the prompt using negative weights.
-This makes model "steer away" from terms in negative prompt, but to do so it first has to INTRODUCE them to the context.</p>
+<p>When you add a negative prompt, it is appended to the prompt with negative weights.
+This makes the model steer away from those terms, but it still has to represent them in context first.</p>
 <p>So by adding negative prompt, you're:</p>
 <ul>
-<li>Limiting the freedom of the model<br />
-  Quite commonly this means that all faces will look similar without variance, etc.</li>
+<li>Limiting model freedom
+  A common result is lower variation (for example, faces becoming more similar).</li>
 <li>Making the model more prone to hallucinations
-  If you're trying to steer away from something that doesn't exist in the first place, it might introduce opposite of what you're trying to do.</li>
+  If you steer away from something that was not present, it may introduce the opposite effect.</li>
 </ul>
-<p>All-in-all, negative prompts are useful to steer model away from certain concepts, but should not be used as a <em>"general purpose long negative prompt"</em></p>
+<p>Negative prompts are useful for steering away from specific concepts, but they should not be treated as a general-purpose long list.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Negative prompting availability depends on the model</p>
 </div>
 <p>Negative prompting requires models with both positive and negative guidance.
 For example, SD-XL will first perform positive guidance and then modify it with negative guidance for each generation step.
-However, if negative guidance is <em>disabled</em> or model does not have negative guidance, negative prompts will not be taked into effect.</p>
+However, if negative guidance is <em>disabled</em> or the model does not support it, negative prompts will not take effect.</p>
 <p>Examples of models where negative guidance can be disabled by setting guidance scale to 0 or 1: <em>SD 1.5, SD-XL</em><br />
 Examples of models where negative guidance is not available by default: <em>FLUX.1, Flex, OmniGen</em>  </p>
 <h3 id="prompt-attention_1">Prompt attention</h3>
-<p>First, nothing wrong with wanting to add extra attention to certain parts of the prompt. But it should be used sparingly and only when needed and keep in mind that overall prompt should be balanced.</p>
-<p>E.g, If your prompt has 10 words and you're raising attention to 5 of them, you're basically telling the model average weight of the prompt is massive. Common result? Overbaked images.</p>
-<p>Prompt balance doesn't have to be perfect, but any prompt that has more than few of words with light attention modifiers is a red flag.  </p>
-<p>Also, keep in mind that adding extremely strong attention modifiers such as <code>(((xyz)))</code> or <code>(xyz:1.5)</code> will make model completely loose concept of prompt as a whole.</p>
+<p>Adding extra attention to parts of a prompt is fine, but use it sparingly and keep overall balance in mind.</p>
+<p>If your prompt has 10 words and you increase attention on 5 of them, average prompt weight becomes too high. A common result is overbaked images.</p>
+<p>Prompt balance does not need to be perfect, but many weighted words in one prompt is usually a red flag.</p>
+<p>Also note that very strong attention modifiers such as <code>(((xyz)))</code> or <code>(xyz:1.5)</code> can make the model lose the overall prompt intent.</p>
 <h2 id="model-specific-tips">Model Specific Tips</h2>
 <h3 id="sd15">SD15</h3>
 <p>Dataset:</p>
@@ -4399,9 +4397,9 @@ Examples of models where negative guidance is not available by default: <em>FLUX
 <li>Used small laion-5b subset with preexisting captions</li>
 <li>No major effort was put into processing or captioning other than what's in the subset</li>
 </ul>
-<p>Result?</p>
+<p>Result:</p>
 <ul>
-<li>Model that's has basic understanding of the world, but to use it effectively you need to "hunt" for the right keywords  </li>
+<li>Model that has a basic understanding of the world, but effective use often requires "hunting" for the right keywords  </li>
 <li>Models are easily fine-tuned as nothing-forced-nothing-removed approach was used during training  </li>
 <li><strong>How to prompt</strong>? Old-school prompting which put heavy emphasis on keywords and attention modifiers  </li>
 </ul>
@@ -4411,7 +4409,7 @@ Examples of models where negative guidance is not available by default: <em>FLUX
 <li>Trained on same dataset as SD15 and then fine-tuned on extended dataset with larger resolution  </li>
 <li>It was also censored in the final parts of training which introduced heavy bias  </li>
 </ul>
-<p>Result?</p>
+<p>Result:</p>
 <ul>
 <li>It's almost like the model was "lobotomized".<br />
   E.g. for the concept of "topless", it is not just missing sample data. It was effectively "burned out" of the model.
@@ -4423,7 +4421,7 @@ Examples of models where negative guidance is not available by default: <em>FLUX
 <li>Used larger subset with extended captions and also diverse resolutions  </li>
 <li>Instead of censoring in the final stages, they simply pruned dataset used for training.</li>
 </ul>
-<p>Result?</p>
+<p>Result:</p>
 <ul>
 <li>Model that <em>knows-what-it-knows</em> and the rest can be added with fine-tuning.</li>
 <li>E.g. It knows what "topless" means, just doesn't have enough examples to develop it fully.  </li>
@@ -4440,13 +4438,13 @@ Examples of models where negative guidance is not available by default: <em>FLUX
 <li>Censored not only by removing images from dataset, but also by modifying them by censoring parts of the image</li>
 <li>Captioned extensively using LLM. Unfortunately, not ON-TOP of existing captions so it can augment them, but instead it REPLACED them - thus keywords already existing in dataset are not trained for at all.</li>
 </ul>
-<p>Result?</p>
+<p>Result:</p>
 <ul>
 <li>Model that <em>thinks-it-knows-everything</em> and now it is up to you to prove it wrong.<br />
   E.g., it knows what a topless person looks like, and it is "certain" that nipples should be presented as blank.<br />
   Which means it would take a massive effort to retrain what it learned the wrong way.<br />
   I hope to be proven wrong, but this looks like a fail.</li>
-<li><strong>How to prompt</strong>? Use of long LLM-generated captions means that model should be prompted using very descriptive language and completely stop using using styles, keywords and attention-modifiers. And since LLM generated captions do not include styles as we know them, we need to replace them with detailed descriptions - it's almost like we need to think like LLM to prompt it - how would LLM describe the image I'm trying to create?</li>
+<li><strong>How to prompt</strong>? Long LLM-generated captions mean this model usually works better with descriptive natural language. Reduce reliance on style tags, keywords, and heavy attention modifiers. Because LLM captions often do not include classic style tags, replace them with concrete visual descriptions.</li>
 </ul>
 
 

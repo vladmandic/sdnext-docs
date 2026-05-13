@@ -3883,19 +3883,21 @@
 
 <h1 id="how-to-use-xyz-grid">How to use X/Y/Z Grid</h1>
 <h2 id="introduction">Introduction</h2>
-<p>The X/Y/Z Grid script is a way of generating multiple images with automatic changes in the image, and then displaying the result in labelled grids.</p>
-<p>To activate the X/Y/Z Grid, scroll down to the Script dropdown and select "X/Y/Z Grid" within.</p>
-<p>Several new UI elements will appear.</p>
-<p>X, Y, and Z types are where you can specify what to change in your image.</p>
-<p>X type will create columns, Y type will create rows, and Z type will create separate grid images, to emulate a "3D grid"
-The X, Y, Z values are where to specify what to change. For some types, there will be a dropdown box to select values, otherwise these values are comma-separated.</p>
-<p>Most of these are fairly self explanatory, such as Model, Seed, VAE, Clip skip, and so on.</p>
+<p>The X/Y/Z Grid script generates multiple images while automatically varying selected values, then displays results in labeled grids.</p>
+<p>To activate X/Y/Z Grid, open the Script dropdown and select "X/Y/Z Grid".</p>
+<p>Several new UI controls will appear.</p>
+<p>X, Y, and Z Types define what changes across generated images.</p>
+<p>X Type creates columns, Y Type creates rows, and Z Type creates separate grid images (a "3D grid" effect).
+X/Y/Z Values define the actual values to test.
+For some types, values are selected from a dropdown. For others, values are comma-separated.</p>
+<p>Most options are self-explanatory, such as Model, Seed, VAE, and CLiP Skip.</p>
 <h2 id="prompt-sr">Prompt S/R</h2>
-<p>"Prompt S/R" is Prompt Search and Replace. After selecting this type, the first word in your value should be a word already in your prompt, followed by comma-separated words to change from this word to other words.</p>
-<p>For example, if you're generating an image with the prompt "a lazy cat" and you set Prompt S/R to <code>cat,dog,monkey</code>, the script will create 3 images of;
+<p>"Prompt S/R" means Prompt Search and Replace.
+After selecting this type, enter a word already present in your prompt, followed by comma-separated replacements.</p>
+<p>For example, if your prompt is "a lazy cat" and Prompt S/R is <code>cat,dog,monkey</code>, the script creates three images:
 <code>a lazy cat</code>, <code>a lazy dog</code>, and <code>a lazy monkey</code>.</p>
-<p>You're not restricted to a single word, you could have multiple words; <code>lazy cat,boisterous dog,mischeavous monkey</code>, or the entire prompt; <code>a lazy cat,three blind mice,an astronaut on the moon</code>.</p>
-<p>Embeddings and Loras are also valid Search and Replace terms; <code>&lt;lora:FirstLora:1&gt;,&lt;lora:SecondLora:1&gt;,&lt;lora:ThirdLora:1&gt;</code>.</p>
+<p>You are not limited to single words. You can replace phrases, for example <code>lazy cat,boisterous dog,mischievous monkey</code>, or even the full prompt, for example <code>a lazy cat,three blind mice,an astronaut on the moon</code>.</p>
+<p>Embeddings and LoRAs are also valid search-and-replace terms, for example <code>&lt;lora:FirstLora:1&gt;,&lt;lora:SecondLora:1&gt;,&lt;lora:ThirdLora:1&gt;</code>.</p>
 <p>You could also change the strength of a lora; <code>&lt;lora:FirstLora:1&gt;,&lt;lora:FirstLora:0.75&gt;,&lt;lora:FirstLora:0.5&gt;,&lt;lora:FirstLora:0.25&gt;</code>.<br />
 (Note: You could strip this down to <code>FirstLora:1,FirstLora:0.75,FirstLora:0.5,FirstLora:0.25</code>.)</p>
 

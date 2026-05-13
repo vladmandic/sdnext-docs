@@ -2975,7 +2975,7 @@
   <a href="#fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        fine-tuning
+        Fine-tuning
       
     </span>
   </a>
@@ -2986,7 +2986,7 @@
   <a href="#model-merge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        model merge
+        Model Merge
       
     </span>
   </a>
@@ -2997,7 +2997,7 @@
   <a href="#textual-inversion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        textual inversion
+        Textual Inversion
       
     </span>
   </a>
@@ -3008,7 +3008,7 @@
   <a href="#aesthetic-gradient" class="md-nav__link">
     <span class="md-ellipsis">
       
-        aesthetic gradient
+        Aesthetic Gradient
       
     </span>
   </a>
@@ -3019,7 +3019,7 @@
   <a href="#custom-diffusion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        custom diffusion
+        Custom Diffusion
       
     </span>
   </a>
@@ -3030,7 +3030,7 @@
   <a href="#hypernetwork" class="md-nav__link">
     <span class="md-ellipsis">
       
-        hypernetwork
+        Hypernetwork
       
     </span>
   </a>
@@ -3041,7 +3041,7 @@
   <a href="#null-text-inversion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        null-text inversion
+        Null-Text Inversion
       
     </span>
   </a>
@@ -3052,7 +3052,7 @@
   <a href="#clip-inversion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        clip inversion
+        CLIP Inversion
       
     </span>
   </a>
@@ -3063,7 +3063,7 @@
   <a href="#dream-artist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dream artist
+        Dream Artist
       
     </span>
   </a>
@@ -3074,7 +3074,7 @@
   <a href="#dreambooth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dreambooth
+        DreamBooth
       
     </span>
   </a>
@@ -3085,7 +3085,7 @@
   <a href="#lora" class="md-nav__link">
     <span class="md-ellipsis">
       
-        lora
+        LoRA
       
     </span>
   </a>
@@ -3936,7 +3936,7 @@
   <a href="#fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        fine-tuning
+        Fine-tuning
       
     </span>
   </a>
@@ -3947,7 +3947,7 @@
   <a href="#model-merge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        model merge
+        Model Merge
       
     </span>
   </a>
@@ -3958,7 +3958,7 @@
   <a href="#textual-inversion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        textual inversion
+        Textual Inversion
       
     </span>
   </a>
@@ -3969,7 +3969,7 @@
   <a href="#aesthetic-gradient" class="md-nav__link">
     <span class="md-ellipsis">
       
-        aesthetic gradient
+        Aesthetic Gradient
       
     </span>
   </a>
@@ -3980,7 +3980,7 @@
   <a href="#custom-diffusion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        custom diffusion
+        Custom Diffusion
       
     </span>
   </a>
@@ -3991,7 +3991,7 @@
   <a href="#hypernetwork" class="md-nav__link">
     <span class="md-ellipsis">
       
-        hypernetwork
+        Hypernetwork
       
     </span>
   </a>
@@ -4002,7 +4002,7 @@
   <a href="#null-text-inversion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        null-text inversion
+        Null-Text Inversion
       
     </span>
   </a>
@@ -4013,7 +4013,7 @@
   <a href="#clip-inversion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        clip inversion
+        CLIP Inversion
       
     </span>
   </a>
@@ -4024,7 +4024,7 @@
   <a href="#dream-artist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dream artist
+        Dream Artist
       
     </span>
   </a>
@@ -4035,7 +4035,7 @@
   <a href="#dreambooth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        dreambooth
+        DreamBooth
       
     </span>
   </a>
@@ -4046,7 +4046,7 @@
   <a href="#lora" class="md-nav__link">
     <span class="md-ellipsis">
       
-        lora
+        LoRA
       
     </span>
   </a>
@@ -4080,88 +4080,79 @@
 
 
 <h1 id="stablediffusion-training-methods">StableDiffusion Training Methods</h1>
-<h2 id="fine-tuning">fine-tuning</h2>
+<h2 id="fine-tuning">Fine-tuning</h2>
 <ul>
-<li>retrains parts of the hypernetwork with new data thus modifying original weights<br />
-  requires large and precisely labelled dataset</li>
-<li>size is same as original model size, ~2-7gb</li>
-<li>verdict: prohibitive due to large dataset and effort required</li>
+<li>Retrains hypernetwork layers with new data, modifying original weights</li>
+<li>Requires large, precisely labeled datasets</li>
+<li>Model size: ~2–7 GB (same as original)</li>
+<li><strong>Status</strong>: Not practical; prohibitive dataset and effort requirements</li>
 </ul>
-<h2 id="model-merge">model merge</h2>
+<h2 id="model-merge">Model Merge</h2>
 <ul>
-<li>combines weights from multiple models according to specified rules</li>
-<li>verdict: highly desired to create pre-set models for specific use-case</li>
+<li>Combines weights from multiple models using specified algorithms</li>
+<li><strong>Status</strong>: Highly desired for creating use-case-specific model variants</li>
 </ul>
-<h2 id="textual-inversion">textual inversion</h2>
+<h2 id="textual-inversion">Textual Inversion</h2>
 <ul>
-<li>assign vector to a new concept with originally one vector per embedding, hacks to enable multi-vector embeddings<br />
-  works by expanding vocabulary of a model, but majority of learned content is actually assembled from existing concepts<br />
-  can be considered as a formula on which already learned weights should be combined to achieve learned concept  </li>
-<li>size 768/1024b per vector</li>
-<li>verdict: best currently viable short-term training solution</li>
+<li>Assigns vectors to new concepts by expanding the model's vocabulary</li>
+<li>Learned content is assembled from existing concept combinations rather than new features</li>
+<li>Can be viewed as a formula for combining existing weights to represent new concepts</li>
+<li>Model size: 768–1024 bytes per vector</li>
+<li><strong>Status</strong>: Best current short-term training solution</li>
 </ul>
-<h2 id="aesthetic-gradient">aesthetic gradient</h2>
+<h2 id="aesthetic-gradient">Aesthetic Gradient</h2>
 <ul>
-<li>uses low-precision trained embeddings to steer clip using classifier guidance<br />
-  training is very cheap, but classifier guidance sloes down image generation<br />
-  result is basic transfer of style from learned image to generated image  </li>
-<li>size is same as embedding</li>
-<li>origin: independent work</li>
-<li>verdict: inconsistent results with minimal value</li>
+<li>Uses low-precision embeddings to steer CLIP via classifier guidance</li>
+<li>Training is cheap, but classifier guidance slows generation</li>
+<li>Results in basic style transfer from learned images to generated output</li>
+<li>Model size: Same as embedding</li>
+<li><strong>Status</strong>: Inconsistent results; limited practical value</li>
 </ul>
-<h2 id="custom-diffusion">custom diffusion</h2>
+<h2 id="custom-diffusion">Custom Diffusion</h2>
 <ul>
-<li>fine-tuning specific model matrices with textual inversion<br />
-  similar speed and memory requirements to embedding training and supposedly gives better results in less steps</li>
-<li>size ~50mb</li>
-<li>origin: cmu</li>
-<li>verdict: possibly promising, requires further investigation, surprisingly low chatter on this topic</li>
+<li>Fine-tunes specific model matrices using textual inversion techniques</li>
+<li>Similar memory and speed to embedding training; reportedly better results in fewer steps</li>
+<li>Model size: ~50 MB</li>
+<li><strong>Status</strong>: Promising but requires further investigation; limited community discussion</li>
 </ul>
-<h2 id="hypernetwork">hypernetwork</h2>
+<h2 id="hypernetwork">Hypernetwork</h2>
 <ul>
-<li>similar to model fine-tuning, but adds small a small neural network that on-the-fly modifies weights of the last two layers of the main model<br />
-  works like adaptive head that steers model in a learned direction so primary use-case is style transfer, not concept transfer</li>
-<li>size is limited to learned layers, ~100-200mb</li>
-<li>origin: leaked from novel.ai</li>
-<li>verdict: lower priority as concept transfer is more important than style transfer</li>
+<li>Similar to fine-tuning but adds a small neural network that dynamically modifies weights in the model's final layers</li>
+<li>Acts as an adaptive layer for style steering rather than concept transfer</li>
+<li>Model size: ~100–200 MB (limited to learned layers)</li>
+<li><strong>Status</strong>: Lower priority; concept transfer is more useful than style transfer</li>
 </ul>
-<h2 id="null-text-inversion">null-text inversion</h2>
+<h2 id="null-text-inversion">Null-Text Inversion</h2>
 <ul>
-<li>similar concept to textual inversion, but trains unconditional embedding that is used for classifier free guidance instead of text embedding<br />
-  resulting embedding is apparently more detailed than standard textual embedding</li>
-<li>size is larger but comparable to textual inversion</li>
-<li>origin: google</li>
-<li>verdict: possibly promising, requires further investigation, but no working prototype as of yet</li>
+<li>Similar to textual inversion but trains an unconditional embedding for classifier-free guidance</li>
+<li>Reportedly more detailed than standard text embeddings</li>
+<li>Model size: Larger than textual inversion but comparable</li>
+<li><strong>Status</strong>: Promising but requires further investigation; no working prototype yet</li>
 </ul>
-<h2 id="clip-inversion">clip inversion</h2>
+<h2 id="clip-inversion">CLIP Inversion</h2>
 <ul>
-<li>similar concept to textual inversion, but uses clip embedding instead of text embedding  </li>
-<li>size is same as textual inversion</li>
-<li>origin: google</li>
-<li>verdict: prohibitive due to requirement of specially fine-tuned model as a starting point</li>
+<li>Similar to textual inversion but uses CLIP embeddings instead of text embeddings</li>
+<li>Model size: Same as textual inversion</li>
+<li><strong>Status</strong>: Prohibitive; requires a specially fine-tuned model as the starting point</li>
 </ul>
-<h2 id="dream-artist">dream artist</h2>
+<h2 id="dream-artist">Dream Artist</h2>
 <ul>
-<li>variation on ti training where both positive and negative embeddings are created</li>
-<li>size is same as textual inversion</li>
-<li>origin: independent work</li>
-<li>verdict: skip for now as solution does not appear to be sufficiently maintained</li>
+<li>Variation of textual inversion training that creates both positive and negative embeddings</li>
+<li>Model size: Same as textual inversion</li>
+<li><strong>Status</strong>: Skip for now; maintenance appears insufficient</li>
 </ul>
-<h2 id="dreambooth">dreambooth</h2>
+<h2 id="dreambooth">DreamBooth</h2>
 <ul>
-<li>similar to model fine-tuning except it adds information on top of model instead of forgetting/overwriting existing concepts  </li>
-<li>size is equal to original model size, ~2-7gb</li>
-<li>origin: google, but heavily modified by independent work</li>
-<li>verdict: prohibitive due to resulting size and requirement to load full model on-demand</li>
+<li>Similar to fine-tuning but adds information on top of the model without overwriting existing concepts</li>
+<li>Model size: ~2–7 GB (same as original model)</li>
+<li><strong>Status</strong>: Prohibitive; requires loading full model and generates large output</li>
 </ul>
-<h2 id="lora">lora</h2>
+<h2 id="lora">LoRA</h2>
+<p>"Low-Rank Adaptation of Large Language Models" — injects trainable layers into cross-attention layers.</p>
 <ul>
-<li>"low-rank adaptation of large language models"<br />
-  injects trainable layers to steer cross attention layers<br />
-  very flexible, but memory intensive so limited training opportunities on normal gpu<br />
-  multiple incompatible implementations: should choose which implementation to use  </li>
-<li>size varies from ~5mb to full-model size, average ~150-300mb</li>
-<li>origin: microsoft</li>
+<li>Highly flexible but memory-intensive; limits training on typical GPUs</li>
+<li>Multiple incompatible implementations; choose one carefully</li>
+<li>Model size: ~5 MB to full model size; typical: ~150–300 MB</li>
 </ul>
 
 

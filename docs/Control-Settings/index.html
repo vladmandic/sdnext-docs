@@ -4095,44 +4095,47 @@
 
 <h1 id="control-guide">Control Guide</h1>
 <p><img alt="screenshot-control" src="https://github.com/user-attachments/assets/cdad2722-ae7c-4c9c-94d6-5ea35a4b1356" /></p>
-<p>SDNext's Control tab is our effort to bring ControlNet, IP-Adapters, T2I Adapter, ControlNet XS, and ControlNet LLLite to our users.  </p>
-<p><strong>Note that this document is a work in progress, it's all quite complex and will take some time to write up a bit more as well as smooth out the rough edges and correct any issues and bugs that pop up, expect frequent updates!</strong>  </p>
-<p>This guide will attempt to explain how to use it so that anyone can understand it and put it to work for themselves.  </p>
+<p>SD.Next's Control tab combines ControlNet, IP-Adapter, T2I-Adapter, ControlNet-XS, and ControlNet-LLLite in one place.</p>
+<p>This guide explains the available settings in practical terms.</p>
 <h2 id="controls">Controls</h2>
 <h3 id="input">Input</h3>
-<p>The Input control is exactly what it sounds like, it controls what input images (or videos) are contributing to your image generation, by default that is just the image in the Control input pane, however if you select <code>Separate init image</code>, another image pane will appear below, allowing you to use that as well.  </p>
-<p><strong>Note:</strong> When using a Control input image as well as a Init input image, the Init input dominates. Adjusting denoise to &gt;=0.9 is recommended, as that will allow the Control input to balance with the Init input. Higher values will increase the strength of Control input further, giving it dominance.  </p>
+<p>Input controls define which images or videos are used for generation. By default, only the image in the Control input pane is used. If you select <code>Separate init image</code>, an additional Init input pane appears.</p>
+<p><strong>Note:</strong> If both Control input and Init input are used, Init input is dominant. Denoising strength at <code>&gt;= 0.9</code> helps rebalance influence toward Control input. Higher values increase Control input influence further.</p>
 <p><img alt="Input control" src="https://github.com/vladmandic/sdnext/assets/108482020/abe4a404-e0ff-42c8-813a-2355b39c4f2e" /></p>
-<p><code>Show Preview</code> is simple, it controls the visibility of the preview window in the far right of the middle row. You'll want this on if you're doing any kind of masking or manipulations that you would want to preview before generating.</p>
-<p>There are 3 different Input types:</p>
+<p><code>Show Preview</code> toggles the preview pane on the right side. Keep it enabled when doing masking or other pre-generation adjustments.</p>
+<p>There are 3 input types:</p>
 <ul>
-<li><code>Control only</code>: This uses only the Control input below as a source for any ControlNet or IP Adapter type tasks based on any of our various options.  </li>
-<li><code>Init image same as control</code>: This option will additionally treat any image placed into the <code>Control input</code> pane as a source for img2img type tasks, an image to modify for example.  </li>
-<li><code>Separate init image</code>: This option creates an additional window next to <code>Control input</code> labeled <code>Init input</code>, so you can have a separate image for both Control operations and an init source.</li>
+<li><code>Control only</code>: Uses only <code>Control input</code> as the source for ControlNet and IP-Adapter workflows.</li>
+<li><code>Init image same as control</code>: Reuses <code>Control input</code> as an img2img init image.</li>
+<li><code>Separate init image</code>: Adds a separate <code>Init input</code> pane so control guidance and init image can differ.</li>
 </ul>
-<p><code>Denoising strength</code> is the same as if you were doing any img2img operation. The higher the value, the more denoising that will take place, and the greater any source image will be modified.</p>
+<p><code>Denoising strength</code> works the same as in img2img. Higher values apply more denoising and allow stronger changes to source images.</p>
 <h3 id="size">Size</h3>
-<p>This can be a little confusing at first because of the <code>Before</code> and <code>After</code> subtabs, however it's really quite simple and extremely powerful.<br />
-The Control size menu allows you to manipulate the size of your input images before and after inference takes place.  </p>
+<p>The Size section has two subtabs, <code>Before</code> and <code>After</code>. They control resizing before and after inference.</p>
 <p><img alt="Size control" src="https://github.com/vladmandic/sdnext/assets/108482020/97102d4b-03d4-4aa8-85de-d6a8c2fa928d" /></p>
 <p>The <code>Before</code> subtab does 2 things:</p>
 <ul>
 <li>
-<p>If you do not select any <code>Resize method</code>, it is only controlling the output image size width and height in pixels as it would in any text2img or img2img operation.</p>
+<p>If no <code>Resize method</code> is selected, it only sets output width and height, like standard text2img or img2img.</p>
 </li>
 <li>
-<p>However, if you do select a <code>Resize method</code>, Nearest for example, you can upscale <em>or</em> downscale the <code>Control input</code> image before any other operations take place. This will be the size of any image used in further operations. Second Pass is not entirely functional yet, but will be part of this.</p>
+<p>If you select a <code>Resize method</code> (for example, Nearest), you can upscale or downscale <code>Control input</code> before other operations. That resized image is then used by later steps. Second Pass is not fully functional yet.</p>
 </li>
 </ul>
-<p>For example, you might have a much larger image, such as 2048x3072, that you want to use with canny or depth map, but you do not want an image that large to manipulate or guide your generation, that would be prohibitive, slower, and possibly cause an OOM.  </p>
-<p>This is where <code>Resize method</code> comes in, you would simply select a resize method, typically Nearest or Lanczos, and then either set the pixel width or height you want to resize to under Fixed, or switch over to Scale and select a number below 1. A setting of 0.5 would make your input image effectively 1024x1536 pixels, which would be used as input for later operations.  </p>
-<p>The <code>After</code> subtab controls any upscaling or downscaling that would take place <strong>at the end of your image generation process</strong>, most commonly this would either be latent upscaling, and ESRGAN model such as 4x Ultrasharp, or one of the various chaiNNer models we provide. This is the same as it would be in a standard upscaling via text2img or img2img.</p>
+<p>For example, if you start with a large image (such as 2048x3072), you may want to reduce it before Canny or Depth processing to lower memory use and avoid OOM.</p>
+<p>Select a resize method (typically Nearest or Lanczos), then either:</p>
+<ul>
+<li>set target width or height under Fixed, or</li>
+<li>switch to Scale and use a value below 1.</li>
+</ul>
+<p>For example, scale <code>0.5</code> changes a 2048x3072 input to 1024x1536 for later processing.</p>
+<p>The <code>After</code> subtab controls upscaling or downscaling at the end of generation. Typical choices are latent upscaling, ESRGAN models such as 4x Ultrasharp, or chaiNNer models. This matches standard text2img/img2img upscaling behavior.</p>
 <h3 id="mask">Mask</h3>
-<p>The Mask controls are where we start getting into the real meat of Control, not only does it allow a plethora of different options to mask, segment, and control the view of your masking with various preview types, but it comes with <strong>22 different colormaps for your viewing pleasure!</strong> (And I think vlad made some of those words up 🤫)  </p>
+<p>Mask controls handle masking and segmentation behavior, plus preview display options.</p>
 <p><img alt="Mask controls" src="https://github.com/vladmandic/sdnext/assets/108482020/e56bb906-02e3-4a5f-869d-6d0d274dc6a5" /></p>
 <ul>
 <li>
-<p><code>Live update</code>: With this checked, your masking will update as you make changes to it, if this is off, you will need to hit the <code>Refresh</code> button to the right to have your preview pane update, making more changes to it while it is processing may lead to it being desynchronized, just hit the refresh button if it does not look correct.</p>
+<p><code>Live update</code>: Updates mask preview as you edit. If disabled, use <code>Refresh</code>. If preview gets out of sync during processing, refresh again.</p>
 </li>
 <li>
 <p><code>Inpaint masked only</code>: Inpainting will apply only to areas you have masked if this is checked. You must actually inpaint something, otherwise it's just img2img.</p>
@@ -4141,38 +4144,37 @@ The Control size menu allows you to manipulate the size of your input images bef
 <p><code>Invert mask</code>: Inverts the masking, things you mark with the brush will be excluded from a full mask of the image.</p>
 </li>
 <li>
-<p><code>Auto-mask</code>: There are three options here, Threshold, Edge, and Greyscale. Each provides a different method of auto-masking your images.</p>
+<p><code>Auto-mask</code>: Three options are available: Threshold, Edge, and Greyscale.</p>
 </li>
 <li>
-<p><code>Auto-segment</code>: Just like Auto-mask, we have provided an extensive list of <a href="../Control-Technical/#segmentation-models">Auto-segmentation models</a>, they don't require ControlNet to handle the process, but may take a few seconds to process, depending on your GPU.  </p>
+<p><code>Auto-segment</code>: Provides multiple <a href="../Control-Technical/#segmentation-models">Auto-segmentation models</a>. These models do not require ControlNet, but can take a few seconds depending on GPU.</p>
 </li>
 <li>
-<p><code>Preview</code>: You can select the preview type here, we have provided 5 modes, Masked, Binary, Greyscale, Color, and Composite, which is the default.</p>
+<p><code>Preview</code>: Select preview mode: Masked, Binary, Greyscale, Color, or Composite (default).</p>
 </li>
 <li>
-<p><code>Colormap</code>: You can select the style/color scheme of the preview here. There are 22 fantastic color schemes!</p>
+<p><code>Colormap</code>: Select the preview color scheme (22 options).</p>
 </li>
 <li>
-<p><code>Blur</code>: This blurs the edges of what you have masked, to allow some flexibility. Play with it.</p>
+<p><code>Blur</code>: Softens mask edges.</p>
 </li>
 <li>
-<p><code>Erode</code>: This slider controls the reduction of your auto-masking or auto-segmentation border.</p>
+<p><code>Erode</code>: Shrinks auto-mask or auto-segmentation borders.</p>
 </li>
 <li>
-<p><code>Dilate</code>: This slider controls the expansion of your auto-masking or auto-segmentation border.</p>
+<p><code>Dilate</code>: Expands auto-mask or auto-segmentation borders.</p>
 </li>
 </ul>
 <h3 id="video">Video</h3>
-<p>The Video controls are quite exciting and fun to play with, with our tools now you can, if you wished, turn any video into an anime version for example, frame by frame. There are three output options, GIF, PNG, and MP4. You must select one of these to have video output.<br />
-With these simple controls, you can tweak your video output with surprising flexibility.<br />
-Some video output methods provide more controls, try them all.</p>
+<p>Video controls let you process video frame by frame. Output formats are GIF, PNG, and MP4. You must select one to generate video output.</p>
+<p>Some output modes expose additional options.</p>
 <p><img alt="Video controls" src="https://github.com/vladmandic/sdnext/assets/108482020/a2ad0a15-1284-4bbf-87f7-b109011448c3" /></p>
 <ul>
 <li>
-<p><code>Skip input frames</code>: This setting controls how many frames are processed from input instead of every frame. Setting it to 0 would mean processing every frame, a setting of 1 would process every other frame, a setting of 2 would process every third frame, cutting the number of total frames by 2/3rds, and so on.</p>
+<p><code>Skip input frames</code>: Controls sampling interval. <code>0</code> processes every frame, <code>1</code> every other frame, <code>2</code> every third frame, and so on.</p>
 </li>
 <li>
-<p><code>Video file</code>: You select the type of output you want here, animated GIF (not JIF!), animated PNG, or MP4 video, all provided via FFMPEG of course.  </p>
+<p><code>Video file</code>: Select output type: animated GIF, animated PNG, or MP4 (via FFMPEG).</p>
 </li>
 <li>
 <p><code>Duration</code>: The length in seconds you want your output video to be.  </p>
@@ -4181,29 +4183,28 @@ Some video output methods provide more controls, try them all.</p>
 <p><code>Pad frames</code>: Determine how many frames to add to the beginning and end of the video. This feature is particularly useful when used with interpolation.</p>
 </li>
 <li>
-<p><code>Interpolate frames</code>: The number of frames you want interpolated (via RIFE) between existing frames (filtered by skip input frames) in a video sequence. This smoothens the video output, especially if you're skipping frames to avoid choppy motion or low frame rates.</p>
+<p><code>Interpolate frames</code>: Number of RIFE-interpolated frames inserted between processed frames. Useful to smooth motion when skipping input frames.</p>
 </li>
 <li>
 <p><code>Loop</code>: This is purely for animated GIF and PNG output, it enables the classic looping that you would expect.</p>
 </li>
 </ul>
-<p>When you're using interpolation, the software also detects scene changes. If the scene changes significantly, it will insert pad frames instead of interpolating between two unrelated frames. This ensures a seamless transition between scenes and maintains the overall quality of the video output.</p>
+<p>When interpolation is enabled, scene changes are also detected. If a scene changes significantly, pad frames are inserted instead of interpolating between unrelated frames.</p>
 <h2 id="extensions">Extensions</h2>
-<p>These are some nice goodies that we have cooked up so that no actual installed extensions are necessary, you may even find that our version works better!</p>
+<p>These built-in integrations are available without separate extension installs.</p>
 <h3 id="ip-adapter">IP-Adapter</h3>
-<p>This is our IP Adapter implementation, with 10 available models for your image or face cloning needs!</p>
+<p>Built-in IP-Adapter includes 10 models for style and face guidance workflows.</p>
 <p><img alt="IP-Adapter controls" src="https://github.com/vladmandic/sdnext/assets/108482020/fa473529-228b-441b-811d-d5c4c8cda6a1" /></p>
 <h2 id="image-panes">Image Panes</h2>
-<p>You may notice small icons above the image panes that look like pencils, these are Interrogate buttons. The left one is BLIP, and the right one is DeepBooru. Click one of the buttons to interrogate the image in the pane below it. The results will appear in your prompt area.</p>
+<p>Small icons above image panes are Interrogate buttons. The left button runs BLIP and the right button runs DeepBooru. Click one to analyze the image in that pane. Results appear in the prompt area.</p>
 <p><img alt="Interrogate buttons" src="https://github.com/vladmandic/sdnext/assets/108482020/6c391a1f-0999-44b6-8363-98c53d576c88" /></p>
 <h3 id="control-input">Control Input</h3>
-<p>This is the heart of Control, you may put any image or even video here to be processed by our system, that means any and all scripts, extensions, even the various Controlnet variants below, though you can individually add guidance images to each of those. If an image is placed here, the system will assume you are performing an img2img process of some sort. If you upload a video to SDNext via the Control input pane, you will see that you can play the video, both input and resultant output. Batching and folders should work as expected.</p>
+<p>Control input is the primary source pane. You can load an image or video here for processing by scripts, extensions, and control modules. If an image is present, the system assumes an img2img-style workflow. If a video is uploaded, input and output playback are available. Batch and folder processing work as expected.</p>
 <p>Note below there are 2 other buttons, Inpainting and Outpainting, below.</p>
 <p><img alt="Control input" src="https://github.com/vladmandic/sdnext/assets/108482020/6f40cbad-226b-492e-9ff3-2f81404a9ea8" /></p>
 <h2 id="controlnet">ControlNet+</h2>
-<p>At the very bottom of the Control page, we have what you've all been waiting for, full ControlNet! I do mean full too, we have it all!
-This includes SD and SD-XL. at last! You won't ever need the ControlNet extension ever again.  </p>
-<p>This will take a bit more work to document example workflows, but there are tooltips, and if you've used ControlNet before, you shouldn't have any problems! However if you do, hop on by our Discord server and we're happy to help.</p>
+<p>At the bottom of the Control page, full ControlNet support is available for SD and SD-XL.</p>
+<p>Example workflows are still being expanded, but tooltips are available throughout the UI. If you need help, ask on the SD.Next Discord server.</p>
 
 
 

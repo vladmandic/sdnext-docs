@@ -3859,13 +3859,18 @@
   
 
 
-<h1 id="macos-and-python">MacOS and Python</h1>
+<h1 id="macos-and-python">macOS and Python</h1>
 <p><a href="./#installation-instructions">TL;DR: Installation Instructions</a></p>
-<p>The MacOS operating system requires Python, so it is installed by default.  However, if you are going to start using Python on your own, it is likely that you'll want to install new packages, perform package updates, and so on -- which can be a problem for MacOS -- it's important to let the operating system handle its own Python.</p>
-<p>Most sources online will tell you to use Homebrew as a package manager for MacOS, so it is a natural conclusion to consider using Homebrew for Python -- and it's common to discover that you already have Python installed through Homebrew as a dependency for something else.  However, this isn't the correct solution either -- it's really the same problem as the MacOS problem, but with a coat of paint.</p>
-<p>Homebrew's Python is there to support other packages.  Importantly, Homebrew deletes old versions of packages after 30 days.  So, if you are using, say, python 3.12 for random scripting and other tasks, but need version 3.10 for, say, SD.Next, Homebrew will delete 3.10, since it doesn't know that you need it for something (since you didn't install SD.Next via Homebrew).  </p>
-<p>The solution is to use another way to manage the Python version(s) that you use on your own.  I use <a href="https://asdf-vm.com/">asdf</a>, which has a <a href="https://github.com/asdf-community/asdf-python">Python plugin</a>, but there are others if you prefer something else.</p>
-<p>Sources / Further Reading:
+<p>macOS includes Python because the operating system needs it.
+If you want to manage your own Python packages and versions, do not rely on the system Python.</p>
+<p>Many guides suggest Homebrew for Python. That is convenient, but it is still not ideal for project-pinned Python versions.
+Homebrew Python mainly exists to support Homebrew packages.</p>
+<p>Homebrew also removes old package versions over time.
+For example, you might need Python 3.10 for SD.Next while using 3.12 elsewhere.
+Homebrew can remove 3.10 because it does not track your SD.Next dependency.</p>
+<p>Use a dedicated version manager for user-managed Python installs.
+This guide uses <a href="https://asdf-vm.com/">asdf</a> with the <a href="https://github.com/asdf-community/asdf-python">Python plugin</a>, but equivalent tools are fine.</p>
+<p>Sources / Further reading:
 - <a href="https://justinmayer.com/posts/homebrew-python-is-not-for-you/">https://justinmayer.com/posts/homebrew-python-is-not-for-you/</a>
 - <a href="https://hackercodex.com/guide/python-development-environment-on-mac-osx/">https://hackercodex.com/guide/python-development-environment-on-mac-osx/</a>
 - <a href="https://github.com/asdf-community/asdf-python">https://github.com/asdf-community/asdf-python</a>
@@ -3906,8 +3911,8 @@ asdf<span class="w"> </span>install<span class="w"> </span>python<span class="w"
 <ol>
 <li>Set the default global version of python:</li>
 </ol>
-<p>Since you will always want 3.10 for SD.Next, you will want to always specifically use that version.
-You will probably want to use the command <code>python</code> in most contexts, and <code>python3.10</code> for version-specific uses.</p>
+<p>Since SD.Next needs 3.10, call that version explicitly for SD.Next.
+For general use, keep your preferred default Python version.</p>
 <div class="highlight"><pre><span></span><code>asdf<span class="w"> </span>global<span class="w"> </span>python<span class="w"> </span><span class="m">3</span>.12.2<span class="w"> </span>
 <span class="c1"># or whatever version you installed</span>
 </code></pre></div>

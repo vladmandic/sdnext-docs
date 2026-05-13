@@ -3860,53 +3860,53 @@
 
 
 <h1 id="hidream-i1">HiDream I1</h1>
-<p>HiDream is a new absolutely massive image generative foundation model with <strong>17B</strong> parameters  </p>
+<p>HiDream is a large image generation foundation model with <strong>17B</strong> parameters.  </p>
 <p><img alt="Image" src="https://github.com/user-attachments/assets/a1c9058a-06a3-490c-bceb-d69b2cd62008" /></p>
-<p><strong>HiDream-I1</strong> family consists of 3 variations:<br />
+<p><strong>HiDream-I1</strong> consists of 3 variants:<br />
 - <a href="https://huggingface.co/HiDream-ai/HiDream-I1-Full">Full</a><br />
 - <a href="https://huggingface.co/HiDream-ai/HiDream-I1-Dev">Dev</a><br />
 - <a href="https://huggingface.co/HiDream-ai/HiDream-I1-Fast">Fast</a>  </p>
-<p>Difference between variants is recommended number of steps:<br />
+<p>The main difference between variants is recommended step count:<br />
 - <em>full=50, dev=28, fast=16</em>  </p>
-<p><strong>HiDream-I1</strong> is compatibile with:<br />
+<p><strong>HiDream-I1</strong> is compatible with:<br />
 - FlowMatching Samplers<br />
 - Remote VAE feature<br />
 - TAE Live-preview feature  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>Due to size (over 25B params in 58GB), offloading and on-the-fly quantization are pretty much a necessity<br />
-Running HiDream on &lt;16GB GPU is possible with <em>BnB-NF4</em> or <em>Quanto-Int4</em> quantization and default Balanced offload settings<br />
+<p>Due to its size (over 25B params in 58GB), offloading and on-the-fly quantization are generally required.<br />
+Running HiDream on GPUs with under 16GB VRAM is possible with <em>BnB-NF4</em> or <em>Quanto-Int4</em> quantization and default Balanced offload settings.<br />
 Note that you must pick quantization methods that are compatible with your GPU and platform  </p>
 <p>[!NOTE]
-Set appropriate <strong>offloading</strong> setting before loading the model to avoid out-of-memory errors<br />
+Set an appropriate <strong>offloading</strong> mode before loading the model to avoid out-of-memory errors.<br />
 For more information see <a href="../Offload/">Offloading Wiki</a>  </p>
 <p>[!NOTE]
-Check compatibility of different <strong>quantizations</strong> with your platform and GPU!<br />
+Check compatibility of different <strong>quantization</strong> methods with your platform and GPU.<br />
 For more information see <a href="../Quantization/">Quantization Wiki</a>  </p>
 <p>[!IMPORTANT]
 Use <strong>reference models</strong><br />
 Simply select it from <em>Networks -&gt; Models -&gt; Reference</em><br />
-and model will be auto-downloaded on first use</p>
+and the model will be auto-downloaded on first use.</p>
 </div>
 <p>Location of downloaded model is:
-- <code>hugginface</code> folder is used for individual components: transformers, t5 text-encoder and llama llm
+- <code>hugginface</code> folder is used for individual components: transformers, T5 text encoder, and llama LLM
 - <code>diffusers</code> folder is used for the main model
-Exact location of both folders can be found in <em>Settings -&gt; System Paths</em></p>
+Exact location of both folders is shown in <em>Settings -&gt; System Paths</em>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Manually downloaded models in either <code>safetensors</code> or <code>gguf</code> formats are currently not supported  </p>
+<p>Manually downloaded models in either <code>safetensors</code> or <code>gguf</code> formats are currently not supported.  </p>
 <p>[!IMPORTANT]
 <strong>Llama-3.1-8b-instruct</strong> LLM model used by HiDream is a gated model!<br />
-You need to request access from the authors to use it<br />
+You need to request access from the authors to use it.<br />
 See <a href="../Gated/">Gated Wiki</a> for more information</p>
 </div>
 <h2 id="text-encoders">Text Encoders</h2>
-<p>HiDream utilizes 4 text-encoders: <em>clip-l, clip-g, t5-1.1-xxl, llama-3.1-8b-instruct</em> for total of <strong>8.3B</strong> parameters  </p>
+<p>HiDream uses 4 text encoders: <em>clip-l, clip-g, t5-1.1-xxl, llama-3.1-8b-instruct</em> for a total of <strong>8.3B</strong> parameters.  </p>
 <p>Custom <code>llama</code> model can be set in: <em>Settings -&gt; Model options -&gt; HiDream</em>  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>SD.Next implementation differens from reference as it bumps up default max token length from <strong>128</strong> to <strong>256</strong><br />
-Max token length can be further overriden using env variable <code>HIDREAM_MAX_SEQUENCE_LENGTH</code></p>
+<p>SD.Next implementation differs from the reference by increasing default max token length from <strong>128</strong> to <strong>256</strong>.<br />
+Max token length can be further overridden using environment variable <code>HIDREAM_MAX_SEQUENCE_LENGTH</code>.</p>
 </div>
 
 

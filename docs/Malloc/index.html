@@ -4016,9 +4016,10 @@
 
 
 <h1 id="memory-allocator">Memory Allocator</h1>
-<p>Combination of OS default memory allocator <code>malloc</code> with Python's default memory allocator is pessimistic when it comes to system memory garbage collection and it will sometimes hold on to allocated memory longer than necessary even if GC is triggered explicitly
-This appears to user as a memory leak as process memory usage grows over time<br />
-This is especially noticeable when frequently loading/unloading large objects such as models or LoRAs  </p>
+<p>The combination of the OS default allocator (<code>malloc</code>) and Python's default allocator can be pessimistic for system-memory garbage collection.
+In practice, memory can stay reserved longer than needed, even when GC is triggered explicitly.</p>
+<p>This can look like a memory leak because process memory usage grows over time.
+It is most noticeable when frequently loading and unloading large objects such as models or LoRAs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This applies to system memory only and has no impact on GPU memory management</p>
@@ -4026,38 +4027,37 @@ This is especially noticeable when frequently loading/unloading large objects su
 <h2 id="linux">Linux</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For Linux deployments you can switch out memory allocator to <code>tcmalloc</code>, <code>jemalloc</code> or <code>mimalloc</code><br />
-which are more efficient and have better memory management</p>
+<p>On Linux, you can switch to <code>tcmalloc</code>, <code>jemalloc</code>, or <code>mimalloc</code>.
+These allocators are often more efficient and release memory more effectively.</p>
 </div>
 <h3 id="tcmalloc">tcmalloc</h3>
-<pre><code>sudo apt install google-perftools  
-sudo ldconfig  
-export LD_PRELOAD=libtcmalloc.so.4  
-./webui.sh --debug
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>google-perftools
+sudo<span class="w"> </span>ldconfig
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span>libtcmalloc.so.4
+./webui.sh<span class="w"> </span>--debug
+</code></pre></div>
 <h3 id="jemalloc">jemalloc</h3>
-<pre><code>sudo apt install libjemalloc2
-sudo ldconfig  
-export LD_PRELOAD=libjemalloc.so.2  
-./webui.sh --debug
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libjemalloc2
+sudo<span class="w"> </span>ldconfig
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span>libjemalloc.so.2
+./webui.sh<span class="w"> </span>--debug
+</code></pre></div>
 <h3 id="linux-mimalloc">Linux mimalloc</h3>
-<pre><code>sudo apt install libmimalloc2.0
-sudo ldconfig  
-export LD_PRELOAD=libmimalloc.so.2  
-./webui.sh --debug
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libmimalloc2.0
+sudo<span class="w"> </span>ldconfig
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span>libmimalloc.so.2
+./webui.sh<span class="w"> </span>--debug
+</code></pre></div>
 <h2 id="windows">Windows</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For Windows deployments you can switch out memory allocator to <code>mimalloc</code><br />
-which is more efficient and has better memory management</p>
+<p>On Windows, you can switch to <code>mimalloc</code>, which may improve memory handling.</p>
 </div>
 <h3 id="windows-mimalloc">Windows mimalloc</h3>
-<p><code>mimalloc</code> for windows requires custom compiled library<br />
-Full instructions can be found here: <a href="https://microsoft.github.io/mimalloc/index.html">https://microsoft.github.io/mimalloc/index.html</a>  </p>
+<p><code>mimalloc</code> on Windows requires a custom-built library.
+Full instructions: <a href="https://microsoft.github.io/mimalloc/index.html">https://microsoft.github.io/mimalloc/index.html</a></p>
 <h2 id="compare">Compare</h2>
-<p>Using Ubuntu 24.04 and after executing 10 batches of 1024px images using SDXL model  </p>
+<p>Ubuntu 24.04 results after running 10 batches of 1024px images with an SDXL model:</p>
 <table>
 <thead>
 <tr>
@@ -4073,7 +4073,7 @@ Full instructions can be found here: <a href="https://microsoft.github.io/mimall
 <td>baseline</td>
 </tr>
 <tr>
-<td>tcmaloc</td>
+<td>tcmalloc</td>
 <td>8423 MB</td>
 <td>very performant and stable over long runs</td>
 </tr>
@@ -4091,10 +4091,10 @@ Full instructions can be found here: <a href="https://microsoft.github.io/mimall
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Results will vary based on system and usage pattern<br />
-What matters is that memory allocator is can intelligently free up memory that is marked as available by SD.Next over time<br />
-while maintaining low memory fragmentation and allowing low-latency allocations<br />
-For example, when unloading LoRAs or switching models</p>
+<p>Results vary by system and usage pattern.
+The key behavior is whether the allocator can reclaim memory that SD.Next marks as available over time,
+while keeping fragmentation low and allocation latency low.
+This is especially visible when unloading LoRAs or switching models.</p>
 </div>
 
 

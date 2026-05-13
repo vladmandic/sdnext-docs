@@ -3882,62 +3882,53 @@
 
 
 <h1 id="updating-sdnext">Updating SD.Next</h1>
-<p>Recommended procedure to update SD.Next to latest release is to simply<br />
-add command line arg: <code>--update</code> or <code>--upgrade</code> (they are aliases)  </p>
-<blockquote>
-<p>./webui.sh --update # linux/macos<br />
-webui.bat --update # windows<br />
-webui.ps1 --update # windows with powershell  </p>
-</blockquote>
-<p>Update under-the-hood uses standard git operations with some extras:  </p>
+<p>Recommended update flow is to use <code>--update</code> or <code>--upgrade</code> (aliases).</p>
+<div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--update<span class="w">   </span><span class="c1"># Linux/macOS</span>
+webui.bat<span class="w"> </span>--update<span class="w">    </span><span class="c1"># Windows</span>
+webui.ps1<span class="w"> </span>--update<span class="w">    </span><span class="c1"># Windows PowerShell</span>
+</code></pre></div>
+<p>Under the hood, update uses standard Git operations plus extra checks:</p>
 <ul>
-<li>verifies status of core repo and performs auto-repair as needed  </li>
-<li>updates core SD.next repo  </li>
-<li>updates all built-in submodules  </li>
-<li>synchronizes levels of all submodules  </li>
+<li>verifies core repo status and performs auto-repair if needed</li>
+<li>updates the core SD.Next repo</li>
+<li>updates built-in submodules</li>
+<li>synchronizes submodule revisions</li>
 </ul>
 <h2 id="manual-update">Manual Update</h2>
-<p>Instead of using automatic update using <code>--update</code> flag, you can update SD.Next manually using GIT:</p>
-<blockquote>
-<p>git pull<br />
-</p>
-</blockquote>
+<p>Instead of automatic update with <code>--update</code>, you can update SD.Next manually using Git:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In case you have any git conflicts, you must resolve then <em>before</em> running git pull or otherwise it will fail</p>
+<p>If you have Git conflicts, resolve them before running <code>git pull</code>.</p>
 </div>
-<p>Note that in this case, you're updating only core repo<br />
-Additionally, check status of submodules:  </p>
-<blockquote>
-<p>git submodule status<br />
-git submodule update  </p>
-</blockquote>
+<p>This updates only the core repo.
+Also check submodule status:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>submodule<span class="w"> </span>status
+git<span class="w"> </span>submodule<span class="w"> </span>update
+</code></pre></div>
 <h2 id="switching-branch">Switching Branch</h2>
-<p>SD.Next development is done in multiple branches on GitHub:  </p>
+<p>SD.Next development uses multiple GitHub branches:</p>
 <ul>
-<li>Stable branch: <a href="https://github.com/vladmandic/sdnext">master</a><br />
-  Typically updated every several weeks after latest features have been tested  </li>
-<li>Development branch: <a href="https://github.com/vladmandic/sdnext/tree/dev">dev</a><br />
-  Updated regularly (e.g. daily) with latest features, fixes and changes<br />
-  This branch always contains latest patches, but it is not fully tested<br />
-  Once we decide on release schedule and consider it as sufficiently stable and tested,<br />
-  code from <code>dev</code> is merged into <code>master</code>  </li>
-<li>Feature branches:<br />
-  For larger features we create additional branches as needed<br />
-  Once feature work has completed, feature branch is merged to <code>dev</code> and removed  </li>
+<li>Stable branch: <a href="https://github.com/vladmandic/sdnext">master</a>
+  Typically updated every few weeks after feature testing.</li>
+<li>Development branch: <a href="https://github.com/vladmandic/sdnext/tree/dev">dev</a>
+  Updated regularly (often daily) with latest fixes and features.
+  This branch has the newest patches, but is not fully tested.
+  When a release is ready, <code>dev</code> is merged into <code>master</code>.</li>
+<li>Feature branches:
+  Created as needed for larger features.
+  Merged into <code>dev</code> when complete, then removed.</li>
 </ul>
-<p>You can switch which branch of the SD.Next you are using at any point in time<br />
-You do not need a separate installation of SD.Next  </p>
-<blockquote>
-<p>git checkout master # to switch to master branch<br />
-git checkout dev # to switch to dev branch<br />
-</p>
-</blockquote>
+<p>You can switch branches at any time without a separate SD.Next installation:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w">  </span><span class="c1"># switch to master</span>
+git<span class="w"> </span>checkout<span class="w"> </span>dev<span class="w">     </span><span class="c1"># switch to dev</span>
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Before switching branches, it is recommended to perform update  </p>
-<p>[!WARNING]<br />
-If differences between branches are significant, it may trigger installation of new requirements</p>
+<p>Run update before switching branches.</p>
+<p>[!WARNING]
+Large branch differences may trigger installation of additional requirements.</p>
 </div>
 
 

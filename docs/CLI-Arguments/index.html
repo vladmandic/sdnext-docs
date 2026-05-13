@@ -4184,8 +4184,8 @@
 <h1 id="command-line-arguments">Command Line Arguments</h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>All command line arguments can also be set as environment flags, for example <code>--debug</code> is equivalent to <code>SD_DEBUG=True</code><br />
-All options listed here are available as arguments to use from the command line or as environment variables, there's no need to do both.</p>
+<p>All command-line arguments can also be set as environment variables. For example, <code>--debug</code> is equivalent to <code>SD_DEBUG=True</code>.
+Use either CLI arguments or environment variables for an option. You do not need both.</p>
 </div>
 <h2 id="list">List</h2>
 <blockquote>
@@ -4270,14 +4270,14 @@ Logging:
 <h2 id="details">Details</h2>
 <h3 id="general-options">General Options</h3>
 <ul>
-<li><code>--config</code>: Specify the server configuration file. This option allows you to use a specific server configuration file. The default is set to <code>&lt;path to data&gt;/config.json</code>. You can customize this by providing a different file path or by setting the environment variable <code>SD_CONFIG</code>.</li>
-<li><code>--ui-config</code>: Specify the UI configuration file. This option allows you to use a specific UI configuration file. The default is set to <code>&lt;path to data&gt;/ui-config.json</code>. You can customize this by providing a different file path or by setting the environment variable <code>SD_UICONFIG</code>.</li>
-<li><code>--autolaunch</code>: Open the UI URL in the system's default browser upon launch. Enabling this flag (<code>True</code>) automatically opens the UI URL in the system's default browser upon launch. The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_AUTOLAUNCH</code>.</li>
-<li><code>--upgrade</code>: Upgrade the main repository to the latest version. Use this option when you want to ensure that you are using the most recent version of the application. Enabling this flag (<code>True</code>) upgrades the main repository to the latest version.  The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_UPGRADE</code>.<br />
+<li><code>--config</code>: Use a specific server configuration file. Default: <code>&lt;path to data&gt;/config.json</code>. Environment variable: <code>SD_CONFIG</code>.</li>
+<li><code>--ui-config</code>: Use a specific UI configuration file. Default: <code>&lt;path to data&gt;/ui-config.json</code>. Environment variable: <code>SD_UICONFIG</code>.</li>
+<li><code>--autolaunch</code>: Open the UI URL in the default browser on startup. Default: <code>False</code>. Environment variable: <code>SD_AUTOLAUNCH</code>.</li>
+<li><code>--upgrade</code>: Upgrade the main repository to the latest version. Default: <code>False</code>. Environment variable: <code>SD_UPGRADE</code>.<br />
 <strong>This is relatively safe to use with master branch. Dev branch is another story, be wary.</strong></li>
-<li><code>--debug</code>: Run SDNext with debug logging to the console. Enabling this flag (<code>True</code>) runs SDNext with debug logging. The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_DEBUG</code>.<br />
-<strong>The sdnext.log files always show debug output for troubleshooting purposes.</strong></li>
-<li><code>--test</code>: Run the tests only and exit. This is useful for checking the integrity of the application without starting the actual service. Also useful for doing installation or reinstallation activities. Enabling this flag (<code>True</code>) runs the application in test mode, executing tests and exiting without launching the full application.  The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_TEST</code>.<br />
+<li><code>--debug</code>: Enable debug logging in the console. Default: <code>False</code>. Environment variable: <code>SD_DEBUG</code>.<br />
+<strong><code>sdnext.log</code> always includes debug output for troubleshooting.</strong></li>
+<li><code>--test</code>: Run tests only and exit. Useful for install or reinstall checks without starting the service. Default: <code>False</code>. Environment variable: <code>SD_TEST</code>.<br />
 <strong>Be careful setting this option as an environment variable as it will only test on every startup, you will never get inside SDNext.</strong>  </li>
 </ul>
 <h3 id="skip-options">Skip Options</h3>
@@ -4322,7 +4322,7 @@ Logging:
 <li><code>--models-dir</code>: Base path where all models are stored. This option sets the base path where all models are stored. The default is <code>'models'</code>. Customize this by providing a different path or by setting the environment variable <code>SD_MODELSDIR</code>.</li>
 </ul>
 <h3 id="troubleshooting-options">Troubleshooting Options</h3>
-<p><strong>Also see <a href="../Troubleshooting/">Troubleshooting Wiki page</a></strong></p>
+<p>Also see <a href="../Troubleshooting/">Troubleshooting Wiki page</a>.</p>
 <ul>
 <li><code>--safe</code>: Run in safe mode with no user extensions. Safe mode can be useful when troubleshooting or when you want to restrict the execution of potentially unsafe user-provided code. Enabling this flag (<code>True</code>) runs the application in safe mode, disabling user extensions.  The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_SAFE</code>.<br />
 <strong>Try this first.</strong></li>
@@ -4375,28 +4375,28 @@ Logging:
 <li><code>--tls-selfsign</code>: Enable TLS with self-signed certificates. Enabling this flag (<code>True</code>) enables TLS with self-signed certificates. The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_TLSSELFSIGN</code>.</li>
 </ul>
 <h4 id="cors-in-depth">CORS in depth</h4>
-<p>These CORS options are important for controlling which domains are permitted to access the resources of your server. It helps in enhancing the security of your web application by preventing unauthorized cross-origin requests. When configuring these options, ensure that you only allow origins that you trust to interact with your server, as allowing any origin (<code>*</code>) can introduce security vulnerabilities. Always specify the origins explicitly or using a secure regular expression pattern.</p>
+<p>CORS options control which domains can access your server resources. Restrict them to trusted origins. Allowing any origin (<code>*</code>) can introduce security risks.</p>
 <ul>
-<li><code>--cors-origins</code>: Allowed CORS origins as a comma-separated list. CORS is a security feature implemented by web browsers that restricts web pages from making requests to a different domain than the one that served the web page. This option allows you to specify a list of origins (domains) that are allowed to access resources on your server. For example, if your application is hosted on <code>http://example.com</code>, and you want to allow access from <code>http://client.example.com</code>, you would set <code>--cors-origins http://client.example.com</code>.<br />
+<li><code>--cors-origins</code>: Allowed CORS origins as a comma-separated list. For example, if your app is hosted on <code>http://example.com</code> and you want to allow access from <code>http://client.example.com</code>, set <code>--cors-origins http://client.example.com</code>.<br />
 <strong>For local network use, often with other tools, you can just set <code>--cors-origins *</code>.</strong></li>
-<li><code>--cors-regex</code>: Allowed CORS origins as a regular expression. This option provides more flexibility by allowing you to specify CORS origins using a regular expression. The regular expression should match the origin(s) you want to allow. This is useful when you have a dynamic set of origins that follow a certain pattern. For instance, if you want to allow any subdomain under <code>example.com</code>, you could set <code>--cors-regex "^https?://[a-z0-9-]+\.example\.com$"</code>.</li>
+<li><code>--cors-regex</code>: Allowed CORS origins as a regular expression. Use this when you need a dynamic origin pattern. For example, to allow any subdomain under <code>example.com</code>, set <code>--cors-regex "^https?://[a-z0-9-]+\.example\.com$"</code>.</li>
 </ul>
 <h4 id="tls-in-depth">TLS in depth</h4>
-<p>When setting up TLS, it's important to use valid certificates from a trusted CA in a production environment to ensure secure and encrypted communication. In a development or testing environment, self-signed certificates can be used, but users should be cautious when accessing the application as browsers may show security warnings due to the self-signed nature. Always ensure that your TLS setup meets security best practices.</p>
+<p>For production, use certificates issued by a trusted CA. Self-signed certificates are suitable for development or testing, but browsers will show warnings.</p>
 <ul>
-<li><code>--tls-keyfile</code>: Enable TLS and specify the key file. TLS is a cryptographic protocol that ensures the secure transmission of data over a network. Enabling TLS in your application secures the communication between the client and the server. The <code>--tls-keyfile</code> option allows you to specify the path to the private key file used for encryption. This private key file should be in PEM format.</li>
+<li><code>--tls-keyfile</code>: Enable TLS and specify the private key file path (PEM format).</li>
 </ul>
 <p>Example:</p>
 <pre><code>--tls-keyfile /path/to/private-key.pem
 </code></pre>
 <ul>
-<li><code>--tls-certfile</code>: Enable TLS and specify the cert file. Along with the private key, you need to specify the TLS certificate file. The certificate file contains the public key and information about the server. It should be in PEM format.</li>
+<li><code>--tls-certfile</code>: Enable TLS and specify the certificate file path (PEM format).</li>
 </ul>
 <p>Example:</p>
 <pre><code>--tls-certfile /path/to/certificate.pem
 </code></pre>
 <ul>
-<li><code>--tls-selfsign</code>: Enable TLS with self-signed certificates. If you don't have a certificate issued by a Certificate Authority (CA), you can enable this option to create self-signed certificates. Self-signed certificates are useful for development and testing but should not be used in production environments where security is crucial.</li>
+<li><code>--tls-selfsign</code>: Enable TLS with self-signed certificates. Useful for development and testing when no CA-issued certificate is available.</li>
 </ul>
 <p>Example:</p>
 <pre><code>--tls-selfsign /path/to/self-signed-certificate.pem

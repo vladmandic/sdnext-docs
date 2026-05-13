@@ -3906,70 +3906,68 @@
 <h1 id="extensions-development">Extensions Development</h1>
 <h2 id="common-mistakes">Common Mistakes</h2>
 <ul>
-<li><strong>Execution on import</strong>:<br />
-  There should be NO CODE that executes on import in any of the extension files (with exception of allowed trivial <code>install.py</code> code)<br />
-  All code should be in functions/classes and executed on application callbacks<br />
-  Failure to do so results in slow server startup (at best) or even server crashes (at worst)  </li>
-<li><strong>Keeping all Python code in <code>/scripts</code></strong>:<br />
-  That folder should have a single entry point file and that file should import any other file that may reside anywhere else EXCEPT <code>/scripts</code> folder<br />
-  Failure to do so results server loading and executing each and every file during startup and then extension itself performs imports again<br />
-  If extension fails to do so results in slow server startup (at best) or even server crashes (at worst)  </li>
-<li><strong>Browser namespace collisions</strong>:<br />
-  All JS code is imported as-is and lives in an global browser namespace<br />
-  Do not define functions like <code>log()</code> - use a unique prefix for all your functions and variables  </li>
-<li><strong>Incorrect usage of callbacks</strong>:<br />
-  For example, JS code can be executed <code>onUiLoaded</code> or <code>onUiUpdated</code><br />
-  First one is triggered once, second one is triggered hundreds of times during server startup<br />
-  Choosing wrong callback to perform initialization work results in initializaton work being performed hundreds of times resulting in slow page loads<br />
-  Typical problem is why is my browser page loading so slow or why is autolaunch not working? Because browser is asked to do the same things hundreds of times<br />
-  This applies to both Python and JS code - always check if you're using correct callbacks  </li>
-<li><strong>Executing code when disabled</strong>:<br />
-  If extension is not enabled, it should not perform any work in callbacks it is registered for and always perform early-exit when work is not needed<br />
-  This can result in pre/during/post generate delays for no apparent reasons<br />
-  Typical problem would be ~0.5sec delay before generate start - which quickly adds up to overall time-to-generate regardless of how fast generate actually is  </li>
-<li><strong>Unsafe references</strong>:<br />
-  Extensions can access server variables either directly or as provided via callbacks, but content of those variables should be handled with care<br />
-  For example, extension can access <code>image.info</code> property, but there is no guarantee that property will exist for all images - always use safe access methods like <code>get()</code> or <code>getattr()</code><br />
-  This also applies to server settings - extensions cannot assume settings never change, otherwise its not viable to ever improve underlying server at all  </li>
-<li><strong>Unsafe patching</strong>:<br />
-  Extensions can patch server code by providing overrides for some methods, but should do so with care<br />
-  For example, extension can replace <code>forward</code> functions, but always consider there may be other extensions that do the same<br />
-  So patching should never be done globally on in a way that breaks other extensions  </li>
-<li><strong>Running platform specific code</strong>:
-  Not everyone runs the same OS or compute backend and using platform or hardware specific code or relying on packages which are not cross-platform is just bad<br />
-  For example, never use platform specific designators such as <code>torch.to('cuda')</code> or <code>torch.float16</code>, always use well-defined server variables such as <code>devices.device</code> and <code>devices.dtype</code>  </li>
+<li><strong>Execution on import</strong>:
+  Keep extension modules import-safe. Do not run work at import time (except trivial and allowed <code>install.py</code> setup).
+  Put logic inside functions/classes and run it from app callbacks.
+  Import-time execution can slow startup or crash the server.</li>
+<li><strong>Keeping all Python code in <code>/scripts</code></strong>:
+  Use <code>/scripts</code> as the entry point only.
+  Split implementation into other modules outside <code>/scripts</code> and import them from the entry file.
+  Otherwise, server startup may load and execute files repeatedly.</li>
+<li><strong>Browser namespace collisions</strong>:
+  JavaScript files are loaded into a shared global namespace.
+  Use unique prefixes for functions and variables instead of generic names such as <code>log()</code>.</li>
+<li><strong>Incorrect callback usage</strong>:
+  Choose callbacks carefully.
+  <code>onUiLoaded</code> runs once, while <code>onUiUpdated</code> can run many times during startup.
+  Running heavy initialization in a frequently called callback causes slow page loads and repeated work.
+  This applies to both Python and JavaScript.</li>
+<li><strong>Executing code when disabled</strong>:
+  If an extension is disabled, callbacks should early-exit and do no work.
+  Otherwise, you can add avoidable delays before, during, or after generation.</li>
+<li><strong>Unsafe references</strong>:
+  Treat callback data and server variables as optional unless guaranteed.
+  For example, <code>image.info</code> may not exist for every image.
+  Use safe access helpers such as <code>get()</code> or <code>getattr()</code>.
+  The same applies to settings: do not assume they never change.</li>
+<li><strong>Unsafe patching</strong>:
+  Extensions can patch server methods, but patch carefully.
+  For example, replacing <code>forward</code> should avoid global behavior that breaks other extensions.</li>
+<li><strong>Running platform-specific code</strong>:
+  Avoid hard-coding platform/backend behavior.
+  Do not force values such as <code>torch.to('cuda')</code> or <code>torch.float16</code>.
+  Use server variables such as <code>devices.device</code> and <code>devices.dtype</code>.</li>
 <li><strong>Assuming values</strong>:
-  Never assume values, always check a well-defined variable what is the current value and handle it accordingly
-  For example, extension may not be installed in <code>/extensions</code> folder, it may be relocated to a different folder</li>
+  Do not assume install paths or runtime values.
+  For example, an extension may not be located under <code>/extensions</code>.</li>
 </ul>
-<p>Unfortunately, looking at top-20 most popular extensions, most of them are guilty of not just one or two, but majority of the above cases and this is not isolated only to extensions that are considered broken<br />
-Always remember that by installing extension you give it full access to do anything and you're relying on extension author to perform all the work correctly and safely  </p>
+<p>Many popular extensions still hit several of these issues.
+Remember that installing an extension grants it broad access, so implementation quality and safety matter.</p>
 <h2 id="extension-vs-script">Extension vs Script</h2>
 <ul>
-<li><strong>Script</strong> is a single module that implements a script</li>
-<li><strong>Script</strong> object is inherited from <code>Script</code> class and implements several mandatory and any of the optional methods for well-defined callbacks</li>
-<li><strong>Extension</strong> is a larger implementation that exists as its own folder with a well-defined folder structure</li>
-<li><strong>Extension</strong> code can further define any number of <strong>Scripts</strong> or work on its own</li>
+<li><strong>Script</strong> is a single module that implements script callbacks.</li>
+<li><strong>Script</strong> objects inherit from <code>Script</code> and implement required methods plus optional callbacks.</li>
+<li><strong>Extension</strong> is a larger implementation with its own folder structure.</li>
+<li><strong>Extension</strong> can contain multiple scripts or operate through its own hooks.</li>
 </ul>
 <h2 id="extension-folder-structure">Extension Folder Structure</h2>
-<p>Note: any of the files are optional</p>
+<p>Note: all files listed below are optional.</p>
 <ul>
-<li><code>/preload.py</code><br />
-  Loaded early during server startup to provide additional command line parameters<br />
-  Extension should define a <code>preload(parser: argparser)</code> function to extend parser as needed<br />
-  Preload should perform no other work or access any other modules</li>
-<li><code>/install.py</code><br />
-  Loaded early during server startup to install any optional requirements<br />
-  Must use well defined server functions such as <code>launch.run_pip</code> and access only modules explicitly marked as safe at the early stages of server startup<br />
-  Do not do direct OS calls or perform any other work other than basic installation</li>
-<li><code>/javascript/*.js</code><br />
-  All JS files in a folder are added as-is
-  There should be no work done in JS scripts other than defining functions/variables and registering callbacks that will be executed at appropriate time</li>
-<li><code>/style.css</code><br />
-  Style is added as-is  </li>
-<li><code>/scripts/*.py</code><br />
-  This is intended as a main entry-point for extension and every file is loaded by the server during startup
-  There should be no work done in Python scripts other than defining functions/variables and registering callbacks that will be executed at appropriate time</li>
+<li><code>/preload.py</code>
+  Loaded early during startup to add command line arguments.
+  Define <code>preload(parser: argparser)</code> and avoid other work at this stage.</li>
+<li><code>/install.py</code>
+  Loaded early during startup to install optional requirements.
+  Use supported helpers such as <code>launch.run_pip</code>.
+  Avoid direct OS calls or unrelated work.</li>
+<li><code>/javascript/*.js</code>
+  JavaScript files are injected as-is.
+  Keep files limited to defining functions/variables and registering callbacks.</li>
+<li><code>/style.css</code>
+  Style is loaded as-is.</li>
+<li><code>/scripts/*.py</code>
+  Main extension entry points loaded by the server during startup.
+  Keep files focused on definitions and callback registration.</li>
 </ul>
 
 

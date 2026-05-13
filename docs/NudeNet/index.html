@@ -4046,28 +4046,28 @@
 <li>Adjustable sensitivity</li>
 <li>Can be used for <strong>txt2img</strong>, <strong>img2img</strong> or <strong>process</strong>  </li>
 <li>FAST!<br />
-  Uses <code>CV2</code> and <code>ONNX</code> backend and typically executes in &lt;0.1sec  </li>
+  Uses <code>CV2</code> and <code>ONNX</code> backend and typically executes in under 0.1 sec.  </li>
 </ul>
 <h3 id="language-check">Language Check</h3>
-<p>If <strong>Check language</strong> is enabled, NudeNet will use <code>facebook/fasttext-language-identification</code> to check if prompt is in allowed language and using allowed alphabet.
+<p>If <strong>Check language</strong> is enabled, NudeNet uses <code>facebook/fasttext-language-identification</code> to check whether a prompt uses an allowed language and alphabet.
 For example:</p>
 <div class="highlight"><pre><span></span><code>LangDetect: [&#39;eng_latn:0.83&#39;]
 </code></pre></div>
-<p>Means that language is English and uses Latin alphabet with 83% confidence.</p>
+<p>This means the detected language is English using the Latin alphabet with 83% confidence.</p>
 <h3 id="image-guard">Image-Guard</h3>
-<p>If <strong>Policy check</strong> is enabled, NudeNet will use <code>LlavaGuard</code> VLM to check if image violates any policies and reasons why.
+<p>If <strong>Policy check</strong> is enabled, NudeNet uses <code>LlavaGuard</code> VLM to check whether an image violates policy and why.
 For example:</p>
 <div class="highlight"><pre><span></span><code>&#39;rating&#39;: &#39;Unsafe&#39;,
 &#39;category&#39;: &#39;O3: Sexual Content&#39;,
 &#39;rationale&#39;: &#39;The image contains a woman with her body covered in paint splatters, which is considered sexually explicit content. This type of content is not allowed on our platform as it violates our policy against sexually explicit content. The image is not educational in nature and does not provide information on sexuality or sexual education. It is simply a depiction of a woman in a provocative pose, which is not appropriate for our platform.&#39;
 </code></pre></div>
 <h3 id="banned-words">Banned Words</h3>
-<p>If <strong>Banned words</strong> check is enabled, NudeNet will use <code>regex</code> to check prompt variations if they contain any banned words or expressions.
+<p>If <strong>Banned words</strong> check is enabled, NudeNet uses <code>regex</code> to check prompt variations for banned words or expressions.
 For example:</p>
 <div class="highlight"><pre><span></span><code>BannedWords: [&#39;naked&#39;]
 </code></pre></div>
 <h2 id="settings">Settings</h2>
-<p>Should be self-explanatory...</p>
+<p>Settings are straightforward and self-explanatory.</p>
 <p><img width="524" height="470" alt="settings" src="https://github.com/user-attachments/assets/211f1f9d-b5f3-408c-b029-2437e1e47a61" /></p>
 <h2 id="examples">Examples</h2>
 <p><img alt="example-pasty" src="https://github.com/user-attachments/assets/5b119583-e5a1-4ee7-877f-628ce38869aa" />

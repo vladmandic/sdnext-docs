@@ -2176,19 +2176,19 @@
   <a href="#lora" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoRa
+        LoRA
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="LoRa">
+    <nav class="md-nav" aria-label="LoRA">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#lora-introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoRa Introduction
+        LoRA Introduction
       
     </span>
   </a>
@@ -2199,7 +2199,7 @@
   <a href="#lora-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoRa Notes
+        LoRA Notes
       
     </span>
   </a>
@@ -2416,19 +2416,19 @@
   <a href="#clip-skip" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clip skip
+        CLIP Skip
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Clip skip">
+    <nav class="md-nav" aria-label="CLIP Skip">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#clip-skip-introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clip skip Introduction
+        CLIP Skip Introduction
       
     </span>
   </a>
@@ -2439,7 +2439,7 @@
   <a href="#clip-skip-usage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clip skip Usage
+        CLIP Skip Usage
       
     </span>
   </a>
@@ -4929,19 +4929,19 @@
   <a href="#lora" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoRa
+        LoRA
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="LoRa">
+    <nav class="md-nav" aria-label="LoRA">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#lora-introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoRa Introduction
+        LoRA Introduction
       
     </span>
   </a>
@@ -4952,7 +4952,7 @@
   <a href="#lora-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoRa Notes
+        LoRA Notes
       
     </span>
   </a>
@@ -5169,19 +5169,19 @@
   <a href="#clip-skip" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clip skip
+        CLIP Skip
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Clip skip">
+    <nav class="md-nav" aria-label="CLIP Skip">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#clip-skip-introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clip skip Introduction
+        CLIP Skip Introduction
       
     </span>
   </a>
@@ -5192,7 +5192,7 @@
   <a href="#clip-skip-usage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clip skip Usage
+        CLIP Skip Usage
       
     </span>
   </a>
@@ -5633,12 +5633,8 @@
 
 <h1 id="features">Features</h1>
 <h2 id="control">Control</h2>
-<p>SDNext's Control tab is our long awaited effort to bring ControlNet, IP-Adapters, T2I Adapter, ControlNet XS, and ControlNet LLLite to our users.  </p>
-<p>After doing that, we decided that we would add everything else under the sun that we could squeeze in there, and place it directly into your hands with greater options and flexibility than ever before, to allow you to <strong>Control</strong> your image and video generation with as little effort, as as much power, as possible.</p>
-<p><strong>Note that this document is a work in progress, it's all quite complex and will take some time to write up a bit more as well as smooth out the rough edges and correct any issues and bugs that pop up, expect frequent updates!</strong>  </p>
-<p>This guide will attempt to explain how to use it so that anyone can understand it and put it to work for themselves.  </p>
-<p>Be sure to also check out <a href="../Control-Technical/">the Control resource page</a> which has more technical information as well as some general tips and suggestions. Its usage information will be merged into this page soon™️.</p>
-<p>We'll start with the... Control Controls!</p>
+<p>The SD.Next Control tab brings ControlNet, IP-Adapters, T2I Adapter, ControlNet XS, and ControlNet LLLite together in one place. It gives you fine-grained control over image and video generation with as little effort and as much power as possible.</p>
+<p>Be sure to also check out <a href="../Control-Technical/">the Control resource page</a> for more technical information and general tips.</p>
 <h3 id="controls">Controls</h3>
 <h4 id="input">Input</h4>
 <p>The Input control is exactly what it sounds like, it controls what input images (or videos) are contributing to your image generation, by default that is just the image in the Control input pane, however if you select <code>Separate init image</code>, another image pane will appear below, allowing you to use that as well.  </p>
@@ -5675,7 +5671,7 @@ The Control size menu allows you to manipulate the size of your input images bef
 <p>This is where <code>Resize method</code> comes in, you would simply select a resize method, typically Nearest or Lanczos, and then either set the pixel width or height you want to resize to under Fixed, or switch over to Scale and select a number below 1. A setting of 0.5 would make your input image effectively 1024x1536 pixels, which would be used as input for later operations.  </p>
 <p>The <code>After</code> subtab controls any upscaling or downscaling that would take place <strong>at the end of your image generation process</strong>, most commonly this would either be latent upscaling, and ESRGAN model such as 4x Ultrasharp, or one of the various chaiNNer models we provide. This is the same as it would be in a standard upscaling via text2img or img2img.</p>
 <h4 id="mask">Mask</h4>
-<p>The Mask controls are where we start getting into the real meat of Control, not only does it allow a plethora of different options to mask, segment, and control the view of your masking with various preview types, but it comes with <strong>22 different colormaps for your viewing pleasure!</strong> (And I think vlad made some of those words up 🤫)  </p>
+<p>The Mask controls provide a wide range of options for masking, segmenting, and previewing your selection — including <strong>22 different colormaps</strong>.</p>
 <p><img alt="Mask controls" src="https://github.com/vladmandic/sdnext/assets/108482020/e56bb906-02e3-4a5f-869d-6d0d274dc6a5" /></p>
 <ul>
 <li>
@@ -5739,7 +5735,7 @@ Some video output methods provide more controls, try them all.</p>
 <p>These are some nice goodies that we have cooked up so that no actual installed extensions are necessary, you may even find that our version works better!</p>
 <h4 id="animatediff">AnimateDiff</h4>
 <p>This is the new home of our Vlad-created implementation of the AnimateDiff extension. Now with <strong>FREE</strong> FreeInit!  </p>
-<p><strong><em>I honestly don't know how to use this, so I'll update this when I do. My apologies! But if you already do, enjoy!</em></strong></p>
+<p><em>Full documentation for AnimateDiff is coming soon.</em></p>
 <p><img alt="AnimateDiff controls" src="https://github.com/vladmandic/sdnext/assets/108482020/233bc583-2449-4b6c-8ee5-9d4a8f1316c3" /></p>
 <h4 id="ip-adapter">IP-Adapter</h4>
 <p>This is our IP Adapter implementation, with 10 available models for your image or face cloning needs!</p>
@@ -5795,8 +5791,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <li>Set your <strong>sampler</strong> to <strong>LCM</strong></li>
 <li>Set number of steps to a low number, e.g. <strong>4-6 steps</strong> for SD 1.5, <strong>2-8 steps</strong> for SD-XL</li>
 <li>Set your <strong>CFG Scale to 1 or 2</strong> (or somewhere between, play with it for best quality)</li>
-<li>Optionally, turning on <strong>Hypertile and/or FreeU</strong> will greatly increase speed and quality of output images</li>
-<li>???</li>
+<li>Optionally, enable <strong>Hypertile</strong> and/or <strong>FreeU</strong> to increase generation speed and output quality.</li>
 <li>Generate!</li>
 </ol>
 <h3 id="lcm-notes">LCM Notes</h3>
@@ -5808,24 +5803,29 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <p><br>
 <br>
 <br></p>
-<h2 id="lora">LoRa</h2>
-<h3 id="lora-introduction">LoRa Introduction</h3>
+<h2 id="lora">LoRA</h2>
+<h3 id="lora-introduction">LoRA Introduction</h3>
 <p>LoRA models are small Stable Diffusion models that apply tiny changes to standard checkpoint models. They are usually 10 to 100 times smaller than checkpoint models. That makes them very attractive to people who have an extensive collection of models.</p>
-<p>This is a tutorial for beginners who haven’t used LoRA models before. You will learn what LoRA models are, where to find them, and how to use them in the SD.NEXT WebUI.</p>
-<p>You can place your LoRA models in <code>./*Your SD.NEXT directory*/models/Lora</code>. (You can change the path of the LoRa directory in your settings in the system paths tab)</p>
-<p>You can either access your LoRA models by clicking on Networks and then on Lora and select the lora model you want to add to your prompt or by typing: <br>
+<p>This is a tutorial for beginners who haven't used LoRA models before. You will learn what LoRA models are, where to find them, and how to use them in SD.Next.</p>
+<p>You can place your LoRA models in <code>./*Your SD.Next directory*/models/Lora</code>. (You can change the LoRA directory path in <strong>Settings → System Paths</strong>.)</p>
+<p>You can access LoRA models by clicking <strong>Networks → LoRA</strong> and selecting a model, or by typing:
 <code>&lt;lora:*lora file name*:*preferred weight*&gt;</code></p>
 <p>The weight indicates the amount of effect it has on your image generation.</p>
-<h3 id="lora-notes">LoRa Notes</h3>
+<h3 id="lora-notes">LoRA Notes</h3>
 <ul>
-<li>Some LoRa's are for different diffusers pipelines, for example you have SD1.5 LoRa's and you have SDXL LoRa's, if you try to use one of these while using the wrong type diffusers pipeline it will give an error.</li>
+<li>LoRAs are pipeline-specific. SD 1.5 LoRAs are not compatible with SDXL pipelines and vice versa; using the wrong type will produce an error.</li>
 </ul>
 <p><br>
 <br>
 <br></p>
 <h2 id="hidiffusion">HiDiffusion</h2>
 <h3 id="hidiffusion-introduction">HiDiffusion Introduction</h3>
-<p>Diffusion models are great for high-resolution image synthesis but struggle with object duplication and longer generation times at higher resolutions. HiDiffusion, a solution with two key components: Resolution-Aware U-Net (RAU-Net), which prevents object duplication by adjusting feature map sizes, and Modified Shifted Window Multi-head Self-Attention (MSW-MSA), which reduces computation time. HiDiffusion can be added to existing models to generate images up to 4096×4096 pixels at 1.5-6 times faster speeds. Experiments show that HiDiffusion effectively tackles these issues and sets new standards for high-resolution image synthesis.</p>
+<p>Diffusion models are capable of high-resolution image synthesis but can struggle with object duplication and slow generation at larger resolutions. HiDiffusion addresses this with two key components:</p>
+<ul>
+<li><strong>Resolution-Aware U-Net (RAU-Net)</strong> — prevents object duplication by adjusting feature map sizes.</li>
+<li><strong>Modified Shifted Window Multi-head Self-Attention (MSW-MSA)</strong> — reduces computation time.</li>
+</ul>
+<p>HiDiffusion can be applied to existing models to generate images up to 4096×4096 pixels at 1.5–6× faster speeds.</p>
 <h4 id="reference">Reference</h4>
 <p>You can read more about HiDiffusion in the link below:</p>
 <ul>
@@ -5906,10 +5906,10 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <p><br>
 <br>
 <br></p>
-<h2 id="clip-skip">Clip skip</h2>
-<h3 id="clip-skip-introduction">Clip skip Introduction</h3>
-<p>Clip Skip plays a significant role in stable diffusion models. It is a technique used to improve the performance of image and video compression in stable diffusion algorithms. By allowing the skipping of certain pixels or blocks, Clip Skip reduces the amount of data that needs to be processed, resulting in faster and more efficient compression. This technique also helps to reduce artifacts and enhance the overall quality of compressed images and videos.</p>
-<h3 id="clip-skip-usage">Clip skip Usage</h3>
+<h2 id="clip-skip">CLIP Skip</h2>
+<h3 id="clip-skip-introduction">CLIP Skip Introduction</h3>
+<p>CLIP Skip controls how many layers of the CLIP text encoder are skipped when processing your prompt. Skipping more layers makes the output less tied to specific prompt wording, which can improve image quality for certain models. Many models are trained with a particular CLIP Skip value; check the model's documentation for the recommended setting.</p>
+<h3 id="clip-skip-usage">CLIP Skip Usage</h3>
 <p>You can enable clip skip in the advanced tab in the image generation settings. The default is 1, but also a very popular value is 2 and lots of models are compatible with it. <br></p>
 <!-- Add image here -->
 
@@ -5933,13 +5933,13 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <h3 id="upscaling-introduction">Upscaling Introduction</h3>
 <p>Upscaling in Stable Diffusion analyzes an image's pixel values to determine the diffusion rate. That rate is then used to expand the image at higher resolution, resulting in a sharper and clearer output without heavily compromising quality.</p>
 <h3 id="upscaling-usage">Upscaling Usage</h3>
-<p>In SD.NEXT there are 2 ways to use upscaling, you can either enable it in the second pass(<strong>this will not upscale the end results from the second pass, it will only upscale the image or latent from the first pass</strong>) or you can use it in the process tab under the upscaling menu in the image generation settings.</p>
+<p>In SD.Next there are two ways to use upscaling: enable it in the second pass (this upscales the first-pass output before the second pass, not the final result), or use it in the <strong>Process</strong> tab under the upscaling menu.</p>
 <!-- Add image here -->
 <p><br></p>
 <!-- Add image here -->
 <p><br></p>
 <h3 id="custom-upscale-models">Custom upscale models</h3>
-<p>You can also add your own upscale models to SD.NEXT in the directories below:</p>
+<p>You can also add your own upscale models to SD.Next in the directories below:</p>
 <ul>
 <li>ESRGAN</li>
 <li>LDSR</li>

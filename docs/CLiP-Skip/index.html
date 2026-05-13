@@ -3865,18 +3865,22 @@
 <p>Using CLiP skip values without understanding their implications can lead to unexpected and most likely corrupt image outputs.</p>
 </div>
 <h2 id="what-is-a-clip-skip">What is a CLiP skip</h2>
-<p>The CLiP text encoder model consists of multiple layers, each providing a different level of specificity<br />
-Lower Clip Skip values mean that more layers are used, resulting in images that closely match the prompts<br />
-Higher values skip some of these layers, leading to potentially more creative outputs but with less adherence to the original prompt  </p>
-<p>Why did it became popular? Because original <em>NovelAI SD 1.5</em> model was trained with CLiP skip value of 2<br />
-And that model was used as basis for many other anime-style models, leading to a common practice of using CLiP skip value of 2 for anime content  </p>
-<p>However, anything newer than that, like pretty much <em>ANY</em> SDXL or FLUX or other recent model,<br />
-is trained with CLiP skip value of 1, and using CLiP skip value of 2 on these models will lead to bad results  </p>
-<p>However, there are still many recommendations on the internet to use CLiP skip value of 2 - and most of them are outdated and wrong (unless we're talking about NAI SD 1.5 derivatives)
-The problem arises from the fact that many SD applications such as original Automatic1111 do not even implement CLiP skip for SDXL and other newer models, so setting it to 2 does not change anything and does not lead to any issues  </p>
-<p>SD.Next, on the other hand, does implement CLiP skip for all models, so setting it to 2 will lead to bad results with SDXL and other newer models  </p>
-<p>If you want to experiment with CLiP skip values, you can do so, but be aware of the implications<br />
-To change the CLiP skip value, you need to unlock it in settings and then set it to the desired value  </p>
+<p>The CLiP text encoder has multiple layers, each adding a different level of prompt interpretation.
+Lower CLiP Skip values use more layers and usually follow prompts more closely.
+Higher values skip layers, which can produce more creative outputs but with weaker prompt adherence.</p>
+<p>Why did it become popular?
+The original <em>NovelAI SD 1.5</em> model was trained with CLiP Skip value 2.
+That model became a base for many anime-style derivatives, so CLiP Skip 2 became common in that segment.</p>
+<p>However, newer models such as SDXL, FLUX, and most recent releases are trained with CLiP Skip value 1.
+Using CLiP Skip 2 on those models usually produces poor results.</p>
+<p>Many online recommendations still suggest CLiP Skip 2.
+Most of them are outdated, except for specific NAI SD 1.5-derived models.</p>
+<p>This confusion exists partly because some SD applications, including original Automatic1111, do not apply CLiP Skip to SDXL and other newer models.
+In those apps, setting CLiP Skip to 2 may have no effect.</p>
+<p>SD.Next applies CLiP Skip across model families.
+Because of that, setting CLiP Skip to 2 can degrade results on SDXL and other newer models.</p>
+<p>You can still experiment with CLiP Skip values if needed.
+To change it, unlock CLiP Skip in settings and then set the desired value.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>SD.Next also supports non-integer CLiP skip values, such as 1.2, 1.5, etc.</p>

@@ -4049,41 +4049,38 @@
 
 <h1 id="stablediffusion-xl">StableDiffusion-XL</h1>
 <h2 id="downloading-sd-xl">Downloading SD-XL</h2>
-<p>You can simply download these two files from Huggingface and place them into your normal checkpoint directory, though we recommend a subfolder.</p>
+<p>Download these two files from Hugging Face and place them in your checkpoint directory (a subfolder is recommended).</p>
 <ul>
 <li><a href="https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/blob/main/sd_xl_base_1.0.safetensors">SD-XL Base</a></li>
 <li><a href="https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/blob/main/sd_xl_refiner_1.0.safetensors">SD-XL Refiner</a></li>
 </ul>
 <h2 id="setup-for-sd-xl">Setup for SD-XL</h2>
-<p>To facilitate easy use of SD-XL and swapping between refiners, backends, and pipelines, we recommend selecting the<br />
-following items in your Settings Tab, on the User Interface page:</p>
+<p>To make SD-XL and refiner/backend/pipeline switching easier, select the following items in Settings -&gt; User Interface:</p>
 <p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/108482020/59688e46-7056-42b6-a8bd-3a53008c9663" /></p>
-<p>Once you select them, hit Apply settings, and then Restart server.
-When the server returns to being active and your browser page reloads, the Quicksettings<br />
-at the top of your screen should look like this (assuming you were using SDXL):</p>
+<p>After selecting them, click Apply settings, then Restart server.
+When the server is active again and the page reloads, the Quicksettings bar should look like this (assuming SDXL is selected):</p>
 <p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/108482020/82b78692-47e8-4604-bf66-df0d90409d65" /></p>
 <h2 id="vram-optimization">VRAM Optimization</h2>
-<p>There are now 3 methods of memory optimization with the Diffusers backend, and consequently SDXL: Model Shuffle, Medvram, and Lowvram.<br />
-Choose one based on your GPU, VRAM, and how large you want your batches to be.</p>
-<p><strong>Note: <code>VAE Tiling</code> can be enabled to save additional VRAM if necessary, but it is recommended to use <code>VAE Slicing</code> if you do not have<br />
-abundant VRAM.</strong><br />
+<p>There are 3 memory optimization methods for the Diffusers backend (and SDXL): Model Shuffle, Medvram, and Lowvram.<br />
+Choose one based on your GPU, VRAM, and target batch size.</p>
+<p><strong>Note: <code>VAE Tiling</code> can save additional VRAM, but <code>VAE Slicing</code> is generally recommended when VRAM is limited.</strong><br />
 <strong><code>Enable attention slicing</code></strong> should generally not be used, as the performance impact is significant.</p>
 <h3 id="option-1-model-shuffle">Option 1: Model Shuffle</h3>
-<p>"Model Shuffle" is a memory optimization feature that dynamically moves different parts of the model between the GPU and CPU to<br />
-efficiently utilize VRAM. This is enabled when the following 3 options are Enabled in the Diffusers settings page:</p>
+<p>"Model Shuffle" dynamically moves model parts between GPU and CPU to use VRAM more efficiently.<br />
+Enable it by turning on these 3 options in Diffusers settings:</p>
 <ul>
 <li>Move the base model to CPU when using the refiner.</li>
 <li>Move the refiner model to CPU when not in use.</li>
 <li>Move the UNet to CPU during VAE decoding.</li>
 </ul>
-<p>To use <code>Model Shuffling</code> do not have <code>--medvram</code> or <code>--lowvram</code> active, then use the following settings:</p>
+<p>To use <code>Model Shuffling</code>, do not enable <code>--medvram</code> or <code>--lowvram</code>, then apply the following settings:</p>
 <p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/108482020/cfe8daed-ec4d-4bb2-bc50-ec72a38e8c66" /></p>
-<p>The important parts are the 3 Move checkboxes.</p>
-<p>Note that if you activate either <code>CPU model offload</code> or <code>Sequential CPU offload</code>, they will deactivate and ignore Model Shuffling.<br />
+<p>The key options are the 3 Move checkboxes.</p>
+<p>If you activate either <code>CPU model offload</code> or <code>Sequential CPU offload</code>, Model Shuffling is deactivated and ignored.<br />
 <strong>VRAM Usage</strong>: "Model Shuffle" will work in 8 GB of VRAM.</p>
 <h3 id="option-2-medvram">Option 2: MEDVRAM</h3>
-<p>If you have a GPU with 6GB VRAM or require larger batches of SD-XL images without VRAM constraints, you can use the <code>--medvram</code> command line argument.<br />
-This option significantly reduces VRAM requirements at the expense of inference speed.<br />
+<p>If you have a 6GB VRAM GPU, or need larger SD-XL batches, use <code>--medvram</code>.<br />
+This significantly reduces VRAM requirements at the cost of inference speed.<br />
 <strong>Cannot be used with <code>--lowvram/Sequential CPU offloading</code></strong><br />
 <strong>Note: Until some upstream fixes go in, this will not work with DML or MAC.</strong></p>
 <p>Alternatively, you can enable the <code>Enable model CPU offload</code> checkbox in the <code>Settings</code> tab on the <code>Diffusers settings</code> page:</p>
@@ -4094,45 +4091,42 @@ This option significantly reduces VRAM requirements at the expense of inference 
 </ul>
 <p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/108482020/9b33541c-d4c4-453f-a939-684b480f06a5" /></p>
 <p><strong>VRAM Usage</strong>: "Model CPU Offload" can work in 6 GB of VRAM.</p>
-<p><strong>Note</strong>: <code>--medvram</code> supersedes the <code>Model Shuffle</code> option (e.g., Move base model, refiner model, UNet), and is mutually exclusive<br />
-and cannot be used together with <code>--lowvram/Sequential CPU offload</code></p>
+<p><strong>Note</strong>: <code>--medvram</code> supersedes <code>Model Shuffle</code> options (Move base model, refiner model, UNet), and cannot be used with <code>--lowvram/Sequential CPU offload</code>.</p>
 <h3 id="option-3-lowvram">Option 3: LOWVRAM</h3>
-<p>If your GPU has as low as 2GB of VRAM, start your SD.Next session with <code>--lowvram</code> as a command line argument to <strong>vastly</strong> reduce<br />
-VRAM requirements at the cost of even more inference speed. This is essentially the <code>Enable Sequential CPU offload</code> setting.</p>
+<p>If your GPU has as little as 2GB VRAM, start SD.Next with <code>--lowvram</code> to <strong>vastly</strong> reduce VRAM requirements at an even larger speed cost.<br />
+This is effectively <code>Enable Sequential CPU offload</code>.</p>
 <p><img alt="image" src="https://github.com/vladmandic/sdnext/assets/108482020/ff56b38e-7aaf-4a04-92db-087aa3ebc63e" /></p>
 <p>Note: VAE slicing, VAE tiling, and Attention slicing are all enabled by <code>--lowvram</code> regardless of the checkboxes.</p>
-<p>Using this setting with a GPU that has higher VRAM, your generations will take even longer, but you will be able to do <em>ridiculously</em> large<br />
-batches of SD-XL images, up to and including 24 on a 12GB GPU.</p>
+<p>Using this setting on higher-VRAM GPUs makes generation slower, but allows very large SD-XL batches, up to 24 on a 12GB GPU.</p>
 <p><strong>Note: Until some upstream fixes go in, this will not work with SDXL LoRA's and SD 1.5.</strong></p>
-<p>We look forward to seeing how large your batches can get, do let us know on the Discord server, and we <strong>HIGHLY RECOMMEND</strong> that<br />
-you continue down this guide and configure your SD.Next with the Fixed FP16 VAE!</p>
+<p>For further gains, continue below and configure SD.Next with the Fixed FP16 VAE.</p>
 <h2 id="fixed-fp16-vae">Fixed FP16 VAE</h2>
-<p>It is currently recommended to use a <strong>Fixed FP16 VAE</strong> rather than the ones built into the SD-XL base and refiner for<br />
-significant reductions in VRAM (from 6GB of VRAM to &lt;1GB VRAM) and a doubling of VAE processing speed.</p>
+<p>It is currently recommended to use a <strong>Fixed FP16 VAE</strong> instead of built-in SD-XL base/refiner VAEs.<br />
+This can significantly reduce VRAM usage (from ~6GB to &lt;1GB for VAE work) and roughly double VAE processing speed.</p>
 <p>Below are the instructions for installation and use:</p>
 <ul>
 <li><a href="https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/blob/main/sdxl_vae.safetensors">Download Fixed FP16 VAE</a> to your VAE folder.</li>
 <li>In your <code>Settings</code> tab, go to <code>Diffusers settings</code> and set <code>VAE Upcasting</code> to <code>False</code> and hit Apply.  </li>
 <li>Select the your VAE and simply <code>Reload Checkpoint</code> to reload the model or  hit <code>Restart server</code>.</li>
 </ul>
-<p>You should be good to go, Enjoy the huge performance boost!</p>
+<p>You should be good to go.</p>
 <h2 id="using-sd-xl">Using SD-XL</h2>
 <ul>
-<li>Then select Autodetect or Stable Diffusion XL from the Pipeline dropdown.</li>
-<li>Next select the sd_xl_base_1.0.safetensors file from the Checkpoint dropdown.</li>
-<li>(optional) Finally select the sd_xl_refiner_1.0.safetensors file from the Refiner dropdown.  </li>
+<li>Select Autodetect or Stable Diffusion XL from the Pipeline dropdown.</li>
+<li>Select <code>sd_xl_base_1.0.safetensors</code> from the Checkpoint dropdown.</li>
+<li>Optional: select <code>sd_xl_refiner_1.0.safetensors</code> from the Refiner dropdown.  </li>
 </ul>
 <h2 id="using-sd-xl-refiner">Using SD-XL Refiner</h2>
-<p>To use <strong>refiner</strong>, it first needs to be loaded and then it can be enabled using <code>Second pass</code> option in the UI.
-Note that use of <strong>refiner</strong> is not necessary as <strong>base</strong> model can produce very good results on its own.</p>
-<p>Refiner can be used in two-modes: as in traditional workflow or with early handover from base to refiner.<br />
+<p>To use <strong>refiner</strong>, load it first, then enable it with <code>Second pass</code> in the UI.
+Using <strong>refiner</strong> is optional; the <strong>base</strong> model can already produce very good results.</p>
+<p>Refiner can be used in two modes: traditional workflow, or early handover from base to refiner.<br />
 In either case, refiner will use calculated number of steps based on <code>Refiner steps</code>.</p>
 <p>If <code>denoise start</code> is set to <code>0</code> or <code>1</code>, then traditional workflow is used:</p>
 <ul>
 <li>Base model runs from <code>0</code> -&gt; <code>100%</code> using Sampling steps.</li>
 <li>Refiner model runs from <code>0</code> -&gt; <code>100%</code> using Refiner steps.</li>
 </ul>
-<p>However, in this mode, refiner may not produce much better result and will likely only smoothen the image as base model already reached 100% and there is insufficient remaining noise for refiner to do anything else.</p>
+<p>In this mode, refiner may not improve quality much and often only smooths the image, because the base model already reached 100% and little noise remains.</p>
 <p>If <code>refiner start</code> is set to any other value, then handover mode is used:</p>
 <ul>
 <li>Base model runs from <code>0%</code> -&gt; <code>denoise_start%</code><br />
@@ -4140,9 +4134,10 @@ In either case, refiner will use calculated number of steps based on <code>Refin
 <li>Refiner model runs from <code>denoise_start%</code> -&gt; <code>100%</code><br />
   Exact number is calculated internally to be Refiner steps.</li>
 </ul>
-<p>In this mode, using different ratio of steps for primary and refiner is allowed, but may result in unexpected results as base and refiner operations will not be perfectly aligned.</p>
-<p>Note on steps vs timesteps: steps do not refer directly do operations internally executed. Steps are used to calculate actual values at which operations will be executed. For example, steps=6 roughly means execute denoising at 0% -&gt; 20%  -&gt; 40%  -&gt; 60%  -&gt; 80%  -&gt; 100%.
-For that reason, specifying steps above 99 is meaningless.</p>
+<p>In this mode, different primary/refiner step ratios are allowed, but may produce unexpected results because base and refiner operations are not perfectly aligned.</p>
+<p>Note on steps vs timesteps: steps do not directly equal internal operations.<br />
+Steps are used to calculate execution points. For example, <code>steps=6</code> roughly means denoising at 0% -&gt; 20% -&gt; 40% -&gt; 60% -&gt; 80% -&gt; 100%.
+For that reason, values above 99 are not meaningful.</p>
 
 
 

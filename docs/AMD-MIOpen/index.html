@@ -4204,10 +4204,10 @@
 
 
 <h1 id="making-your-sdnext-faster-with-miopen-tuning">Making Your SD.Next Faster with MIOpen Tuning</h1>
-<p>If you're running SD.Next on an AMD GPU, this guide will help you unlock speed improvements that make your image generation noticeably faster. It also explains what MIOpen is and how it works under the hood, so the tuning process makes sense rather than feeling like magic.</p>
+<p>If you're running SD.Next on an AMD GPU, this guide helps you improve generation speed. It also explains what MIOpen does, so tuning is easier to understand.</p>
 <hr />
 <h2 id="what-is-miopen">What is MIOpen?</h2>
-<p>MIOpen is AMD's open-source library for deep learning primitives — AMD's equivalent of NVIDIA's cuDNN. It provides optimized implementations of the operations that neural networks rely on: convolutions, pooling, normalization, activations, and more.</p>
+<p>MIOpen is AMD's open-source deep-learning primitive library, similar in role to NVIDIA cuDNN. It provides optimized implementations of operations such as convolutions, pooling, normalization, and activations.</p>
 <p>When SD.Next generates an image, it doesn't talk to your GPU directly. The request travels through several layers:</p>
 <div class="highlight"><pre><span></span><code>┌─────────────────────────────────┐
 │   SD.Next                       │  ← User Interface
@@ -4275,7 +4275,7 @@
          │  Execute optimal GPU kernel │
          └─────────────────────────────┘
 </code></pre></div>
-<p><strong>This is why the first run is slow.</strong> MIOpen has to benchmark every solver for every unique convolution it encounters — and a single image generation touches hundreds of different convolution configurations across the text encoder, U-Net, and VAE. Each benchmark takes a fraction of a second, but they add up.</p>
+<p><strong>This is why the first run is slow.</strong> MIOpen benchmarks every solver for each unique convolution shape. A single generation can touch hundreds of shapes across the text encoder, U-Net, and VAE. Each benchmark is short, but together they add up.</p>
 <p>Once the cache is built, every subsequent run skips benchmarking entirely and jumps straight to the winner.</p>
 <hr />
 <h2 id="what-to-expect-before-and-after">What to Expect: Before and After</h2>
@@ -4343,11 +4343,11 @@
 </tbody>
 </table>
 <h3 id="commands">Commands</h3>
-<p><strong>Linux — temporary (current session only):</strong></p>
+<p><strong>Linux (temporary, current session only):</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">MIOPEN_FIND_MODE</span><span class="o">=</span><span class="m">3</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">MIOPEN_FIND_ENFORCE</span><span class="o">=</span><span class="m">3</span>
 </code></pre></div>
-<p><strong>Linux — permanent (add to <code>~/.bashrc</code> or <code>~/.profile</code>):</strong></p>
+<p><strong>Linux (persistent, add to <code>~/.bashrc</code> or <code>~/.profile</code>):</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export MIOPEN_FIND_MODE=3&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export MIOPEN_FIND_ENFORCE=3&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <span class="nb">source</span><span class="w"> </span>~/.bashrc
@@ -4371,9 +4371,12 @@ set MIOPEN_FIND_ENFORCE=3
 <div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">MIOPEN_FIND_MODE</span><span class="p">=</span>3
 <span class="k">set</span> <span class="nv">MIOPEN_FIND_ENFORCE</span><span class="p">=</span>3
 .\python_embeded\python.exe -m streamlit run ...
-</code></pre></div>
-<p>Then launch SD.Next as normal. On Windows with ROCm:</p>
-<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">webui</span><span class="p">.</span><span class="n">bat</span> <span class="p">-</span><span class="n">-use-rocm</span>
+```text
+
+Then launch SD.Next as normal. On Windows with ROCm:
+
+```powershell
+.\webui.bat --use-rocm
 </code></pre></div>
 <hr />
 <h2 id="the-tuning-cache">The Tuning Cache</h2>
@@ -4387,7 +4390,7 @@ set MIOPEN_FIND_ENFORCE=3
 <p><strong>You can override the cache location</strong> with:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">MIOPEN_USER_DB_PATH</span><span class="o">=</span>/path/to/your/cache
 </code></pre></div>
-<p>This is useful if you want to share a pre-built cache across multiple installs, or keep it on a fast drive.</p>
+<p>This is useful if you want to share a prebuilt cache across multiple installs or keep it on a faster drive.</p>
 <p><strong>To reset the cache</strong> (forces re-tuning from scratch), delete the <code>.udb</code> and <code>.ufdb</code> files in the cache directory.</p>
 <hr />
 <h2 id="when-does-re-tuning-happen">When Does Re-Tuning Happen?</h2>

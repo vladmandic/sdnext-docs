@@ -2893,6 +2893,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2909,6 +2927,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3768,6 +3816,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3793,32 +3860,32 @@
 
 
 <h1 id="stable-diffusion-pipeline">Stable Diffusion Pipeline</h1>
-<p>This is probably the best end-to-end semi-technical article:<br />
-<a href="https://stable-diffusion-art.com/how-stable-diffusion-work/">https://stable-diffusion-art.com/how-stable-diffusion-work/</a></p>
-<p>And a detailed look at diffusion process:
-<a href="https://towardsdatascience.com/understanding-diffusion-probabilistic-models-dpms-1940329d6048">https://towardsdatascience.com/understanding-diffusion-probabilistic-models-dpms-1940329d6048</a></p>
-<p>But this is a short look at the pipeline:</p>
+<p>For comprehensive explanations, see:
+- <a href="https://stable-diffusion-art.com/how-stable-diffusion-work/">How Stable Diffusion Works</a> (end-to-end overview)
+- <a href="https://towardsdatascience.com/understanding-diffusion-probabilistic-models-dpms-1940329d6048">Understanding Diffusion Probabilistic Models</a> (technical deep dive)</p>
+<h2 id="pipeline-steps">Pipeline Steps</h2>
 <ol>
-<li>Encoder / Conditioning
-   Text (via tokenizer) or image (via vision model) to semantic map<br />
-   (e.g CLiP text encoder)  </li>
-<li>Sampler
-   Generate noise which is starting point to map to content<br />
-   (e.g. k_lms)  </li>
-<li>Diffuser
-   Create vector content based on resolved noise + semantic map<br />
-   (e.g. actual stable diffusion checkpoint)  </li>
-<li>Autoencoder
-   Maps between latent and pixel space (actually creates images from vectors)<br />
-   (e.g. typically some image-database trained GAN)  </li>
-<li>Denoising
-   Get meaningful images from pixel signatures<br />
-   Basically, blends what autoencoder inserted using information from diffuser<br />
-   (e.g. U-NET)</li>
-<li>Loop and repeat
-   From step#3 with cross-attention to blend results  </li>
-<li>Run additional models as needed  </li>
-<li>Upscale (e.g. ESRGAN)  </li>
+<li>
+<p><strong>Encoder / Conditioning</strong> — Convert text (via tokenizer) or images (via vision model) into semantic maps (e.g., CLIP text encoder)</p>
+</li>
+<li>
+<p><strong>Sampler</strong> — Generate starting noise as the basis for content generation (e.g., K-LMS)</p>
+</li>
+<li>
+<p><strong>Diffuser</strong> — Create vector content from noise and semantic map (e.g., Stable Diffusion checkpoint)</p>
+</li>
+<li>
+<p><strong>Autoencoder</strong> — Map between latent and pixel space to generate actual images (e.g., VAE)</p>
+</li>
+<li>
+<p><strong>Denoising</strong> — Refine pixel output using diffuser information and blend results (e.g., U-NET)</p>
+</li>
+<li>
+<p><strong>Iterative Refinement</strong> — Repeat steps 3–5 with cross-attention to progressively blend and improve results</p>
+</li>
+<li>
+<p><strong>Optional Post-Processing</strong> — Apply additional models as needed (e.g., ESRGAN for upscaling)  </p>
+</li>
 </ol>
 
 

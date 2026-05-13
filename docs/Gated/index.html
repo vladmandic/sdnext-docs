@@ -1088,15 +1088,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#huggingface-login" class="md-nav__link">
+  <a href="#hugging-face-login" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Huggingface Login
+        Hugging Face Login
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Huggingface Login">
+    <nav class="md-nav" aria-label="Hugging Face Login">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3862,15 +3862,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#huggingface-login" class="md-nav__link">
+  <a href="#hugging-face-login" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Huggingface Login
+        Hugging Face Login
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Huggingface Login">
+    <nav class="md-nav" aria-label="Hugging Face Login">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3938,32 +3938,33 @@
 
 
 <h1 id="gated-models">Gated Models</h1>
-<h2 id="huggingface-login">Huggingface Login</h2>
-<p>Access to some models is gated by vendor and in those cases, you need to request access to model from the vendor.<br />
-For this you need to have a valid Huggingface account: <a href="https://huggingface.co/login">Login</a> or <a href="https://huggingface.co/join">Sign Up</a>  </p>
-<p>Huggingface login and/or access token is not required for non-gated models  </p>
+<h2 id="hugging-face-login">Hugging Face Login</h2>
+<p>Access to some models is gated by the vendor. In those cases, you must request model access from the vendor.
+For this, you need a valid Hugging Face account: <a href="https://huggingface.co/login">Login</a> or <a href="https://huggingface.co/join">Sign Up</a>.</p>
+<p>Hugging Face login and/or token is not required for non-gated models.</p>
 <h3 id="create-token">Create Token</h3>
-<p><em>Note</em>: This is a one-time operation as same access token is used for all gated models.</p>
-<p>Once you are logged in, create access token that an external application such as <strong>SD.Next</strong> can use to access <strong>Huggingface</strong> on your behalf:</p>
-<p>Go to: <em>Huggingface -&gt; Profile -&gt; Settings -&gt; Access Token -&gt; Create new token</em><br />
-Or use <a href="https://huggingface.co/settings/tokens/new?tokenType=read">this link</a>  </p>
+<p><em>Note</em>: This is a one-time step. The same access token is used for all gated models.</p>
+<p>After you log in, create an access token that an external application such as SD.Next can use on your behalf.</p>
+<p>Go to: <em>Hugging Face -&gt; Profile -&gt; Settings -&gt; Access Token -&gt; Create new token</em>
+Or use <a href="https://huggingface.co/settings/tokens/new?tokenType=read">this link</a>.</p>
 <ul>
-<li>Token type: READ<br />
-  Do not use fine-grained to avoid complications<br />
-  Name is your choice  </li>
-<li>Create token<br />
-  Copy the token and store it in a safe place  </li>
+<li>Token type: READ</li>
+<li>Do not use fine-grained tokens to avoid extra complexity</li>
+<li>Name is your choice</li>
+<li>Create token, then copy and store it in a safe place</li>
 </ul>
 <h3 id="add-token-to-sdnext">Add Token to SD.Next</h3>
-<p>Go to: <em>SD.Next -&gt; System -&gt; Settings -&gt; Huggingface</em><br />
-- Paste the token in the Huggingface Token field<br />
-- Click "Apply settings"  </p>
+<p>Go to: <em>SD.Next -&gt; System -&gt; Settings -&gt; Hugging Face</em></p>
+<ul>
+<li>Paste the token in the Hugging Face Token field</li>
+<li>Click Apply settings</li>
+</ul>
 <h2 id="requesting-access">Requesting Access</h2>
-<p><em>Note</em>: Requesting access must be done on individual per-model case</p>
-<p>Requesting access can be in the form of simply accepting vendors terms of service or filling a form to get access to the model or requesting access and waiting for approval.<br />
-In all cases, you need to go to model page on Huggingface and follow instruction.  </p>
+<p><em>Note</em>: Access requests are per model.</p>
+<p>Requesting access can mean accepting terms, filling out a form, or waiting for approval.
+In all cases, go to the model page on Hugging Face and follow the vendor instructions.</p>
 <p>Examples: <a href="https://huggingface.co/black-forest-labs/FLUX.1-dev">FLUX.1</a>, <a href="https://huggingface.co/stabilityai/stable-diffusion-3.5-large">SD3.5</a></p>
-<p>Once you have access, you can use the model in SD.Next as usual</p>
+<p>Once access is granted, you can use the model in SD.Next as usual.</p>
 
 
 

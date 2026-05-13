@@ -4067,13 +4067,16 @@
 <li>Install <a href="../Installation/#install-python-and-git">Git and Python</a></li>
 </ul>
 <h3 id="running-sdnext-on-windows">Running SD.Next on Windows</h3>
-<p>Open the CMD in a folder you want to install SD.Next and install SD.Next from Github with this command:  </p>
+<p>Open CMD in the folder where you want to install SD.Next, then run:  </p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/sdnext
+<span class="sb">```</span>bash
+
+Then<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> </span><span class="sb">`</span>sdnext<span class="sb">`</span><span class="w"> </span>folder:<span class="w">  </span>
+
+<span class="sb">```</span>shell
+<span class="nb">cd</span><span class="w"> </span>sdnext
 </code></pre></div>
-<p>Then enter into the sdnext folder:  </p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>sdnext
-</code></pre></div>
-<p>Then run SD.Next with this command:  </p>
+<p>Then start SD.Next with:  </p>
 <div class="highlight"><pre><span></span><code>.<span class="se">\w</span>ebui.bat<span class="w"> </span>--use-ipex
 </code></pre></div>
 <div class="admonition note">
@@ -4113,13 +4116,16 @@ makepkg<span class="w"> </span>-si
 <span class="nb">export</span><span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span>python3.12
 </code></pre></div>
 <h3 id="running-sdnext-on-linux">Running SD.Next on Linux</h3>
-<p>Open the terminal in a folder you want to install SD.Next and install SD.Next from Github with this command:  </p>
+<p>Open a terminal in the folder where you want to install SD.Next, then run:  </p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/sdnext
+<span class="sb">```</span>bash
+
+Then<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> </span><span class="sb">`</span>sdnext<span class="sb">`</span><span class="w"> </span>folder:<span class="w">  </span>
+
+<span class="sb">```</span>shell
+<span class="nb">cd</span><span class="w"> </span>sdnext
 </code></pre></div>
-<p>Then enter into the sdnext folder:  </p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>sdnext
-</code></pre></div>
-<p>Then run SD.Next with this command:  </p>
+<p>Then start SD.Next with:  </p>
 <div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-ipex
 </code></pre></div>
 <div class="admonition note">
@@ -4149,13 +4155,13 @@ Resulting docker image will use 1.1 GB disk space (uncompressed) for the docker 
 <h2 id="environment-variables">Environment Variables</h2>
 <ul>
 <li>
-<p><code>IPEX_SDPA_SLICE_TRIGGER_RATE</code>: Specify when dynamic attention slicing for Scaled Dot Product Attention should get triggered for Intel ARC. This environment variable allows you to set the trigger rate in gigabytes (GB). The default is <code>1</code>.</p>
+<p><code>IPEX_SDPA_SLICE_TRIGGER_RATE</code>: Trigger threshold for dynamic attention slicing in SDPA on Intel ARC, in GB. Default: <code>1</code>.</p>
 </li>
 <li>
-<p><code>IPEX_ATTENTION_SLICE_RATE</code>: Specify the dynamic attention slicing rate for 32 bit GPUs. This environment variable allows you to set the slicing rate in gigabytes (GB). The default is <code>0.5</code>.</p>
+<p><code>IPEX_ATTENTION_SLICE_RATE</code>: Dynamic attention slicing rate for 32-bit GPUs, in GB. Default: <code>0.5</code>.</p>
 </li>
 <li>
-<p><code>IPEX_FORCE_ATTENTION_SLICE</code>: Specify to enable or disable Dynamic Attention. The default is <code>1</code>.</p>
+<p><code>IPEX_FORCE_ATTENTION_SLICE</code>: Enables or disables dynamic attention slicing. Default: <code>1</code>.</p>
 </li>
 <li><code>1</code> will force enable dynamic attention slicing even if the GPU supports 64 bit.</li>
 <li><code>-1</code> will force disable dynamic attention slicing even if the GPU doesn't support 64 bit.</li>
@@ -4163,7 +4169,7 @@ Resulting docker image will use 1.1 GB disk space (uncompressed) for the docker 
 <p><code>0</code> will automatically enable or disable dynamic attention based on the GPU.</p>
 </li>
 <li>
-<p><code>IPEXRUN</code>: Specify to launch the webui with ipexrun. Set it to <code>True</code> to use ipexrun. The default is unset.</p>
+<p><code>IPEXRUN</code>: Launches the web UI with ipexrun when set to <code>True</code>. Default: unset.</p>
 </li>
 </ul>
 

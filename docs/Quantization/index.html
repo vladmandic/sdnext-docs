@@ -4223,8 +4223,8 @@
 <li>Compute-optimization<br />
   speed up the inference process by providing optimized kernels for native execution in quantized precision  </li>
 </ul>
-<p>For storage-only quantization, the model is quantized to lower precision but the operations are still performed in the original precision<br />
-which means that each operation needs to be upcasted to the original precision before execution resulting in a performance overhead  </p>
+<p>For storage-only quantization, model weights are stored at lower precision, but operations still run at the original precision.
+That means weights are upcast before execution, which adds performance overhead.</p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Quantization considerations</p>
@@ -4276,7 +4276,7 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 <ul>
 <li><code>SDNQ</code> 19 int-based and 69 float-based quantization schemes  </li>
 <li><code>BitsAndBytes</code> 3 float-based quantization schemes  </li>
-<li><code>Optimium.Quanto</code> 3 int-based and 2 float-based quantization schemes  </li>
+<li><code>Optimum.Quanto</code> 3 int-based and 2 float-based quantization schemes  </li>
 <li><code>TorchAO</code>: 4 int-based and 3 float-based quantization schemes  </li>
 <li><code>Layerwise</code> 2 float8-based quantization schemes  </li>
 <li><code>GGUF</code> with pre-quantized weights  </li>
@@ -4287,7 +4287,7 @@ For example, you can use <code>BitsAndBytes</code> for the <strong>transformer</
 Using any quantization engine for the first time may result in failure as required libraries are downloaded and installed<br />
 Restart SD.Next and try again if you encounter any issues  </p>
 <p>[!TIP]
-If you're on Windows with a compatible GPU, you may try <strong>WSL2</strong> for broader feature compatibiliy<br />
+If you're on Windows with a compatible GPU, you may try <strong>WSL2</strong> for broader feature compatibility.<br />
 See <a href="../WSL/">WSL Wiki</a> for more details</p>
 </div>
 <h3 id="sdnq">SDNQ</h3>
@@ -4309,7 +4309,7 @@ See <a href="../WSL/">WSL Wiki</a> for more details</p>
 <p>Typical models pre-quantized with <code>bitsandbytes</code> would have look like <code>*nf4.safetensors</code> or <code>*fp8.safetensors</code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>BnB is allows for usage of balanced offload as well as fast quantization on-the-fly during load but it is not available on all platforms.</p>
+<p>BnB supports balanced offload and fast on-the-fly quantization during load, but it is not available on all platforms.</p>
 </div>
 <p>Limitations:</p>
 <ul>
@@ -4322,7 +4322,7 @@ See <a href="../WSL/">WSL Wiki</a> for more details</p>
 <li>for Intel/IPEX: <a href="https://huggingface.co/docs/bitsandbytes/main/en/installation?backend=Intel+CPU+%2B+GPU#multi-backend">BitsAndBytes Intel backend installation guide</a>  </li>
 </ul>
 <h3 id="optimum-quanto">Optimum-Quanto</h3>
-<p>Typical models pre-quantized with <code>optimum.quanto</code> would have look like <code>*qint.safetensors</code>.</p>
+<p>Typical models pre-quantized with <code>optimum.quanto</code> usually look like <code>*qint.safetensors</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>OQ is efficient with its qint8/qint4 quantization types, but it cannot be used with broad offloading methods</p>
@@ -4340,7 +4340,7 @@ Limitations:<br />
 - int4 based quantization cannot be used with any offload method  </p>
 <h3 id="gguf">GGUF</h3>
 <p><strong>GGUF</strong> is a binary file format used to package pre-quantized models.  </p>
-<p><strong>GGUF</strong> is originally desiged by <code>llama.cpp</code> project and intended to be used with its <strong>GGML</strong> execution runtime.<br />
+<p><strong>GGUF</strong> was originally designed by the <code>llama.cpp</code> project and intended for its <strong>GGML</strong> runtime.<br />
 However, without GGML, GGUF provides storage-only quantization which means that every operation needs to be upcast to current device precision before execution (typically FP16 or BF16) which comes with a significant performance overhead.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -4358,8 +4358,8 @@ However, without GGML, GGUF provides storage-only quantization which means that 
   you cannot load all-in-one single-file GGUF model</li>
 </ul>
 <h2 id="benchmarks">Benchmarks</h2>
-<p>Comparing performance of different quantization methods on the FLUX.1-Dev model<br />
-This is not a comprehensive benchmark, but rather a quick overview of the performance of different quantization methods  </p>
+<p>Comparing performance of different quantization methods on the FLUX.1-Dev model.
+This is a quick overview, not a comprehensive benchmark.</p>
 <h3 id="environment">Environment</h3>
 <blockquote>
 <p>model==FLUX.1-Dev<br />
@@ -4565,7 +4565,7 @@ batch==1  </p>
 <p>For CUDA environments<br />
 <code>BitsAndBytes</code> is another versatile option and <code>nf4</code> is an efficient quantization type from both memory and compute perspective  </p>
 <p>For ROCm, ZLUDA or IPEX environments<br />
-<code>Optimum.Quanto</code> is another option if you can fit the model into VRAM either using <strong>Model offload</strong> or without using any offload as its not compatible with the default <strong>Balanced offload</strong>  </p>
+<code>Optimum.Quanto</code> is another option if the model fits in VRAM, either with <strong>Model offload</strong> or with no offload, since it is not compatible with default <strong>Balanced offload</strong>.  </p>
 <h3 id="errors">Errors</h3>
 <div class="admonition danger">
 <p class="admonition-title">Caution</p>
@@ -4586,8 +4586,8 @@ batch==1  </p>
 </li>
 </ul>
 <h2 id="triton">Triton</h2>
-<p>Many quantization schemes rely on <a href="https://github.com/triton-lang/triton/">Triton</a> compiler for Torch which is not available on all platforms
-If your installation fails, you can try building <code>triton</code> from sources or find pre-build binary wheels</p>
+<p>Many quantization schemes rely on the <a href="https://github.com/triton-lang/triton/">Triton</a> compiler for Torch, which is not available on all platforms.
+If installation fails, try building <code>triton</code> from source or using a prebuilt wheel.</p>
 <h3 id="triton-for-windows">Triton for Windows</h3>
 <p>A Triton fork is available for Windows and can be installed on Nvidia GPUs.<br />
 Open a CMD window from your SD.Next installation folder and install Triton Windows with these commands:</p>

@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stable-casdade" class="md-skip">
+        <a href="#stable-cascade" class="md-skip">
           Skip to content
         </a>
       
@@ -4015,7 +4015,7 @@
   
 
 
-<h1 id="stable-casdade">Stable-Casdade</h1>
+<h1 id="stable-cascade">Stable-Cascade</h1>
 <p>Original repo: <a href="https://github.com/Stability-AI/StableCascade">https://github.com/Stability-AI/StableCascade</a></p>
 <h2 id="use">Use</h2>
 <ol>
@@ -4023,18 +4023,18 @@
    to either <strong>BF16</strong> (if supported) or <strong>FP32</strong> (if not supported)<br />
 <em>Note</em>: <strong>FP16</strong> is not supported for this model  </li>
 <li>Enable model offloading in Settings -&gt; Diffusers -&gt; Model CPU offload<br />
-   without this, stable cascade will use &gt;16GB of VRAM  </li>
+   without this, Stable Cascade uses &gt;16GB of VRAM  </li>
 <li>Recommended: Set sampler to <em>Default</em>  </li>
 <li>Select model from <em>Networks -&gt; Models -&gt; Reference</em><br />
-   you can select either Full or Lite variation of the model
+   you can select either Full or Lite variant of the model
    and it will automatically be downloaded on first use and loaded into SD.Next<br />
-   attempting to load a manually downloaded safetensors files is not supported as model requires special handling<br />
-   SD.Next automatically chooses BF16 variation when downloading from networs -&gt; reference<br />
-   since its smaller and can be used with either BF16 or FP32 compute precision</li>
+   attempting to load a manually downloaded safetensors file is not supported because this model requires special handling<br />
+   SD.Next automatically chooses the BF16 variant when downloading from Networks -&gt; Reference<br />
+   since it is smaller and works with either BF16 or FP32 compute precision</li>
 </ol>
 <h3 id="unet-models">UNet models</h3>
 <ol>
-<li>Put the UNet safetensors in <code>models/UNet</code> folder and put the text encoder (if you use one) in there too. Text encoder name should be the UNet Name + _text_encoder  </li>
+<li>Put the UNet safetensors in <code>models/UNet</code> and place the text encoder there too (if used). Text encoder name should be UNet name + <code>_text_encoder</code>.  </li>
 <li>Load the Stable Cascade base (or a custom decoder) from Huggingface as the main model first, then load the UNet (prior) model as the UNet model from settings.  </li>
 </ol>
 <p>Example UNet name: <code>sc_unet.safetensors</code><br />
@@ -4053,19 +4053,19 @@ Example Text Encoder name: <code>sc_unet_text_encoder.safetensors</code>  </p>
 </ul>
 <h3 id="notes">Notes</h3>
 <ul>
-<li>If model download fails, simply retry it, it will continue from where it left off</li>
-<li>Model consists out of 3 stages split into 2 pipelines which are exected as C -&gt; B -&gt; A:</li>
+<li>If model download fails, retry; it continues from where it left off.</li>
+<li>Model consists of 3 stages split into 2 pipelines, executed as C -&gt; B -&gt; A.</li>
 <li>Full variation requires ~10GB VRAM and runs at ~3 it/s on RTX4090 at 1024px</li>
 <li>Lite variation requires ~4GB VRAM and runs at ~6 it/s on RTX4090 at 1024px</li>
 </ul>
 <p><em>Note</em>: performance numbers are for combined pipeline, both decoder and prior</p>
 <h2 id="variations">Variations</h2>
 <h3 id="overview">Overview</h3>
-<p>Stable cascade is a 3-stage model split into two pipelines (so-called <em>prior</em> and <em>decoder</em>) and comes into two main variations: <strong>Full</strong> and <strong>Lite</strong><br />
+<p>Stable Cascade is a 3-stage model split into two pipelines (so-called <em>prior</em> and <em>decoder</em>) and has two main variants: <strong>Full</strong> and <strong>Lite</strong>.<br />
 You can select which one to use from Networks -&gt; Models -&gt; Reference  </p>
-<p>Additionally, each variation comes in 3 different precisions: <strong>FP32</strong>, <strong>BF16</strong>, and <strong>FP16</strong><br />
-<em>Note</em>: <strong>FP16</strong> is an unofficial version by <a href="https://huggingface.co/KBlueLeaf/Stable-Cascade-FP16-fixed">@KohakuBlueleaf</a> of the model fixed to work with FP16 and may result in slightly different output  </p>
-<p>Which precision is going to get loaded depends on:  </p>
+<p>Additionally, each variant comes in 3 precisions: <strong>FP32</strong>, <strong>BF16</strong>, and <strong>FP16</strong>.<br />
+<em>Note</em>: <strong>FP16</strong> is an unofficial version by <a href="https://huggingface.co/KBlueLeaf/Stable-Cascade-FP16-fixed">@KohakuBlueleaf</a>, adapted to work with FP16 and may produce slightly different output.  </p>
+<p>Loaded precision depends on:  </p>
 <ul>
 <li>your user preference in Settings -&gt; Compute -&gt; Precision  </li>
 <li>and GPU compatibility as not all GPUs support all precision types  </li>

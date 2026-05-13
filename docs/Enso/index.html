@@ -2755,10 +2755,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-makes-it-different" class="md-nav__link">
+  <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Makes It Different
+        Key Features
       
     </span>
   </a>
@@ -2802,7 +2802,7 @@
   <a href="#current-status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current status
+        Current Status
       
     </span>
   </a>
@@ -3867,10 +3867,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-makes-it-different" class="md-nav__link">
+  <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Makes It Different
+        Key Features
       
     </span>
   </a>
@@ -3914,7 +3914,7 @@
   <a href="#current-status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current status
+        Current Status
       
     </span>
   </a>
@@ -3948,8 +3948,7 @@
 
 
 <h1 id="enso">Enso</h1>
-<p>Enso is an alternative UI for SD.Next built with React and an infinite canvas workspace.
-It builds upon the familiar layout of ModernUI improved to meet the intersection between power users and casual users, solving the user experience challenges in more advanced workflows without taking away functionality.</p>
+<p>Enso is an alternative UI for SD.Next built with React and an infinite canvas. It enhances ModernUI's familiar layout to serve both power users and casual users, improving advanced workflows without sacrificing functionality.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Enso is a work-in-progress alpha. Features, layout, and V2 APIs may change as development continues</p>
@@ -3957,31 +3956,25 @@ It builds upon the familiar layout of ModernUI improved to meet the intersection
 For optimum safety it's recommended to clone and set up a separate installation of SD.Next for experimenting with Enso</p>
 </div>
 <p><img width="1024" alt="Enso_hero" src="https://github.com/user-attachments/assets/807df5f6-32b6-44ad-8fd0-a4be0d72473a" /></p>
-<h2 id="what-makes-it-different">What Makes It Different</h2>
+<h2 id="key-features">Key Features</h2>
 <ul>
-<li><strong>Dense but friendly UI</strong> - A fusion of dense, power-user controls familiar from ModernUI with enough QoL improvements and assists to be approachable for all. Full command palette, interactive tutorials, customizable shortcuts, prompt editor with autocomplete and visual aids, all with intuitiveness in mind.</li>
-<li><strong>Infinite canvas</strong> - Pan and zoom to level of detail you need, compose multiple image layers with free transforms (position, rotation, scale, opacity).</li>
-<li><strong>WYSIWYG</strong> - What you see in the canvas frames is exactly what gets sent to the backend - no resizing surprises.</li>
-<li><strong>Layer compositing</strong> - Stack multiple images, paint masks, and arrange ControlNet/IP-Adapter reference frames on one workspace with flexibility of infinite canvas to let you see what you want to see.</li>
-<li><strong>Async job queue</strong> - Generations are submitted as jobs, tracked in a queue, and can run in the background while you work.</li>
-<li><strong>Presets and rich job history</strong> - Save, export and import presets of settings and inputs, recall your prior jobs from the job history queue - both in full, including input images</li>
-<li><strong>Real-time progress</strong> - Per-job WebSocket channels push live preview frames and progress updates without polling.</li>
+<li><strong>Dense but Friendly UI</strong> — Power-user controls from ModernUI with QoL improvements, command palette, interactive tutorials, customizable shortcuts, and a prompt editor with autocomplete and visual aids</li>
+<li><strong>Infinite Canvas</strong> — Pan and zoom to any detail level; compose multiple image layers with free transforms (position, rotation, scale, opacity)</li>
+<li><strong>WYSIWYG</strong> — Canvas content matches backend output exactly; no resizing surprises</li>
+<li><strong>Layer Compositing</strong> — Stack images, paint masks, and arrange ControlNet/IP-Adapter reference frames on one workspace</li>
+<li><strong>Async Job Queue</strong> — Submit generations as jobs; run them in the background while continuing to work</li>
+<li><strong>Presets and Job History</strong> — Save and recall presets and prior jobs including input images</li>
+<li><strong>Real-time Progress</strong> — Live preview frames and progress updates via per-job WebSocket channels</li>
 </ul>
 <p><img width="1024" alt="Enso_img2img" src="https://github.com/user-attachments/assets/d0637ee6-6db5-4999-a89e-1fbedb25ecd6" /></p>
 <h2 id="installation">Installation</h2>
-<p>To enable Enso start SD.Next with the <code>--enso</code> flag.</p>
-<blockquote>
-<p><code>./webui.bat --enso</code></p>
-</blockquote>
-<p>And access at <code>/enso</code> endpoint.</p>
-<blockquote>
-<p><code>localhost:7860/enso/</code></p>
-</blockquote>
-<p>Enso runs as a SD.Next extension, downloaded and installed automatically with the flag and is updated with the usual <code>--upgrade</code> flag.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Enso uses its own <strong>v2 API</strong> (<code>/sdapi/v2/</code>) and does not interfere with the existing v1 API or the Gradio UI</p>
-</div>
+<p>Start SD.Next with the <code>--enso</code> flag:</p>
+<div class="highlight"><pre><span></span><code>./webui.bat<span class="w"> </span>--enso
+</code></pre></div>
+<p>Then access Enso at:</p>
+<div class="highlight"><pre><span></span><code>localhost:7860/enso/
+</code></pre></div>
+<p>Enso installs automatically as a SD.Next extension and updates with the <code>--upgrade</code> flag. It uses the <strong>v2 API</strong> (<code>/sdapi/v2/</code>) and does not interfere with the v1 API or Gradio UI.</p>
 <h2 id="layout-overview">Layout Overview</h2>
 <div class="highlight"><pre><span></span><code>+------------------------------------------------------------+
 |  Top Bar: model selector, presets, image tools              |
@@ -4036,32 +4029,26 @@ For optimum safety it's recommended to clone and set up a separate installation 
 <!-- PLACEHOLDER: annotated screenshot with regions labeled matching the table above -->
 
 <h2 id="command-palette">Command Palette</h2>
-<p>One of the features that is principal to the ease of use of Enso is the Command Palette.</p>
-<p>It is a one shortcut key to find any functionality, setting or parameter withing the program.
-It uses semantic fuzzy search, so even if it receives a best-effort guess of the name of the item it is likely it will be able to find it.</p>
-<p>The default keybind of the Command Palette is <code>Ctrl + K</code>.</p>
+<p>The Command Palette is central to Enso's usability. Press <code>Ctrl + K</code> to open a searchable interface for all functionality, settings, and parameters. It uses semantic fuzzy search, so approximate names are likely to find what you need.</p>
 <p><img width="864" alt="Enso_commandpalette" src="https://github.com/user-attachments/assets/75d6ffab-3a56-4fd9-acc0-b131a7d04773" /></p>
-<h2 id="current-status">Current status</h2>
-<p>Enso is under active development. Core functionality that is working:</p>
+<h2 id="current-status">Current Status</h2>
+<p>Enso is under active development. Working features:</p>
 <ul>
-<li>Text-to-image and image-to-image generation is generally in fully useable state</li>
+<li>Text-to-image and image-to-image generation</li>
 <li>Mask painting and inpainting</li>
 <li>ControlNet and IP-Adapter with visual canvas frames</li>
 <li>Async job queue with live preview</li>
 <li>Job history</li>
 <li>Model and network browsing</li>
-<li>Civitai browser</li>
+<li>CivitAI browser</li>
 <li>Image gallery</li>
 <li>Captioning and prompt enhancement</li>
 <li>Command palette</li>
 </ul>
-<p>Other features like video generation are under intense development, and they might or might not work at any given time unless explicitly noted above.</p>
+<p>Features like video generation are under active development and may not work consistently.</p>
 <!-- PLACEHOLDER: 2-3 screenshots showing different workflows (e.g. inpainting, ControlNet, gallery) -->
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For issues, feature requests, or feedback related to Enso, use the Enso repository rather than the main SD.Next issue tracker</p>
-</div>
+<p>For issues, feature requests, or feedback, use the <a href="https://github.com/vladmandic/sdnext-enso">Enso repository</a> rather than the main SD.Next tracker.</p>
 
 
 

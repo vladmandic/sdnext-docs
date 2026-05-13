@@ -4038,29 +4038,31 @@
 
 
 <h1 id="nunchaku">Nunchaku</h1>
-<p><a href="https://github.com/mit-han-lab/nunchaku/blob/main/README.md">Nunchaku</a> is a high-performance inference engine from <a href="https://github.com/mit-han-lab">MIT-Han-Lab</a> optimized for 4-bit neural networks
-Nunchaku uses novel 4-bit <a href="https://github.com/mit-han-lab/deepcompressor/tree/main/examples/diffusion">SVDQuant</a> quantization via <a href="https://github.com/mit-han-lab/deepcompressor">DeepCompressor</a></p>
+<p><a href="https://github.com/mit-han-lab/nunchaku/blob/main/README.md">Nunchaku</a> is a high-performance inference engine from <a href="https://github.com/mit-han-lab">MIT-Han-Lab</a>, optimized for 4-bit neural networks.
+It uses 4-bit <a href="https://github.com/mit-han-lab/deepcompressor/tree/main/examples/diffusion">SVDQuant</a> quantization via <a href="https://github.com/mit-han-lab/deepcompressor">DeepCompressor</a>.</p>
 <p>Nunchaku can speed up inference by <strong>2-5x</strong> compared to standard 16-bit or 8-bit models!</p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Nunchaku is supported <em>only</em> on <strong>CUDA</strong> platforms using <strong>Turing/Ampere/Ada/Blackwell</strong> GPUs<br />
 Nunchaku requires Python <strong>3.11</strong> or <strong>3.12</strong>  </p>
 <p>[!NOTE]
-On Blackweel GPUs, Nunchaku will default to <code>FP4</code> methods<br />
-while on other GPU generations it will use <code>INT4</code> methods</p>
+On Blackwell GPUs, Nunchaku defaults to <code>FP4</code> methods.<br />
+On other GPU generations, it uses <code>INT4</code> methods.</p>
 </div>
 <h2 id="install">Install</h2>
-<p>SD.Next will attempt to auto-install pre-built wheels when possible,<br />
-but if you encounter issues, see <a href="./#manual-build">Manual build</a> section  </p>
+<p>SD.Next attempts to auto-install prebuilt wheels when possible.
+If that fails, use the <a href="./#manual-build">Manual build</a> section.</p>
 <h2 id="configure">Configure</h2>
-<p>To enable Nunchaku support, set appropriate quantization options in <em>Settings -&gt; Quantization</em><br />
-- <strong>Enable for modules</strong>:<br />
-  Enable or disable Nunchaku for specific modules<br />
-  Currently supports Transformers and TE<br />
-- <strong>Nunchaku attention</strong>:<br />
-  Overrides current attention module with Nunchaku's custom fp16 attention mechanism<br />
-- <strong>Nunchaku offloading</strong>:<br />
-  Overrides current offloading method with Nunchaku's custom offloading method  </p>
+<p>To enable Nunchaku support, set quantization options in <em>Settings -&gt; Quantization</em>:</p>
+<ul>
+<li><strong>Enable for modules</strong>:
+  Enable or disable Nunchaku for specific modules.
+  Currently supports Transformers and TE.</li>
+<li><strong>Nunchaku attention</strong>:
+  Replaces the current attention module with Nunchaku's custom FP16 attention.</li>
+<li><strong>Nunchaku offloading</strong>:
+  Replaces the current offloading method with Nunchaku's custom offloading.</li>
+</ul>
 <h3 id="support">Support</h3>
 <p>At the moment, Nunchaku supports following models:<br />
 - <strong>FLUX.1</strong> both <em>Dev</em> and <em>Schnell</em> variants<br />
@@ -4071,10 +4073,10 @@ but if you encounter issues, see <a href="./#manual-build">Manual build</a> sect
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>SD.Next will auto-download Nunchaku's prequantized modules as needed on first access<br />
-Nunchaku replaces model's DiT module with a custom pre-quantized one,<br />
-Any model fine-tune will be ignored  </p>
+Nunchaku replaces a model's DiT module with a custom pre-quantized module.<br />
+Any model fine-tune is ignored.  </p>
 <p>[!NOTE]
-For FLUX.1 Nunchaku supports multiple base modeles:
+For FLUX.1, Nunchaku supports multiple base models:
 - Black-Forrest FLUX.1 Dev and Schnell<br />
 - Shuttle Jaguar finetune</p>
 </div>
@@ -4085,7 +4087,7 @@ For FLUX.1 Nunchaku supports multiple base modeles:
 </div>
 <p>Nunchaku is compatible with some advanced features like:
 - <strong>LoRA</strong> loading<br />
-  however, Nunchaku uses custom LoRA loader so not all LoRAs may be supported<br />
+  however, Nunchaku uses a custom LoRA loader, so not all LoRAs may be supported<br />
 - <strong>Para-attention</strong> first-block-cache<br />
   enable in <em>Settings -&gt; Pipeline modifiers</em>  </p>
 <p>Unsupported and/or known limitations:

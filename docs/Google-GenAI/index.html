@@ -1404,6 +1404,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vertex AI (Google Cloud)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-developer-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Developer API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3831,6 +3881,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vertex AI (Google Cloud)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-developer-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Developer API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3859,35 +3959,31 @@
   
 
 
-<h1 id="google-cloud-genai-models">Google Cloud GenAI models</h1>
-<p>Google cloud GenAI models can be used for image and video generation:
-- Gemini 2.5 Flash
-- Gemini 3.0 Pro
-- Veo 3.1</p>
-<h2 id="authentication">Authentication</h2>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>To use Google GenAI models, you need to set up authentication using an <strong>API key</strong> or <strong>service account credentials</strong>,<br />
-depending on whether you are using Vertex AI or Google Developer access.</p>
-<p>[!NOTE]
-You can setup authentication via SD.Next directly via <em>settings -&gt; model options -&gt; google genai</em><br />
-Or using Google documented environment variables</p>
-</div>
+<h1 id="google-cloud-genai-models">Google Cloud GenAI Models</h1>
+<p>Google Cloud GenAI models can be used for image and video generation:</p>
 <ul>
-<li>Google cloud use VertexAI endpoints<br />
-  Use VertexAI endpoints for GenAI models, by default SD.Next will use Google Developer endpoints  </li>
-<li>If VertexAI is enabled, you need to provide service account credentials:<br />
-    Details: <a href="https://docs.cloud.google.com/docs/authentication/set-up-adc-local-dev-environment">https://docs.cloud.google.com/docs/authentication/set-up-adc-local-dev-environment</a>  </li>
-<li>If VertexAI is disabled, you need to provide an API key  </li>
-<li>Google cloud API key<br />
-  Your Google Cloud Developer API key for GenAI models<br />
-  Details: <a href="https://ai.google.dev/gemini-api/docs/api-key">https://ai.google.dev/gemini-api/docs/api-key</a></li>
-<li>Google Cloud project ID
-  Your Google Cloud project ID, required for VertexAI access<br />
-  Details: <a href="https://cloud.google.com/vertex-ai/docs/start/cloud-environment">https://cloud.google.com/vertex-ai/docs/start/cloud-environment</a></li>
-<li>Google Cloud location ID<br />
-  Your Google Cloud location ID, required for VertexAI access<br />
-  Details: <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/locations">https://cloud.google.com/vertex-ai/generative-ai/docs/learn/locations</a></li>
+<li>Gemini 2.5 Flash</li>
+<li>Gemini 3.0 Pro</li>
+<li>Veo 3.1</li>
+</ul>
+<h2 id="authentication">Authentication</h2>
+<p>To use Google GenAI models, you need to set up authentication using either an API key or service account credentials, depending on whether you're using Vertex AI or Google Developer access.</p>
+<h3 id="configuration-options">Configuration Options</h3>
+<p>You can configure authentication via:</p>
+<ul>
+<li><strong>SD.Next</strong>: Go to <em>Settings → Model Options → Google GenAI</em></li>
+<li><strong>Environment variables</strong>: Use Google-documented environment variables</li>
+</ul>
+<h3 id="vertex-ai-google-cloud">Vertex AI (Google Cloud)</h3>
+<p>Use Vertex AI endpoints for GenAI models. When Vertex AI is enabled, provide service account credentials.</p>
+<p>Details: <a href="https://docs.cloud.google.com/docs/authentication/set-up-adc-local-dev-environment">https://docs.cloud.google.com/docs/authentication/set-up-adc-local-dev-environment</a></p>
+<h3 id="google-developer-api">Google Developer API</h3>
+<p>If Vertex AI is disabled, SD.Next uses Google Developer endpoints and requires an API key.</p>
+<p>Details: <a href="https://ai.google.dev/gemini-api/docs/api-key">https://ai.google.dev/gemini-api/docs/api-key</a></p>
+<h3 id="required-settings">Required Settings</h3>
+<ul>
+<li><strong>Google Cloud Project ID</strong>: Required for Vertex AI access (details: <a href="https://cloud.google.com/vertex-ai/docs/start/cloud-environment">https://cloud.google.com/vertex-ai/docs/start/cloud-environment</a>)</li>
+<li><strong>Google Cloud Location ID</strong>: Required for Vertex AI access (details: <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/locations">https://cloud.google.com/vertex-ai/generative-ai/docs/learn/locations</a>)</li>
 </ul>
 
 

@@ -4048,15 +4048,15 @@
 
 
 <h1 id="debug">Debug</h1>
-<p>To run <strong>SD.Next</strong> in debug mode, start it with <code>--debug</code> flag<br />
-This has no overhead and can be safely used in daily operations as it just prints additional information to logs  </p>
+<p>To run <strong>SD.Next</strong> in debug mode, start it with the <code>--debug</code> flag.
+This has negligible overhead and is safe for daily use. It adds more detail to logs.</p>
 <p>Example:</p>
 <blockquote>
 <p>webui.bat --debug<br />
 webui.sh --debug  </p>
 </blockquote>
 <h2 id="extra-debug">Extra Debug</h2>
-<p>Some debug information would be too much for regular use, so it can be enabled by use of environment variables:</p>
+<p>Some debug output is too verbose for regular use, so it is controlled through environment variables.</p>
 <h3 id="install-load">Install &amp; load</h3>
 <ul>
 <li><code>SD_INSTALL_DEBUG</code>: report detailed information related to packages installation  </li>
@@ -4092,7 +4092,7 @@ webui.sh --debug  </p>
 <li><code>SD_SAVE_DEBUG</code>: report all params and metadata save operations as they happen</li>
 <li><code>SD_PASTE_DEBUG</code>: report all params paste and parse operations as they happen</li>
 <li><code>SD_HDR_DEBUG</code>: print HDR processing information</li>
-<li><code>SD_MASK_DEBUG</code>: reported detailed information on image masking operations as they happen  </li>
+<li><code>SD_MASK_DEBUG</code>: report detailed information on image masking operations as they happen  </li>
 <li><code>SD_DOWNLOAD_DEBUG</code>: report detailed information on model download operations as they happen</li>
 <li><code>SD_CALLBACK_DEBUG</code>: report each step as it executes with full details  </li>
 <li><code>SD_BROWSER_DEBUG</code>: report all gallery operations as they happen</li>
@@ -4111,10 +4111,10 @@ webui.bat --debug  </p>
 <p>export SD_PROCESS_DEBUG=true<br />
 webui.sh --debug  </p>
 </blockquote>
-<p>Additional information enabled via env variables will show in log with level <code>TRACE</code></p>
+<p>Additional information enabled through environment variables appears in logs at <code>TRACE</code> level.</p>
 <h2 id="profiling">Profiling</h2>
 <p>To run <strong>SD.Next</strong> in profiling mode, start it with <code>--profile</code> flag<br />
-This does have overhead, both on processing and memory side, so its not recommended for daily use<br />
+This adds CPU/GPU and memory overhead, so it is not recommended for daily use.<br />
 SD.Next will collect profiling information from both Python, Torch and CUDA and print it upon completion of specific operations  </p>
 <p>Example:</p>
 <blockquote>
@@ -4123,14 +4123,14 @@ webui.sh --debug --profile</p>
 </blockquote>
 <h2 id="monitoring">Monitoring</h2>
 <p>SD.Next memory usage can be monitored using <code>--monitor PERIOD</code> flag in which case,<br />
-it will print detailed memory statistics for both CPU and GPU ever n seconds  </p>
+it will print detailed memory statistics for both CPU and GPU every n seconds.  </p>
 <p>Example:</p>
 <blockquote>
 <p>webui.sh --debug --monitor</p>
 </blockquote>
 <h2 id="crashes">Crashes</h2>
 <p>If <strong>SD.Next</strong> crashes during its code, it will produce traceback in the console output<br />
-If traceback is not present and process simply exited that typically means that process crashed on the system side and app-level traceback cannot be captured</p>
+If traceback is not present and the process simply exits, that typically means the crash happened at the system level and app-level traceback could not be captured.</p>
 <p>In that case, please check system logs for more information:</p>
 <ul>
 <li><strong>Linux</strong>: kernel logs <code>dmesg -ku</code></li>

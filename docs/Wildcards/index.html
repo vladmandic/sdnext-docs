@@ -2432,10 +2432,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How does it work?
+        How It Works
       
     </span>
   </a>
@@ -3862,10 +3862,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How does it work?
+        How It Works
       
     </span>
   </a>
@@ -3938,14 +3938,17 @@
 
 
 <h1 id="wildcards-in-prompts">Wildcards in Prompts</h1>
-<p>Wildcards are placeholders in the prompt text that are replaced with a random value from a list of choices which allows for more variety in the prompts generated.  </p>
+<p>Wildcards are placeholders in prompt text.
+Each placeholder is replaced with a random value from a list, which adds variety to generated prompts.</p>
 <ul>
 <li>SD.Next supports standard file-based wildcards in prompts.</li>
-<li>Wildcard support is enabled by default, can be disabled in <em>settings -&gt; extra networks</em> if you want to use 3rd party extension instead of SD.Next built-in support.  </li>
-<li>Wildcards folder is set in <em>settings -&gt; system paths</em>, default is <code>models\wildcards</code></li>
+<li>Wildcard support is enabled by default.
+  You can disable it in <em>Settings -&gt; Extra Networks</em> if you want to use a third-party extension instead of SD.Next built-in support.</li>
+<li>Wildcards folder is set in <em>Settings -&gt; System Paths</em>.
+  Default path: <code>models\wildcards</code>.</li>
 </ul>
-<h2 id="how-does-it-work">How does it work?</h2>
-<p><em>TL;DR</em>: string <code>"__abc__"</code> in prompt is matched to a file <code>abc.txt</code> inside wildcards folder</p>
+<h2 id="how-it-works">How It Works</h2>
+<p><em>TL;DR</em>: the string <code>__abc__</code> in a prompt is matched to a file named <code>abc.txt</code> in the wildcards folder.</p>
 <p>The prompt syntax for wildcards is:</p>
 <blockquote>
 <p>a woman wearing a <code>__color__</code> dress</p>
@@ -3960,7 +3963,7 @@ blue
 <blockquote>
 <p><code>woman with {blonde|brunette|red-head|purple highlights} hair</code></p>
 </blockquote>
-<p>You can also mix and match both wildcards and curly braces in the same prompt and even nest them:</p>
+<p>You can combine file-based wildcards and inline choices in the same prompt, including nested forms:</p>
 <blockquote>
 <p><code>woman with {blonde|__color__} hair</code>
 <code>woman with {blonde|brunette|auburn|{purple|pink|green}} hair</code></p>
@@ -3971,24 +3974,24 @@ blue
 <code>woman with {blonde:.4:|brunette:.4|{purple:.2|pink:.4|cyan}} hair</code>
 <code>woman with {blonde:8:|brunette:4|red-head:2|purple highlights:1} hair</code></p>
 </blockquote>
-<p>The allowed weight range is [0:1], if a weight is above 1, the whole range gets normalized.</p>
+<p>The allowed weight range is [0:1]. If a weight is above 1, the whole range is normalized.</p>
 <h2 id="tips">Tips</h2>
 <ul>
-<li>Wildcards can be used in both positive and negative prompts  </li>
+<li>Wildcards can be used in both positive and negative prompts</li>
 <li>Prompt can have any number of wildcards<blockquote>
 <p>a woman wearing a <code>__color__</code> dress and a <code>__shape__</code> hat</p>
 </blockquote>
 </li>
 <li>Wildcards can be nested<br />
-  Line inside wildcard file can also have a wildcard referrring to another wildcard, etc.  </li>
+  A line inside a wildcard file can reference another wildcard.</li>
 <li>Supports filename-only and path-based wildcards with full subfolder support<br />
-  If wildcard is refered as <code>__color__</code> then it will look for  </li>
+  If wildcard is referenced as <code>__color__</code>, it looks for:</li>
 <li>file <code>color.txt</code> in <em>any</em> subfolders<br />
-  If wildcard is refered as <code>__color/__</code> then it will look for  </li>
+  If wildcard is referenced as <code>__color/__</code>, it looks for:</li>
 <li>folder <code>color</code> with any wildcard files inside it<br />
-  If wildcard is refered as <code>__nsp/color__</code> then it will look for  </li>
+  If wildcard is referenced as <code>__nsp/color__</code>, it looks for:</li>
 <li><code>color.txt</code> <em>only</em> in <code>nsp</code> folder inside wildcards folder  </li>
-<li>Wildcards files can be in one-choice per line or multiple choices per line separated by <code>|</code> format  </li>
+<li>Wildcard files can use one choice per line, or multiple choices per line separated by <code>|</code></li>
 </ul>
 <h3 id="validation">Validation</h3>
 <p>Wildcard matches and replacements will be logged in the standard log with debug level:</p>

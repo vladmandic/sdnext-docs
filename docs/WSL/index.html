@@ -4227,11 +4227,10 @@
 
 <h1 id="sdnext-with-wsl-on-windows">SD.Next with WSL on Windows</h1>
 <h2 id="wsl-windows-subsystem-for-linux">WSL: Windows Subsystem for Linux</h2>
-<p>WSL is a way to run Linux inside Windows virtual machine thus having full Linux feature set without needing to have separate Linux installation</p>
-<p>Step-by-step guide to install WSL2 distro on Windows 10/11 and configure it for SD.Next development  </p>
-<p>Guide is targeted towards nVidia GPUs where WSL support is available out-of-the-box<br />
-Additional GPU vendors may be supported, but are not covered by this guide</p>
-<p>Assumption is that WSL requirements from OS side are already installed and GPU has recent drivers installed  </p>
+<p>WSL lets you run Linux inside Windows, so you can use a full Linux environment without a separate Linux installation.</p>
+<p>This guide covers installing a WSL2 distro on Windows 10/11 and configuring it for SD.Next.<br />
+It targets nVidia GPUs, where WSL support is available out of the box. Other GPU vendors may work, but are not covered here.</p>
+<p>It assumes WSL prerequisites are already enabled in Windows and that your GPU drivers are up to date.  </p>
 <h2 id="wsl-installation">WSL Installation</h2>
 <h3 id="verify-wsl">Verify WSL</h3>
 <div class="admonition warning">
@@ -4239,8 +4238,7 @@ Additional GPU vendors may be supported, but are not covered by this guide</p>
 <p>WSL requires virtualization to be enabled in BIOS<br />
 Note that this is not compatible with some overclocking tools such as Intel's XTU</p>
 </div>
-<p>Make sure that wsl subsystem is installed:<br />
-From <em>command prompt</em>:  </p>
+<p>Make sure the WSL subsystem is installed. From <em>Command Prompt</em>:  </p>
 <blockquote>
 <p>wsl --status<br />
 wsl --version</p>
@@ -4255,7 +4253,7 @@ DXCore version: 10.0.25131.1002-220531-1700.rs-onecore-base2-hyp
 Windows version: 10.0.22635.3430
 </code></pre>
 <h3 id="install-wsl">Install WSL</h3>
-<p>Pick Linux distro to use:</p>
+<p>Choose a Linux distro:</p>
 <blockquote>
 <p>wsl --list --online</p>
 </blockquote>
@@ -4280,24 +4278,23 @@ OracleLinux_7_9                 Oracle Linux 7.9
 OracleLinux_8_7                 Oracle Linux 8.7
 OracleLinux_9_1                 Oracle Linux 9.1
 </code></pre>
-<p>Recommended is <strong>Ubuntu-22.04 LTS</strong><br />
+<p>Recommended: <strong>Ubuntu-24.04 LTS</strong>.<br />
 Install it:</p>
 <blockquote>
 <p>wsl --install -d Ubuntu-24.04</p>
 </blockquote>
 <pre><code>Installing: Ubuntu 24.04 LTS
 </code></pre>
-<p>When prompted to create user and password, provide them (in this example we'll use <code>myuser</code>)<br />
-After installation completes you'll automatically be placed in the <em>bash</em> shell of the new distro  </p>
-<p><em>Note</em>: WSL installation does not allow to pick distro friendly name or location, those can be changed later  </p>
+<p>When prompted, create a user and password (this guide uses <code>myuser</code>).<br />
+After installation completes, WSL opens a <code>bash</code> shell in the new distro.  </p>
+<p><em>Note</em>: WSL install does not let you choose the distro friendly name or storage location. You can change those later.  </p>
 <h3 id="update-wsl">Update WSL</h3>
 <p>From <em>bash</em>:  </p>
 <blockquote>
 <p>sudo apt update<br />
 sudo apt dist-upgrade  </p>
 </blockquote>
-<p><strong>ubuntu 24.04</strong> already comes with <strong>python</strong> and <strong>git</strong>, so no need to install them<br />
-but we do need to install <strong>venv</strong> tools:</p>
+<p><strong>Ubuntu 24.04</strong> already includes Python and Git, but you still need venv tools:</p>
 <blockquote>
 <p>sudo apt install python3.11-venv python3-pip<br />
 python3 --version<br />
@@ -4309,7 +4306,7 @@ git version 2.43.0
 <p>Also, required NV libs are already present and linked which makes using nVidia GPU with this distro very easy  </p>
 <h3 id="memory">Memory</h3>
 <p>By default WSL allocates 50% of total memory on Windows<br />
-If you want to allow WSL to use more memory, increase its memory limits.  </p>
+If you want WSL to use more memory, increase its memory limit.  </p>
 <p>For example, edit WSL configuration</p>
 <blockquote>
 <p><code>C:\Users\&lt;username&gt;\.wslconfig</code></p>
@@ -4320,7 +4317,7 @@ nestedVirtualization=false
 debugConsole=false
 memory=51539607552
 </code></pre>
-<p>This will allocate 48GB (48 * 1024^3) to WSL</p>
+<p>This allocates 48 GB ($48 \times 1024^3$) to WSL.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Keep in mind that WSL allocated memory should be<br />
@@ -4328,10 +4325,10 @@ total available memory - reserved memory required for Windows,<br />
 so don't go overboard</p>
 </div>
 <h3 id="move-wsl">Move WSL</h3>
-<p>This step is <em>optional</em> if you want to move WSL2 distro to another location<br />
+<p>This step is <em>optional</em> if you want to move a WSL2 distro to another location.<br />
 Default installation path is <code>%USERPROFILE%\AppData\Local\Packages\&lt;PackageName_with_ID&gt;\LocalState\ext4.vhdx</code><br />
 For example: <code>C:\Users\mandiv\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc\LocalState\ext4.vhdx</code>  </p>
-<p>In this example we'll move it to <code>D:\WSL\</code> and use friendly name <code>MyUbuntu</code>  </p>
+<p>In this example, move it to <code>D:\WSL\</code> and use the friendly name <code>MyUbuntu</code>.  </p>
 <p>From command prompt:<br />
 Shutdown WSL</p>
 <blockquote>
@@ -4358,7 +4355,7 @@ wsl --set-default MyUbuntu  </p>
 <blockquote>
 <p>wsl --distribution MyUbuntu --user myuser</p>
 </blockquote>
-<p>And then from <em>bash</em>:</p>
+<p>Then in <code>bash</code>:</p>
 <blockquote>
 <p>cd<br />
 git clone <a href="https://github.com/vladmandic/sdnext/">https://github.com/vladmandic/sdnext/</a> sdnext<br />
@@ -4381,17 +4378,16 @@ Local URL: http://127.0.0.1:7860/
 ...
 Startup time: 10.98 torch=1.90 gradio=0.40 libraries=0.88 extensions=0.52 face-restore=6.00 ui-en=0.09 ui-control=0.06 ui-extras=0.13 ui-settings=0.13 ui-extensions=0.25 launch=0.21 api=0.05 app-started=0.12
 </code></pre>
-<p><em>Note</em>: This will install sdnext into <code>/home/myuser/sdnext</code>, but feel free to modify path as desired  </p>
-<p>Now just use your browser to navigate to specified url and that's it</p>
+<p><em>Note</em>: This installs SD.Next into <code>/home/myuser/sdnext</code>, but you can use any path you prefer.  </p>
+<p>Open your browser and navigate to the shown URL.</p>
 <h3 id="configure-sdnext">Configure SD.Next</h3>
 <p>If you want to share entire configuration (config files, extensions, output folders, models, etc)<br />
-between different SD.Next installations, start SD.Next with <code>--data-dir</code> cmd flag  </p>
+between different SD.Next installations, start SD.Next with <code>--data-dir</code>.  </p>
 <p>For example, to access previous Windows data on <code>C:\SDNext</code>, use <code>./webui.sh --data-dir /mnt/c/SDNext</code></p>
-<p>or if you want to share just models, use <code>--model-dir</code> cmd flag, for example <code>./webui.sh --model-dir /mnt/c/SDNext/models</code></p>
+<p>If you only want to share models, use <code>--model-dir</code>, for example <code>./webui.sh --model-dir /mnt/c/SDNext/models</code>.</p>
 <h2 id="additional-info">Additional Info</h2>
 <h3 id="additional-packages">Additional Packages</h3>
-<p>If you're using some other distro than recommended one,<br />
-you may need to install additional packages such as:</p>
+<p>If you use a different distro, you may need extra packages such as:</p>
 <ul>
 <li>upgrade Python (if it is below 3.9) or downgrade Python (if it is above 3.12)</li>
 </ul>
@@ -4406,12 +4402,12 @@ export PYTHON=/usr/bin/python3.11</p>
 <h3 id="memory-optimizations">Memory Optimizations</h3>
 <p>See <a href="../Malloc/">Malloc</a> for details on how to optimize memory usage  </p>
 <h3 id="dev-vs-master">Dev vs Master</h3>
-<p>to switch to to use development version of SD.Next:</p>
+<p>To switch to the development branch:</p>
 <blockquote>
 <p>git pull
 git checkout dev</p>
 </blockquote>
-<p>to switch back to master:</p>
+<p>To switch back to <code>master</code>:</p>
 <blockquote>
 <p>git checkout master</p>
 </blockquote>
@@ -4431,7 +4427,7 @@ Optionally install SMB client (<code>samba</code>) in Ubuntu, export models fold
 </blockquote>
 <ol>
 <li>
-<p>Create credentials file <code>.cred</code> in your home folder (e.g. <code>/home/myuser/.cred</code>) with the following content:</p>
+<p>Create credentials file <code>.cred</code> in your home folder (for example <code>/home/myuser/.cred</code>) with the following content:</p>
 <p>touch .cred
 chmod 600 .cred
 echo "username=yourwindowsusername" &gt;&gt; .cred
@@ -4439,7 +4435,7 @@ echo "password=yourwindowspassword" &gt;&gt; .cred</p>
 </li>
 </ol>
 <div class="admonition tip">
-<p class="admonition-title">How to get internal-loopback IP of your Window host?</p>
+<p class="admonition-title">How to get internal-loopback IP of your Windows host?</p>
 <p><code>ip route show | grep -i default | awk '{ print $3}'</code></p>
 </div>
 <ol>

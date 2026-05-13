@@ -1877,6 +1877,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1893,6 +1911,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positive-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positive Prompt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#negative-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negative Prompt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#width-and-height" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Width and Height
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cfg-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CFG Scale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seed
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3768,6 +3882,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positive-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positive Prompt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#negative-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negative Prompt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#width-and-height" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Width and Height
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sampler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cfg-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CFG Scale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seed
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3792,27 +3991,24 @@
   
 
 
-<h1 id="getting-started">Getting started</h1>
-<p>This section describes how to use sdnext with assumption of basic knowledge of stable Diffusion. This section will show you how easy it is to generate images with SDNext with a few clicks. As a user only adjust and click the settings highlighted and noted in red ink</p>
-<p>On running the <code>./webui.bat</code> the main page will load up which looks like the following below:
- <!-- image here -->
-</p>
-<p>The following sections are important and need to be modified by the user for an image to be generated. All red sections selected with red ink are sections the user must adjust and implement.</p>
-<p><strong>Base Model</strong>
-This is the base model you are going to use to generate an image with. This is also called a checkpoint. From the civitAi website there are hundreds if not thousands of models you can download and use. Note that models are typically very large typically in the range of ~2Gb to 30Gb of space.
-these models are typically stored in the models/stable-diffusion folder of your sdnext directory.</p>
-<p><strong>Positive Prompt</strong>
-There are two prompts positive and negative. The positive prompts is where you write and describe the image and picture you wish to generate.</p>
-<p><strong>Negative Prompt</strong>
-This is the section where you write descriptions and components you DON'T want in your image. For example if your are drawing an anime girl sitting on a desk, typical negative prompts can and could be making sure you have a detailed face or not having several hand and legs. Note that there are also embeddings you can use such as bad hands which will be written and placed here.</p>
-<p><strong>Width and Height</strong>
-are the image size you wish to work with. For SD1.5 image typically you start with 512x512 or 512x768 images. Using images larger then the training size do not help in image generation and result in poor or horrible images generated. Typically the following image resolutions are used and desired based on the following</p>
-<p><strong>Sampling Types:</strong>
-The sampler is the method used to generate the image, along with the number of steps it uses. Increasing the step count does not always improve image quality. It only consumes more resources and may even degrade the result, so it is best to choose an appropriate number of steps. For example, Euler A can typically generate good images in about 24 steps. See the Sampler section for more information.</p>
-<p><strong>CFG Scale:</strong>
-This controls how closely the AI follows your prompt. Again, an appropriate value should be chosen. If the CFG value is too low, the AI is given more freedom. If it is too high, you restrict the AI and force it to follow the prompt more closely. Typical CFG values are between 6 and 9. Values much lower or higher often produce worse results.</p>
-<p><strong>Seed:</strong>
-The seed is the number. An unique number for every image that is generated. Setting it to -1 you will get a random new image everytime. If you wish to upload or use a pre-existing image say from civitAI, use the process tab and import the settings and you will see the seed value will be the number of the existing generated image.</p>
+<h1 id="getting-started">Getting Started</h1>
+<p>This guide covers the basics of generating images with SD.Next, assuming the application is already installed.</p>
+<p>Open the web interface by running <code>webui.bat</code> (Windows) or <code>./webui.sh</code> (Linux/Mac). The main page loads with the <strong>Text</strong> tab active by default.</p>
+<p>The following settings are required before generating an image:</p>
+<h3 id="base-model">Base Model</h3>
+<p>The base model (also called a checkpoint) determines the visual style and capabilities of image generation. Models are available on <a href="https://civitai.com">CivitAI</a> and <a href="https://huggingface.co">Hugging Face</a>, and typically range from 2 GB to 30 GB. Place downloaded models in the <code>models/stable-diffusion/</code> folder inside your SD.Next directory.</p>
+<h3 id="positive-prompt">Positive Prompt</h3>
+<p>Describe what you want in the image. Be specific about subjects, style, lighting, and composition.</p>
+<h3 id="negative-prompt">Negative Prompt</h3>
+<p>Describe what you do <em>not</em> want in the image. Common entries include anatomy issues (e.g., extra limbs, distorted faces) and style elements to avoid. Negative embeddings such as <code>bad-hands-5</code> can also be placed here.</p>
+<h3 id="width-and-height">Width and Height</h3>
+<p>Set the output image dimensions. For SD 1.5 models, start with 512×512 or 512×768. Generating at sizes significantly larger than a model's training resolution often degrades quality.</p>
+<h3 id="sampler">Sampler</h3>
+<p>The sampler controls the algorithm and number of steps used during generation. More steps do not always improve quality and always increase generation time. <code>Euler A</code> typically produces good results in around 24 steps. See the <a href="Samplers">Samplers</a> page for details.</p>
+<h3 id="cfg-scale">CFG Scale</h3>
+<p>Controls how closely the output follows your prompt. Values between 6 and 9 are typical. Too low gives the model more creative freedom; too high can produce over-saturated or distorted results.</p>
+<h3 id="seed">Seed</h3>
+<p>A unique number assigned to each generated image. Set to <code>-1</code> for a random seed on every run. To reproduce settings from an image found online, use the <strong>Process</strong> tab to import its metadata — the seed will be included.</p>
 
 
 

@@ -2676,12 +2676,12 @@
   <a href="#face-script" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Face script
+        Face Script
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Face script">
+    <nav class="md-nav" aria-label="Face Script">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2737,7 +2737,7 @@
   <a href="#kohya-hires-fix" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kohya HiRes fix
+        Kohya HiRes Fix
       
     </span>
   </a>
@@ -2792,7 +2792,7 @@
   <a href="#prompt-from-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prompt from file
+        Prompt from File
       
     </span>
   </a>
@@ -2803,12 +2803,12 @@
   <a href="#regional-prompting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Regional prompting
+        Regional Prompting
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Regional prompting">
+    <nav class="md-nav" aria-label="Regional Prompting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4165,12 +4165,12 @@
   <a href="#face-script" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Face script
+        Face Script
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Face script">
+    <nav class="md-nav" aria-label="Face Script">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4226,7 +4226,7 @@
   <a href="#kohya-hires-fix" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kohya HiRes fix
+        Kohya HiRes Fix
       
     </span>
   </a>
@@ -4281,7 +4281,7 @@
   <a href="#prompt-from-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prompt from file
+        Prompt from File
       
     </span>
   </a>
@@ -4292,12 +4292,12 @@
   <a href="#regional-prompting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Regional prompting
+        Regional Prompting
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Regional prompting">
+    <nav class="md-nav" aria-label="Regional Prompting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4467,23 +4467,26 @@
 </ul>
 <h2 id="script-list">Script List</h2>
 <h3 id="xyz-grid">X/Y/Z Grid</h3>
-<p>The X/Y/Z Grid script is a way of generating multiple images with automatic changes in the image, and then displaying the result in labelled grids.</p>
-<p>To activate the X/Y/Z Grid, scroll down to the Script dropdown and select "X/Y/Z Grid" within.</p>
-<p>Several new UI elements will appear.</p>
-<p>X, Y, and Z types are where you can specify what to change in your image.</p>
-<p>X type will create columns, Y type will create rows, and Z type will create separate grid images, to emulate a "3D grid"
-The X, Y, Z values are where to specify what to change. For some types, there will be a dropdown box to select values, otherwise these values are comma-separated.</p>
-<p>Most of these are fairly self explanatory, such as Model, Seed, VAE, Clip skip, and so on.</p>
+<p>The X/Y/Z Grid script generates multiple images with automatic parameter changes and displays results in labeled grids.</p>
+<p>To enable it, scroll to the Script dropdown and select "X/Y/Z Grid".</p>
+<p>X, Y, and Z types specify what to change:</p>
+<ul>
+<li><strong>X type</strong>: Creates columns</li>
+<li><strong>Y type</strong>: Creates rows</li>
+<li><strong>Z type</strong>: Creates separate grid images (emulating a "3D grid")</li>
+</ul>
+<p>For some types, use a dropdown to select values. For others, enter comma-separated values.</p>
 <h3 id="prompt-sr">Prompt S/R</h3>
-<p>"Prompt S/R" is Prompt Search and Replace. After selecting this type, the first word in your value should be a word already in your prompt, followed by comma-separated words to change from this word to other words.</p>
-<p>For example, if you're generating an image with the prompt "a lazy cat" and you set Prompt S/R to <code>cat,dog,monkey</code>, the script will create 3 images of;
-<code>a lazy cat</code>, <code>a lazy dog</code>, and <code>a lazy monkey</code>.</p>
-<p>You're not restricted to a single word, you could have multiple words; <code>lazy cat,boisterous dog,mischeavous monkey</code>, or the entire prompt; <code>a lazy cat,three blind mice,an astronaut on the moon</code>.</p>
-<p>Embeddings and Loras are also valid Search and Replace terms; <code>&lt;lora:FirstLora:1&gt;,&lt;lora:SecondLora:1&gt;,&lt;lora:ThirdLora:1&gt;</code>.</p>
-<p>You could also change the strength of a lora; <code>&lt;lora:FirstLora:1&gt;,&lt;lora:FirstLora:0.75&gt;,&lt;lora:FirstLora:0.5&gt;,&lt;lora:FirstLora:0.25&gt;</code>.<br />
-(Note: You could strip this down to <code>FirstLora:1,FirstLora:0.75,FirstLora:0.5,FirstLora:0.25</code>.)</p>
-<h3 id="face-script">Face script</h3>
-<p>SD.NEXT's face script is used for 4 different face scripts:</p>
+<p>"Prompt S/R" is Prompt Search and Replace. After selecting this type, enter the word to search for (which must be in your prompt) followed by comma-separated replacement words.</p>
+<p>Example: If generating an image with the prompt "a lazy cat" and you set Prompt S/R to <code>cat,dog,monkey</code>, the script creates 3 images:
+- <code>a lazy cat</code>
+- <code>a lazy dog</code>
+- <code>a lazy monkey</code></p>
+<p>You can use multiple words or entire prompts: <code>lazy cat,boisterous dog,mischievous monkey</code> or <code>a lazy cat,three blind mice,an astronaut on the moon</code>.</p>
+<p>Embeddings and LoRAs are also valid search and replace terms: <code>&lt;lora:FirstLora:1&gt;,&lt;lora:SecondLora:1&gt;,&lt;lora:ThirdLora:1&gt;</code>.</p>
+<p>You can also change LoRA strength: <code>&lt;lora:FirstLora:1&gt;,&lt;lora:FirstLora:0.75&gt;,&lt;lora:FirstLora:0.5&gt;,&lt;lora:FirstLora:0.25&gt;</code> (can be shortened to <code>FirstLora:1,FirstLora:0.75,FirstLora:0.5,FirstLora:0.25</code>).</p>
+<h3 id="face-script">Face Script</h3>
+<p>SD.Next supports 4 face scripts:</p>
 <ul>
 <li><a href="https://huggingface.co/h94/IP-Adapter-FaceID">FaceID</a></li>
 <li><a href="https://github.com/deepinsight/insightface/blob/master/examples/in_swapper/README.md">FaceSwap</a></li>
@@ -4491,101 +4494,103 @@ The X, Y, Z values are where to specify what to change. For some types, there wi
 <li><a href="https://photo-maker.github.io/">PhotoMaker</a></li>
 </ul>
 <h4 id="faceid">FaceID</h4>
-<p>First select your desired FaceID model and then upload a good picture of the desired face.</p>
-<p><strong>Strength</strong>: How much the script should be applied to the image.<br />
-<strong>Structure</strong>: How much similarity there is between the uploaded image and the generated image.  </p>
-<h4 id="faceswap">FaceSwap</h4>
-<p>You only have to upload a good picture of the desired face.</p>
-<h4 id="instantid">InstantID</h4>
-<p>Add an input image with a good picture of the desired face.
-<strong>Strength</strong>: How much the script should be applied to the image.<br />
-<strong>Control</strong>: How much similarity there is between the uploaded image and the generated image.  </p>
-<h4 id="photomaker">PhotoMaker</h4>
-<p>Add an input image with a good picture of the desired face.
-<strong>Strength</strong>: How much the script should be applied to the image.<br />
-<strong>Start</strong>: When the script should be activated during the image generation process.  </p>
-<!-- Add image here -->
-
-<h3 id="kohya-hires-fix">Kohya HiRes fix</h3>
-<p>The <a href="https://github.com/wcde/sd-webui-kohya-hiresfix">Kohya HiRes fix</a> in SD.NEXT is a great way to generate higher resolution images without getting deformities, it's quite easy to use and not that intensive on your system. It's pretty straight forward but it will take some experimenting to see what's the best settings for your image.</p>
-<p>You select the kohya hires fix in the scripts and then you can change the settings to your needs. (<strong>Note: it takes a lot of experimentation to see what works for you</strong>).</p>
+<p>Select the desired FaceID model and upload a clear picture of the desired face.</p>
 <ul>
-<li><strong>Scale Factor</strong>: The value that determines the scaling factor applied to the input data during the processing. It controls the magnitude of the changes made to the data.</li>
-<li><strong>Timestep</strong>: Timestep represents the time step used in the the processing. It determines the granularity of the processing and how the input data is transformed over time.</li>
-<li><strong>Block</strong>: Block represents the number of blocks used in the processing. It determines the partitioning of the input data into smaller segments for processing.</li>
+<li><strong>Strength</strong>: How much the script is applied to the image</li>
+<li><strong>Structure</strong>: How much similarity between the uploaded and generated image</li>
+</ul>
+<h4 id="faceswap">FaceSwap</h4>
+<p>Upload a clear picture of the desired face.</p>
+<h4 id="instantid">InstantID</h4>
+<p>Add an input image with a clear picture of the desired face.</p>
+<ul>
+<li><strong>Strength</strong>: How much the script is applied to the image</li>
+<li><strong>Control</strong>: How much similarity between the uploaded and generated image</li>
+</ul>
+<h4 id="photomaker">PhotoMaker</h4>
+<p>Add an input image with a clear picture of the desired face.</p>
+<ul>
+<li><strong>Strength</strong>: How much the script is applied to the image</li>
+<li><strong>Start</strong>: When the script should be activated during image generation</li>
+</ul>
+<h3 id="kohya-hires-fix">Kohya HiRes Fix</h3>
+<p>The <a href="https://github.com/wcde/sd-webui-kohya-hiresfix">Kohya HiRes Fix</a> generates higher-resolution images without deformities. It requires experimentation to find optimal settings for your use case.</p>
+<p>Select the script and adjust settings as needed. Common parameters:</p>
+<ul>
+<li><strong>Scale Factor</strong>: Determines the scaling magnitude applied to input data</li>
+<li><strong>Timestep</strong>: Represents the time step used in processing; determines processing granularity</li>
+<li><strong>Block</strong>: Represents the number of blocks used; determines data partitioning into smaller segments</li>
 </ul>
 <h3 id="layerdiffuse">LayerDiffuse</h3>
-<p>LayerDiffuse allows you to create transparent images with Diffusers.</p>
-<p>Simply select <a href="https://github.com/rootonchair/diffuser_layerdiffuse">LayerDiffuse</a> in the scripts and then click on apply to model after setting everything up. If you want to disable it, simply disable the script. (<strong>Note: You have to reload the model and applying it again after making changes like: adding Lora, Controlnet or IP Adapters</strong>).</p>
+<p>LayerDiffuse creates transparent images with Diffusers. Select <a href="https://github.com/rootonchair/diffuser_layerdiffuse">LayerDiffuse</a> in the scripts and click "Apply to Model" after configuring. To disable it, uncheck the script.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reload the model and reapply after making changes like adding LoRA, ControlNet, or IP Adapters.</p>
+</div>
 <h3 id="mixture-tiling">Mixture Tiling</h3>
-<p><a href="https://github.com/albarji/mixture-of-diffusers">Mixture of Diffusers</a>, an algorithm that builds over existing diffusion models to provide a more detailed control over composition. By harmonizing several diffusion processes acting on different regions of a canvas, it allows generating larger images, where the location of each object and style is controlled by a separate diffusion process.</p>
-<p>To use it you have to select in the scripts, then you have to write your prompts with newlines between them, so for example:  </p>
-<p><strong>bird</strong><br />
-<strong>plane</strong><br />
-<strong>dog</strong><br />
-<strong>cat</strong>  </p>
-<p>X and Y have to be so if you do X times Y the outcome would be the amount of lines/prompts you have. For the example above you would have to do X=2 and Y=2, X times Y = 4 and you have 4 lines of prompts in the example above.</p>
-<p><strong>The X and Y overlap</strong>: if you set overlap regions to 0, you're basically getting a combined grid of images. adjust overlap so images can blend and the resulting image actually makes sense.</p>
-<p><strong>Note: each region is a separate generate process and then they are combined.</strong></p>
+<p><a href="https://github.com/albarji/mixture-of-diffusers">Mixture of Diffusers</a> allows detailed control over composition by harmonizing multiple diffusion processes on different canvas regions. This enables generating larger images where each object and style is controlled by a separate process.</p>
+<p>To use it, select the script and enter prompts separated by newlines:</p>
+<div class="highlight"><pre><span></span><code>bird
+plane
+dog
+cat
+</code></pre></div>
+<p>Set X and Y so that X × Y equals the number of prompts. For the example above, use X=2 and Y=2.</p>
+<p><strong>Overlap</strong>: Set overlap regions to 0 for a combined grid, or adjust to allow images to blend smoothly.</p>
 <h3 id="mulan">MuLan</h3>
-<p>MuLan, a versatile framework to equip any diffusion model with multilingual generation abilities natively by up to 110+ languages around the world.</p>
-<p>Simply enable <a href="https://github.com/mulanai/MuLan">MuLan</a> in the scripts and start prompting in your desired language, then click generate.</p>
+<p><a href="https://github.com/mulanai/MuLan">MuLan</a> equips diffusion models with multilingual generation in 110+ languages. Simply enable it in the scripts and prompt in your desired language.</p>
 <h3 id="prompt-matrix">Prompt Matrix</h3>
-<p>Prompt Matrix is useful for testing and comparing the changes prompts are making to your generated images.</p>
-<p>First enable prompt matrix in your scripts.</p>
-<p>Then create your prompt like this:<br />
-<code>Woman|Red hair|Blue eyes</code>  </p>
-<p>You can make the prompt like this as big as you want. What it will do is it will generate a grid of images, one without the red hair and blue eyes, one with Woman + Red hair, one with Woman + Blue eyes and one with Woman + Red hair + Blue eyes.</p>
+<p>Prompt Matrix generates a grid of images to test and compare different prompt components. Enable it and create your prompt like this:</p>
+<div class="highlight"><pre><span></span><code>Woman|Red hair|Blue eyes
+</code></pre></div>
 <ul>
-<li><strong>Set at prompt start</strong>: This will make it so the example of above will be used like this Red hair|Blue eyes|Woman, so in other words it will use the secondary prompts first before adding Woman to it, for example like this: Red hair, Woman.</li>
-<li><strong>Random seeds</strong>: It will use a different seed for every image in the grid.</li>
-<li><strong>Prompt type</strong>: To pick for what prompt you wanna use this script.</li>
-<li><strong>Joining char</strong>: Comma: Woman, Red hair, space: Woman Red hair.</li>
-<li><strong>Grid margins</strong>: The space between each image in the grid.</li>
+<li><strong>Set at Prompt Start</strong>: Reorder so secondary prompts come before the primary</li>
+<li><strong>Random Seeds</strong>: Use a different seed for each image</li>
+<li><strong>Prompt Type</strong>: Select which prompt type to apply this to</li>
+<li><strong>Joining Char</strong>: Choose separator (comma or space)</li>
+<li><strong>Grid Margins</strong>: Space between images</li>
 </ul>
-<h3 id="prompt-from-file">Prompt from file</h3>
-<p>Prompt from file allows you to use generation settings from a file including the prompt.</p>
-<p>First you need to create a .txt file and type something like this:<br />
-<code>--prompt "what ever you want" --negative_prompt "whatever you don't want" --steps 30 --cfg_scale 10 --sampler_name "DPM++ SDE Karras" --seed -1 --width 512 --height 768</code> <br>
-Then upload the file to SD.NEXT at upload prompts.<br />
-You can also type it in the prompts box for the same result although it won't be saved if you shutdown SD.NEXT.</p>
-<h3 id="regional-prompting">Regional prompting</h3>
-<p>This pipeline is a port of the <a href="https://github.com/huggingface/diffusers/blob/main/examples/community/README.md#regional-prompting-pipeline">Regional Prompter</a> extension for Stable Diffusion web UI to diffusers. This code implements a pipeline for the Stable Diffusion model, enabling the division of the canvas into multiple regions, with different prompts applicable to each region. Users can specify regions in two ways: using Cols and Rows modes for grid-like divisions, or the Prompt mode for regions calculated based on prompts.</p>
+<h3 id="prompt-from-file">Prompt from File</h3>
+<p>Load generation settings and prompts from a file. Create a <code>.txt</code> file with settings like:</p>
+<div class="highlight"><pre><span></span><code>--prompt<span class="w"> </span><span class="s2">&quot;whatever you want&quot;</span><span class="w"> </span>--negative_prompt<span class="w"> </span><span class="s2">&quot;whatever you don&#39;t want&quot;</span><span class="w"> </span>--steps<span class="w"> </span><span class="m">30</span><span class="w"> </span>--cfg_scale<span class="w"> </span><span class="m">10</span><span class="w"> </span>--sampler_name<span class="w"> </span><span class="s2">&quot;DPM++ SDE Karras&quot;</span><span class="w"> </span>--seed<span class="w"> </span>-1<span class="w"> </span>--width<span class="w"> </span><span class="m">512</span><span class="w"> </span>--height<span class="w"> </span><span class="m">768</span>
+</code></pre></div>
+<p>Then upload the file to SD.Next in the prompt upload section. You can also type settings directly in the prompts box for the same result (though changes won't be saved after shutdown).</p>
+<h3 id="regional-prompting">Regional Prompting</h3>
+<p>Regional Prompting divides the canvas into multiple regions, each with separate prompts. Regions can be specified as a grid or calculated from prompts.</p>
 <h4 id="cols-and-rows">Cols and Rows</h4>
-<p>In the Cols, Rows mode, you can split the screen vertically and horizontally and assign prompts to each region. The split ratio can be specified by 'div', and you can set the division ratio like '3;3;2' or '0.1;0.5'. Furthermore, as will be described later, you can also subdivide the split Cols, Rows to specify more complex regions.  </p>
-<p>In this image, the image is divided into three parts, and a separate prompt is applied to each. The prompts are divided by 'BREAK', and each is applied to the respective region.  </p>
-<p><em>Example:</em><br />
-Mode used: <code>rows</code><br />
-Prompt used:<br />
-<code>green hair twintail BREAK</code><br />
-<code>red blouse BREAK</code><br />
-<code>blue skirt</code><br />
-Grid sections: <code>1,1,1</code>  </p>
-<p><em>Here is a more advanced example:</em><br />
-Mode used: <code>rows</code><br />
-Prompt used:<br />
-<code>blue sky BREAK</code><br />
-<code>green hair BREAK</code><br />
-<code>book shelf BREAK</code><br />
-<code>terrarium on the desk BREAK</code><br />
-<code>orange dress and sofa</code><br />
-Grid sections: <code>1,2,1,1;2,4,6</code>  </p>
+<p>Split the screen vertically and horizontally, assigning a prompt to each region. The split ratio is specified by 'div' (e.g. '3;3;2' or '0.1;0.5'). You can also subdivide regions for more complex layouts.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>Mode: rows
+Prompt: green hair twintail BREAK
+        red blouse BREAK
+        blue skirt
+Grid sections: 1,1,1
+</code></pre></div>
+<p>Advanced example:</p>
+<div class="highlight"><pre><span></span><code>Mode: rows
+Prompt: blue sky BREAK
+        green hair BREAK
+        book shelf BREAK
+        terrarium on the desk BREAK
+        orange dress and sofa
+Grid sections: 1,2,1,1;2,4,6
+</code></pre></div>
 <h4 id="prompt-and-prompt-ex">Prompt and Prompt-EX</h4>
-<p>The difference is that in Prompt, duplicate regions are added, whereas in Prompt-EX, duplicate regions are overwritten sequentially. Since they are processed in order, setting a TARGET with a large regions first makes it easier for the effect of small regions to remain unmuffled.</p>
+<p>In Prompt mode, duplicate regions are added. In Prompt-EX mode, duplicate regions are overwritten sequentially. Process regions in order; set larger regions first for better effect preservation in small regions.</p>
 <p>Prompt-EX example:</p>
-<p>Mode used: <code>Prompt-EX</code><br />
-Prompt used:<br />
-<code>a girl in street with shirt, tie, skirt BREAK</code><br />
-<code>red, shirt BREAK</code><br />
-<code>green, tie BREAK</code><br />
-<code>blue , skirt</code><br />
-Prompt thresholds: <code>0.4,0.6,0.6</code>  </p>
+<div class="highlight"><pre><span></span><code>Mode: Prompt-EX
+Prompt: a girl in street with shirt, tie, skirt BREAK
+        red, shirt BREAK
+        green, tie BREAK
+        blue, skirt
+Prompt thresholds: 0.4,0.6,0.6
+</code></pre></div>
 <h4 id="threshold">Threshold</h4>
-<p>The threshold used to determine the mask created by the prompt. This can be set as many times as there are masks, as the range varies widely depending on the target prompt. If multiple regions are used, enter them separated by commas. For example, hair tends to be ambiguous and requires a small value, while face tends to be large and requires a small value. These should be ordered by BREAK.</p>
+<p>The threshold determines the mask created by the prompt. Set one threshold per mask (separated by commas). Values vary widely depending on the target: hair requires small values (ambiguous), face requires larger values. Order thresholds by BREAK order.</p>
 <h4 id="power">Power</h4>
-<p>Idicates how much regional prompting is applied to the image generation.</p>
+<p>How much regional prompting is applied to image generation.</p>
 <h3 id="resadapter">ResAdapter</h3>
-<p>ResAdapter, a plug-and-play resolution adapter for enabling any diffusion model generate resolution-free images: no additional training, no additional inference and no style transfer.</p>
+<p>ResAdapter is a resolution adapter enabling any diffusion model to generate resolution-free images without additional training or inference overhead.</p>
 <table>
 <thead>
 <tr>

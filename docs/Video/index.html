@@ -4146,14 +4146,14 @@ Support includes <strong>T2V: text-to-video</strong> and <strong>I2V: image-to-v
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>All models are auto-downloaded upon first use<br />
-Download location uses the folder specified in: <em>Settings -&gt; System paths -&gt; Huggingface</em>  </p>
+<p>All models are auto-downloaded on first use.<br />
+Download location is defined in: <em>Settings -&gt; System paths -&gt; Huggingface</em>.  </p>
 <p>[!NOTE]
 Optimized support for <a href="../FramePack/">FramePack</a> based on <strong>HunyuanVideo-I2V</strong> is implemented in a separate tab<br />
-FramePack allows generation high-quality videos with pretty much unlimited duration and with limited VRAM!  </p>
+FramePack supports high-quality generation with near-unlimited duration and limited VRAM.  </p>
 <p>[!NOTE]
 Support for <a href="../LTX/">LTXVideo</a> is implemented in a separate tab<br />
-LTXVideo allows flexible video guidance using text, image and video prompts with optional upsampling and refining!</p>
+LTXVideo supports flexible guidance with text, image, and video prompts, with optional upsampling and refining.</p>
 </div>
 <h3 id="reference-list">Reference list</h3>
 <table>
@@ -4582,35 +4582,35 @@ LTXVideo allows flexible video guidance using text, image and video prompts with
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Each model may require specific resolution or parameters to produce quality results<br />
-This also includes advanced paramters such as <em>Sampler shift</em> which would during normal text-to-image be considered not required to tweak<br />
-See individual model's original notes for recommendations on parameters  </p>
+<p>Each model may require specific resolutions and parameters for best results.<br />
+This includes advanced parameters such as <em>Sampler shift</em>, which are usually not critical for text-to-image.<br />
+See each model's original notes for recommended settings.  </p>
 <p>[!NOTE]
-Its recommended to use <em>Default</em> as sampler for all models unless you need to change specific sampler setting<br />
-For example, to change <em>Sampler Shift</em>, you need to select appropriate sampler for that model</p>
+It is recommended to use <em>Default</em> sampler unless you need a model-specific setting.<br />
+For example, to change <em>Sampler Shift</em>, select the matching sampler for that model.</p>
 </div>
 <h3 id="legacy-models">Legacy models</h3>
-<p>Additional video models are available as individually selectable scripts in either text or image interfaces  </p>
+<p>Additional video models are available as individually selectable scripts in text or image interfaces.  </p>
 <ul>
 <li><a href="https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt">Stable Video Diffusion</a>, Base, XY 1.0 and XT 1.1</li>
 <li><a href="https://huggingface.co/ali-vilab/i2vgen-xl">VGen</a>  </li>
 <li><a href="https://github.com/guoyww/animatediff/">AnimateDiff</a>  </li>
 </ul>
 <h3 id="lora">LoRA</h3>
-<p>SD.Next includes LoRA support for <em>Hunyuan, LTX, WAN, Mochi, Cog</em>  </p>
-<p>See <a href="../LoRA/">LoRA</a> for more details  </p>
+<p>SD.Next includes LoRA support for <em>Hunyuan, LTX, WAN, Mochi, Cog</em>.  </p>
+<p>See <a href="../LoRA/">LoRA</a> for more details.  </p>
 <h2 id="optimizations">Optimizations</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Any use on GPUs below 16GB and systems below 48GB RAM is experimental</p>
 </div>
 <h3 id="memory">Memory</h3>
-<p>Offloading helps by moving data between system RAM and GPU VRAM memory as needed<br />
-However, there is no way around requirement that entire model must be loaded into RAM before it can be used<br />
-Look at the total model size in the table and make sure you have enough RAM to load the model  </p>
+<p>Offloading helps by moving data between system RAM and GPU VRAM as needed.<br />
+However, the full model still must load into RAM before use.<br />
+Check total model size in the table and confirm your system has enough RAM.  </p>
 <h3 id="offloading">Offloading</h3>
-<p>Enable offloading so model components can be moved in and out of VRAM as needed<br />
-Most models support all offloading types:  </p>
+<p>Enable offloading so model components can move in and out of VRAM as needed.<br />
+Most models support all offloading modes:  </p>
 <ul>
 <li><strong>Balanced</strong>: recommended, but may require extra tuning  </li>
 <li><strong>Model</strong>: simplest  </li>
@@ -4618,28 +4618,28 @@ Most models support all offloading types:  </p>
 </ul>
 <p>See <a href="../Offload/">Offload</a> for more details  </p>
 <h3 id="quantization">Quantization</h3>
-<p>Enable on-the-fly quantization during load in <em>Settings -&gt; Quantization</em> for additional memory savings  </p>
+<p>Enable on-the-fly quantization during load in <em>Settings -&gt; Quantization</em> for additional memory savings.  </p>
 <ul>
 <li><strong>SDNQ</strong>  </li>
 <li><strong>BnB</strong>  </li>
 <li><strong>Optimum-Quanto</strong>  </li>
 <li><strong>TorchAO</strong>  </li>
 </ul>
-<p>You can enable quantization for both or either <strong>Transformers</strong> and <strong>Text-Encoder</strong> separately  </p>
+<p>You can enable quantization for <strong>Transformers</strong> and <strong>Text Encoder</strong> together or separately.  </p>
 <ul>
-<li>Most T2V and I2V models support on-the-fly quantization of transformers module  </li>
-<li>Most T2V support quantization of text-encoder while I2V model may not due to inability to quantize image vectors  </li>
+<li>Most T2V and I2V models support on-the-fly quantization of the transformer module.  </li>
+<li>Most T2V models support text-encoder quantization, while many I2V models do not because image vectors cannot be quantized in the same way.  </li>
 </ul>
 <p>See <a href="../Quantization/">Quantization</a> for more details</p>
 <h3 id="decoding">Decoding</h3>
-<p>Instead of using full VAE that is packaged with the model itself to decode final frames, SD.Next supports use of Tiny VAE as well as ability to use Remote VAE to decode video</p>
+<p>Instead of using only the full VAE packaged with the model to decode final frames, SD.Next also supports Tiny VAE and Remote VAE for video decoding.</p>
 <ul>
 <li><strong>Tiny VAE</strong>: support for <em>Hunyuan, WAN, Mochi</em>  </li>
 <li><strong>Remote VAE</strong>: support for <em>Hunyuan</em>  </li>
 </ul>
 <p>See <a href="../VAE/">VAE</a> for more details  </p>
 <h3 id="processing">Processing</h3>
-<p>SD.Next supports two types of optional processing acceleration:  </p>
+<p>SD.Next supports two optional acceleration methods:  </p>
 <ul>
 <li><a href="https://huggingface.co/papers/2410.19355">FasterCache</a><br />
   support for <em>Hunyuan, Mochi, Latte, Allegro, Cog, WanDB, LTX</em>  </li>
@@ -4647,10 +4647,10 @@ Most models support all offloading types:  </p>
   support for <em>Hunyuan, Mochi, Latte, Allegro, Cog, WanDB, LTX</em>  </li>
 </ul>
 <h2 id="interpolation">Interpolation</h2>
-<p>For all video modules, SD.Next supports adding interpolated frames to video for smoother output<br />
-Interpolation (if enabled) is performed using <a href="https://github.com/vladmandic/rife">RIFE</a> Real-Time Intermediate Flow Estimation  </p>
+<p>All video modules support optional frame interpolation for smoother output.<br />
+When enabled, interpolation uses <a href="https://github.com/vladmandic/rife">RIFE</a> (Real-Time Intermediate Flow Estimation).  </p>
 <h2 id="issueslimitations">Issues/Limitations</h2>
-<p>See <a href="https://github.com/vladmandic/sdnext/blob/dev/TODO.md">TODO</a> for known issues and limitations  </p>
+<p>See <a href="https://github.com/vladmandic/sdnext/blob/dev/TODO.md">TODO</a> for known issues and limitations.  </p>
 
 
 

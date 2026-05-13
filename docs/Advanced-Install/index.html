@@ -3912,13 +3912,13 @@ The scripts do not perform any other setup tasks.  </p>
 This can be intentional when running <strong>SD.Next</strong> in a dedicated container where extra virtual-environment isolation is not needed.</p>
 <h2 id="venv">VENV</h2>
 <p>By default, SD.Next uses <code>venv</code> to install dependencies.<br />
-Using <code>venv</code> is optional, but recommended to avoid dependency conflicts with other applications.</p>
+Using <code>venv</code> is optional, but recommended to avoid dependency conflicts with other apps.</p>
 <p>You can pre-create <code>venv</code> with specific options. For example:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv<span class="w"> </span>--system-site-packages
 </code></pre></div>
 <p>This setup uses system site packages where available and installs only missing or incompatible packages inside <code>venv</code>.</p>
 <h2 id="upgrades">Upgrades</h2>
-<p><strong>SD.Next</strong> includes a built-in upgrade path with the <code>--upgrade</code> flag, and manual upgrades with <code>git pull</code> are also supported.  </p>
+<p><strong>SD.Next</strong> includes a built-in upgrade path with the <code>--upgrade</code> flag. Manual upgrades with <code>git pull</code> are also supported.  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>If you use manual upgrades with <code>git pull</code>, also update all <strong>submodules</strong>.</p>

@@ -3954,10 +3954,8 @@ All users should do Steps #1 and #2 regardless of having a problem or not.</p>
 <p>You should familiarize yourself with all available CLI arguments by typing <code>webui.bat (or .sh) --help</code>, which<br />
 will present a full list of them to you. There are likely options you have at your disposal that you are unaware of.</p>
 <h2 id="2-ui-config">2. UI Config</h2>
-<p>If your <code>ui-config.json</code> file is larger than a few (1-20) kb, delete it. The way the UI config file works has<br />
-changed, now it only saves the differences between SD.Next's defaults and what you have set rather than the older<br />
-bloated file that contained everything. Issues arise from new settings and defaults being overridden by the existing<br />
-old settings that are no longer valid, this can even lead to non-functional buttons.</p>
+<p>If your <code>ui-config.json</code> file is larger than a few KB (1–20 KB is normal), delete it.</p>
+<p>The file now saves only the differences from SD.Next's defaults rather than the full configuration. Stale entries from older versions can override new defaults and cause issues, including non-functional buttons.</p>
 <h2 id="3-config">3. Config</h2>
 <p>Often many issues are cleared up by simply deleting the config.json file and letting SD.Next generate a new one. However<br />
 this is destructive and annoying because you have to set all of your personal preferences again, including model/image paths.<br />
@@ -3965,10 +3963,7 @@ Instead we recommend simply renaming <code>config.json</code> to <code>config-ba
 you restart SD.Next, while also preserving your paths and settings. You can always use <code>--config config-backup.json</code> to start<br />
 SD.Next back up with your previous settings, or undo the rename entirely if it did not help.</p>
 <h2 id="4-use-debug-mode">4. Use Debug Mode</h2>
-<p>If you're encountering errors of any kind, unexpected process terminations, or other issues, start up SD.Next with the <code>--debug</code><br />
-argument. This will allow you to see with greater detail what's going on, often exposing obvious fixes or indicating what the<br />
-source of the errors are. In general we advise with running <code>--debug</code> all the time, but some users find it annoying to see it<br />
-updating so often.</p>
+<p>If you're encountering errors, unexpected terminations, or other issues, start SD.Next with the <code>--debug</code> argument. This provides more detailed log output, which often exposes the root cause. Running with <code>--debug</code> at all times is generally recommended, though some users prefer to omit it to reduce log verbosity.</p>
 <h2 id="5-safe-mode">5. Safe Mode</h2>
 <p>Unless the issues you are having are directly involving an extension, it can be helpful to take all non-essential extensions<br />
 out of the equation (disabling them) for troubleshooting purposes. Therefore we advise starting up with the <code>--safe</code> argument<br />

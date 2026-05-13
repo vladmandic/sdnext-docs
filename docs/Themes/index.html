@@ -2742,7 +2742,7 @@
   <a href="#switching-themes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Switching themes
+        Switching Themes
       
     </span>
   </a>
@@ -2811,10 +2811,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#huggingface-themes" class="md-nav__link">
+  <a href="#hugging-face-themes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Huggingface Themes
+        Hugging Face Themes
       
     </span>
   </a>
@@ -3938,7 +3938,7 @@
   <a href="#switching-themes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Switching themes
+        Switching Themes
       
     </span>
   </a>
@@ -4007,10 +4007,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#huggingface-themes" class="md-nav__link">
+  <a href="#hugging-face-themes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Huggingface Themes
+        Hugging Face Themes
       
     </span>
   </a>
@@ -4060,33 +4060,28 @@
 
 
 <h1 id="themes">Themes</h1>
-<p>SD.Next supports two native theme engines plus option to disable it completely to use external themes:</p>
+<p>SD.Next supports two native theme engines and an option to disable theming entirely for external themes.</p>
 <h2 id="set-themes">Set Themes</h2>
-<p><strong>Set theme via UI</strong>: <em>settings -&gt; user interface</em></p>
+<p><strong>Via UI</strong>: Go to <em>Settings &gt; User Interface</em></p>
 <ul>
-<li>theme type: <strong>modern</strong>, <strong>standard</strong>, <strong>none</strong><br />
-<em>note</em>: <strong>none</strong> disables native theme engine and is used<br />
-  for <em>gradio</em> built-in themes, <em>huggingface</em> 3rd party themes and custom <em>extension</em> based themes  </li>
-<li>theme name  </li>
-<li>theme mode<br />
-  to force light/dark or leave it as os-default (auto)  </li>
+<li><strong>Theme type</strong>: <code>modern</code>, <code>standard</code>, or <code>none</code><br />
+<em>Note</em>: <code>none</code> disables native theming for Gradio, Hugging Face, and custom extension themes</li>
+<li><strong>Theme name</strong>: Select the specific theme</li>
+<li><strong>Theme mode</strong>: Force light/dark or use OS default (auto)  </li>
 </ul>
-<p><strong>Set theme via CLI</strong>: <code>--theme theme-type/theme-name</code>  </p>
+<p><strong>Via CLI</strong>: Use <code>--theme type/name</code></p>
 <ul>
-<li>theme <code>default</code> defaults to <strong>modern/default</strong></li>
-<li>optional theme types: <strong>standard</strong>, <strong>modern</strong>, <strong>gradio</strong>, <strong>huggingface</strong><br />
-  if theme type is not specified, it will default to <strong>standard</strong>  </li>
-<li>if theme name is not specified, it will default to:  </li>
-<li><strong>default</strong> for modern</li>
-<li><strong>black-teal</strong> for standard</li>
-<li><strong>gradio/default</strong> for gradio</li>
-<li><strong>huggingface/none</strong> for huggingface</li>
-<li>theme param can additionally be used to enable to specific theme extension:</li>
-<li><strong>lobe</strong></li>
-<li><strong>cozy-next</strong></li>
+<li>Default theme: <code>modern/default</code></li>
+<li>Available types: <code>standard</code>, <code>modern</code>, <code>gradio</code>, <code>huggingface</code></li>
+<li>If type is omitted, defaults to <code>standard</code></li>
+<li>If name is omitted, defaults to:</li>
+<li><code>default</code> for modern</li>
+<li><code>black-teal</code> for standard</li>
+<li><code>gradio/default</code> for gradio</li>
+<li><code>huggingface/none</code> for huggingface</li>
+<li>Extensions can also provide themes: <code>lobe</code>, <code>cozy-next</code></li>
 </ul>
-<p>Selected theme type and name will be shown in the log on startup<br />
-example:</p>
+<p>The selected theme appears in startup logs. For example:</p>
 <pre><code>11:41:37-649897 DEBUG    UI themes available: type=Standard themes=12
 11:41:37-650510 INFO     UI theme: type=Standard name="black-teal" style=Auto
 11:41:37-651747 DEBUG    UI theme: css="/home/vlado/dev/sdnext/javascript/black-teal.css" base="sdnext.css" user="None"
@@ -4096,19 +4091,19 @@ example:</p>
 11:42:42-947313 INFO     UI theme: type=Modern name="sdxl_alpha" style=Auto
 11:42:42-948546 DEBUG    UI theme: css="extensions-builtin/sdnext-modernui/themes/sdxl_alpha.css" base="base.css" user="None"
 </code></pre>
-<h3 id="switching-themes">Switching themes</h3>
-<p>Once you set theme type, themes of type <strong>standard</strong> and <strong>modern</strong> can be switched on the fly without restarts  </p>
+<h3 id="switching-themes">Switching Themes</h3>
+<p>After setting a theme type, <code>standard</code> and <code>modern</code> themes can be switched live without restarts.  </p>
 <h2 id="creating-custom-themes">Creating Custom Themes</h2>
 <p>See <a href="../Theme-User/">User Themes</a> for details on creating custom themes  </p>
 <h2 id="available-themes">Available Themes</h2>
 <h3 id="standard-themes">Standard Themes</h3>
-<p>SD.Next comes with number of built-in themes:</p>
+<p>SD.Next includes built-in themes:</p>
 <ul>
-<li>Black teal, Light teal, Simple dark, Simple light, Black orange</li>
+<li>Black Teal, Light Teal, Simple Dark, Simple Light, Black Orange</li>
 </ul>
-<p>Following community created themes are included in SD.Next:</p>
+<p>Community-created themes:</p>
 <ul>
-<li>Invoked, Amethisyt nightfall, Emerald paradise, Midnight barbie, Orchid dreams, Timeless beige</li>
+<li>Invoked, Amethyst Nightfall, Emerald Paradise, Midnight Barbie, Orchid Dreams, Timeless Beige</li>
 </ul>
 <p>Example screenshots can be found at: <a href="https://github.com/vladmandic/sdnext/issues/4173">Standard Themes</a></p>
 <h3 id="modern-themes">Modern Themes</h3>
@@ -4117,19 +4112,15 @@ example:</p>
 <p>Any issues related to modern ui should be reported at: <a href="https://github.com/BinaryQuantumSoul/sdnext-modernui/issues">https://github.com/BinaryQuantumSoul/sdnext-modernui/issues</a></p>
 </div>
 <h3 id="gradio-themes">Gradio Themes</h3>
-<p>List of built-in Gradio themes:</p>
+<p>Built-in Gradio themes:</p>
 <ul>
-<li>Gradio default, Gradio base, Gradio soft, Gradio glass, Gradio monochrome</li>
+<li>Gradio Default, Gradio Base, Gradio Soft, Gradio Glass, Gradio Monochrome</li>
 </ul>
-<p>Use of Gradio themes disables built-in theme engine and uses Gradio theme engine instead<br />
-Gradio themes are not optimized for SDNext and will likely cause some UI components to look out of place  </p>
-<h3 id="huggingface-themes">Huggingface Themes</h3>
-<p>When you refresh list of themes using System -&gt; Settings -&gt; User Interface -&gt; Themes -&gt; Refresh<br />
-SD.Next will download list of 3rd party Gradio themes hosted on Huggingface  </p>
-<p>Note that formatting of UI components in that case depends on theme itself and is outside of SD.Next control  </p>
+<p>Gradio themes disable the native theme engine. Note that these themes are not optimized for SD.Next and may cause UI components to appear misaligned.  </p>
+<h3 id="hugging-face-themes">Hugging Face Themes</h3>
+<p>Click <em>System &gt; Settings &gt; User Interface &gt; Themes &gt; Refresh</em> to download third-party Gradio themes from Hugging Face. Component formatting depends on each theme and is not controlled by SD.Next.  </p>
 <h3 id="extensions">Extensions</h3>
-<p>SDNext also supports custom themes via extensions<br />
-Currently listed are <strong>cozy-next</strong> and <strong>lobe</strong> themes, however those themes are not updated for recent SDNext releases - please contact extension authors for updates  </p>
+<p>SD.Next supports custom themes via extensions. Available options include <code>cozy-next</code> and <code>lobe</code>, though these may not be updated for recent releases—contact the authors for updates.  </p>
 
 
 

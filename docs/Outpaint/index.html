@@ -2320,10 +2320,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How does it work?
+        How it works
       
     </span>
   </a>
@@ -3918,10 +3918,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How does it work?
+        How it works
       
     </span>
   </a>
@@ -4050,26 +4050,29 @@
 
 
 <h1 id="outpainting">Outpainting</h1>
-<p>Following guide is based on <strong>Control tab</strong> functionality  </p>
+<p>This guide is based on <strong>Control tab</strong> functionality.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Screenshots are using Standard UI, but functionality using Modern UI is the same</p>
 </div>
-<h2 id="how-does-it-work">How does it work?</h2>
-<p>Outpaint is combination of expand image + use original image as mask area + trigger inpaint<br />
-Result is that newly expanded area is now <em>outpainted</em> while original image remains unchanged  </p>
-<h2 id="select-what-to-outpaint">Select what to outpaint</h2>
-<p>There are several ways to use outpainting:  </p>
+<h2 id="how-it-works">How it works</h2>
+<p>Outpaint combines three steps:</p>
 <ul>
-<li>If you know exactly by how much you want to outpaint,<br />
-  Easiest is to simply specify outpaint size using <a href="./#resize-outpaint">resizing method</a>  </li>
-<li>If you want to experiment interactively,<br />
-  You can zoom in/out and/or move input image using <a href="./#interactive-outpaint">interactive method</a><br />
-<em>Note</em>: this method is very powerful, but can be finicky due to Gradio image control usability limitations  </li>
+<li>expand the image canvas,</li>
+<li>use the original image as protected mask area,</li>
+<li>run inpaint on newly added regions.</li>
+</ul>
+<p>The expanded area is outpainted while the original image area is preserved.</p>
+<h2 id="select-what-to-outpaint">Select what to outpaint</h2>
+<p>There are several ways to use outpainting:</p>
+<ul>
+<li>If you know target size, use the <a href="./#resize-outpaint">resizing method</a>.</li>
+<li>If you want to experiment interactively, use the <a href="./#interactive-outpaint">interactive method</a> to zoom and reposition input.
+  <em>Note</em>: interactive editing can be finicky due to current Gradio image-control limits.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Settings noted at the bottom apply to both methods</p>
+<p>Settings at the bottom apply to both methods.</p>
 </div>
 <h3 id="resize-outpaint">Resize Outpaint</h3>
 <ul>
@@ -4083,27 +4086,22 @@ Result is that newly expanded area is now <em>outpainted</em> while original ima
 <li>In <strong>Size settings</strong><br />
   Select <strong>Before</strong> -&gt; <strong>Mode</strong> -&gt; <strong>Outpaint</strong><br />
   Select desired size<br />
-<em>Note</em>: Size can be either fixed resolution or scale-by  </li>
+<em>Note</em>: Size can be fixed resolution or scale-by.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Resize outpaint mode is different than normal resize since it does not resize input image directly<br />
-Instead it creates new image and places original image in the center of newly created larger image with remaining areas marked for outpainting</p>
+<p>Resize outpaint mode is different from normal resize. It does not resize input directly.
+It creates a larger image, places original image in the center, and marks remaining area for outpainting.</p>
 </div>
 <h4 id="image-vs-inpaint-method">Image vs Inpaint Method</h4>
-<p>With <strong>resize outpaint</strong>, you again have two options:</p>
+<p>With <strong>resize outpaint</strong>, there are two options:</p>
 <ul>
-<li>By uploading input image to <strong>Select</strong> tab<br />
-  You will be using <em>Image-to-Image</em> outpaint mode<br />
-  Which will perform seamless integration of outpainted area,<br />
-  but will also allow modifications input content as well<br />
-<em>Note</em>: when using this mode, you must use prompt that includes description of the original image<br />
-  to allow it to be blended and avoid replacing it completely  </li>
-<li>By uploading input image to <strong>Outpaint</strong> tab<br />
-  You will be using <em>Inpaint-with-Mask</em> outpaint mode<br />
-  Which will maintain input image,<br />
-  but will make it more difficult to blend outpainted area<br />
-<em>Note</em>: when using this mode, experiment with mask blur/errode/dilate values  </li>
+<li>Upload input image to <strong>Select</strong> tab:
+  Uses <em>Image-to-Image</em> outpaint mode. It blends new area more seamlessly, but can also alter original image content.
+  <em>Note</em>: include original image description in prompt to improve blending and reduce replacement risk.</li>
+<li>Upload input image to <strong>Outpaint</strong> tab:
+  Uses <em>Inpaint-with-Mask</em> outpaint mode. It preserves original image better, but blending outpainted areas can be harder.
+  <em>Note</em>: experiment with mask blur/erode/dilate values.</li>
 </ul>
 <p><strong>Example</strong>:<br />
 <img alt="Image" src="https://github.com/user-attachments/assets/cc211750-aa18-4619-b1fe-f12c59503c1d" />  </p>
@@ -4111,7 +4109,7 @@ Instead it creates new image and places original image in the center of newly cr
 <ul>
 <li>Select <strong>Control</strong> tab  </li>
 <li>In <strong>Input panel</strong>, select <strong>Outpaint tab</strong><br />
-  Interactive outpaint is only available when using outpaint tab  </li>
+  Interactive outpaint is available only in Outpaint tab.</li>
 <li>Upload image<br />
 <img alt="Image" src="https://github.com/user-attachments/assets/56705c1c-4ca9-4057-b934-239526f0ae81" /><br />
 <em>Note</em>: Status bar will display image details:  <blockquote>
@@ -4138,12 +4136,12 @@ Instead it creates new image and places original image in the center of newly cr
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Instead of uploading image to outpaint tab,<br />
-you can use <em>send to</em> feature to transfer generated image from Text/Image/Control tabs  </p>
+<p>Instead of uploading image to Outpaint tab,
+you can use <em>send to</em> to transfer generated image from Text/Image/Control tabs.</p>
 <p>[!TIP]
-Note that after confirming expand/zoom/reposition with the mouse click<br />
-image may look the same so pay attention to the status bar!<br />
-<em>This is the limitation of current Gradio and we're looking at possible replacements for native canvas</em></p>
+After confirming expand/zoom/reposition, image may look unchanged.
+Check status bar dimensions to verify updates.
+<em>This is a limitation of current Gradio. We are evaluating native canvas replacements.</em></p>
 </div>
 <p><strong>Example</strong><br />
 <img alt="Image" src="https://github.com/user-attachments/assets/255807b4-da58-4ebd-b42f-9edd81b622c4" /></p>
@@ -4151,16 +4149,16 @@ image may look the same so pay attention to the status bar!<br />
 <h3 id="strength">Strength</h3>
 <p>In <strong>Input settings</strong><br />
 set denoising strength to a high value (at least 0.55 or higher)<br />
-so outpaint can freely create new content  </p>
+so outpaint can create new content more freely.</p>
 <p><img alt="Image" src="https://github.com/user-attachments/assets/e589af63-9a3f-46ae-9d23-b2bcbaa0c579" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>using low denoising strength will result in expanded image, but not actually outpainted<br />
+<p>Using low denoising strength expands the image but often does not outpaint new content.
 <img alt="Image" src="https://github.com/user-attachments/assets/5b196d1b-4499-4050-b36e-cb038e83635d" /></p>
 </div>
 <h3 id="mask">Mask</h3>
 <p>In <strong>Mask settings</strong><br />
-you can control amount of edge blur/erode/dilate between original image and outpained section  </p>
+you can control blur/erode/dilate edge overlap between original image and outpainted section.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Start with 0 for blur/erode/dilate and increase as needed</p>

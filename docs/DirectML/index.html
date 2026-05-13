@@ -4029,25 +4029,28 @@
 <p>SD.Next includes support for PyTorch-DirectML.</p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>DirectML support is marked as End-of-Life (EOL) and will be removed in the future releases
-<code>torch-directml</code> received no updates in over one year and is currently superseded by <code>rocm</code> or <code>zluda</code>.</p>
+<p>DirectML support is marked End-of-Life (EOL) and will be removed in a future release.
+<code>torch-directml</code> has not received updates in over one year and is currently superseded by <code>ROCm</code> or <code>ZLUDA</code>.</p>
 </div>
 <h2 id="how-to">How to</h2>
 <p>Add <code>--use-directml</code> to the command-line arguments.</p>
 <p>For details, go to <a href="../Installation/#initial-installation">Installation</a>.</p>
 <h2 id="performance">Performance</h2>
-<p>The performance is quite bad compared to ZLUDA and ROCm.</p>
-<p>If your card is relatively new and you prefer Windows system, we recommend ZLUDA.</p>
-<p>If you are familiar with Linux system, we recommend ROCm.</p>
+<p>Performance is significantly lower than ZLUDA and ROCm.</p>
+<p>If your card is relatively new and you prefer Windows, use ZLUDA.</p>
+<p>If you are comfortable with Linux, use ROCm.</p>
 <h2 id="faq">FAQ</h2>
 <h3 id="directml-does-not-collect-garbage-memory">DirectML does not collect garbage memory</h3>
 <p>PyTorch-DirectML does not access graphics memory by indexing. Because PyTorch-DirectML's tensor implementation extends <a href="https://github.com/pytorch/pytorch/blob/main/aten/src/ATen/OpaqueTensorImpl.h">OpaqueTensorImpl</a>, we cannot access the actual storage of a tensor.</p>
 <h3 id="an-error-occurs-with-no-error-message">An error occurs with no error message</h3>
-<p>If you met <code>RuntimeError</code> with no error message (or empty), please report us via GitHub issue or Discord. (please check whether there's a duplicated issue)</p>
+<p>If you met <code>RuntimeError</code> with no error message (or empty), please report us via GitHub issue or Discord. (please check whether there's a duplicated issue)
+If you get <code>RuntimeError</code> with no error message, report it on GitHub or Discord after checking for duplicates.</p>
 <h3 id="it-does-not-work-properly-with-fp16">It does not work properly with FP16</h3>
-<p>If it works with FP32, please report us via GitHub issue or Discord. (please check whether there's a duplicated issue)</p>
+<p>If it works with FP32, please report us via GitHub issue or Discord. (please check whether there's a duplicated issue)
+If it works with FP32 but not FP16, report it on GitHub or Discord after checking for duplicates.</p>
 <h3 id="the-terminal-is-suddenly-frozen-during-generation">The terminal is suddenly frozen during generation</h3>
-<p>Please report us via GitHub issue or Discord. (please check whether there's a duplicated issue)</p>
+<p>Please report us via GitHub issue or Discord. (please check whether there's a duplicated issue)
+Please report it on GitHub or Discord after checking for duplicates.</p>
 <h2 id="olive-experimental-support">Olive (experimental support)</h2>
 <p>Refer to <a href="../ONNX-Runtime/">ONNX Runtime</a></p>
 

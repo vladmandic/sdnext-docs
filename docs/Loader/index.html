@@ -3459,10 +3459,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#receipe" class="md-nav__link">
+  <a href="#recipe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Receipe
+        Recipe
       
     </span>
   </a>
@@ -3967,10 +3967,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#receipe" class="md-nav__link">
+  <a href="#recipe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Receipe
+        Recipe
       
     </span>
   </a>
@@ -4004,48 +4004,47 @@
 
 
 <h1 id="custom-model-loader">Custom Model Loader</h1>
-<ul>
-<li>in <em>Models -&gt; Loader</em></li>
-<li>Can be used to load any known diffusion model with default or custom model components</li>
-</ul>
+<p>The custom model loader is available in <em>Models -&gt; Loader</em>.
+You can use it to load any supported diffusion model with default or custom components.</p>
 <h2 id="model-type">Model Type</h2>
 <ul>
-<li>Can be any currently supported model type  </li>
-<li><strong>Autodetect</strong> can be used to attempt loading repo for any model<br />
-  e.g. there is a new model on huggingface that is not yet added to predefined list - well, try it out ;)</li>
-<li><strong>Current</strong> can be used to replace selected components without reloading model itself  </li>
+<li>Can be any currently supported model type.</li>
+<li><strong>Autodetect</strong> attempts to load a repo for any model.
+  This is useful for new Hugging Face models that are not yet in the predefined list.</li>
+<li><strong>Current</strong> replaces selected components without reloading the model itself.</li>
 </ul>
 <h2 id="model-repo">Model Repo</h2>
-<p>Valid model repo on huggingface is required to access base model config
+<p>A valid model repo on Hugging Face is required to access the base model config.
 - Default model repo is provided for common models
-- Model repo can be overriden to any valid repo on huggingface</p>
+- Model repo can be overridden to any valid repo on Hugging Face</p>
 <h2 id="loadable-components">Loadable Components</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Any model component that is marked as loadable can be overriden<br />
-If neither local or remote values are set, default from model repo will be used<br />
-Any loadable model component with set value will be loaded from that value</p>
+<p>Any model component marked as loadable can be overridden.
+If neither local nor remote values are set, the default from the model repo is used.
+Any loadable component with a set value is loaded from that value.</p>
 </div>
 <h3 id="local-vs-remote">Local vs Remote</h3>
 <ul>
-<li>Can use local or remote models  </li>
-<li>Local model can be any valid path to safetensors file or folder with hf-style structure  </li>
-<li>Remote model can be any valid huggingface repo, with or without subfolder or full url to file hosted on huggingface  </li>
+<li>You can use local or remote models.</li>
+<li>A local model can be a valid path to a safetensors file or a folder with HF-style structure.</li>
+<li>A remote model can be any valid Hugging Face repo, with or without a subfolder, or a full URL to a Hugging Face-hosted file.</li>
 </ul>
 <h3 id="dtype">Dtype</h3>
 <ul>
-<li>Can be used to override torch compute dtype when loading each individual component</li>
+<li>Overrides Torch compute dtype when loading each component.</li>
 </ul>
 <h3 id="quant">Quant</h3>
 <ul>
-<li>Can be used to enable quantization when loading each individual component</li>
-<li>Quant settings will be used from <em>settings -&gt; quantization</em>  </li>
+<li>Enables quantization when loading each component.</li>
+<li>Quant settings are taken from <em>Settings -&gt; Quantization</em>.</li>
 </ul>
-<h2 id="receipe">Receipe</h2>
-<p>Model receipe can be saved to JSON file for later use</p>
-<blockquote>
-<p>[!WARNING] Load/Save receipe is not yet implemented</p>
-</blockquote>
+<h2 id="recipe">Recipe</h2>
+<p>Model recipes can be saved to a JSON file for later use.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Load/save recipe is not yet implemented.</p>
+</div>
 
 
 

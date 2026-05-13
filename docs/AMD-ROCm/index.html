@@ -1635,17 +1635,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#install-guide-for-arch-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install Guide for Arch Linux
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -4000,17 +3989,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#install-guide-for-arch-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install Guide for Arch Linux
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -4126,9 +4104,9 @@
 
 
 <h1 id="amd-rocm">AMD ROCm</h1>
-<p>To use <strong>AMD ROCm</strong> with <strong>SD.Next</strong> you need to
-1. Install ROCm libraries first.<br />
-2. Run SD.Next with <code>--use-rocm</code> flag to force it to install appropriate version of <code>torch</code>.  </p>
+<p>To use <strong>AMD ROCm</strong> with <strong>SD.Next</strong>:
+1. Install ROCm libraries.
+2. Run SD.Next with <code>--use-rocm</code> so it installs a compatible <code>torch</code> build.</p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>AMD ROCm is officially supported for specific AMD GPUs.  </p>
@@ -4177,12 +4155,18 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>ref<span class="w"> </
 <span class="w">    </span>libhipfft0-devel<span class="w"> </span>libhipsolver0-devel<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>libhipsparse1-devel<span class="w"> </span>rocthrust-devel<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>librocfft0<span class="w"> </span>rocm-core<span class="w"> </span>rocrand<span class="w"> </span>rocsolver<span class="w"> </span>
-</code></pre></div>
-<p>This procedure should also work for Leap based distributions and Slowroll (change the relevant lines for the distribution, check the repository page for details), but they haven't been tested.</p>
-<p><strong>NOTE</strong>: This installs also the build dependencies for flash-attention.</p>
-<h3 id="install-guide-for-arch-linux">Install Guide for Arch Linux</h3>
-<p>Install ROCm and git:  </p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>rocm-hip-runtime<span class="w"> </span>git
+<span class="w">  </span><span class="sb">```</span>
+
+This<span class="w"> </span>procedure<span class="w"> </span>should<span class="w"> </span>also<span class="w"> </span>work<span class="w"> </span><span class="k">for</span><span class="w"> </span>Leap-based<span class="w"> </span>distributions<span class="w"> </span>and<span class="w"> </span>Slowroll<span class="w"> </span><span class="o">(</span>adjust<span class="w"> </span>the<span class="w"> </span>distro-specific<span class="w"> </span>lines<span class="o">)</span>,<span class="w"> </span>but<span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>tested.
+
+**Note**:<span class="w"> </span>This<span class="w"> </span>also<span class="w"> </span>installs<span class="w"> </span>build<span class="w"> </span>dependencies<span class="w"> </span><span class="k">for</span><span class="w"> </span>flash-attention.
+
+<span class="c1">### Install Guide for Arch Linux</span>
+
+Install<span class="w"> </span>ROCm<span class="w"> </span>and<span class="w"> </span>git:<span class="w">  </span>
+
+<span class="sb">```</span>shell
+sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>rocm-hip-runtime<span class="w"> </span>git
 </code></pre></div>
 <p>Install Python 3.12 (or anything between 3.10 and 3.13):  </p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>base-devel<span class="w"> </span>python-pip<span class="w"> </span>python-virtualenv
@@ -4196,34 +4180,37 @@ makepkg<span class="w"> </span>-si
 <span class="c1"># rm -rf python312</span>
 </code></pre></div>
 <p>Install ROCm SDK:  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>ROCm SDK is optional. It is only required for building flash attention or similar custom kernels.<br />
-ROCm SDK uses 26 GB of disk space.</p>
-</div>
+<blockquote>
+<p>[!NOTE]
+ROCm SDK is optional. It is only required for building flash attention or similar custom kernels.<br />
+ROCm SDK uses 26 GB of disk space.  </p>
+</blockquote>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>rocm-hip-sdk<span class="w"> </span>libxml2-legacy<span class="w"> </span>gcc14<span class="w"> </span>gcc14-libs
 </code></pre></div>
 <h2 id="running-sdnext-with-rocm-locally">Running SD.Next with ROCm locally</h2>
-<p>Open the terminal in a folder you want to install SD.Next and install SD.Next from Github with this command:  </p>
+<p>Open a terminal in the folder where you want to install SD.Next, then run:  </p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/sdnext
+<span class="sb">```</span>bash
+
+Then<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> </span><span class="sb">`</span>sdnext<span class="sb">`</span><span class="w"> </span>folder:<span class="w">  </span>
+
+<span class="sb">```</span>shell
+<span class="nb">cd</span><span class="w"> </span>sdnext
 </code></pre></div>
-<p>Then enter into the sdnext folder:  </p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>sdnext
-</code></pre></div>
-<p>Then run SD.Next with this command:  </p>
+<p>Run SD.Next with:  </p>
 <div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-rocm
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
-</div>
+<blockquote>
+<p>[!NOTE]
+It will install the necessary libraries at the first run so it will take a while depending on your internet.  </p>
+</blockquote>
 <h2 id="running-sdnext-with-docker-for-rocm">Running SD.Next with Docker for ROCm</h2>
-<p>Check out the <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker wiki</a> if you want to build a custom Docker image.  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Installing ROCm on your system is not required when using Docker as Docker has no access to it anyway.</p>
-</div>
-<p>Using Docker with a prebuilt image:  </p>
+<p>See <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker</a> if you want to build a custom image.  </p>
+<blockquote>
+<p>[!NOTE]
+Installing ROCm on your system is not required when using Docker as Docker has no access to it anyway.  </p>
+</blockquote>
+<p>To run a prebuilt Docker image:  </p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SDNEXT_DOCKER_ROOT_FOLDER</span><span class="o">=</span>~/sdnext
 sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--name<span class="w"> </span>sdnext-rocm<span class="w"> </span><span class="se">\</span>
@@ -4237,21 +4224,25 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 <span class="w">  </span>-v<span class="w"> </span><span class="nv">$SDNEXT_DOCKER_ROOT_FOLDER</span>/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>disty0/sdnext-rocm:latest
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.<br />
+<blockquote>
+<p>[!NOTE]
+It will install the necessary libraries at the first run so it will take a while depending on your internet.<br />
 Resulting docker image will use 3.2 GB disk space (uncompressed) for the docker image and 20 GB for the venv.</p>
-</div>
+</blockquote>
 <h2 id="rocm-performance-tuning-on-linux">ROCm performance tuning on Linux</h2>
-<p>For more details, see <a href="../AMD-MIOpen/">AMD-MIOpen Guide</a> page.</p>
+<p>For details, see <a href="../AMD-MIOpen/">AMD-MIOpen Guide</a>.</p>
 <h3 id="miopen-database-tuning">MIOpen database tuning</h3>
-<p>On first use, when using a resolution for the first time, or when upgrading Pytorch versions, ROCm runs a series of benchmarks to select the most efficient approach. This can lead to slow (up to 5-8 minutes) startup times, in particular if you use a refine pass at high resolution, but it only happens once per resolution (subsequent runs are much faster). If for any case this is undesirable, you can set the environment variable <code>MIOPEN_FIND_MODE</code> to <code>FAST</code>. This will reduce a lot the startup time on first use at the price of worse performance when generating.
-On the other hand, for best performance during generation (but slower startup on first use), you can set the variable <code>MIOPEN_FIND_ENFORCE</code> to <code>SEARCH</code>.</p>
+<p>On first use, on first use of a new resolution, or after a PyTorch upgrade, ROCm runs benchmarks to pick efficient kernels.<br />
+This can make startup slow (up to 5-8 minutes), especially with high-resolution refine passes, but it usually happens once per resolution.</p>
+<p>If startup time is the priority, set <code>MIOPEN_FIND_MODE=FAST</code>.<br />
+If generation performance is the priority, set <code>MIOPEN_FIND_ENFORCE=SEARCH</code> and accept slower first-time startup.</p>
 <h3 id="reduce-vram-consumption">Reduce VRAM consumption</h3>
-<p>If you use the <code>bf16</code> data type (<em>Settings &gt; Compute Settings &gt; Execution Precision &gt; Device precision type</em>), which is autodetected on RDNA3 and newer cards, there is the chance that VRAM usage will be very high (16+ GB) when decoding the final image and when upscaling with non-latent upscalers. To workaround the problem, ensure to set <code>Device precision type</code> as <code>fp16</code>, and disable VAE upcasting in <em>Variational Auto Encoder &gt; VAE upcasting</em>.
-Setting <code>fp16</code> has also a noticeable improvement on performance.</p>
+<p>If you use <code>bf16</code> (<em>Settings &gt; Compute Settings &gt; Execution Precision &gt; Device precision type</em>), which is auto-detected on RDNA3 and newer cards, VRAM usage can become very high (16+ GB) during final decode and non-latent upscaling.<br />
+To reduce usage, set <code>Device precision type</code> to <code>fp16</code> and disable VAE upcasting in <em>Variational Auto Encoder &gt; VAE upcasting</em>.</p>
+<p>Using <code>fp16</code> can also improve performance.</p>
 <h3 id="composable-kernel-ck-flash-attention">Composable Kernel (CK) Flash attention</h3>
-<p>On RDNA3 hardware (RX 7000 series), you can set the option to use CK Flash Attention for improved performance in <em>Compute Settings &gt; Cross Attention &gt; SDP Options</em> by toggling <code>CK Flash attention</code> and restarting SD.Next. Notice that enabling this option requires <code>rocm-hip-sdk</code> installed as it will download and compile an additional Python package from source on startup.</p>
+<p>On RDNA3 hardware (RX 7000 series), you can enable CK Flash Attention in <em>Compute Settings &gt; Cross Attention &gt; SDP Options</em> by toggling <code>CK Flash attention</code> and restarting SD.Next.<br />
+This requires <code>rocm-hip-sdk</code>, because SD.Next downloads and compiles an additional Python package at startup.</p>
 <p>In case you want to install it manually, activate the virtual environment then run <code>pip</code>:  </p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--no-build-isolation<span class="w"> </span>git+https://github.com/Disty0/flash-attention@navi_rotary_fix
 </code></pre></div>

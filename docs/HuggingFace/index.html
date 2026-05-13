@@ -1139,10 +1139,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prefferred-method" class="md-nav__link">
+  <a href="#preferred-method" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prefferred method
+        Preferred method
       
     </span>
   </a>
@@ -3885,10 +3885,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prefferred-method" class="md-nav__link">
+  <a href="#preferred-method" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prefferred method
+        Preferred method
       
     </span>
   </a>
@@ -3939,52 +3939,44 @@
 
 <h1 id="huggingface">HuggingFace</h1>
 <h2 id="automatic-model-download">Automatic Model Download</h2>
-<p>Manual model download from HuggingFace is supported in SD.Next, but not preferred way as SD.Next has a built-in model downloader.</p>
-<p>You can simply type the model repo id in the model selection dropdown and SD.Next will search for it and download it automatically into the correct folder.</p>
-<p><em>Example</em>:<br />
-Type <code>Laxhar/noobai-XL-Vpred-1.0</code> into the model selection dropdown</p>
+<p>Manual model download from Hugging Face is supported, but SD.Next includes a built-in downloader and that is the preferred path.</p>
+<p>Type the model repo ID in the model selection dropdown and SD.Next will search for it and download it into the correct folder.</p>
+<p><em>Example</em>:
+Type <code>Laxhar/noobai-XL-Vpred-1.0</code> in the model selection dropdown.</p>
 <h2 id="manual-model-download">Manual Model Download</h2>
-<p>When downloading models manually from HuggingFace using either of the methods below, please ensure that you place the downloaded model files into the correct directory as specified in your SD.Next configuration under the <code>Diffusers</code> models path</p>
-<h3 id="prefferred-method">Prefferred method</h3>
-<p>for manually downloading a model from hugginface to your local directory:</p>
-<ul>
-<li>
-<blockquote>
-<p><code>hf download --cache-dir &lt;path-to-sdnext-diffusers-folder&gt; &lt;autor&gt;/&lt;repo-id-on-huggingface&gt;</code></p>
-</blockquote>
-</li>
-</ul>
-<p>This will automatically create folder structure as expected by sdnext for huggingface models</p>
+<p>If you download models manually, place files in the correct directory from your SD.Next config under the <code>Diffusers</code> models path.</p>
+<h3 id="preferred-method">Preferred method</h3>
+<p>For manual download from Hugging Face into your local diffusers directory:</p>
+<div class="highlight"><pre><span></span><code>hf<span class="w"> </span>download<span class="w"> </span>--cache-dir<span class="w"> </span>&lt;path-to-sdnext-diffusers-folder&gt;<span class="w"> </span>&lt;author&gt;/&lt;repo-id-on-huggingface&gt;
+</code></pre></div>
+<p>This creates the folder structure expected by SD.Next for Hugging Face models.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>hf</code> command <a href="https://huggingface.co/docs/huggingface_hub/guides/cli">cli guide</a></p>
+<p><code>hf</code> command <a href="https://huggingface.co/docs/huggingface_hub/guides/cli">CLI guide</a></p>
 <p>[!IMPORTANT]
-You must set folder to a correct <code>Diffusers</code> folder as specified in your SD.Next config</p>
+You must set the path to the correct <code>Diffusers</code> folder from your SD.Next config.</p>
 </div>
-<p><em>Example</em>:<br />
-- &gt; <code>hf download --cache-dir /sdnext/models/Diffusers/ Laxhar/noobai-XL-Vpred-1.0</code></p>
-<p>Which downloaded the model into <code>/sdnext/models/Diffusers/models--Laxhar--noobai-XL-Vpred-1.0/</code> folder<br />
-And model becomes visible in sdnext under name <code>noobai-XL-Vpred-1.0</code>  </p>
+<p><em>Example</em>:</p>
+<div class="highlight"><pre><span></span><code>hf<span class="w"> </span>download<span class="w"> </span>--cache-dir<span class="w"> </span>/sdnext/models/Diffusers/<span class="w"> </span>Laxhar/noobai-XL-Vpred-1.0
+</code></pre></div>
+<p>This downloads the model into <code>/sdnext/models/Diffusers/models--Laxhar--noobai-XL-Vpred-1.0/</code>.
+The model then appears in SD.Next as <code>noobai-XL-Vpred-1.0</code>.</p>
 <h3 id="alternative-method">Alternative method</h3>
-<p>You can do full download as-is using any tool
-For example: browser, <code>git lfs</code>, <code>wget</code>, <code>curl</code>, <code>hf</code> cli, etc.  </p>
-<p><em>Example</em> using <code>hf</code> cli:</p>
-<ul>
-<li>
-<blockquote>
-<p><code>hf download --local-dir /sdnext/models/Diffusers/noobai-XL-Vpred-1.0 Laxhar/noobai-XL-Vpred-1.0</code></p>
-</blockquote>
-</li>
-</ul>
+<p>You can also do a full download as-is with any tool,
+for example browser, <code>git lfs</code>, <code>wget</code>, <code>curl</code>, or <code>hf</code> CLI.</p>
+<p><em>Example</em> using <code>hf</code> CLI:</p>
+<div class="highlight"><pre><span></span><code>hf<span class="w"> </span>download<span class="w"> </span>--local-dir<span class="w"> </span>/sdnext/models/Diffusers/noobai-XL-Vpred-1.0<span class="w"> </span>Laxhar/noobai-XL-Vpred-1.0
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>In this case, you specify full path to the model folder directly and that name is what SD.Next will use to identify the model<br />
-Model folder should not be prefixed with <code>models--&lt;author&gt;--</code> as per standard HuggingFace folder structure as to indicate to SD.Next that this is a manually downloaded model and should be treated as such<br />
-Folder name MUST contain original model name as on HuggingFace to allow SD.Next to match model type and select correct loader for it</p>
+<p>In this case, you specify the full model folder path directly, and that folder name is what SD.Next uses to identify the model.
+The folder should not use the <code>models--&lt;author&gt;--</code> prefix used by standard Hugging Face cache layout,
+because SD.Next uses this to distinguish manually downloaded models.
+Folder name must contain the original model name from Hugging Face so SD.Next can match model type and select the correct loader.</p>
 </div>
 <p><em>Example</em>:
-- Ok: <code>/sdnext/models/Diffusers/noobai-XL-Vpred-1.0-my-version</code>
-- Not ok: <code>/sdnext/models/Diffusers/my-version</code></p>
+- OK: <code>/sdnext/models/Diffusers/noobai-XL-Vpred-1.0-my-version</code>
+- Not OK: <code>/sdnext/models/Diffusers/my-version</code></p>
 
 
 

@@ -3308,12 +3308,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#model" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3321,6 +3316,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3906,12 +3906,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#model" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3919,6 +3914,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3960,7 +3960,8 @@
 
 
 <h1 id="offload">Offload</h1>
-<p>Offload is a method of moving model or parts of the model between the GPU memory (VRAM) and system memory (RAM) in order to reduce the memory footprint of the model and allow it to run on GPUs with lower VRAM.</p>
+<p>Offload moves a model, or model parts, between GPU memory (VRAM) and system memory (RAM).
+This reduces VRAM usage and helps run larger models on lower-VRAM GPUs.</p>
 <h2 id="offload-mode">Offload Mode</h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -3969,13 +3970,13 @@
 <h3 id="balanced">Balanced</h3>
 <p>Balanced offload works differently than all other offloading methods as it performs offloading only when the VRAM usage exceeds the user-specified threshold.</p>
 <ul>
-<li>Recommended for compatible high VRAM GPUs  </li>
-<li>Faster but requires compatible platform and sufficient VRAM  </li>
-<li>Balanced offload moves parts of the model depending on the user-specified threshold allowing to control how much VRAM is to be used  </li>
-<li>High threshold will set the maximum memory usage allowed for the model weights of a single model component  </li>
-<li>Low threshold will decide when to offload unused models back to RAM<br />
-   If the VRAM usage is higher than the low threshold, it will offload, otherwise it will do nothing  </li>
-<li>Configure threshold in <em>Settings -&gt; Models &amp; Loading -&gt; Balanced offload GPU high / low watermark</em></li>
+<li>Recommended for compatible high-VRAM GPUs.</li>
+<li>Faster than other offload modes, but requires platform compatibility and enough VRAM.</li>
+<li>Moves model parts based on user-defined thresholds, so you can control VRAM usage.</li>
+<li>The high threshold sets the maximum memory usage allowed for weights of a single model component.</li>
+<li>The low threshold controls when unused model parts are offloaded back to RAM.
+  If VRAM usage is above the low threshold, offloading runs. Otherwise, it does nothing.</li>
+<li>Configure thresholds in <em>Settings -&gt; Models &amp; Loading -&gt; Balanced offload GPU high / low watermark</em>.</li>
 </ul>
 <p>Balanced offloading default behavior is based on detected GPU memory:
 - <strong>default</strong>: offload=balanced gpu-min=0.2 gpu-max=0.6 gc-threshold=0.7<br />
@@ -3987,35 +3988,35 @@
 <p>Not compatible with <em>Optimum.Quanto</em> <code>qint</code> quantization</p>
 </div>
 <h3 id="sequential">Sequential</h3>
-<p>Works on layer-by-layer basis of each model component that is marked as offload-compatible  </p>
+<p>Works layer by layer for each model component marked as offload-compatible.</p>
 <ul>
-<li>Recommended for low VRAM GPUs</li>
-<li>Much slower but allows to run large models such as FLUX even on GPUs with 2-4GB VRAM  </li>
+<li>Recommended for low-VRAM GPUs.</li>
+<li>Much slower, but can run large models such as FLUX on GPUs with 2-4GB VRAM.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Not compatible with Quanto <code>qint</code> or BitsAndBytes <code>nf4</code> quantization  </p>
 <p>[!NOTE]
-Use of <code>--lowvram</code> automatically triggers use of sequenential offload</p>
+Using <code>--lowvram</code> automatically enables sequential offload.</p>
 </div>
-<h2 id="model">Model</h2>
-<p>Works on model component level by offloading components that are marked as offload-compatible<br />
-For example, VAE, text-encoder, etc.</p>
+<h3 id="model">Model</h3>
+<p>Works at the model-component level by offloading components marked as offload-compatible.
+Examples include VAE and text encoder.</p>
 <ul>
-<li>Recommended for medium when balanced offload is not compatible  </li>
-<li>Higher compatibility than either balanced and sequential, but lesser savings  </li>
+<li>Recommended for medium VRAM when balanced offload is not compatible.</li>
+<li>More compatible than balanced or sequential, but with lower memory savings.</li>
 </ul>
 <p>Limitations: N/A</p>
 <h2 id="performance-notes">Performance Notes</h2>
 <ul>
 <li>Tested using SDXL with 2 large LoRA models  </li>
 <li>Sequential offload is default for GPUs with 4GB or less</li>
-<li>Balanced offload is default for GPUs with more than 4GB<br />
-  Balanced offload is slower than no offload, but allows using large models such as SD35 and FLUX.1 out-of-the-box</li>
+<li>Balanced offload is default for GPUs with more than 4GB.
+  Balanced offload is slower than no offload, but it enables large models such as SD35 and FLUX.1 out of the box.</li>
 <li>Balanced offload set to default values  </li>
 <li>LoRA overhead is measured in sec for first and subsequent iterations  </li>
-<li>LoRA mode=backup can use up to 2x system memory<br />
-  Using backup can be prohibitive on large models such as SD35 or FLUX.1</li>
+<li>LoRA mode=backup can use up to 2x system memory.
+  On large models such as SD35 or FLUX.1, this can be prohibitive.</li>
 </ul>
 <table>
 <thead>

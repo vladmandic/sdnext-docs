@@ -2499,10 +2499,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How does it work
+        How it works
       
     </span>
   </a>
@@ -3845,10 +3845,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How does it work
+        How it works
       
     </span>
   </a>
@@ -3882,21 +3882,17 @@
 
 
 <h1 id="reprocess">Reprocess</h1>
-<p>Reprocess is a new top-level option that allows to repeat the processing of a given image using different parameters.</p>
+<p>Reprocess is a top-level option that lets you run a previously generated image again with different parameters.</p>
 <h2 id="use-cases">Use cases</h2>
-<p>Below are several examples where reprocess can be useful:</p>
+<p>Examples where Reprocess is useful:</p>
 <ul>
-<li>You can generate an image at lower quality<br />
-  such as using lower step count or using fast vae instead of full<br />
-  and if you like the image, bump up step count and switch vae and reprocess it  </li>
-<li>Or process as usual and if you like the results<br />
-  enable detailer, hires or refine workflows and reprocess  </li>
-<li>Or if you don't like what hires did because you used too high of denoise strength<br />
-  you can go back and reprocess original image before hires, but now with different strength  </li>
+<li>Generate quickly first (for example, fewer steps or fast VAE), then increase steps or switch VAE and reprocess if you like the result.</li>
+<li>Run your normal workflow first, then enable Detailer, HiRes, or Refine and reprocess.</li>
+<li>If HiRes used too much denoising, go back to the pre-HiRes latent and reprocess with adjusted strength.</li>
 </ul>
-<h2 id="how-does-it-work">How does it work</h2>
-<p>Reprocess works at the latent level, meaning that any workflow that runs in latent space adds its latents to reprocess history.<br />
-For example, each of the following operations will add to reprocess history:  </p>
+<h2 id="how-it-works">How it works</h2>
+<p>Reprocess works at latent level. Any workflow step that runs in latent space adds entries to Reprocess history.</p>
+<p>For example, these operations add history entries:</p>
 <ul>
 <li>Generate</li>
 <li>HiRes</li>
@@ -3905,9 +3901,9 @@ For example, each of the following operations will add to reprocess history:  </
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Reprocess by default will take last known latent<br />
-However, you can see entire history of latents in <em>Networks -&gt; History</em> and pick one that you want to reprocess<br />
-Length of maintained history is configuratble in <em>Settings -&gt; Networks</em></p>
+<p>Reprocess uses the most recent latent by default.
+You can review full latent history in <em>Networks -&gt; History</em> and choose a specific entry to reprocess.
+History length is configurable in <em>Settings -&gt; Networks</em>.</p>
 </div>
 
 

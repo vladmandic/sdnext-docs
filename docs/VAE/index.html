@@ -3926,14 +3926,16 @@
 
 
 <h1 id="variational-autoencoder-vae">Variational Autoencoder (VAE)</h1>
-<p>VAE is a model that can be used to compress and decompress images.<br />
-It is a type of autoencoder that learns a latent space representation of the input data. The model is trained to minimize the reconstruction error of the input data, while also learning a latent space that is continuous and smooth. This allows the model to generate new images by sampling from the latent space.</p>
+<p>VAE is a model used to compress and decompress images.
+It learns a latent-space representation of input data and minimizes reconstruction error during training.
+Because the latent space is continuous and smooth, it can also be sampled to generate new outputs.</p>
 <p><em>Why?</em>  </p>
-<p>All popular image generation models work in compressed in compressed <em>latent</em> space to allow for faster inference and reduced memory footprint. Which means VAE is required to convert images to and from latent space.  </p>
+<p>Popular image generation models work in compressed <em>latent</em> space for faster inference and lower memory use.
+That means VAE is required to convert images to and from latent space.</p>
 <p><em>When?</em>  </p>
 <ul>
 <li>VAE is used to <strong>decode</strong> latent to image as a final step of image generation and</li>
-<li>VAE is used to <strong>encode</strong> image to latent as a first step of image processing in case of inpaint or image-to-image workflows  </li>
+<li>VAE is used to <strong>encode</strong> image to latent as a first step for inpaint and image-to-image workflows</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -3941,21 +3943,23 @@ It is a type of autoencoder that learns a latent space representation of the inp
 If you're not specifying a custom VAE model, it simply means you're using a default one specified in the model</p>
 </div>
 <h2 id="vae-processing">VAE Processing</h2>
-<p>SD.Next allows to use 3 types of VAE processing:</p>
+<p>SD.Next supports three VAE processing types:</p>
 <ul>
 <li><strong>Full</strong>: use full VAE model<br />
   See section on <a href="./#choosing-a-vae">Choosing a VAE</a> for more information  </li>
 <li><strong>Tiny</strong>: use tiny VAE model<br />
-  Tiny VAE model is a smaller version of the full VAE model and has a reduced memory footprint<br />
-  It is useful for generating images quickly, but may not be as accurate as the full VAE model  </li>
+  Tiny VAE is a smaller version of the full model with lower memory usage.
+  It can generate images faster, but may be less accurate than full VAE.</li>
 <li><strong>Remote</strong>: use remote VAE model<br />
-  Remote VAE model is a VAE model that is stored on a remote server and accessed over the network<br />
-  It is useful for generating images on a machine with limited memory or processing power<br />
+  Remote VAE is hosted on a remote server and accessed over the network.
+  It is useful on machines with limited memory or compute.
   See section on <a href="./#remote-vae">Remote VAE</a> for more information</li>
 </ul>
 <h2 id="choosing-a-vae">Choosing a VAE</h2>
-<p>When choosing a custom VAE, you must select a model that is compatible with the image generation model you are using. For example, SD-XL model can only use VAE models that are compatible with the SD-XL model.  </p>
-<p>Location for VAE models is specified in *Settings -&gt; System Paths -&gt; VAE, default is <code>models/VAE</code></p>
+<p>When choosing a custom VAE, select one that is compatible with your base model.
+For example, an SD-XL model requires an SD-XL-compatible VAE.</p>
+<p>Set the VAE model path in <em>Settings -&gt; System Paths -&gt; VAE</em>.
+Default path: <code>models/VAE</code>.</p>
 <p>VAE can be set to:</p>
 <ul>
 <li><strong>Default</strong><br />
@@ -3974,7 +3978,7 @@ For more information, see <a href="https://huggingface.co/docs/diffusers/main/en
 <li>When using remote VAE, you must have an active internet connection  </li>
 <li>Remote VAE is only available for some models: for example, <em>SD 1.5, SD-XL, FLUX.1 and HiDream</em>  </li>
 <li>Remote VAE is limited to <em>2048x2048</em> resolution  </li>
-<li>In case of remote VAE failure, SD.Next will auto-switch to local VAE  </li>
+<li>On remote VAE failure, SD.Next automatically switches to local VAE</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3983,11 +3987,12 @@ However, they are NOT stored on the server.<br />
 No other information is sent or stored to remote servers.</p>
 </div>
 <h2 id="common-issues">Common Issues</h2>
-<p>VAE decode is a critical step in image generation and as such, it can be a source of many issues.<br />
-It is also the single most processing and memory intensive step in image generation.  </p>
+<p>VAE decode is a critical step in image generation, and it can cause several common issues.
+It is also the most compute- and memory-intensive step in the pipeline.</p>
 <ul>
 <li><em>Image generation results in a black image</em><br />
-  This is usually caused due to numerical instability in the VAE model itself combined with choosen GPU settings. For example, many current VAE models are not stable at standard <strong>float16</strong> precision and require either full <strong>float32</strong> precision (which doubles the memory requirements) or <strong>bfloat16</strong> which slightly reduces the precision, but allows the model to work without overflows.  </li>
+  This is usually caused by numerical instability in the VAE model combined with chosen GPU settings.
+  Many VAE models are unstable at <strong>float16</strong> precision and need either <strong>float32</strong> (higher memory use) or <strong>bfloat16</strong> (slightly lower precision, but fewer overflows).  </li>
 <li>If your model is generating black images, try switching to <strong>bfloat16</strong> precision in the GPU settings.</li>
 <li>
 <p>If that doesn't help, try using a custom VAE model that is more stable at lower precision.<br />
@@ -3995,12 +4000,15 @@ It is also the single most processing and memory intensive step in image generat
 </li>
 <li>
 <p><em>Image generation hangs at 100%</em><br />
-  Its not hanging, its just that means that all generate steps are done and now VAE is processing the latent space to generate the final image.<br />
-  However, if you're running out of VRAM and system decided to swap it to RAM, it may easily take a 10x longer time to finish. It is recommended to disallow system RAM-&gt;VRAM swapping.  </p>
+  It is usually not hanging. Generation steps are complete, and VAE decode is still processing.
+  If VRAM is exhausted and the system starts swapping, completion can take much longer (often around 10x).
+  It is recommended to avoid RAM-&gt;VRAM swapping.</p>
 </li>
 <li>
 <p><em>Image generation fails with out-of-memory error</em><br />
-  VAE decode is the single most memory intensive step in image generation and can result in large memory usage. If you cannot process images due to memory constraints, try enabling VAE Tiling or reducing the resolution of the images. Note that running <em>refine</em> or <em>hires</em> steps will require more memory than the initial <em>generate</em> step - simply because they typically run at higher resolution.  </p>
+  VAE decode can use a large amount of memory.
+  If you hit memory limits, try enabling VAE Tiling or reducing image resolution.
+  Also note that <em>refine</em> and <em>hires</em> steps usually need more memory than the initial <em>generate</em> step because they run at higher resolution.</p>
 </li>
 </ul>
 

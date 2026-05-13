@@ -2339,10 +2339,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ControlNet LLLite">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#t2i-adapter" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2351,7 +2350,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="T2I-Adapter">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#processors" class="md-nav__link">
@@ -4081,10 +4081,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ControlNet LLLite">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#t2i-adapter" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4093,7 +4092,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="T2I-Adapter">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#processors" class="md-nav__link">
@@ -4283,28 +4283,28 @@
 
 <h1 id="control-overview">Control Overview</h1>
 <p><img alt="screenshot-processors" src="https://github.com/user-attachments/assets/7bccb82b-366e-4bdb-ae57-cc53fac95d3c" /></p>
-<p>Native control module for SD.Next for Diffusers backend<br />
-Can be used for Control generation as well as Image and Text workflows  </p>
-<p>For a guide on the options and settings, as well as explanations for the controls themselves, see the <a href="../Control-HowTo/">Control Howto</a> and <a href="../Control-Settings/">Control Settings</a> pages.</p>
+<p>Native control module for SD.Next on the Diffusers backend.</p>
+<p>It supports control-guided generation plus image and text workflows.</p>
+<p>For option and setting details, see <a href="../Control-HowTo/">Control Howto</a> and <a href="../Control-Settings/">Control Settings</a>.</p>
 <h2 id="supported-control-models">Supported Control Models</h2>
 <ul>
 <li><a href="https://github.com/lllyasviel/ControlNet">lllyasviel ControlNet</a> for <strong>SD 1.5</strong> and <strong>SD-XL</strong> models<br />
-  Includes ControlNets as well as Reference-only mode and any compatible 3rd party models<br />
-  Original ControlNets for SD15 are 1.4GB each and for SDXL its at massive 4.9GB  </li>
+  Includes ControlNets, Reference-only mode, and compatible third-party models.
+  Original SD 1.5 ControlNets are about 1.4 GB each, and SDXL models are about 4.9 GB each.</li>
 <li><a href="https://vislearn.github.io/ControlNet-XS/">VisLearn ControlNet XS</a> for <strong>SD-XL</strong> models<br />
-  Lightweight ControlNet models for SDXL at 165MB only with near-identical results  </li>
+  Lightweight SDXL ControlNet models at about 165 MB with near-identical results.</li>
 <li><a href="https://github.com/TencentARC/T2I-Adapter">TencentARC T2I-Adapter</a> for <strong>SD 1.5</strong> and <strong>SD-XL</strong> models<br />
-  T2I-Adapters provide similar functionality at much lower resource cost at only 300MB each  </li>
+  Provides similar control functionality at lower resource cost, about 300 MB each.</li>
 <li><a href="https://huggingface.co/kohya-ss/controlnet-lllite">Kohya Control LLite</a> for <strong>SD-XL</strong> models<br />
-  LLLite models for SDXL at 46MB only provide lightweight image control  </li>
+  Lightweight image control for SDXL, about 46 MB each.</li>
 <li><a href="https://github.com/tencent-ailab/IP-Adapter">TenecentAILab IP-Adapter</a> for <strong>SD 1.5</strong> and <strong>SD-XL</strong> models<br />
-  IP-Adapters provides great style transfer functionality at much lower resource cost at below 100MB for SD15 and 700MB for SDXL<br />
-  IP-Adapters can be combined with ControlNet for more stable results, especially when doing batch/video processing  </li>
+  Style transfer with lower resource cost, below 100 MB for SD 1.5 and about 700 MB for SDXL.
+  Can be combined with ControlNet for more stable batch or video workflows.</li>
 <li><a href="https://huggingface.co/CiaraRowles/TemporalNet">CiaraRowles TemporalNet</a> for <strong>SD 1.5</strong> models<br />
-  ControlNet model designed to enhance temporal consistency and reduce flickering for batch/video processing  </li>
+  Improves temporal consistency and reduces flicker in batch/video processing.</li>
 </ul>
-<p>All built-in models are downloaded upon first use and stored stored in:<br />
-<code>/models/controlnet</code>, <code>/models/adapter</code>, <code>/models/xs</code>, <code>/models/lite</code>, <code>/models/processor</code></p>
+<p>All built-in models are downloaded on first use and stored in:
+  <code>/models/controlnet</code>, <code>/models/adapter</code>, <code>/models/xs</code>, <code>/models/lite</code>, <code>/models/processor</code></p>
 <p>Listed below are all models that are supported out-of-the-box:</p>
 <h3 id="controlnet">ControlNet</h3>
 <ul>
@@ -4314,8 +4314,8 @@ Can be used for Control generation as well as Image and Text workflows  </p>
 <li><strong>SDXL</strong>:<br />
   Canny Small XL, Canny Mid XL, Canny XL, Depth Zoe XL, Depth Mid XL</li>
 </ul>
-<p>Note: only models compatible with currently loaded base model are listed<br />
-Additional ControlNet models in safetensors can be downloaded manually and placed into corresponding folder: <code>/models/control/controlnet</code>  </p>
+<p>Note: only models compatible with the currently loaded base model are listed.
+Additional ControlNet models in safetensors can be downloaded manually and placed in: <code>/models/control/controlnet</code></p>
 <h2 id="controlnet-xs">ControlNet XS</h2>
 <ul>
 <li><strong>SDXL</strong>:<br />
@@ -4326,28 +4326,29 @@ Additional ControlNet models in safetensors can be downloaded manually and place
 <li><strong>SDXL</strong>:<br />
   Canny, Canny anime, Depth anime, Blur anime, Pose anime, Replicate anime</li>
 </ul>
-<p>Note: control-lllite is implemented using unofficial implementation and its considered experimental<br />
-Additional ControlNet models in safetensors can be downloaded manually and placed into corresponding folder: <code>/models/control/lite</code>  </p>
-<h3 id="t2i-adapter">T2I-Adapter</h3>
-<pre><code>'Segment': 'TencentARC/t2iadapter_seg_sd14v1',
-'Zoe Depth': 'TencentARC/t2iadapter_zoedepth_sd15v1',
-'OpenPose': 'TencentARC/t2iadapter_openpose_sd14v1',
-'KeyPose': 'TencentARC/t2iadapter_keypose_sd14v1',
-'Color': 'TencentARC/t2iadapter_color_sd14v1',
-'Depth v1': 'TencentARC/t2iadapter_depth_sd14v1',
-'Depth v2': 'TencentARC/t2iadapter_depth_sd15v2',
-'Canny v1': 'TencentARC/t2iadapter_canny_sd14v1',
-'Canny v2': 'TencentARC/t2iadapter_canny_sd15v2',
-'Sketch v1': 'TencentARC/t2iadapter_sketch_sd14v1',
-'Sketch v2': 'TencentARC/t2iadapter_sketch_sd15v2',
-</code></pre>
+<p>Note: Control-LLLite uses an unofficial implementation and is considered experimental.
+Additional ControlNet models in safetensors can be downloaded manually and placed in: <code>/models/control/lite</code></p>
+<h2 id="t2i-adapter">T2I-Adapter</h2>
+<p>Built-in aliases include:</p>
+<div class="highlight"><pre><span></span><code>&#39;Segment&#39;: &#39;TencentARC/t2iadapter_seg_sd14v1&#39;
+&#39;Zoe Depth&#39;: &#39;TencentARC/t2iadapter_zoedepth_sd15v1&#39;
+&#39;OpenPose&#39;: &#39;TencentARC/t2iadapter_openpose_sd14v1&#39;
+&#39;KeyPose&#39;: &#39;TencentARC/t2iadapter_keypose_sd14v1&#39;
+&#39;Color&#39;: &#39;TencentARC/t2iadapter_color_sd14v1&#39;
+&#39;Depth v1&#39;: &#39;TencentARC/t2iadapter_depth_sd14v1&#39;
+&#39;Depth v2&#39;: &#39;TencentARC/t2iadapter_depth_sd15v2&#39;
+&#39;Canny v1&#39;: &#39;TencentARC/t2iadapter_canny_sd14v1&#39;
+&#39;Canny v2&#39;: &#39;TencentARC/t2iadapter_canny_sd15v2&#39;
+&#39;Sketch v1&#39;: &#39;TencentARC/t2iadapter_sketch_sd14v1&#39;
+&#39;Sketch v2&#39;: &#39;TencentARC/t2iadapter_sketch_sd15v2&#39;
+</code></pre></div>
 <ul>
 <li><strong>SD15</strong>:<br />
   Segment, Zoe Depth, OpenPose, KeyPose, Color, Depth v1, Depth v2, Canny v1, Canny v2, Sketch v1, Sketch v2  </li>
 <li><strong>SDXL</strong>:<br />
   Canny XL, Depth Zoe XL, Depth Midas XL, LineArt XL, OpenPose XL, Sketch XL  </li>
 </ul>
-<p><em>Note</em>: Only models compatible with currently loaded base model are listed</p>
+<p><em>Note</em>: Only models compatible with the currently loaded base model are listed.</p>
 <h3 id="processors">Processors</h3>
 <ul>
 <li><strong>Pose style</strong>: OpenPose, DWPose, MediaPipe Face</li>
@@ -4356,9 +4357,9 @@ Additional ControlNet models in safetensors can be downloaded manually and place
 <li><strong>Segmentation style</strong>: SegmentAnything</li>
 <li><strong>Other</strong>: MLSD, Shuffle</li>
 </ul>
-<p><em>Note</em>: Processor sizes can vary from none for built-in ones to anywhere between 200MB up to 4.2GB for ZoeDepth-Large</p>
+<p><em>Note</em>: Processor sizes range from built-in options with no extra size up to about 4.2 GB for ZoeDepth-Large.</p>
 <h3 id="segmentation-models">Segmentation Models</h3>
-<p>There are 8 Auto-segmentation models available:  </p>
+<p>There are 8 auto-segmentation models available:</p>
 <ul>
 <li>Facebook SAM ViT Base (357MB)  </li>
 <li>Facebook SAM ViT Large (1.16GB)</li>
@@ -4370,7 +4371,7 @@ Additional ControlNet models in safetensors can be downloaded manually and place
 <li>Rembg ISNet</li>
 </ul>
 <h3 id="reference">Reference</h3>
-<p>Reference mode is its own pipeline, so it cannot have multiple units or processors  </p>
+<p>Reference mode uses its own pipeline, so it cannot use multiple units or processors.</p>
 <h2 id="workflows">Workflows</h2>
 <h3 id="inputs-outputs">Inputs &amp; Outputs</h3>
 <ul>
@@ -4386,14 +4387,14 @@ Additional ControlNet models in safetensors can be downloaded manually and place
 <ul>
 <li>Unit is: <strong>input</strong> plus <strong>process</strong> plus <strong>control</strong></li>
 <li>Pipeline consists of any number of configured units<br />
-  If unit is using using control modules, all control modules inside pipeline must be of same type<br />
+  If a unit uses control modules, all control modules in that pipeline must be the same type.
   e.g. <strong>ControlNet</strong>, <strong>ControlNet-XS</strong>, <strong>T2I-Adapter</strong> or <strong>Reference</strong></li>
 <li>Each unit can use primary input or its own override input  </li>
-<li>Each unit can have no processor in which case it will run control on input directly<br />
-  Use when you're using predefined input templates  </li>
+<li>Each unit can have no processor, in which case control runs directly on input.
+  Use this when using predefined input templates.</li>
 <li>Unit can have no control in which case it will run processor only  </li>
 <li>Any combination of input, processor and control is possible<br />
-  For example, two enabled units with process only will produce compound processed image but without control  </li>
+  For example, two enabled units with processor only produce a compound processed image without control.</li>
 </ul>
 <h3 id="what-if">What-if?</h3>
 <ul>
@@ -4401,9 +4402,9 @@ Additional ControlNet models in safetensors can be downloaded manually and place
   Can be freely used instead of standard <code>txt2img</code>  </li>
 <li>If none of units have control or adapter, pipeline will run in <strong>img2img</strong> mode using input image<br />
   Can be freely used instead of standard <code>img2img</code>  </li>
-<li>If you have processor enabled, but no controlnet or adapter loaded,<br />
+<li>If you have processor enabled, but no ControlNet or adapter loaded,
   pipeline will run in <strong>img2img</strong> mode using processed input</li>
-<li>If you have multiple processors enabled, but no controlnet or adapter loaded,<br />
+<li>If you have multiple processors enabled, but no ControlNet or adapter loaded,
   pipeline will run in <strong>img2img</strong> mode on <em>blended</em> processed image  </li>
 <li>Output resolution is by default set to input resolution,<br />
   Use resize settings to force any resolution  </li>
@@ -4430,14 +4431,13 @@ Additional ControlNet models in safetensors can be downloaded manually and place
 <h3 id="outpaint">Outpaint</h3>
 <ul>
 <li>Outpaint workflow is triggered when input image is provided in <strong>outpaint</strong> mode</li>
-<li>Outpaint mode can be used with image-to-image or controlnet workflows</li>
+<li>Outpaint mode can be used with image-to-image or ControlNet workflows</li>
 <li>Other unit types such as T2I, XS or Lite do not support outpaint mode</li>
-<li>Recommendation is to increase denoising strength to at least 0.8 since outpained area is blank and needs to be filled with noise</li>
-<li>Outpaint following input image can be controled by overlap setting - higher overlap and more of original image will be part of the outpaint process</li>
+<li>Recommended denoising strength is at least 0.8 because outpainted area starts blank and needs noise.</li>
+<li>Influence from the original image can be controlled with overlap. Higher overlap includes more of the original image in outpaint processing.</li>
 </ul>
 <h2 id="logging">Logging</h2>
-<p>To enable extra logging for troubleshooting purposes,<br />
-set environment variables before running <strong>SD.Next</strong></p>
+<p>To enable extra logging for troubleshooting, set environment variables before running <strong>SD.Next</strong>.</p>
 <ul>
 <li>
 <p>Linux:</p>
@@ -4456,17 +4456,17 @@ webui.bat --debug  </p>
 </blockquote>
 </li>
 </ul>
-<p><em>Note</em>: Starting with debug info enabled also enables <strong>Test</strong> mode in Control module</p>
+<p><em>Note</em>: Starting with debug enabled also enables <strong>Test</strong> mode in the Control module.</p>
 <h2 id="known-issues">Known issues</h2>
 <h3 id="dwpose">DWPose</h3>
-<p>DWPose preprocessor internally uses <code>openmin/mmengine/mmpose/mmdet</code> packages<br />
-which have not been updated in several years and compatibility with latest versions of <code>torch</code> and other system packages is limited  </p>
-<p>You may try to manually install DWPose dependencies using following procedure:<br />
+<p>DWPose preprocessor internally uses <code>openmin/mmengine/mmpose/mmdet</code> packages.
+These packages have not been updated in several years, so compatibility with newer <code>torch</code> and system packages can be limited.</p>
+<p>You can try installing DWPose dependencies manually:
 - Install full <a href="https://developer.nvidia.com/cuda-toolkit">CUDA Toolkit</a> as mmengine requires nvidia compiler (nvcc)<br />
-<em>note</em>: CUDA version should match version of CUDA that comes with <code>torch</code> in in the SD.Next log:</p>
+<em>note</em>: CUDA version should match the CUDA version bundled with <code>torch</code> shown in SD.Next logs:</p>
 <blockquote>
 <p>Torch: torch==2.6.0+cu126 torchvision==0.21.0+cu126<br />
-  here <code>cu126</code> means CUDA version 12.6<br />
+  here <code>cu126</code> means CUDA version 12.6.
 - Install build tools for your platform
   Linux: <code>build-essentials/gcc/make</code> or Windows: <code>Visual Studio Build Tools</code><br />
 - Activate your <code>venv</code>
