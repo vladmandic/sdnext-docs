@@ -8508,10 +8508,15 @@
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">CircleStone Anima 1.0</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
     in both original precision and SDNQ-4bit quantiztion  </li>
+<li><strong>Changes</strong></li>
+<li>all <strong>Guidance</strong> params are now set to <em>-1</em> by default to allow using model defaults and avoid confusion with different model behaviour<br />
+    log will print default values used by model if not set by user  </li>
 <li><strong>Features</strong></li>
 <li><strong>Captioning</strong> new feature: analyze existing images for prompt adherence<br />
 <em>tip</em>: image analysis requires larger VLM model to produce quality output<br />
     new api endpoint: <code>/sdapi/v1/analyze</code>  </li>
+<li><strong>HF download</strong> use <code>XET</code> by default<br />
+    see <em>settings -&gt; huggingface -&gt; download method</em> for options  </li>
 <li><strong>AI</strong></li>
 <li>Cognitive analysis and improvements to <em>all</em> AI prompts</li>
 <li>Automated fixes using <code>/check-</code> skills</li>
@@ -8521,6 +8526,8 @@
 <li><code>gradio</code> initial hijack</li>
 <li><code>SmolVLM</code> captioning</li>
 <li><code>gradio</code> temp files guard against large image</li>
+<li><code>diffusers</code> patch custom pipelines for <code>qk_norm</code></li>
+<li><em>GHSA</em> fixes, thanks @SSJCorpSec for reporting</li>
 </ul>
 <h2 id="update-for-2026-05-13">Update for 2026-05-13</h2>
 <h3 id="highlights-for-2026-05-13">Highlights for 2026-05-13</h3>
