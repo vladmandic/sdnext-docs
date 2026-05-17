@@ -4372,13 +4372,15 @@ It does not cover mostly static system settings.</p>
 Parameters from "Settings" sections (such as advanced sampler or postprocessing options) can be used in the <code>override_settings</code> dictionary for per-generation changes.</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
+<li><a href="./#sdnext-parameters-guide">SDnext Parameters Guide</a></li>
+<li><a href="./#table-of-contents">Table of Contents</a></li>
 <li><a href="./#understanding-parameter-terminology">Understanding Parameter Terminology</a></li>
 <li><a href="./#base-parameters">Base Parameters</a></li>
+<li><a href="./#vae-parameters">VAE Parameters</a></li>
 <li><a href="./#sampler-parameters">Sampler Parameters</a></li>
 <li><a href="./#guidance-parameters">Guidance Parameters</a></li>
 <li><a href="./#text-encoder-parameters">Text Encoder Parameters</a></li>
 <li><a href="./#style-parameters">Style Parameters</a></li>
-<li><a href="./#vae-parameters">VAE Parameters</a></li>
 <li><a href="./#enhancement-parameters">Enhancement Parameters</a></li>
 <li><a href="./#face-restoration-parameters">Face Restoration Parameters</a></li>
 <li><a href="./#detailer-parameters">Detailer Parameters</a></li>
@@ -4392,7 +4394,6 @@ Parameters from "Settings" sections (such as advanced sampler or postprocessing 
 <li><a href="./#script-parameters">Script Parameters</a></li>
 <li><a href="./#override-parameters">Override Parameters</a></li>
 <li><a href="./#video-processing-parameters">Video Processing Parameters</a></li>
-<li><a href="./#text-encoder-parameters">CLiP Skip</a></li>
 <li><a href="./#resize-modes">Resize modes</a></li>
 <li><a href="./#context-aware-scaling">Context-aware scaling</a></li>
 <li><a href="./#notes">Notes</a></li>
@@ -4855,26 +4856,26 @@ Parameters from "Settings" sections (such as advanced sampler or postprocessing 
 <td style="text-align: left;">Guidance End</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>diffusers_guidance_rescale</code></td>
+<td style="text-align: left;"><code>cfg_rescale</code></td>
 <td style="text-align: left;"><code>float</code></td>
 <td style="text-align: left;"><code>0.0</code></td>
-<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: diffusers_guidance_rescale: 0.3</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: cfg_rescale: 0.3</code></td>
 <td style="text-align: left;">Rescale guidance for diffusers to prevent oversaturation when using high CFG values. Helps maintain color balance.</td>
 <td style="text-align: left;">Rescale guidance</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>pag_scale</code></td>
+<td style="text-align: left;"><code>cfg_true</code></td>
 <td style="text-align: left;"><code>float</code></td>
 <td style="text-align: left;"><code>0.0</code></td>
-<td style="text-align: left;"><code>Range: 0.0 to 5.0</code> <br> <code>Syntax: pag_scale: 2.0</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 5.0</code> <br> <code>Syntax: cfg_true: 2.0</code></td>
 <td style="text-align: left;">Perturbed Attention Guidance scale for enhanced details. Improves fine details without affecting overall composition.</td>
 <td style="text-align: left;">Attention guidance</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>pag_adaptive</code></td>
+<td style="text-align: left;"><code>cfg_adaptive</code></td>
 <td style="text-align: left;"><code>float</code></td>
 <td style="text-align: left;"><code>0.5</code></td>
-<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: pag_adaptive: 0.8</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: cfg_adaptive: 0.8</code></td>
 <td style="text-align: left;">Adaptive strength for PAG. Controls how much the guidance adapts to different image regions.</td>
 <td style="text-align: left;">Adaptive scaling</td>
 </tr>
@@ -4900,7 +4901,7 @@ Parameters from "Settings" sections (such as advanced sampler or postprocessing 
 <td style="text-align: left;"><code>1</code></td>
 <td style="text-align: left;"><code>Range: 1 to 12</code> <br> <code>Syntax: clip_skip: 2</code></td>
 <td style="text-align: left;">Skip last N layers of CLIP model. Only affects models which use CLIP as their Text Encoder. Values 1 or 2 used with SD1.5, should be left at default 1 with SDXL and other models. More here: <a href="../CLiP-Skip/">CLiP skip in detail</a></td>
-<td style="text-align: left;">Clip skip</td>
+<td style="text-align: left;">CLiP-skip</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>clip_skip_enabled</code></td>
@@ -5361,10 +5362,10 @@ Parameters from "Settings" sections (such as advanced sampler or postprocessing 
 <td style="text-align: left;">resize background color</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>image_cfg_scale</code></td>
+<td style="text-align: left;"><code>cfg_image</code></td>
 <td style="text-align: left;"><code>float</code></td>
 <td style="text-align: left;"><code>None</code></td>
-<td style="text-align: left;"><code>Range: 0.0 to 3.0</code> <br> <code>Syntax: image_cfg_scale: 1.5</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 3.0</code> <br> <code>Syntax: cfg_image: 1.5</code></td>
 <td style="text-align: left;">Image conditioning strength (for ControlNet/IP-Adapter). Controls how closely to follow the input image structure.</td>
 <td style="text-align: left;">guidance scale</td>
 </tr>
