@@ -3548,6 +3548,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#hadamard-group-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hadamard group size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#svd-rank-size" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3585,6 +3596,17 @@
     <span class="md-ellipsis">
       
         Use SVD quantization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-hadamard-rotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Hadamard rotations
       
     </span>
   </a>
@@ -4327,6 +4349,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#hadamard-group-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hadamard group size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#svd-rank-size" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4364,6 +4397,17 @@
     <span class="md-ellipsis">
       
         Use SVD quantization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-hadamard-rotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Hadamard rotations
       
     </span>
   </a>
@@ -4514,6 +4558,7 @@
 <li>Supports post load quantization for any model  </li>
 <li>Supports on-the-fly usage of LoRA models  </li>
 <li>Supports SVD Quantization  </li>
+<li>Supports Hadamard Rotations  </li>
 <li>Supports balanced offload  </li>
 </ul>
 <p>Benchmarks are available in the <a href="../Quantization/#benchmarks">Quantization Wiki</a>.</p>
@@ -4694,6 +4739,11 @@ Linear layers will use this formula to find the group size: <code>2 ** (2 + numb
 Convolutions and Embeddings will use this formula to find the group size: <code>2 ** (1 + number_of_bits)</code><br />
 Setting the group size to <code>-1</code> will disable grouping.  </p>
 <p>Using Quantized MatMul will disable group sizes if the number of bits is a 6 or more and group size is set to 0.  </p>
+<h3 id="hadamard-group-size">Hadamard group size</h3>
+<p>Used to set how many tensor elements share the same Hadamard rotation matrix.<br />
+Or in other words, sets the size of the Hadamard rotation matrix.<br />
+Higher values have better quality but with less performance and more memory usage.<br />
+Default is <code>128</code>.  </p>
 <h3 id="svd-rank-size">SVD rank size</h3>
 <p>The rank size to use for SVD quantization.<br />
 Higher values have better quality but with less performance and more memory usage.<br />
@@ -4720,12 +4770,18 @@ The formula used to calculate the threshold is: <code>10 ** -(num_bits / 2)</cod
 Default is <code>None</code></p>
 <h3 id="use-svd-quantization">Use SVD quantization</h3>
 <p>Enabling this option will apply SVD quantization on top of SDNQ quantization.<br />
-SVD has much higher quality but runs slower.<br />
+SVD has much higher quality but runs much slower and takes much longer to quantize a model.<br />
 SVD also makes LoRAs usable with 4-bit quantization.<br />
 More info on SVD quantization: <a href="https://arxiv.org/abs/2411.05007">https://arxiv.org/abs/2411.05007</a><br />
+This option can stack together with Hadamard rotations.<br />
 Disabled by default.  </p>
 <p>Note: SVD lowrank used by SDNQ is not deterministic.<br />
 Meaning that you will get slightly different quantization results every time.  </p>
+<h3 id="use-hadamard-rotations">Use Hadamard rotations</h3>
+<p>Enabling this option will apply Hadamard rotations on top of SDNQ quantization.<br />
+Hadamard has much higher quality but runs slightly slower.<br />
+This option can stack together with SVD quantization.<br />
+Disabled by default.  </p>
 <h3 id="use-dynamic-quantization">Use Dynamic quantization</h3>
 <p>Enabling this option will dynamically select a per layer quantization type based on the <code>Dynamic loss threshold</code>.<br />
 And the current <code>Quantization type</code> will be used as the minimum allowed quantization type when this option is enabled.<br />
@@ -4734,7 +4790,7 @@ This option takes longer to quantize but has much higher quality depending on yo
 If the minimum allowed quantization type can't achieve good quantization loss on a specific layer, then it will increase the quantization type just for that layer until it achieves a good quantization loss.<br />
 This will take time to test on quantization and the end model might be slightly larger but the resulting model will have much higher quality.  </p>
 <p>This option should be preferred over SVD first.<br />
-If you can't get good enough results with <code>Dynamic quantization</code> alone, then you can combine it with SVD too.<br />
+If you can't get good enough results with <code>Dynamic quantization</code> alone, then you can combine it with Hadamard and / or SVD too.<br />
 Disabled by default.  </p>
 <h3 id="quantize-convolutional-layers">Quantize convolutional layers</h3>
 <p>Enabling this option will quantize convolutional layers in UNet models too.<br />

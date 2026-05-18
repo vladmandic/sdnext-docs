@@ -3771,10 +3771,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-05-17" class="md-nav__link">
+  <a href="#update-for-2026-05-18" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-05-17
+        Update for 2026-05-18
       
     </span>
   </a>
@@ -6141,10 +6141,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-05-17" class="md-nav__link">
+  <a href="#update-for-2026-05-18" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-05-17
+        Update for 2026-05-18
       
     </span>
   </a>
@@ -8503,7 +8503,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-05-17">Update for 2026-05-17</h2>
+<h2 id="update-for-2026-05-18">Update for 2026-05-18</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">CircleStone Anima 1.0</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
@@ -8512,19 +8512,25 @@
 <li>all <strong>Guidance</strong> params are now set to <em>-1</em> by default to allow using model defaults and avoid confusion with different model behaviour<br />
     log will print default values used by model if not set by user  </li>
 <li><strong>Features</strong></li>
+<li><strong>SDNQ</strong> additional quantization algorithm: <em>Hadamard Rotations</em><br />
+    much higher quality than base SDNQ, but runs slightly slower<br />
+    still faster than SVD and can be combined together with SVD for combined benefits  </li>
 <li><strong>Captioning</strong> new feature: analyze existing images for prompt adherence<br />
 <em>tip</em>: image analysis requires larger VLM model to produce quality output<br />
     new api endpoint: <code>/sdapi/v1/analyze</code>  </li>
 <li><strong>HF download</strong> use <code>XET</code> by default<br />
     see <em>settings -&gt; huggingface -&gt; download method</em> for options  </li>
+<li><strong>Nunchaku</strong> consider DEV builds when auto-installing</li>
 <li><strong>Compute</strong></li>
-<li><strong>CUDA</strong> update to <code>torch==2.12</code> with <code>cuda==13.2</code></li>
-<li><strong>ROCm</strong> update to <code>torch==2.12</code></li>
-<li><strong>IPEX</strong> update to <code>torch==2.12</code></li>
+<li>update <code>torch==2.12</code> for <em>CUDA, ROCm, IPEX</em></li>
 <li><strong>AI</strong></li>
 <li>Cognitive analysis and improvements to <em>all</em> AI prompts</li>
 <li>Automated fixes using <code>/check-</code> skills</li>
 <li>Automated syntax, spelling and readability improvements to <code>/wiki</code> pages</li>
+<li><strong>Internal</strong></li>
+<li>complete refactor of <code>modernui</code> javascript codebase to typescript!</li>
+<li>improve <code>kanvas</code> typing</li>
+<li>additional strong typing in core, thanks @awsr</li>
 <li><strong>Fixes</strong></li>
 <li><em>hidream-o1</em> prequant loading</li>
 <li><code>gradio</code> initial hijack</li>
@@ -8536,6 +8542,8 @@
 <li><code>attention</code> execution guard against <code>cpu</code> tensors</li>
 <li>downloaded diffuser model use <code>snapshot</code> path</li>
 <li>improve <code>settings</code> search</li>
+<li><code>nunchaku</code> z-image loader</li>
+<li><code>ui</code> server log monitor</li>
 </ul>
 <h2 id="update-for-2026-05-13">Update for 2026-05-13</h2>
 <h3 id="highlights-for-2026-05-13">Highlights for 2026-05-13</h3>
