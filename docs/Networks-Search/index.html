@@ -3993,7 +3993,7 @@ In addition to that, the RegEx search is also slower than a normal search, so it
 RegEx searches are case-insensitive too.</p>
 <p>One more thing to watch out for, is file paths. For the normal search the Windows <code>\</code> is replaced with a <code>/</code> to make it easier to search for file paths. This is not the case for the RegEx search. So you could use for example <code>[\/\\]</code> to match both <code>\</code> and <code>/</code> in a RegEx search.</p>
 <p>Considering the RegEx search, the field which is searched is structured in the following way:</p>
-<div class="highlight"><pre><span></span><code><span class="sb">`filename: </span><span class="si">${</span><span class="nx">filename</span><span class="si">}</span><span class="sb">|name: </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">|tags: </span><span class="si">${</span><span class="nx">tags</span><span class="si">}</span><span class="sb">`</span>
+<div class="highlight"><pre><span></span><code>filename: ${filename}|name: ${name}|tags: ${tags}
 </code></pre></div>
 <p>As of writing this, these fields represent:</p>
 <ul>
