@@ -141,15 +141,10 @@ nav:
     - Themes: Themes.md
     - Enso: Enso.md
     - Kanvas: Kanvas.md
-    - Localization: Locale.md
     - Shortcuts: Hotkeys.md
   - Behind-the-Scenes:
     - How Does It Work?: SD-Pipeline-How-it-Works.md
     - Training Methods: SD-Training-Methods.md
-    - Hints and Tooltips: Hints.md
-    - Wiki and Docs: Docs.md
-    - Custom Extensions: Extensions.md
-    - User Themes: Theme-User.md
     - Backends: Backend.md
     - Profiling: Profiling.md
   - Advanced:
@@ -162,6 +157,17 @@ nav:
     - Variable Auto-Encoder: VAE.md
     - Benchmark Results: Benchmark.md
     - Nunchaku Engine: Nunchaku.md
+  - Development:
+    - Home: Dev-Home.md
+    - Getting Started: Dev-GettingStarted.md
+    - AI Coding: Dev-AICoding.md
+    - Code Structure: Dev-Structure.md
+    - UI Development: Dev-UI.md
+    - UI Themes: Dev-Theme.md
+    - Wiki & Documentation: Dev-Docs.md
+    - Tips & Hints: Dev-Hints.md
+    - Localization: Dev-Locale.md
+    - Extensions & Scripts: Dev-Extensions.md
   - API:
     - API Usage: API.md
     - CLI and API Examples: CLI-Tools.md
