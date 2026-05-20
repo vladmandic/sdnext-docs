@@ -3916,7 +3916,7 @@
 
 
 <h1 id="localization">Localization</h1>
-<p>SD.Next localization system is based on the single JSON file: <a href="https://github.com/vladmandic/sdnext/blob/dev/html/locale_en.json">html/locale_en.json</a>  </p>
+<p>SD.Next localization system is based on the single JSON file: <a href="https://github.com/vladmandic/sdnext/blob/dev/ui/locale/locale_en.json">ui/locale/locale_en.json</a>  </p>
 <p>The structure is simple: for each visible UI label, there is a corresponding hint displayed when the user hovers over the label.</p>
 <p><em>Example</em>: Generate button:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;Generate&quot;</span><span class="p">,</span><span class="nt">&quot;localized&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;hint&quot;</span><span class="p">:</span><span class="s2">&quot;Start processing&quot;</span><span class="p">}</span>
@@ -3925,13 +3925,13 @@
 <p class="admonition-title">Tip</p>
 <p>See <a href="../Hints/">Hints</a> document for more details</p>
 </div>
-<p>This file is auto-translated using an LLM model to create separate files in the format <code>html/locale_{locale}.json</code>. These auto-generated files should not be edited directly as they will be overwritten on the next update. For translation improvements, contact the maintainers.</p>
+<p>This file is auto-translated using an LLM model to create separate files in the format <code>ui/locale/locale_{locale}.json</code>. These auto-generated files should not be edited directly as they will be overwritten on the next update. For translation improvements, contact the maintainers.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Translation is performed using the <code>cli/localize.js</code> script</p>
 </div>
 <h2 id="editing-localization">Editing Localization</h2>
-<p>For poor translations or to provide better alternatives, create or edit <code>html/override_{locale}.json</code>. This file should include only the specific items you want to override.</p>
+<p>For poor translations or to provide better alternatives, create or edit <code>ui/locale/override_{locale}.json</code>. This file should include only the specific items you want to override.</p>
 <h3 id="supported-languages">Supported Languages</h3>
 <ul>
 <li><code>en</code>: English</li>
