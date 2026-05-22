@@ -4034,22 +4034,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-05-21" class="md-nav__link">
+  <a href="#update-for-2026-05-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-05-21
+        Update for 2026-05-22
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-05-21">
+    <nav class="md-nav" aria-label="Update for 2026-05-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-05-21" class="md-nav__link">
+  <a href="#highlights-for-2026-05-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-05-21
+        Highlights for 2026-05-22
       
     </span>
   </a>
@@ -4057,10 +4057,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-05-21" class="md-nav__link">
+  <a href="#details-for-2026-05-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-05-21
+        Details for 2026-05-22
       
     </span>
   </a>
@@ -6432,22 +6432,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-05-21" class="md-nav__link">
+  <a href="#update-for-2026-05-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-05-21
+        Update for 2026-05-22
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-05-21">
+    <nav class="md-nav" aria-label="Update for 2026-05-22">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-05-21" class="md-nav__link">
+  <a href="#highlights-for-2026-05-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-05-21
+        Highlights for 2026-05-22
       
     </span>
   </a>
@@ -6455,10 +6455,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-05-21" class="md-nav__link">
+  <a href="#details-for-2026-05-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-05-21
+        Details for 2026-05-22
       
     </span>
   </a>
@@ -8822,16 +8822,16 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-05-21">Update for 2026-05-21</h2>
-<h3 id="highlights-for-2026-05-21">Highlights for 2026-05-21</h3>
+<h2 id="update-for-2026-05-22">Update for 2026-05-22</h2>
+<h3 id="highlights-for-2026-05-22">Highlights for 2026-05-22</h3>
 <p><em>What's New?</em>
 - <strong>Anima</strong> made it to release version
 - <strong>SDNQ</strong> new quantization algorithm with even higher quality
-- Improved image metadata options
-- New image analysis feature</p>
+- New <strong>image analysis</strong> feature and much improved <strong>prompt enhance</strong> capabilities which allow steering the model in real-time
+- Improved image metadata options</p>
 <p>And we have new <a href="https://vladmandic.github.io/sdnext-docs/Dev-Home/">Contibuting<strong> &amp; </strong>Development</a> section in docs with info on pretty much any type of development or contribution related topics - do check it out!</p>
 <p>Plus continued work on modernization of codebase: UI is now fully TypeScript based and new modular LoRA loader</p>
-<h3 id="details-for-2026-05-21">Details for 2026-05-21</h3>
+<h3 id="details-for-2026-05-22">Details for 2026-05-22</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">CircleStone Anima 1.0</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
@@ -8840,8 +8840,19 @@
 <li><strong>SDNQ</strong> new quantization algorithm: <em>Hadamard Rotations</em><br />
     much higher quality than base SDNQ, but runs slightly slower<br />
     still faster than SVD and can be combined together with SVD for combined benefits  </li>
-<li><strong>Metadata</strong>
-    add <em>wildcards</em> (if used) info to image metadata<br />
+<li><strong>Prompt enhance</strong> tons of features<br />
+    cleanup list of predefined models, new models added and some old removed<br />
+    improved default values plus some new params like min length and <code>custom args</code> so you can pass anything to an llm model<br />
+    improved system prompts<br />
+    new processing engine! now you can steer the model as its generating<br />
+    add words to list and model will either steer away from them towards safe choices or you choose specific replacements for them<br />
+<em>for example</em>: <code>child:person, toy:airplane, dog:cat</code><br />
+    will do exactly as you'd expect, steer away from first word towards (optional) second word<br />
+    and it expands the functionality with customizable embedding similarity:
+    <em>for example</em>, <code>child</code> can match <code>kid</code>, <code>girl</code>, <code>boy</code><br />
+    and it expands the functionality with customizable semantic matching:
+    <em>for example</em>, <code>young ...</code> will match before next word appears in the prompt and steer away from it towards desired choices  </li>
+<li>add <em>wildcards</em> (if used) info to image metadata<br />
     if wildcards or styles modify prompt, add original prompt to image metadata as <em>template</em>  </li>
 <li><strong>Captioning</strong> new feature: analyze existing images for prompt adherence<br />
 <em>tip</em>: image analysis requires larger VLM model to produce quality output<br />
@@ -8889,6 +8900,7 @@
 <li><code>kanvas</code> enable toolbar on <em>send-to</em> action</li>
 <li><code>hf download</code> model card lookup</li>
 <li><code>ltx video</code> padding logic</li>
+<li><code>prompt enhance</code> custom model loader</li>
 </ul>
 <h2 id="update-for-2026-05-13">Update for 2026-05-13</h2>
 <h3 id="highlights-for-2026-05-13">Highlights for 2026-05-13</h3>
