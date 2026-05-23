@@ -4238,10 +4238,15 @@
 <h2 id="requirements">Requirements</h2>
 <p>All UI work requires that NodeJS is installed<br />
 Install requirements:  </p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>pnpm</code> is recommended for faster installs and better dependency management</p>
+</div>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>pnpm
+pnpm<span class="w"> </span>install
 </code></pre></div>
 <h2 id="building">Building</h2>
-<p>All build commands are defined in <code>package.json</code> and can be run with <code>npm run &lt;command&gt;</code>.</p>
+<p>All build commands are defined in <code>package.json</code> and can be run with <code>pnpm run &lt;command&gt;</code>.</p>
 <p>To create production builds:
 - <code>build:core</code> - builds core UI components and StandardUI
 - <code>build:modernui</code> - builds ModernUI components
@@ -4270,7 +4275,7 @@ Install requirements:  </p>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><code>npm run ui</code> runs all UI checks and a full build.<br />
+<p><code>pnpm run ui</code> runs all UI checks and a full build.<br />
 It is recommended before submitting a PR.</p>
 </div>
 <h2 id="paths">Paths</h2>

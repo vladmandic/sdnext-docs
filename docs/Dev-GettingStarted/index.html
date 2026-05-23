@@ -4392,9 +4392,10 @@ Avoid generic names like <code>my-changes</code> or <code>update-code</code>.</p
 <p>Install the project dependencies:</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><code>pnpm</code> is recommended for faster installs, but default <code>npm</code> also works:</p>
+<p><code>pnpm</code> is recommended for faster installs and better dependency management</p>
 </div>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>pnpm
+pnpm<span class="w"> </span>install
 </code></pre></div>
 <h2 id="3-make-your-changes">3. Make your changes</h2>
 <p>Edit only the files needed for your contribution. Avoid unrelated changes and do not include submodule updates unless they are part of your work.</p>
@@ -4410,7 +4411,7 @@ Avoid generic names like <code>my-changes</code> or <code>update-code</code>.</p
 <p class="admonition-title">Important</p>
 <p>Make sure to fix any linting errors before submitting your PR.</p>
 </div>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>lint
+<div class="highlight"><pre><span></span><code>pnpm<span class="w"> </span>run<span class="w"> </span>lint
 </code></pre></div>
 <p>This command runs:
 - <code>precommit</code> for formatting and pre-commit checks
