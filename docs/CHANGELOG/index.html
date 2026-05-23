@@ -4034,22 +4034,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-05-22" class="md-nav__link">
+  <a href="#update-for-2026-05-23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-05-22
+        Update for 2026-05-23
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-05-22">
+    <nav class="md-nav" aria-label="Update for 2026-05-23">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-05-22" class="md-nav__link">
+  <a href="#highlights-for-2026-05-23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-05-22
+        Highlights for 2026-05-23
       
     </span>
   </a>
@@ -4057,10 +4057,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-05-22" class="md-nav__link">
+  <a href="#details-for-2026-05-23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-05-22
+        Details for 2026-05-23
       
     </span>
   </a>
@@ -6432,22 +6432,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-05-22" class="md-nav__link">
+  <a href="#update-for-2026-05-23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-05-22
+        Update for 2026-05-23
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-05-22">
+    <nav class="md-nav" aria-label="Update for 2026-05-23">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-05-22" class="md-nav__link">
+  <a href="#highlights-for-2026-05-23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-05-22
+        Highlights for 2026-05-23
       
     </span>
   </a>
@@ -6455,10 +6455,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-05-22" class="md-nav__link">
+  <a href="#details-for-2026-05-23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-05-22
+        Details for 2026-05-23
       
     </span>
   </a>
@@ -8822,20 +8822,24 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-05-22">Update for 2026-05-22</h2>
-<h3 id="highlights-for-2026-05-22">Highlights for 2026-05-22</h3>
+<h2 id="update-for-2026-05-23">Update for 2026-05-23</h2>
+<h3 id="highlights-for-2026-05-23">Highlights for 2026-05-23</h3>
 <p><em>What's New?</em>
-- <strong>Anima</strong> made it to release version
+- <strong>Anima</strong> made it to release version, Microsoft joins the game with <strong>Lens</strong>
 - <strong>SDNQ</strong> new quantization algorithm with even higher quality
 - New <strong>image analysis</strong> feature and much improved <strong>prompt enhance</strong> capabilities which allow steering the model in real-time
 - Improved image metadata options</p>
 <p>And we have new <a href="https://vladmandic.github.io/sdnext-docs/Dev-Home/">Contibuting<strong> &amp; </strong>Development</a> section in docs with info on pretty much any type of development or contribution related topics - do check it out!</p>
 <p>Plus continued work on modernization of codebase: UI is now fully TypeScript based and new modular LoRA loader</p>
-<h3 id="details-for-2026-05-22">Details for 2026-05-22</h3>
+<h3 id="details-for-2026-05-23">Details for 2026-05-23</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">CircleStone Anima 1.0</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
     in both original precision and SDNQ-4bit quantiztion  </li>
+<li><a href="https://huggingface.co/microsoft/Lens">Microsoft Lens</a> in <em>Standard</em>, <em>Base</em> and <em>Turbo</em> (distilled) variant<br />
+    3.8B text-to-image DiT model with 12B GPT-OSS text-encoding and Flux2 VAE<br />
+    oh, that 12B encoder is MoE with 3.6B activated plus its prequantized using <code>mxfp4</code><br />
+<em>note</em> Lens comes with its own prompt-refiner, enable in settings -&gt; model options (disabled by default)  </li>
 <li><strong>Features</strong></li>
 <li><strong>SDNQ</strong> new quantization algorithm: <em>Hadamard Rotations</em><br />
     much higher quality than base SDNQ, but runs slightly slower<br />
