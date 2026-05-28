@@ -1,0 +1,6807 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="SD.Next Documentation">
+      
+      
+      
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Schedulers/">
+      
+      
+        <link rel="prev" href="../Networks-Search/">
+      
+      
+        <link rel="next" href="../Detailer/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Schedulers - SD.Next Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../sdnext.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Schedulers - SD.Next Documentation" />
+<meta property="og:description" content="SD.Next Documentation" />
+<meta property="og:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Schedulers.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://vladmandic.github.io/sdnext-docs/Schedulers/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Schedulers - SD.Next Documentation" />
+<meta property="twitter:description" content="SD.Next Documentation" />
+<meta property="twitter:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Schedulers.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#schedulers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SD.Next Documentation" class="md-header__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
+      
+  <img src="../favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SD.Next Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Schedulers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 2h14v14H2zm20 6v14H8v-4h2v2h10V10h-2V8z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m3.55 19.09 1.41 1.41 1.8-1.79-1.42-1.42M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6c0-3.32-2.69-6-6-6m8 7h3v-2h-3m-2.76 7.71 1.8 1.79 1.41-1.41-1.79-1.8M20.45 5l-1.41-1.4-1.8 1.79 1.42 1.42M13 1h-2v3h2M6.76 5.39 4.96 3.6 3.55 5l1.79 1.81zM1 13h3v-2H1m12 9h-2v3h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/vladmandic/automatic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SD.Next
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Installation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Install
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Model-Support/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Models
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nVidia/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Platforms
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Getting-Started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Themes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  User Interface
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../SD-Pipeline-How-it-Works/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Behind-the-Scenes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Performance-Tuning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Dev-Home/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../API/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../FAQ/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Troubleshoot
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CHANGELOG/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SD.Next Documentation" class="md-nav__button md-logo" aria-label="SD.Next Documentation" data-md-component="logo">
+      
+  <img src="../favicon.ico" alt="logo">
+
+    </a>
+    SD.Next Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/vladmandic/automatic" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SD.Next
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href=".." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Install
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Launcher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Launcher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Advanced-Install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLI-Arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Model-Support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Gated/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gated Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HuggingFace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HuggingFace Tokens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SD-XL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    StableDiffusion XL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SD3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    StableDiffusion 3.x
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Stable-Cascade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    StableCascade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FLUX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FLUX.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Using-LCM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HiDream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HiDream
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FramePack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FramePack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LTX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LTXVideo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Google-GenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google-GenAI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platforms
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Platforms
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nVidia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nVidia-CUDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Intel-ARC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intel-ARC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AMD-ROCm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD-ROCm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AMD-MIOpen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD-MIOpen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ZLUDA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ZLUDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenVINO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVINO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ONNX-Runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONNX & Olive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MacOS-Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MacOS-Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DirectML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DirectML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting-Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Models-Tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working with Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prompting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Prompt-Enhance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Enhacement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networks-Search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networks Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedulers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedulers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Core Concept
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed-vs-quality-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speed vs Quality Trade-offs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffusers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diffusers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-foundational-gaussian-schedulers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Foundational Gaussian Schedulers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dpm-solver-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. DPM-Solver Family
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-euler-heun-karras-style-schedulers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Euler &amp; Heun (Karras-style) Schedulers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-modern-distillation-high-speed-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Modern Distillation &amp; High-Speed Solvers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-flow-matching-rectified-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Flow Matching &amp; Rectified Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sdnext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDNext
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SDNext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-high-precision-advanced-ode-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. High-Precision &amp; Advanced ODE Solvers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-flow-matching-optimized-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Flow Matching Optimized Solvers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-fast-step-distillation-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Fast-Step &amp; Distillation Solvers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-continuous-variational-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Continuous &amp; Variational Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unique-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unique Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#res4lyf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RES4LYF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RES4LYF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-res-family-refined-exponential-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. RES Family (Refined Exponential Solvers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-exponential-time-differencing-etd-lawson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Exponential Time Differencing (ETD) &amp; Lawson
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-classical-numerical-integrators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Classical Numerical Integrators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-flow-matching-physics-inspired-samplers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Flow Matching &amp; Physics-Inspired Samplers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-utilities-sigma-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Utilities &amp; Sigma Generators
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduler-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduler Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scheduler Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Detailer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detailer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LoRA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LoRA Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control-HowTo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control-Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Control-Technical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Technicals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Outpaint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outpainting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Caption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Captioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wildcards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Wildcards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLiP-Skip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using CLiP skip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Reprocess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reprocess Latents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Stability-Matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stability-Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPAdapter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../XYZ-Grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XYZ Grid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NudeNet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NudeNet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-in Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Interface
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Interface
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enso
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kanvas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kanvas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotkeys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behind-the-Scenes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Behind-the-Scenes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SD-Pipeline-How-it-Works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Does It Work?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SD-Training-Methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profiling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Performance-Tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance Tuning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Offload/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Offloading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Malloc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Allocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quantization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Quantization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDNQ-Quantization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDNQ Quantization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Loader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VAE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable Auto-Encoder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmark Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Nunchaku/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nunchaku Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-Home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-SelfStart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Where to Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-GettingStarted/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-AICoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Coding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-UI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-Theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-Docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki & Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-Hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips & Hints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-Locale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Dev-Extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions & Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLI-Tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI and API Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshoot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshoot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frequently Asked Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Debug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Core Concept
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speed-vs-quality-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speed vs Quality Trade-offs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffusers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diffusers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-foundational-gaussian-schedulers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Foundational Gaussian Schedulers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dpm-solver-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. DPM-Solver Family
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-euler-heun-karras-style-schedulers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Euler &amp; Heun (Karras-style) Schedulers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-modern-distillation-high-speed-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Modern Distillation &amp; High-Speed Solvers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-flow-matching-rectified-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Flow Matching &amp; Rectified Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sdnext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDNext
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SDNext">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-high-precision-advanced-ode-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. High-Precision &amp; Advanced ODE Solvers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-flow-matching-optimized-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Flow Matching Optimized Solvers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-fast-step-distillation-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Fast-Step &amp; Distillation Solvers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-continuous-variational-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Continuous &amp; Variational Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unique-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unique Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#res4lyf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RES4LYF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RES4LYF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-res-family-refined-exponential-solvers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. RES Family (Refined Exponential Solvers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-exponential-time-differencing-etd-lawson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Exponential Time Differencing (ETD) &amp; Lawson
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-classical-numerical-integrators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Classical Numerical Integrators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-flow-matching-physics-inspired-samplers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Flow Matching &amp; Physics-Inspired Samplers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-utilities-sigma-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Utilities &amp; Sigma Generators
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduler-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduler Capabilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scheduler Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="schedulers">Schedulers</h1>
+<ul>
+<li><a href="./#introduction">Introduction</a></li>
+<li><a href="./#the-core-concept">The Core Concept</a></li>
+<li><a href="./#speed-vs-quality-trade-offs">Speed vs Quality Trade-offs</a></li>
+<li><a href="./#model-compatibility">Model Compatibility</a></li>
+<li><a href="./#list">Complete List</a></li>
+<li><a href="./#diffusers">Diffusers Library</a></li>
+<li><a href="./#sdnext">SDNext Extensions</a></li>
+<li><a href="./#res4lyf">RES4LYF Custom Suite</a></li>
+<li><a href="./#scheduler-capabilities">Table with Capabilities</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>In the context of diffusion models, a <strong>scheduler</strong> (also known as a <strong>sampler</strong>) is the algorithm responsible for managing the iterative process of turning pure noise into a clean, coherent image.</p>
+<h3 id="the-core-concept">The Core Concept</h3>
+<p>While the <strong>model</strong> provides the "intelligence" to recognize patterns in noise, the <strong>scheduler</strong> provides the "roadmap" for how to navigate from chaos to clarity.</p>
+<p>Diffusion models are trained by gradually adding noise to an image until it becomes unrecognizable. To generate a new image, the model performs this process in reverse. However, the neural network doesn't "jump" to the final image in one step. Instead, it predicts the noise present in its current input, and the <strong>scheduler</strong> calculates how to subtract that noise to move one step closer to the final result.</p>
+<h3 id="speed-vs-quality-trade-offs">Speed vs Quality Trade-offs</h3>
+<p>The choice of scheduler significantly impacts the final result:</p>
+<ul>
+<li><strong>Efficiency</strong>: Schedulers like <strong>UniPC</strong>, <strong>LCM</strong>, or <strong>TCD</strong> are optimized for speed, producing high-quality images in just 4–8 steps  </li>
+<li><strong>Precision</strong>: Schedulers like <strong>DPM++ 2M</strong> or <strong>Heun</strong> provide high mathematical accuracy and smoother gradients, typically requiring 20–30 steps for optimal results  </li>
+<li><strong>Consistency</strong>: Deterministic schedulers (<strong>ODE</strong>-based) will always produce the same image for the same seed, while stochastic schedulers (<strong>SDE</strong>-based) may vary slightly even with the same seed  </li>
+</ul>
+<h3 id="model-compatibility">Model Compatibility</h3>
+<p>For a scheduler to work correctly, it must match the <strong>prediction type</strong> the model was trained with:</p>
+<ul>
+<li><strong>Epsilon</strong>: The standard for most models (e.g., SD 1.5, SDXL). The model predicts the noise added to the image  </li>
+<li><strong>V-Prediction</strong>: Used in models like SD 2.1-v and certain SDXL refinements. The model predicts a velocity vector that balances noise and signal, which helps avoid color shifts at very high/low noise levels  </li>
+<li><strong>Flow Matching</strong>: The modern standard for models like <strong>Flux</strong> and <strong>SD3</strong>. The model predicts a constant-speed linear path ("flow") between pure noise and pure data. This typically results in much faster convergence and higher detail retention  </li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Using a mismatched scheduler and prediction type can result in pure noise or visible artifacts.</p>
+</div>
+<h2 id="list">List</h2>
+<p>Schedulers available in SD.Next are grouped into three categories:  </p>
+<ul>
+<li>Schedulers present in core <a href="./#diffusers">Diffusers Library</a>  </li>
+<li>Additional schedulers ported by <a href="./#sdnext">SDNext Extensions</a>  </li>
+<li>Collection of <a href="./#res4lyf">RES4LYF Custom Suite</a>  </li>
+</ul>
+<h2 id="diffusers">Diffusers</h2>
+<h3 id="1-foundational-gaussian-schedulers">1. Foundational Gaussian Schedulers</h3>
+<p>The original samplers that defined the diffusion era, focusing on iterative denoising through Markovian and non-Markovian processes.
+- <strong>Foundational Math</strong>: Based on the original Ho et al. and Song et al. formulations.
+- <strong>Versatility</strong>: Support for inversion and parallel sampling.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>DDPMScheduler</strong></td>
+<td style="text-align: left;">Denoising Diffusion Probabilistic Models; the standard for training and original inference.</td>
+<td style="text-align: left;">2 (PT, Parallel)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DDIMScheduler</strong></td>
+<td style="text-align: left;">Denoising Diffusion Implicit Models; enables faster, non-Markovian sampling and inversion.</td>
+<td style="text-align: left;">4 (PT, Parallel, CogVideoX, Inverse)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PNDMScheduler</strong></td>
+<td style="text-align: left;">Pseudo Numerical Methods for Diffusion Models; uses multi-step Runge-Kutta logic.</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-dpm-solver-family">2. DPM-Solver Family</h3>
+<p>A suite of high-order solvers specifically designed to solve the Probability Flow ODE of diffusion models with fewer steps.
+- <strong>ODE Efficiency</strong>: Purpose-built for the semi-linear structure of diffusion ODEs.
+- <strong>Karras Support</strong>: Deep integration with Karras-style noise schedules.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>DPMSolverMultistepScheduler</strong></td>
+<td style="text-align: left;">Efficient high-order multistep solver; the standard recommendation for Stable Diffusion.</td>
+<td style="text-align: left;">4 (PT, Inverse, CogVideoX, Cosine)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DPMSolverSinglestepScheduler</strong></td>
+<td style="text-align: left;">Higher-order singlestep solver for precise but slightly slower sampling.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DPMSolverSDEScheduler</strong></td>
+<td style="text-align: left;">Stochastic variant using SDE integration for improved texture and variety.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EDMDPMSolverMultistepScheduler</strong></td>
+<td style="text-align: left;">DPM-Solver implementation optimized for the EDM (Elucidating Design Space) framework.</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-euler-heun-karras-style-schedulers">3. Euler &amp; Heun (Karras-style) Schedulers</h3>
+<p>Classical numerical methods adapted for discrete-time diffusion, often preferred for their predictable and clean convergence.
+- <strong>Prediction Modes</strong>: Heavy support for <code>epsilon</code>, <code>v_prediction</code>, and <code>sample</code> targets.
+- <strong>Ancestral Sampling</strong>: Includes <code>ancestral</code> variants that add noise at each step.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>EulerDiscreteScheduler</strong></td>
+<td style="text-align: left;">Simple and effective first-order ODE solver; excellent for most SD models.</td>
+<td style="text-align: left;">2 (PT, Flax)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EulerAncestralDiscreteScheduler</strong></td>
+<td style="text-align: left;">Euler method with added stochastic noise; known for creative diversity and stability.</td>
+<td style="text-align: left;">2 (PT, LTX)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HeunDiscreteScheduler</strong></td>
+<td style="text-align: left;">Second-order method providing better accuracy than Euler at the cost of double model calls.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LMSDiscreteScheduler</strong></td>
+<td style="text-align: left;">Linear Multi-step solver using a history of gradients to improve convergence.</td>
+<td style="text-align: left;">2 (PT, Flax)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-modern-distillation-high-speed-solvers">4. Modern Distillation &amp; High-Speed Solvers</h3>
+<p>State-of-the-art solvers designed for 1-4 step inference through consistency or distillation techniques.
+- <strong>Extreme Speed</strong>: Enables near real-time generation.
+- <strong>Consistency Models</strong>: Based on the Consistency Models (CM) and Latent Consistency (LCM) research.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>LCMScheduler</strong></td>
+<td style="text-align: left;">Latent Consistency Models; the industry standard for 4-step real-time generation.</td>
+<td style="text-align: left;">2 (PT, FlowMatch)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TCDScheduler</strong></td>
+<td style="text-align: left;">Trajectory Consistency Distillation; improves on LCM for better 1-step quality.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SCMScheduler</strong></td>
+<td style="text-align: left;">Simple Consistency Models; streamlined distillation for high-quality fast sampling.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ConsistencyDecoderScheduler</strong></td>
+<td style="text-align: left;">Specialized scheduler for the DALL-E 3 consistency decoder models.</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-flow-matching-rectified-flow">5. Flow Matching &amp; Rectified Flow</h3>
+<p>Schedulers for the latest generation of "Flow" models (like Flux, SD3, and AuraFlow) which use linear velocity targets.
+- <strong>Velocity Prediction</strong>: Designed specifically for models trained on flow-matching objectives.
+- <strong>Linear Trajectories</strong>: Optimal for models that denoise along a straight line.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>FlowMatchEulerDiscreteScheduler</strong></td>
+<td style="text-align: left;">The standard Euler solver for Flow Matching models (SD3, Flux).</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FlowMatchHeunDiscreteScheduler</strong></td>
+<td style="text-align: left;">Higher-order Heun solver for Flow Matching trajectories.</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sdnext">SDNext</h2>
+<h3 id="1-high-precision-advanced-ode-solvers">1. High-Precision &amp; Advanced ODE Solvers</h3>
+<p>Solvers designed for superior convergence and precision, often using predictor-corrector or boundary-diffusion frameworks.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>BDIA_DDIMScheduler</strong></td>
+<td style="text-align: left;">Boundary-Diffusion Implicit Algorithm; high-precision extension of DDIM with non-Markovian guidance and gamma-weighted trajectory correction.</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DCSolverMultistepScheduler</strong></td>
+<td style="text-align: left;">Dynamic Compensation solver; multi-step UniPC framework with dynamic extrapolation and ratio optimization to minimize approximation error.</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TDDScheduler</strong></td>
+<td style="text-align: left;">Time-Dependent Diffusion; experimental sampler that extends DPMSolverSinglestep with special jump logic and TDD-specific training step support.</td>
+<td style="text-align: left;">3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-flow-matching-optimized-solvers">2. Flow Matching Optimized Solvers</h3>
+<p>Specialized solvers designed for the latest generation of Flow-based models (e.g., Flux, SD3, AuraFlow), supporting resolution-aware trajectory shifting.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>FlowMatchDPMSolverMultistepScheduler</strong></td>
+<td style="text-align: left;">Dedicated high-order DPM solver for Flow Matching with integrated Brownian Tree smoke/noise stability and multiple SDE/ODE modes.</td>
+<td style="text-align: left;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FlowUniPCMultistepScheduler</strong></td>
+<td style="text-align: left;">Multi-step UniPC framework adapted for flow-prediction models, supporting dynamic shifting and high-order B(h) updates.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FlashFlowMatchEulerDiscreteScheduler</strong></td>
+<td style="text-align: left;">Optimized Euler-based scheduler for FlashFlow models, featuring resolution-aware dynamic shifting (mu/base/max shift).</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-fast-step-distillation-solvers">3. Fast-Step &amp; Distillation Solvers</h3>
+<p>Production-grade solvers optimized for extremely low step counts (1-4 steps) while maintaining visual fidelity.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>UFOGenScheduler</strong></td>
+<td style="text-align: left;">Diffusion GAN-based sampler implementing both one-step and multi-step sampling trajectories with thresholding support.</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-continuous-variational-frameworks">4. Continuous &amp; Variational Frameworks</h3>
+<p>Schedulers based on specific mathematical foundations for variational objectives and continuous time formulations.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>VDMScheduler</strong></td>
+<td style="text-align: left;">Variational Diffusion Models; supports both discrete and continuous formulations of VDM objectives (linear, cosine, or sigmoid schedules).</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="unique-features">Unique Features</h2>
+<ul>
+<li><strong>Dynamic Compensation (DC)</strong>: Implements dynamic extrapolation to correct for trajectory drift during the denoising process.</li>
+<li><strong>Brownian Tree Noise Sampler</strong>: Provides significantly more stable convergence in Flow Matching compared to standard random noise.</li>
+<li><strong>Resolution-Aware Shifting</strong>: Automatically adjusts noise schedules based on the image sequence length (total pixels) to optimize quality across resolutions.</li>
+<li><strong>BDIA Guidance</strong>: Uses boundary-diffusion implicit algorithm logic to guide DDIM samples with a configurable gamma-weighted correction.</li>
+</ul>
+<h2 id="res4lyf">RES4LYF</h2>
+<h3 id="1-res-family-refined-exponential-solvers">1. RES Family (Refined Exponential Solvers)</h3>
+<p>The core of the suite, implementing state-of-the-art exponential integration with high-order accuracy and perfect variance tracking.
+- <strong>High-Order Convergence</strong>: Maintains structural integrity at low step counts.
+- <strong>Variance Preservation</strong>: Eliminates brightness drift and color shift during generation.
+- <strong>Unified Interface</strong>: Seamless switching between multistep and multistage modes.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RESUnifiedScheduler</strong></td>
+<td style="text-align: left;">Unified interface for switching between various RES and DEIS integration schemes.</td>
+<td style="text-align: left;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RESMultistepScheduler</strong></td>
+<td style="text-align: left;">High-order multistep solver using historical gradients for efficient sampling.</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RESMultistepSDEScheduler</strong></td>
+<td style="text-align: left;">Stochastic multistep solver that maintains variance while improving sample diversity.</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RESSinglestepScheduler</strong></td>
+<td style="text-align: left;">Multi-stage singlestep solver offering high accuracy within a single timestep interval.</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RESSinglestepSDEScheduler</strong></td>
+<td style="text-align: left;">Stochastic variant of the singlestep solver for high-quality, diverse image generation.</td>
+<td style="text-align: left;">4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-exponential-time-differencing-etd-lawson">2. Exponential Time Differencing (ETD) &amp; Lawson</h3>
+<p>Advanced integrators that solve the linear part of the Probability Flow ODE exactly, providing superior stability for high-order updates.
+- <strong>Exact ODE Handling</strong>: Solves the deterministic part of the diffusion process without approximation.
+- <strong>Superior Stability</strong>: Prevents numerical explosions in high-order (3rd and 4th) sampling steps.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>ETDRKScheduler</strong></td>
+<td style="text-align: left;">Implements Exponential Time Differencing Runge-Kutta methods for exact linear ODE handling.</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LawsonScheduler</strong></td>
+<td style="text-align: left;">Uses Lawson's transformation to simplify and stabilize exponential integration steps.</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ABNorsettScheduler</strong></td>
+<td style="text-align: left;">Implements Adams-Bashforth Norsett methods for stable multistep diffusion sampling.</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DEISMultistepScheduler</strong></td>
+<td style="text-align: left;">Diffusion Exponential Integrator Sampler utilizing multistep polynomial extrapolation.</td>
+<td style="text-align: left;">3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-classical-numerical-integrators">3. Classical Numerical Integrators</h3>
+<p>Standard mathematical integrators optimized and refactored for the specific dynamics of the diffusion reverse process.
+- <strong>Familiar Tableaus</strong>: Uses proven RK, Radau, and Lobatto logic.
+- <strong>Modern Refactor</strong>: Fully updated to operate in normalized signal space for VP/VE compatibility.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>LinearRKScheduler</strong></td>
+<td style="text-align: left;">Flexible implementation of standard Runge-Kutta methods from Euler to RK4.</td>
+<td style="text-align: left;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RungeKuttaScheduler</strong></td>
+<td style="text-align: left;">Classic nth-order, m-stage Runge-Kutta integrator with optimal balance.</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SpecializedRKScheduler</strong></td>
+<td style="text-align: left;">Collection of advanced solvers including SSPRK (Strong Stability Preserving) and TSI schemes.</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LobattoScheduler</strong></td>
+<td style="text-align: left;">High-order solvers based on Lobatto IIIA schemes, known for their strong stability properties.</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RadauIIAScheduler</strong></td>
+<td style="text-align: left;">Specialized solvers based on Radau IIA quadrature for robust stiff-ODE integration.</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GaussLegendreScheduler</strong></td>
+<td style="text-align: left;">High-precision symmetric solvers based on Gauss-Legendre quadrature.</td>
+<td style="text-align: left;">3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-flow-matching-physics-inspired-samplers">4. Flow Matching &amp; Physics-Inspired Samplers</h3>
+<p>Solvers designed for Flow Matching/Rectified Flow models and physics-based sampling dynamics.
+- <strong>Non-Euclidean Flows</strong>: Supports Hyperbolic, Spherical, and Lorentzian geometries.
+- <strong>Stochastic Refinement</strong>: Uses Langevin and tangent-based methods for unique textures.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RiemannianFlowScheduler</strong></td>
+<td style="text-align: left;">Solves flow matching problems on Euclidean, Spherical, Hyperbolic, and Lorentzian manifolds.</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FlowEuclideanScheduler</strong></td>
+<td style="text-align: left;">standard Euclidean metric flow matching variant.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FlowHyperbolicScheduler</strong></td>
+<td style="text-align: left;">Flow matching on hyperbolic (Poincaré) manifolds.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FlowSphericalScheduler</strong></td>
+<td style="text-align: left;">Flow matching on spherical manifolds.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FlowLorentzianScheduler</strong></td>
+<td style="text-align: left;">Flow matching on Lorentzian manifolds.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PECScheduler</strong></td>
+<td style="text-align: left;">Predictor-Corrector framework for refined, multi-pass sampling steps.</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>BongTangentScheduler</strong></td>
+<td style="text-align: left;">Implements the Bong Tangent method for geometrically-guided diffusion sampling.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LangevinDynamicsScheduler</strong></td>
+<td style="text-align: left;">Uses Langevin-style gradient steps for stochastic refinement of samples.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SimpleExponentialScheduler</strong></td>
+<td style="text-align: left;">Lightweight solver using simple exponential decay for fast, low-step sampling.</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-utilities-sigma-generators">5. Utilities &amp; Sigma Generators</h3>
+<p>Infrastructure for controlling noise profiles and driving the integration process.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scheduler</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>CommonSigmaScheduler</strong></td>
+<td style="text-align: left;">Centralized schedule generator for Arcsine, Easing, Sigmoid, and Sine noise profiles.</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SigmaSigmoidScheduler</strong></td>
+<td style="text-align: left;">S-shaped sigma profile for balanced noise distribution.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SigmaSineScheduler</strong></td>
+<td style="text-align: left;">Sine-based profile for periodic noise modulation.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SigmaEasingScheduler</strong></td>
+<td style="text-align: left;">Natural easing curves (In/Out/In-Out) for sigma progression.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SigmaArcsineScheduler</strong></td>
+<td style="text-align: left;">Arcsine-based profile for concentrated sampling near boundaries.</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SigmaSmoothScheduler</strong></td>
+<td style="text-align: left;">Smoothstep-based profile for consistent noise transitions.</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scheduler-capabilities">Scheduler Capabilities</h2>
+<p>The following table lists all supported schedulers and their capabilities.
+Legend:
+- <em>Epsilon</em>: supports model trained with epsilon prediction type
+- <em>VPred</em>: supports model trained with v-prediction prediction type
+- <em>Flow</em>: supports model trained with flow matching prediction type
+- <em>Sigmas</em>: supports custom sigmas noise schedule
+- <em>Timesteps</em>: supports custom timesteps noise schedule
+- <em>Karras</em>: supports karras-style sigma schedule
+- <em>Beta</em>: supports beta-style sigma schedule
+- <em>Exponential</em>: supports exponential-style sigma schedule</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Class</th>
+<th>Origin</th>
+<th>Epsilon</th>
+<th>VPred</th>
+<th>Flow</th>
+<th>Sigmas</th>
+<th>Timesteps</th>
+<th>Karras</th>
+<th>Beta</th>
+<th>Exponential</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UniPC</td>
+<td>UniPCMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DDIM</td>
+<td>DDIMScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Euler</td>
+<td>EulerDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Euler a</td>
+<td>EulerAncestralDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Euler SGM</td>
+<td>EulerDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Euler EDM</td>
+<td>EDMEulerScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Euler FlowMatch</td>
+<td>FlowMatchEulerDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++</td>
+<td>DPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 2M</td>
+<td>DPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 3M</td>
+<td>DPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 1S</td>
+<td>DPMSolverSinglestepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ SDE</td>
+<td>DPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 2M SDE</td>
+<td>DPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 2M EDM</td>
+<td>EDMDPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM++ Cosine</td>
+<td>CosineDPMSolverMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM SDE</td>
+<td>DPMSolverSDEScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ Inverse</td>
+<td>DPMSolverMultistepInverseScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 2M Inverse</td>
+<td>DPMSolverMultistepInverseScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DPM++ 3M Inverse</td>
+<td>DPMSolverMultistepInverseScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>UniPC FlowMatch</td>
+<td>FlowUniPCMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2 FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2a FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2++ 2M FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2++ 2S FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2++ SDE FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2++ 2M SDE FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DPM2++ 3M SDE FlowMatch</td>
+<td>FlowMatchDPMSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Heun</td>
+<td>HeunDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Heun FlowMatch</td>
+<td>FlowMatchHeunDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Flash FlowMatch</td>
+<td>FlashFlowMatchEulerDiscreteScheduler</td>
+<td>SD.Next</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DEIS</td>
+<td>DEISMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES DEIS</td>
+<td>RESDEISMultistepScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>SA Solver</td>
+<td>SASolverScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DC Solver</td>
+<td>DCSolverMultistepScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DDPM</td>
+<td>DDPMScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DDPM Parallel</td>
+<td>DDPMParallelScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>DDIM Parallel</td>
+<td>DDIMParallelScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>PNDM</td>
+<td>PNDMScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>IPNDM</td>
+<td>IPNDMScheduler</td>
+<td>Diffusers</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>LMSD</td>
+<td>LMSDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>KDPM2</td>
+<td>KDPM2DiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>KDPM2 a</td>
+<td>KDPM2AncestralDiscreteScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>CMSI</td>
+<td>CMStochasticIterativeScheduler</td>
+<td>Diffusers</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>VDM Solver</td>
+<td>VDMScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>BDIA DDIM</td>
+<td>BDIA_DDIMScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>LCM</td>
+<td>LCMScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>LCM FlowMatch</td>
+<td>FlowMatchLCMScheduler</td>
+<td>Diffusers</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>TCD</td>
+<td>TCDScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>TDD</td>
+<td>TDDScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>PeRFlow</td>
+<td>PeRFlowScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>UFOGen</td>
+<td>UFOGenScheduler</td>
+<td>SD.Next</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>CogX DDIM</td>
+<td>CogVideoXDDIMScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>ABNorsett 2M</td>
+<td>ABNorsettScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ABNorsett 3M</td>
+<td>ABNorsettScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ABNorsett 4M</td>
+<td>ABNorsettScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lawson 2S A</td>
+<td>LawsonScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lawson 2S B</td>
+<td>LawsonScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lawson 4S</td>
+<td>LawsonScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ETD-RK 2S</td>
+<td>ETDRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ETD-RK 3S A</td>
+<td>ETDRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ETD-RK 3S B</td>
+<td>ETDRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ETD-RK 4S A</td>
+<td>ETDRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>ETD-RK 4S B</td>
+<td>ETDRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>PEC 423</td>
+<td>PECScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>PEC 433</td>
+<td>PECScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Unified 2S</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Unified 3S</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Unified 2M</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Unified 3M</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Singlestep 2S</td>
+<td>RESSinglestepScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Singlestep 3S</td>
+<td>RESSinglestepScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Multistep 2M</td>
+<td>RESMultistepScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-Multistep 3M</td>
+<td>RESMultistepScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-SDE 2S</td>
+<td>RESSinglestepSDEScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>RES-SDE 3S</td>
+<td>RESSinglestepSDEScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DEIS-Multistep</td>
+<td>DEISMultistepScheduler</td>
+<td>Diffusers</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DEIS-Unified 1S</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>DEIS-Unified 2M</td>
+<td>RESUnifiedScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Sigmoid Sigma</td>
+<td>CommonSigmaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Sine Sigma</td>
+<td>CommonSigmaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Easing Sigma</td>
+<td>CommonSigmaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Arcsine Sigma</td>
+<td>CommonSigmaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Smoothstep Sigma</td>
+<td>CommonSigmaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Langevin Dynamics</td>
+<td>LangevinDynamicsScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Euclidean Flow</td>
+<td>RiemannianFlowScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Hyperbolic Flow</td>
+<td>RiemannianFlowScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Spherical Flow</td>
+<td>RiemannianFlowScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lorentzian Flow</td>
+<td>RiemannianFlowScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK 2</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK 3</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK 4</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK Euler</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK Heun</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Linear-RK Ralston</td>
+<td>LinearRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lobatto 2</td>
+<td>LobattoScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lobatto 3</td>
+<td>LobattoScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Lobatto 4</td>
+<td>LobattoScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Radau IIA 2</td>
+<td>RadauIIAScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Radau IIA 3</td>
+<td>RadauIIAScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Radau IIA 4</td>
+<td>RadauIIAScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Gauss-Legendre 2S</td>
+<td>GaussLegendreScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Gauss-Legendre 3S</td>
+<td>GaussLegendreScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Gauss-Legendre 4S</td>
+<td>GaussLegendreScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Specialized-RK 3S</td>
+<td>SpecializedRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Specialized-RK 4S</td>
+<td>SpecializedRKScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Runge-Kutta 4/4</td>
+<td>RungeKuttaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Runge-Kutta 5/7</td>
+<td>RungeKuttaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+<tr>
+<td>Runge-Kutta 6/7</td>
+<td>RungeKuttaScheduler</td>
+<td>Res4Lyf</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[ ]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+<td>[x]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="credits">Credits</h3>
+<p>Based on the <a href="https://github.com/ClownsharkBatwing/RES4LYF">RES4LYF</a> implementation for ComfyUI by @ClownsharkBatwing</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Networks-Search/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Networks Search">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Networks Search
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Detailer/" class="md-footer__link md-footer__link--next" aria-label="Next: Detailer Guide">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Detailer Guide
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      ©SD.Next org
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/vladmandic/automatic/" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/VjvR2tabEX" target="_blank" rel="noopener" title="Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/@SDNext" target="_blank" rel="noopener" title="Youtube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.preview", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
