@@ -8857,11 +8857,15 @@
     <em>for example</em>, <code>child</code> can match <code>kid</code>, <code>girl</code>, <code>boy</code><br />
     and it expands the functionality with customizable semantic matching:
     <em>for example</em>, <code>young ...</code> will match before next word appears in the prompt and steer away from it towards desired choices  </li>
-<li>add <em>wildcards</em> (if used) info to image metadata<br />
-    if wildcards or styles modify prompt, add original prompt to image metadata as <em>template</em>  </li>
-<li><strong>Captioning</strong> new feature: analyze existing images for prompt adherence<br />
+<li><strong>Captioning</strong>
+    new feature: analyze existing images for prompt adherence<br />
 <em>tip</em>: image analysis requires larger VLM model to produce quality output<br />
-    new api endpoint: <code>/sdapi/v1/analyze</code>  </li>
+    new api endpoint: <code>/sdapi/v1/analyze</code><br />
+    cleanup list of predefined models, new models added and some old removed<br />
+    improved default values plus some new params like min length and <code>custom args</code> so you can pass anything to an llm model<br />
+    improved system prompts  </li>
+<li>add <em>wildcards</em> (if used) info to image <strong>metadata</strong><br />
+    if wildcards or styles modify prompt, add original prompt to image metadata as <em>template</em>  </li>
 <li><strong>Masking</strong> updated interface and capabilities<br />
     you can now also select mask type instead of focing alpha mask with all models  </li>
 <li><strong>HF download</strong> use <code>XET</code> by default<br />
@@ -8870,6 +8874,12 @@
 <li><strong>Gallery</strong> add clear cache button to folder menu</li>
 <li><strong>UV</strong> much updated <code>--uv</code> support for fast installs<br />
     now also supports global <code>uv</code> if present in the system  </li>
+<li><strong>Attention Dispatcher</strong> new attention backends dispatcher<br />
+    in <em>settings -&gt; attention Dispatcher</em><br />
+    allows to use pluggable kernels defines either in packages or in new <a href="https://huggingface.co/docs/kernels/index">kernels</a> library<br />
+    see <a href="https://huggingface.co/docs/diffusers/optimization/attention_backends#available-backends">backends</a> for list of available attention backends<br />
+<em>note</em> compatiblity matrix between torch backend, torch version and model specifics is relatively small at the moment<br />
+<em>note</em> does not replace existing <em>attention</em> settings</li>
 <li><strong>Changes</strong></li>
 <li>all <strong>Guidance</strong> params are now set to <em>-1</em> by default to allow using model defaults and avoid confusion with different model behaviour<br />
     log will print default values used by model if not set by user  </li>
@@ -8892,7 +8902,7 @@
 <li>improve <code>kanvas</code> typing</li>
 <li>additional strong typing in core, thanks @awsr</li>
 <li><strong>Fixes</strong></li>
-<li><em>hidream-o1</em> prequant loading</li>
+<li><code>hidream-o1</code> prequant loading</li>
 <li><code>gradio</code> initial hijack</li>
 <li><code>SmolVLM</code> captioning</li>
 <li><code>gradio</code> temp files guard against large image</li>
@@ -8911,6 +8921,7 @@
 <li><code>styles</code> loader exception handling</li>
 <li><code>kanvas</code> image change notification</li>
 <li><code>reinstall</code> force reinstal of transformers and diffusers</li>
+<li><code>ipex</code> torch install error, thanks @liutyi</li>
 </ul>
 <h2 id="update-for-2026-05-13">Update for 2026-05-13</h2>
 <h3 id="highlights-for-2026-05-13">Highlights for 2026-05-13</h3>
