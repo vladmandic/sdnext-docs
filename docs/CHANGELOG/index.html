@@ -4034,22 +4034,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-05-29" class="md-nav__link">
+  <a href="#update-for-2026-06-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-05-29
+        Update for 2026-06-01
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-05-29">
+    <nav class="md-nav" aria-label="Update for 2026-06-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-05-29" class="md-nav__link">
+  <a href="#highlights-for-2026-06-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-05-29
+        Highlights for 2026-06-01
       
     </span>
   </a>
@@ -4057,10 +4057,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-05-29" class="md-nav__link">
+  <a href="#details-for-2026-06-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-05-29
+        Details for 2026-06-01
       
     </span>
   </a>
@@ -6432,22 +6432,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-05-29" class="md-nav__link">
+  <a href="#update-for-2026-06-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-05-29
+        Update for 2026-06-01
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-05-29">
+    <nav class="md-nav" aria-label="Update for 2026-06-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-05-29" class="md-nav__link">
+  <a href="#highlights-for-2026-06-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-05-29
+        Highlights for 2026-06-01
       
     </span>
   </a>
@@ -6455,10 +6455,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-05-29" class="md-nav__link">
+  <a href="#details-for-2026-06-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-05-29
+        Details for 2026-06-01
       
     </span>
   </a>
@@ -8822,8 +8822,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-05-29">Update for 2026-05-29</h2>
-<h3 id="highlights-for-2026-05-29">Highlights for 2026-05-29</h3>
+<h2 id="update-for-2026-06-01">Update for 2026-06-01</h2>
+<h3 id="highlights-for-2026-06-01">Highlights for 2026-06-01</h3>
 <p><em>What's New?</em>
 - <strong>Anima</strong> made it to release version, Microsoft joins the game with <strong>Lens</strong>
 - <strong>SDNQ</strong> new quantization algorithm with even higher quality
@@ -8831,7 +8831,7 @@
 - Improved image metadata options</p>
 <p>And we have new <a href="https://vladmandic.github.io/sdnext/">Home</a> page and new <a href="https://vladmandic.github.io/sdnext-docs/Dev-Home/">Contributing &amp; Development</a> section in docs with info on pretty much any type of development or contribution related topics - do check it out!</p>
 <p>Plus continued work on modernization of codebase: UI is now fully TypeScript based and we have a new modular LoRA loader</p>
-<h3 id="details-for-2026-05-29">Details for 2026-05-29</h3>
+<h3 id="details-for-2026-06-01">Details for 2026-06-01</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">CircleStone Anima 1.0</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
@@ -8880,6 +8880,9 @@
     see <a href="https://huggingface.co/docs/diffusers/optimization/attention_backends#available-backends">backends</a> for list of available attention backends<br />
 <em>note</em> compatiblity matrix between torch backend, torch version and model specifics is relatively small at the moment<br />
 <em>note</em> does not replace existing <em>attention</em> settings</li>
+<li><strong>Shared components</strong> additional support for shared model components<br />
+    avoids unnecessary downloads and allows to share components between different models<br />
+    enabled by default, see <em>settings -&gt; text encoder -&gt; use shared instance</em>  </li>
 <li><strong>Changes</strong></li>
 <li>all <strong>Guidance</strong> params are now set to <em>-1</em> by default to allow using model defaults and avoid confusion with different model behaviour<br />
     log will print default values used by model if not set by user  </li>
@@ -8893,6 +8896,8 @@
 <li>Automated fixes using <code>/check-</code> skills</li>
 <li>Automated syntax, spelling and readability improvements to <code>/wiki</code> pages</li>
 <li><strong>Internal</strong></li>
+<li>massive new codebase/refactor to use native transformers loader!</li>
+<li>refactor shared components loader</li>
 <li>update <code>torch==2.12</code> for <em>CUDA, ROCm, IPEX</em></li>
 <li>complete refactor of <code>core</code> JavaScript codebase to TypeScript!</li>
 <li>complete refactor of <code>modernui</code> JavaScript codebase to TypeScript!</li>
@@ -8922,6 +8927,9 @@
 <li><code>kanvas</code> image change notification</li>
 <li><code>reinstall</code> force reinstal of transformers and diffusers</li>
 <li><code>ipex</code> torch install error, thanks @liutyi</li>
+<li><code>taesd</code> preview constant size with reduced layers  </li>
+<li><code>output path</code> use correct base folder for initial folders  </li>
+<li><code>ltx</code> prompt embeds move to device, thanks @ryanmeador</li>
 </ul>
 <h2 id="update-for-2026-05-13">Update for 2026-05-13</h2>
 <h3 id="highlights-for-2026-05-13">Highlights for 2026-05-13</h3>
