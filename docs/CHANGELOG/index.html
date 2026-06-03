@@ -4034,22 +4034,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-02" class="md-nav__link">
+  <a href="#update-for-2026-06-03" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-02
+        Update for 2026-06-03
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-06-02">
+    <nav class="md-nav" aria-label="Update for 2026-06-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-06-02" class="md-nav__link">
+  <a href="#highlights-for-2026-06-03" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-06-02
+        Highlights for 2026-06-03
       
     </span>
   </a>
@@ -4057,10 +4057,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-06-02" class="md-nav__link">
+  <a href="#details-for-2026-06-03" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-06-02
+        Details for 2026-06-03
       
     </span>
   </a>
@@ -6432,22 +6432,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-02" class="md-nav__link">
+  <a href="#update-for-2026-06-03" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-02
+        Update for 2026-06-03
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-06-02">
+    <nav class="md-nav" aria-label="Update for 2026-06-03">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-06-02" class="md-nav__link">
+  <a href="#highlights-for-2026-06-03" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-06-02
+        Highlights for 2026-06-03
       
     </span>
   </a>
@@ -6455,10 +6455,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-06-02" class="md-nav__link">
+  <a href="#details-for-2026-06-03" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-06-02
+        Details for 2026-06-03
       
     </span>
   </a>
@@ -8822,8 +8822,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-06-02">Update for 2026-06-02</h2>
-<h3 id="highlights-for-2026-06-02">Highlights for 2026-06-02</h3>
+<h2 id="update-for-2026-06-03">Update for 2026-06-03</h2>
+<h3 id="highlights-for-2026-06-03">Highlights for 2026-06-03</h3>
 <p><em>What's New?</em>
 - <strong>Anima</strong> made it to release version, Microsoft joins the game with <strong>Lens</strong>
 - <strong>SDNQ</strong> new quantization algorithm with even higher quality
@@ -8832,7 +8832,7 @@
 - Improved image metadata options</p>
 <p>And we have new <a href="https://vladmandic.github.io/sdnext/">Home</a> page and new <a href="https://vladmandic.github.io/sdnext-docs/Dev-Home/">Contributing &amp; Development</a> section in docs with info on pretty much any type of development or contribution related topics - do check it out!</p>
 <p>Plus continued work on modernization of codebase: UI is now fully TypeScript based and we have a new modular LoRA loader</p>
-<h3 id="details-for-2026-06-02">Details for 2026-06-02</h3>
+<h3 id="details-for-2026-06-03">Details for 2026-06-03</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">CircleStone Anima 1.0</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
@@ -8868,8 +8868,6 @@
 <li><strong>Detailer</strong> available as post-processing task for existing images  </li>
 <li><strong>Masking</strong> updated interface and capabilities<br />
     you can now also select mask type instead of focing alpha mask with all models  </li>
-<li>add <em>wildcards</em> (if used) info to image <strong>metadata</strong><br />
-    if wildcards or styles modify prompt, add original prompt to image metadata as <em>template</em>  </li>
 <li><strong>Gallery</strong> add clear cache button to folder menu</li>
 <li><strong>UV</strong> much updated <code>--uv</code> support for fast installs<br />
     now also supports global <code>uv</code> if present in the system  </li>
@@ -8879,6 +8877,9 @@
     see <a href="https://huggingface.co/docs/diffusers/optimization/attention_backends#available-backends">backends</a> for list of available attention backends<br />
 <em>note</em> compatiblity matrix between torch backend, torch version and model specifics is relatively small at the moment<br />
 <em>note</em> does not replace existing <em>attention</em> settings</li>
+<li><strong>Image metadata</strong> add <em>wildcards</em> (if used) info to image<br />
+    if wildcards or styles modify prompt, add original prompt to image metadata as <em>template</em>  </li>
+<li><strong>Video metadata</strong> add processing info to video metadata as well, thanks @ryanmeador</li>
 <li><strong>Changes</strong></li>
 <li>all <strong>Guidance</strong> params are now set to <em>-1</em> by default to allow using model defaults and avoid confusion with different model behaviour<br />
     log will print default values used by model if not set by user  </li>
@@ -8890,6 +8891,7 @@
 <li><strong>HF download</strong> use <code>XET</code> by default<br />
     see <em>settings -&gt; huggingface -&gt; download method</em> for options  </li>
 <li><strong>Nunchaku</strong> consider <em>DEV</em> builds when auto-installing</li>
+<li><strong>Video</strong> save image thumbnail for generated video is now optional, thanks @ryanmeador  </li>
 <li><strong>Docs</strong></li>
 <li>new <a href="https://vladmandic.github.io/sdnext-docs/Dev-Home/">Contributing &amp; Development</a> home page<br />
     includes pages on <em>development setup, code structure, coding standards, ui development, themes, docs, hints</em> and more!  </li>
@@ -8908,6 +8910,9 @@
 <li>large refactor of <code>lora</code> native loader</li>
 <li>improve <code>kanvas</code> typing</li>
 <li>additional strong typing in core, thanks @awsr</li>
+<li>enhance automated testing<br />
+<code>pnpm test</code> (uses <code>--test</code>) flag runs pipeline init checks<br />
+<code>pnpm compile</code> (new) runs static python compile and import checks  </li>
 <li><strong>Fixes</strong></li>
 <li><code>hidream-o1</code> prequant loading</li>
 <li><code>gradio</code> initial hijack</li>
