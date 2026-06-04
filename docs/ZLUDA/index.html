@@ -5012,7 +5012,7 @@ python<span class="w"> </span>rmake.py<span class="w"> </span>-a<span class="w">
 <p>(adjust paths and architectures as needed).</p>
 <p><strong>Important:</strong></p>
 <ul>
-<li>Replace <code>"gfx1101;gfx1103"</code> with the correct GPU or APU architecture names for your system.Make sure sepearte with ";"if you have more than one arches build .</li>
+<li>Replace <code>"gfx1101;gfx1103"</code> with the correct GPU or APU architecture names for your system.Make sure separate with ";"if you have more than one arches build .</li>
 <li>Make sure read the  Editing Tensile/Common.py and blow before to build .</li>
 <li>For ROCm 6.1.2, change the path to <code>C:\rocm\Tensile-rocm-6.1.2</code>.</li>
 <li>The specific commands and patch files may vary depending on your setup and ROCm version.</li>
@@ -5032,7 +5032,7 @@ path if needed).</p>
 </li>
 <li>
 <p>Copy <code>rocblas.dll</code>  to <code>C:\Program Files\AMD\ROCm\5.7\bin</code>. This is where the HIP SDK looks for it by
-default.( make sure to bakc up the origianl rocblas.dll )</p>
+default.( make sure to back up the original rocblas.dll )</p>
 </li>
 <li>
 <p><strong>Place Tensile Data Files:</strong></p>
@@ -5041,7 +5041,7 @@ default.( make sure to bakc up the origianl rocblas.dll )</p>
 <p>Navigate to <code>C:\Program Files\AMD\ROCm\5.7\bin\rocblas\</code></p>
 </li>
 <li>
-<p>Replace the <code>library</code> with new build ( back up the origianl library by rename to different name ,eg ,bklibrary).  This is where you should place all the Tensile data files from your build directory.</p>
+<p>Replace the <code>library</code> with new build ( back up the original library by rename to different name ,eg ,bklibrary).  This is where you should place all the Tensile data files from your build directory.</p>
 </li>
 <li>
 <p><strong>Test Your HIP Program:</strong></p>
@@ -5057,7 +5057,7 @@ Tensile data files.</li>
 * Make sure the ROCm version in the <code>bin</code> directory matches the version of rocBLAS you built.</p>
 <h3 id="note-editing-tensilecommonpy">Note: Editing Tensile/Common.py</h3>
 <p>This file contains general parameters used by the Tensile library. To ensure compatibility with your GPU, you need
-to update two specific settings.Update the value of <code>" globalParameters["SupportedISA"]"</code>and <code>"CACHED_ASM_CAPS"</code> with your<code>gpu ISA and info</code> .and choose the simliar gpu achetecture. eg <code>RND2 for gfx1031 ,RND2 for gfx1032</code>, then copy and put below with your gpu number and others availble gpu data .For hip sdk 6.1.2 , <code>CACHED_ASM_CAPS</code> info move to tensile/AsmCaps.py, also edit architectureMap from line299 to 310 , add your arch infomation .map your arch information to correct logic file .however , some optimized logic don't exsit in the offoicial release. then we need to creat it.otherwilse ,it will creat a fallback no optimized rocblas and library.</p>
+to update two specific settings.Update the value of <code>" globalParameters["SupportedISA"]"</code>and <code>"CACHED_ASM_CAPS"</code> with your<code>gpu ISA and info</code> .and choose the similar gpu achetecture. eg <code>RND2 for gfx1031 ,RND2 for gfx1032</code>, then copy and put below with your gpu number and others available gpu data .For hip sdk 6.1.2 , <code>CACHED_ASM_CAPS</code> info move to tensile/AsmCaps.py, also edit architectureMap from line299 to 310 , add your arch information .map your arch information to correct logic file .however , some optimized logic don't exist in the offoicial release. then we need to creat it.otherwilse ,it will creat a fallback no optimized rocblas and library.</p>
 <p><strong>Here's a step-by-step guide:</strong></p>
 <ol>
 <li><strong>Choose Your Architecture:</strong></li>
@@ -5083,7 +5083,7 @@ code according to your GPU)</li>
 <li>"Rename all files within the new folder to reflect your architecture name (e.g., change 'navi21' to
 'navi22'). You can use a file renaming tool like 'File Rename APP', a free application available in the Windows Store, for this task."</li>
 <li>
-<p>if build failed ,that's beacuse ROCm architectures have different capabilities. You need to ensure your <code>rocblas</code> is tailored to each
+<p>if build failed ,that's because ROCm architectures have different capabilities. You need to ensure your <code>rocblas</code> is tailored to each
 architecture you're targeting:</p>
 <ul>
 <li>
