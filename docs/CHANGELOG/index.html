@@ -4034,22 +4034,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-03" class="md-nav__link">
+  <a href="#update-for-2026-06-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-03
+        Update for 2026-06-05
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-06-03">
+    <nav class="md-nav" aria-label="Update for 2026-06-05">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-06-03" class="md-nav__link">
+  <a href="#highlights-for-2026-06-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-06-03
+        Highlights for 2026-06-05
       
     </span>
   </a>
@@ -4057,10 +4057,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-06-03" class="md-nav__link">
+  <a href="#details-for-2026-06-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-06-03
+        Details for 2026-06-05
       
     </span>
   </a>
@@ -6432,22 +6432,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-03" class="md-nav__link">
+  <a href="#update-for-2026-06-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-03
+        Update for 2026-06-05
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-06-03">
+    <nav class="md-nav" aria-label="Update for 2026-06-05">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-06-03" class="md-nav__link">
+  <a href="#highlights-for-2026-06-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-06-03
+        Highlights for 2026-06-05
       
     </span>
   </a>
@@ -6455,10 +6455,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-06-03" class="md-nav__link">
+  <a href="#details-for-2026-06-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-06-03
+        Details for 2026-06-05
       
     </span>
   </a>
@@ -8822,17 +8822,17 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-06-03">Update for 2026-06-03</h2>
-<h3 id="highlights-for-2026-06-03">Highlights for 2026-06-03</h3>
+<h2 id="update-for-2026-06-05">Update for 2026-06-05</h2>
+<h3 id="highlights-for-2026-06-05">Highlights for 2026-06-05</h3>
 <p><em>What's New?</em>
-- <strong>Anima</strong> made it to release version, Microsoft joins the game with <strong>Lens</strong>
+- <strong>Ideogram-4</strong> released, Microsoft joins the game with <strong>Lens</strong> and <strong>Anima</strong> made it to release version
 - <strong>SDNQ</strong> new quantization algorithm with even higher quality
 - New <strong>image analysis</strong> feature and much improved <strong>prompt enhance</strong> capabilities which allow steering the model in real-time
 - New workflows with ability to run <strong>detailing</strong> as post-processing on existing images<br />
 - Improved image metadata options</p>
 <p>And we have new <a href="https://vladmandic.github.io/sdnext/">Home</a> page and new <a href="https://vladmandic.github.io/sdnext-docs/Dev-Home/">Contributing &amp; Development</a> section in docs with info on pretty much any type of development or contribution related topics - do check it out!</p>
 <p>Plus continued work on modernization of codebase: UI is now fully TypeScript based and we have a new modular LoRA loader</p>
-<h3 id="details-for-2026-06-03">Details for 2026-06-03</h3>
+<h3 id="details-for-2026-06-05">Details for 2026-06-05</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">CircleStone Anima 1.0</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
@@ -8843,9 +8843,8 @@
 <em>note</em> Lens comes with its own prompt-refiner, enable in settings -&gt; model options (disabled by default)<br />
 <em>note</em> original Lens implements only text-2-image, SD.Next adds image-2-image and inpaint workflows as well  </li>
 <li><a href="https://huggingface.co/ideogram-ai/ideogram-4">Ideogram 4</a> open-weight 9.3B flow-matching single-stream DiT<br />
-    Qwen3-VL-8B text encoder (shared and deduped) and Flux2 VAE, with dual-transformer asymmetric CFG<br />
-    converted to a bf16-Diffusers repo with SDNQ-at-load<br />
-<em>note</em> requires structured JSON-caption prompts, a plain-text prompt returns the model's built-in safety placeholder  </li>
+    with dual-transformer architecture (9.5b) and qwen3 (8b) text encoder<br />
+    too many notes to add here, so check out the dedicated <a href="wiki/Ideogram.md">Ideogram-4 wiki page</a> for all details!</li>
 <li><strong>Features</strong></li>
 <li><strong>SDNQ</strong> new quantization algorithm: <em>Hadamard Rotations</em><br />
     much higher quality than base SDNQ, but runs slightly slower<br />
