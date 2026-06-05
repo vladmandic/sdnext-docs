@@ -8842,6 +8842,10 @@
     oh, that 12B encoder is MoE with 3.6B activated plus its prequantized using <code>mxfp4</code><br />
 <em>note</em> Lens comes with its own prompt-refiner, enable in settings -&gt; model options (disabled by default)<br />
 <em>note</em> original Lens implements only text-2-image, SD.Next adds image-2-image and inpaint workflows as well  </li>
+<li><a href="https://huggingface.co/ideogram-ai/ideogram-4">Ideogram 4</a> open-weight 9.3B flow-matching single-stream DiT<br />
+    Qwen3-VL-8B text encoder (shared and deduped) and Flux2 VAE, with dual-transformer asymmetric CFG<br />
+    converted to a bf16-Diffusers repo with SDNQ-at-load<br />
+<em>note</em> requires structured JSON-caption prompts, a plain-text prompt returns the model's built-in safety placeholder  </li>
 <li><strong>Features</strong></li>
 <li><strong>SDNQ</strong> new quantization algorithm: <em>Hadamard Rotations</em><br />
     much higher quality than base SDNQ, but runs slightly slower<br />
