@@ -97,8 +97,10 @@ nav:
     - Video: Video.md
     - FramePack: FramePack.md
     - LTXVideo: LTX.md
+    - Ideogram: Ideogram.md
     - Google-GenAI: Google-GenAI.md
   - Platforms:
+    - Overview: Platforms.md
     - nVidia-CUDA: nVidia.md
     - WSL: WSL.md
     - Intel-ARC: Intel-ARC.md
@@ -169,6 +171,7 @@ nav:
     - Tips & Hints: Dev-Hints.md
     - Localization: Dev-Locale.md
     - Extensions & Scripts: Dev-Extensions.md
+    - LoRA Specs: LoRA-Technical.md
   - API:
     - API Usage: API.md
     - CLI and API Examples: CLI-Tools.md
