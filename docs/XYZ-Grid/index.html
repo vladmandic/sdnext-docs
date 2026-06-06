@@ -2673,6 +2673,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Prompt S/R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commas-in-replacement-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commas in replacement values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-terms-match-anywhere-in-the-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search terms match anywhere in the prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholder-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placeholder tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -4176,6 +4215,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Prompt S/R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commas-in-replacement-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commas in replacement values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-terms-match-anywhere-in-the-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search terms match anywhere in the prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholder-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placeholder tokens
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -4223,6 +4301,26 @@ After selecting this type, enter a word already present in your prompt, followed
 <p>Embeddings and LoRAs are also valid search-and-replace terms, for example <code>&lt;lora:FirstLora:1&gt;,&lt;lora:SecondLora:1&gt;,&lt;lora:ThirdLora:1&gt;</code>.</p>
 <p>You could also change the strength of a lora; <code>&lt;lora:FirstLora:1&gt;,&lt;lora:FirstLora:0.75&gt;,&lt;lora:FirstLora:0.5&gt;,&lt;lora:FirstLora:0.25&gt;</code>.<br />
 (Note: You could strip this down to <code>FirstLora:1,FirstLora:0.75,FirstLora:0.5,FirstLora:0.25</code>.)</p>
+<h3 id="commas-in-replacement-values">Commas in replacement values</h3>
+<p>Replacement values are separated by commas, so every comma in the field is treated as a separator. Quotation marks are not special and do not group a value; wrapping a replacement in <code>"..."</code> only adds literal quote characters to the prompt.</p>
+<p>A comma that belongs inside a single replacement is escaped with a backslash, written as <code>\,</code>. The backslash is stripped before the prompt is used, leaving an ordinary comma. This matters most when the whole prompt is replaced with alternatives that themselves contain commas.</p>
+<p>For example, the prompt is <code>a lazy cat</code> and the goal is to swap the whole prompt for two alternatives that contain commas.</p>
+<p>Without escaping, the value <code>a lazy cat,a happy dog, wearing a hat,a wise owl, perched on a branch</code> is split on every comma into five values: <code>a lazy cat</code>, <code>a happy dog</code>, <code>wearing a hat</code>, <code>a wise owl</code>, and <code>perched on a branch</code>. The result is five images with broken prompts.</p>
+<p>With escaping, the value <code>a lazy cat,a happy dog\, wearing a hat,a wise owl\, perched on a branch</code> is split into three values. Because the search term <code>a lazy cat</code> is the full prompt, each value becomes a complete prompt, producing the three intended images: <code>a lazy cat</code>, <code>a happy dog, wearing a hat</code>, and <code>a wise owl, perched on a branch</code>.</p>
+<h3 id="search-terms-match-anywhere-in-the-prompt">Search terms match anywhere in the prompt</h3>
+<p>Search and replace acts on every value in the field, and each is a plain text replacement with no word boundaries. A term is replaced wherever it occurs, including inside longer words. With the prompt <code>a cat, intricate details</code> and Prompt S/R <code>cat,dog,owl</code>, the <code>cat</code> inside <code>intricate</code> is replaced along with the standalone word: the second image becomes <code>a dog, intridoge details</code> and the third becomes <code>a owl, intriowle details</code>.</p>
+<p>Distinctive terms avoid this. With Prompt S/R <code>a cat,a fox,a wolf</code>, none of the values occur inside <code>intricate</code>, so only the subject changes, giving <code>a cat, intricate details</code>, <code>a fox, intricate details</code>, and <code>a wolf, intricate details</code>.</p>
+<h3 id="placeholder-tokens">Placeholder tokens</h3>
+<p>A placeholder token marks a fixed insertion point in the prompt and can be reused to fill several positions from a single value. The token works best when it is distinctive, so it does not match inside other words, and it avoids the <code>__name__</code> form, which is reserved for wildcards.</p>
+<p>For a fixed insertion point, the prompt <code>portrait of SUBJECT_SLOT, oil painting, golden hour</code> with Prompt S/R <code>SUBJECT_SLOT,a fox,a deer,an owl</code> varies only the subject while the style and lighting stay constant, giving <code>portrait of a fox, oil painting, golden hour</code>, <code>portrait of a deer, oil painting, golden hour</code>, and <code>portrait of an owl, oil painting, golden hour</code>.</p>
+<p>For repeated positions, a token is replaced everywhere it appears. The prompt <code>COLOR_SLOT hair and COLOR_SLOT eyes</code> with Prompt S/R <code>COLOR_SLOT,red,blue,green</code> fills both positions from one value, giving <code>red hair and red eyes</code>, <code>blue hair and blue eyes</code>, and <code>green hair and green eyes</code>.</p>
+<p>A placeholder also replaces the whole prompt with unrelated alternatives. The prompt <code>PROMPT</code> with Prompt S/R <code>PROMPT,a serene lake at dawn\, misty,a neon cyberpunk alley\, raining</code> produces three images:</p>
+<ul>
+<li><code>PROMPT</code> (the first value is the search term, so the first cell renders the literal token unchanged)</li>
+<li><code>a serene lake at dawn, misty</code></li>
+<li><code>a neon cyberpunk alley, raining</code></li>
+</ul>
+<p>Each replacement is a complete prompt on its own: the token is not repeated in front of it, and internal commas are escaped as <code>\,</code>. When a usable first image matters more than a comma-free anchor, a complete prompt is placed in the prompt box and used as the first value instead of a token.</p>
 
 
 
