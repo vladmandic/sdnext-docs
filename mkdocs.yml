@@ -147,7 +147,6 @@ nav:
   - Behind-the-Scenes:
     - How Does It Work?: SD-Pipeline-How-it-Works.md
     - Training Methods: SD-Training-Methods.md
-    - Backends: Backend.md
     - Profiling: Profiling.md
   - Advanced:
     - Performance Tuning: Performance-Tuning.md
