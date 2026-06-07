@@ -3953,6 +3953,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#per-request-settings-and-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-Request Settings and Overrides
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Per-Request Settings and Overrides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sampler-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampler names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4295,6 +4334,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#per-request-settings-and-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-Request Settings and Overrides
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Per-Request Settings and Overrides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sampler-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampler names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4351,11 +4429,13 @@
 <h1 id="sdnext-api">SD.Next API</h1>
 <p>SD.Next provides a full HTTP REST API for interacting with the server and running operations.</p>
 <h2 id="docs">Docs</h2>
-<p>API documentation is generated when the server starts with the <code>--docs</code> flag.</p>
-<p>Use either endpoint:
-- <code>/docs</code>
-- <code>/redocs</code></p>
-<p>Both endpoints expose the same API information in different formats.</p>
+<p>Interactive API documentation is served at two endpoints in different presentations:</p>
+<ul>
+<li><code>/docs</code> (Swagger UI)</li>
+<li><code>/redocs</code> (ReDoc)</li>
+</ul>
+<p>Both are generated from the request models, so they list every endpoint together with its accepted parameters, types, and defaults, and stay in sync with the running build. They are the authoritative reference for what each request accepts.</p>
+<p>The docs are enabled by default. Setting the <code>SD_NODOCS</code> environment variable disables them.</p>
 <h2 id="internal-vs-public-api">Internal vs Public API</h2>
 <p>The API has two groups: internal and public.
 All public API endpoints start with <code>/sdapi/</code>.</p>
@@ -4415,6 +4495,30 @@ If not set, the server includes the current step preview image in the response.<
 </ul>
 <p>A common usage pattern is to poll the progress endpoint while generation is running and stop when <code>progress</code> reaches <code>1</code>.
 You can also check that <code>job_count</code> is <code>0</code>, but note it may briefly be <code>0</code> right before a new task starts.</p>
+<h2 id="per-request-settings-and-overrides">Per-Request Settings and Overrides</h2>
+<p>Most generation parameters are per-request. The <code>/sdapi/v1/txt2img</code> and <code>/sdapi/v1/img2img</code> request models are generated from the processing class, so any processing parameter can be sent directly in the payload for a single request. The complete list of accepted fields for each endpoint is described in <a href="../Parameters/">Parameters</a> and served as a live schema at <code>/docs</code> and <code>/redocs</code>. A separate <code>/sdapi/v1/options</code> call is not required to set the sampler, step count, CFG scale, CLiP skip, or similar values.</p>
+<p>A single request can carry the model, the sampler, and the per-request parameters together:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a cat&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;negative_prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;blurry&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;cfg_scale&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;sampler_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DPM++ 2M SDE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;clip_skip&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;override_settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;sd_model_checkpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;modelname&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="sampler-names">Sampler names</h3>
+<p><code>sampler_name</code> selects the solver. The sigma schedule (Karras, Exponential, and similar) is a separate field, <code>schedulers_sigma</code>, which accepts <code>default</code>, <code>karras</code>, <code>betas</code>, <code>exponential</code>, <code>lambdas</code>, and <code>flowmatch</code>. The exact list of solver names is returned by <code>/sdapi/v1/samplers</code>.</p>
+<p>A name is matched case-insensitively; an unrecognized name is rejected with <code>404 Sampler not found</code>, while the value <code>Default</code> keeps the scheduler the loaded model ships with. <code>Default</code> is also the value used when <code>sampler_name</code> is omitted.</p>
+<p>Automatic1111 fuses the solver and the sigma schedule into a single name, so its names do not transfer directly. For example, <code>DPM++ 2M Karras</code> is expressed here as <code>sampler_name: "DPM++ 2M"</code> together with <code>schedulers_sigma: "karras"</code>.</p>
+<p>The full scheduler list and the effect of each sampler option are covered in <a href="../Schedulers/">Schedulers</a> and <a href="../Parameters/">Parameters</a>.</p>
+<h3 id="model-overrides">Model overrides</h3>
+<p>The loaded model can be set per-request through <code>override_settings</code>, for example <code>{"sd_model_checkpoint": "modelname"}</code>. The output-path options listed in <code>restricted_opts</code> cannot be overridden this way. The full set of overridable settings is listed under Override Parameters in <a href="../Parameters/">Parameters</a>.</p>
+<p>By default <code>override_settings_restore_afterwards</code> is <code>true</code>, so an overridden option is restored once the request completes. For a checkpoint override this means the model is loaded before the request and the previous model is reloaded afterwards, which adds two model loads per request whenever the requested model differs from the one already loaded. An override that matches the current value is dropped and triggers no reload. For a workflow that issues many requests against the same model, setting the model once through <code>/sdapi/v1/options</code> or sending <code>override_settings_restore_afterwards: false</code> avoids the repeated reloads.</p>
 <h2 id="examples">Examples</h2>
 <h3 id="t2i-with-controlnet">T2I with ControlNet</h3>
 <p>The <code>/sdapi/v1/control</code> endpoint supports the same operations as <code>txt2img</code> and <code>img2img</code> (with slightly different parameters), but it also supports ControlNet-specific operations. A common pattern is to generate an image with txt2img while using ControlNet units and their specific images (called <code>override images</code> in SD.Next parlance) to condition the generation.</p>

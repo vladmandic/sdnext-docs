@@ -4691,8 +4691,8 @@
 <h1 id="sdnext-parameters-guide">SDnext Parameters Guide</h1>
 <p>This guide documents generation parameters available in SD.Next.
 It does not cover mostly static system settings.</p>
-<p>Parameters listed here can be used in the <code>extra</code> field of styles.
-Parameters from "Settings" sections (such as advanced sampler or postprocessing options) can be used in the <code>override_settings</code> dictionary for per-generation changes.</p>
+<p>These parameters are per-request: each can be sent directly in a single <code>/sdapi/v1/txt2img</code> or <code>/sdapi/v1/img2img</code> call, placed in the <code>extra</code> field of a style, or, when backed by a setting, passed in the <code>override_settings</code> dictionary for one generation. A separate <code>/sdapi/v1/options</code> call is not needed to use them.</p>
+<p>The <a href="../API/">API</a> guide is the place to look for how to build a request: payload shape, model and sampler selection, and overrides. The live, always-current request schema is served at <code>/docs</code> and <code>/redocs</code>.</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
 <li><a href="./#sdnext-parameters-guide">SDnext Parameters Guide</a></li>
@@ -4959,8 +4959,8 @@ Parameters from "Settings" sections (such as advanced sampler or postprocessing 
 <td style="text-align: left;"><code>sampler_name</code></td>
 <td style="text-align: left;"><code>str</code></td>
 <td style="text-align: left;"><code>None</code></td>
-<td style="text-align: left;"><code>Values: "Euler", "Euler a", "DPM++ 2M", etc.</code> <br> <code>Syntax: sampler_name: DPM++ 2M Karras</code></td>
-<td style="text-align: left;">Algorithm used for image generation. Different samplers can produce different styles and qualities.</td>
+<td style="text-align: left;"><code>Values: "Euler", "Euler a", "DPM++ 2M", etc.</code> <br> <code>Syntax: sampler_name: DPM++ 2M</code></td>
+<td style="text-align: left;">Solver used for generation. The sigma schedule (Karras, Exponential, and similar) is a separate field, <code>schedulers_sigma</code>, and is not part of this name.</td>
 <td style="text-align: left;">Sampling method</td>
 </tr>
 <tr>
@@ -5023,7 +5023,7 @@ Parameters from "Settings" sections (such as advanced sampler or postprocessing 
 <td style="text-align: left;"><code>schedulers_sigma</code></td>
 <td style="text-align: left;"><code>str</code></td>
 <td style="text-align: left;"><code>"default"</code></td>
-<td style="text-align: left;"><code>Values: 'default', 'karras', 'exponential', 'polyexponential'</code></td>
+<td style="text-align: left;"><code>Values: 'default', 'karras', 'betas', 'exponential', 'lambdas', 'flowmatch'</code></td>
 <td style="text-align: left;">The algorithm used to calculate the noise schedule (sigmas). 'karras' is a popular choice.</td>
 <td style="text-align: left;">sigma method</td>
 </tr>
