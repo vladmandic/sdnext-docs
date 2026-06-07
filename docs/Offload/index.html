@@ -4293,19 +4293,19 @@ This reduces VRAM usage and helps run larger models on lower-VRAM GPUs.</p>
 <h3 id="balanced">Balanced</h3>
 <p>Balanced offload works differently than all other offloading methods as it performs offloading only when the VRAM usage exceeds the user-specified threshold.</p>
 <ul>
-<li>Recommended for compatible high-VRAM GPUs.</li>
+<li>The default mode for any detected GPU, suitable across the memory range.</li>
 <li>Faster than other offload modes, but requires platform compatibility and enough VRAM.</li>
-<li>Moves model parts based on user-defined thresholds, so you can control VRAM usage.</li>
+<li>Model parts move based on configured thresholds, keeping VRAM usage within the limit.</li>
 <li>The high threshold sets the maximum memory usage allowed for weights of a single model component.</li>
 <li>The low threshold controls when unused model parts are offloaded back to RAM.
   If VRAM usage is above the low threshold, offloading runs. Otherwise, it does nothing.</li>
-<li>Configure thresholds in <em>Settings -&gt; Models &amp; Loading -&gt; Balanced offload GPU high / low watermark</em>.</li>
+<li>Thresholds are configured under <em>Settings -&gt; Models &amp; Loading -&gt; Offload low watermark / Offload GPU high watermark</em>.</li>
 </ul>
-<p>Balanced offloading default behavior is based on detected GPU memory:
-- <strong>default</strong>: offload=balanced gpu-min=0.2 gpu-max=0.6 gc-threshold=0.7<br />
-- <strong>&lt;= 4gb/lowvram</strong>: offload=sequential quantization=cpu vae-tiling=on gc-threshold=0.0<br />
-- <strong>&lt;= 12gb/medvram</strong>: offload=balanced gpu-min=0.0 vae-tiling=on<br />
-- <strong>&gt;= 24gb/highvram</strong>: offload=balanced gpu-max=0.8 never=clip-l,clip-g,vae  </p>
+<p>Defaults are selected from detected GPU memory. Every detected GPU uses balanced offload; only the explicit <code>--lowvram</code> flag switches to sequential, and <code>--medvram</code> forces balanced with a low watermark of 0.
+- <strong>12-24 GB (default)</strong>: balanced, low/high watermark 0.2 / 0.6<br />
+- <strong>4-12 GB</strong>: balanced, low watermark 0.0, large text encoders always offloaded<br />
+- <strong>4 GB or less</strong>: balanced, low watermark 0.0, plus the <code>--lowvram</code> low-memory optimizations (VAE tiling, aggressive garbage collection)<br />
+- <strong>24 GB or more</strong>: balanced, high watermark 0.8, large text encoders always offloaded, CLIP and VAE never offloaded  </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Not compatible with <em>Optimum.Quanto</em> <code>qint</code> quantization</p>
@@ -4313,7 +4313,7 @@ This reduces VRAM usage and helps run larger models on lower-VRAM GPUs.</p>
 <h3 id="sequential">Sequential</h3>
 <p>Works layer by layer for each model component marked as offload-compatible.</p>
 <ul>
-<li>Recommended for low-VRAM GPUs.</li>
+<li>Recommended for very low VRAM, around 4 GB or less.</li>
 <li>Much slower, but can run large models such as FLUX on GPUs with 2-4GB VRAM.</li>
 </ul>
 <div class="admonition warning">
@@ -4326,15 +4326,14 @@ Using <code>--lowvram</code> automatically enables sequential offload.</p>
 <p>Works at the model-component level by offloading components marked as offload-compatible.
 Examples include VAE and text encoder.</p>
 <ul>
-<li>Recommended for medium VRAM when balanced offload is not compatible.</li>
+<li>Recommended when balanced offload is not compatible.</li>
 <li>More compatible than balanced or sequential, but with lower memory savings.</li>
 </ul>
 <p>Limitations: N/A</p>
 <h2 id="performance-notes">Performance Notes</h2>
 <ul>
 <li>Tested using SDXL with 2 large LoRA models  </li>
-<li>Sequential offload is default for GPUs with 4GB or less</li>
-<li>Balanced offload is default for GPUs with more than 4GB.
+<li>Balanced offload is the default for all detected GPUs; sequential offload applies only with <code>--lowvram</code>.
   Balanced offload is slower than no offload, but it enables large models such as SD35 and FLUX.1 out of the box.</li>
 <li>Balanced offload set to default values  </li>
 <li>LoRA overhead is measured in sec for first and subsequent iterations  </li>
