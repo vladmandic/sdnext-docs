@@ -1431,6 +1431,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#components" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4201,6 +4212,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#components" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4278,13 +4300,18 @@
 <li><a href="https://huggingface.co/ideogram-ai/ideogram-4-nf4-diffusers">Model card</a></li>
 </ul>
 <h2 id="variants">Variants</h2>
-<p>The original Ideogram-4 model was released in FP8 and NF4 variants.
-SD.Next ships it with BF16 weights so users can experiment with any type of quantization using native quantization-during-load features.</p>
+<p>The original Ideogram-4 model was released in pre-quantized <strong>FP8</strong> and <strong>NF4</strong> variants only<br />
+SD.Next ships Ideogram-4 with 
+- <strong>BF16</strong> weights so users can experiment with any type of quantization using native quantization-during-load features.
+- <strong>SDNQ UINT4</strong> pre-quantized weights for users who want to use it immediately without experimenting with quantization.</p>
+<p>Both variants are available in SD.Next networks -&gt; reference models for immediate use.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Ideogram-4 is a large model and aggressive quantization is highly recommended<br />
 Due to both RAM and VRAM requirements, it is not usable without quantization on most consumer hardware</p>
 </div>
+<h2 id="resolution">Resolution</h2>
+<p>Ideogram-4 is trained on 2MP images and can generate native 2k resolution without tiling or upscaling given the sufficient VRAM.</p>
 <h2 id="components">Components</h2>
 <p>Ideogram-4 consists of:
 - <code>text-encoder</code>: <em>qwen-3-vl-8b</em>
@@ -4348,12 +4375,12 @@ Or you can also write the JSON prompt yourself and pass it directly</p>
 <blockquote>
 <p><strong>Settings</strong>: <em>Model options -&gt; Ideogram 4 -&gt; Enable prompt-enhance</em></p>
 </blockquote>
-<p>This enables or disables the prompt enhancer, which uses the same <code>Qwen-3-VL-8B</code> model that Ideogram-4 uses for text encoding.
-The enhancer expands and rewrites prompts into Ideogram-4 JSON format.
-It is enabled by default because Ideogram-4 is not usable without a JSON prompt.
-It is not fast—approximately 30 seconds on an RTX 4090.</p>
-<p>If you pass a detailed JSON prompt, the enhancer detects it and skips enhancement.
-If prompt enhance is disabled and you pass a non-JSON prompt, SD.Next converts it naively into Ideogram-4 JSON format.</p>
+<p>This enables or disables the prompt enhancer, which uses the same <code>Qwen-3-VL-8B</code> model that Ideogram-4 uses for text encoding with an additional 1.1GB <code>lm_head</code><br />
+The enhancer expands and rewrites prompts into Ideogram-4 JSON format<br />
+It is enabled by default because Ideogram-4 is not usable without a JSON prompt<br />
+It is not fast—approximately 30 seconds on an RTX4090  </p>
+<p>If you pass a detailed JSON prompt, the enhancer detects it and skips enhancement<br />
+If prompt enhance is disabled and you pass a non-JSON prompt, SD.Next converts it naively into Ideogram-4 JSON format  </p>
 
 
 

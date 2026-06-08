@@ -4094,22 +4094,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-07" class="md-nav__link">
+  <a href="#update-for-2026-06-08" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-07
+        Update for 2026-06-08
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-06-07">
+    <nav class="md-nav" aria-label="Update for 2026-06-08">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-06-07" class="md-nav__link">
+  <a href="#highlights-for-2026-06-08" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-06-07
+        Highlights for 2026-06-08
       
     </span>
   </a>
@@ -4117,10 +4117,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-06-07" class="md-nav__link">
+  <a href="#details-for-2026-06-08" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-06-07
+        Details for 2026-06-08
       
     </span>
   </a>
@@ -6492,22 +6492,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-07" class="md-nav__link">
+  <a href="#update-for-2026-06-08" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-07
+        Update for 2026-06-08
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-06-07">
+    <nav class="md-nav" aria-label="Update for 2026-06-08">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-06-07" class="md-nav__link">
+  <a href="#highlights-for-2026-06-08" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-06-07
+        Highlights for 2026-06-08
       
     </span>
   </a>
@@ -6515,10 +6515,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-06-07" class="md-nav__link">
+  <a href="#details-for-2026-06-08" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-06-07
+        Details for 2026-06-08
       
     </span>
   </a>
@@ -8882,8 +8882,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-06-07">Update for 2026-06-07</h2>
-<h3 id="highlights-for-2026-06-07">Highlights for 2026-06-07</h3>
+<h2 id="update-for-2026-06-08">Update for 2026-06-08</h2>
+<h3 id="highlights-for-2026-06-08">Highlights for 2026-06-08</h3>
 <p><em>What's New?</em>
 - <strong>Ideogram-4</strong> released, Microsoft joins the game with <strong>Lens</strong> and <strong>Anima</strong> made it to release version
 - <strong>SDNQ</strong> new quantization algorithm with even higher quality
@@ -8895,7 +8895,7 @@
 <p>Plus continued work on modernization of codebase: UI is now fully TypeScript based
 And we have a new modular LoRA loader, new native Transformers loader and improved finetunes support!  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2026-06-07">Details for 2026-06-07</h3>
+<h3 id="details-for-2026-06-08">Details for 2026-06-08</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">CircleStone Anima 1.0</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
@@ -8974,7 +8974,9 @@ And we have a new modular LoRA loader, new native Transformers loader and improv
     better compatibility for different finetunes and automatic detection of compatibility with base model  </li>
 <li>refactor shared components loader<br />
     now takes into effect desired pre-quant precision and allows to share components between different models  </li>
-<li>new </li>
+<li>update all model loading code to use consistent paths:<br />
+<code>diffusers_dir</code> for image pipelines<br />
+<code>hfcache_dir</code> for model components and auxiliary models  </li>
 <li>update <code>torch==2.12</code> for <em>CUDA, ROCm, IPEX</em></li>
 <li>complete refactor of <code>core</code> JavaScript codebase to TypeScript!</li>
 <li>complete refactor of <code>modernui</code> JavaScript codebase to TypeScript!</li>
@@ -9015,7 +9017,9 @@ And we have a new modular LoRA loader, new native Transformers loader and improv
 <li><code>openpose</code> processor</li>
 <li><code>img2img</code> api default sampler</li>
 <li><code>sdnq</code> default dynamic loss value</li>
+<li><code>sdnq</code> prequant save/load</li>
 <li><code>samplers</code> ui sigma methods</li>
+<li><code>xpu</code> generator on non-cpu</li>
 </ul>
 <h2 id="update-for-2026-05-13">Update for 2026-05-13</h2>
 <h3 id="highlights-for-2026-05-13">Highlights for 2026-05-13</h3>
