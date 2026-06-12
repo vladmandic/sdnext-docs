@@ -4094,22 +4094,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-11" class="md-nav__link">
+  <a href="#update-for-2026-06-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-11
+        Update for 2026-06-12
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-06-11">
+    <nav class="md-nav" aria-label="Update for 2026-06-12">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-06-11" class="md-nav__link">
+  <a href="#highlights-for-2026-06-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-06-11
+        Highlights for 2026-06-12
       
     </span>
   </a>
@@ -4117,10 +4117,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-06-11" class="md-nav__link">
+  <a href="#details-for-2026-06-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-06-11
+        Details for 2026-06-12
       
     </span>
   </a>
@@ -6492,22 +6492,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-11" class="md-nav__link">
+  <a href="#update-for-2026-06-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-11
+        Update for 2026-06-12
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-06-11">
+    <nav class="md-nav" aria-label="Update for 2026-06-12">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-06-11" class="md-nav__link">
+  <a href="#highlights-for-2026-06-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-06-11
+        Highlights for 2026-06-12
       
     </span>
   </a>
@@ -6515,10 +6515,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-06-11" class="md-nav__link">
+  <a href="#details-for-2026-06-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-06-11
+        Details for 2026-06-12
       
     </span>
   </a>
@@ -8882,8 +8882,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-06-11">Update for 2026-06-11</h2>
-<h3 id="highlights-for-2026-06-11">Highlights for 2026-06-11</h3>
+<h2 id="update-for-2026-06-12">Update for 2026-06-12</h2>
+<h3 id="highlights-for-2026-06-12">Highlights for 2026-06-12</h3>
 <p><em>What's New?</em>
 - <strong>Ideogram-4</strong> released, Microsoft joins the game with <strong>Lens</strong> and <strong>Anima</strong> made it to release version
 - <strong>SDNQ</strong> new quantization algorithm with even higher quality
@@ -8894,7 +8894,7 @@
 <p>Plus continued work on modernization of codebase: UI is now fully TypeScript based
 And we have a new modular LoRA loader, new native Transformers loader and improved 3rd party finetunes support!  </p>
 <p><a href="https://github.com/vladmandic/automatic/blob/master/README.md">ReadMe</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://github.com/vladmandic/automatic/wiki">WiKi</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2026-06-11">Details for 2026-06-11</h3>
+<h3 id="details-for-2026-06-12">Details for 2026-06-12</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/circlestone-labs/Anima">CircleStone Anima 1.0</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
@@ -8916,12 +8916,14 @@ And we have a new modular LoRA loader, new native Transformers loader and improv
 <em>tip</em>: image analysis requires larger VLM model to produce quality output<br />
     new api endpoint: <code>/sdapi/v1/analyze</code><br />
     cleanup list of predefined models, new models added and some old removed<br />
+    add support for prequantized models
     improved default values plus some new params like min length and <code>custom args</code> so you can pass anything to an llm model<br />
     improved system prompts  </li>
 <li><strong>Prompt Enhance</strong> tons of features<br />
     cleanup list of predefined models, new models added and some old removed<br />
     improved default values plus some new params like min length and <code>custom args</code> so you can pass anything to an llm model<br />
     improved system prompts<br />
+    add support for prequantized models
     new processing engine! now you can steer the model as its generating<br />
     add words to list and model will either steer away from them towards safe choices or you choose specific replacements for them<br />
 <em>for example</em>: <code>child:person, toy:airplane, dog:cat</code><br />
@@ -9024,6 +9026,7 @@ And we have a new modular LoRA loader, new native Transformers loader and improv
 <li><code>xpu</code> generator on non-cpu</li>
 <li><code>compel</code> compatibility with <em>transformers==5</em></li>
 <li><code>mixture-tiling</code> fix for non-square images, thanks @QualiaRain</li>
+<li><code>prompts-from-file</code> fix metadata handling, thanks @QualiaRain</li>
 </ul>
 <h2 id="update-for-2026-05-13">Update for 2026-05-13</h2>
 <h3 id="highlights-for-2026-05-13">Highlights for 2026-05-13</h3>
