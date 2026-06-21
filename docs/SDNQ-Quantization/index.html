@@ -3399,12 +3399,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#quantized-matmul-type" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3413,8 +3408,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Quantized MatMul type">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#modules-to-not-convert" class="md-nav__link">
@@ -4621,12 +4615,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#quantized-matmul-type" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4635,8 +4624,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Quantized MatMul type">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#modules-to-not-convert" class="md-nav__link">
@@ -4868,13 +4856,13 @@
 </ol>
 <h2 id="features">Features</h2>
 <ul>
-<li>SDNQ is fully cross-platform, supports all GPUs and CPUs and includes many quantization methods:  </li>
+<li>SDNQ is fully cross-platform, supports all GPUs, iGPUs, CPUs and NPUs and includes many quantization methods:  </li>
 <li>Supports bit rates all the way from 1-bit to 16-bit  </li>
 <li>Supports <em>integer</em>, <em>unsigned integer</em>, <em>floating point</em>, <em>unsigned floating point</em> formats and their variants  </li>
 <li>Supports 33 int-based and 143 float-based quantization schemes totaling to 176 supported quantization schemes  </li>
 <li>Supports nearly all model types  </li>
 <li>Supports compute optimizations using Triton via <code>torch.compile</code>  </li>
-<li>Supports Quantized MatMul with significant speedups on INT8, FP8 or FP16 supported GPUs  </li>
+<li>Supports Quantized MatMul with significant speedups on INT8, FP8 or FP16 supported GPUs, CPUs and NPUs  </li>
 <li>Supports on-the-fly quantization during model load with little to no overhead (<code>pre</code> mode)  </li>
 <li>Supports quantization for the convolutional layers with UNet models  </li>
 <li>Supports quantization for the embedding layers with Text models  </li>
@@ -5034,7 +5022,7 @@ Symmetric quants can store negative and positive values, so they do not need a z
 <h3 id="quantization-type-for-text-encoders">Quantization type for Text Encoders</h3>
 <p>Same as <code>Quantization type</code> but for the Text Encoders.<br />
 <code>default</code> option will use the same type as <code>Quantization type</code>.  </p>
-<h2 id="quantized-matmul-type">Quantized MatMul type</h2>
+<h3 id="quantized-matmul-type">Quantized MatMul type</h3>
 <p>Overrides the Quantized MatMul type.<br />
 Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types, FP8 MatMul with FP types below 16 bits and Quantized FP16 MatMul with FP types above 16 bits.<br />
 This option has no effect if <code>Use Quantized MatMul</code> options is disabled.  </p>
@@ -5130,8 +5118,9 @@ This setting requires a full restart of the webui to apply.<br />
 Enabled by default if Triton is available.  </p>
 <h3 id="use-quantized-matmul">Use Quantized MatMul</h3>
 <p>Enabling this option uses quantized INT8 or FP8 MatMul instead of BF16/FP16 during model execution.<br />
-Has significantly higher performance on GPUs with INT8 or FP8 support.
-Requires Triton. Disabled by default.  </p>
+Has significantly higher performance on GPUs, CPUs or NPUs with INT8 or FP8 support.<br />
+Having a working Triton or Inductor install is highly recommended.<br />
+Disabled by default.  </p>
 <p><strong>Supported GPUs</strong><br />
 - <strong>Nvidia</strong><br />
   Requires Turing (RTX 2000) or newer GPUs for INT8 matmul.<br />
@@ -5145,9 +5134,21 @@ Requires Triton. Disabled by default.  </p>
   Requires Alchemist (Arc A) or newer GPUs for INT8 matmul.<br />
   Intel doesn't support FP8 matmul.<br />
   Intel can emulate FP8 matmul but it will be very slow.  </p>
+<p><strong>Supported CPUs</strong><br />
+INT8 MatMul is supported on any CPU with AVX-512 support natively or any CPU with AVX2 support via OpenVINO.  </p>
+<p><strong>Supported NPUs</strong><br />
+INT8 and FP16 MatMul is supported on Intel NPUs via OpenVINO.  </p>
 <p>Recommended quant type to use with this option is <code>int8</code> for quality and better hardware compatibility.<br />
 INT8 matmul is also significantly faster than FP8 matmul on consumer Nvidia GPUs.<br />
 Recommended quant type for FP8 matmul is <code>float8_e4m3fn</code>.  </p>
+<p>Notes:
+- <code>Dequantize using full precision</code> option might have too much performance hit if you don't have access to Triton.<br />
+  But it is better to keep it enabled if you have access to Triton as Triton eliminates the overhead from this option.<br />
+- NPUs and CPUs that doesn't support AVX-512 requires OpenVINO for Quantized MatMul.<br />
+  Activate your venv and install OpenVINO with <code>pip install openvino</code><br />
+  OpenVINO with NPU is auto used if OpenVINO is installed and no GPU is available.<br />
+  This can be overridden with this environment variable: <code>SDNQ_USE_OPENVINO_MM</code><br />
+  And the OpenVINO device can be overridden with this environment variable: <code>SDNQ_OPENVINO_DEVICE</code>  </p>
 <h3 id="use-quantized-matmul-with-convolutional-layers">Use Quantized MatMul with convolutional layers</h3>
 <p>Same as <code>Use Quantized MatMul</code> but for the convolutional layers with UNets like SDXL.<br />
 Disabled by default.  </p>
@@ -5161,7 +5162,8 @@ If device map is set to <code>gpu</code>, model weights will be loaded directly 
 If <code>Model offload mode</code> is set to <code>model</code>, quantized model weights will be sent to the GPU after quantization and will be sent back to the CPU after the quantization of the current model part is over.  </p>
 <h3 id="dequantize-using-full-precision">Dequantize using full precision</h3>
 <p>Enabling this option will use <code>FP32</code> on the dequantization step and will keep the scales, zero points and svd in FP32.<br />
-Has higher quality outputs but also has higher memory usage.<br />
+Has much higher quality outputs but also has higher memory usage and might have lower performance.<br />
+This option has no performance impact with Triton but has high performance impact if you don't have access to Triton.<br />
 Enabled by default.  </p>
 
 
