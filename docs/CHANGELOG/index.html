@@ -4094,10 +4094,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-22" class="md-nav__link">
+  <a href="#update-for-2026-06-23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-22
+        Update for 2026-06-23
       
     </span>
   </a>
@@ -6503,10 +6503,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-22" class="md-nav__link">
+  <a href="#update-for-2026-06-23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-22
+        Update for 2026-06-23
       
     </span>
   </a>
@@ -8904,9 +8904,14 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-06-22">Update for 2026-06-22</h2>
+<h2 id="update-for-2026-06-23">Update for 2026-06-23</h2>
 <ul>
+<li><strong>Models</strong></li>
+<li><a href="https://www.krea.ai/blog/krea-2-image-model">Krea 2</a> in <em>base</em> and <em>turbo</em> (distilled) variants<br />
+    K2 is a 12.9B single-stream flow-matching DiT and using a Qwen3-VL-4B text encoder</li>
 <li><strong>Features</strong></li>
+<li><strong>SDNQ-Attention</strong><br />
+    modelled after <em>sage-attention</em>, but modified to support AMD and Intel GPUs in addition to nVidia  </li>
 <li><strong>SDNQ</strong> support for NPU during quantization and inference  </li>
 <li>add option: force dtype on load<br />
     use to force model components to override loading with desired dtype regardless of component config  </li>
@@ -8932,6 +8937,7 @@
 <li><code>measure</code> handle current kanvas stage</li>
 <li><code>caption</code> button in standard-ui</li>
 <li><code>python</code> experimental/ignore version checks</li>
+<li><code>hipBLASLt</code> improved detection, thanks @0xDELUXA</li>
 </ul>
 <h2 id="update-for-2026-06-16">Update for 2026-06-16</h2>
 <h3 id="highlights-for-2026-06-16">Highlights for 2026-06-16</h3>
