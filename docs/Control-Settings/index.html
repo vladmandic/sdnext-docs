@@ -4428,11 +4428,19 @@
 <p><code>Show Preview</code> toggles the preview pane on the right side. Keep it enabled when doing masking or other pre-generation adjustments.</p>
 <p>There are 3 input types:</p>
 <ul>
-<li><code>Control only</code>: Uses only <code>Control input</code> as the source for ControlNet and IP-Adapter workflows.</li>
-<li><code>Init image same as control</code>: Reuses <code>Control input</code> as an img2img init image.</li>
-<li><code>Separate init image</code>: Adds a separate <code>Init input</code> pane so control guidance and init image can differ.</li>
+<li><code>Control only</code>: Uses only <strong>Control input</strong> as the source for ControlNet and IP-Adapter workflows</li>
+<li><code>Init image same as control</code>: Reuses <strong>Control input</strong> as an <em>img2img</em> init image</li>
+<li><code>Separate init image</code>: Uses different <strong>Init input</strong> from <strong>Control input</strong></li>
 </ul>
-<p><code>Denoising strength</code> works the same as in img2img. Higher values apply more denoising and allow stronger changes to source images.</p>
+<p>By default control works with <strong>Kanvas</strong> images UI control:
+- First kanvas stage is <strong>Control input</strong>
+- Second kanvas stage is <strong>Init input</strong> (if used)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each control unit can have its own override input which, if set, will take precedence over the main input.<br />
+This allows for multiple control units to use different inputs in the same workflow.</p>
+</div>
+<p><code>Denoising strength</code> works the same as in <em>img2img</em>: Higher values apply more denoising and allow stronger changes to source images.</p>
 <h3 id="size">Size</h3>
 <p>The Size section has two subtabs, <code>Before</code> and <code>After</code>. They control resizing before and after inference.</p>
 <p><img alt="Size control" src="https://github.com/vladmandic/sdnext/assets/108482020/97102d4b-03d4-4aa8-85de-d6a8c2fa928d" /></p>
