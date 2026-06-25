@@ -4094,10 +4094,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-23" class="md-nav__link">
+  <a href="#update-for-2026-06-25" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-23
+        Update for 2026-06-25
       
     </span>
   </a>
@@ -6503,10 +6503,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-06-23" class="md-nav__link">
+  <a href="#update-for-2026-06-25" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-06-23
+        Update for 2026-06-25
       
     </span>
   </a>
@@ -8904,7 +8904,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-06-23">Update for 2026-06-23</h2>
+<h2 id="update-for-2026-06-25">Update for 2026-06-25</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://www.krea.ai/blog/krea-2-image-model">Krea 2</a> in <em>base</em> and <em>turbo</em> (distilled) variants<br />
@@ -8914,12 +8914,15 @@
 <li><strong>SDNQ-Attention</strong><br />
     modelled after <em>sage-attention</em>, but modified to support AMD and Intel GPUs in addition to nVidia  </li>
 <li><strong>SDNQ</strong> support for NPU during quantization and inference  </li>
-<li>add option: force dtype on load<br />
+<li>add option: <em>compute settings -&gt; force dtype on load</em><br />
     use to force model components to override loading with desired dtype regardless of component config  </li>
+<li>add option: <em>backend settings -&gt; force sychronize</em><br />
+    enabled by default, disable to speed up processing but may cause image corruptions, especially during preview</li>
 <li><strong>UI</strong></li>
 <li>dynamic visibility of image controls</li>
 <li>improve main panel positioning: <em>portrait/landscape</em></li>
 <li>improved gallery performance</li>
+<li>preview now only runs if output panel is visible  </li>
 <li>ModernUI: old <em>txt2img</em> and <em>img2img</em> tabs are marked as legacy and hidden by default</li>
 <li>StandardUI: marked as legacy</li>
 <li><strong>Internal</strong></li>
@@ -8939,6 +8942,8 @@
 <li><code>caption</code> button in standard-ui</li>
 <li><code>python</code> experimental/ignore version checks</li>
 <li><code>hipBLASLt</code> improved detection, thanks @0xDELUXA</li>
+<li><code>embeddings</code> handle textual-inversion with new transformers</li>
+<li><code>options</code> handle compatibility options</li>
 </ul>
 <h2 id="update-for-2026-06-16">Update for 2026-06-16</h2>
 <h3 id="highlights-for-2026-06-16">Highlights for 2026-06-16</h3>
