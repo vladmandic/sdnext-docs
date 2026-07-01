@@ -8963,7 +8963,7 @@
 <h2 id="update-for-2026-07-01">Update for 2026-07-01</h2>
 <h3 id="highlights-for-2026-07-01">Highlights for 2026-07-01</h3>
 <p>Service-pack update with several fixes and quality-of-life improvements<br />
-Plus few new models: <strong>Krea 2</strong><br />
+Plus few new models: <strong>Krea 2</strong>, <strong>Photoroom PRXPixel</strong>, <strong>FLUX.2 Klein 9B KV</strong><br />
 And <strong>SDNQ</strong> improvements: now with <em>NPU</em> support and its own native <em>attention</em> kernels!  </p>
 <p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
 <h3 id="details-for-2026-07-01">Details for 2026-07-01</h3>
@@ -8974,7 +8974,9 @@ And <strong>SDNQ</strong> improvements: now with <em>NPU</em> support and its ow
     K2 is a 12.9B single-stream flow-matching DiT and using a Qwen3-VL-4B text encoder  </li>
 <li><a href="https://huggingface.co/Photoroom/prxpixel-t2i">Photoroom PRXPixel</a> pixel-space PRX variant using a Qwen3-VL text encoder and flow-matching scheduler<br />
     supports <em>direct RGB</em> generation without a VAE and uses a <em>1024px</em> default sample size  </li>
-<li><strong>Microsoft Lens</strong> got unpublished, but we still got a mirror</li>
+<li><a href="https://huggingface.co/Jinstudio/Lens">Microsoft Lens</a> got unpublished, but we still got a mirror</li>
+<li><a href="https://huggingface.co/black-forest-labs/FLUX.2-klein-9b-kv">FLUX.2 Klein 9B KV</a> a bit late, but finally here in both <em>bf16</em> and <em>sdnq</em> pre-quantized variants  </li>
+<li>plus several new community models...</li>
 <li><strong>Features</strong></li>
 <li><strong>SDNQ-Attention</strong><br />
     modelled after <em>sage-attention</em>, but modified to support AMD and Intel GPUs in addition to nVidia  </li>
@@ -8997,6 +8999,7 @@ And <strong>SDNQ</strong> improvements: now with <em>NPU</em> support and its ow
 <li><strong>Internal</strong></li>
 <li>delay init of video models</li>
 <li><strong>Fixes</strong></li>
+<li>anima: simplify loader</li>
 <li>amd: hipBLASLt improved detection, thanks @0xDELUXA</li>
 <li>api: add missing endpoint registration</li>
 <li>api: openapi schema exposure</li>
@@ -9004,6 +9007,7 @@ And <strong>SDNQ</strong> improvements: now with <em>NPU</em> support and its ow
 <li>caption: button in standard-ui</li>
 <li>embeddings: handle textual-inversion with new transformers</li>
 <li>extensions: handle extension without remote</li>
+<li>huggingface: strip corrupt headers on download</li>
 <li>insightface: missing dependencies</li>
 <li>live preview: configurable pause when not in focus, thanks @Artheriax</li>
 <li>log: strip ansi sequences from ring buffer and client side logging</li>
