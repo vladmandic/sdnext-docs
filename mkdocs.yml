@@ -84,6 +84,7 @@ nav:
     - Advanced Install: Advanced-Install.md
     - CLI Arguments: CLI-Arguments.md
   - Models:
+    - Loading: Model-Loading.md
     - Supported Models: Model-Support.md
     - Model Specs: Models.md
     - Gated Access: Gated.md
@@ -149,6 +150,7 @@ nav:
     - Training Methods: SD-Training-Methods.md
     - Profiling: Profiling.md
   - Advanced:
+    - Performance Timers: Performance-Timers.md
     - Performance Tuning: Performance-Tuning.md
     - Memory Offloading: Offload.md
     - Memory Allocation: Malloc.md
