@@ -9112,6 +9112,10 @@ Also couple of <em>experimental</em> features: see below for details...  </p>
 <li>vae: restore hijack on pipeline switch</li>
 <li>startup: faster model storage checks</li>
 <li>installer: double-restart on diffusers/transformers upgrade</li>
+<li>krea2: load custom transformers that omit the dormant residual layers</li>
+<li>krea2: base defaults to guidance 4.5 instead of 1.0</li>
+<li>text encoder: load non-t5 single-file overrides as their actual class and quantize under sdnq</li>
+<li>text encoder: reload on override change, reset when base model is incompatible</li>
 </ul>
 <h2 id="update-for-2026-06-16">Update for 2026-06-16</h2>
 <h3 id="highlights-for-2026-06-16">Highlights for 2026-06-16</h3>
