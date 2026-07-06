@@ -4435,11 +4435,14 @@ SD.Next will automatically download and cache the required model files for you</
 <p>A single base model may have multiple available variants. In the Networks panel, variants are grouped by category  </p>
 <ul>
 <li><strong>Base</strong> - the original model<br />
-  This is the reference implementation for the family and should be used first  </li>
+  This is the reference implementation for the family and included without any modifications<br />
+  Base variants typically require higher step counts and guidance scale to achieve the best quality</li>
 <li><strong>Distilled</strong> - a smaller or faster version of the base model<br />
-  Distilled variants often trade some quality for faster performance  </li>
+  Distilled variants often trade some quality for faster performance<br />
+<em>Example</em>: <strong>Turbo</strong> variants are distilled for speed so they can run with lower step count and/or without guidance scale  </li>
 <li><strong>Quantized</strong> - a model version pre-quantized using <a href="../SDNQ-Quantization/">SDNQ-Quantization</a><br />
-  These versions are much smaller (often ~4× smaller) and may run faster on limited memory  </li>
+  These versions are much smaller and may run faster on limited memory<br />
+<em>Example</em>: typical SDNQ prequantized models are ~4× smaller than the original model with near-zero quality loss  </li>
 <li><strong>Community</strong> - community-created variants<br />
   These can include fine-tuning, special-purpose training, or other custom modifications  </li>
 <li><strong>Nunchaku</strong> - optimized variants for NVIDIA GPUs<br />

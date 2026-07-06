@@ -4154,22 +4154,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-07-05" class="md-nav__link">
+  <a href="#update-for-2026-07-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-07-05
+        Update for 2026-07-06
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-07-05">
+    <nav class="md-nav" aria-label="Update for 2026-07-06">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-07-05" class="md-nav__link">
+  <a href="#highlights-for-2026-07-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-07-05
+        Highlights for 2026-07-06
       
     </span>
   </a>
@@ -4177,10 +4177,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-07-05" class="md-nav__link">
+  <a href="#details-for-2026-07-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-07-05
+        Details for 2026-07-06
       
     </span>
   </a>
@@ -6591,22 +6591,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-07-05" class="md-nav__link">
+  <a href="#update-for-2026-07-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-07-05
+        Update for 2026-07-06
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-07-05">
+    <nav class="md-nav" aria-label="Update for 2026-07-06">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-07-05" class="md-nav__link">
+  <a href="#highlights-for-2026-07-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-07-05
+        Highlights for 2026-07-06
       
     </span>
   </a>
@@ -6614,10 +6614,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-07-05" class="md-nav__link">
+  <a href="#details-for-2026-07-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-07-05
+        Details for 2026-07-06
       
     </span>
   </a>
@@ -9020,14 +9020,14 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-07-05">Update for 2026-07-05</h2>
-<h3 id="highlights-for-2026-07-05">Highlights for 2026-07-05</h3>
+<h2 id="update-for-2026-07-06">Update for 2026-07-06</h2>
+<h3 id="highlights-for-2026-07-06">Highlights for 2026-07-06</h3>
 <p>Service-pack update with number of fixes and quality-of-life improvements<br />
 Plus few new models: <strong>Krea 2</strong>, <strong>Boogu</strong>, <strong>Photoroom PRXPixel</strong>, <strong>FLUX.2 Klein KV</strong> and some new community models<br />
-And <strong>SDNQ</strong> improvements: now with <em>NPU</em> support and its own native <em>attention</em> kernels!<br />
+And <strong>SDNQ</strong> improvements: now with <em>NPU</em> support and its own native <em>attention</em> kernels (try it, you may get a nice free performance boost)!<br />
 Also couple of <em>experimental</em> features: see below for details...  </p>
 <p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2026-07-05">Details for 2026-07-05</h3>
+<h3 id="details-for-2026-07-06">Details for 2026-07-06</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://www.krea.ai/blog/krea-2-image-model">Krea 2</a> in <em>base</em> and <em>turbo</em> (distilled) variants<br />
@@ -9060,6 +9060,7 @@ Also couple of <em>experimental</em> features: see below for details...  </p>
     auto-select download path<br />
     improved search<br />
     validate downloads  </li>
+<li>improved custom <strong>Text Encoder</strong> loader  </li>
 <li><strong>UI</strong></li>
 <li>dynamic visibility of image controls</li>
 <li>improve main panel positioning: <em>portrait/landscape</em></li>
@@ -9081,8 +9082,9 @@ Also couple of <em>experimental</em> features: see below for details...  </p>
 <em>note</em>: pruna options compatibility varies greatly depending on platform, gpu, torch and model used<br />
 <em>note</em>: some pruna options may require additional packages to be installed  </li>
 <li><strong>Fixes</strong></li>
-<li>anima: simplify loader</li>
 <li>amd: hipBLASLt improved detection, thanks @0xDELUXA</li>
+<li>anima: simplify loader</li>
+<li>anima: vae postprocessing with batch size</li>
 <li>api: add missing endpoint registration</li>
 <li>api: openapi schema exposure</li>
 <li>api: stricter api request and response schemas</li>
@@ -9091,6 +9093,9 @@ Also couple of <em>experimental</em> features: see below for details...  </p>
 <li>extensions: handle extension without remote</li>
 <li>huggingface: strip corrupt headers on download</li>
 <li>insightface: missing dependencies</li>
+<li>installer: double-restart on diffusers/transformers upgrade</li>
+<li>krea2: base defaults to guidance 4.5 instead of 1.0</li>
+<li>krea2: load custom transformers that omit the dormant residual layers</li>
 <li>live preview: configurable pause when not in focus, thanks @Artheriax</li>
 <li>log: strip ansi sequences from ring buffer and client side logging</li>
 <li>lora: cache state_dict between load attempts</li>
@@ -9104,18 +9109,17 @@ Also couple of <em>experimental</em> features: see below for details...  </p>
 <li>processors: init code and multiple fixes</li>
 <li>pulid: import paths</li>
 <li>python: experimental/ignore version checks</li>
+<li>scheduler: handle zero-sigma for i2i/inpaint flowmatch workflows</li>
 <li>sdnq: warn instead of error for <code>triton</code></li>
-<li>ui debounce aspect-ratio linked width/height controls</li>
-<li>ui: networks details scrollbars</li>
-<li>vae: scale factor improved detection</li>
-<li>text-encode: restore hijack on pipeline switch</li>
-<li>vae: restore hijack on pipeline switch</li>
 <li>startup: faster model storage checks</li>
-<li>installer: double-restart on diffusers/transformers upgrade</li>
-<li>krea2: load custom transformers that omit the dormant residual layers</li>
-<li>krea2: base defaults to guidance 4.5 instead of 1.0</li>
 <li>text encoder: load non-t5 single-file overrides as their actual class and quantize under sdnq</li>
 <li>text encoder: reload on override change, reset when base model is incompatible</li>
+<li>text-encode: restore hijack on pipeline switch</li>
+<li>ui debounce aspect-ratio linked width/height controls</li>
+<li>ui: networks details scrollbars</li>
+<li>vae: restore hijack on pipeline switch</li>
+<li>vae: scale factor improved detection</li>
+<li>vae: better detection of invalid/nan values</li>
 </ul>
 <h2 id="update-for-2026-06-16">Update for 2026-06-16</h2>
 <h3 id="highlights-for-2026-06-16">Highlights for 2026-06-16</h3>
