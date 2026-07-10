@@ -4154,10 +4154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-07-09" class="md-nav__link">
+  <a href="#update-for-2026-07-10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-07-09
+        Update for 2026-07-10
       
     </span>
   </a>
@@ -6602,10 +6602,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-07-09" class="md-nav__link">
+  <a href="#update-for-2026-07-10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-07-09
+        Update for 2026-07-10
       
     </span>
   </a>
@@ -9042,13 +9042,23 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-07-09">Update for 2026-07-09</h2>
+<h2 id="update-for-2026-07-10">Update for 2026-07-10</h2>
 <ul>
+<li><strong>Models</strong></li>
+<li><a href="https://civitai.com/models/2458426/anima?modelVersionId=3108569">Anima 1.0</a> new <em>Aesthetic</em> and <em>Turbo</em> variants  </li>
 <li><strong>Features</strong></li>
-<li>log view copy server log and copy client log buttons<br />
+<li>ui: improved log viewer for both server and client logs</li>
+<li>ui: expose server errors</li>
+<li>ui: log view copy server log and copy client log buttons<br />
     this copies current log to clipboard for easy sharing  </li>
-<li>api add <code>/sdapi/v1/restart</code> endpoint</li>
-<li>load transformers from all-in-one safetensors  </li>
+<li>api: add <code>/sdapi/v1/restart</code> endpoint</li>
+<li>loader: support transformers from all-in-one safetensors  </li>
+<li>loader: improve <code>fp8</code> model support</li>
+<li>civitai: improve search</li>
+<li>civitai: restart download</li>
+<li>sdnq: improve attention</li>
+<li><strong>Experimental</strong></li>
+<li>support for <code>comfy_quant</code> models  </li>
 <li><strong>Fixes</strong></li>
 <li>huggingface: fix model access on windows</li>
 <li>lora: fix lora text-encoder loader</li>
@@ -9057,6 +9067,8 @@
 <li>installer: handle detached branch on non-english setups</li>
 <li>fs: faster stat</li>
 <li>server-info: handle multiple gpus</li>
+<li>load: skip redundant model reload </li>
+<li>sdnq: fix hadamard on sdnq atten with sd 1.5</li>
 </ul>
 <h2 id="update-for-2026-07-07">Update for 2026-07-07</h2>
 <h3 id="highlights-for-2026-07-07">Highlights for 2026-07-07</h3>
