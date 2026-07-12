@@ -9100,20 +9100,19 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2026-07-12">Update for 2026-07-12</h2>
 <h3 id="highlights-for-2026-07-12">Highlights for 2026-07-12</h3>
-<p><em>What's New?</em> Full 3 days(!) since there release, we're bringing a service pack update:
-<strong>Anima</strong> has new <em>Aesthetic</em> and <em>Turbo</em> variants, UI log viewer now allows monitoring and easy sharing of server and client logs
-There are quite a few SDNQ improvements and we're continuing with enhanced support for 3rd party finetunes</p>
-<p><em>Note</em>: As long as there are no major items in #dev branch, we will continue with weekly service updates, so stay tuned for more!</p>
+<p><em>What's New?</em> Full week(!) since there release, we're bringing a service pack update:<br />
+<strong>Anima</strong> has new <em>Aesthetic</em> and <em>Turbo</em> variants<br />
+But also:<br />
+- UI updates to Server info and Log viewers, more informative and allows easier sharing of info
+- Quite a few SDNQ improvements, both to quantization and attention
+- Continuing with enhanced support for 3rd party finetunes</p>
+<p><em>Note</em>: As long as there are no major items in <code>#dev</code> branch, we will continue with weekly service updates, so stay tuned for more!  </p>
 <p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
 <h3 id="details-for-2026-07-12">Details for 2026-07-12</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://civitai.com/models/2458426/anima?modelVersionId=3108569">Anima 1.0</a> new <em>Aesthetic</em> and <em>Turbo</em> variants  </li>
 <li><strong>Features</strong></li>
-<li>ui: improved log viewer for both server and client logs</li>
-<li>ui: expose server errors</li>
-<li>ui: log view copy server log and copy client log buttons<br />
-    this copies current log to clipboard for easy sharing  </li>
 <li>loader: support loading secondary unet for models that have multiple unets<br />
 <em>networks panel -&gt; toggle: load model as secondary model</em><br />
 <em>settings -&gt; model loading -&gt; unet model secondary</em>  </li>
@@ -9124,6 +9123,14 @@ There are quite a few SDNQ improvements and we're continuing with enhanced suppo
 <li>civitai: restart download</li>
 <li>sdnq: improve attention</li>
 <li>api: add <code>/sdapi/v1/restart</code> endpoint</li>
+<li><strong>UI</strong></li>
+<li>improved server info panel<br />
+    now shows loaded components, networks, etc.  </li>
+<li>improved log viewer for both server and client logs</li>
+<li>expose server errors</li>
+<li>log view copy server log and copy client log buttons<br />
+    copies current log to clipboard for easy sharing  </li>
+<li>collapsible input &amp; output panels for <em>video</em>, <em>caption</em>, <em>process</em> tabs</li>
 <li><strong>Experimental</strong></li>
 <li>support for <code>comfy_quant</code> models  </li>
 <li><strong>Fixes</strong></li>
