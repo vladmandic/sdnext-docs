@@ -3449,6 +3449,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantized-matmul-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantized MatMul type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantization-type-for-text-encoders" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3460,10 +3471,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantized-matmul-type" class="md-nav__link">
+  <a href="#quantized-matmul" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quantized MatMul type
+        Quantized MatMul
       
     </span>
   </a>
@@ -3607,17 +3618,6 @@
     <span class="md-ellipsis">
       
         Dequantize using torch.compile
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#use-quantized-matmul" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use Quantized MatMul
       
     </span>
   </a>
@@ -4665,6 +4665,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#quantized-matmul-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantized MatMul type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quantization-type-for-text-encoders" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4676,10 +4687,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quantized-matmul-type" class="md-nav__link">
+  <a href="#quantized-matmul" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quantized MatMul type
+        Quantized MatMul
       
     </span>
   </a>
@@ -4823,17 +4834,6 @@
     <span class="md-ellipsis">
       
         Dequantize using torch.compile
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#use-quantized-matmul" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use Quantized MatMul
       
     </span>
   </a>
@@ -5079,13 +5079,44 @@ Symmetric quants can store negative and positive values, so they do not need a z
 <li><code>float2_e1m0fn</code> uses float2_e1m0fn packed into uint2 and has -2.0 to 2.0 range.  </li>
 <li><code>float1_e1m0fnu</code> uses float1_e1m0fnu packed into uint1 and has 0 to 2.0 range.  </li>
 </ul>
+<h3 id="quantized-matmul-type">Quantized MatMul type</h3>
+<p>Enables / Disables Quantized MatMul or overrides the Quantized MatMul type.<br />
+Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types, FP8 MatMul with FP types below 16 bits and Quantized FP16 MatMul with FP types above 16 bits.  </p>
 <h3 id="quantization-type-for-text-encoders">Quantization type for Text Encoders</h3>
 <p>Same as <code>Quantization type</code> but for the Text Encoders.<br />
 <code>default</code> option will use the same type as <code>Quantization type</code>.  </p>
-<h3 id="quantized-matmul-type">Quantized MatMul type</h3>
-<p>Overrides the Quantized MatMul type.<br />
-Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types, FP8 MatMul with FP types below 16 bits and Quantized FP16 MatMul with FP types above 16 bits.<br />
-This option has no effect if <code>Use Quantized MatMul</code> options is disabled.  </p>
+<h3 id="quantized-matmul">Quantized MatMul</h3>
+<p>Quantized MatMul uses quantized INT8 or FP8 MatMul instead of BF16/FP16 during model execution.<br />
+Has significantly higher performance on GPUs, CPUs or NPUs with INT8 or FP8 support.<br />
+Having a working Triton or Inductor install is highly recommended.  </p>
+<p><strong>Supported GPUs</strong><br />
+- <strong>Nvidia</strong><br />
+  Requires Turing (RTX 2000) or newer GPUs for INT8 matmul.<br />
+  Requires Ada (RTX 4000) or newer GPUs for FP8 matmul.<br />
+- <strong>AMD</strong><br />
+  Requires RDNA2 (RX 6000) or newer GPUs for INT8 matmul.<br />
+  Requires MI300X or RDNA4 (RX 9000) for FP8 matmul.<br />
+  - RDNA3 (RX 7000) supports INT8 matmul but runs at the same speed as FP16.<br />
+  - RDNA2 (RX 6000) and older GPUs are supported via Triton with INT8 DP4A.<br />
+- <strong>Intel</strong><br />
+  Requires Alchemist (Arc A) or newer GPUs for INT8 matmul.<br />
+  Intel doesn't support FP8 matmul.<br />
+  Intel can emulate FP8 matmul but it will be very slow.  </p>
+<p><strong>Supported CPUs</strong><br />
+INT8 MatMul is supported on any CPU with AVX-512 support natively or any CPU with AVX2 support via OpenVINO.  </p>
+<p><strong>Supported NPUs</strong><br />
+INT8 and FP16 MatMul is supported on Intel NPUs via OpenVINO.  </p>
+<p>Recommended quant type to use with this option is <code>int8</code> for quality and better hardware compatibility.<br />
+INT8 matmul is also significantly faster than FP8 matmul on consumer Nvidia GPUs.<br />
+Recommended quant type for FP8 matmul is <code>float8_e4m3fn</code>.  </p>
+<p>Notes:
+- <code>Dequantize using full precision</code> option might have too much performance hit if you don't have access to Triton.<br />
+  But it is better to keep it enabled if you have access to Triton as Triton eliminates the overhead from this option.<br />
+- NPUs and CPUs that doesn't support AVX-512 requires OpenVINO for Quantized MatMul.<br />
+  Activate your venv and install OpenVINO with <code>pip install openvino</code><br />
+  OpenVINO with NPU is auto used if OpenVINO is installed and no GPU is available.<br />
+  This can be overridden with this environment variable: <code>SDNQ_USE_OPENVINO_MM</code><br />
+  And the OpenVINO device can be overridden with this environment variable: <code>SDNQ_OPENVINO_DEVICE</code>  </p>
 <h3 id="modules-to-not-convert">Modules to not convert</h3>
 <p>A comma separated list of module names to skip quantization.<br />
 Modules listed in this option will not be quantized and will be kept in full precision.<br />
@@ -5176,41 +5207,8 @@ Has better memory savings but lower quality.  </p>
 Has significantly higher performance.<br />
 This setting requires a full restart of the webui to apply.<br />
 Enabled by default if Triton is available.  </p>
-<h3 id="use-quantized-matmul">Use Quantized MatMul</h3>
-<p>Enabling this option uses quantized INT8 or FP8 MatMul instead of BF16/FP16 during model execution.<br />
-Has significantly higher performance on GPUs, CPUs or NPUs with INT8 or FP8 support.<br />
-Having a working Triton or Inductor install is highly recommended.<br />
-Disabled by default.  </p>
-<p><strong>Supported GPUs</strong><br />
-- <strong>Nvidia</strong><br />
-  Requires Turing (RTX 2000) or newer GPUs for INT8 matmul.<br />
-  Requires Ada (RTX 4000) or newer GPUs for FP8 matmul.<br />
-- <strong>AMD</strong><br />
-  Requires RDNA2 (RX 6000) or newer GPUs for INT8 matmul.<br />
-  Requires MI300X or RDNA4 (RX 9000) for FP8 matmul.<br />
-  - RDNA3 (RX 7000) supports INT8 matmul but runs at the same speed as FP16.<br />
-  - RDNA2 (RX 6000) and older GPUs are supported via Triton with INT8 DP4A.<br />
-- <strong>Intel</strong><br />
-  Requires Alchemist (Arc A) or newer GPUs for INT8 matmul.<br />
-  Intel doesn't support FP8 matmul.<br />
-  Intel can emulate FP8 matmul but it will be very slow.  </p>
-<p><strong>Supported CPUs</strong><br />
-INT8 MatMul is supported on any CPU with AVX-512 support natively or any CPU with AVX2 support via OpenVINO.  </p>
-<p><strong>Supported NPUs</strong><br />
-INT8 and FP16 MatMul is supported on Intel NPUs via OpenVINO.  </p>
-<p>Recommended quant type to use with this option is <code>int8</code> for quality and better hardware compatibility.<br />
-INT8 matmul is also significantly faster than FP8 matmul on consumer Nvidia GPUs.<br />
-Recommended quant type for FP8 matmul is <code>float8_e4m3fn</code>.  </p>
-<p>Notes:
-- <code>Dequantize using full precision</code> option might have too much performance hit if you don't have access to Triton.<br />
-  But it is better to keep it enabled if you have access to Triton as Triton eliminates the overhead from this option.<br />
-- NPUs and CPUs that doesn't support AVX-512 requires OpenVINO for Quantized MatMul.<br />
-  Activate your venv and install OpenVINO with <code>pip install openvino</code><br />
-  OpenVINO with NPU is auto used if OpenVINO is installed and no GPU is available.<br />
-  This can be overridden with this environment variable: <code>SDNQ_USE_OPENVINO_MM</code><br />
-  And the OpenVINO device can be overridden with this environment variable: <code>SDNQ_OPENVINO_DEVICE</code>  </p>
 <h3 id="use-quantized-matmul-with-convolutional-layers">Use Quantized MatMul with convolutional layers</h3>
-<p>Same as <code>Use Quantized MatMul</code> but for the convolutional layers with UNets like SDXL.<br />
+<p>Enables <code>Use Quantized MatMul</code> for the convolutional layers with UNets like SDXL.<br />
 Disabled by default.  </p>
 <h3 id="quantize-using-gpu">Quantize using GPU</h3>
 <p>Enabling this option will use the GPU for quantization calculations on model load.<br />
