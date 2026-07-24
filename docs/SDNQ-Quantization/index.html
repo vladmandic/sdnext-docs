@@ -5146,8 +5146,10 @@ Setting the group size to <code>-1</code> will disable grouping.  </p>
 <p>Used to set how many tensor elements share the same Hadamard rotation matrix.<br />
 Or in other words, sets the size of the Hadamard rotation matrix.<br />
 Higher values have better quality but with less performance and more memory usage.  </p>
-<p>Hadamard group size has to be a power of 2.<br />
-Default is <code>128</code>.  </p>
+<p>Hadamard group size has to be a power of 2 or 4.<br />
+Hadamard 4x4 matrix (aka ConvRot) will be used when Hadamard group size is a power of 4.<br />
+Hadamard 2x2 matrix (aka QuaRot) will be used when Hadamard group size is a power of 2.  </p>
+<p>Default is <code>256</code>.  </p>
 <h3 id="svd-rank-size">SVD rank size</h3>
 <p>The rank size to use for SVD quantization.<br />
 Higher values have better quality but with less performance and more memory usage.<br />
@@ -5186,6 +5188,7 @@ Meaning that you will get slightly different quantization results every time.  <
 Hadamard has much higher quality but runs slightly slower.<br />
 This option can stack together with SVD quantization.<br />
 Disabled by default.  </p>
+<p>Note: QuaRot and ConvRot are Hadamard rotations.  </p>
 <h3 id="use-dynamic-quantization">Use Dynamic quantization</h3>
 <p>Enabling this option will dynamically select a per layer quantization type based on the <code>Dynamic loss threshold</code>.<br />
 And the current <code>Quantization type</code> will be used as the minimum allowed quantization type when this option is enabled.<br />
