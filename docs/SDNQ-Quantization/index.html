@@ -5153,16 +5153,19 @@ Hadamard 2x2 matrix (aka QuaRot) will be used when Hadamard group size is a powe
 <h3 id="svd-rank-size">SVD rank size</h3>
 <p>The rank size to use for SVD quantization.<br />
 Higher values have better quality but with less performance and more memory usage.<br />
-Default is <code>32</code>.  </p>
+Default is <code>32</code>.<br />
+Note: <code>Use SVD quantization</code> option needs to be enabled for this option.  </p>
 <h3 id="svd-steps">SVD steps</h3>
 <p>The number of steps to use in the lowrank SVD estimation.<br />
 Higher values have better quality but takes longer to quantize.<br />
-Default is <code>8</code>.  </p>
+Default is <code>8</code>.<br />
+Note: <code>Use SVD quantization</code> option needs to be enabled for this option.  </p>
 <h3 id="dynamic-loss-threshold">Dynamic loss threshold</h3>
 <p>The target threshold to use with <code>Dynamic quantization</code>.<br />
 SDNQ uses STD normalized MSE loss to calculate its quantization loss and this option will be used as the loss target for it.  </p>
 <p>Setting the loss threshold to a negative value or the value <code>None</code> will make SDNQ auto-select a threshold based on the weights dtype.<br />
 The formula used to calculate the threshold is: <code>10 ** -(num_bits / 2)</code>  </p>
+<p>Note: <code>Use Dynamic quantization</code> option needs to be enabled for this option.  </p>
 <p>Some recommended target presets are:  </p>
 <p>16 bit: <code>1e-8</code><br />
 14 bit: <code>1e-7</code><br />
