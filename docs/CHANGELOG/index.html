@@ -4154,10 +4154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-07-30" class="md-nav__link">
+  <a href="#update-for-2026-07-31" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-07-30
+        Update for 2026-07-31
       
     </span>
   </a>
@@ -6652,10 +6652,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-07-30" class="md-nav__link">
+  <a href="#update-for-2026-07-31" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-07-30
+        Update for 2026-07-31
       
     </span>
   </a>
@@ -9142,14 +9142,22 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-07-30">Update for 2026-07-30</h2>
+<h2 id="update-for-2026-07-31">Update for 2026-07-31</h2>
 <ul>
+<li><strong>Models</strong></li>
+<li><a href="https://huggingface.co/SeFi-Image/SeFi-Image-5B-RL">SeFi-Image</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
+    SeFi is an interesting model that separates generation into semantic and texture latent streams<br />
+    and denoising semantic structure slightly ahead of texture details<br />
+    SeFi comes in sizes with 1B, 2B and 5B params  </li>
+<li><a href="https://huggingface.co/mage-flow-community/Mage-Flow">Microsoft Mage-Flow</a> in <em>Base</em> and <em>Turbo</em> (distilled) variants<br />
+    Mage-Flow is a 4B-scale generative stack for efficient text-to-image generation and instruction-based image editing<br />
+<em>note</em>: Microsoft released and then unpublished the model, but we still have a mirror available for download  </li>
 <li><strong>Features</strong></li>
-<li>startup: optimized server startup</li>
-<li>process: preserve audio when processing video</li>
 <li>video: support for scripts/extensions</li>
 <li>prompt enhance: support for video generation</li>
-<li>remove background: add <a href="https://huggingface.co/egeorcun/lucida">lucida</a> model</li>
+<li>startup: optimized server startup</li>
+<li>process: preserve audio when processing video</li>
+<li>remove background: new <a href="https://huggingface.co/egeorcun/lucida">lucida</a> model</li>
 <li><strong>Fixes</strong></li>
 <li>seedvr quality</li>
 <li>skip-all do not skip env init</li>
