@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#change-log-for-sdnext" class="md-skip">
+        <a href="#update-for-2026-08-05" class="md-skip">
           Skip to content
         </a>
       
@@ -4100,8 +4100,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -4143,8 +4141,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -6641,8 +6637,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -9141,7 +9135,9 @@
   
 
 
-<h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
+  <h1>Changelog</h1>
+
+<p># Change Log for SD.Next</p>
 <h2 id="update-for-2026-08-05">Update for 2026-08-05</h2>
 <ul>
 <li><strong>Models</strong></li>
@@ -9155,9 +9151,11 @@
 <li><a href="https://huggingface.co/lite-infer">Nunchaku-Lite</a> pre-quantized models<br />
     included: <em>Z-Image, Flux.1-Dev/Schnell/Krea/Kontex, Qwen-Image/Image-Edit, Ernie-Image</em></li>
 <li><strong>Features</strong></li>
-<li>add support for <a href="https://github.com/rootonchair/nunchaku-lite">Nunchaku-Lite</a> inference engine<br />
+<li><a href="https://github.com/rootonchair/nunchaku-lite">Nunchaku-Lite</a> inference engine<br />
     unlike Nunchaku, Nunchaku-Lite is based on Kernels and does not require any additional packages to be installed<br />
     but like original Nunchaku, it is only available for CUDA and right now only for <code>torch==2.11/2.12</code>  </li>
+<li><a href="https://huggingface.co/krea/Krea-2-Turbo">Krea2</a> add <em>Inpaint</em> pipeline<br />
+    this also makes K2 compatible with <em>Detailer</em> workflow  </li>
 <li>storage analyzer: new feature that analyzes your storage used by sdnext per type and location<br />
 <em>system -&gt; storage</em>  </li>
 <li>video: support for scripts/extensions<br />
