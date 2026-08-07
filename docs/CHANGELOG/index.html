@@ -9205,7 +9205,7 @@
 - On the server side, there are quite a few <em>under-the-hood</em> improvements, including optimized startup, optimized webserver, end-to-end profiling, storage analyzer, etc.<br />
 - There are also several new auxiliary models, such as <strong>Lucida</strong> for background removal<br />
 - And video processing now supports scripts such as prompt enhance, nudenet, etc.<br />
-- Plus several quality-of-life improvements and bug-fixes across the board<br />
+- Plus several quality-of-life improvements (better progress monitoring for one) and bug-fixes across the board
 - Updated <a href="https://github.com/vladmandic/sdnext-launcher/releases/tag/v0.1.6">SD.Next Launcher</a> with improved platform compatibility and upgrade workflows  </p>
 <p><em>Note</em>: This release follows previous minor service-release which did not get full announcement, so if you missed it, check it out</p>
 <h3 id="details-for-2026-08-07">Details for 2026-08-07</h3>
@@ -9234,6 +9234,8 @@
 <li>prompt enhance: support for video generation</li>
 <li>startup: optimized server startup</li>
 <li>process: preserve audio when processing video</li>
+<li>separate progress reporting and live-preview for much more precise progress reporting</li>
+<li>add progress details to performance status bar (below the preview image)</li>
 <li>remove background: new <a href="https://huggingface.co/egeorcun/lucida">lucida</a> model</li>
 <li>profile flag now logs all http requests and internal tasks</li>
 <li><strong>API</strong></li>
