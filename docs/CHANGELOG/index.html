@@ -4154,10 +4154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-08" class="md-nav__link">
+  <a href="#update-for-2026-08-09" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-08
+        Update for 2026-08-09
       
     </span>
   </a>
@@ -6691,10 +6691,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-08" class="md-nav__link">
+  <a href="#update-for-2026-08-09" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-08
+        Update for 2026-08-09
       
     </span>
   </a>
@@ -9220,15 +9220,21 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-08-08">Update for 2026-08-08</h2>
+<h2 id="update-for-2026-08-09">Update for 2026-08-09</h2>
 <ul>
-<li><strong>Detailer</strong> support for VL models in addition to standard YOLO models<br />
-  select any of Qwen3-VL models in model selection<br />
-  enter the human-readable ask as detailer instructions<br />
-  for example: <em>glasses, optional hat, left hand, largest tree in the background</em><br />
-<em>note</em>: VL models are much larger, so use with caution<br />
-<em>note</em>: LLM processes data sequentially, so if it cannot find one item, it may skip the rest of the items in the prompt  </li>
+<li><strong>Detailer</strong>: Pretty much <em>detailer.next</em> :)<br />
+  Detailer detection models were traditionally <em>YOLO</em> models, but now we also use:  </li>
+<li><a href="https://huggingface.co/facebook/sam3">Facebook-SAM3</a> hybrid promptable concept segmentation and detection network</li>
+<li><a href="https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct">Qwen3-VL</a> vision-language autoregressive foundation models, in <em>2B, 4B, and 8B</em> variants</li>
+<li><a href="https://huggingface.co/microsoft/Florence-2-large">Florence-2</a> lightweight multi-task vision sequence-to-sequence models, in <em>base and large</em> variants</li>
+<li><a href="https://huggingface.co/IDEA-Research/grounding-dino-base">Grounding-DINO</a> open-vocabulary object detection models, in <em>tiny and base</em> variants</li>
 </ul>
+<p>select any of the above models in the detailer model selection dropdown<br />
+  and enter your human-readable target descriptions as <em>detailer instructions</em><br />
+  for example: <em>glasses, optional hat, left hand, largest tree in the background</em><br />
+<em>note</em>: VL models are much larger, so use them with caution<br />
+<em>note</em>: LLMs process data sequentially, meaning if a model cannot find one specific item, it may skip subsequent items in the prompt<br />
+<em>note</em>: SAM3 is a <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated model</a>  </p>
 <h2 id="update-for-2026-08-07">Update for 2026-08-07</h2>
 <h3 id="highlights-for-2026-08-07">Highlights for 2026-08-07</h3>
 <p>This release brings <strong>Sefi-Image</strong> and <strong>Mage-Flow</strong> models, plus a new <strong>Nunchaku-Lite</strong> inference engine<br />
