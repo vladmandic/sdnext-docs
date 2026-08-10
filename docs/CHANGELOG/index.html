@@ -9235,9 +9235,12 @@
 <em>note</em>: VL models are much larger, so use them with caution<br />
 <em>note</em>: LLMs process data sequentially, meaning if a model cannot find one specific item, it may skip subsequent items in the prompt<br />
 <em>note</em>: SAM3 is a <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated model</a><br />
+- <a href="https://github.com/Disty0/sdnq">SDNQ</a> is now a separate package and no longer part of sdnext repo<br />
+  installed and used internally by sd.next, but also supported by diffusers natively<br />
 - <strong>Server</strong>
   - update handlers for all authenticated workflows
   - nunchaku-lite support for <code>torch==2.13</code>
+  - remove DirectML support: latest release was over 2 years ago and is not compatible with modern frameworks
 - <strong>Fixes</strong>
   - init hf env variables before gradio load
   - lora skip init and rebuild offload state

@@ -4627,7 +4627,6 @@ Startup:
   --skip-env                                         Skips setting of env variables during startup, default: False
 
 Compute Engine:
-  --use-directml                                     Use DirectML if no compatible GPU is detected, default: False
   --use-openvino                                     Use Intel OpenVINO backend, default: False
   --use-ipex                                         Force use Intel OneAPI XPU backend, default: False
   --use-cuda                                         Force use nVidia CUDA backend, default: False
@@ -4679,7 +4678,6 @@ Logging:
 </ul>
 <h3 id="hardware-backends-use-during-installation-or-reinstall-operations">Hardware Backends (Use During Installation or <code>--reinstall</code> operations)</h3>
 <ul>
-<li><code>--use-directml</code>: Use DirectML if no compatible GPU is detected. Enabling this flag (<code>True</code>) allows the use of DirectML if no compatible GPU is detected. The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_USEDIRECTML</code>.</li>
 <li><code>--use-openvino</code>: Use Intel OpenVINO backend. Enabling this flag (<code>True</code>) allows the use of the Intel OpenVINO backend. The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_USEOPENVINO</code>.</li>
 <li><code>--use-ipex</code>: Force use Intel OneAPI XPU backend. Enabling this flag (<code>True</code>) forces the use of the Intel OneAPI XPU backend. The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_USEIPEX</code>.</li>
 <li><code>--use-cuda</code>: Force use NVIDIA CUDA backend. Enabling this flag (<code>True</code>) forces the use of the NVIDIA CUDA backend. The default is <code>False</code>, and you can set it to <code>True</code> using the environment variable <code>SD_USECUDA</code>.</li>
