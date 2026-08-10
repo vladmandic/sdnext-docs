@@ -4154,10 +4154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-09" class="md-nav__link">
+  <a href="#update-for-2026-08-10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-09
+        Update for 2026-08-10
       
     </span>
   </a>
@@ -6691,10 +6691,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-09" class="md-nav__link">
+  <a href="#update-for-2026-08-10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-09
+        Update for 2026-08-10
       
     </span>
   </a>
@@ -9220,7 +9220,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-08-09">Update for 2026-08-09</h2>
+<h2 id="update-for-2026-08-10">Update for 2026-08-10</h2>
 <ul>
 <li><strong>Detailer</strong>: Pretty much <em>detailer.next</em> :)<br />
   Detailer detection models were traditionally <em>YOLO</em> models, but now we also use:  </li>
@@ -9234,7 +9234,12 @@
   for example: <em>glasses, optional hat, left hand, largest tree in the background</em><br />
 <em>note</em>: VL models are much larger, so use them with caution<br />
 <em>note</em>: LLMs process data sequentially, meaning if a model cannot find one specific item, it may skip subsequent items in the prompt<br />
-<em>note</em>: SAM3 is a <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated model</a>  </p>
+<em>note</em>: SAM3 is a <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated model</a><br />
+- <strong>Server</strong>
+  - update handlers for all authenticated workflows
+  - nunchaku-lite support for <code>torch==2.13</code>
+- <strong>Fixes</strong>
+  - init hf env variables before gradio load</p>
 <h2 id="update-for-2026-08-07">Update for 2026-08-07</h2>
 <h3 id="highlights-for-2026-08-07">Highlights for 2026-08-07</h3>
 <p>This release brings <strong>Sefi-Image</strong> and <strong>Mage-Flow</strong> models, plus a new <strong>Nunchaku-Lite</strong> inference engine<br />
