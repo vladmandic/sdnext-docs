@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/Dev-Hints/">
+        <link rel="canonical" href="https://vladmandic.github.io/sdnext-docs/MiniMax/">
       
       
-        <link rel="prev" href="../Dev-Docs/">
+        <link rel="prev" href="../LTX/">
       
       
-        <link rel="next" href="../Dev-Locale/">
+        <link rel="next" href="../Ideogram/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Tips & Hints - SD.Next Documentation</title>
+        <title>MiniMax - SD.Next Documentation</title>
       
     
     
@@ -63,17 +63,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Tips & Hints - SD.Next Documentation" />
+<meta property="og:title" content="MiniMax - SD.Next Documentation" />
 <meta property="og:description" content="SD.Next Documentation" />
-<meta property="og:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Dev-Hints.png" />
+<meta property="og:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/MiniMax.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://vladmandic.github.io/sdnext-docs/Dev-Hints/" />
+<meta property="og:url" content="https://vladmandic.github.io/sdnext-docs/MiniMax/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Tips & Hints - SD.Next Documentation" />
+<meta property="twitter:title" content="MiniMax - SD.Next Documentation" />
 <meta property="twitter:description" content="SD.Next Documentation" />
-<meta property="twitter:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Dev-Hints.png" />
+<meta property="twitter:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/MiniMax.png" />
 </head>
   
   
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hints" class="md-skip">
+        <a href="#minimax-h3" class="md-skip">
           Skip to content
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tips & Hints
+              MiniMax
             
           </span>
         </div>
@@ -296,10 +296,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../Model-Loading/" class="md-tabs__link">
           
   
@@ -428,12 +430,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../Dev-Home/" class="md-tabs__link">
           
   
@@ -904,8 +904,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -947,19 +949,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -977,7 +982,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1384,10 +1389,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../MiniMax/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MiniMax
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1403,6 +1435,148 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offloading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Offloading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#balanced-offloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Balanced offloading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-offloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group offloading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ref-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ref workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3430,10 +3604,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -3465,22 +3637,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   
@@ -3498,7 +3667,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3737,37 +3906,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tips & Hints
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Dev-Hints/" class="md-nav__link">
         
   
   
@@ -3783,126 +3925,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#editing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Editing
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Editing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#contribution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contribution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#typography" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Typography
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Typography">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cross-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cross-references
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Structure
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-pitfalls" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common pitfalls
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#translation-propagation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Translation propagation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4325,22 +4347,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#editing" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Editing
+        Requirements
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Editing">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offloading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Offloading">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
+  <a href="#balanced-offloading" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Validation
+        Balanced offloading
       
     </span>
   </a>
@@ -4348,10 +4392,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#contribution" class="md-nav__link">
+  <a href="#group-offloading" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contribution
+        Group offloading
       
     </span>
   </a>
@@ -4364,22 +4408,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#typography" class="md-nav__link">
+  <a href="#variants" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Typography
+        Variants
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Typography">
+    <nav class="md-nav" aria-label="Variants">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cross-references" class="md-nav__link">
+  <a href="#base-workflows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cross-references
+        Base workflows
       
     </span>
   </a>
@@ -4387,10 +4431,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
+  <a href="#ref-workflows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Structure
+        Ref workflows
       
     </span>
   </a>
@@ -4398,21 +4442,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#common-pitfalls" class="md-nav__link">
+  <a href="#image-workflows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common pitfalls
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#translation-propagation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Translation propagation
+        Image workflows
       
     </span>
   </a>
@@ -4421,6 +4454,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4450,85 +4494,66 @@
   
 
 
-<h1 id="hints">Hints</h1>
-<p>SD.Next hints system is based on the single JSON file: <a href="https://github.com/vladmandic/sdnext/blob/dev/ui/locale/locale_en.json">ui/locale/locale_en.json</a>  </p>
-<p>Structure of the file is simple: For each visible UI label, there is a corresponding hint that is displayed when user hovers over the label.  </p>
-<p><em>Example</em>: generate button:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;Generate&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;localized&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;hint&quot;</span><span class="p">:</span><span class="s2">&quot;Start processing&quot;</span><span class="w"> </span><span class="p">}</span>
-</code></pre></div>
-<p>See <a href="../Dev-Locale/">Localization</a> document for more details since same file is used for language localizations as well as providing hints  </p>
-<h2 id="editing">Editing</h2>
-<p>You can add or modify hints displayed in the UI by editing the hints file.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Only modify the <code>hint</code> field in the file. Do not change any other fields.</p>
-<p>[!IMPORTANT]
-Items in the <em>"missing"</em> section are auto-created with default hints only. To customize them, move them to the correct section and add your hint. Do not leave them in the missing section, as they will be overwritten on the next update.</p>
+<h1 id="minimax-h3">MiniMax H3</h1>
+<p>MiniMax H3 is an omni-modal generative video model with support for unified understanding of multimodal contexts composed of text, images, video, and audio, and can generate video with native stereo audio at resolutions up to 2K and durations of up to 15 seconds.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>MiniMax H3 is massive</em>! <strong>33B transformer</strong> and <strong>32B text-encoder</strong> (<em>qwen3-vl</em>) combine to <strong>134GB</strong> of model weights in <code>bfloat16</code>!</p>
 </div>
-<h3 id="validation">Validation</h3>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>All <strong>hints</strong> updates should be validated before submitting</p>
+<p class="admonition-title">Important</p>
+<p>See <a href="./#offloading">offloading</a> and <a href="./#quantization">quantization</a> sections below before attempting to load MiniMax-H3</p>
 </div>
-<p>Before submitting updates, validate your edits by saving the file locally and running:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>test/validate-locale.py
-</code></pre></div>
-<h3 id="contribution">Contribution</h3>
-<p>The best way to submit additions or changes is to create a GitHub PR with changes to the file.</p>
-<p>Alternatively:
-- Create a GitHub discussion or issue to suggest changes
-- Reach out via the <a href="https://discord.com/channels/1101998836328697867/1126522089487208560">Discord server - #Contribute channel</a></p>
-<h2 id="typography">Typography</h2>
-<p>Hint strings render as HTML. A small set of inline tags is used to keep hints scannable.</p>
-<table>
-<thead>
-<tr>
-<th>Tag</th>
-<th>Meaning</th>
-<th>Examples</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&lt;b&gt;</code></td>
-<td>A <strong>value</strong>: default, dropdown enum, or specific numeric</td>
-<td><code>&lt;b&gt;0.30&lt;/b&gt;</code>, <code>&lt;b&gt;Karras&lt;/b&gt;</code>, <code>&lt;b&gt;v_prediction&lt;/b&gt;</code></td>
-</tr>
-<tr>
-<td><code>&lt;b&gt;&lt;i&gt;</code></td>
-<td>A <strong>cross-reference</strong> to another label in the UI</td>
-<td><code>&lt;b&gt;&lt;i&gt;Denoising strength&lt;/i&gt;&lt;/b&gt;</code>, <code>&lt;b&gt;&lt;i&gt;Use init image&lt;/i&gt;&lt;/b&gt;</code></td>
-</tr>
-<tr>
-<td><code>&lt;i&gt;</code></td>
-<td>A <strong>proper noun</strong>: model family, dataset, or example value being discussed</td>
-<td><code>&lt;i&gt;SDXL&lt;/i&gt;</code>, <code>&lt;i&gt;danbooru&lt;/i&gt;</code>, <code>&lt;i&gt;long hair&lt;/i&gt;</code></td>
-</tr>
-<tr>
-<td><code>&lt;code&gt;</code></td>
-<td>A <strong>literal</strong>: type or use this verbatim</td>
-<td><code>&lt;code&gt;[PROMPT]&lt;/code&gt;</code>, <code>&lt;code&gt;face-yolo8n:conf=0.5:strength=0.4&lt;/code&gt;</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="cross-references">Cross-references</h3>
-<p>Use <code>&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;</code> whenever a hint refers to another control by its exact visible label. This includes setting names, tab names, and named buttons. Match the label exactly, including capitalization and spacing. Readers will look for the same string in the UI.</p>
-<p>Generic concept references (<code>the model</code>, <code>the prompt</code>, <code>the scheduler</code>) are not cross-references and stay unstyled.</p>
-<h3 id="structure">Structure</h3>
-<ul>
-<li><code>&lt;br&gt;</code> for a line break within a paragraph</li>
-<li><code>&lt;br&gt;&lt;br&gt;</code> for a paragraph break</li>
-<li><code>&lt;br&gt;- &lt;b&gt;key&lt;/b&gt;: description</code> for a keyed bullet list, used for short enumerations of dropdown values, modes, or numeric brackets</li>
-</ul>
-<p>Do not use <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, Markdown asterisks, or unicode bullets; none of those are used elsewhere in the file.</p>
-<h3 id="common-pitfalls">Common pitfalls</h3>
-<ul>
-<li>Do not bold ad-hoc emphasis. <code>&lt;b&gt;</code> is reserved for values and, combined with <code>&lt;i&gt;</code>, for cross-references; overusing it makes the genuine signal blend in.</li>
-<li>Do not use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> separately for cross-references; always combined as <code>&lt;b&gt;&lt;i&gt;...&lt;/i&gt;&lt;/b&gt;</code>.</li>
-<li>Do not reword the inside of <code>&lt;code&gt;</code> blocks; they are literal user-facing strings.</li>
-</ul>
-<h3 id="translation-propagation">Translation propagation</h3>
-<p><code>ui/locale/locale_en.json</code> is the source of truth. Other <code>locale_*.json</code> files are auto-generated by <code>test/localize.mjs</code>, so formatting changes in English propagate forward on the next translation run. Per-locale corrections live in <code>ui/locale/override_{locale}.json</code> (see <a href="../Dev-Locale/">Localization</a>).</p>
+<h2 id="requirements">Requirements</h2>
+<p>Due to size, MiniMax-H3 may not run properly on systems with less than <strong>64GB of RAM</strong><br />
+Depending on quantization and offloading methods, MiniMax-H3 can run comfortably on GPUs with as little as <strong>16GB of VRAM</strong>  </p>
+<h2 id="quantization">Quantization</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>SD.Next provides access to SDNQ pre-quantized weights in <code>uint4</code> precision which reduces the model size to <strong>47GB</strong></p>
+</div>
+<p>To use pre-quantized weights, simply select them from model selection dropdown  </p>
+<p>If you choose to use non-quantized weights, you should enable desired quantization  </p>
+<p><em>For more information see <a href="../Quantization/">Quantization Wiki</a> and <a href="../SDNQ-Quantization/">SDNQ Wiki</a></em></p>
+<h2 id="offloading">Offloading</h2>
+<h3 id="balanced-offloading">Balanced offloading</h3>
+<p>SD.Next <em>default</em> offload method is <strong>balanced offloading</strong> which is the best starting point for most models. However, MiniMax-H3 is so massive that it may require more aggressive offloading to fit into your GPU memory  </p>
+<p>with balanced offloading, MiniMax-H3 requires a GPU with at least <strong>24GB of VRAM</strong>.</p>
+<h3 id="group-offloading">Group offloading</h3>
+<p>recommended offload method for MiniMax-H3 is <strong>group offloading</strong> which allows MiniMax-H3 to run on a GPU with as little as <strong>16GB of VRAM</strong>.  </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>group offloading is a more aggressive offload method which does result in some performance loss, but it is the only way to run MiniMax-H3 on GPUs with less than 24GB of VRAM.</p>
+</div>
+<p><em>for more information see <a href="../Offload/">Offloading Wiki</a></em></p>
+<h2 id="variants">Variants</h2>
+<p>MiniMax H3 has two separate variants which use different transformers weights:
+- <em>base</em>: <strong>fl2va</strong>: used for text-to-video, image-to-video and first-last-frame-to-video video generation
+- <em>ref</em>: <strong>ref2va</strong>: used for reference-based video generation</p>
+<p>both <em>base</em> and <em>ref</em> variants use the same text-encoder weights, but have different transformer weights  </p>
+<p><strong>pruned</strong>: Also, both <em>base</em> and <em>ref</em> variants are available in a <em>pruned</em> variant which is slightly smaller as parts of the transformer model are pruned/removed.</p>
+<p>depending on which variant you load, you will have access to different workflows</p>
+<h3 id="base-workflows">Base workflows</h3>
+<p>available if <em>base</em> model is loaded
+- <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md">prompting guide</a>
+- <em>text-to-video</em> is used when there are no input images provided
+- <em>image-to-video</em> is used when a single input image is provided
+- <em>first-last-frame-to-video</em> is used when two input images are provided</p>
+<h3 id="ref-workflows">Ref workflows</h3>
+<p>available if <em>ref</em> model is loaded
+- <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md">prompting guide</a>
+- <em>reference-to-video</em>  </p>
+<p>in <em>ref2va</em> workflow, you can upload any combination of:
+- 9 reference images
+- 3 reference videos
+- 3 reference audio files</p>
+<p>total number of reference media must be up to 12 files<br />
+lengths of reference videos and audio files must be up to duration of generated video</p>
+<h3 id="image-workflows">Image workflows</h3>
+<p>everything as above except that MiniMax-H3 can also be used as a regular <em>text-to-image/image-to-image model</em>, not limited to Video generation<br />
+to use MiniMax-H3 as a <em>t2i/i2i</em> model, simply select it from the networks -&gt; reference and use as any other model  </p>
+<h2 id="legal">Legal</h2>
+<p>Due to pending lawsuit, MiniMax-H3 <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE">license</a> comes with a <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/QA-about-License.md">disclaimer</a>  </p>
 
 
 
@@ -4564,7 +4589,7 @@ Items in the <em>"missing"</em> section are auto-created with default hints only
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Dev-Docs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Wiki &amp; Documentation">
+          <a href="../LTX/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LTXVideo">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4574,20 +4599,20 @@ Items in the <em>"missing"</em> section are auto-created with default hints only
                 Previous
               </span>
               <div class="md-ellipsis">
-                Wiki & Documentation
+                LTXVideo
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Dev-Locale/" class="md-footer__link md-footer__link--next" aria-label="Next: Localization">
+          <a href="../Ideogram/" class="md-footer__link md-footer__link--next" aria-label="Next: Ideogram">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Localization
+                Ideogram
               </div>
             </div>
             <div class="md-footer__button md-icon">

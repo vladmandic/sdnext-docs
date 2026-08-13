@@ -98,6 +98,7 @@ nav:
     - Video: Video.md
     - FramePack: FramePack.md
     - LTXVideo: LTX.md
+    - MiniMax: MiniMax.md
     - Ideogram: Ideogram.md
     - Google-GenAI: Google-GenAI.md
   - Platforms:
