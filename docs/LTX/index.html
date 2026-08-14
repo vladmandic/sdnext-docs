@@ -1424,6 +1424,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ltx-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LTX-2.5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4297,6 +4308,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ltx-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LTX-2.5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4395,6 +4417,16 @@
 
 
 <h1 id="ltxvideo">LTXVideo</h1>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>TODO: This document is pending rewrite</p>
+</div>
+<h2 id="ltx-25">LTX-2.5</h2>
+<pre><code>paired with a *Gemma 4* text encoder and a duration head:  
+tick *auto duration* and the clip length is predicted from the prompt instead of set by hand  
+*note*: image conditioning is now re-compressed to match what the models were trained on,  
+at CRF 18 for LTX-2.5 and 33 for earlier LTX-2.x versions
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This document covers the optimized LTXVideo integration in the Video → LTX tab. Other LTXVideo models are available in Video → Generic tab.</p>
@@ -4415,7 +4447,7 @@
 <h2 id="video-encoding">Video Encoding</h2>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>Video support requires <code>ffmpeg</code> to be installed and available in the <code>PATH</code></p>
+<p>Video support requires <a href="https://ffmpeg.org/">ffmpeg</a> to be installed and available in the <code>PATH</code></p>
 </div>
 <p>Video location is set in <em>Settings → Image Paths → Video</em>.</p>
 <p>Video is encoded using the selected codec and codec options. Default codec is <code>libx264</code>. Use the refresh button to see codecs available on your system.

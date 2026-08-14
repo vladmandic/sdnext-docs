@@ -4184,10 +4184,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-13" class="md-nav__link">
+  <a href="#update-for-2026-08-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-13
+        Update for 2026-08-14
       
     </span>
   </a>
@@ -6721,10 +6721,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-13" class="md-nav__link">
+  <a href="#update-for-2026-08-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-13
+        Update for 2026-08-14
       
     </span>
   </a>
@@ -9250,12 +9250,18 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-08-13">Update for 2026-08-13</h2>
+<h2 id="update-for-2026-08-14">Update for 2026-08-14</h2>
 <ul>
 <li><strong>Models</strong></li>
-<li><a href="https://huggingface.co/MiniMaxAI/MiniMax-H3">MiniMax H3</a> in <em>base</em> and <em>ref</em> variants
-    MiniMax-H3 is an amazing, but absolutely massive at 32B text-encoder and 33B transformer video model<br />
-    for details, see <a href="../MiniMax/">MiniMax wiki page</a></li>
+<li><a href="https://huggingface.co/MiniMaxAI/MiniMax-H3">MiniMax H3</a> available in <em>base</em> and <em>ref</em> variants<br />
+    MiniMax-H3 is an amazing video model, but absolutely massive at 33B transformer with 32B qwen3-vl text-encoder<br />
+    with support for <em>t2v, i2v, fl2v, ref2v, t2i, i2i</em> workflows<br />
+    see <a href="https://vladmandic.github.io/sdnext-docs/MiniMax">MiniMax docs page</a> for details and usage instructions  </li>
+<li><a href="https://huggingface.co/Lightricks/LTX-2.5">Lightricks LTX-2.5</a> available in <em>distilled</em> and <em>dev</em> variants<br />
+    LTX-2.5 is a 22B transformer with 12B gemma-4 text-encoder<br />
+    with support for <em>t2v, i2v, cond2v</em> workflows<br />
+    see <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTX docs page</a> for details and usage instructions<br />
+<em>note</em>: LTX-2.5 is a <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated model</a>  </li>
 <li><strong>Detailer</strong>: Pretty much <em>detailer.next</em> :)<br />
   Detailer detection models were traditionally <em>YOLO</em> models, but now we can also use:  </li>
 <li><a href="https://huggingface.co/facebook/sam3">Facebook-SAM3</a> hybrid promptable concept segmentation and detection network</li>
@@ -9280,8 +9286,8 @@
   - add <code>SD_DIFFUSERS_DEBUG</code> and <code>SD_TRANSFORMERS_DEBUG</code> env variables to trace diffusers and transformers internal operations<br />
 - <strong>API</strong>
   - full support for video generation using api<br />
-<em>note</em>: video api uses async workflow where you submit request and then later download the result<br />
     new endpoints: <code>/sdapi/v1/video</code>, <code>/sdapi/v1/video/models</code>, <code>/sdapi/v1/video/file</code><br />
+<em>note</em>: video api uses async workflow where you submit request and then later download the result<br />
 - <strong>Removed</strong>
   - remove DirectML support<br />
     latest release was over 2 years ago and is not compatible with modern frameworks<br />
@@ -9292,7 +9298,15 @@
   - improve handling of hf auth
   - improve pipeline detection for non-cached models
   - cleanup alt offload codepaths
-  - hf progress bars</p>
+  - hf progress bars
+  - ltx: send the guidance stack and cross-timestep on every 2.x call path
+  - ltx: distilled variants no longer force dynamic shifting on, which remapped their sigma schedule
+  - ltx: sampler shift now reaches flow-match schedulers
+  - ltx: reload the latent upsampler when the model or its repo changes
+  - video: take the audio sample rate from the loaded vocoder
+  - video: keep the shared text encoder out of the registry rows
+  - processing stats reporting
+  - image metadata handle correct image index</p>
 <h2 id="update-for-2026-08-07">Update for 2026-08-07</h2>
 <h3 id="highlights-for-2026-08-07">Highlights for 2026-08-07</h3>
 <p>This release brings <strong>Sefi-Image</strong> and <strong>Mage-Flow</strong> models, plus a new <strong>Nunchaku-Lite</strong> inference engine<br />
