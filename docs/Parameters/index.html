@@ -2413,6 +2413,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#video-generation-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Generation Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resize-modes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4720,6 +4731,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#video-generation-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Generation Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resize-modes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4807,6 +4829,7 @@ It does not cover mostly static system settings.</p>
 <li><a href="./#script-parameters">Script Parameters</a></li>
 <li><a href="./#override-parameters">Override Parameters</a></li>
 <li><a href="./#video-processing-parameters">Video Processing Parameters</a></li>
+<li><a href="./#video-generation-parameters">Video Generation Parameters</a></li>
 <li><a href="./#resize-modes">Resize modes</a></li>
 <li><a href="./#context-aware-scaling">Context-aware scaling</a></li>
 <li><a href="./#notes">Notes</a></li>
@@ -6190,6 +6213,310 @@ It does not cover mostly static system settings.</p>
 <td style="text-align: left;"><code>Syntax: vae_tile_frames: 8</code></td>
 <td style="text-align: left;">Number of frames to tile in VAE for memory efficiency. Helps process longer videos on limited GPU memory.</td>
 <td style="text-align: left;">tile frames</td>
+</tr>
+</tbody>
+</table>
+<h2 id="video-generation-parameters">Video Generation Parameters</h2>
+<p>These parameters apply to the dedicated video endpoint <code>POST /sdapi/v1/video</code> and mirror the Video tab controls. Model selection, input modes, output handling, and error behavior are covered in the Video Generation section of the <a href="../API/">API</a> guide; the live request schema is served at <code>/docs</code> and <code>/redocs</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Details / Syntax</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">UI Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>engine</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Values: engine names from /sdapi/v1/video/models</code></td>
+<td style="text-align: left;">Video engine family. Omitted together with <code>model</code>, the currently loaded checkpoint is used.</td>
+<td style="text-align: left;">Video engine</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>model</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Values: model names from /sdapi/v1/video/models</code></td>
+<td style="text-align: left;">Video model name within the engine; loaded on demand before generation.</td>
+<td style="text-align: left;">Video model</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>prompt</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>""</code></td>
+<td style="text-align: left;"><code>Syntax: prompt: your text here</code></td>
+<td style="text-align: left;">The positive text prompt.</td>
+<td style="text-align: left;">Prompt</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>negative_prompt</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>""</code></td>
+<td style="text-align: left;"><code>Syntax: negative_prompt: blurry, low quality</code></td>
+<td style="text-align: left;">The negative text prompt.</td>
+<td style="text-align: left;">Negative prompt</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>styles</code></td>
+<td style="text-align: left;"><code>List[str]</code></td>
+<td style="text-align: left;"><code>[]</code></td>
+<td style="text-align: left;"><code>Syntax: styles: [style1, style2]</code></td>
+<td style="text-align: left;">List of prompt style names to apply.</td>
+<td style="text-align: left;">Styles</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>width</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>832</code></td>
+<td style="text-align: left;"><code>Range: 64 to 4096</code></td>
+<td style="text-align: left;">Output width in pixels; snapped to the model canvas multiple.</td>
+<td style="text-align: left;">Width</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>height</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>480</code></td>
+<td style="text-align: left;"><code>Range: 64 to 4096</code></td>
+<td style="text-align: left;">Output height in pixels; snapped to the model canvas multiple.</td>
+<td style="text-align: left;">Height</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>frames</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>17</code></td>
+<td style="text-align: left;"><code>Range: 1 to 1024</code></td>
+<td style="text-align: left;">Number of frames to generate. A value of 1 produces a single still image on workflow models.</td>
+<td style="text-align: left;">Frames</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>steps</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>50</code></td>
+<td style="text-align: left;"><code>Range: 1 to 200</code></td>
+<td style="text-align: left;">Number of inference steps.</td>
+<td style="text-align: left;">Steps</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sampler_name</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"Default"</code></td>
+<td style="text-align: left;"><code>Values: see /sdapi/v1/samplers</code></td>
+<td style="text-align: left;">Sampler name. <code>Default</code> keeps the scheduler the model ships with.</td>
+<td style="text-align: left;">Sampling method</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sampler_shift</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>-1.0</code></td>
+<td style="text-align: left;"><code>Range: -1.0 to 20.0</code></td>
+<td style="text-align: left;">Scheduler flow shift. <code>-1</code> keeps the model default.</td>
+<td style="text-align: left;">Sampler shift</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dynamic_shift</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Enables resolution-dependent scheduler shifting.</td>
+<td style="text-align: left;">Dynamic shift</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>seed</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>-1</code></td>
+<td style="text-align: left;"><code>Values: -1 (random), or any positive integer</code></td>
+<td style="text-align: left;">Generation seed.</td>
+<td style="text-align: left;">Initial seed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>guidance_scale</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>-1.0</code></td>
+<td style="text-align: left;"><code>Range: -1.0 to 14.0</code></td>
+<td style="text-align: left;">Classifier-free guidance scale. <code>-1</code> keeps the model default.</td>
+<td style="text-align: left;">Guidance scale</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>guidance_true</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>-1.0</code></td>
+<td style="text-align: left;"><code>Range: -1.0 to 14.0</code></td>
+<td style="text-align: left;">True CFG scale. <code>-1</code> keeps the model default.</td>
+<td style="text-align: left;">True guidance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>init_image</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Values: base64 data, data URI, or upload reference</code></td>
+<td style="text-align: left;">First-frame input image; required by i2v and flf2v models.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>init_strength</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>0.8</code></td>
+<td style="text-align: left;"><code>Range: 0.0 to 1.0</code></td>
+<td style="text-align: left;">Denoising strength for the init image.</td>
+<td style="text-align: left;">Init strength</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>last_image</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>None</code></td>
+<td style="text-align: left;"><code>Values: base64 data, data URI, or upload reference</code></td>
+<td style="text-align: left;">Last-frame input image; required by flf2v models.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vae_type</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"Default"</code></td>
+<td style="text-align: left;"><code>Values: "Default", "Tiny", "Remote", "Upscale"</code></td>
+<td style="text-align: left;">VAE decode variant.</td>
+<td style="text-align: left;">VAE decode</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vae_tile_frames</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>16</code></td>
+<td style="text-align: left;"><code>Range: 1 to 64</code></td>
+<td style="text-align: left;">Number of frames per VAE decode tile; lower values reduce memory use.</td>
+<td style="text-align: left;">Tile frames</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>audio</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>True</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Generates audio on models that support it.</td>
+<td style="text-align: left;">Audio</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mp4_fps</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>24</code></td>
+<td style="text-align: left;"><code>Range: 1 to 60</code></td>
+<td style="text-align: left;">Frames per second of the saved video.</td>
+<td style="text-align: left;">FPS</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mp4_interpolate</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>Range: 0 to 10</code></td>
+<td style="text-align: left;">RIFE interpolation passes between frames.</td>
+<td style="text-align: left;">Video interpolation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mp4_codec</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"libx264"</code></td>
+<td style="text-align: left;"><code>Values: "none", "libx264"</code></td>
+<td style="text-align: left;">Video codec. <code>none</code> skips video encoding.</td>
+<td style="text-align: left;">Video codec</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mp4_ext</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"mp4"</code></td>
+<td style="text-align: left;"><code>Syntax: mp4_ext: webm</code></td>
+<td style="text-align: left;">Container extension; the muxer is inferred from it.</td>
+<td style="text-align: left;">Video format</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mp4_opt</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>"crf:16"</code></td>
+<td style="text-align: left;"><code>Syntax: "key:value, key:value"</code></td>
+<td style="text-align: left;">Encoder options as comma-separated key:value pairs.</td>
+<td style="text-align: left;">Video options</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mp4_video</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>True</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Writes the video container to disk.</td>
+<td style="text-align: left;">Video save video</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mp4_frames</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Writes individual frame images to disk.</td>
+<td style="text-align: left;">Video save frames</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mp4_sf</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Writes raw frames as a safetensors file.</td>
+<td style="text-align: left;">Video save safetensors</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mp4_thumb</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>True</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Writes a thumbnail image next to the video.</td>
+<td style="text-align: left;">Video save thumbnail</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>override_settings</code></td>
+<td style="text-align: left;"><code>Dict</code></td>
+<td style="text-align: left;"><code>{}</code></td>
+<td style="text-align: left;"><code>Syntax: override_settings: {key: value}</code></td>
+<td style="text-align: left;">Setting overrides applied for this generation only. Checkpoint switching is rejected on this endpoint.</td>
+<td style="text-align: left;">Override settings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>script_args</code></td>
+<td style="text-align: left;"><code>list</code></td>
+<td style="text-align: left;"><code>[]</code></td>
+<td style="text-align: left;"><code>Syntax: script_args: [arg1, arg2]</code></td>
+<td style="text-align: left;">Positional arguments for a selectable script.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>alwayson_scripts</code></td>
+<td style="text-align: left;"><code>Dict</code></td>
+<td style="text-align: left;"><code>{}</code></td>
+<td style="text-align: left;"><code>Syntax: alwayson_scripts: {script name: {args: [...]}}</code></td>
+<td style="text-align: left;">Per-script argument overrides, keyed by script name.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>send_video</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>True</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Returns the video base64-encoded in the response.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>send_frames</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>False</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Returns every frame base64-encoded in the response. Forced on for still results.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>send_thumbnail</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>True</code></td>
+<td style="text-align: left;"><code>Values: True, False</code></td>
+<td style="text-align: left;">Returns the thumbnail base64-encoded in the response.</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
