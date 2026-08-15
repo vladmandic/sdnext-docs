@@ -9284,10 +9284,15 @@
   - log long torch autotune operations
   - utilize <code>torch.accelerator</code> where available
   - add <code>SD_DIFFUSERS_DEBUG</code> and <code>SD_TRANSFORMERS_DEBUG</code> env variables to trace diffusers and transformers internal operations<br />
+- <strong>Video</strong>
+  - reorganized <em>video</em> tab
+  - better support for video codeces and formats
 - <strong>API</strong>
   - full support for video generation using api<br />
     new endpoints: <code>/sdapi/v1/video</code>, <code>/sdapi/v1/video/models</code>, <code>/sdapi/v1/video/file</code><br />
 <em>note</em>: video api uses async workflow where you submit request and then later download the result<br />
+- <strong>Other</strong>
+  - ar display ration on manual resolution change
 - <strong>Removed</strong>
   - remove DirectML support<br />
     latest release was over 2 years ago and is not compatible with modern frameworks<br />
