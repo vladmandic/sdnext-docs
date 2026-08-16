@@ -4497,13 +4497,6 @@ Then<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> </s
 <p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
 </div>
 <h2 id="install-guide-for-linux-or-wsl">Install Guide for Linux or WSL</h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Do not use Linux Kernel 6.8 or 6.9 with Linux.</strong>  </p>
-<p><a href="https://github.com/intel/compute-runtime/issues/726">https://github.com/intel/compute-runtime/issues/726</a><br />
-Update your kernel to at least 6.10 or update to the latest available kernel.  </p>
-<p><em>Updating the kernel is not necessary for WSL because it uses Windows GPU drivers instead.</em></p>
-</div>
 <h3 id="install-guide-for-ubuntu-linux-or-ubuntu-with-wsl">Install Guide for Ubuntu Linux or Ubuntu with WSL</h3>
 <p>Following Ubuntu instructions are for Ubuntu 24.04.<br />
 Install the base packages:</p>
@@ -4574,7 +4567,7 @@ Resulting docker image will use 1.1 GB disk space (uncompressed) for the docker 
 <p><code>IPEX_ATTENTION_SLICE_RATE</code>: Dynamic attention slicing rate for 32-bit GPUs, in GB. Default: <code>0.5</code>.</p>
 </li>
 <li>
-<p><code>IPEX_FORCE_ATTENTION_SLICE</code>: Enables or disables dynamic attention slicing. Default: <code>1</code>.</p>
+<p><code>IPEX_FORCE_ATTENTION_SLICE</code>: Enables or disables dynamic attention slicing. Default: <code>0</code>.</p>
 </li>
 <li><code>1</code> will force enable dynamic attention slicing even if the GPU supports 64 bit.</li>
 <li><code>-1</code> will force disable dynamic attention slicing even if the GPU doesn't support 64 bit.</li>
