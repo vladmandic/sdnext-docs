@@ -9281,9 +9281,11 @@
   - nunchaku-lite support for <code>torch==2.13</code>
   - update handlers for all authenticated workflows
   - update handlers for all hf-based progress bars
+  - offload options take effect immediately without restart/reload
   - log long torch autotune operations
   - utilize <code>torch.accelerator</code> where available
   - add <code>SD_DIFFUSERS_DEBUG</code> and <code>SD_TRANSFORMERS_DEBUG</code> env variables to trace diffusers and transformers internal operations<br />
+  - model load add option to not use <code>mmap</code>, thanks @cjmcgee
 - <strong>Video</strong>
   - reorganized <em>video</em> tab
   - better support for video codeces and formats
@@ -9297,18 +9299,17 @@
   - remove DirectML support<br />
     latest release was over 2 years ago and is not compatible with modern frameworks<br />
 - <strong>Fixes</strong>
-  - init hf env variables before gradio load
-  - lora skip init and rebuild offload state
-  - lora keep network multiplier on change
-  - improve handling of hf auth
-  - improve pipeline detection for non-cached models
-  - cleanup alt offload codepaths
+  - hf: init hf env variables before gradio load
+  - lora: skip init and rebuild offload state
+  - lora: keep network multiplier on change
+  - auth: improve handling of hf auth
+  - load: improve pipeline detection for non-cached models
+  - offload: cleanup alt offload codepaths
   - offload: text encoders no longer take the denoiser profile on modular pipelines
   - offload: components entered through encode or decode are detected by structure rather than by name
   - offload: group offload honors the never-offload and model-type exclusion settings
-  - offload: offload options take effect when changed instead of waiting for a model reload
   - settings: offload settings grouped into shared overrides and per-mode sections
-  - hf progress bars
+  - log: hf progress bars
   - ltx: send the guidance stack and cross-timestep on every 2.x call path
   - ltx: distilled variants no longer force dynamic shifting on, which remapped their sigma schedule
   - ltx: sampler shift now reaches flow-match schedulers
@@ -9316,9 +9317,10 @@
   - video: take the audio sample rate from the loaded vocoder
   - video: keep the shared text encoder out of the registry rows
   - video: use generic loader methods
-  - processing stats reporting
-  - image metadata handle correct image index
-  - gguf transformer loader</p>
+  - log: processing stats reporting
+  - metadata: image metadata handle correct image index
+  - gguf: transformer loader
+  - scripts: mixture-of-diffusers and mixture-tiling update to use igwn-segments</p>
 <h2 id="update-for-2026-08-07">Update for 2026-08-07</h2>
 <h3 id="highlights-for-2026-08-07">Highlights for 2026-08-07</h3>
 <p>This release brings <strong>Sefi-Image</strong> and <strong>Mage-Flow</strong> models, plus a new <strong>Nunchaku-Lite</strong> inference engine<br />
@@ -9495,7 +9497,7 @@ And update to process tab, several quality-of-life improvements and bug-fixes  <
 <li><strong>First-Last-Frame</strong> (FLF2V) support for Wan-2.2-I2V and LTX</li>
 <li>add option: <em>compute settings -&gt; force dtype on load</em><br />
     use to force model components to override loading with desired dtype regardless of component config  </li>
-<li>add option: <em>backend settings -&gt; force sychronize</em><br />
+<li>add option: <em>backend settings -&gt; force synchronize</em><br />
     enabled by default, disable to speed up processing but may cause image corruptions, especially during preview</li>
 <li>add option: <em>model loading -&gt; attempt to load incomplete model</em><br />
     disabled by default, attempts to load model by mapping it to known model even if some components are missing<br />
@@ -9625,7 +9627,7 @@ And we have a new modular LoRA loader, new native Transformers loader and improv
 <li><strong>Samplers</strong> reorganized into clear sampler categories</li>
 <li><strong>Gallery</strong> add clear cache button to folder menu</li>
 <li><strong>Finetunes</strong> improved support for loading model finetunes<br />
-    this also includes detecting compatibility and falbacks  </li>
+    this also includes detecting compatibility and fallbacks  </li>
 <li><strong>UV</strong> much updated <code>--uv</code> support for fast installs<br />
     now also supports global <code>uv</code> if present in the system  </li>
 <li><strong>Attention Dispatcher</strong> new attention backends dispatcher<br />
