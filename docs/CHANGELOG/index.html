@@ -4184,10 +4184,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-16" class="md-nav__link">
+  <a href="#update-for-2026-08-17" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-16
+        Update for 2026-08-17
       
     </span>
   </a>
@@ -6721,10 +6721,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-16" class="md-nav__link">
+  <a href="#update-for-2026-08-17" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-16
+        Update for 2026-08-17
       
     </span>
   </a>
@@ -9250,7 +9250,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-08-16">Update for 2026-08-16</h2>
+<h2 id="update-for-2026-08-17">Update for 2026-08-17</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/MiniMaxAI/MiniMax-H3">MiniMax H3</a> available in <em>base</em> and <em>ref</em> variants<br />
@@ -9285,10 +9285,13 @@
   - log long torch autotune operations
   - utilize <code>torch.accelerator</code> where available
   - add <code>SD_DIFFUSERS_DEBUG</code> and <code>SD_TRANSFORMERS_DEBUG</code> env variables to trace diffusers and transformers internal operations<br />
-  - model load add option to not use <code>mmap</code>, thanks @cjmcgee
+  - add settings -&gt; model load -&gt; <em>offload state dict</em> option<br />
+    reduces memory spikes during model load at the cost of disk i/o and slower load times<br />
+  - use <code>GRADIO_TEMP_DIR</code> env variable for temp folder if set
 - <strong>Video</strong>
   - reorganized <em>video</em> tab
   - better support for video codeces and formats
+  - add <em>generate forever</em> button
 - <strong>API</strong>
   - full support for video generation using api<br />
     new endpoints: <code>/sdapi/v1/video</code>, <code>/sdapi/v1/video/models</code>, <code>/sdapi/v1/video/file</code><br />
@@ -9296,7 +9299,9 @@
   - authentication for websocket connection
   - allowed path validation for endpoints that get/put files
 - <strong>Other</strong>
-  - ar display ration on manual resolution change
+  - Krea2: add <em>settings -&gt; model options -&gt; krea2 dense masking</em>
+    may provide significant speed-up on some gpus, disabled by default<br />
+  - AR display ratio on manual resolution change
 - <strong>Removed</strong>
   - remove DirectML support<br />
     latest release was over 2 years ago and is not compatible with modern frameworks<br />

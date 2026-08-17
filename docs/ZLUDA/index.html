@@ -5034,7 +5034,7 @@ python<span class="w"> </span>rdeps.py
 </code></pre></div>
 <p>If you encounter any mistake, try to Google and fix it or try it again. Use <code>install.sh -d</code> in Linux.</p>
 <p>Once done, run:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>rmake.py<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;gfx906;gfx1012&quot;</span><span class="w"> </span>--lazy-library-loading<span class="w"> </span>--no-merge-architectures<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;C:\ROCm\Tensile-rocm-5.7.0&quot;</span>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>rmake.py<span class="w"> </span>-a<span class="w"> </span><span class="s2">"gfx906;gfx1012"</span><span class="w"> </span>--lazy-library-loading<span class="w"> </span>--no-merge-architectures<span class="w"> </span>-t<span class="w"> </span><span class="s2">"C:\ROCm\Tensile-rocm-5.7.0"</span>
 <span class="sb">```</span>text
 
 Change<span class="w"> </span><span class="sb">`</span>gfx906<span class="p">;</span>gfx1012<span class="sb">`</span><span class="w"> </span>to<span class="w"> </span>your<span class="w"> </span>GPU<span class="w"> </span>LLVM<span class="w"> </span>Target.<span class="w"> </span>If<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>multiple<span class="w"> </span>ones<span class="w"> </span>at<span class="w"> </span>a<span class="w"> </span>time,<span class="w"> </span>make<span class="w"> </span>sure<span class="w"> </span>to<span class="w"> </span>separate<span class="w"> </span>with<span class="w"> </span><span class="sb">`</span><span class="p">;</span><span class="sb">`</span>.
@@ -5049,7 +5049,7 @@ Your<span class="w"> </span>programs<span class="w"> </span>should<span class="w
 
 This<span class="w"> </span>guide<span class="w"> </span>will<span class="w"> </span>walk<span class="w"> </span>you<span class="w"> </span>through<span class="w"> </span>building<span class="w"> </span>rocBLAS<span class="w"> </span>using<span class="w"> </span>the<span class="w"> </span>official<span class="w"> </span>ROCm<span class="w"> </span>documentation.
 
-This<span class="w"> </span>guide<span class="w"> </span>is<span class="w"> </span><span class="k">for</span><span class="w"> </span>users<span class="w"> </span>with<span class="w"> </span>AMD<span class="w"> </span>GPUs<span class="w"> </span>lacking<span class="w"> </span>official<span class="w"> </span>ROCm/<span class="o">[</span>HIP<span class="w"> </span>SDK<span class="o">](</span>https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html<span class="o">)</span><span class="w"> </span>support,<span class="w"> </span>or<span class="w"> </span>those<span class="w"> </span>wanting<span class="w"> </span>to<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>HIP<span class="w"> </span>SDK<span class="w"> </span>support<span class="w"> </span><span class="k">for</span><span class="w"> </span>hip<span class="w"> </span>sdk<span class="w"> </span><span class="m">5</span>.7<span class="w"> </span>and<span class="w"> </span><span class="m">6</span>.1.2<span class="w">  </span>on<span class="w"> </span>Windows<span class="w"> </span><span class="k">for</span><span class="w"> </span>integrated<span class="w"> </span>AMD<span class="w"> </span>GPUs<span class="o">(</span>iGPUs<span class="o">)</span>.<span class="s2">&quot;</span>
+This<span class="w"> </span>guide<span class="w"> </span>is<span class="w"> </span><span class="k">for</span><span class="w"> </span>users<span class="w"> </span>with<span class="w"> </span>AMD<span class="w"> </span>GPUs<span class="w"> </span>lacking<span class="w"> </span>official<span class="w"> </span>ROCm/<span class="o">[</span>HIP<span class="w"> </span>SDK<span class="o">](</span>https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html<span class="o">)</span><span class="w"> </span>support,<span class="w"> </span>or<span class="w"> </span>those<span class="w"> </span>wanting<span class="w"> </span>to<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>HIP<span class="w"> </span>SDK<span class="w"> </span>support<span class="w"> </span><span class="k">for</span><span class="w"> </span>hip<span class="w"> </span>sdk<span class="w"> </span><span class="m">5</span>.7<span class="w"> </span>and<span class="w"> </span><span class="m">6</span>.1.2<span class="w">  </span>on<span class="w"> </span>Windows<span class="w"> </span><span class="k">for</span><span class="w"> </span>integrated<span class="w"> </span>AMD<span class="w"> </span>GPUs<span class="o">(</span>iGPUs<span class="o">)</span>.<span class="s2">"</span>
 
 <span class="s2">If you already have the libraries, you can skip this section!</span>
 
@@ -5086,8 +5086,8 @@ This<span class="w"> </span>guide<span class="w"> </span>is<span class="w"> </sp
 
 <span class="s2">### Determine Your ROCm Version</span>
 
-<span class="s2">* **ROCm 5.7.0:** Follow the instructions for &quot;</span>**For<span class="w"> </span>hip<span class="w"> </span><span class="m">5</span>.7**<span class="s2">&quot; below.</span>
-<span class="s2">* **ROCm 6.1.2:** Follow the instructions for &quot;</span>**For<span class="w"> </span>hip<span class="w"> </span><span class="m">6</span>.1.2**<span class="s2">&quot; below.</span>
+<span class="s2">* **ROCm 5.7.0:** Follow the instructions for "</span>**For<span class="w"> </span>hip<span class="w"> </span><span class="m">5</span>.7**<span class="s2">" below.</span>
+<span class="s2">* **ROCm 6.1.2:** Follow the instructions for "</span>**For<span class="w"> </span>hip<span class="w"> </span><span class="m">6</span>.1.2**<span class="s2">" below.</span>
 
 
 <span class="s2">### Patches for Tensile</span>
@@ -5157,7 +5157,7 @@ after<span class="w"> </span><span class="k">done</span><span class="w"> </span>
 
 <span class="sb">```</span>shell
 
-python<span class="w"> </span>rmake.py<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;gfx1101;gfx1103&quot;</span><span class="w"> </span>--lazy-library-loading--no-merge-architectures<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;C:\rocm\Tensile-rocm-5.7.0&quot;</span>
+python<span class="w"> </span>rmake.py<span class="w"> </span>-a<span class="w"> </span><span class="s2">"gfx1101;gfx1103"</span><span class="w"> </span>--lazy-library-loading--no-merge-architectures<span class="w"> </span>-t<span class="w"> </span><span class="s2">"C:\rocm\Tensile-rocm-5.7.0"</span>
 </code></pre></div>
 <p>(adjust paths and architectures as needed).</p>
 <p><strong>Important:</strong></p>

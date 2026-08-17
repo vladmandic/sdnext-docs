@@ -4295,9 +4295,9 @@ This guide uses <a href="https://asdf-vm.com/">asdf</a> with the <a href="https:
 </ol>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>homebrew<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span>https://github.com/Homebrew/brew/tarball/master<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>xz<span class="w"> </span>--strip-components<span class="w"> </span><span class="m">1</span><span class="w"> </span>-C<span class="w"> </span>homebrew
 
-<span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>homebrew/bin/brew<span class="w"> </span>shellenv<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">eval</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>homebrew/bin/brew<span class="w"> </span>shellenv<span class="k">)</span><span class="s2">"</span>
 brew<span class="w"> </span>update<span class="w"> </span>--force<span class="w"> </span>--quiet
-chmod<span class="w"> </span>-R<span class="w"> </span>go-w<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/share/zsh&quot;</span>
+chmod<span class="w"> </span>-R<span class="w"> </span>go-w<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span><span class="s2">/share/zsh"</span>
 </code></pre></div>
 <ol>
 <li>Install asdf and python build dependencies:</li>
@@ -4308,7 +4308,7 @@ chmod<span class="w"> </span>-R<span class="w"> </span>go-w<span class="w"> </sp
 <li>Add asdf to <code>.zshrc</code> to use it immediately and persistently:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>.<span class="w"> </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>asdf<span class="k">)</span>/asdf.sh
-<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;\n. </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>asdf<span class="k">)</span><span class="s2">/asdf.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n. </span><span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>asdf<span class="k">)</span><span class="s2">/asdf.sh"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
 </code></pre></div>
 <ol>
 <li>Add the python asdf plugin:</li>

@@ -4667,16 +4667,16 @@ You can also check that <code>job_count</code> is <code>0</code>, but note it ma
 <p>Most generation parameters are per-request. The <code>/sdapi/v1/txt2img</code> and <code>/sdapi/v1/img2img</code> request models are generated from the processing class, so any processing parameter can be sent directly in the payload for a single request. The complete list of accepted fields for each endpoint is described in <a href="../Parameters/">Parameters</a> and served as a live schema at <code>/docs</code> and <code>/redocs</code>. A separate <code>/sdapi/v1/options</code> call is not required to set the sampler, step count, CFG scale, CLiP skip, or similar values.</p>
 <p>A single request can carry the model, the sampler, and the per-request parameters together:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a cat&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;negative_prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;blurry&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;cfg_scale&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;sampler_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DPM++ 2M SDE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;clip_skip&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;override_settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;sd_model_checkpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;modelname&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">"prompt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a cat"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"negative_prompt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blurry"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"steps"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"cfg_scale"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"seed"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"sampler_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DPM++ 2M SDE"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"clip_skip"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"override_settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"sd_model_checkpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"modelname"</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="sampler-names">Sampler names</h3>
@@ -4713,14 +4713,14 @@ You can also check that <code>job_count</code> is <code>0</code>, but note it ma
 <p>Switching checkpoints through <code>override_settings</code> is not supported on this endpoint and is rejected with <code>400</code>; the model is selected per-request through <code>engine</code> and <code>model</code>, or switched beforehand with <code>POST /sdapi/v1/checkpoint</code>.</p>
 <p>A minimal request:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;engine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WAN Video&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WAN 2.2 5B T2V&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a cat walking through tall grass&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">832</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;frames&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;mp4_fps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span>
+<span class="w">  </span><span class="nt">"engine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WAN Video"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WAN 2.2 5B T2V"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"prompt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a cat walking through tall grass"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">832</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"frames"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"steps"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"mp4_fps"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>The full field list is documented under Video Generation Parameters in <a href="../Parameters/">Parameters</a> and served as a live schema at <code>/docs</code>. A complete client example is available at <code>cli/api-video.py</code>.</p>

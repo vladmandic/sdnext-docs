@@ -4968,22 +4968,22 @@ or run <code>cli/run-benchmark.py</code> from the CLI.</p>
 </tbody>
 </table>
 <h3 id="intel-arc-api-benchmarks">Intel ARC API Benchmarks</h3>
-<div class="highlight"><pre><span></span><code>2024-02-07 22:52:56,406 INFO: {&#39;run-benchmark&#39;}
-2024-02-07 22:52:56,407 INFO: {&#39;options&#39;: {&#39;prompt&#39;: &#39;photo of two dice on a table&#39;, &#39;negative_prompt&#39;: &#39;foggy, blurry&#39;, &#39;steps&#39;: 50, &#39;sampler_name&#39;: &#39;Euler a&#39;, &#39;width&#39;: 512, &#39;height&#39;: 512, &#39;full_quality&#39;: True, &#39;cfg_scale&#39;: 0, &#39;batch_size&#39;: 1, &#39;n_iter&#39;: 1, &#39;seed&#39;: -1}}
-2024-02-07 22:52:56,432 INFO: {&#39;version&#39;: {&#39;app&#39;: &#39;sd.next&#39;, &#39;updated&#39;: &#39;2024-02-07&#39;, &#39;hash&#39;: &#39;659ad2e7&#39;, &#39;url&#39;: &#39;https://github.com/vladmandic/sdnext/tree/dev&#39;}}
-2024-02-07 22:52:56,434 INFO: {&#39;platform&#39;: {&#39;arch&#39;: &#39;x86_64&#39;, &#39;cpu&#39;: &#39;&#39;, &#39;system&#39;: &#39;Linux&#39;, &#39;release&#39;: &#39;6.7.3-arch1-2&#39;, &#39;python&#39;: &#39;3.11.6&#39;, &#39;torch&#39;: &#39;2.1.0a0+cxx11.abi&#39;, &#39;diffusers&#39;: &#39;0.26.2&#39;, &#39;gradio&#39;: &#39;3.43.2&#39;}}
-2024-02-07 22:52:56,437 INFO: {&#39;model&#39;: &#39;SD1.5/SoteMixV3 [dcc16969a0]&#39;}
-2024-02-07 22:52:56,441 INFO: {&#39;system&#39;: {&#39;cpu&#39;: {&#39;free&#39;: 48901079040.00001, &#39;used&#39;: 1533939712, &#39;total&#39;: 50435018752.00001}, &#39;gpu&#39;: {&#39;system&#39;: {&#39;free&#39;: 17079205888, &#39;used&#39;: 0, &#39;total&#39;: 17079205888}, &#39;session&#39;: {&#39;current&#39;: 0, &#39;peak&#39;: 0}}}}
-2024-02-07 22:52:56,441 INFO: {&#39;batch-sizes&#39;: [1, 1, 2, 4, 8, 12, 16, 24, 32]}
-2024-02-07 22:53:10,362 INFO: {&#39;warmup&#39;: 13.92}
-2024-02-07 22:53:18,182 INFO: {&#39;batch&#39;: 1, &#39;its&#39;: 12.81, &#39;img&#39;: 3.9, &#39;wall&#39;: 3.9, &#39;peak&#39;: 2.61, &#39;oom&#39;: False}
-2024-02-07 22:53:31,723 INFO: {&#39;batch&#39;: 2, &#39;its&#39;: 15.49, &#39;img&#39;: 3.23, &#39;wall&#39;: 6.45, &#39;peak&#39;: 3.07, &#39;oom&#39;: False}
-2024-02-07 22:53:55,512 INFO: {&#39;batch&#39;: 4, &#39;its&#39;: 17.18, &#39;img&#39;: 2.91, &#39;wall&#39;: 11.64, &#39;peak&#39;: 3.07, &#39;oom&#39;: False}
-2024-02-07 22:54:39,504 INFO: {&#39;batch&#39;: 8, &#39;its&#39;: 18.4, &#39;img&#39;: 2.72, &#39;wall&#39;: 21.74, &#39;peak&#39;: 3.07, &#39;oom&#39;: False}
-2024-02-07 22:55:43,500 INFO: {&#39;batch&#39;: 12, &#39;its&#39;: 18.93, &#39;img&#39;: 2.64, &#39;wall&#39;: 31.7, &#39;peak&#39;: 3.07, &#39;oom&#39;: False}
-2024-02-07 22:56:58,086 INFO: {&#39;batch&#39;: 16, &#39;its&#39;: 21.61, &#39;img&#39;: 2.31, &#39;wall&#39;: 37.01, &#39;peak&#39;: 3.07, &#39;oom&#39;: False}
-2024-02-07 22:58:48,560 INFO: {&#39;batch&#39;: 24, &#39;its&#39;: 21.92, &#39;img&#39;: 2.28, &#39;wall&#39;: 54.74, &#39;peak&#39;: 3.64, &#39;oom&#39;: False}
-2024-02-07 23:01:09,184 INFO: {&#39;batch&#39;: 32, &#39;its&#39;: 22.82, &#39;img&#39;: 2.19, &#39;wall&#39;: 70.12, &#39;peak&#39;: 4.06, &#39;oom&#39;: False}
+<div class="highlight"><pre><span></span><code>2024-02-07 22:52:56,406 INFO: {'run-benchmark'}
+2024-02-07 22:52:56,407 INFO: {'options': {'prompt': 'photo of two dice on a table', 'negative_prompt': 'foggy, blurry', 'steps': 50, 'sampler_name': 'Euler a', 'width': 512, 'height': 512, 'full_quality': True, 'cfg_scale': 0, 'batch_size': 1, 'n_iter': 1, 'seed': -1}}
+2024-02-07 22:52:56,432 INFO: {'version': {'app': 'sd.next', 'updated': '2024-02-07', 'hash': '659ad2e7', 'url': 'https://github.com/vladmandic/sdnext/tree/dev'}}
+2024-02-07 22:52:56,434 INFO: {'platform': {'arch': 'x86_64', 'cpu': '', 'system': 'Linux', 'release': '6.7.3-arch1-2', 'python': '3.11.6', 'torch': '2.1.0a0+cxx11.abi', 'diffusers': '0.26.2', 'gradio': '3.43.2'}}
+2024-02-07 22:52:56,437 INFO: {'model': 'SD1.5/SoteMixV3 [dcc16969a0]'}
+2024-02-07 22:52:56,441 INFO: {'system': {'cpu': {'free': 48901079040.00001, 'used': 1533939712, 'total': 50435018752.00001}, 'gpu': {'system': {'free': 17079205888, 'used': 0, 'total': 17079205888}, 'session': {'current': 0, 'peak': 0}}}}
+2024-02-07 22:52:56,441 INFO: {'batch-sizes': [1, 1, 2, 4, 8, 12, 16, 24, 32]}
+2024-02-07 22:53:10,362 INFO: {'warmup': 13.92}
+2024-02-07 22:53:18,182 INFO: {'batch': 1, 'its': 12.81, 'img': 3.9, 'wall': 3.9, 'peak': 2.61, 'oom': False}
+2024-02-07 22:53:31,723 INFO: {'batch': 2, 'its': 15.49, 'img': 3.23, 'wall': 6.45, 'peak': 3.07, 'oom': False}
+2024-02-07 22:53:55,512 INFO: {'batch': 4, 'its': 17.18, 'img': 2.91, 'wall': 11.64, 'peak': 3.07, 'oom': False}
+2024-02-07 22:54:39,504 INFO: {'batch': 8, 'its': 18.4, 'img': 2.72, 'wall': 21.74, 'peak': 3.07, 'oom': False}
+2024-02-07 22:55:43,500 INFO: {'batch': 12, 'its': 18.93, 'img': 2.64, 'wall': 31.7, 'peak': 3.07, 'oom': False}
+2024-02-07 22:56:58,086 INFO: {'batch': 16, 'its': 21.61, 'img': 2.31, 'wall': 37.01, 'peak': 3.07, 'oom': False}
+2024-02-07 22:58:48,560 INFO: {'batch': 24, 'its': 21.92, 'img': 2.28, 'wall': 54.74, 'peak': 3.64, 'oom': False}
+2024-02-07 23:01:09,184 INFO: {'batch': 32, 'its': 22.82, 'img': 2.19, 'wall': 70.12, 'peak': 4.06, 'oom': False}
 </code></pre></div>
 <h2 id="openvino">OpenVINO</h2>
 <h3 id="openvino-environment">OpenVINO Environment</h3>
@@ -5076,21 +5076,21 @@ or run <code>cli/run-benchmark.py</code> from the CLI.</p>
 </ul>
 <p>Peak: 9.36 with batch size 8.</p>
 <p>Possible max batch size: 12 (Slow with 12, OOM with 16)</p>
-<div class="highlight"><pre><span></span><code>2024-02-08 20:09:31,923 INFO: {&#39;run-benchmark&#39;}
-2024-02-08 20:09:31,924 INFO: {&#39;options&#39;: {&#39;prompt&#39;: &#39;photo of two dice on a table&#39;, &#39;negative_prompt&#39;: &#39;foggy, blurry&#39;, &#39;steps&#39;: 50, &#39;sampler_name&#39;: &#39;Euler a&#39;, &#39;width&#39;: 512, &#39;height&#39;: 512, &#39;full_quality&#39;: True, &#39;cfg_scale&#39;: 0, &#39;batch_size&#39;: 1, &#39;n_iter&#39;: 1, &#39;seed&#39;: -1}}
-2024-02-08 20:09:32,005 INFO: {&#39;version&#39;: {&#39;app&#39;: &#39;sd.next&#39;, &#39;updated&#39;: &#39;2024-02-07&#39;, &#39;hash&#39;: &#39;659ad2e7&#39;, &#39;url&#39;: &#39;https://github.com/vladmandic/sdnext/tree/dev&#39;}}
-2024-02-08 20:09:32,007 INFO: {&#39;platform&#39;: {&#39;arch&#39;: &#39;AMD64&#39;, &#39;cpu&#39;: &#39;Intel64 Family 6 Model 183 Stepping 1, GenuineIntel&#39;, &#39;system&#39;: &#39;Windows&#39;, &#39;release&#39;: &#39;Windows-10-10.0.22631-SP0&#39;, &#39;python&#39;: &#39;3.10.11&#39;, &#39;torch&#39;: &#39;2.0.0+cpu&#39;, &#39;diffusers&#39;: &#39;0.26.2&#39;, &#39;gradio&#39;: &#39;3.43.2&#39;}}
-2024-02-08 20:09:32,013 INFO: {&#39;system&#39;: {&#39;cpu&#39;: {&#39;free&#39;: 136382431232.00002, &#39;used&#39;: 708612096, &#39;total&#39;: 137091043328.00002}, &#39;gpu&#39;: {&#39;error&#39;: &#39;unavailable&#39;}}}
-2024-02-08 20:09:32,013 INFO: {&#39;batch-sizes&#39;: [1, 1, 2, 4, 8, 12, 16]}
-2024-02-08 20:09:51,463 INFO: {&#39;warmup&#39;: 19.45}
-2024-02-08 20:10:03,837 INFO: {&#39;batch&#39;: 1, &#39;its&#39;: 8.06, &#39;img&#39;: 6.2, &#39;wall&#39;: 6.2, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 20:10:27,845 INFO: {&#39;batch&#39;: 2, &#39;its&#39;: 9.02, &#39;img&#39;: 5.54, &#39;wall&#39;: 11.09, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 20:11:12,886 INFO: {&#39;batch&#39;: 4, &#39;its&#39;: 9.04, &#39;img&#39;: 5.53, &#39;wall&#39;: 22.12, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 20:12:38,582 INFO: {&#39;batch&#39;: 8, &#39;its&#39;: 9.36, &#39;img&#39;: 5.34, &#39;wall&#39;: 42.76, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 20:15:22,610 INFO: {&#39;batch&#39;: 12, &#39;its&#39;: 7.31, &#39;img&#39;: 6.84, &#39;wall&#39;: 82.04, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 20:15:23,465 ERROR: {&#39;requested&#39;: 16, &#39;received&#39;: 0}
-2024-02-08 20:15:24,161 ERROR: {&#39;requested&#39;: 16, &#39;received&#39;: 0}
-2024-02-08 20:15:24,164 INFO: {&#39;batch&#39;: 16, &#39;its&#39;: 1150.12, &#39;img&#39;: 0.04, &#39;wall&#39;: 0.7, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
+<div class="highlight"><pre><span></span><code>2024-02-08 20:09:31,923 INFO: {'run-benchmark'}
+2024-02-08 20:09:31,924 INFO: {'options': {'prompt': 'photo of two dice on a table', 'negative_prompt': 'foggy, blurry', 'steps': 50, 'sampler_name': 'Euler a', 'width': 512, 'height': 512, 'full_quality': True, 'cfg_scale': 0, 'batch_size': 1, 'n_iter': 1, 'seed': -1}}
+2024-02-08 20:09:32,005 INFO: {'version': {'app': 'sd.next', 'updated': '2024-02-07', 'hash': '659ad2e7', 'url': 'https://github.com/vladmandic/sdnext/tree/dev'}}
+2024-02-08 20:09:32,007 INFO: {'platform': {'arch': 'AMD64', 'cpu': 'Intel64 Family 6 Model 183 Stepping 1, GenuineIntel', 'system': 'Windows', 'release': 'Windows-10-10.0.22631-SP0', 'python': '3.10.11', 'torch': '2.0.0+cpu', 'diffusers': '0.26.2', 'gradio': '3.43.2'}}
+2024-02-08 20:09:32,013 INFO: {'system': {'cpu': {'free': 136382431232.00002, 'used': 708612096, 'total': 137091043328.00002}, 'gpu': {'error': 'unavailable'}}}
+2024-02-08 20:09:32,013 INFO: {'batch-sizes': [1, 1, 2, 4, 8, 12, 16]}
+2024-02-08 20:09:51,463 INFO: {'warmup': 19.45}
+2024-02-08 20:10:03,837 INFO: {'batch': 1, 'its': 8.06, 'img': 6.2, 'wall': 6.2, 'peak': 0.0, 'oom': False}
+2024-02-08 20:10:27,845 INFO: {'batch': 2, 'its': 9.02, 'img': 5.54, 'wall': 11.09, 'peak': 0.0, 'oom': False}
+2024-02-08 20:11:12,886 INFO: {'batch': 4, 'its': 9.04, 'img': 5.53, 'wall': 22.12, 'peak': 0.0, 'oom': False}
+2024-02-08 20:12:38,582 INFO: {'batch': 8, 'its': 9.36, 'img': 5.34, 'wall': 42.76, 'peak': 0.0, 'oom': False}
+2024-02-08 20:15:22,610 INFO: {'batch': 12, 'its': 7.31, 'img': 6.84, 'wall': 82.04, 'peak': 0.0, 'oom': False}
+2024-02-08 20:15:23,465 ERROR: {'requested': 16, 'received': 0}
+2024-02-08 20:15:24,161 ERROR: {'requested': 16, 'received': 0}
+2024-02-08 20:15:24,164 INFO: {'batch': 16, 'its': 1150.12, 'img': 0.04, 'wall': 0.7, 'peak': 0.0, 'oom': False}
 </code></pre></div>
 <h2 id="onnx-runtime">ONNX Runtime</h2>
 <ul>
@@ -5101,19 +5101,19 @@ or run <code>cli/run-benchmark.py</code> from the CLI.</p>
 </ul>
 <p>Peak: 17.58</p>
 <p>Possible max batch size: 8 (Not OOM, but very slow with 12 or higher)</p>
-<div class="highlight"><pre><span></span><code>2024-02-08 19:20:45,235 INFO: {&#39;run-benchmark&#39;}
-2024-02-08 19:20:45,236 INFO: {&#39;options&#39;: {&#39;prompt&#39;: &#39;photo of two dice on a table&#39;, &#39;negative_prompt&#39;: &#39;foggy, blurry&#39;, &#39;steps&#39;: 50, &#39;sampler_name&#39;: &#39;Euler a&#39;, &#39;width&#39;: 512, &#39;height&#39;: 512, &#39;full_quality&#39;: True, &#39;cfg_scale&#39;: 0, &#39;batch_size&#39;: 1, &#39;n_iter&#39;: 1, &#39;seed&#39;: -1}}
-2024-02-08 19:20:45,317 INFO: {&#39;version&#39;: {&#39;app&#39;: &#39;sd.next&#39;, &#39;updated&#39;: &#39;2024-02-07&#39;, &#39;hash&#39;: &#39;659ad2e7&#39;, &#39;url&#39;: &#39;https://github.com/vladmandic/sdnext/tree/dev&#39;}}
-2024-02-08 19:20:45,318 INFO: {&#39;platform&#39;: {&#39;arch&#39;: &#39;AMD64&#39;, &#39;cpu&#39;: &#39;Intel64 Family 6 Model 183 Stepping 1, GenuineIntel&#39;, &#39;system&#39;: &#39;Windows&#39;, &#39;release&#39;: &#39;Windows-10-10.0.22631-SP0&#39;, &#39;python&#39;: &#39;3.10.12&#39;, &#39;torch&#39;: &#39;2.2.0+cpu&#39;, &#39;diffusers&#39;: &#39;0.26.2&#39;, &#39;gradio&#39;: &#39;3.43.2&#39;}}
-2024-02-08 19:20:45,324 INFO: {&#39;system&#39;: {&#39;cpu&#39;: {&#39;free&#39;: 136392728576.00002, &#39;used&#39;: 698314752, &#39;total&#39;: 137091043328.00002}, &#39;gpu&#39;: {&#39;error&#39;: &#39;unavailable&#39;}}}
-2024-02-08 19:20:45,324 INFO: {&#39;batch-sizes&#39;: [1, 1, 2, 4, 8, 12, 16]}
-2024-02-08 19:21:03,553 INFO: {&#39;warmup&#39;: 18.23}
-2024-02-08 19:21:12,036 INFO: {&#39;batch&#39;: 1, &#39;its&#39;: 11.81, &#39;img&#39;: 4.23, &#39;wall&#39;: 4.23, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 19:21:26,618 INFO: {&#39;batch&#39;: 2, &#39;its&#39;: 13.79, &#39;img&#39;: 3.62, &#39;wall&#39;: 7.25, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 19:21:54,400 INFO: {&#39;batch&#39;: 4, &#39;its&#39;: 14.46, &#39;img&#39;: 3.46, &#39;wall&#39;: 13.83, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 19:22:40,407 INFO: {&#39;batch&#39;: 8, &#39;its&#39;: 17.58, &#39;img&#39;: 2.84, &#39;wall&#39;: 22.75, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 19:30:30,903 INFO: {&#39;batch&#39;: 12, &#39;its&#39;: 2.56, &#39;img&#39;: 19.57, &#39;wall&#39;: 234.8, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 19:40:08,391 INFO: {&#39;batch&#39;: 16, &#39;its&#39;: 2.77, &#39;img&#39;: 18.05, &#39;wall&#39;: 288.86, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
+<div class="highlight"><pre><span></span><code>2024-02-08 19:20:45,235 INFO: {'run-benchmark'}
+2024-02-08 19:20:45,236 INFO: {'options': {'prompt': 'photo of two dice on a table', 'negative_prompt': 'foggy, blurry', 'steps': 50, 'sampler_name': 'Euler a', 'width': 512, 'height': 512, 'full_quality': True, 'cfg_scale': 0, 'batch_size': 1, 'n_iter': 1, 'seed': -1}}
+2024-02-08 19:20:45,317 INFO: {'version': {'app': 'sd.next', 'updated': '2024-02-07', 'hash': '659ad2e7', 'url': 'https://github.com/vladmandic/sdnext/tree/dev'}}
+2024-02-08 19:20:45,318 INFO: {'platform': {'arch': 'AMD64', 'cpu': 'Intel64 Family 6 Model 183 Stepping 1, GenuineIntel', 'system': 'Windows', 'release': 'Windows-10-10.0.22631-SP0', 'python': '3.10.12', 'torch': '2.2.0+cpu', 'diffusers': '0.26.2', 'gradio': '3.43.2'}}
+2024-02-08 19:20:45,324 INFO: {'system': {'cpu': {'free': 136392728576.00002, 'used': 698314752, 'total': 137091043328.00002}, 'gpu': {'error': 'unavailable'}}}
+2024-02-08 19:20:45,324 INFO: {'batch-sizes': [1, 1, 2, 4, 8, 12, 16]}
+2024-02-08 19:21:03,553 INFO: {'warmup': 18.23}
+2024-02-08 19:21:12,036 INFO: {'batch': 1, 'its': 11.81, 'img': 4.23, 'wall': 4.23, 'peak': 0.0, 'oom': False}
+2024-02-08 19:21:26,618 INFO: {'batch': 2, 'its': 13.79, 'img': 3.62, 'wall': 7.25, 'peak': 0.0, 'oom': False}
+2024-02-08 19:21:54,400 INFO: {'batch': 4, 'its': 14.46, 'img': 3.46, 'wall': 13.83, 'peak': 0.0, 'oom': False}
+2024-02-08 19:22:40,407 INFO: {'batch': 8, 'its': 17.58, 'img': 2.84, 'wall': 22.75, 'peak': 0.0, 'oom': False}
+2024-02-08 19:30:30,903 INFO: {'batch': 12, 'its': 2.56, 'img': 19.57, 'wall': 234.8, 'peak': 0.0, 'oom': False}
+2024-02-08 19:40:08,391 INFO: {'batch': 16, 'its': 2.77, 'img': 18.05, 'wall': 288.86, 'peak': 0.0, 'oom': False}
 </code></pre></div>
 <h3 id="with-optimized-model-using-olive">With optimized model using Olive</h3>
 <ul>
@@ -5121,19 +5121,19 @@ or run <code>cli/run-benchmark.py</code> from the CLI.</p>
 </ul>
 <p>Peak: <strong>54.08</strong></p>
 <p>Possible max batch size: Unknown (at least 48)</p>
-<div class="highlight"><pre><span></span><code>2024-02-08 18:51:28,096 INFO: {&#39;run-benchmark&#39;}
-2024-02-08 18:51:28,097 INFO: {&#39;options&#39;: {&#39;prompt&#39;: &#39;photo of two dice on a table&#39;, &#39;negative_prompt&#39;: &#39;foggy, blurry&#39;, &#39;steps&#39;: 50, &#39;sampler_name&#39;: &#39;Euler a&#39;, &#39;width&#39;: 512, &#39;height&#39;: 512, &#39;full_quality&#39;: True, &#39;cfg_scale&#39;: 0, &#39;batch_size&#39;: 1, &#39;n_iter&#39;: 1, &#39;seed&#39;: -1}}
-2024-02-08 18:51:28,167 INFO: {&#39;version&#39;: {&#39;app&#39;: &#39;sd.next&#39;, &#39;updated&#39;: &#39;2024-02-07&#39;, &#39;hash&#39;: &#39;659ad2e7&#39;, &#39;url&#39;: &#39;https://github.com/vladmandic/sdnext/tree/dev&#39;}}
-2024-02-08 18:51:28,168 INFO: {&#39;platform&#39;: {&#39;arch&#39;: &#39;AMD64&#39;, &#39;cpu&#39;: &#39;Intel64 Family 6 Model 183 Stepping 1, GenuineIntel&#39;, &#39;system&#39;: &#39;Windows&#39;, &#39;release&#39;: &#39;Windows-10-10.0.22631-SP0&#39;, &#39;python&#39;: &#39;3.10.12&#39;, &#39;torch&#39;: &#39;2.2.0+cpu&#39;, &#39;diffusers&#39;: &#39;0.26.2&#39;, &#39;gradio&#39;: &#39;3.43.2&#39;}}
-2024-02-08 18:51:28,174 INFO: {&#39;system&#39;: {&#39;cpu&#39;: {&#39;free&#39;: 136385822719.99998, &#39;used&#39;: 705220608, &#39;total&#39;: 137091043327.99998}, &#39;gpu&#39;: {&#39;error&#39;: &#39;unavailable&#39;}}}
-2024-02-08 18:51:28,174 INFO: {&#39;batch-sizes&#39;: [1, 1, 2, 4, 8, 12, 16]}
-2024-02-08 18:51:42,445 INFO: {&#39;warmup&#39;: 14.27}
-2024-02-08 18:51:46,603 INFO: {&#39;batch&#39;: 1, &#39;its&#39;: 23.63, &#39;img&#39;: 2.12, &#39;wall&#39;: 2.12, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 18:52:00,527 INFO: {&#39;batch&#39;: 2, &#39;its&#39;: 35.06, &#39;img&#39;: 1.43, &#39;wall&#39;: 2.85, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 18:52:18,711 INFO: {&#39;batch&#39;: 4, &#39;its&#39;: 40.34, &#39;img&#39;: 1.24, &#39;wall&#39;: 4.96, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 18:52:42,958 INFO: {&#39;batch&#39;: 8, &#39;its&#39;: 50.51, &#39;img&#39;: 0.99, &#39;wall&#39;: 7.92, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 18:53:13,677 INFO: {&#39;batch&#39;: 12, &#39;its&#39;: 53.81, &#39;img&#39;: 0.93, &#39;wall&#39;: 11.15, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
-2024-02-08 18:53:51,700 INFO: {&#39;batch&#39;: 16, &#39;its&#39;: 54.08, &#39;img&#39;: 0.92, &#39;wall&#39;: 14.79, &#39;peak&#39;: 0.0, &#39;oom&#39;: False}
+<div class="highlight"><pre><span></span><code>2024-02-08 18:51:28,096 INFO: {'run-benchmark'}
+2024-02-08 18:51:28,097 INFO: {'options': {'prompt': 'photo of two dice on a table', 'negative_prompt': 'foggy, blurry', 'steps': 50, 'sampler_name': 'Euler a', 'width': 512, 'height': 512, 'full_quality': True, 'cfg_scale': 0, 'batch_size': 1, 'n_iter': 1, 'seed': -1}}
+2024-02-08 18:51:28,167 INFO: {'version': {'app': 'sd.next', 'updated': '2024-02-07', 'hash': '659ad2e7', 'url': 'https://github.com/vladmandic/sdnext/tree/dev'}}
+2024-02-08 18:51:28,168 INFO: {'platform': {'arch': 'AMD64', 'cpu': 'Intel64 Family 6 Model 183 Stepping 1, GenuineIntel', 'system': 'Windows', 'release': 'Windows-10-10.0.22631-SP0', 'python': '3.10.12', 'torch': '2.2.0+cpu', 'diffusers': '0.26.2', 'gradio': '3.43.2'}}
+2024-02-08 18:51:28,174 INFO: {'system': {'cpu': {'free': 136385822719.99998, 'used': 705220608, 'total': 137091043327.99998}, 'gpu': {'error': 'unavailable'}}}
+2024-02-08 18:51:28,174 INFO: {'batch-sizes': [1, 1, 2, 4, 8, 12, 16]}
+2024-02-08 18:51:42,445 INFO: {'warmup': 14.27}
+2024-02-08 18:51:46,603 INFO: {'batch': 1, 'its': 23.63, 'img': 2.12, 'wall': 2.12, 'peak': 0.0, 'oom': False}
+2024-02-08 18:52:00,527 INFO: {'batch': 2, 'its': 35.06, 'img': 1.43, 'wall': 2.85, 'peak': 0.0, 'oom': False}
+2024-02-08 18:52:18,711 INFO: {'batch': 4, 'its': 40.34, 'img': 1.24, 'wall': 4.96, 'peak': 0.0, 'oom': False}
+2024-02-08 18:52:42,958 INFO: {'batch': 8, 'its': 50.51, 'img': 0.99, 'wall': 7.92, 'peak': 0.0, 'oom': False}
+2024-02-08 18:53:13,677 INFO: {'batch': 12, 'its': 53.81, 'img': 0.93, 'wall': 11.15, 'peak': 0.0, 'oom': False}
+2024-02-08 18:53:51,700 INFO: {'batch': 16, 'its': 54.08, 'img': 0.92, 'wall': 14.79, 'peak': 0.0, 'oom': False}
 </code></pre></div>
 <h3 id="onnx-runtime-api-benchmarks">ONNX Runtime API Benchmarks</h3>
 <p>Using latest version of <strong>SD.Next</strong> with <strong>Torch 2.2.0</strong> and <strong>CUDA 12.1</strong>.
@@ -5141,22 +5141,22 @@ or run <code>cli/run-benchmark.py</code> from the CLI.</p>
 <p>Environment: <strong>Intel i9-13900KF</strong> with <strong>NVIDIA RTX 4090</strong>.</p>
 <p>With simple settings, peak performance reaches about <strong>110 it/s</strong>:</p>
 <div class="highlight"><pre><span></span><code>vlado@wsl:~/dev/sdnext-dev $ python cli/run-benchmark.py --maxbatch 32
-2024-02-07 11:19:53,026 INFO: {&#39;run-benchmark&#39;}
-2024-02-07 11:19:53,027 INFO: {&#39;options&#39;: {&#39;prompt&#39;: &#39;photo of two dice on a table&#39;, &#39;negative_prompt&#39;: &#39;foggy, blurry&#39;, &#39;steps&#39;: 50, &#39;sampler_name&#39;: &#39;Euler a&#39;, &#39;width&#39;: 512, &#39;height&#39;: 512, &#39;full_quality&#39;: True, &#39;cfg_scale&#39;: 0, &#39;batch_size&#39;: 1, &#39;n_iter&#39;: 1, &#39;seed&#39;: -1}}
-2024-02-07 11:19:53,046 INFO: {&#39;version&#39;: {&#39;app&#39;: &#39;sd.next&#39;, &#39;updated&#39;: &#39;2024-02-07&#39;, &#39;hash&#39;: &#39;d967bd03&#39;, &#39;url&#39;: &#39;https://github.com/vladmandic/sdnext/tree/dev&#39;}}
-2024-02-07 11:19:53,048 INFO: {&#39;platform&#39;: {&#39;arch&#39;: &#39;x86_64&#39;, &#39;cpu&#39;: &#39;x86_64&#39;, &#39;system&#39;: &#39;Linux&#39;, &#39;release&#39;: &#39;5.15.146.1-microsoft-standard-WSL2&#39;, &#39;python&#39;: &#39;3.11.1&#39;, &#39;torch&#39;: &#39;2.2.0+cu121&#39;, &#39;diffusers&#39;: &#39;0.26.2&#39;, &#39;gradio&#39;: &#39;3.43.2&#39;}}
-2024-02-07 11:19:53,051 INFO: {&#39;model&#39;: &#39;sd15/lyriel-v16 [ec6f68ea63]&#39;}
-2024-02-07 11:19:53,054 INFO: {&#39;system&#39;: {&#39;cpu&#39;: {&#39;free&#39;: 49020043264.0, &#39;used&#39;: 1495736320, &#39;total&#39;: 50515779584.0}, &#39;gpu&#39;: {&#39;system&#39;: {&#39;free&#39;: 24110956544, &#39;used&#39;: 1645740032, &#39;total&#39;: 25756696576}, &#39;session&#39;: {&#39;current&#39;: 0, &#39;peak&#39;: 0}}}}
-2024-02-07 11:19:53,054 INFO: {&#39;batch-sizes&#39;: [1, 1, 2, 4, 8, 12, 16, 24, 32]}
-2024-02-07 11:19:59,394 INFO: {&#39;warmup&#39;: 6.34}
-2024-02-07 11:20:02,354 INFO: {&#39;batch&#39;: 1, &#39;its&#39;: 33.63, &#39;img&#39;: 1.49, &#39;wall&#39;: 1.49, &#39;peak&#39;: 7.05, &#39;oom&#39;: False}
-2024-02-07 11:20:06,213 INFO: {&#39;batch&#39;: 2, &#39;its&#39;: 64.3, &#39;img&#39;: 0.78, &#39;wall&#39;: 1.56, &#39;peak&#39;: 7.1, &#39;oom&#39;: False}
-2024-02-07 11:20:11,293 INFO: {&#39;batch&#39;: 4, &#39;its&#39;: 90.87, &#39;img&#39;: 0.55, &#39;wall&#39;: 2.2, &#39;peak&#39;: 7.18, &#39;oom&#39;: False}
-2024-02-07 11:20:19,416 INFO: {&#39;batch&#39;: 8, &#39;its&#39;: 104.6, &#39;img&#39;: 0.48, &#39;wall&#39;: 3.82, &#39;peak&#39;: 7.18, &#39;oom&#39;: False}
-2024-02-07 11:20:30,850 INFO: {&#39;batch&#39;: 12, &#39;its&#39;: 111.96, &#39;img&#39;: 0.45, &#39;wall&#39;: 5.36, &#39;peak&#39;: 7.18, &#39;oom&#39;: False}
-2024-02-07 11:20:46,236 INFO: {&#39;batch&#39;: 16, &#39;its&#39;: 110.37, &#39;img&#39;: 0.45, &#39;wall&#39;: 7.25, &#39;peak&#39;: 7.18, &#39;oom&#39;: False}
-2024-02-07 11:21:09,338 INFO: {&#39;batch&#39;: 24, &#39;its&#39;: 109.75, &#39;img&#39;: 0.46, &#39;wall&#39;: 10.93, &#39;peak&#39;: 7.18, &#39;oom&#39;: False}
-2024-02-07 11:21:39,623 INFO: {&#39;batch&#39;: 32, &#39;its&#39;: 111.38, &#39;img&#39;: 0.45, &#39;wall&#39;: 14.37, &#39;peak&#39;: 7.18, &#39;oom&#39;: False}
+2024-02-07 11:19:53,026 INFO: {'run-benchmark'}
+2024-02-07 11:19:53,027 INFO: {'options': {'prompt': 'photo of two dice on a table', 'negative_prompt': 'foggy, blurry', 'steps': 50, 'sampler_name': 'Euler a', 'width': 512, 'height': 512, 'full_quality': True, 'cfg_scale': 0, 'batch_size': 1, 'n_iter': 1, 'seed': -1}}
+2024-02-07 11:19:53,046 INFO: {'version': {'app': 'sd.next', 'updated': '2024-02-07', 'hash': 'd967bd03', 'url': 'https://github.com/vladmandic/sdnext/tree/dev'}}
+2024-02-07 11:19:53,048 INFO: {'platform': {'arch': 'x86_64', 'cpu': 'x86_64', 'system': 'Linux', 'release': '5.15.146.1-microsoft-standard-WSL2', 'python': '3.11.1', 'torch': '2.2.0+cu121', 'diffusers': '0.26.2', 'gradio': '3.43.2'}}
+2024-02-07 11:19:53,051 INFO: {'model': 'sd15/lyriel-v16 [ec6f68ea63]'}
+2024-02-07 11:19:53,054 INFO: {'system': {'cpu': {'free': 49020043264.0, 'used': 1495736320, 'total': 50515779584.0}, 'gpu': {'system': {'free': 24110956544, 'used': 1645740032, 'total': 25756696576}, 'session': {'current': 0, 'peak': 0}}}}
+2024-02-07 11:19:53,054 INFO: {'batch-sizes': [1, 1, 2, 4, 8, 12, 16, 24, 32]}
+2024-02-07 11:19:59,394 INFO: {'warmup': 6.34}
+2024-02-07 11:20:02,354 INFO: {'batch': 1, 'its': 33.63, 'img': 1.49, 'wall': 1.49, 'peak': 7.05, 'oom': False}
+2024-02-07 11:20:06,213 INFO: {'batch': 2, 'its': 64.3, 'img': 0.78, 'wall': 1.56, 'peak': 7.1, 'oom': False}
+2024-02-07 11:20:11,293 INFO: {'batch': 4, 'its': 90.87, 'img': 0.55, 'wall': 2.2, 'peak': 7.18, 'oom': False}
+2024-02-07 11:20:19,416 INFO: {'batch': 8, 'its': 104.6, 'img': 0.48, 'wall': 3.82, 'peak': 7.18, 'oom': False}
+2024-02-07 11:20:30,850 INFO: {'batch': 12, 'its': 111.96, 'img': 0.45, 'wall': 5.36, 'peak': 7.18, 'oom': False}
+2024-02-07 11:20:46,236 INFO: {'batch': 16, 'its': 110.37, 'img': 0.45, 'wall': 7.25, 'peak': 7.18, 'oom': False}
+2024-02-07 11:21:09,338 INFO: {'batch': 24, 'its': 109.75, 'img': 0.46, 'wall': 10.93, 'peak': 7.18, 'oom': False}
+2024-02-07 11:21:39,623 INFO: {'batch': 32, 'its': 111.38, 'img': 0.45, 'wall': 14.37, 'peak': 7.18, 'oom': False}
 ```text
 
 With full optimizations and custom-compiled **Stable-Fast**,
@@ -5164,22 +5164,22 @@ peak performance reaches about **150 it/s** (and about **165 it/s** with *TAESD*
 
 ```log
 vlado@wsl:~/dev/sdnext-dev $ python cli/run-benchmark.py --maxbatch 32
-2024-02-07 11:29:23,431 INFO: {&#39;run-benchmark&#39;}
-2024-02-07 11:29:23,432 INFO: {&#39;options&#39;: {&#39;prompt&#39;: &#39;photo of two dice on a table&#39;, &#39;negative_prompt&#39;: &#39;foggy, blurry&#39;, &#39;steps&#39;: 50, &#39;sampler_name&#39;: &#39;Euler a&#39;, &#39;width&#39;: 512, &#39;height&#39;: 512, &#39;full_quality&#39;: True, &#39;cfg_scale&#39;: 0, &#39;batch_size&#39;: 1, &#39;n_iter&#39;: 1, &#39;seed&#39;: -1}}
-2024-02-07 11:29:23,451 INFO: {&#39;version&#39;: {&#39;app&#39;: &#39;sd.next&#39;, &#39;updated&#39;: &#39;2024-02-07&#39;, &#39;hash&#39;: &#39;d967bd03&#39;, &#39;url&#39;: &#39;https://github.com/vladmandic/sdnext/tree/dev&#39;}}
-2024-02-07 11:29:23,453 INFO: {&#39;platform&#39;: {&#39;arch&#39;: &#39;x86_64&#39;, &#39;cpu&#39;: &#39;x86_64&#39;, &#39;system&#39;: &#39;Linux&#39;, &#39;release&#39;: &#39;5.15.146.1-microsoft-standard-WSL2&#39;, &#39;python&#39;: &#39;3.11.1&#39;, &#39;torch&#39;: &#39;2.2.0+cu121&#39;, &#39;diffusers&#39;: &#39;0.26.2&#39;, &#39;gradio&#39;: &#39;3.43.2&#39;}}
-2024-02-07 11:29:23,456 INFO: {&#39;model&#39;: &#39;sd15/lyriel-v16 [ec6f68ea63]&#39;}
-2024-02-07 11:29:23,459 INFO: {&#39;system&#39;: {&#39;cpu&#39;: {&#39;free&#39;: 49373564927.99999, &#39;used&#39;: 1142214656, &#39;total&#39;: 50515779583.99999}, &#39;gpu&#39;: {&#39;system&#39;: {&#39;free&#39;: 24110956544, &#39;used&#39;: 1645740032, &#39;total&#39;: 25756696576}, &#39;session&#39;: {&#39;current&#39;: 0, &#39;peak&#39;: 0}}}}
-2024-02-07 11:29:23,459 INFO: {&#39;batch-sizes&#39;: [1, 1, 2, 4, 8, 12, 16, 24, 32]}
-2024-02-07 11:29:38,504 INFO: {&#39;warmup&#39;: 15.04}
-2024-02-07 11:29:38,965 INFO: {&#39;batch&#39;: 1, &#39;its&#39;: 78.16, &#39;img&#39;: 0.67, &#39;wall&#39;: 0.23, &#39;peak&#39;: 7.11, &#39;oom&#39;: False}
-2024-02-07 11:29:42,630 INFO: {&#39;batch&#39;: 2, &#39;its&#39;: 98.91, &#39;img&#39;: 0.51, &#39;wall&#39;: 1.01, &#39;peak&#39;: 7.11, &#39;oom&#39;: False}
-2024-02-07 11:29:47,192 INFO: {&#39;batch&#39;: 4, &#39;its&#39;: 117.92, &#39;img&#39;: 0.42, &#39;wall&#39;: 1.7, &#39;peak&#39;: 7.11, &#39;oom&#39;: False}
-2024-02-07 11:29:54,028 INFO: {&#39;batch&#39;: 8, &#39;its&#39;: 142.42, &#39;img&#39;: 0.35, &#39;wall&#39;: 2.81, &#39;peak&#39;: 7.11, &#39;oom&#39;: False}
-2024-02-07 11:30:03,161 INFO: {&#39;batch&#39;: 12, &#39;its&#39;: 153.29, &#39;img&#39;: 0.33, &#39;wall&#39;: 3.91, &#39;peak&#39;: 7.11, &#39;oom&#39;: False}
-2024-02-07 11:30:14,921 INFO: {&#39;batch&#39;: 16, &#39;its&#39;: 153.41, &#39;img&#39;: 0.33, &#39;wall&#39;: 5.21, &#39;peak&#39;: 7.11, &#39;oom&#39;: False}
-2024-02-07 11:30:33,534 INFO: {&#39;batch&#39;: 24, &#39;its&#39;: 144.65, &#39;img&#39;: 0.35, &#39;wall&#39;: 8.3, &#39;peak&#39;: 7.11, &#39;oom&#39;: False}
-2024-02-07 11:30:56,914 INFO: {&#39;batch&#39;: 32, &#39;its&#39;: 150.59, &#39;img&#39;: 0.33, &#39;wall&#39;: 10.63, &#39;peak&#39;: 7.11, &#39;oom&#39;: False}
+2024-02-07 11:29:23,431 INFO: {'run-benchmark'}
+2024-02-07 11:29:23,432 INFO: {'options': {'prompt': 'photo of two dice on a table', 'negative_prompt': 'foggy, blurry', 'steps': 50, 'sampler_name': 'Euler a', 'width': 512, 'height': 512, 'full_quality': True, 'cfg_scale': 0, 'batch_size': 1, 'n_iter': 1, 'seed': -1}}
+2024-02-07 11:29:23,451 INFO: {'version': {'app': 'sd.next', 'updated': '2024-02-07', 'hash': 'd967bd03', 'url': 'https://github.com/vladmandic/sdnext/tree/dev'}}
+2024-02-07 11:29:23,453 INFO: {'platform': {'arch': 'x86_64', 'cpu': 'x86_64', 'system': 'Linux', 'release': '5.15.146.1-microsoft-standard-WSL2', 'python': '3.11.1', 'torch': '2.2.0+cu121', 'diffusers': '0.26.2', 'gradio': '3.43.2'}}
+2024-02-07 11:29:23,456 INFO: {'model': 'sd15/lyriel-v16 [ec6f68ea63]'}
+2024-02-07 11:29:23,459 INFO: {'system': {'cpu': {'free': 49373564927.99999, 'used': 1142214656, 'total': 50515779583.99999}, 'gpu': {'system': {'free': 24110956544, 'used': 1645740032, 'total': 25756696576}, 'session': {'current': 0, 'peak': 0}}}}
+2024-02-07 11:29:23,459 INFO: {'batch-sizes': [1, 1, 2, 4, 8, 12, 16, 24, 32]}
+2024-02-07 11:29:38,504 INFO: {'warmup': 15.04}
+2024-02-07 11:29:38,965 INFO: {'batch': 1, 'its': 78.16, 'img': 0.67, 'wall': 0.23, 'peak': 7.11, 'oom': False}
+2024-02-07 11:29:42,630 INFO: {'batch': 2, 'its': 98.91, 'img': 0.51, 'wall': 1.01, 'peak': 7.11, 'oom': False}
+2024-02-07 11:29:47,192 INFO: {'batch': 4, 'its': 117.92, 'img': 0.42, 'wall': 1.7, 'peak': 7.11, 'oom': False}
+2024-02-07 11:29:54,028 INFO: {'batch': 8, 'its': 142.42, 'img': 0.35, 'wall': 2.81, 'peak': 7.11, 'oom': False}
+2024-02-07 11:30:03,161 INFO: {'batch': 12, 'its': 153.29, 'img': 0.33, 'wall': 3.91, 'peak': 7.11, 'oom': False}
+2024-02-07 11:30:14,921 INFO: {'batch': 16, 'its': 153.41, 'img': 0.33, 'wall': 5.21, 'peak': 7.11, 'oom': False}
+2024-02-07 11:30:33,534 INFO: {'batch': 24, 'its': 144.65, 'img': 0.35, 'wall': 8.3, 'peak': 7.11, 'oom': False}
+2024-02-07 11:30:56,914 INFO: {'batch': 32, 'its': 150.59, 'img': 0.33, 'wall': 10.63, 'peak': 7.11, 'oom': False}
 </code></pre></div>
 <p>Additional gains are possible by combining more settings, but some combinations can become unstable.
 Examples: <em>channels-last, hyper-tile, tomesd, fused-projections</em>.</p>

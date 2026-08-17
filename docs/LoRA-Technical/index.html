@@ -4551,18 +4551,18 @@
 <h2 id="load-lifecycle">Load lifecycle</h2>
 <p>Activation runs once per generation through the extra-networks system, after the prompt is parsed.</p>
 <div class="highlight"><pre><span></span><code>flowchart TD
-    P[&quot;prompt with &amp;lt;lora:name:weight&amp;gt;&quot;] --&gt; A[&quot;ExtraNetworkLora.activate&quot;]
-    A --&gt; PA[&quot;parse: names, te/unet multipliers, dyn_dims, lora_modules&quot;]
-    PA --&gt; GM[&quot;lora_overrides.get_method&quot;]
-    GM --&gt;|diffusers| ND1[&quot;network_load -&gt; load_diffusers per net&quot;]
-    GM --&gt;|nunchaku| NK[&quot;lora_nunchaku.load_nunchaku&quot;]
-    GM --&gt;|native| ND2[&quot;network_load -&gt; load_safetensors per net&quot;]
-    ND1 --&gt; SA[&quot;pipe.set_adapters, optional fuse_lora&quot;]
-    ND2 --&gt; CH{&quot;changed?&quot;}
-    CH --&gt;|yes| DE[&quot;network_deactivate (fuse mode only)&quot;]
-    DE --&gt; AC[&quot;network_activate: patch module weights&quot;]
-    CH --&gt;|no| SKIP[&quot;skip, weights already applied&quot;]
-    SA --&gt; DONE[&quot;generation runs with adapters live&quot;]
+    P["prompt with &amp;lt;lora:name:weight&amp;gt;"] --&gt; A["ExtraNetworkLora.activate"]
+    A --&gt; PA["parse: names, te/unet multipliers, dyn_dims, lora_modules"]
+    PA --&gt; GM["lora_overrides.get_method"]
+    GM --&gt;|diffusers| ND1["network_load -&gt; load_diffusers per net"]
+    GM --&gt;|nunchaku| NK["lora_nunchaku.load_nunchaku"]
+    GM --&gt;|native| ND2["network_load -&gt; load_safetensors per net"]
+    ND1 --&gt; SA["pipe.set_adapters, optional fuse_lora"]
+    ND2 --&gt; CH{"changed?"}
+    CH --&gt;|yes| DE["network_deactivate (fuse mode only)"]
+    DE --&gt; AC["network_activate: patch module weights"]
+    CH --&gt;|no| SKIP["skip, weights already applied"]
+    SA --&gt; DONE["generation runs with adapters live"]
     AC --&gt; DONE
     NK --&gt; DONE
     SKIP --&gt; DONE
@@ -4583,32 +4583,32 @@
 <h2 id="method-selection">Method selection</h2>
 <p><code>get_method</code> returns <code>(method, reason)</code>. The reason is logged so an automatic fallback can be told apart from a user opt-in. Method is decided per network so a single file hash can be forced even when the arch supports native.</p>
 <div class="highlight"><pre><span></span><code>flowchart TD
-    S[&quot;get_method(shorthash)&quot;] --&gt; NQ{&quot;Nunchaku transformer or unet loaded?&quot;}
-    NQ --&gt;|yes| RN[&quot;nunchaku&quot;]
-    NQ --&gt;|no| FD{&quot;opts.lora_force_diffusers?&quot;}
-    FD --&gt;|yes| RD1[&quot;diffusers: opt-in&quot;]
-    FD --&gt;|no| FC{&quot;pipeline class in force_classes_diffusers?&quot;}
-    FC --&gt;|yes| RD2[&quot;diffusers: class-forced&quot;]
-    FC --&gt;|no| AN{&quot;sd_model_type in allow_native?&quot;}
-    AN --&gt;|no| RD3[&quot;diffusers: arch-unsupported&quot;]
-    AN --&gt;|yes| FH{&quot;file hash in force_hashes_diffusers?&quot;}
-    FH --&gt;|yes| RD4[&quot;diffusers: hash-forced&quot;]
-    FH --&gt;|no| RNAT[&quot;native: default&quot;]
+    S["get_method(shorthash)"] --&gt; NQ{"Nunchaku transformer or unet loaded?"}
+    NQ --&gt;|yes| RN["nunchaku"]
+    NQ --&gt;|no| FD{"opts.lora_force_diffusers?"}
+    FD --&gt;|yes| RD1["diffusers: opt-in"]
+    FD --&gt;|no| FC{"pipeline class in force_classes_diffusers?"}
+    FC --&gt;|yes| RD2["diffusers: class-forced"]
+    FC --&gt;|no| AN{"sd_model_type in allow_native?"}
+    AN --&gt;|no| RD3["diffusers: arch-unsupported"]
+    AN --&gt;|yes| FH{"file hash in force_hashes_diffusers?"}
+    FH --&gt;|yes| RD4["diffusers: hash-forced"]
+    FH --&gt;|no| RNAT["native: default"]
 </code></pre></div>
 <p><code>allow_native</code> lists the arches eligible for native loading: <code>sd</code>, <code>sdxl</code>, <code>sd3</code>, <code>f1</code>, <code>f2</code>, <code>chroma</code>, <code>zimage</code>, <code>anima</code>, <code>ernieimage</code>. Any other arch always takes the diffusers path. <code>force_classes_diffusers</code> currently holds the FluxKontext pipeline classes.</p>
 <h2 id="native-path">Native path</h2>
 <p><code>load_safetensors</code> is the native loader. It splits on <code>shared.sd_model_type</code>.</p>
 <div class="highlight"><pre><span></span><code>flowchart TD
-    LS[&quot;load_safetensors(name, network_on_disk)&quot;] --&gt; C{&quot;name in lora_cache?&quot;}
-    C --&gt;|yes| RET[&quot;return cached Network&quot;]
-    C --&gt;|no| D{&quot;sd_model_type in _NATIVE_DISPATCH?&quot;}
-    D --&gt;|yes| PA[&quot;import pipelines/&amp;lt;arch&amp;gt;/&amp;lt;arch&amp;gt;_lora.py&quot;]
-    PA --&gt; TL[&quot;mod.try_load -&gt; native_adapter.try_load_chain&quot;]
-    TL --&gt; NET1[&quot;Network with NetworkModule per matched key&quot;]
-    D --&gt;|no| GEN[&quot;generic key-parsing loop&quot;]
-    GEN --&gt; KC[&quot;lora_convert.KeyConvert maps keys to model modules&quot;]
-    KC --&gt; MT[&quot;l.module_types create_module per match&quot;]
-    MT --&gt; NET2[&quot;Network with NetworkModule per matched key&quot;]
+    LS["load_safetensors(name, network_on_disk)"] --&gt; C{"name in lora_cache?"}
+    C --&gt;|yes| RET["return cached Network"]
+    C --&gt;|no| D{"sd_model_type in _NATIVE_DISPATCH?"}
+    D --&gt;|yes| PA["import pipelines/&amp;lt;arch&amp;gt;/&amp;lt;arch&amp;gt;_lora.py"]
+    PA --&gt; TL["mod.try_load -&gt; native_adapter.try_load_chain"]
+    TL --&gt; NET1["Network with NetworkModule per matched key"]
+    D --&gt;|no| GEN["generic key-parsing loop"]
+    GEN --&gt; KC["lora_convert.KeyConvert maps keys to model modules"]
+    KC --&gt; MT["l.module_types create_module per match"]
+    MT --&gt; NET2["Network with NetworkModule per matched key"]
 </code></pre></div>
 <p>Per-arch native adapters cover the arches in <code>_NATIVE_DISPATCH</code>: <code>zimage</code>, <code>chroma</code>, <code>ernieimage</code>, <code>f2</code>, <code>anima</code>. Each maps to a module exposing <code>try_load(name, network_on_disk, lora_scale)</code>.</p>
 <p>The generic loop covers the remaining native-eligible arches (<code>sd</code>, <code>sdxl</code>, <code>sd3</code>, <code>f1</code>):</p>
@@ -4700,8 +4700,8 @@
     class ModuleType {
         create_module()
     }
-    NetworkOnDisk &quot;1&quot; --&gt; &quot;*&quot; Network : loaded into
-    Network &quot;1&quot; --&gt; &quot;*&quot; NetworkModule : modules
+    NetworkOnDisk "1" --&gt; "*" Network : loaded into
+    Network "1" --&gt; "*" NetworkModule : modules
     ModuleType ..&gt; NetworkModule : creates
     NetworkModule &lt;|-- NetworkModuleLora
     NetworkModule &lt;|-- NetworkModuleLokr
@@ -4721,15 +4721,15 @@
 <h2 id="apply-and-restore">Apply and restore</h2>
 <p><code>network_activate</code> iterates every module of the active components (<code>text_encoder*</code>, <code>unet</code>, <code>transformer*</code>, <code>llm_adapter</code>). For each module that carries a <code>network_layer_name</code> and whose <code>network_current_names</code> differ from the wanted set, it backs up, computes the combined delta, and applies it.</p>
 <div class="highlight"><pre><span></span><code>flowchart TD
-    NA[&quot;network_activate&quot;] --&gt; IT[&quot;for each module with network_layer_name&quot;]
-    IT --&gt; SK{&quot;current_names == wanted_names?&quot;}
-    SK --&gt;|yes| NEXT[&quot;skip&quot;]
-    SK --&gt;|no| BK[&quot;network_backup_weights&quot;]
-    BK --&gt; CW[&quot;network_calc_weights: sum updown over loaded_networks&quot;]
-    CW --&gt; FU{&quot;opts.lora_fuse_native?&quot;}
-    FU --&gt;|yes| AD[&quot;network_apply_direct: write delta into weight&quot;]
-    FU --&gt;|no| AW[&quot;network_apply_weights: restore from backup then add delta&quot;]
-    AD --&gt; MARK[&quot;set network_current_names = wanted_names&quot;]
+    NA["network_activate"] --&gt; IT["for each module with network_layer_name"]
+    IT --&gt; SK{"current_names == wanted_names?"}
+    SK --&gt;|yes| NEXT["skip"]
+    SK --&gt;|no| BK["network_backup_weights"]
+    BK --&gt; CW["network_calc_weights: sum updown over loaded_networks"]
+    CW --&gt; FU{"opts.lora_fuse_native?"}
+    FU --&gt;|yes| AD["network_apply_direct: write delta into weight"]
+    FU --&gt;|no| AW["network_apply_weights: restore from backup then add delta"]
+    AD --&gt; MARK["set network_current_names = wanted_names"]
     AW --&gt; MARK
 </code></pre></div>
 <p><code>network_calc_weights</code> walks <code>l.loaded_networks</code> (or <code>previously_loaded_networks</code> when <code>use_previous</code> is set), pulls each network's <code>NetworkModule</code> for this layer, calls <code>calc_updown</code>, scales by the module multiplier, and accumulates one combined delta. It dequantizes through the SDNQ backup when the target weight is quantized.</p>
