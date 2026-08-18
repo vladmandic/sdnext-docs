@@ -2405,6 +2405,23 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-class-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-class prompts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Per-class prompts">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#segmentation" class="md-nav__link">
     <span class="md-ellipsis">
@@ -2440,6 +2457,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4441,6 +4486,23 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-class-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-class prompts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Per-class prompts">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#segmentation" class="md-nav__link">
     <span class="md-ellipsis">
@@ -4476,6 +4538,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4556,6 +4646,19 @@ Detailer prompt:
 </code></pre></div>
 <p>If you have 2 models and 3 detected objects, the first model uses the first 3 lines (one per object), and the second model uses the next 3 lines (one per object).</p>
 <p>The same rule applies to negative prompts.</p>
+<h2 id="per-class-prompts">Per-class prompts</h2>
+<p>When using a multi-class model (or several models with different classes), prompt lines can be assigned to detections by class name instead of by line position<br />
+Prefix a line with [CLASS=name] to route that line's prompt to any detection whose class matches name:  </p>
+<blockquote>
+<p>[CLASS=face] detailed eyes, sharp iris<br />
+[CLASS=hand] five fingers, correct anatomy  </p>
+</blockquote>
+<p>Class names are matched case-insensitively against the classes listed in logs when the model loads<br />
+Multiple classes can share one line: [CLASS=head,face] ....<br />
+Lines without a [CLASS=...] tag are used as before — assigned by position to any detection with no matching class tag  </p>
+<p>If a [CLASS=name] tag never matches a detection, a warning is logged in case it's a typo  </p>
+<p>The same syntax applies to negative prompts.</p>
+<p>Note: Per-class prompts are not compatible with Merge detailers — merging combines all detections from a model into a single region, so per-class targeting no longer applies.</p>
 <h3 id="segmentation">Segmentation</h3>
 <p>Some Detailer models can output segmentation masks, not just bounding boxes.
 To use segmentation masks, enable <strong>Use segmentation</strong>.
@@ -4570,13 +4673,29 @@ Some models support multiple classes, and you can choose which <strong>classes</
 <code>yolo11m</code> is one example of a multi-class model.
 When using a multi-class model, available classes are listed in logs at runtime.</p>
 <h2 id="models">Models</h2>
-<p>SD.Next includes several pre-defined single-class Detailer models:
+<h3 id="yolo">YOLO</h3>
+<p>Typical Detailer models are from the YOLO model family, which is a popular object detection framework.
+SD.Next includes several pre-defined single-class Detailer models:
   <code>face-yolo8n</code>, <code>hand_yolov8n</code>, <code>person_yolov8n-seg</code>, <code>eyes-v1</code>, <code>eyes-full-v1</code><br />
 And one multi-class model:
   <code>yolo11m</code></p>
 <p>Additional models can be added by downloading a pretrained model and placing it in the folder specified in <em>Settings -&gt; System paths -&gt; Yolo models</em> (default: <code>models/yolo</code>).</p>
-<p>Compatible models are from the YOLO model family.
-Models from other families, such as MediaPipe, are not supported.</p>
+<h3 id="transformers">Transformers</h3>
+<p>In addition to YOLO models, Detailer can also use as several transformers-based models, some specific to vision-language tasks, and some for open-vocabulary detection and segmentation.:<br />
+- <a href="https://huggingface.co/facebook/sam3">Facebook-SAM3</a> hybrid promptable concept segmentation and detection network
+- <a href="https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct">Qwen3-VL</a> vision-language autoregressive foundation models, in <em>2B, 4B, and 8B</em> variants
+- <a href="https://huggingface.co/microsoft/Florence-2-large">Florence-2</a> lightweight multi-task vision sequence-to-sequence models, in <em>base and large</em> variants
+- <a href="https://huggingface.co/IDEA-Research/grounding-dino-base">Grounding-DINO</a> open-vocabulary object detection models, in <em>tiny and base</em> variants</p>
+<p>Select any of the above models in the detailer model selection dropdown<br />
+and enter your human-readable target descriptions as <em>detailer instructions</em>  </p>
+<p>For example:</p>
+<blockquote>
+<p><em>glasses, optional hat, left hand, largest tree in the background</em>  </p>
+</blockquote>
+<p>Notes:
+- VL models are much larger, so use them with caution<br />
+- LLMs process data sequentially, meaning if a model cannot find one specific item, it may skip subsequent items in the prompt<br />
+- SAM3 is a <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated model</a>  </p>
 <h2 id="expert-mode">Expert Mode</h2>
 <p>The model list is usually shown as a dropdown where one or more models can be selected.
 You can also use the button next to the list to switch to a text box for manual model input and optional parameters.

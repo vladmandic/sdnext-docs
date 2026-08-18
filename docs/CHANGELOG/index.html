@@ -4184,10 +4184,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-17" class="md-nav__link">
+  <a href="#update-for-2026-08-18" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-17
+        Update for 2026-08-18
       
     </span>
   </a>
@@ -6721,10 +6721,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-17" class="md-nav__link">
+  <a href="#update-for-2026-08-18" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-17
+        Update for 2026-08-18
       
     </span>
   </a>
@@ -9250,7 +9250,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-08-17">Update for 2026-08-17</h2>
+<h2 id="update-for-2026-08-18">Update for 2026-08-18</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/MiniMaxAI/MiniMax-H3">MiniMax H3</a> available in <em>base</em> and <em>ref</em> variants<br />
@@ -9262,21 +9262,20 @@
     with support for <em>t2v, i2v, cond2v</em> workflows<br />
     see <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTX docs page</a> for details and usage instructions<br />
 <em>note</em>: LTX-2.5 is a <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated model</a>  </li>
+<li><a href="https://github.com/rootonchair/nunchaku-lite">Nunchaku Lite</a> now includes <a href="https://huggingface.co/lite-infer/krea-2-turbo-nunchaku-lite-int4_r32-bnb4-text-encoder">Krea 2 Turbo</a> and <a href="https://huggingface.co/lite-infer/flux.2-klein-4b-nunchaku-lite-int4_r32-bnb4-text-encoder">Flux.2-Klein</a> 4B and 9B<br />
+    Nunchaku-lite engine offers significant speed up through heavily optimized quants and kernels for nvidia gpus  </li>
 <li><strong>Detailer</strong>: Pretty much <em>detailer.next</em> :)<br />
   Detailer detection models were traditionally <em>YOLO</em> models, but now we can also use:  </li>
 <li><a href="https://huggingface.co/facebook/sam3">Facebook-SAM3</a> hybrid promptable concept segmentation and detection network</li>
 <li><a href="https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct">Qwen3-VL</a> vision-language autoregressive foundation models, in <em>2B, 4B, and 8B</em> variants</li>
 <li><a href="https://huggingface.co/microsoft/Florence-2-large">Florence-2</a> lightweight multi-task vision sequence-to-sequence models, in <em>base and large</em> variants</li>
-<li><a href="https://huggingface.co/IDEA-Research/grounding-dino-base">Grounding-DINO</a> open-vocabulary object detection models, in <em>tiny and base</em> variants</li>
+<li><a href="https://huggingface.co/IDEA-Research/grounding-dino-base">Grounding-DINO</a> open-vocabulary object detection models, in <em>tiny and base</em> variants  </li>
 </ul>
-<p>select any of the above models in the detailer model selection dropdown<br />
-  and enter your human-readable target descriptions as <em>detailer instructions</em><br />
-  for example: <em>glasses, optional hat, left hand, largest tree in the background</em><br />
-<em>note</em>: VL models are much larger, so use them with caution<br />
-<em>note</em>: LLMs process data sequentially, meaning if a model cannot find one specific item, it may skip subsequent items in the prompt<br />
-<em>note</em>: SAM3 is a <a href="https://vladmandic.github.io/sdnext-docs/Gated/">gated model</a><br />
+<p>additionally, detailer can now use per-class prompts, thanks @kirtasshh<br />
+  see <a href="https://vladmandic.github.io/sdnext-docs/Detailer">Detailer wiki page</a> for details and usage instructions
 - <a href="https://github.com/Disty0/sdnq">SDNQ</a> is now a separate package and no longer part of sdnext repo<br />
   installed and used internally by sd.next, but also supported by diffusers natively<br />
+  and sdnq development brings a lot of new optimizations, in both quantization and attention mechanisms<br />
 - <strong>Server</strong>
   - nunchaku-lite support for <code>torch==2.13</code>
   - update handlers for all authenticated workflows
