@@ -9274,7 +9274,8 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="highlights-for-2026-08-21">Highlights for 2026-08-21</h2>
 <p>Time for a new release, this is a larger one!
-Main focus is improving video workflows which also brings full support for new <a href="https://vladmandic.github.io/sdnext-docs/MiniMax">MiniMax H3</a> and <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTXVideo-2.5</a></p>
+Main focus is improving video workflows which also brings full support for new <a href="https://vladmandic.github.io/sdnext-docs/MiniMax">MiniMax H3</a> and <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTXVideo-2.5</a><br />
+and improves general video processing with flexible video upscaling, updated interpolation, etc.</p>
 <p><em>What else?</em>
 - <a href="https://vladmandic.github.io/sdnext-docs/Detailer">Detailer.next</a> with new support for <em>vision-language models</em> and <em>per-class prompts</em>
 - New <a href="https://vladmandic.github.io/sdnext-docs/Offload/#group">group offload</a> option which is more aggressive than the default balanced offload
@@ -9325,12 +9326,16 @@ Main focus is improving video workflows which also brings full support for new <
 - <strong>Video</strong>
   - reorganized <em>video</em> tab
   - better support for video codeces and formats
+  - add flexible video upscaling as video generation step<br />
+    see <a href="https://vladmandic.github.io/sdnext-docs/Video">Video wiki page</a> for details and recommended upscaling models<br />
+  - improved interpolation
   - add <em>generate forever</em> button
 - <strong>Upscalers</strong>
   - update <em>spandrel</em> integration<br />
     moving forward, spandrel engine will be main upscaling engine for sdnext<br />
     when downloading any upscaling models manually, place them in <code>models/Spandrel</code> folder<br />
-  - add several compact/light upscalers that are better suited for video upscaling<br />
+  - update <em>chainner</em> integration
+  - add several low-latency upscalers that are better suited for video upscaling<br />
 - <strong>API</strong>
   - full support for video generation using api<br />
     new endpoints: <code>/sdapi/v1/video</code>, <code>/sdapi/v1/video/models</code>, <code>/sdapi/v1/video/file</code><br />
