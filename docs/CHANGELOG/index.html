@@ -9280,7 +9280,8 @@ and improves general video processing with flexible video upscaling, updated int
 - <a href="https://vladmandic.github.io/sdnext-docs/Detailer">Detailer.next</a> with new support for <em>vision-language models</em> and <em>per-class prompts</em>
 - New <a href="https://vladmandic.github.io/sdnext-docs/Offload/#group">group offload</a> option which is more aggressive than the default balanced offload
 - Extended model support for <a href="https://github.com/rootonchair/nunchaku-lite">Nunchaku-Lite</a> engine
-- A lot of <a href="https://github.com/Disty0/sdnq">SDNQ</a> <em>quantization and attention</em> optimizations and features</p>
+- A lot of <a href="https://github.com/Disty0/sdnq">SDNQ</a> <em>quantization and attention</em> optimizations and features
+- Updated <a href="https://github.com/vladmandic/sdnext-launcher">SD.Next Launcher</a></p>
 <p>Plus quite a lot more, see full <a href="https://github.com/vladmandic/automatic/blob/dev/CHANGELOG.md">changelog</a> for details!</p>
 <p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
 <h2 id="details-for-2026-08-22">Details for 2026-08-22</h2>
@@ -9323,6 +9324,7 @@ and improves general video processing with flexible video upscaling, updated int
     reduces memory spikes during model load at the cost of disk i/o and slower load times<br />
   - use <code>GRADIO_TEMP_DIR</code> env variable for temp folder if set
   - update ui login form
+  - update file logging
 - <strong>Video</strong>
   - reorganized <em>video</em> tab
   - better support for video codeces and formats
@@ -9379,7 +9381,8 @@ and improves general video processing with flexible video upscaling, updated int
   - scripts: mixture-of-diffusers and mixture-tiling update to use igwn-segments
   - api: process
   - api: auth via remote-ip
-  - krea2: fallback to base pipeline/transformer for nunchaku-lite</p>
+  - krea2: fallback to base pipeline/transformer for nunchaku-lite
+  - torchsde: handle obsolete dependency</p>
 <h2 id="update-for-2026-08-07">Update for 2026-08-07</h2>
 <h3 id="highlights-for-2026-08-07">Highlights for 2026-08-07</h3>
 <p>This release brings <strong>Sefi-Image</strong> and <strong>Mage-Flow</strong> models, plus a new <strong>Nunchaku-Lite</strong> inference engine<br />
