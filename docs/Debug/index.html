@@ -4179,6 +4179,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#override-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Override variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime / workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#core-processing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4353,6 +4375,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#override-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Override variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime / workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#core-processing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4480,7 +4524,57 @@ webui.sh --debug  </p>
 <li><code>SD_LOAD_DEBUG</code>: report all model loading operations as they happen</li>
 <li><code>SD_PIP_DEBUG</code>: report details about all pip operations</li>
 <li><code>SD_CONFIG_DEBUG</code>: report all configuration processing requests</li>
+<li><code>SD_ENV_DEBUG</code>: trace environment detection and startup behavior</li>
+<li><code>SD_PLATFORM_DEBUG</code>: trace platform/device initialization</li>
+<li><code>SD_TORCH_DEBUG</code>: trace PyTorch internal initialization</li>
+<li><code>SD_TRANSFORMERS_DEBUG</code>: trace Transformers internal operations</li>
+<li><code>SD_QUEUE_DEBUG</code>: debug request queue behavior</li>
+<li><code>SD_METADATA_DEBUG</code>: trace image metadata read/write operations</li>
+<li><code>SD_MOVE_VERBOSE</code>: print more verbose model move information</li>
+<li><code>SD_COMPILE_DEBUG</code>: trace model compile/optimization operations</li>
+<li><code>SD_CAPTION_DEBUG</code>: enable captioning subsystem debug logs</li>
+<li><code>SD_SECRETS_DEBUG</code>: trace secrets handling operations</li>
+<li><code>SD_UI_DEBUG</code>: trace UI load/save debug operations</li>
 </ul>
+<h3 id="override-variables">Override variables</h3>
+<p>These environment variables override paths and configuration files used by SD.Next.</p>
+<ul>
+<li><code>SD_MODEL</code>: load a specific checkpoint on startup</li>
+<li><code>SD_DATADIR</code>: override the base user data directory</li>
+<li><code>SD_MODELSDIR</code>: override the default models directory</li>
+<li><code>SD_EMBEDDINGSDIR</code>: override the embeddings directory</li>
+<li><code>SD_VAEDIR</code>: override the VAE directory</li>
+<li><code>SD_LORADIR</code>: override the LoRA directory</li>
+<li><code>SD_EXTENSIONSDIR</code>: override the extensions directory</li>
+<li><code>SD_CONFIG</code>: use a custom configuration file</li>
+<li><code>SD_SECRETS</code>: use a custom secrets file</li>
+<li><code>SD_UICONFIG</code>: use a custom UI configuration file</li>
+<li><code>SD_PATH_PARAMS</code>: override the <code>params.txt</code> file path</li>
+<li><code>SD_HFCACHEDIR</code>: override the HuggingFace cache directory</li>
+</ul>
+<h3 id="runtime-workflow">Runtime / workflow</h3>
+<p>The following environment variables can change startup behavior, server settings, and workflow execution.</p>
+<ul>
+<li><code>SD_FREEZE</code>: disable editing settings</li>
+<li><code>SD_MEDVRAM</code>: enable medium VRAM mode</li>
+<li><code>SD_LOWVRAM</code>: enable low VRAM mode</li>
+<li><code>SD_DISABLE</code>: disable specific UI tabs</li>
+<li><code>SD_NO_CACHE</code>: disable file caching</li>
+<li><code>SD_KANVAS_DISABLE</code>: disable Kanvas extension support</li>
+<li><code>SD_VAE_DEFAULT</code>: force default VAE output mode</li>
+<li><code>SD_PORT</code>: override the web server port</li>
+<li><code>SD_SERVERNAME</code>: override the server hostname</li>
+<li><code>SD_SUBPATH</code>: set the URL subpath for reverse proxies</li>
+<li><code>SD_THEME</code>: override the UI theme</li>
+<li><code>SD_LOCALE</code>: override the UI locale</li>
+<li><code>SD_AUTH</code>: set basic auth credentials</li>
+<li><code>SD_AUTHFILE</code>: set an auth credentials file</li>
+<li><code>SD_MONITOR</code>: enable memory monitoring mode</li>
+<li><code>SD_STATUS</code>: enable server status check mode</li>
+</ul>
+<blockquote>
+<p>Note: <code>SD_INSTALL_QUIET</code> is primarily used in test environments to suppress installer output and is not a normal runtime debug flag.</p>
+</blockquote>
 <h3 id="core-processing">Core processing</h3>
 <ul>
 <li><code>SD_DISABLE_PBAR</code>: disable progress bar for all operations</li>
@@ -4499,6 +4593,8 @@ webui.sh --debug  </p>
 <ul>
 <li><code>SD_EN_DEBUG</code>: report all extra networks operations as they happen</li>
 <li><code>SD_LORA_DEBUG</code>: increase verbosity of LoRA loading and execution</li>
+<li><code>SD_LORA_DUMP</code>: dump LoRA key information during loading</li>
+<li><code>SD_TI_DEBUG</code>: enable textual inversion debug traces</li>
 </ul>
 <h3 id="other">Other</h3>
 <ul>
@@ -4513,6 +4609,8 @@ webui.sh --debug  </p>
 <li><code>SD_PULID_DEBUG</code>: debug logging for pulid operations</li>
 <li><code>SD_PREVIEW_DEBUG</code>: debug logging for live preview operations</li>
 <li><code>SD_LLM_DEBUG</code>: debug logging for LLM operations</li>
+<li><code>SD_XYZ_DEBUG</code>: enable XYZ script debug traces</li>
+<li><code>SD_GRADING_DEBUG</code>: enable grading processing debug logs</li>
 </ul>
 <p>Example <em>Windows</em>:</p>
 <blockquote>
@@ -4529,6 +4627,13 @@ webui.sh --debug  </p>
 <p>To run <strong>SD.Next</strong> in profiling mode, start it with <code>--profile</code> flag<br />
 This adds CPU/GPU and memory overhead, so it is not recommended for daily use.<br />
 SD.Next will collect profiling information from both Python, Torch and CUDA and print it upon completion of specific operations  </p>
+<p>Use environment variables to control profiler behavior:</p>
+<ul>
+<li><code>SD_PROFILE_FLOPS</code>: enable FLOPs profiling</li>
+<li><code>SD_PROFILE_SHAPES</code>: record tensor shapes during profiling</li>
+<li><code>SD_PROFILE_STACK</code>: enable stack tracing in the profiler</li>
+<li><code>SD_PROFILE_FOLDER</code>: write profiler trace output to the given folder</li>
+</ul>
 <p>Example:</p>
 <blockquote>
 <p>webui.bat --debug --profile<br />
