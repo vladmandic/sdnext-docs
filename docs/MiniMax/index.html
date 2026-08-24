@@ -4554,21 +4554,22 @@ Depending on quantization and offloading methods, MiniMax-H3 can run comfortably
 <p><em>for more information see <a href="../Offload/">Offloading Wiki</a></em></p>
 <h2 id="variants">Variants</h2>
 <p>MiniMax H3 has two separate variants which use different transformers weights:
-- <em>base</em>: <strong>fl2va</strong>: used for text-to-video, image-to-video and first-last-frame-to-video video generation
-- <em>ref</em>: <strong>ref2va</strong>: used for reference-based video generation</p>
-<p>both <em>base</em> and <em>ref</em> variants use the same text-encoder weights, but have different transformer weights  </p>
-<p><strong>pruned</strong>: Also, both <em>base</em> and <em>ref</em> variants are available in a <em>pruned</em> variant which is slightly smaller as parts of the transformer model are pruned/removed.</p>
-<p>depending on which variant you load, you will have access to different workflows</p>
+- <em>base</em>: used for text-to-video (<strong>t2va</strong>), image-to-video (<strong>i2va</strong>) and first-last-frame-to-video (<strong>fl2va</strong>) video generation<br />
+- <em>ref</em>: used for reference-based (<strong>ref2va</strong>) video generation</p>
+<p><em>Notes</em>:
+- both <em>base</em> and <em>ref</em> variants use the same text-encoder weights, but have different transformer weights<br />
+- both <em>base</em> and <em>ref</em> variants are available in a <em>pruned</em> variant which is slightly smaller as parts of the transformer model are pruned/removed  </p>
+<p>depending on which variant you load, you will have access to different workflows  </p>
 <h3 id="base-workflows">Base workflows</h3>
 <p>available if <em>base</em> model is loaded
 - <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md">prompting guide</a>
-- <em>text-to-video</em> is used when there are no input images provided
-- <em>image-to-video</em> is used when a single input image is provided
-- <em>first-last-frame-to-video</em> is used when two input images are provided</p>
+- <strong>t2va</strong>: <em>text-to-video</em> is used when there are no input images provided
+- <strong>i2va</strong>: <em>image-to-video</em> is used when a single input image is provided
+- <strong>fl2va</strong>: <em>first-last-frame-to-video</em> is used when two input images are provided</p>
 <h3 id="ref-workflows">Ref workflows</h3>
 <p>available if <em>ref</em> model is loaded
 - <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md">prompting guide</a>
-- <em>reference-to-video</em>  </p>
+- <strong>ref2va</strong>: <em>reference-to-video</em></p>
 <p>in <em>ref2va</em> workflow, you can upload any combination of:
 - 9 reference images
 - 3 reference videos
