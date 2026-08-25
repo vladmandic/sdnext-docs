@@ -4391,15 +4391,20 @@ Balanced offload works differently than all other offloading methods as it perfo
 <p>Group offloading partitions a sub-model’s layers into smaller clusters, dynamically loading one group into GPU memory for execution while offloading the inactive groups back to CPU RAM.<br />
 Unlike standard balanced offloading—which swaps entire sub-networks like the text encoder, UNet, or VAE sequentially—group offloading operates at a finer granularity within the transformer or attention blocks themselves.<br />
 This provides a middle ground between full model offloading and ultra-granular sequential layer offloading.  </p>
+<p>Group offloading comes with two modes: <code>leaf_level</code> and <code>block_level</code>:
+- <strong>block-level</strong> offloading swaps entire transformer layers or module groups in larger bulk transfers to balance low VRAM usage with fast asynchronous streaming
+- <strong>leaf-level</strong> offloading swaps parameters down to individual primitive layers (like single linear or convolution weights) for absolute minimum VRAM footprint at the cost of significantly higher overhead</p>
+<p>Group offloading performance can be improved by enabling streams usage, both prefetch and overlap, but at the cost of increased VRAM usage</p>
 <h3 id="sequential">Sequential</h3>
 <p>Works layer by layer for each model component marked as offload-compatible.</p>
 <ul>
-<li>Recommended for very low VRAM, around 4 GB or less.</li>
-<li>Much slower, but can run large models such as FLUX on GPUs with 2-4GB VRAM.</li>
+<li>Recommended for very low VRAM, around 4 GB or less</li>
+<li>Much slower, but can run large models such as FLUX on GPUs with 2-4GB VRAM</li>
+<li>Not supported by all models</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Using <code>--lowvram</code> automatically enables sequential offload.</p>
+<p>Using <code>--lowvram</code> automatically enables sequential offload</p>
 </div>
 <h3 id="model">Model</h3>
 <p>Works at the model-component level by offloading components marked as offload-compatible.
