@@ -4184,10 +4184,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#highlights-for-2026-08-25" class="md-nav__link">
+  <a href="#highlights-for-2026-08-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-08-25
+        Highlights for 2026-08-26
       
     </span>
   </a>
@@ -4195,10 +4195,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details-for-2026-08-25" class="md-nav__link">
+  <a href="#details-for-2026-08-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-08-25
+        Details for 2026-08-26
       
     </span>
   </a>
@@ -6732,10 +6732,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#highlights-for-2026-08-25" class="md-nav__link">
+  <a href="#highlights-for-2026-08-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-08-25
+        Highlights for 2026-08-26
       
     </span>
   </a>
@@ -6743,10 +6743,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#details-for-2026-08-25" class="md-nav__link">
+  <a href="#details-for-2026-08-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-08-25
+        Details for 2026-08-26
       
     </span>
   </a>
@@ -9272,7 +9272,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="highlights-for-2026-08-25">Highlights for 2026-08-25</h2>
+<h2 id="highlights-for-2026-08-26">Highlights for 2026-08-26</h2>
 <p>Time for a new release, this is a larger one!
 Main focus is improving video workflows which also brings full support for new <a href="https://vladmandic.github.io/sdnext-docs/MiniMax">MiniMax H3</a> and <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTXVideo-2.5</a><br />
 and improves general video processing with flexible video upscaling, updated interpolation, etc.</p>
@@ -9284,7 +9284,7 @@ and improves general video processing with flexible video upscaling, updated int
 - Updated <a href="https://github.com/vladmandic/sdnext-launcher">SD.Next Launcher</a></p>
 <p>Plus quite a lot more, see full <a href="https://github.com/vladmandic/automatic/blob/dev/CHANGELOG.md">changelog</a> for details!</p>
 <p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h2 id="details-for-2026-08-25">Details for 2026-08-25</h2>
+<h2 id="details-for-2026-08-26">Details for 2026-08-26</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/MiniMaxAI/MiniMax-H3">MiniMax H3</a> available in <em>base</em> and <em>ref</em> variants<br />
@@ -9311,7 +9311,7 @@ and improves general video processing with flexible video upscaling, updated int
   installed and used internally by sd.next, but also supported by diffusers natively<br />
   and sdnq development brings a lot of new optimizations, in both quantization and attention mechanisms<br />
 - <strong>Compute</strong>
-  - torch-rocm for windows switch to <em>whl-multi-arch</em> distribution<br />
+  - torch-rocm for windows switch to <a href="https://repo.amd.com/rocm/whl-multi-arch/">whl-multi-arch</a> distribution and pin to <code>torch==2.12</code> with <code>rocm==7.14</code>
   - nunchaku-lite support for <code>torch==2.13</code>
 - <strong>Server</strong>
   - update handlers for all authenticated workflows
@@ -9347,6 +9347,9 @@ and improves general video processing with flexible video upscaling, updated int
   - allowed path validation for endpoints that get/put files
   - log auth methods
 - <strong>Other</strong>
+  - support for <code>.heic</code> and <code>.heif</code> image formats<br />
+    standard file save and load, including exif metadata<br />
+<em>note</em>: heif is not natively supported in <em>chrome</em>, so support includes on-the-fly conversion<br />
   - Krea2: add <em>settings -&gt; model options -&gt; krea2 dense masking</em>
     may provide significant speed-up on some gpus, disabled by default<br />
   - AR display ratio on manual resolution change
@@ -9388,7 +9391,8 @@ and improves general video processing with flexible video upscaling, updated int
   - upscaler: avoid unnecessary multi-pass
   - ideogram4: fix callback
   - xyzgrid: fix seed/prompt/negative handling, thanks @QuintusAntonius
-  - vram: skip reset</p>
+  - vram: skip reset
+  - heic: switch to pillow-heif handler</p>
 <h2 id="update-for-2026-08-07">Update for 2026-08-07</h2>
 <h3 id="highlights-for-2026-08-07">Highlights for 2026-08-07</h3>
 <p>This release brings <strong>Sefi-Image</strong> and <strong>Mage-Flow</strong> models, plus a new <strong>Nunchaku-Lite</strong> inference engine<br />
