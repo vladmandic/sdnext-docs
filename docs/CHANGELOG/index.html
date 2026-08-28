@@ -4184,10 +4184,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-27" class="md-nav__link">
+  <a href="#update-for-2026-08-28" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-27
+        Update for 2026-08-28
       
     </span>
   </a>
@@ -6760,10 +6760,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-27" class="md-nav__link">
+  <a href="#update-for-2026-08-28" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-27
+        Update for 2026-08-28
       
     </span>
   </a>
@@ -9328,20 +9328,29 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-08-27">Update for 2026-08-27</h2>
+<h2 id="update-for-2026-08-28">Update for 2026-08-28</h2>
 <ul>
 <li><strong>LoRA</strong></li>
-<li>new calibration engine that allows lora to be applied with far smaller error when dealing with highly quantized models</li>
 <li>new apply engine that allows lora to be applied much faster</li>
-<li><em>note</em>: calibration data is stored once calculated so it can be reused for future runs, location is <code>models/calibration</code> folder  </li>
+<li>new calibration engine that allows lora to be applied with far smaller error when dealing with highly quantized models</li>
+<li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/LoRA">LoRA docs</a> for details and usage instructions</li>
+<li><em>note</em>: calibration data is stored once calculated so it can be reused for future runs<br />
+    location is <code>models/calibration</code> folder  </li>
+<li>new factor cache that allows lora effects to be pre-calculated and persistently cached for future runs<br />
+    location is <code>models/lora-factor-cache</code> folder  </li>
+<li><strong>Attention</strong></li>
+<li>new <code>sparse-attention</code> method that can be combined with other attention methods<br />
+    to reduce memory usage and improve performance on large models<br />
+<em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Attention">Attention docs</a> for details and usage instructions  </li>
 <li><strong>Internal</strong></li>
+<li>modular pipelines intercept and profiling hooks</li>
 <li>attention mechanisms decision tree and apply method refactor</li>
 </ul>
 <h2 id="update-for-2026-08-26">Update for 2026-08-26</h2>
 <h3 id="highlights-for-2026-08-26">Highlights for 2026-08-26</h3>
 <p>Time for a new release, <em>this is a large one</em>!
 Main focus is improving video workflows which also brings full support for new <a href="https://vladmandic.github.io/sdnext-docs/MiniMax">MiniMax H3</a> and <a href="https://vladmandic.github.io/sdnext-docs/LTX">LTXVideo-2.5</a><br />
-and improves general video processing with flexible video upscaling, updated interpolation, etc.</p>
+and improvements to general video processing with flexible video upscaling, updated interpolation, etc.</p>
 <p><em>What else?</em>
 - <a href="https://vladmandic.github.io/sdnext-docs/Detailer">Detailer.next</a> with new support for <em>vision-language models</em> and <em>per-class prompts</em>
 - New <a href="https://vladmandic.github.io/sdnext-docs/Offload/#group">group offload</a> option which is more aggressive than the default balanced offload
