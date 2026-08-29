@@ -9344,11 +9344,15 @@
 <li>per-block strength</li>
 <li><strong>Attention</strong></li>
 <li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Attention">Attention docs</a> for details and usage instructions<br />
-<em>note</em>: attention now has its own settings section in <em>settings -&gt; cross attention</em>  </li>
+<em>note</em>: attention now has its own settings section in <em>settings -&gt; cross attention</em><br />
+<em>note</em>: this is a breaking change - if you had custom attention settings in previous releases, you will need to re-apply them in the new settings section  </li>
 <li>new <code>sparse-attention</code> method that can be combined with other attention methods<br />
     to reduce memory usage and improve performance on large models  </li>
 <li><strong>Internal</strong></li>
 <li>modular pipelines intercept and profiling hooks</li>
+<li>modular pipelines convert standard model on-demand </li>
+<li>modular pipelines previews</li>
+<li>modular pipelines basic guidance</li>
 <li>attention mechanisms decision tree and apply method refactor</li>
 </ul>
 <h2 id="update-for-2026-08-26">Update for 2026-08-26</h2>
