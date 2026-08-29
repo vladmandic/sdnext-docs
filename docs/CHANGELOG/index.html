@@ -4184,10 +4184,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-28" class="md-nav__link">
+  <a href="#update-for-2026-08-29" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-28
+        Update for 2026-08-29
       
     </span>
   </a>
@@ -6760,10 +6760,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-28" class="md-nav__link">
+  <a href="#update-for-2026-08-29" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-28
+        Update for 2026-08-29
       
     </span>
   </a>
@@ -9328,20 +9328,25 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-08-28">Update for 2026-08-28</h2>
+<h2 id="update-for-2026-08-29">Update for 2026-08-29</h2>
 <ul>
 <li><strong>LoRA</strong></li>
+<li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/LoRA">LoRA docs</a> for all of the improvements and usage instructions<br />
+<em>note</em>: lora now has its own settings section in <em>settings -&gt; lora</em></li>
 <li>new apply engine that allows lora to be applied much faster</li>
 <li>new calibration engine that allows lora to be applied with far smaller error when dealing with highly quantized models</li>
-<li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/LoRA">LoRA docs</a> for details and usage instructions</li>
 <li><em>note</em>: calibration data is stored once calculated so it can be reused for future runs<br />
     location is <code>models/calibration</code> folder  </li>
 <li>new factor cache that allows lora effects to be pre-calculated and persistently cached for future runs<br />
     location is <code>models/lora-factor-cache</code> folder  </li>
+<li>multi-network stack modes<br />
+    can significantly improve lora quality when using multiple loras at once  </li>
+<li>per-block strength</li>
 <li><strong>Attention</strong></li>
+<li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Attention">Attention docs</a> for details and usage instructions<br />
+<em>note</em>: attention now has its own settings section in <em>settings -&gt; cross attention</em>  </li>
 <li>new <code>sparse-attention</code> method that can be combined with other attention methods<br />
-    to reduce memory usage and improve performance on large models<br />
-<em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Attention">Attention docs</a> for details and usage instructions  </li>
+    to reduce memory usage and improve performance on large models  </li>
 <li><strong>Internal</strong></li>
 <li>modular pipelines intercept and profiling hooks</li>
 <li>attention mechanisms decision tree and apply method refactor</li>
@@ -11167,7 +11172,7 @@ And check out new <strong>history</strong> tab in the right panel, it now shows 
 <em>note</em>: this does not impact the actual image resolution, only the resolution at which detailer internally operates  </li>
 <li>refactor reuse-seed and add functionality to all tabs  </li>
 <li>refactor modernui js codebase  </li>
-<li>move zluda flash attenion to <em>Triton Flash attention</em> option  </li>
+<li>move zluda flash attenion to <em>Triton AMD Flash attention</em> option  </li>
 <li>remove samplers filtering  </li>
 <li>allow both flow-matching and discrete samplers for sdxl models  </li>
 <li>cleanup command line parameters  </li>
