@@ -4184,10 +4184,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-29" class="md-nav__link">
+  <a href="#update-for-2026-08-30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-29
+        Update for 2026-08-30
       
     </span>
   </a>
@@ -6760,10 +6760,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-29" class="md-nav__link">
+  <a href="#update-for-2026-08-30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-29
+        Update for 2026-08-30
       
     </span>
   </a>
@@ -9328,7 +9328,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-08-29">Update for 2026-08-29</h2>
+<h2 id="update-for-2026-08-30">Update for 2026-08-30</h2>
 <ul>
 <li><strong>LoRA</strong></li>
 <li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/LoRA">LoRA docs</a> for all of the improvements and usage instructions<br />
@@ -9348,16 +9348,21 @@
 <em>note</em>: this is a breaking change - if you had custom attention settings in previous releases, you will need to re-apply them in the new settings section  </li>
 <li>new <code>sparse-attention</code> method that can be combined with other attention methods<br />
     to reduce memory usage and improve performance on large models  </li>
+<li>new attention mechanisms decision tree and apply method refactor</li>
 <li><strong>Modular Pipelines</strong></li>
-<li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Modular-Pipelines">Modular Pipelines docs</a> for details and usage instructions</li>
+<li><em>TODO</em>: short note...<br />
+    see <a href="https://vladmandic.github.io/sdnext-docs/Modular-Pipelines">Modular Pipelines docs</a> for details and usage instructions</li>
+<li>new model <strong>Guidance</strong> stack for modular pipelines<br />
+    includes: <em>CFG, PAG, Auto, Zero, APG, SLG, SEG, TCFG, FDG</em><br />
+<em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Guidance">Guidance docs</a> for details and usage instructions  </li>
+<li>new model <strong>Caching</strong> stack for modular pipelines<br />
+    includes: <em>FasterCache, FirstBlockCache, LayerSkip, MagCache, PyramidAttentionBroadcast, TaylorSeerCache, TextKVCache</em><br />
+<em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Caching">Caching docs</a> for details and usage instructions  </li>
 <li>implement progress and preview</li>
 <li>intercept and profiling hooks</li>
-<li>full modular guidance</li>
 <li>on-demand convert standard model on-demand </li>
-<li><strong>Internal</strong></li>
-<li>attention mechanisms decision tree and apply method refactor</li>
 <li><strong>Fixes</strong></li>
-<li>unnecessary secondary prompt</li>
+<li>unnecessary secondary prompt if same</li>
 <li>js fetch exception handling</li>
 </ul>
 <h2 id="update-for-2026-08-26">Update for 2026-08-26</h2>
