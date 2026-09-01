@@ -4184,10 +4184,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-31" class="md-nav__link">
+  <a href="#update-for-2026-09-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-31
+        Update for 2026-09-01
       
     </span>
   </a>
@@ -6760,10 +6760,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-08-31" class="md-nav__link">
+  <a href="#update-for-2026-09-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-08-31
+        Update for 2026-09-01
       
     </span>
   </a>
@@ -9328,7 +9328,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-08-31">Update for 2026-08-31</h2>
+<h2 id="update-for-2026-09-01">Update for 2026-09-01</h2>
 <ul>
 <li><strong>LoRA</strong></li>
 <li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/LoRA">LoRA docs</a> for all of the improvements and usage instructions<br />
@@ -9342,6 +9342,7 @@
 <li>multi-network stack modes<br />
     can significantly improve lora quality when using multiple loras at once  </li>
 <li>per-block strength</li>
+<li>native support for <strong>MiniMax</strong></li>
 <li><strong>Attention</strong></li>
 <li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Attention">Attention docs</a> for details and usage instructions<br />
 <em>note</em>: attention now has its own settings section in <em>settings -&gt; cross attention</em><br />
@@ -9362,16 +9363,22 @@
 <li>intercept and profiling hooks</li>
 <li>on-demand convert standard model on-demand </li>
 <li><strong>Other</strong></li>
-<li>Video Preview: TAESD support for MiniMax</li>
+<li>Video Preview: TAESD support for <strong>MiniMax</strong></li>
 <li>new optional transformer hooks: <em>settings -&gt; compute add-ons</em><br />
 <em>PAG: Perturbed attention guidance, PAB: Pyramid attention broadcast, FBC: First Block Cache, FC: Faster Cache, LS: Layer Skip, MC: Mag Cache, TS: TaylorSeer</em><br />
 <em>note</em>: compatibility of different methods varies across different models  </li>
+<li><strong>Wiki/Docs</strong>:</li>
+<li><a href="https://vladmandic.github.io/sdnext-docs/MiniMax">MiniMax</a> updated with LoRA, Turbo and other improvements</li>
 <li><strong>Fixes</strong></li>
 <li>unnecessary secondary prompt if same</li>
 <li>js fetch exception handling</li>
 <li>detailer handling of stop/skip/pause</li>
 <li>cleanup dead rife code, thanks @Anai-Guo</li>
 <li>lumina-dimoo attention-kwargs, thanks @Anai-Guo</li>
+<li>improve network type/version lookup</li>
+<li>cleanup lora tags</li>
+<li>xyz grid apply bool values</li>
+<li>vdm scheduler fix steps, thanks @zjn20030811</li>
 </ul>
 <h2 id="update-for-2026-08-26">Update for 2026-08-26</h2>
 <h3 id="highlights-for-2026-08-26">Highlights for 2026-08-26</h3>

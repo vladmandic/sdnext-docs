@@ -1563,6 +1563,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoRA
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoRA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#turbo-lora" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1570,6 +1582,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4469,6 +4486,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoRA
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoRA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#turbo-lora" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4476,6 +4505,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4579,12 +4613,32 @@ lengths of reference videos and audio files must be up to duration of generated 
 <h3 id="image-workflows">Image workflows</h3>
 <p>everything as above except that MiniMax-H3 can also be used as a regular <em>text-to-image/image-to-image model</em>, not limited to Video generation<br />
 to use MiniMax-H3 as a <em>t2i/i2i</em> model, simply select it from the networks -&gt; reference and use as any other model  </p>
-<h2 id="turbo-lora">Turbo LoRA</h2>
-<p>MiniMax-H2 can be used with <a href="https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora">Turbo LoRA</a> to reduce steps from base 30-50 down to 4-8 steps only!</p>
+<h2 id="lora">LoRA</h2>
+<p>SD.Next includes native LoRA support for MiniMax-H3</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Turbo LoRA is not compatible with <em>pruned</em> variant!</p>
+<p>LoRA variant must match desired model variant
+e.g. fl2va LoRA can only be used with base model, and ref2va LoRA can only be used with ref model
+LoRA will load, but will have severe quality issues if used with the wrong model variant</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pruned variant may not be compatible with some LoRAs if they were trained to include pruned layers</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have issues with native lora support, try Diffusers built-in LoRA support<br />
+in <em>Settings -&gt; LoRA -&gt; LoRA load using Diffusers method</em></p>
+</div>
+<h3 id="turbo-lora">Turbo LoRA</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>MiniMax-H3 can be used with <strong>Turbo LoRA</strong> to reduce steps from base 30-50 down to 4-8 steps only!</p>
+</div>
+<ul>
+<li><a href="https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora">Link to recommended Turbo LoRA for base variant</a></li>
+<li><a href="https://huggingface.co/Abiray/MiniMax-H3-Turbo-Lora-Pruned-ComfyUI">Link to recommended Turbo LoRA for pruned variant</a></li>
+</ul>
 <h2 id="legal">Legal</h2>
 <p>Due to pending lawsuit, MiniMax-H3 <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE">license</a> comes with a <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/QA-about-License.md">disclaimer</a>  </p>
 
