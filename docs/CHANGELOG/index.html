@@ -4184,10 +4184,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-01" class="md-nav__link">
+  <a href="#update-for-2026-09-02" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-01
+        Update for 2026-09-02
       
     </span>
   </a>
@@ -6760,10 +6760,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-01" class="md-nav__link">
+  <a href="#update-for-2026-09-02" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-01
+        Update for 2026-09-02
       
     </span>
   </a>
@@ -9328,7 +9328,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-09-01">Update for 2026-09-01</h2>
+<h2 id="update-for-2026-09-02">Update for 2026-09-02</h2>
 <ul>
 <li><strong>LoRA</strong></li>
 <li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/LoRA">LoRA docs</a> for all of the improvements and usage instructions<br />
@@ -9362,23 +9362,27 @@
 <li>implement progress and preview</li>
 <li>intercept and profiling hooks</li>
 <li>on-demand convert standard model on-demand </li>
+<li><strong>Compute</strong></li>
+<li>openvino: update <code>openvino==2026.3.1</code> with <code>torch==2.13.0</code></li>
 <li><strong>Other</strong></li>
 <li>Video Preview: TAESD support for <strong>MiniMax</strong></li>
 <li>new optional transformer hooks: <em>settings -&gt; compute add-ons</em><br />
 <em>PAG: Perturbed attention guidance, PAB: Pyramid attention broadcast, FBC: First Block Cache, FC: Faster Cache, LS: Layer Skip, MC: Mag Cache, TS: TaylorSeer</em><br />
 <em>note</em>: compatibility of different methods varies across different models  </li>
+<li>remove <code>/redocs</code> as <code>/docs</code> are primary api docs  </li>
 <li><strong>Wiki/Docs</strong>:</li>
 <li><a href="https://vladmandic.github.io/sdnext-docs/MiniMax">MiniMax</a> updated with LoRA, Turbo and other improvements</li>
 <li><strong>Fixes</strong></li>
-<li>unnecessary secondary prompt if same</li>
-<li>js fetch exception handling</li>
-<li>detailer handling of stop/skip/pause</li>
-<li>cleanup dead rife code, thanks @Anai-Guo</li>
-<li>lumina-dimoo attention-kwargs, thanks @Anai-Guo</li>
-<li>improve network type/version lookup</li>
-<li>cleanup lora tags</li>
-<li>xyz grid apply bool values</li>
-<li>vdm scheduler fix steps, thanks @zjn20030811</li>
+<li>prompt: unnecessary secondary prompt if same</li>
+<li>ui: js fetch exception handling</li>
+<li>detailer: handling of stop/skip/pause</li>
+<li>rife: cleanup dead code, thanks @Anai-Guo</li>
+<li>lumina-dimoo: attention-kwargs, thanks @Anai-Guo</li>
+<li>network: improve type/version lookup</li>
+<li>lora: cleanup tags</li>
+<li>xyz grid: apply bool values</li>
+<li>vdm scheduler: fix steps, thanks @zjn20030811</li>
+<li>openvino: optimize recompile checks and lora loading</li>
 </ul>
 <h2 id="update-for-2026-08-26">Update for 2026-08-26</h2>
 <h3 id="highlights-for-2026-08-26">Highlights for 2026-08-26</h3>
