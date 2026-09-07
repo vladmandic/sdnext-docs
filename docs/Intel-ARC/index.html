@@ -3257,6 +3257,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3569,6 +3577,118 @@
     
   
     Nunchaku Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guidance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modular-Pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modular Pipelines
   
 
     
@@ -4504,7 +4624,7 @@ Install the base packages:</p>
 </code></pre></div>
 <p>Add the package lists for Intel Level Zero Drivers:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO<span class="w"> </span>-<span class="w"> </span>https://repositories.intel.com/gpu/intel-graphics.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--yes<span class="w"> </span>--dearmor<span class="w"> </span>--output<span class="w"> </span>/usr/share/keyrings/intel-graphics.gpg
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu noble client"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/intel-gpu-noble.list
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu noble client&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/intel-gpu-noble.list
 sudo<span class="w"> </span>apt<span class="w"> </span>update
 </code></pre></div>
 <p>Install the Intel Level Zero Drivers and the packages needed for PyTorch:</p>

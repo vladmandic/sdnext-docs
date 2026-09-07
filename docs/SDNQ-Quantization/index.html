@@ -3096,6 +3096,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3789,6 +3797,118 @@
     
   
     Nunchaku Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guidance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modular-Pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modular Pipelines
   
 
     
@@ -4947,7 +5067,7 @@
 <ul>
 <li><code>Quantized MatMul</code><br />
   Recommended for much better performance if Triton is available on supported GPUs<br />
-  Supported GPUs for quantized matmul are listed in the <a href="./#use-quantized-matmul">Use Quantized MatMul section</a>.  </li>
+  Supported GPUs for quantized matmul are listed in the <a href="./#quantized-matmul">Use Quantized MatMul section</a>  </li>
 <li>Recommended quantization dtype is <code>INT8</code> for its fast speed and almost no loss in quality<br />
   You can use <code>INT6</code> with little quality loss to save more memory and <code>UINT4</code> to save even more memory<br />
 <code>float8_e4m3fn</code> is another option for fast speed and high quality but <code>FP8</code> has slightly lower quality and performance than <code>INT8</code>  </li>
@@ -5137,8 +5257,8 @@ For example, <code>minimum_6bit</code> will quantize the specified modules to <c
 Default is empty.  </p>
 <p>An example dict:  </p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="nt">"int8"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"transformer_blocks.0.img_mod.1.weight"</span><span class="p">,</span><span class="w"> </span><span class="s2">"transformer_blocks.0.*"</span><span class="p">],</span>
-<span class="nt">"minimum_6bit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"img_in"</span><span class="p">]</span>
+<span class="nt">&quot;int8&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;transformer_blocks.0.img_mod.1.weight&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;transformer_blocks.0.*&quot;</span><span class="p">],</span>
+<span class="nt">&quot;minimum_6bit&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;img_in&quot;</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="group-size">Group size</h3>

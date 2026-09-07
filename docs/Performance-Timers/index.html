@@ -3096,6 +3096,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3519,6 +3527,118 @@
     
   
     Nunchaku Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guidance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modular-Pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modular Pipelines
   
 
     
@@ -4535,7 +4655,7 @@
 <li><strong>High <code>pipeline</code></strong>: this is the actual model compute. Fewer steps, a faster sampler, quantization, or model compile. See <a href="../Performance-Tuning/">Performance Tuning</a></li>
 <li><strong>High <code>onload</code>/<code>offload</code>/<code>move</code></strong>: model parts are being shuffled between RAM and VRAM every generation. If you have VRAM headroom, raise the offload low watermark or exempt specific model/module types from offloading in <em>Settings -&gt; Models &amp; Loading</em>. Note that offloading exists for a reason: workflows that spike VRAM usage, such as HiRes to a much higher resolution, need that headroom for decode. See <a href="../Offload/">Offload</a></li>
 <li><strong>High <code>decode</code>/<code>vae</code></strong>: consider a faster VAE, or check whether VAE tiling/slicing is enabled unnecessarily on a high-VRAM system. See <a href="../VAE/">VAE</a></li>
-<li><strong>High <code>lora</code></strong>: LoRA apply cost depends heavily on LoRA type and mode; see the measurements in <a href="../Offload/#performance-notes">Offload</a></li>
+<li><strong>High <code>lora</code></strong>: LoRA apply cost depends heavily on LoRA type and mode</li>
 <li><strong>High <code>te</code>/<code>prompt</code></strong>: large text encoders (T5, LLMs) are expensive; offloading them adds onload cost on every prompt change. Reusing the same prompt avoids re-encoding</li>
 </ul>
 

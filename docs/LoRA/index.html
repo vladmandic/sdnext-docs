@@ -3324,6 +3324,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3636,6 +3644,118 @@
     
   
     Nunchaku Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guidance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attention
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modular-Pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modular Pipelines
   
 
     
@@ -4722,14 +4842,23 @@ After removing or switching a LoRA while fusing is enabled, you may still see it
 To fully restore the original model, use <em>System -&gt; Reload Model</em>.</p>
 </div>
 <h3 id="other-settings">Other Settings</h3>
-<p><strong>LoRA force reload always</strong> (<code>lora_force_reload</code>)
-- Forces LoRA to reload from storage on every generation
-- Useful for debugging or when LoRA files are being modified externally
-- Default: <em>disabled</em></p>
-<p><strong>LoRA memory cache</strong> (<code>lora_in_memory_limit</code>)
-- Number of LoRAs to keep cached in memory
-- Reduces reload time when switching between frequently used LoRAs
-- Default: 1</p>
+<p><strong>LoRA force reload always</strong>
+Forces LoRA to reload from storage on every generation<br />
+Useful for debugging or when LoRA files are being modified externally  </p>
+<p><strong>LoRA memory cache</strong>
+Number of LoRAs to keep cached in memory<br />
+Reduces reload time when switching between frequently used LoRAs  </p>
+<p><strong>LoRA auto-apply tags</strong>
+Automatically adds (n) LoRA trigger words to the prompt when a LoRA is selected  </p>
+<p><strong>LoRA quantized host calibration</strong> and <strong>LoRA quantized host cache</strong>
+Applying lora to quantized models can be tricky, as the quantization process can introduce errors that affect LoRA performance<br />
+These settings allow SD.Next to analyze and calibrate model/lora interactions to improve quality and reduce artifacts. Calibration data is stored on disk for future usage  </p>
+<ul>
+<li>Calibration data is stored once calculated so it can be reused for future runs<br />
+  location is <code>models/calibration</code> folder  </li>
+<li>Factor cache that allows lora effects to be pre-calculated and persistently cached for future runs<br />
+  location is <code>models/lora-factor-cache</code> folder  </li>
+</ul>
 
 
 

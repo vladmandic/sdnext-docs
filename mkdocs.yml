@@ -161,6 +161,10 @@ nav:
     - Variable Auto-Encoder: VAE.md
     - Benchmark Results: Benchmark.md
     - Nunchaku Engine: Nunchaku.md
+    - Caching: Caching.md
+    - Guidance: Guidance.md
+    - Attention: Attention.md
+    - Modular Pipelines: Modular-Pipelines.md
   - Development:
     - Home: Dev-Home.md
     - Where to Start: Dev-SelfStart.md
