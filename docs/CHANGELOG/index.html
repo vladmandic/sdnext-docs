@@ -4304,22 +4304,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-05" class="md-nav__link">
+  <a href="#update-for-2026-09-07" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-05
+        Update for 2026-09-07
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-09-05">
+    <nav class="md-nav" aria-label="Update for 2026-09-07">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-09-05" class="md-nav__link">
+  <a href="#highlights-for-2026-09-07" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-09-05
+        Highlights for 2026-09-07
       
     </span>
   </a>
@@ -4327,10 +4327,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-09-05" class="md-nav__link">
+  <a href="#details-for-2026-09-07" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-09-05
+        Details for 2026-09-07
       
     </span>
   </a>
@@ -6908,22 +6908,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-05" class="md-nav__link">
+  <a href="#update-for-2026-09-07" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-05
+        Update for 2026-09-07
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-09-05">
+    <nav class="md-nav" aria-label="Update for 2026-09-07">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-09-05" class="md-nav__link">
+  <a href="#highlights-for-2026-09-07" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-09-05
+        Highlights for 2026-09-07
       
     </span>
   </a>
@@ -6931,10 +6931,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-09-05" class="md-nav__link">
+  <a href="#details-for-2026-09-07" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-09-05
+        Details for 2026-09-07
       
     </span>
   </a>
@@ -9504,15 +9504,16 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-09-05">Update for 2026-09-05</h2>
-<h3 id="highlights-for-2026-09-05">Highlights for 2026-09-05</h3>
+<h2 id="update-for-2026-09-07">Update for 2026-09-07</h2>
+<h3 id="highlights-for-2026-09-07">Highlights for 2026-09-07</h3>
 <p>All-about-optimizations: 
 - improved LoRA performance and quality, especially with quantized models
 - newly structured attention mechanisms
-- modular pipelines with new guidance
+- modular pipelines with new guidance methods
 - support for different caching stacks
-- compute updates across the board</p>
-<h3 id="details-for-2026-09-05">Details for 2026-09-05</h3>
+- compute updates across the board
+- enhanced cloud model support</p>
+<h3 id="details-for-2026-09-07">Details for 2026-09-07</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/yeoj34760/Anima-2.9B">Anima 2.9B Preview v1</a><br />
@@ -9522,7 +9523,7 @@
     with support for text-to-image, vq-conditioned text-to-image and image-editing workflows<br />
 <em>note</em> model is extremely quantization sensitive so minimum allowed quant type is <code>uint8</code>  </li>
 <li><strong>LoRA</strong></li>
-<li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/LoRA">LoRA docs</a> for all of the improvements and usage instructions<br />
+<li>see <a href="https://vladmandic.github.io/sdnext-docs/LoRA">LoRA docs</a> for all of the improvements and usage instructions<br />
 <em>note</em>: lora now has its own settings section in <em>settings -&gt; lora</em></li>
 <li>new apply engine that allows lora to be applied much faster</li>
 <li>new calibration engine that allows lora to be applied with far smaller error when dealing with highly quantized models</li>
@@ -9535,25 +9536,24 @@
 <li>per-block strength</li>
 <li>native support for <strong>MiniMax</strong></li>
 <li><strong>Attention</strong></li>
-<li><em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Attention">Attention docs</a> for details and usage instructions<br />
+<li>see <a href="https://vladmandic.github.io/sdnext-docs/Attention">Attention docs</a> for details and usage instructions<br />
 <em>note</em>: attention now has its own settings section in <em>settings -&gt; cross attention</em><br />
 <em>note</em>: this is a breaking change - if you had custom attention settings in previous releases, you will need to re-apply them in the new settings section  </li>
 <li>new <code>sparse-attention</code> method that can be combined with other attention methods<br />
     to reduce memory usage and improve performance on large models  </li>
 <li>new attention mechanisms decision tree and apply method refactor</li>
 <li><strong>Modular Pipelines</strong></li>
-<li><em>TODO</em>: short note...<br />
-    see <a href="https://vladmandic.github.io/sdnext-docs/Modular-Pipelines">Modular Pipelines docs</a> for details and usage instructions</li>
+<li>see <a href="https://vladmandic.github.io/sdnext-docs/Modular-Pipelines">Modular Pipelines docs</a> for details and usage instructions</li>
 <li>new model <strong>Guidance</strong> stack for modular pipelines<br />
     includes: <em>CFG, PAG, Auto, Zero, APG, SLG, SEG, TCFG, FDG</em><br />
-<em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Guidance">Guidance docs</a> for details and usage instructions  </li>
+    see <a href="https://vladmandic.github.io/sdnext-docs/Guidance">Guidance docs</a> for details and usage instructions  </li>
 <li>new model <strong>Caching</strong> stack for modular pipelines<br />
     includes: <em>FasterCache, FirstBlockCache, LayerSkip, MagCache, PyramidAttentionBroadcast, TaylorSeerCache, TextKVCache</em><br />
-<em>TODO</em>: see <a href="https://vladmandic.github.io/sdnext-docs/Caching">Caching docs</a> for details and usage instructions  </li>
+    see <a href="https://vladmandic.github.io/sdnext-docs/Caching">Caching docs</a> for details and usage instructions</li>
 <li>implement progress and preview</li>
 <li>intercept and profiling hooks</li>
 <li>on-demand convert standard model on-demand </li>
-<li><strong>Google</strong>  </li>
+<li><strong>Cloud</strong></li>
 <li>updated support for google models in text, image and video workflows<br />
 <em>note</em>: requires google api key  </li>
 <li><a href="https://ai.google.dev/gemini-api/docs/veo">Google Veo</a> in <em>preview</em>, <em>fast</em> and <em>lite</em> variants<br />
@@ -9564,6 +9564,10 @@
     workflows: <em>caption</em>  </li>
 <li><a href="https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash">Google Gemini</a> in <em>flash</em> and <em>pro</em> variants<br />
     workflows: <em>caption, prompt-enhance</em>  </li>
+<li>added support for xai grok models  </li>
+<li><a href="https://x.ai/grok">X.AI Grok</a> in <em>3</em>, <em>3 fast</em>, <em>3 mini</em> and <em>3 mini fast</em> variants<br />
+    workflows: <em>caption, prompt-enhance</em><br />
+<em>note</em>: requires grok api key  </li>
 <li><strong>Compute</strong></li>
 <li>cuda: update <code>torch==2.14.0</code> with <code>cuda==13.2</code></li>
 <li>openvino: update <code>openvino==2026.3.1</code> with <code>torch==2.13.0</code></li>
@@ -9577,10 +9581,14 @@
 <li>update <code>numpy</code> and <code>scipy</code> frozen requirements as required by new compute drivers<br />
 <em>note</em>: this may break compatibility with some legacy packages, so report any finidings  </li>
 <li><strong>Other</strong></li>
-<li>Video Preview: TAESD support for <strong>MiniMax</strong></li>
+<li>video preview: TAESD support for <strong>MiniMax</strong></li>
+<li>support <code>xai grok</code> for prompt enhance workflows<br />
+<em>note</em>: requires grok api key  </li>
 <li>remove <code>/redocs</code> as <code>/docs</code> are primary api docs  </li>
+<li>rebuild docs site index  </li>
 <li><strong>Wiki/Docs</strong>:</li>
-<li><a href="https://vladmandic.github.io/sdnext-docs/MiniMax">MiniMax</a> updated with LoRA, Turbo and other improvements</li>
+<li>new articles: <em>Attention, Modular-Pipelines</em></li>
+<li>updated: <em>LoRA, MiniMax</em></li>
 <li><strong>Fixes</strong></li>
 <li>prompt: unnecessary secondary prompt if same</li>
 <li>ui: js fetch exception handling</li>
@@ -9596,6 +9604,10 @@
 <li>compile: keep model compiled state</li>
 <li>prompt: cache checks when cfg changes</li>
 <li>lucida: handle requirements</li>
+<li>vae: fetch scale factor from the model</li>
+<li>todo: remove dead code, thanks @Anai-Guo</li>
+<li>offline: honor offline mode for more models, thanks @ryanmeador</li>
+<li>prompt enhance: cloud models use correct system prompt  </li>
 </ul>
 <h2 id="update-for-2026-08-26">Update for 2026-08-26</h2>
 <h3 id="highlights-for-2026-08-26">Highlights for 2026-08-26</h3>
