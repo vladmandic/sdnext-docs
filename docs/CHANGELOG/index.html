@@ -4304,22 +4304,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-08" class="md-nav__link">
+  <a href="#update-for-2026-09-09" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-08
+        Update for 2026-09-09
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-09-08">
+    <nav class="md-nav" aria-label="Update for 2026-09-09">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-09-08" class="md-nav__link">
+  <a href="#highlights-for-2026-09-09" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-09-08
+        Highlights for 2026-09-09
       
     </span>
   </a>
@@ -4327,10 +4327,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-09-08" class="md-nav__link">
+  <a href="#details-for-2026-09-09" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-09-08
+        Details for 2026-09-09
       
     </span>
   </a>
@@ -6908,22 +6908,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-08" class="md-nav__link">
+  <a href="#update-for-2026-09-09" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-08
+        Update for 2026-09-09
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-09-08">
+    <nav class="md-nav" aria-label="Update for 2026-09-09">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-09-08" class="md-nav__link">
+  <a href="#highlights-for-2026-09-09" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-09-08
+        Highlights for 2026-09-09
       
     </span>
   </a>
@@ -6931,10 +6931,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-09-08" class="md-nav__link">
+  <a href="#details-for-2026-09-09" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-09-08
+        Details for 2026-09-09
       
     </span>
   </a>
@@ -9504,16 +9504,24 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-09-08">Update for 2026-09-08</h2>
-<h3 id="highlights-for-2026-09-08">Highlights for 2026-09-08</h3>
-<p>All-about-optimizations: 
-- improved LoRA performance and quality, especially with quantized models
-- newly structured attention mechanisms
-- modular pipelines with new guidance methods
-- support for different caching stacks
-- compute updates across the board
-- enhanced cloud model support</p>
-<h3 id="details-for-2026-09-08">Details for 2026-09-08</h3>
+<h2 id="update-for-2026-09-09">Update for 2026-09-09</h2>
+<h3 id="highlights-for-2026-09-09">Highlights for 2026-09-09</h3>
+<p><em>What's New</em>? Well, code-wise, this is a big one...<br />
+First, a-lot-of-optimizations: 
+- improved <strong>LoRA</strong> performance and quality, especially with quantized models
+- newly structured <strong>attention</strong> mechanisms
+- modular pipelines with new <strong>guidance</strong> methods
+- support for different <strong>caching</strong> stacks
+- compute updates across the board</p>
+<p>And some cool new stuff and models:
+- <strong>DLSSv5</strong> integration<br />
+- New models:<br />
+<strong>Anima 2.9B</strong>, <strong>LLaDa-Image</strong><br />
+- And few cloud models:<br />
+<em>Google's Gemini, NanoBanana, Veo, Omni</em> and <em>X.AI's Grok</em>  </p>
+<p>Plus inevitable bug-fixes...</p>
+<p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
+<h3 id="details-for-2026-09-09">Details for 2026-09-09</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/yeoj34760/Anima-2.9B">Anima 2.9B Preview v1</a><br />
@@ -9535,6 +9543,15 @@
     can significantly improve lora quality when using multiple loras at once  </li>
 <li>per-block strength</li>
 <li>native support for <strong>MiniMax</strong></li>
+<li><strong>DLSS</strong></li>
+<li>add DLSS support for: <em>NeuralRender, SuperSample and FrameGen</em><br />
+    dlls 5 caused quite a stir, but combined with generative ai it becomes a nice tool  </li>
+<li>available via <em>extras -&gt; dlss</em> as part of generate workflow or as a standalone <em>processing</em> workflow<br />
+<em>todo</em>: video support will be added in the future  </li>
+<li><em>note</em>: requires nvidia rtx gpu, windows platform and compatible gpu drivers<br />
+    but...it can be used from wsl2: unpack required package on windows host and you can access it from the wsl2 environment  </li>
+<li><em>install</em>: requires <a href="https://github.com/Merserk/dlss5-visual-enhancer/releases/tag/v7.0">DLSS 5 Visual Enhancer</a>  </li>
+<li><em>diag</em>: enable <code>SD_DLSS_DEBUG=true</code> and monitor <code>dlss.log</code> in the package directory  </li>
 <li><strong>Attention</strong></li>
 <li>see <a href="https://vladmandic.github.io/sdnext-docs/Attention">Attention docs</a> for details and usage instructions<br />
 <em>note</em>: attention now has its own settings section in <em>settings -&gt; cross attention</em><br />
