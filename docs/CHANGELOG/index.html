@@ -9507,7 +9507,8 @@
 <h2 id="update-for-2026-09-11">Update for 2026-09-11</h2>
 <h3 id="highlights-for-2026-09-11">Highlights for 2026-09-11</h3>
 <p><em>What's New</em>? Well, code-wise, this is a big one...<br />
-First, a-lot-of-optimizations: 
+First, a-lot-of-optimizations:
+- updated core packages
 - improved <strong>LoRA</strong> performance and quality, especially with quantized models
 - newly structured <strong>attention</strong> mechanisms
 - modular pipelines with new <strong>guidance</strong> methods
@@ -9530,6 +9531,7 @@ First, a-lot-of-optimizations:
     LLaDA-Image is a 6.5B transformer with massive 16.3B fully-custom MoE text-encoder and optional 1.3B SigVQ conditioning model<br />
     with support for text-to-image, vq-conditioned text-to-image and image-editing workflows<br />
 <em>note</em> model is extremely quantization sensitive so minimum allowed quant type is <code>uint8</code>  </li>
+<li><a href="https://huggingface.co/MiniMaxAI/MiniMax-H3">MiniMax-H3</a> update with pre-quantized <code>sdnq-uint8</code> <em>pruned</em> variants  </li>
 <li><strong>LoRA</strong></li>
 <li>see <a href="https://vladmandic.github.io/sdnext-docs/LoRA">LoRA docs</a> for all of the improvements and usage instructions<br />
 <em>note</em>: lora now has its own settings section in <em>settings -&gt; lora</em></li>
@@ -9592,6 +9594,7 @@ First, a-lot-of-optimizations:
 <li>option to skip triton autotune and use default config for all triton kernels<br />
     in <em>settings -&gt; compute settings</em><br />
 <em>note</em>: this may improve initial generate time, but may also reduce performance on some models  </li>
+<li>rocm: update <code>rocm</code> script and add detailed <code>miopen</code> logging, thanks @resonantsky  </li>
 <li>new optional transformer hooks<br />
     in <em>settings -&gt; compute add-ons</em><br />
 <em>PAG: Perturbed attention guidance, PAB: Pyramid attention broadcast, FBC: First Block Cache, FC: Faster Cache, LS: Layer Skip, MC: Mag Cache, TS: TaylorSeer</em><br />
@@ -9617,6 +9620,7 @@ First, a-lot-of-optimizations:
 <li>lucida: handle requirements</li>
 <li>lumina-dimoo: attention-kwargs, thanks @Anai-Guo</li>
 <li>minimax: crop image to video aspect ratio</li>
+<li>modular: handle module with remote-code</li>
 <li>network: improve type/version lookup</li>
 <li>offline: honor offline mode for more models, thanks @ryanmeador</li>
 <li>openvino: optimize recompile checks and lora loading</li>
