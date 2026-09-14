@@ -4304,22 +4304,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-13" class="md-nav__link">
+  <a href="#update-for-2026-09-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-13
+        Update for 2026-09-14
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-09-13">
+    <nav class="md-nav" aria-label="Update for 2026-09-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-09-13" class="md-nav__link">
+  <a href="#highlights-for-2026-09-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-09-13
+        Highlights for 2026-09-14
       
     </span>
   </a>
@@ -4327,10 +4327,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-09-13" class="md-nav__link">
+  <a href="#details-for-2026-09-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-09-13
+        Details for 2026-09-14
       
     </span>
   </a>
@@ -6908,22 +6908,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-13" class="md-nav__link">
+  <a href="#update-for-2026-09-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-13
+        Update for 2026-09-14
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-09-13">
+    <nav class="md-nav" aria-label="Update for 2026-09-14">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-09-13" class="md-nav__link">
+  <a href="#highlights-for-2026-09-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-09-13
+        Highlights for 2026-09-14
       
     </span>
   </a>
@@ -6931,10 +6931,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-09-13" class="md-nav__link">
+  <a href="#details-for-2026-09-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-09-13
+        Details for 2026-09-14
       
     </span>
   </a>
@@ -9504,8 +9504,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-09-13">Update for 2026-09-13</h2>
-<h3 id="highlights-for-2026-09-13">Highlights for 2026-09-13</h3>
+<h2 id="update-for-2026-09-14">Update for 2026-09-14</h2>
+<h3 id="highlights-for-2026-09-14">Highlights for 2026-09-14</h3>
 <p><em>What's New</em>? Well, code-wise, this is a big one...<br />
 First, a-lot-of-optimizations:
 - Updated core packages
@@ -9521,7 +9521,7 @@ First, a-lot-of-optimizations:
 - Some (light) UI restyling</p>
 <p>Plus inevitable bug-fixes...</p>
 <p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2026-09-13">Details for 2026-09-13</h3>
+<h3 id="details-for-2026-09-14">Details for 2026-09-14</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/yeoj34760/Anima-2.9B">Anima 2.9B Preview v1</a><br />
@@ -9531,7 +9531,7 @@ First, a-lot-of-optimizations:
     with support for text-to-image, vq-conditioned text-to-image and image-editing workflows<br />
 <em>note</em> model is extremely quantization sensitive so minimum allowed quant type is <code>uint8</code>  </li>
 <li><a href="https://huggingface.co/MiniMaxAI/MiniMax-H3">MiniMax-H3</a> updates<br />
-    new <a href="https://huggingface.co/OzzyGT/MiniMax_H3_sdnq_8bit_pruned">SDNQ-uint8</a> pre-quantized <em>pruned</em> variants<br />
+    new <a href="https://huggingface.co/OzzyGT/MiniMax_H3_sdnq_8bit_pruned">SDNQ-uint8</a> pre-quantized <em>base</em> and <em>pruned</em> variants<br />
     new <a href="https://huggingface.co/rootonchair/MiniMax-H3-nunchaku-lite-int4">Nunchaku-Lite</a> variant<br />
     new <a href="https://huggingface.co/OpenVDN/vdn-minimax-h3">VDN</a> <em>video-delta-net</em> variant  </li>
 <li><strong>LoRA</strong></li>
@@ -9622,6 +9622,7 @@ First, a-lot-of-optimizations:
 <li>compile: keep model compiled state</li>
 <li>detailer: handling of stop/skip/pause</li>
 <li>framepack: correct device assignment, thanks @li-lizhe</li>
+<li>json: handle file locks</li>
 <li>log: ansi color handling</li>
 <li>lora: cleanup tags</li>
 <li>lora: support transformer ref models</li>
@@ -9640,6 +9641,7 @@ First, a-lot-of-optimizations:
 <li>prompt: unnecessary secondary prompt if same</li>
 <li>prompt: clean prompt after network parsing</li>
 <li>rife: cleanup dead code, thanks @Anai-Guo</li>
+<li>temp files: handle locking</li>
 <li>theme: fix circular imports changing theme to default</li>
 <li>todo: remove dead code, thanks @Anai-Guo</li>
 <li>ui: js fetch exception handling</li>
