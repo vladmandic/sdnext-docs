@@ -6435,7 +6435,7 @@ It does not cover mostly static system settings.</p>
 <td style="text-align: left;"><code>float</code></td>
 <td style="text-align: left;"><code>-1.0</code></td>
 <td style="text-align: left;"><code>Range: -1.0 to 20.0</code></td>
-<td style="text-align: left;">Scheduler flow shift. <code>-1</code> keeps the model default.</td>
+<td style="text-align: left;">Scheduler flow shift; the video schedule on models with a separate audio schedule. <code>-1</code> keeps the model default.</td>
 <td style="text-align: left;">Sampler shift</td>
 </tr>
 <tr>
@@ -6445,6 +6445,14 @@ It does not cover mostly static system settings.</p>
 <td style="text-align: left;"><code>Values: True, False</code></td>
 <td style="text-align: left;">Enables resolution-dependent scheduler shifting.</td>
 <td style="text-align: left;">Dynamic shift</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>audio_shift</code></td>
+<td style="text-align: left;"><code>float</code></td>
+<td style="text-align: left;"><code>-1.0</code></td>
+<td style="text-align: left;"><code>Range: -1.0 to 10.0</code></td>
+<td style="text-align: left;">Audio schedule shift on models with a separate audio scheduler. <code>-1</code> keeps the model default.</td>
+<td style="text-align: left;">MiniMax audio shift</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>seed</code></td>
