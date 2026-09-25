@@ -2504,6 +2504,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Processors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pose-processors-rtmlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pose processors (rtmlib)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2624,34 +2641,6 @@
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known issues
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Known issues">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dwpose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DWPose
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4637,6 +4626,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Processors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pose-processors-rtmlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pose processors (rtmlib)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4760,34 +4766,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known issues
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Known issues">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dwpose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DWPose
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4891,6 +4869,47 @@ Additional ControlNet models in safetensors can be downloaded manually and place
 <li><strong>Other</strong>: MLSD, Shuffle</li>
 </ul>
 <p><em>Note</em>: Processor sizes range from built-in options with no extra size up to about 4.2 GB for ZoeDepth-Large.</p>
+<h4 id="pose-processors-rtmlib">Pose processors (rtmlib)</h4>
+<p>DWPose, RTMW and RTMO run through <a href="https://github.com/Tau-J/rtmlib">rtmlib</a> on CPU via onnxruntime. Models download automatically on first use.</p>
+<table>
+<thead>
+<tr>
+<th>Processor</th>
+<th>Model</th>
+<th>Keypoints</th>
+<th>Detector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DWPose</strong></td>
+<td>DWPose whole-body, size selectable (default DWPose-l 384x288)</td>
+<td>133 (body, feet, face, hands)</td>
+<td>YOLOX-HumanArt, size selectable</td>
+</tr>
+<tr>
+<td><strong>RTMW</strong></td>
+<td>RTMW-l (<code>rtmw-dw-x-l</code>, 256x192)</td>
+<td>133 (body, feet, face, hands)</td>
+<td>YOLOX-HumanArt m</td>
+</tr>
+<tr>
+<td><strong>RTMO</strong></td>
+<td>RTMO-l, one-stage</td>
+<td>17 (body only)</td>
+<td>none (one-stage)</td>
+</tr>
+</tbody>
+</table>
+<p>Output is drawn as an OpenPose-style skeleton (134 points for whole-body models, 18 for body-only).</p>
+<p><strong>Settings</strong></p>
+<ul>
+<li><strong>Pose confidence</strong>: minimum keypoint score; keypoints and limbs below it are not drawn. <em>(DWPose, RTMW)</em></li>
+<li><strong>Person detector</strong>: <code>tiny</code> / <code>m</code> / <code>x</code>, default <code>m</code>. Size of the person detector: how reliably people are found. Larger is more accurate and slower. <em>(DWPose)</em></li>
+<li><strong>Pose model size</strong>: <code>t</code> / <code>s</code> / <code>m</code> / <code>l</code>, default <code>l</code>. Size of the pose model: how precise the skeleton, hands and face are once a person is found. <code>l</code> uses 384x288 input; the others use 256x192. <em>(DWPose)</em></li>
+<li><strong>Body / Hands / Face</strong>: choose which parts are drawn. Feet are drawn with Body. <em>(DWPose, RTMW)</em></li>
+<li><strong>Use full image if no person detected</strong>: default on. If the detector finds nobody, the whole image is treated as one person; a warning is logged when this happens. Helps with half-body shots, close-up portraits and anime or illustrations. When off, an empty pose is returned instead. <em>(DWPose, RTMW)</em></li>
+</ul>
 <h3 id="segmentation-models">Segmentation Models</h3>
 <p>There are 8 auto-segmentation models available:</p>
 <ul>
@@ -4991,24 +5010,6 @@ webui.bat --debug  </p>
 </li>
 </ul>
 <p><em>Note</em>: Starting with debug enabled also enables <strong>Test</strong> mode in the Control module.</p>
-<h2 id="known-issues">Known issues</h2>
-<h3 id="dwpose">DWPose</h3>
-<p>DWPose preprocessor internally uses <code>openmin/mmengine/mmpose/mmdet</code> packages.
-These packages have not been updated in several years, so compatibility with newer <code>torch</code> and system packages can be limited.</p>
-<p>You can try installing DWPose dependencies manually:
-- Install full <a href="https://developer.nvidia.com/cuda-toolkit">CUDA Toolkit</a> as mmengine requires nvidia compiler (nvcc)<br />
-<em>note</em>: CUDA version should match the CUDA version bundled with <code>torch</code> shown in SD.Next logs:</p>
-<blockquote>
-<p>Torch: torch==2.6.0+cu126 torchvision==0.21.0+cu126<br />
-  here <code>cu126</code> means CUDA version 12.6.
-- Install build tools for your platform
-  Linux: <code>build-essentials/gcc/make</code> or Windows: <code>Visual Studio Build Tools</code><br />
-- Activate your <code>venv</code>
-  Linux: <code>source venv/bin/activate</code> or Windows: <code>venv\Scripts\activate</code>
-- Install requirements:</p>
-<p>pip install --upgrade --no-deps --force-reinstall termcolor xtcocotools terminaltables pycocotools munkres shapely openmim==0.3.9 mmengine==0.10.5 mmcv==2.2.0 mmpose==1.3.2 mmdet==3.3.0</p>
-</blockquote>
-<p>Note that this can take a long time  </p>
 
 
 
