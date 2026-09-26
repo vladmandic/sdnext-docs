@@ -4304,10 +4304,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-25" class="md-nav__link">
+  <a href="#update-for-2026-09-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-25
+        Update for 2026-09-26
       
     </span>
   </a>
@@ -6919,10 +6919,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-25" class="md-nav__link">
+  <a href="#update-for-2026-09-26" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-25
+        Update for 2026-09-26
       
     </span>
   </a>
@@ -9526,7 +9526,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-09-25">Update for 2026-09-25</h2>
+<h2 id="update-for-2026-09-26">Update for 2026-09-26</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-2.1">Qwen-Image 2.1</a> in <em>base</em>, <em>sdnq-4bit</em> and <em>sdnq-8bit</em> variants<br />
@@ -9541,12 +9541,17 @@
 <li>update <code>diffusers==0.41.0.dev0</code></li>
 <li><code>rocm</code> windows installation move to <em>stable</em>, thanks @resonantsky<br />
     at the moment, this results in installation of <code>torch==2.13.0</code> with <code>rocm==10.0.0</code>  </li>
+<li><strong>Preview</strong></li>
+<li>full refactor: refactored taesd, added micro decoder, removed simple and approximate methods</li>
+<li>preview methods: <em>None, Micro, Tiny (TAESD), Full</em></li>
+<li>new <em>setting -&gt; live preview -&gt; force live preview on each step</em><br />
+    instead of relying on polling and low-priority updates, forces preview calculation on each step  </li>
+<li>new <a href="https://huggingface.co/vladmandic/MicroDecoder">MicroDecoder</a> vae implementation<br />
+    used for live-preview as quick vae and can be trained on any model  </li>
 <li><strong>Other</strong></li>
+<li><code>LivePreview</code>: full refactor</li>
 <li><code>DWPose</code>, <code>RTMW</code>, <code>RTMO</code>: image processor updates, thanks @kirtasshh<br />
     refactored to use <code>ONNX</code> instead of obsolete <code>mmpose</code> lib and with additional configurable settings  </li>
-<li><code>VAE</code>: new <a href="https://huggingface.co/vladmandic/MicroDecoder">MicroDecoder</a> vae implementation<br />
-    used for live-preview as quick vae and can be trained on any model<br />
-    currently used for <em>qwen-image-2.1</em>  </li>
 <li><strong>Fixes</strong></li>
 <li>api: hardening all all file-access api endpoints</li>
 <li>prompt cache: bypass when condition images are encoded</li>
