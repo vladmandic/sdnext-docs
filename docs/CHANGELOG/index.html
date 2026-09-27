@@ -9541,19 +9541,31 @@
 <li>update <code>diffusers==0.41.0.dev0</code></li>
 <li><code>rocm</code> windows installation move to <em>stable</em>, thanks @resonantsky<br />
     at the moment, this results in installation of <code>torch==2.13.0</code> with <code>rocm==10.0.0</code>  </li>
+<li><strong>DLSS</strong> <em>(reimagined)</em></li>
+<li>complete reverse-engineering of <em>nVidia DLSS</em> to enable gpu-agnostic usage (can even run on cpu)</li>
+<li>supports DLSS <em>NeuralRender</em>, <em>SuperRes</em>, and <em>FrameGen</em></li>
+<li>operations can be chained in any desired order</li>
+<li>supports image and video processing (with motion vectors for stabilization)</li>
+<li>can be used via <em>generate -&gt; extras</em> or as a separate <em>process</em> workflow</li>
+<li>additional gpu-acceleration for cuda is included, but skipped on non-cuda devices</li>
+<li>no installation needed, just enable and thats it!</li>
 <li><strong>Preview</strong></li>
-<li>full refactor: refactored taesd, added micro decoder, removed simple and approximate methods</li>
-<li>preview methods: <em>None, Micro, Tiny (TAESD), Full</em></li>
-<li>new <em>setting -&gt; live preview -&gt; force live preview on each step</em><br />
-    instead of relying on polling and low-priority updates, forces preview calculation on each step  </li>
+<li>full refactor: refactored <em>taesd</em>, added <em>micro-decoder</em>, removed <em>simple</em> and <em>approximate</em> methods</li>
 <li>new <a href="https://huggingface.co/vladmandic/MicroDecoder">MicroDecoder</a> vae implementation<br />
     used for live-preview as quick vae and can be trained on any model  </li>
+<li>available preview methods: <em>None, Micro, Tiny (TAESD), Full</em></li>
+<li>new <em>setting -&gt; live preview -&gt; force live preview on each step</em><br />
+    instead of relying on polling and low-priority updates, forces preview calculation on each step  </li>
 <li><strong>Other</strong></li>
-<li><code>DWPose</code>, <code>RTMW</code>, <code>RTMO</code>: image processor updates, thanks @kirtasshh<br />
+<li>edit-models: simplify usage of multi-image reference editing  </li>
+<li>processors: <code>DWPose</code>, <code>RTMW</code>, <code>RTMO</code>: image processor updates, thanks @kirtasshh<br />
     refactored to use <code>ONNX</code> instead of obsolete <code>mmpose</code> lib and with additional configurable settings  </li>
-<li>simplify usage of multi-image reference editing  </li>
+<li>ui: manual clear of errors/warnings, thanks @kirtasshh</li>
+<li>ui: selecting lora from networks panel inserts it in active prompt instead of just default, thanks @kirtasshh</li>
 <li><strong>Fixes</strong></li>
 <li>api: hardening all all file-access api endpoints</li>
+<li>api: control endpoint with input images</li>
+<li>detailer: use of lora models, thanks @kirtasshh</li>
 <li>dlss: additional DLSS reporting</li>
 <li>dlss: additional DLSS reporting</li>
 <li>grid: images with transparency keep it in grids and live previews</li>
@@ -9564,6 +9576,7 @@
 <li>networks: name mapping for network models and loras</li>
 <li>networks: preview mapping for reference networks</li>
 <li>networks: preview mapping for reference networks</li>
+<li>offload: enable offload using streams on different gpus, thanks @li-lizhe</li>
 <li>pixelsmith: vae tiling, thanks @li-lizhe</li>
 <li>pixelsmith: vae tiling, thanks @li-lizhe  </li>
 <li>prompt cache: bypass when condition images are encoded</li>
