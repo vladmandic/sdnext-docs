@@ -4304,10 +4304,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-26" class="md-nav__link">
+  <a href="#update-for-2026-09-27" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-26
+        Update for 2026-09-27
       
     </span>
   </a>
@@ -6919,10 +6919,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-26" class="md-nav__link">
+  <a href="#update-for-2026-09-27" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-26
+        Update for 2026-09-27
       
     </span>
   </a>
@@ -9526,7 +9526,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-09-26">Update for 2026-09-26</h2>
+<h2 id="update-for-2026-09-27">Update for 2026-09-27</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-2.1">Qwen-Image 2.1</a> in <em>base</em>, <em>sdnq-4bit</em> and <em>sdnq-8bit</em> variants<br />
@@ -9549,28 +9549,30 @@
 <li>new <a href="https://huggingface.co/vladmandic/MicroDecoder">MicroDecoder</a> vae implementation<br />
     used for live-preview as quick vae and can be trained on any model  </li>
 <li><strong>Other</strong></li>
-<li><code>LivePreview</code>: full refactor</li>
 <li><code>DWPose</code>, <code>RTMW</code>, <code>RTMO</code>: image processor updates, thanks @kirtasshh<br />
     refactored to use <code>ONNX</code> instead of obsolete <code>mmpose</code> lib and with additional configurable settings  </li>
+<li>simplify usage of multi-image reference editing  </li>
 <li><strong>Fixes</strong></li>
 <li>api: hardening all all file-access api endpoints</li>
-<li>qwen-image, flux.2, glm-image: sizes align to the 16 px floor the pipelines apply</li>
-<li>img2img: warn and record in the infotext when the output size follows the input image instead of the request</li>
-<li>prompt cache: bypass when condition images are encoded</li>
+<li>dlss: additional DLSS reporting</li>
+<li>dlss: additional DLSS reporting</li>
 <li>grid: images with transparency keep it in grids and live previews</li>
 <li>group offload: places the vae on-demand behind the vae hijack</li>
-<li>vae tiling: tile size setting applies to 3d vaes, 16x vae tile geometry</li>
-<li>pixelsmith: vae tiling, thanks @li-lizhe  </li>
-<li>networks: preview mapping for reference networks</li>
-<li>dlss: additional DLSS reporting</li>
-<li>temp file: gradio temp file error handling</li>
-<li>pixelsmith: vae tiling, thanks @li-lizhe</li>
-<li>txt2img: fix hires strength handling</li>
-<li>networks: preview mapping for reference networks</li>
-<li>networks: name mapping for network models and loras</li>
-<li>dlss: additional DLSS reporting</li>
-<li>temp file: gradio temp file error handling</li>
+<li>img2img: warn and record in the infotext when the output size follows the input image instead of the request</li>
 <li>metadata: correct refine prompt restore, thanks @QualiaRain</li>
+<li>multi-image: inputs reach multi-image models as one condition set on every route and the requested size sets the output size</li>
+<li>networks: name mapping for network models and loras</li>
+<li>networks: preview mapping for reference networks</li>
+<li>networks: preview mapping for reference networks</li>
+<li>pixelsmith: vae tiling, thanks @li-lizhe</li>
+<li>pixelsmith: vae tiling, thanks @li-lizhe  </li>
+<li>prompt cache: bypass when condition images are encoded</li>
+<li>qwen-image, flux.2, glm-image: sizes align to the 16 px floor the pipelines apply</li>
+<li>styles: fix infotext parsing, thanks @obelisk-complex</li>
+<li>temp file: gradio temp file error handling</li>
+<li>temp file: gradio temp file error handling</li>
+<li>txt2img: fix hires strength handling</li>
+<li>vae tiling: tile size setting applies to 3d vaes, 16x vae tile geometry</li>
 <li>video: handle failed model load without loading default model, thanks @QualiaRain</li>
 </ul>
 <h2 id="update-for-2026-09-17">Update for 2026-09-17</h2>
