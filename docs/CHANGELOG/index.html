@@ -4304,22 +4304,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-29" class="md-nav__link">
+  <a href="#update-for-2026-09-30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-29
+        Update for 2026-09-30
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-09-29">
+    <nav class="md-nav" aria-label="Update for 2026-09-30">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-09-29" class="md-nav__link">
+  <a href="#highlights-for-2026-09-30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-09-29
+        Highlights for 2026-09-30
       
     </span>
   </a>
@@ -4327,10 +4327,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-09-29" class="md-nav__link">
+  <a href="#details-for-2026-09-30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-09-29
+        Details for 2026-09-30
       
     </span>
   </a>
@@ -6947,22 +6947,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-29" class="md-nav__link">
+  <a href="#update-for-2026-09-30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-29
+        Update for 2026-09-30
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-09-29">
+    <nav class="md-nav" aria-label="Update for 2026-09-30">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-09-29" class="md-nav__link">
+  <a href="#highlights-for-2026-09-30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-09-29
+        Highlights for 2026-09-30
       
     </span>
   </a>
@@ -6970,10 +6970,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-09-29" class="md-nav__link">
+  <a href="#details-for-2026-09-30" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-09-29
+        Details for 2026-09-30
       
     </span>
   </a>
@@ -9582,17 +9582,18 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-09-29">Update for 2026-09-29</h2>
-<h3 id="highlights-for-2026-09-29">Highlights for 2026-09-29</h3>
+<h2 id="update-for-2026-09-30">Update for 2026-09-30</h2>
+<h3 id="highlights-for-2026-09-30">Highlights for 2026-09-30</h3>
 <p><em>What's New</em>? This release brings:
 - Few new models: <strong>Qwen-Image 2.1</strong>, <strong>Bria Fibo 1.5</strong> and <strong>ObjectClear</strong>
 - <strong>DLSS5</strong> reimagined for much higher performance and full cross-platform support
 - New live-preview method using <strong>MicroDecoder</strong>
 - Better handling of multi-image reference editing
+- Compute updates for ROCm, OpenVINO, and XPU
 - Massive updates to UI tooltips/hints: over 1,000 new entries and revised existing ones</p>
 <p>Plus quite a few other improvements and inevitable bug-fixes, see full changelog below for details...</p>
 <p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2026-09-29">Details for 2026-09-29</h3>
+<h3 id="details-for-2026-09-30">Details for 2026-09-30</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-2.1">Qwen-Image 2.1</a> in <em>base</em>, <em>sdnq-4bit</em> and <em>sdnq-8bit</em> variants<br />
@@ -9608,10 +9609,14 @@
 <em>note</em>: for optimal results, provide a clear mask indicating target areas and prompt what should be removed  </li>
 <li><strong>Compute</strong></li>
 <li>update <code>diffusers==0.41.0.dev0</code></li>
-<li><code>rocm</code> windows installation move to <em>stable</em>, thanks @resonantsky<br />
-    at the moment, this results in installation of <code>torch==2.13.0</code> with <code>rocm==10.0.0</code>  </li>
+<li><code>rocm</code> linux update to <code>2.14.0+rocm7.14</code> <em>stable</em> and <code>2.15.0+rocm10.0</code> <em>nightly</em></li>
+<li><code>openvino</code> update to <code>torch==2.14.0</code> with <code>openvino==2026.4.0</code></li>
+<li><code>xpu</code> update to <code>torch==2.14.0+xpu</code></li>
+<li><code>rocm</code> windows update to <code>torch==2.14.0</code> with <code>rocm==10.0.0</code><br />
+<code>rocm</code> windows installation move to <em>stable</em> amd wheels, thanks @resonantsky  </li>
 <li>options to skip triton autotune for entire model or just text-encoder<br />
     in <em>settings -&gt; compute settings</em>  </li>
+<li>warn if torch acceleration is installed but not available</li>
 <li><strong>DLSS</strong> <em>(reimagined)</em></li>
 <li>complete reverse-engineering of <em>nVidia DLSS</em> to enable gpu-agnostic usage (can even run on cpu)</li>
 <li>supports DLSS <em>NeuralRender</em>, <em>SuperRes</em>, and <em>FrameGen</em></li>
@@ -9634,6 +9639,7 @@
     automatically handle: flux.2, glm-image, nano-banana, joy-image-edit, qwen-image-edit</li>
 <li>processors: <code>DWPose</code>, <code>RTMW</code>, <code>RTMO</code>: image processor updates, thanks @kirtasshh<br />
     refactored to use <code>ONNX</code> instead of obsolete <code>mmpose</code> lib and with additional configurable settings  </li>
+<li>lora: extend support for more model types</li>
 <li><strong>UI</strong></li>
 <li>massive improvement to built-in tooltips/hints<br />
     over 1,000 new entries, now at zero missing ui controls or settings<br />
@@ -9643,13 +9649,19 @@
 <li><strong>Fixes</strong></li>
 <li>api: control endpoint with input images</li>
 <li>api: hardening all all file-access api endpoints</li>
+<li>caption: improve qwen image handling</li>
+<li>caption: improve error handling</li>
+<li>civitai: better handle downloads and naming</li>
 <li>control: hires fixed size keeps the requested width on 16 px and 32 px models</li>
 <li>detailer: use of lora models, thanks @kirtasshh</li>
 <li>dlss: the detailer and the other per-image steps run once when dlss is off</li>
 <li>grid: images with transparency keep it in grids and live previews</li>
+<li>hints: duplicate labels</li>
 <li>img2img: inputs reach multi-image models as one condition set on every route and the requested size sets the output size</li>
 <li>img2img: qwen-image, flux.2, glm-image align sizes to the 16 px floor</li>
 <li>img2img: warn and record in the infotext when the output size follows the input image instead of the request</li>
+<li>lora: native loading applies the alpha diffusers and diffsynth files store in metadata</li>
+<li>lora: alibaba-pai qwen-image 2.1 fun-acc 4-step runs on the sigma grid it was distilled for</li>
 <li>metadata: correct refine prompt restore, thanks @QualiaRain</li>
 <li>networks: name mapping for network models and loras</li>
 <li>networks: preview mapping for reference networks</li>
@@ -9659,6 +9671,8 @@
 <li>pixelsmith: vae tiling, thanks @li-lizhe  </li>
 <li>preview: remove flicker when finishing generation</li>
 <li>prompt cache: bypass when condition images are encoded</li>
+<li>sampler: when creating sampler, copy all valid options from default sampler</li>
+<li>seedvr: handle temporal overap</li>
 <li>styles: fix infotext parsing, thanks @obelisk-complex</li>
 <li>temp file: gradio temp file error handling</li>
 <li>temp file: gradio temp file error handling</li>
