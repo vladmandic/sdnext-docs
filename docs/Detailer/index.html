@@ -2423,6 +2423,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#skipping-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skipping classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#segmentation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4624,6 +4635,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#skipping-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skipping classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#segmentation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4773,12 +4795,30 @@ Prefix a line with [CLASS=name] to route that line's prompt to any detection who
 <p>[CLASS=face] detailed eyes, sharp iris<br />
 [CLASS=hand] five fingers, correct anatomy  </p>
 </blockquote>
-<p>Class names are matched case-insensitively against the classes listed in logs when the model loads<br />
-Multiple classes can share one line: [CLASS=head,face] ....<br />
-Lines without a [CLASS=...] tag are used as before — assigned by position to any detection with no matching class tag  </p>
-<p>If a [CLASS=name] tag never matches a detection, a warning is logged in case it's a typo  </p>
+<p>Notes:
+- Class names are matched case-insensitively against the classes listed in logs when the model loads<br />
+- Multiple classes can share one line: [CLASS=head,face] ....<br />
+- Lines without a [CLASS=...] tag are used as before — assigned by position to any detection with no matching class tag<br />
+- If there are no lines without a [CLASS=...] tag, detections with no matching class tag use the primary prompt, as if a [prompt] line had been added<br />
+- If a [CLASS=name] tag never matches a detection, a warning is logged in case it's a typo  </p>
 <p>The same syntax applies to negative prompts.</p>
-<p>Note: Per-class prompts are not compatible with Merge detailers — merging combines all detections from a model into a single region, so per-class targeting no longer applies.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Per-class prompts are not compatible with Merge detailers — merging combines all detections from a model into a single region, so per-class targeting no longer applies.</p>
+</div>
+<h3 id="skipping-classes">Skipping classes</h3>
+<p>With a multi-class model (or several models with different classes), detections of some classes can be excluded from detailing
+Add a line with [SKIP=name] to the detailer prompt or the detailer negative prompt: those detections are still detected, but not processed</p>
+<p>[SKIP=eyes]
+[CLASS=face] detailed skin</p>
+<p>Notes:
+- Class names are matched case-insensitively against the classes listed in logs when the model loads<br />
+- Multiple classes can share one line: [SKIP=eyes,hand]<br />
+- Skip lines are not used as prompt text, and a detailer prompt that only contains skip lines still uses the primary prompt<br />
+- Skipped detections don't count towards Max detected and don't use up positional prompt lines  </p>
+<p>If a class has both [SKIP=name] and a [CLASS=name] line, the [CLASS] line wins: the detection is processed with its prompt and a warning is logged
+If a [SKIP=name] tag never matches a detection, a warning is logged in case it's a typo</p>
+<p>With Include detections enabled, skipped detections are shown in yellow and detections where the skip was overridden by a [CLASS] line in red</p>
 <h3 id="segmentation">Segmentation</h3>
 <p>Some Detailer models can output segmentation masks, not just bounding boxes.
 To use segmentation masks, enable <strong>Use segmentation</strong>.

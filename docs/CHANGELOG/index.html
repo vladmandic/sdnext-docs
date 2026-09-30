@@ -9640,6 +9640,9 @@
 <li>processors: <code>DWPose</code>, <code>RTMW</code>, <code>RTMO</code>: image processor updates, thanks @kirtasshh<br />
     refactored to use <code>ONNX</code> instead of obsolete <code>mmpose</code> lib and with additional configurable settings  </li>
 <li>lora: extend support for more model types</li>
+<li>scheduler: expose base and max image sequence lengths<br />
+    recommended to change when target resolution is significantly different from the base resolution  </li>
+<li>detailer: add option to skip specific classes using <code>[SKIP=name]</code> in the detailer prompt, thanks @kirtasshh</li>
 <li><strong>UI</strong></li>
 <li>massive improvement to built-in tooltips/hints<br />
     over 1,000 new entries, now at zero missing ui controls or settings<br />
@@ -9652,6 +9655,7 @@
 <li>caption: improve qwen image handling</li>
 <li>caption: improve error handling</li>
 <li>civitai: better handle downloads and naming</li>
+<li>civitai: reference downloads no longer log an unmapped model type</li>
 <li>control: hires fixed size keeps the requested width on 16 px and 32 px models</li>
 <li>detailer: use of lora models, thanks @kirtasshh</li>
 <li>dlss: the detailer and the other per-image steps run once when dlss is off</li>
@@ -9670,8 +9674,10 @@
 <li>pag: attention guidance engages again on sd15 and sdxl</li>
 <li>pixelsmith: vae tiling, thanks @li-lizhe  </li>
 <li>preview: remove flicker when finishing generation</li>
+<li>preview: better route decode call based on latents ndim</li>
 <li>prompt cache: bypass when condition images are encoded</li>
-<li>sampler: when creating sampler, copy all valid options from default sampler</li>
+<li>scheduler: when creating sampler, copy all valid options from default sampler</li>
+<li>scheduler: debounce sampler options save</li>
 <li>seedvr: handle temporal overap</li>
 <li>styles: fix infotext parsing, thanks @obelisk-complex</li>
 <li>temp file: gradio temp file error handling</li>
