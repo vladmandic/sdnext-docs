@@ -4304,22 +4304,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-30" class="md-nav__link">
+  <a href="#update-for-2026-10-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-30
+        Update for 2026-10-01
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-09-30">
+    <nav class="md-nav" aria-label="Update for 2026-10-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-09-30" class="md-nav__link">
+  <a href="#highlights-for-2026-10-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-09-30
+        Highlights for 2026-10-01
       
     </span>
   </a>
@@ -4327,10 +4327,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-09-30" class="md-nav__link">
+  <a href="#details-for-2026-10-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-09-30
+        Details for 2026-10-01
       
     </span>
   </a>
@@ -6947,22 +6947,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-09-30" class="md-nav__link">
+  <a href="#update-for-2026-10-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-09-30
+        Update for 2026-10-01
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-09-30">
+    <nav class="md-nav" aria-label="Update for 2026-10-01">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-09-30" class="md-nav__link">
+  <a href="#highlights-for-2026-10-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-09-30
+        Highlights for 2026-10-01
       
     </span>
   </a>
@@ -6970,10 +6970,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#details-for-2026-09-30" class="md-nav__link">
+  <a href="#details-for-2026-10-01" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Details for 2026-09-30
+        Details for 2026-10-01
       
     </span>
   </a>
@@ -9582,18 +9582,18 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-09-30">Update for 2026-09-30</h2>
-<h3 id="highlights-for-2026-09-30">Highlights for 2026-09-30</h3>
+<h2 id="update-for-2026-10-01">Update for 2026-10-01</h2>
+<h3 id="highlights-for-2026-10-01">Highlights for 2026-10-01</h3>
 <p><em>What's New</em>? This release brings:
 - Few new models: <strong>Qwen-Image 2.1</strong>, <strong>Bria Fibo 1.5</strong> and <strong>ObjectClear</strong>
-- <strong>DLSS5</strong> reimagined for much higher performance and full cross-platform support
+- <strong>DLSS5</strong> reimagined for much higher performance and full cross-platform and cross-gpu support
 - New live-preview method using <strong>MicroDecoder</strong>
 - Better handling of multi-image reference editing
-- Compute updates for ROCm, OpenVINO, and XPU
-- Massive updates to UI tooltips/hints: over 1,000 new entries and revised existing ones</p>
+- Compute updates for <em>ROCm, OpenVINO, and XPU</em>
+- Massive updates to UI tooltips/hints: <em>over 1,000 new entries and revised existing ones</em></p>
 <p>Plus quite a few other improvements and inevitable bug-fixes, see full changelog below for details...</p>
 <p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
-<h3 id="details-for-2026-09-30">Details for 2026-09-30</h3>
+<h3 id="details-for-2026-10-01">Details for 2026-10-01</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-2.1">Qwen-Image 2.1</a> in <em>base</em>, <em>sdnq-4bit</em> and <em>sdnq-8bit</em> variants<br />
@@ -9625,6 +9625,7 @@
 <li>can be used via <em>generate -&gt; extras</em> or as a separate <em>process</em> workflow</li>
 <li>additional gpu-acceleration for cuda is included, but skipped on non-cuda devices</li>
 <li>no installation needed, just enable and thats it!</li>
+<li>cli usage in <code>modules/dlss/cli-dlss.py</code>  </li>
 <li><strong>Preview</strong></li>
 <li>full refactor: refactored <em>taesd</em>, added <em>micro-decoder</em>, removed <em>simple</em> and <em>approximate</em> methods</li>
 <li>new <a href="https://huggingface.co/vladmandic/MicroDecoder">MicroDecoder</a> vae implementation<br />
@@ -9635,14 +9636,17 @@
     instead of relying on polling and low-priority updates, forces preview calculation on each step  </li>
 <li>previews now work on batched generations</li>
 <li><strong>Other</strong></li>
-<li>edit-models: simplify usage of multi-image reference editing<br />
+<li><strong>edit-models</strong>: simplify usage of multi-image reference editing<br />
     automatically handle: flux.2, glm-image, nano-banana, joy-image-edit, qwen-image-edit</li>
-<li>processors: <code>DWPose</code>, <code>RTMW</code>, <code>RTMO</code>: image processor updates, thanks @kirtasshh<br />
+<li><strong>processors</strong>: <code>DWPose</code>, <code>RTMW</code>, <code>RTMO</code>: image processor updates, thanks @kirtasshh<br />
     refactored to use <code>ONNX</code> instead of obsolete <code>mmpose</code> lib and with additional configurable settings  </li>
-<li>lora: extend support for more model types</li>
-<li>scheduler: expose base and max image sequence lengths<br />
+<li><strong>lora</strong>: extend support for more model types</li>
+<li><strong>scheduler</strong>: expose base and max image sequence lengths<br />
     recommended to change when target resolution is significantly different from the base resolution  </li>
-<li>detailer: add option to skip specific classes using <code>[SKIP=name]</code> in the detailer prompt, thanks @kirtasshh</li>
+<li><strong>detailer</strong>: add option to skip specific classes using <code>[SKIP=name]</code> in the detailer prompt, thanks @kirtasshh</li>
+<li><strong>watermarking</strong>: updated code for both image(visible) and text(invisible) watermarking<br />
+    new api endpoint: <code>/sdapi/v1/watermark</code> with <code>POST</code> and <code>GET</code> methods<br />
+    new cli example: <code>cli/api-watermark.py</code>  </li>
 <li><strong>UI</strong></li>
 <li>massive improvement to built-in tooltips/hints<br />
     over 1,000 new entries, now at zero missing ui controls or settings<br />
