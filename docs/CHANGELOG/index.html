@@ -9625,12 +9625,16 @@
   - zluda should only be used on older amd gpus not supported by rocm/windows<br />
 - <strong>Compute</strong>
   - sdnq: support double-quant, including <code>nvfp4</code>
+  - text encoder: <em>skip torch compile for TE</em> option runs encoder calls without torch.compile, so a new prompt length or image size does not trigger a recompile, see <em>settings -&gt; compute settings</em>
 - <strong>Fixes</strong>
   - schedulers: update init signature for new configuration options
   - rocm: remove incompatible env flags
   - test: update <code>--test</code> workflow
   - paths: improve handling of allowed paths and add settings option to extend them
-  - reference: update missing reference thumbnails</p>
+  - reference: update missing reference thumbnails
+  - hires: no output-size warning or infotext entry for the image the hires pass upscales itself
+  - control: no output-size warning or infotext entry when the processed input sets the size
+  - triton: skipping autotune runs the first config the kernel's own pruning keeps, so sdnq int8 attention compiles with skip enabled</p>
 <h2 id="update-for-2026-10-01">Update for 2026-10-01</h2>
 <h3 id="highlights-for-2026-10-01">Highlights for 2026-10-01</h3>
 <p><em>What's New</em>? This release brings:
