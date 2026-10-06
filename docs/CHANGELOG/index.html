@@ -4304,13 +4304,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-05" class="md-nav__link">
+  <a href="#update-for-2026-10-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-05
+        Update for 2026-10-06
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-for-2026-10-06_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update for 2026-10-06
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update for 2026-10-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2026-10-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2026-10-06
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2026-10-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details for 2026-10-06
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6958,13 +6997,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-05" class="md-nav__link">
+  <a href="#update-for-2026-10-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-05
+        Update for 2026-10-06
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-for-2026-10-06_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update for 2026-10-06
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update for 2026-10-06">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2026-10-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2026-10-06
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2026-10-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details for 2026-10-06
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -9604,7 +9682,20 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-10-05">Update for 2026-10-05</h2>
+<h2 id="update-for-2026-10-06">Update for 2026-10-06</h2>
+<ul>
+<li><strong>Edit</strong><br />
+<em>edit</em> models work differently than more traditional <em>i2i/inpaint</em> models as they use indirect reference image(s)<br />
+<strong>hires</strong> and <strong>detailer</strong> now set condition-image on edit models thus unlocking advanced workflows<br />
+  supported: <em>Qwen-Image 2.1, Qwen-Image-Edit and Edit Plus, FLUX.2, FLUX.1 Kontext, GLM-Image, JoyImage Edit Plus</em>  </li>
+</ul>
+<h2 id="update-for-2026-10-06_1">Update for 2026-10-06</h2>
+<h3 id="highlights-for-2026-10-06">Highlights for 2026-10-06</h3>
+<p>Service release which brings several updates and fixes, but most importantly verified and locked down <em>torch/compute</em> configurations for all supported GPUs and platforms.
+For optimal experience, either perform a fresh install or delete the <code>venv</code> folder so all required libs are clean-installed.</p>
+<p>See <a href="https://github.com/vladmandic/sdnext/blob/dev/CHANGELOG.md">changelog</a> below for full details.</p>
+<p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/automatic/blob/master/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
+<h3 id="details-for-2026-10-06">Details for 2026-10-06</h3>
 <ul>
 <li><strong>Torch</strong><br />
   update all torch versions to best known options:  </li>
@@ -9638,7 +9729,12 @@
   - hires: no output-size warning or infotext entry for the image the hires pass upscales itself
   - control: no output-size warning or infotext entry when the processed input sets the size
   - triton: skipping autotune runs the first config the kernel's own pruning keeps
-  - gc: aux models use correct gc method, thanks @li-lizhe</p>
+  - gc: aux models use correct gc method, thanks @li-lizhe
+  - control: controlnet with a separate init image uses the unit's processed image
+  - control: controlnet with <em>init image same as control</em> uses the unit's processed image
+  - control: multiple units on controlnet-union
+  - control: t2i-adapter, controlnet-xs and controllite model lists follow the loaded model type
+  - control: live preview and interrupt for sd and sdxl controlnet without an init image</p>
 <h2 id="update-for-2026-10-01">Update for 2026-10-01</h2>
 <h3 id="highlights-for-2026-10-01">Highlights for 2026-10-01</h3>
 <p><em>What's New</em>? This release brings:
