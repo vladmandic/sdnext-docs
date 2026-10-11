@@ -9701,6 +9701,10 @@
 <li>server: <code>--auth</code> values masked in the startup log and <code>/sdapi/v1/cmd-flags</code></li>
 <li>api: <code>--cors-origins</code> entries separated by a comma and a space</li>
 <li>api: auth check for users with a non-ascii password</li>
+<li>infotext: quoted values with escaped quotes, and a parser stall on unterminated ones</li>
+<li>infotext: parser stall on long runs of words or spaces without a colon</li>
+<li>infotext: parse error on values with superscript or circled digits</li>
+<li>infotext: a value starting with a double quote no longer swallows the next parameter</li>
 </ul>
 <h2 id="update-for-2026-10-06">Update for 2026-10-06</h2>
 <h3 id="highlights-for-2026-10-06">Highlights for 2026-10-06</h3>
