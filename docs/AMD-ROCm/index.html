@@ -1777,6 +1777,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#install-guide-for-arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Guide for Arch Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1862,6 +1873,45 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="ROCm on Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-triton-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Triton-Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-lightweight-visual-studio-buildtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Install Lightweight Visual Studio Buildtools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-visual-c-redistributables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Install Visual C++ Redistributables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4522,6 +4572,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#install-guide-for-arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Guide for Arch Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4608,6 +4669,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="ROCm on Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-triton-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Triton-Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-lightweight-visual-studio-buildtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Install Lightweight Visual Studio Buildtools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-visual-c-redistributables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Install Visual C++ Redistributables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -4637,22 +4737,28 @@
 
 
 <h1 id="amd-rocm">AMD ROCm</h1>
-<p>To use <strong>AMD ROCm</strong> with <strong>SD.Next</strong>:
-1. Install ROCm libraries.
-2. Run SD.Next with <code>--use-rocm</code> so it installs a compatible <code>torch</code> build.</p>
+<p>To use <strong>AMD ROCm</strong> with <strong>SD.Next</strong>:</p>
+<ol>
+<li>Install ROCm libraries.</li>
+<li>Run SD.Next with <code>--use-rocm</code> so it installs a compatible <code>torch</code> build.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>AMD ROCm is officially supported for specific AMD GPUs.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>AMD ROCm is officially supported for specific AMD GPUs.  </p>
-<p>[!IMPORTANT]<br />
-Currently, PyTorch support on Windows is not officially maintained by PyTorch team.<br />
-See <a href="https://www.amd.com/en/resources/support-articles/release-notes/RN-AMDGPU-WINDOWS-PYTORCH-PREVIEW.html">AMD's announcement</a> for more information.  </p>
-<p>[!WARNING]<br />
-Unofficial support for other platforms is provided by the community and <strong>SD.Next</strong> does not guarantee it will work.<br />
+<p>Currently, PyTorch support on Windows is not officially maintained by PyTorch team.<br />
+See <a href="https://www.amd.com/en/resources/support-articles/release-notes/RN-AMDGPU-WINDOWS-PYTORCH-PREVIEW.html">AMD's announcement</a> for more information.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unofficial support for other platforms is provided by the community and <strong>SD.Next</strong> does not guarantee it will work.<br />
 Use of any third-party libraries is at your own risk.</p>
 </div>
 <ul>
-<li>For preview support on Windows platform, see <a href="./#rocm-on-windows">ROCm on Windows</a> section.  </li>
-<li>For unofficial support for Windows platform, see <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA">ZLUDA</a> page.  </li>
+<li>For preview support on Windows platform, see <a href="./#rocm-on-windows">ROCm on Windows</a> section.</li>
+<li>For unofficial support for Windows platform, see <a href="https://github.com/vladmandic/sdnext/wiki/ZLUDA">ZLUDA</a> page.</li>
 </ul>
 <h2 id="rocm-on-linux">ROCm on Linux</h2>
 <h3 id="install-guide-for-ubuntu-2404">Install Guide for Ubuntu 24.04</h3>
@@ -4667,7 +4773,7 @@ sudo<span class="w"> </span>usermod<span class="w"> </span>-a<span class="w"> </
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>python3<span class="w"> </span>python3-dev<span class="w"> </span>python3-venv<span class="w"> </span>python3-pip
 </code></pre></div>
 <h3 id="install-guide-for-ubuntu-2204">Install Guide for Ubuntu 22.04</h3>
-<p>Simply change the wget line from "noble" to "jammy" if using Ubuntu 22.04.  </p>
+<p>Simply change the wget line from "noble" to "jammy" if using Ubuntu 22.04.</p>
 <h3 id="install-guide-for-opensuse-tumbleweed">Install Guide for openSUSE Tumbleweed</h3>
 <p>Install prerequisites:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>zypper<span class="w"> </span><span class="k">in</span><span class="w"> </span>python312-devel<span class="w"> </span>python312-virtualenv<span class="w"> </span>python312-pip<span class="w"> </span>patterns-devel-base-devel_basis
@@ -4688,20 +4794,14 @@ sudo<span class="w"> </span>zypper<span class="w"> </span>ref<span class="w"> </
 <span class="w">    </span>libhipfft0-devel<span class="w"> </span>libhipsolver0-devel<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>libhipsparse1-devel<span class="w"> </span>rocthrust-devel<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>librocfft0<span class="w"> </span>rocm-core<span class="w"> </span>rocrand<span class="w"> </span>rocsolver<span class="w"> </span>
-<span class="w">  </span><span class="sb">```</span>
-
-This<span class="w"> </span>procedure<span class="w"> </span>should<span class="w"> </span>also<span class="w"> </span>work<span class="w"> </span><span class="k">for</span><span class="w"> </span>Leap-based<span class="w"> </span>distributions<span class="w"> </span>and<span class="w"> </span>Slowroll<span class="w"> </span><span class="o">(</span>adjust<span class="w"> </span>the<span class="w"> </span>distro-specific<span class="w"> </span>lines<span class="o">)</span>,<span class="w"> </span>but<span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>tested.
-
-**Note**:<span class="w"> </span>This<span class="w"> </span>also<span class="w"> </span>installs<span class="w"> </span>build<span class="w"> </span>dependencies<span class="w"> </span><span class="k">for</span><span class="w"> </span>flash-attention.
-
-<span class="c1">### Install Guide for Arch Linux</span>
-
-Install<span class="w"> </span>ROCm<span class="w"> </span>and<span class="w"> </span>git:<span class="w">  </span>
-
-<span class="sb">```</span>shell
-sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>rocm-hip-runtime<span class="w"> </span>git
 </code></pre></div>
-<p>Install Python 3.12 (or anything between 3.10 and 3.13):  </p>
+<p>This procedure should also work for Leap-based distributions and Slowroll (adjust the distro-specific lines), but it is not tested.</p>
+<p><strong>Note</strong>: This also installs build dependencies for flash-attention.</p>
+<h3 id="install-guide-for-arch-linux">Install Guide for Arch Linux</h3>
+<p>Install ROCm and git:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>rocm-hip-runtime<span class="w"> </span>git
+</code></pre></div>
+<p>Install Python 3.12 (or anything between 3.10 and 3.13):</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>base-devel<span class="w"> </span>python-pip<span class="w"> </span>python-virtualenv
 git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/python312.git
 <span class="nb">cd</span><span class="w"> </span>python312
@@ -4712,16 +4812,16 @@ makepkg<span class="w"> </span>-si
 <span class="c1"># remove the package builder residuals:</span>
 <span class="c1"># rm -rf python312</span>
 </code></pre></div>
-<p>Install ROCm SDK:  </p>
-<blockquote>
-<p>[!NOTE]
-ROCm SDK is optional. It is only required for building flash attention or similar custom kernels.<br />
-ROCm SDK uses 26 GB of disk space.  </p>
-</blockquote>
+<p>Install ROCm SDK:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ROCm SDK is optional. It is only required for building flash attention or similar custom kernels.\
+ROCm SDK uses 26 GB of disk space.</p>
+</div>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>rocm-hip-sdk<span class="w"> </span>libxml2-legacy<span class="w"> </span>gcc14<span class="w"> </span>gcc14-libs
 </code></pre></div>
 <h2 id="running-sdnext-with-rocm-locally">Running SD.Next with ROCm locally</h2>
-<p>Open a terminal in the folder where you want to install SD.Next, then run:  </p>
+<p>Open a terminal in the folder where you want to install SD.Next, then run:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vladmandic/sdnext
 <span class="sb">```</span>bash
 
@@ -4730,20 +4830,20 @@ Then<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> </s
 <span class="sb">```</span>shell
 <span class="nb">cd</span><span class="w"> </span>sdnext
 </code></pre></div>
-<p>Run SD.Next with:  </p>
+<p>Run SD.Next with:</p>
 <div class="highlight"><pre><span></span><code>./webui.sh<span class="w"> </span>--use-rocm
 </code></pre></div>
-<blockquote>
-<p>[!NOTE]
-It will install the necessary libraries at the first run so it will take a while depending on your internet.  </p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.</p>
+</div>
 <h2 id="running-sdnext-with-docker-for-rocm">Running SD.Next with Docker for ROCm</h2>
-<p>See <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker</a> if you want to build a custom image.  </p>
-<blockquote>
-<p>[!NOTE]
-Installing ROCm on your system is not required when using Docker as Docker has no access to it anyway.  </p>
-</blockquote>
-<p>To run a prebuilt Docker image:  </p>
+<p>See <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker</a> if you want to build a custom image.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Installing ROCm on your system is not required when using Docker as Docker has no access to it anyway.</p>
+</div>
+<p>To run a prebuilt Docker image:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SDNEXT_DOCKER_ROOT_FOLDER</span><span class="o">=</span>~/sdnext
 sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--name<span class="w"> </span>sdnext-rocm<span class="w"> </span><span class="se">\</span>
@@ -4757,29 +4857,34 @@ sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </
 <span class="w">  </span>-v<span class="w"> </span><span class="nv">$SDNEXT_DOCKER_ROOT_FOLDER</span>/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>disty0/sdnext-rocm:latest
 </code></pre></div>
-<blockquote>
-<p>[!NOTE]
-It will install the necessary libraries at the first run so it will take a while depending on your internet.<br />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It will install the necessary libraries at the first run so it will take a while depending on your internet.<br />
 Resulting docker image will use 3.2 GB disk space (uncompressed) for the docker image and 20 GB for the venv.</p>
-</blockquote>
+</div>
 <h2 id="rocm-performance-tuning-on-linux">ROCm performance tuning on Linux</h2>
 <p>For details, see <a href="../AMD-MIOpen/">AMD-MIOpen Guide</a>.</p>
 <h3 id="miopen-database-tuning">MIOpen database tuning</h3>
-<p>On first use, on first use of a new resolution, or after a PyTorch upgrade, ROCm runs benchmarks to pick efficient kernels.<br />
+<p>On first use, on first use of a new resolution, or after a PyTorch upgrade, ROCm runs benchmarks to pick efficient kernels.\
 This can make startup slow (up to 5-8 minutes), especially with high-resolution refine passes, but it usually happens once per resolution.</p>
-<p>If startup time is the priority, set <code>MIOPEN_FIND_MODE=FAST</code>.<br />
+<p>If startup time is the priority, set <code>MIOPEN_FIND_MODE=FAST</code>.\
 If generation performance is the priority, set <code>MIOPEN_FIND_ENFORCE=SEARCH</code> and accept slower first-time startup.</p>
 <h3 id="reduce-vram-consumption">Reduce VRAM consumption</h3>
-<p>If you use <code>bf16</code> (<em>Settings &gt; Compute Settings &gt; Execution Precision &gt; Device precision type</em>), which is auto-detected on RDNA3 and newer cards, VRAM usage can become very high (16+ GB) during final decode and non-latent upscaling.<br />
+<p>If you use <code>bf16</code> (<em>Settings &gt; Compute Settings &gt; Execution Precision &gt; Device precision type</em>), which is auto-detected on RDNA3 and newer cards, VRAM usage can become very high (16+ GB) during final decode and non-latent upscaling.\
 To reduce usage, set <code>Device precision type</code> to <code>fp16</code> and disable VAE upcasting in <em>Variational Auto Encoder &gt; VAE upcasting</em>.</p>
 <p>Using <code>fp16</code> can also improve performance.</p>
 <h3 id="composable-kernel-ck-flash-attention">Composable Kernel (CK) Flash attention</h3>
-<p>On RDNA3 hardware (RX 7000 series), you can enable CK Flash Attention in <em>Compute Settings &gt; Cross Attention &gt; SDP Options</em> by toggling <code>CK Flash attention</code> and restarting SD.Next.<br />
+<p>On RDNA3 hardware (RX 7000 series), you can enable CK Flash Attention in <em>Compute Settings &gt; Cross Attention &gt; SDP Options</em> by toggling <code>CK Flash attention</code> and restarting SD.Next.\
 This requires <code>rocm-hip-sdk</code>, because SD.Next downloads and compiles an additional Python package at startup.</p>
-<p>In case you want to install it manually, activate the virtual environment then run <code>pip</code>:  </p>
+<p>In case you want to install it manually, activate the virtual environment then run <code>pip</code>:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--no-build-isolation<span class="w"> </span>git+https://github.com/Disty0/flash-attention@navi_rotary_fix
 </code></pre></div>
 <h2 id="rocm-on-windows">ROCm on Windows</h2>
+<p>ROCm on Windows is always in a state of flux with constant development changes.<br />
+Users of the popular gaming architectures RDNA2, RDNA3 and RDNA4 all report variance is performance when changing versions.</p>
+<p>At SD.Next we attempt to test and verify performant versions vs regressive ones but there are as yet no final versions that work for everyone properly all the time.</p>
+<p>ROCm users are encouraged to open github issues and visit the SD.Next discord with their questions and reports,
+Especially if they experience performance issues from version to version.</p>
 <ol>
 <li>Install <a href="https://git-scm.com/downloads/win">Git</a> and <a href="https://www.python.org/downloads/release/python-31210/">Python 3.12</a>.</li>
 <li>Open the terminal in a folder you want to install SD.Next and install SD.Next from GitHub with this command:</li>
@@ -4801,6 +4906,45 @@ This requires <code>rocm-hip-sdk</code>, because SD.Next downloads and compiles 
 </ol>
 <div class="highlight"><pre><span></span><code>./webui.bat<span class="w"> </span>--use-rocm
 </code></pre></div>
+<h3 id="installing-triton-windows">Installing Triton-Windows</h3>
+<p>SD.Next ROCm on Windows supports SDNQ which is the best performing attention and quantization path for all RDNA architectures, Users are strongly encouraged to use SDNQ for all types of image and video generation.</p>
+<p>A pre-requisite for the functioning of SDNQ is Triton, Triton-Windows in this case.   </p>
+<p>Once the SD.Next installation has concluded install Triton-Windows with this command:</p>
+<div class="highlight"><pre><span></span><code>CD<span class="w"> </span>SD.Next<span class="w"> </span>folder
+./venv/scripts/activate<span class="w"> </span>
+pip<span class="w"> </span>install<span class="w"> </span>triton-windows<span class="o">==</span><span class="m">3</span>.7.1.post27
+</code></pre></div>
+<blockquote>
+<p>[!IMPORTANT] 📌 Prior to running SD.Next, for Triton-Windows to work, The C++ runtime engine environment needs to be installed.</p>
+</blockquote>
+<p>Usually a full installation of the Microsoft Visual Studio  is required, instead here is a lightweight alternative that only installs the required C++ runtime engine and it's requirements, instead of the entire Visual Studio IDE.</p>
+<h3 id="step-1-install-lightweight-visual-studio-buildtools">Step 1: Install Lightweight Visual Studio Buildtools</h3>
+<p>You can download the official lightweight bootstrapper directly from Microsoft's short link:</p>
+<p><a href="https://aka.ms/vs/17/release/vs_BuildTools.exe">https://aka.ms/vs/17/release/vs_BuildTools.exe</a></p>
+<p><em>(Running this executable launches the minimal installer without installing the full Visual Studio IDE).</em></p>
+<p>After download completes run in an elevated command prompt or powershell:</p>
+<div class="highlight"><pre><span></span><code>vs_BuildTools.exe<span class="w"> </span>--passive<span class="w"> </span>--wait<span class="w"> </span>--add<span class="w"> </span>Microsoft.VisualStudio.Workload.VCTools<span class="w"> </span>--includeRecommended
+</code></pre></div>
+<p>After install completes verify the location of the requires <code>vcvars64.bat</code> file:</p>
+<div class="highlight"><pre><span></span><code>C:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="w"> </span><span class="o">(</span>x86<span class="o">)</span><span class="se">\M</span>icrosoft<span class="w"> </span>Visual<span class="w"> </span>Studio<span class="se">\2</span><span class="m">022</span><span class="se">\B</span>uildTools<span class="se">\V</span>C<span class="se">\A</span>uxiliary<span class="se">\B</span>uild<span class="se">\v</span>cvars64.bat
+</code></pre></div>
+<p>If the installation location is present run the following command, if the installation folder is different in version make the necessary changes to the following command:</p>
+<div class="highlight"><pre><span></span><code>cmd<span class="w"> </span>/c<span class="w"> </span><span class="s1">'"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat" &gt;nul 2&gt;&amp;1 &amp;&amp; set'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>ForEach-Object<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="nv">$_</span><span class="w"> </span>-match<span class="w"> </span><span class="s1">'^([^=]+)=(.*)$'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="o">[</span>System.Environment<span class="o">]</span>::SetEnvironmentVariable<span class="o">(</span><span class="nv">$matches</span><span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span><span class="nv">$matches</span><span class="o">[</span><span class="m">2</span><span class="o">]</span>,<span class="w"> </span><span class="s1">'Process'</span><span class="o">)</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="o">}</span>
+</code></pre></div>
+<p>It is vital that the <code>vcvars64.bat</code> is found before running this command, do a search for it and copy that path into the command to be sure.</p>
+<h3 id="step-2-install-visual-c-redistributables">Step 2: Install Visual C++ Redistributables</h3>
+<p>Because compiled binaries (such as <code>libtriton.pyd</code>) link against MSVC, ensure the system runtime is updated:</p>
+<ol>
+<li>
+<p>Download the 64-bit runtime <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Visual C++ Redistributable (</a><code>vc_redist.x64.exe</code><a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">)</a>.</p>
+</li>
+<li>
+<p>Run the <code>vc_redist.x64.exe</code> installer.</p>
+</li>
+<li>Complete the setup and restart your system if prompted.</li>
+</ol>
+<p>After both installations have concluded, restart your computer, now your SD.Next is ready with Triton-Windows support.</p>
+<p>Overall ROCm support on Windows is an ongoing AMD development project, if you have any questions, reports of bugs, or are having trouble with the installation don't hesitate to join the Discord or open an issue on Github.</p>
 
 
 
