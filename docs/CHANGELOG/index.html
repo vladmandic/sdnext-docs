@@ -9718,12 +9718,17 @@
 <li><a href="https://deepmind.google/models/model-cards/nano-banana-2-1">Google Nano Banana 2.1</a></li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo">Qwen Image 2.1 Turbo</a> in <em>base</em> and <em>sdnq-uint4</em> variants</li>
 <li><strong>Scheduler</strong><br />
-  new native <em>task scheduler</em> and <em>queue management</em><br />
+  new native <em>Task Scheduler</em> and <em>Queue Management</em><br />
   see <a href="https://vladmandic.github.io/sdnext-docs/Scheduler/">scheduler documentation</a>  </li>
 <li><strong>Edit Models</strong><br />
 <em>edit</em> models work differently than more traditional <em>i2i/inpaint</em> models as they use indirect reference image(s)<br />
 <strong>hires</strong> and <strong>detailer</strong> now set condition-image on edit models thus unlocking advanced workflows<br />
   supported models: <em>Qwen-Image 2.1, Qwen-Image-Edit and Edit Plus, FLUX.2, FLUX.1 Kontext, GLM-Image, JoyImage Edit Plus</em>  </li>
+<li><strong>Benchmark</strong><br />
+  in-depth benchmarking of quantization and attention parameters<br />
+  provides clear recommendations based on benchmark results<br />
+  available via UI: <em>System -&gt; Benchmark</em> or CLI: <code>cli/sdnq-attention-benchmark.py</code><br />
+<em>note</em>: depending on benchmark settings/depth, it may take a very long time to complete  </li>
 <li><strong>Fixes</strong></li>
 <li>offload: group offload logs a denied pin once per component</li>
 <li>ipadapter: loading and unloading adapters under group offload</li>
