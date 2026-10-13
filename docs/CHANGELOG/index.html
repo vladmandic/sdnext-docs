@@ -9731,6 +9731,12 @@
 <em>note</em>: depending on benchmark settings/depth, it may take a very long time to complete  </li>
 <li><strong>Fixes</strong></li>
 <li>offload: group offload logs a denied pin once per component</li>
+<li>offload: balanced offload warns when a module exceeds the gpu limit and part of it runs from cpu</li>
+<li>anima: load repos in the diffusers modular layout, such as <code>circlestone-labs/Anima-Base-v1.0-Diffusers</code></li>
+<li>color correction: histogram method returns rgb instead of rgba</li>
+<li>color correction: keep transparency of rgba outputs, wavelet and adain no longer fail on them</li>
+<li>color correction: wavelet method keeps the generated image and matches only its colors</li>
+<li>server: create the <code>data</code> folder in a new <code>--data-dir</code>, so the metadata cache saves</li>
 <li>ipadapter: loading and unloading adapters under group offload</li>
 <li>ipadapter: jobs without an adapter after an adapter job</li>
 <li>lora: reset loaded networks if refiner prompt is used</li>
@@ -9746,6 +9752,13 @@
 <li>infotext: a value starting with a double quote no longer swallows the next parameter</li>
 <li>rocm: arch detection with newer windows drivers, thanks @crashingalexsan</li>
 <li>samplers: update ui when sampler settings change, thanks @resonantsky</li>
+<li>video: reject output extensions other than letters and digits</li>
+<li>video: accept only rate and quality codec options</li>
+<li>api: folders allowed for one file request no longer stay allowed for later requests</li>
+<li>api: rate limit and log costs match the exact path or the route template, not other routes' prefixes</li>
+<li>video: no error logged after framepack upscale or seedvr interpolation</li>
+<li>framepack: a run after an interrupted job no longer ends at once without output</li>
+<li>api: register <code>/sdapi/v1/framepack</code> with video upscale options, 499 on interrupt and 500 when no video was written</li>
 </ul>
 <h2 id="update-for-2026-10-06">Update for 2026-10-06</h2>
 <h3 id="highlights-for-2026-10-06">Highlights for 2026-10-06</h3>
