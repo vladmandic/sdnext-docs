@@ -2413,6 +2413,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#scheduler-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduler controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#scheduler-execution" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4507,6 +4518,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#scheduler-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduler controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#scheduler-execution" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4624,9 +4646,23 @@ It lets you submit a generation request, continue working, and let SD.Next proce
 <p>Each task keeps the prompt, model, and media inputs with it so it can be processed later without losing context.</p>
 <h2 id="scheduler-state">Scheduler state</h2>
 <p>Scheduler itself can be in one of the following states:
-- <strong>Active</strong>: the scheduler will process any tasks in the queue
-- <strong>Paused</strong>: the scheduler is temporarily halted
-- <strong>Auto</strong>: the scheduler will run during preferred start/end active time</p>
+- <strong>Active</strong>: the worker processes queued tasks regardless of the active-time window.
+- <strong>Paused</strong>: task processing is paused, but the worker, database, and task API remain available. Tasks can still be listed and managed.
+- <strong>Auto</strong>: the worker processes tasks only during the configured start/end active-time window.
+- <strong>Stopped</strong>: the worker is stopped and task APIs and new scheduled submissions are unavailable. If the server starts in this state, it does not initialize the scheduler database. Status and state controls remain available; choosing Active, Paused, or Auto enables the scheduler again.</p>
+<h2 id="scheduler-controls">Scheduler controls</h2>
+<p>The Control and Video panels provide a <strong>Schedule</strong> button that adds the current request to the queue instead of starting generation immediately. Video requests from the Video, FramePack, LTX Video, and MiniMax panels use the same queue.</p>
+<p>The Scheduler toolbar buttons control the worker:</p>
+<ul>
+<li><strong>Active</strong>: process queued tasks without a time restriction.</li>
+<li><strong>Paused</strong>: pause processing while keeping task management available.</li>
+<li><strong>Auto</strong>: process tasks only within the configured active-time window.</li>
+<li><strong>Stop scheduler</strong>: stop the worker and disable task operations until another mode is selected.</li>
+<li><strong>Refresh</strong>: reload task rows and scheduler status.</li>
+<li><strong>Load more tasks</strong>: fetch the next page of task history when more rows are available.</li>
+<li><strong>Prune tasks</strong>: delete tasks older than the selected date and compact the database.</li>
+</ul>
+<p>Each task row provides <strong>Execute</strong>, <strong>Pause</strong>, <strong>Resume</strong>, and <strong>Delete</strong> actions when applicable. Task details also provide <strong>Save task parameters</strong> and a <strong>Run at</strong> field for rescheduling.</p>
 <h2 id="scheduler-execution">Scheduler execution</h2>
 <p>Each task can be <strong>Queued</strong> or <strong>Scheduled</strong></p>
 <ul>
