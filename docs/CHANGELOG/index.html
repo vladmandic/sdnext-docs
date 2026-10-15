@@ -9802,6 +9802,9 @@ Plus quite a lot of other smaller improvements and bug fixes  </p>
 <li>html custom hash for improved caching and performance</li>
 <li>js split bundle</li>
 <li>microvae is now default for live previews</li>
+<li><strong>Internal</strong></li>
+<li>switch hosted models from private repo to <a href="https://huggingface.co/SD-Next">https://huggingface.co/SD-Next</a></li>
+<li>update <code>sdnq=0.28.0</code></li>
 <li><strong>Fixes</strong></li>
 <li>anima: load repos in the diffusers modular layout</li>
 <li>api: <code>--cors-origins</code> entries separated by a comma and a space</li>
@@ -9815,8 +9818,10 @@ Plus quite a lot of other smaller improvements and bug fixes  </p>
 <li>color correction: keep transparency of rgba outputs, wavelet and adain no longer fail on them</li>
 <li>color correction: transparent outputs are matched on their visible pixels</li>
 <li>color correction: wavelet method keeps the generated image and matches only its colors</li>
+<li>dlss: do not run detailer twice if enabled</li>
 <li>enso: disable if not specified in startup</li>
 <li>framepack: a run after an interrupted job no longer ends at once without output</li>
+<li>gallery: correctly name custom folders</li>
 <li>infotext: a value starting with a double quote no longer swallows the next parameter</li>
 <li>infotext: parse error on values with superscript or circled digits</li>
 <li>infotext: parser stall on long runs of words or spaces without a colon</li>
