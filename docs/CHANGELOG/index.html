@@ -9778,10 +9778,15 @@ And quite a lot of other smaller improvements and bug fixes  </p>
 <h3 id="details-for-2026-10-17">Details for 2026-10-17</h3>
 <ul>
 <li><strong>Models</strong>  </li>
-<li><a href="https://huggingface.co/OzzyGT/ming_image_0_1_design_diffusers">Ming-Image Design 0.1</a><br />
+<li><a href="https://huggingface.co/OzzyGT/ming_image_0_1_design_diffusers">inclusionAI Ming-Image Design 0.1</a> in <em>base</em> and <em>sdnq-uint4</em> variants<br />
     Ming-Image is as a 6B-parameter flow-matching transformer with 16B-parameter custom text encoder<br />
-    workflows: t2i model for genel use, optimized for ui, infographic and poster design  </li>
-<li><a href="https://huggingface.co/black-forest-labs/flux-3-image-klein-base">Black Forest Labs FLUX.3 Klein</a> im <em>base</em> and <em>turbo</em> variants
+    workflows: t2i model for general use, optimized for ui, infographic and poster design<br />
+<em>note</em>: prompt using natural language, tag sequences or JSON layouts  </li>
+<li><a href="https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base">OpenMOSS MOSS-Image</a> in <em>base</em> and <em>sft</em> (fine-tuned) variants<br />
+    MOSS-Image is a 5B parameter single-stream DiT with the Qwen3.5-9B text encoder<br />
+    workflows: t2i<br />
+<em>note</em>: prompt using natural language, tag sequences or JSON layouts  </li>
+<li><a href="https://huggingface.co/black-forest-labs/flux-3-image-klein-base">Black Forest Labs FLUX.3 Klein</a> in <em>base</em> and <em>turbo</em> variants
     Flux.3 is a 5.6B parameter flow-matching transformer with Qwen3-VL-4B text-encoder with<br />
     workflows: t2i and image editing  </li>
 <li><a href="https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo">Qwen Image 2.1 Turbo</a> in <em>base</em> and <em>sdnq-uint4</em> variants  </li>
@@ -9804,10 +9809,15 @@ And quite a lot of other smaller improvements and bug fixes  </p>
 <li>parallel template loading</li>
 <li>html custom hash for improved caching and performance</li>
 <li>js split bundle</li>
-<li>microvae is now default for live previews</li>
+<li><strong>MicroDecoder</strong></li>
+<li><a href="https://huggingface.co/SD-Next/MicroDecoder">microdecoder</a> is now <em>default</em> for live previews</li>
+<li>additional trained model type families</li>
+<li>extended mapping of base model types to microdecoder family</li>
+<li>allow training of custom vae classes</li>
 <li><strong>Internal</strong></li>
 <li>switch hosted models from private repo to <a href="https://huggingface.co/SD-Next">https://huggingface.co/SD-Next</a></li>
 <li>update <code>sdnq=0.29.0</code></li>
+<li>sparse attention updates</li>
 <li><strong>Fixes</strong></li>
 <li>anima: load repos in the diffusers modular layout</li>
 <li>api: <code>--cors-origins</code> entries separated by a comma and a space</li>
@@ -9834,6 +9844,7 @@ And quite a lot of other smaller improvements and bug fixes  </p>
 <li>ipadapter: loading and unloading adapters under group offload</li>
 <li>lora: reset loaded networks if refiner prompt is used</li>
 <li>mps: fix torch gc issue, thanks @diesse</li>
+<li>networks: improve model title and type detection</li>
 <li>offload: balanced offload warns when a module exceeds the gpu limit and part of it runs from cpu</li>
 <li>offload: group offload logs a denied pin once per component</li>
 <li>rocm: arch detection with newer windows drivers, thanks @crashingalexsan</li>
