@@ -4342,6 +4342,17 @@
     </span>
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-for-2026-10-18_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update for 2026-10-18
+      
+    </span>
+  </a>
+  
     <nav class="md-nav" aria-label="Update for 2026-10-18">
       <ul class="md-nav__list">
         
@@ -7063,6 +7074,17 @@
     </span>
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-for-2026-10-18_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update for 2026-10-18
+      
+    </span>
+  </a>
+  
     <nav class="md-nav" aria-label="Update for 2026-10-18">
       <ul class="md-nav__list">
         
@@ -9769,6 +9791,14 @@
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2026-10-18">Update for 2026-10-18</h2>
+<ul>
+<li><strong>Fixes</strong></li>
+<li>lora: bias deltas no longer refused when the model is quantized or native fuse is off</li>
+<li>mageflow: load single-file transformers, including low-rank modulation checkpoints (MageTrail 0.3+)</li>
+<li>offload: group offload keeps text encoder layers whole, so qwen3.5 encoders run with causal-conv1d installed</li>
+<li>offload: group offload recognizes vae encode and decode entry points with current diffusers, so vaes load on demand instead of staying on gpu</li>
+</ul>
+<h2 id="update-for-2026-10-18_1">Update for 2026-10-18</h2>
 <h3 id="highlights-for-2026-10-18">Highlights for 2026-10-18</h3>
 <p>Leading with major new features: native <strong>Task Scheduler</strong> and <strong>Queue Management</strong>, improved handling and usability of <strong>Edit Models</strong>, improved <strong>UI Performance</strong>, and enhanced in-depth <strong>Benchmarking</strong> capabilities<br />
 Plus adding few new models: <em>BFL Flux.3 Klein</em>, <em>Ming-Image Design 0.1</em>, <em>MOSS-Image</em>, <em>Qwen-Image 2.1 Turbo</em>, <em>Google Nano-Banana 2.1</em><br />
