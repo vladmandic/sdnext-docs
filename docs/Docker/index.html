@@ -4831,9 +4831,9 @@ If you make changes to <code>Dockerfile</code> or update <strong>SD.Next</strong
 If you want to include any extensions in the docker image, install/clone them into <code>/extensions</code> folder before building the image</p>
 </div>
 <h3 id="cuda">CUDA</h3>
-<p>SD.Next docker template is based on <a href="https://hub.docker.com/r/pytorch/pytorch/tags">official base image</a> with <code>python==3.11.11</code>, <code>torch==2.8.0</code> and <code>cuda==12.8</code><br />
-Base image <code>pytorch/pytorch:2.8.0-cuda12.8-cudnn9-runtime</code> is 3.99GB<br />
-And full <strong>SD.Next</strong> resulting image is ~11.0GB and contains all required dependencies  </p>
+<p>SD.Next docker template is based on <a href="https://hub.docker.com/r/pytorch/pytorch/tags">official base image</a> with <code>python==3.12.3</code>, <code>torch==2.14.1</code> and <code>cuda==13.2</code><br />
+Base image <code>pytorch/pytorch:2.14.1-cuda13.2-cudnn9-runtime</code> is 3.06GB<br />
+And full <strong>SD.Next</strong> resulting image is ~12.1GB and contains all required and optional dependencies  </p>
 <div class="highlight"><pre><span></span><code><span class="nv">SD_FOLDER</span><span class="o">=</span>/home/sdnext<span class="w"> </span><span class="c1"># path to sdnext home folder</span>
 docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--debug<span class="w"> </span><span class="se">\</span>
@@ -4914,8 +4914,11 @@ In that case, it is recommended to add <code>--privileged</code> to give the con
  =&gt; =&gt; naming to docker.io/sdnext/sdnext-cuda                                                               0.0s
 </code></pre></div>
 <h4 id="state">State</h4>
-<p>As noted above, SD.Next Docker deployment is designed for stateless operation.<br />
-By default, any data stored inside the container is lost when the container stops.  </p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>As noted above, <strong>SD.Next Docker</strong> deployment is designed for <em>stateless operation</em>.<br />
+By default, any data stored inside the container is lost when the container stops.</p>
+</div>
 <p>All state items and outputs will be read from and written to <code>/server/data</code><br />
 This includes:
 - Configuration files: <code>config.json</code>, <code>ui-config.json</code>
@@ -4973,11 +4976,11 @@ Other options include <a href="https://docs.github.com/en/packages/working-with-
 2. Create a <a href="https://hub.docker.com/settings/security">personal access token</a> in your Docker Hub account<br />
 3. Login to Docker Hub from your terminal  </p>
 <blockquote>
-<p>docker login --username <username> --password <token><br />
+<p><code>docker login --username &lt;username&gt; --password &lt;token&gt;</code><br />
 4. Tag your local container with your Docker Hub username and repository name<br />
-docker tag sdnext/sdnext-cuda <username>/sdnext-cuda<br />
+<code>docker tag sdnext/sdnext-cuda &lt;username&gt;/sdnext-cuda</code><br />
 5. Push your container to Docker Hub<br />
-docker push <username>/sdnext-cuda</p>
+<code>docker push &lt;username&gt;/sdnext-cuda</code></p>
 </blockquote>
 <p>Your container is now available on Docker Hub and can be seen on<br />
 <a href="https://hub.docker.com/repository/docker/_username_/sdnext-cuda/">https://hub.docker.com/repository/docker/_username_/sdnext-cuda/</a>!  </p>
@@ -5002,6 +5005,18 @@ for example <a href="https://runpod.io/">RunPod</a> or <a href="https://aws.amaz
 <p>Inspect image</p>
 </div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>image<span class="w"> </span>inspect<span class="w"> </span>sdnext/sdnext-cuda<span class="w">  </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:b8d9efd4e642a49a2338570cfb8b7b47dc7d4cc4321b3c597b45cd52b1067ba5"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"RepoTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">"sdnext/sdnext-cuda:latest"</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">"RepoDigests"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">"Parent"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"Comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buildkit.dockerfile.v0"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"Created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-10-19T09:49:06.089340874+02:00"</span><span class="p">,</span>
+<span class="w">      </span><span class="err">...</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

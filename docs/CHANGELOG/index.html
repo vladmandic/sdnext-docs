@@ -4334,10 +4334,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-18" class="md-nav__link">
+  <a href="#update-for-2026-10-19" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-18
+        Update for 2026-10-19
       
     </span>
   </a>
@@ -4345,7 +4345,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-18_1" class="md-nav__link">
+  <a href="#update-for-2026-10-18" class="md-nav__link">
     <span class="md-ellipsis">
       
         Update for 2026-10-18
@@ -7066,10 +7066,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-18" class="md-nav__link">
+  <a href="#update-for-2026-10-19" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-18
+        Update for 2026-10-19
       
     </span>
   </a>
@@ -7077,7 +7077,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-18_1" class="md-nav__link">
+  <a href="#update-for-2026-10-18" class="md-nav__link">
     <span class="md-ellipsis">
       
         Update for 2026-10-18
@@ -9790,15 +9790,27 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-10-18">Update for 2026-10-18</h2>
+<h2 id="update-for-2026-10-19">Update for 2026-10-19</h2>
 <ul>
+<li><strong>Docker</strong></li>
+<li>update <code>Dockerfile</code> for all supported platforms</li>
+<li><a href="https://hub.docker.com/repository/docker/vladmandic/sdnext-cuda">SD.Next CUDA docker image</a> rebuild and update</li>
+<li><strong>Wiki</strong></li>
+<li>updates to: <code>Scheduler</code>, <code>Models</code>, <code>Model-Support</code>, <code>Docker</code>, <code>AMD-ROCm</code>, <code>AMD-MIOpen</code>, <code>Detailer</code>, <code>LoRA</code></li>
+<li><strong>Coding</strong><br />
+  expand ai/ml instructions and skills<br />
+  see <a href="https://github.com/vladmandic/sdnext/blob/dev/.github/copilot-instructions.md">instructions</a> and <a href="https://github.com/vladmandic/sdnext/blob/dev/.github/skills/README.md">skills readme</a> for details</li>
+<li><strong>Internal</strong></li>
+<li>expand <code>--test</code> behavior</li>
 <li><strong>Fixes</strong></li>
+<li>ui: fallback template load method when running on older server</li>
 <li>lora: bias deltas no longer refused when the model is quantized or native fuse is off</li>
 <li>mageflow: load single-file transformers, including low-rank modulation checkpoints (MageTrail 0.3+)</li>
 <li>offload: group offload keeps text encoder layers whole, so qwen3.5 encoders run with causal-conv1d installed</li>
-<li>offload: group offload recognizes vae encode and decode entry points with current diffusers, so vaes load on demand instead of staying on gpu</li>
+<li>offload: group offload recognizes vae encode and decode entry points with current diffusers</li>
+<li>scheduler: delete orphan records on record deletion</li>
 </ul>
-<h2 id="update-for-2026-10-18_1">Update for 2026-10-18</h2>
+<h2 id="update-for-2026-10-18">Update for 2026-10-18</h2>
 <h3 id="highlights-for-2026-10-18">Highlights for 2026-10-18</h3>
 <p>Leading with major new features: native <strong>Task Scheduler</strong> and <strong>Queue Management</strong>, improved handling and usability of <strong>Edit Models</strong>, improved <strong>UI Performance</strong>, and enhanced in-depth <strong>Benchmarking</strong> capabilities<br />
 Plus adding few new models: <em>BFL Flux.3 Klein</em>, <em>Ming-Image Design 0.1</em>, <em>MOSS-Image</em>, <em>Qwen-Image 2.1 Turbo</em>, <em>Google Nano-Banana 2.1</em><br />
