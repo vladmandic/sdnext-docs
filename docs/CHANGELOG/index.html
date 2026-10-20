@@ -4345,17 +4345,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-19" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update for 2026-10-19
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#update-for-2026-10-18" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7088,17 +7077,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-19" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update for 2026-10-19
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#update-for-2026-10-18" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -9814,11 +9792,6 @@
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
 <h2 id="update-for-2026-10-20">Update for 2026-10-20</h2>
 <ul>
-<li><strong>Fixes</strong></li>
-<li>moss: downloaded moss-image models appear in the model list</li>
-</ul>
-<h2 id="update-for-2026-10-19">Update for 2026-10-19</h2>
-<ul>
 <li><strong>Docker</strong></li>
 <li>update <code>Dockerfile</code> for all supported platforms</li>
 <li><a href="https://hub.docker.com/repository/docker/vladmandic/sdnext-cuda">SD.Next CUDA docker image</a> rebuild and update</li>
@@ -9830,12 +9803,17 @@
 <li><strong>Internal</strong></li>
 <li>expand <code>--test</code> behavior</li>
 <li><strong>Fixes</strong></li>
-<li>ui: fallback template load method when running on older server</li>
+<li>launch: dont overwrite existing LD_LIBRARY_PATH</li>
 <li>lora: bias deltas no longer refused when the model is quantized or native fuse is off</li>
 <li>mageflow: load single-file transformers, including low-rank modulation checkpoints (MageTrail 0.3+)</li>
+<li>moss: downloaded moss-image models appear in the model list</li>
+<li>moss: performance optimizations</li>
+<li>offload: balanced offload clear stale state on unload, thanks @Jackmeson1</li>
 <li>offload: group offload keeps text encoder layers whole, so qwen3.5 encoders run with causal-conv1d installed</li>
 <li>offload: group offload recognizes vae encode and decode entry points with current diffusers</li>
 <li>scheduler: delete orphan records on record deletion</li>
+<li>seedvr: unblock usage on non-cuda devices</li>
+<li>ui: fallback template load method when running on older server</li>
 </ul>
 <h2 id="update-for-2026-10-18">Update for 2026-10-18</h2>
 <h3 id="highlights-for-2026-10-18">Highlights for 2026-10-18</h3>
