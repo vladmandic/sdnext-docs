@@ -5100,38 +5100,6 @@ It does not cover mostly static system settings.</p>
 <td style="text-align: left;">Seed</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>subseed</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;"><code>-1</code></td>
-<td style="text-align: left;"><code>Values: -1 (random), or any positive integer</code> <br> <code>Syntax: subseed: 67890</code></td>
-<td style="text-align: left;">Secondary seed for additional variation control. Works together with subseed_strength to add controlled randomness to your generation.</td>
-<td style="text-align: left;">Variation</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>subseed_strength</code></td>
-<td style="text-align: left;"><code>float</code></td>
-<td style="text-align: left;"><code>0</code></td>
-<td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: subseed_strength: 0.15</code></td>
-<td style="text-align: left;">How much the subseed affects the generation (0 = no effect, 1 = maximum effect). Useful for creating slight variations of the image with the same seed.</td>
-<td style="text-align: left;">Variation strength</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>seed_resize_from_h</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;"><code>-1</code></td>
-<td style="text-align: left;"><code>Values: -1 (disabled), or positive integer</code> <br> <code>Syntax: seed_resize_from_h: 512</code></td>
-<td style="text-align: left;">Original height for seed resizing. This maintains noise patterns when changing resolution, useful when upscaling while keeping similar composition.</td>
-<td style="text-align: left;">Resize seed from height</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>seed_resize_from_w</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;"><code>-1</code></td>
-<td style="text-align: left;"><code>Values: -1 (disabled), or positive integer</code> <br> <code>Syntax: seed_resize_from_w: 512</code></td>
-<td style="text-align: left;">Original width for seed resizing. Works with seed_resize_from_h to maintain consistency across resolution changes.</td>
-<td style="text-align: left;">Resize seed from width</td>
-</tr>
-<tr>
 <td style="text-align: left;"><code>batch_size</code></td>
 <td style="text-align: left;"><code>int</code></td>
 <td style="text-align: left;"><code>1</code></td>

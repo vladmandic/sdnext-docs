@@ -4334,10 +4334,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-20" class="md-nav__link">
+  <a href="#update-for-2026-10-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-20
+        Update for 2026-10-21
       
     </span>
   </a>
@@ -7066,10 +7066,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-20" class="md-nav__link">
+  <a href="#update-for-2026-10-21" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-20
+        Update for 2026-10-21
       
     </span>
   </a>
@@ -9790,30 +9790,53 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-10-20">Update for 2026-10-20</h2>
+<h2 id="update-for-2026-10-21">Update for 2026-10-21</h2>
 <ul>
-<li><strong>Docker</strong></li>
-<li>update <code>Dockerfile</code> for all supported platforms</li>
-<li><a href="https://hub.docker.com/repository/docker/vladmandic/sdnext-cuda">SD.Next CUDA docker image</a> rebuild and update</li>
-<li><strong>Wiki</strong></li>
-<li>updates to: <code>Scheduler</code>, <code>Models</code>, <code>Model-Support</code>, <code>Docker</code>, <code>AMD-ROCm</code>, <code>AMD-MIOpen</code>, <code>Detailer</code>, <code>LoRA</code></li>
+<li><strong>Models</strong></li>
+<li><a href="https://huggingface.co/briaai/Fibo-2.0-dev">Bria FIBO 2.0</a> <em>Dev</em> base and <em>Edit Turbo</em> distilled variants<br />
+<em>architecture</em>: 8.1B flow-matching transformer with Qwen3-VL-4B text-encoder<br />
+<em>note</em>: this is a <a href="https://vladmandic.github.io/sdnext-docs/Gated">gated model</a><br />
+<em>note</em>: BriaFIBO is designed to work with highly structured <a href="https://docs.bria.ai/vgl#5-schema-reference">JSON prompts</a><br />
+    if you provide a simple string-based prompt, sdnext will convert it to naive JSON, but it will be sub-optimal  </li>
 <li><strong>Coding</strong><br />
   expand ai/ml instructions and skills<br />
   see <a href="https://github.com/vladmandic/sdnext/blob/dev/.github/copilot-instructions.md">instructions</a> and <a href="https://github.com/vladmandic/sdnext/blob/dev/.github/skills/README.md">skills readme</a> for details</li>
+<li><strong>Wiki</strong></li>
+<li>updates to: <code>Scheduler</code>, <code>Models</code>, <code>Model-Support</code>, <code>Docker</code>, <code>AMD-ROCm</code>, <code>AMD-MIOpen</code>, <code>Detailer</code>, <code>LoRA</code></li>
+<li><strong>Docker</strong></li>
+<li>update <code>Dockerfile</code> for all supported platforms</li>
+<li><a href="https://hub.docker.com/repository/docker/vladmandic/sdnext-cuda">SD.Next CUDA docker image</a> rebuild and update</li>
 <li><strong>Internal</strong></li>
 <li>expand <code>--test</code> behavior</li>
+<li>infer transformers <code>native_spec</code> everywhere where its not explicitly set</li>
+<li>remove <code>subseed</code> from codebase as its obsolete</li>
+<li>remove <code>seed resize</code> from codebase as its obsolete</li>
+<li><strong>Logging</strong></li>
+<li>customizable logging theme<br />
+    see <code>data/console.json</code> for defaults and specify custom file using env variable <code>SDNEXT_CONSOLE_THEME</code>  </li>
 <li><strong>Fixes</strong></li>
+<li>api: return complete set in GET /sdapi/v1/options, thanks @Jackmeson1</li>
 <li>launch: dont overwrite existing LD_LIBRARY_PATH</li>
 <li>lora: bias deltas no longer refused when the model is quantized or native fuse is off</li>
 <li>mageflow: load single-file transformers, including low-rank modulation checkpoints (MageTrail 0.3+)</li>
+<li>microdecoder: improve error handling</li>
 <li>moss: downloaded moss-image models appear in the model list</li>
 <li>moss: performance optimizations</li>
+<li>moss: single-file model loading support</li>
+<li>network preview: handle unets</li>
+<li>network preview: fix stale cache</li>
 <li>offload: balanced offload clear stale state on unload, thanks @Jackmeson1</li>
 <li>offload: group offload keeps text encoder layers whole, so qwen3.5 encoders run with causal-conv1d installed</li>
 <li>offload: group offload recognizes vae encode and decode entry points with current diffusers</li>
+<li>prompt encode: expand simple str-to-json handling for models that require json</li>
+<li>rocm: add explicit support for gfx1030, thanks @resonantsky</li>
 <li>scheduler: delete orphan records on record deletion</li>
+<li>sdnq: attention dtype and mask fixes</li>
 <li>seedvr: unblock usage on non-cuda devices</li>
+<li>state: race condition when settings are changed while generate is running</li>
 <li>ui: fallback template load method when running on older server</li>
+<li>unet: hash on first load</li>
+<li>wan: loading route changes video frame count, thanks @Jackmeson1</li>
 </ul>
 <h2 id="update-for-2026-10-18">Update for 2026-10-18</h2>
 <h3 id="highlights-for-2026-10-18">Highlights for 2026-10-18</h3>
