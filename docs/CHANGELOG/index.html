@@ -4334,10 +4334,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-21" class="md-nav__link">
+  <a href="#update-for-2026-10-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-21
+        Update for 2026-10-22
       
     </span>
   </a>
@@ -7066,10 +7066,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-21" class="md-nav__link">
+  <a href="#update-for-2026-10-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-21
+        Update for 2026-10-22
       
     </span>
   </a>
@@ -9790,7 +9790,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-10-21">Update for 2026-10-21</h2>
+<h2 id="update-for-2026-10-22">Update for 2026-10-22</h2>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/briaai/Fibo-2.0-dev">Bria FIBO 2.0</a> <em>Dev</em> base and <em>Edit Turbo</em> distilled variants<br />
@@ -9806,16 +9806,24 @@
 <li><strong>Docker</strong></li>
 <li>update <code>Dockerfile</code> for all supported platforms</li>
 <li><a href="https://hub.docker.com/repository/docker/vladmandic/sdnext-cuda">SD.Next CUDA docker image</a> rebuild and update</li>
+<li><strong>Prompt Enhance</strong></li>
+<li>add presets for different prompt styles: <em>Standard, Simple, Detailed, Creative, Structured, JSON, Tag</em><br />
+    use different presets depending on the desired prompt style and model's preferred input format  </li>
+<li><strong>Metadata</strong></li>
+<li>improve model hash info for all models</li>
+<li>add unet hash if using custom unet/dit</li>
+<li>add prompt from style to metadata template field</li>
+<li><strong>Logging</strong></li>
+<li>customizable logging theme<br />
+    see <code>data/console.json</code> for defaults and specify custom file using env variable <code>SDNEXT_CONSOLE_THEME</code>  </li>
 <li><strong>Internal</strong></li>
 <li>expand <code>--test</code> behavior</li>
 <li>infer transformers <code>native_spec</code> everywhere where its not explicitly set</li>
 <li>remove <code>subseed</code> from codebase as its obsolete</li>
 <li>remove <code>seed resize</code> from codebase as its obsolete</li>
-<li><strong>Logging</strong></li>
-<li>customizable logging theme<br />
-    see <code>data/console.json</code> for defaults and specify custom file using env variable <code>SDNEXT_CONSOLE_THEME</code>  </li>
 <li><strong>Fixes</strong></li>
 <li>api: return complete set in GET /sdapi/v1/options, thanks @Jackmeson1</li>
+<li>dlss: save once when running as extras</li>
 <li>launch: dont overwrite existing LD_LIBRARY_PATH</li>
 <li>lora: bias deltas no longer refused when the model is quantized or native fuse is off</li>
 <li>mageflow: load single-file transformers, including low-rank modulation checkpoints (MageTrail 0.3+)</li>
