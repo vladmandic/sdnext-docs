@@ -4334,13 +4334,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-22" class="md-nav__link">
+  <a href="#update-for-2026-10-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-22
+        Update for 2026-10-24
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2026-10-24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2026-10-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2026-10-24
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2026-10-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details for 2026-10-24
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7066,13 +7094,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-22" class="md-nav__link">
+  <a href="#update-for-2026-10-24" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-22
+        Update for 2026-10-24
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2026-10-24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2026-10-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2026-10-24
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2026-10-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details for 2026-10-24
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -9790,7 +9846,19 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-10-22">Update for 2026-10-22</h2>
+<h2 id="update-for-2026-10-24">Update for 2026-10-24</h2>
+<h3 id="highlights-for-2026-10-24">Highlights for 2026-10-24</h3>
+<p><em>What's new in this release?</em>
+- One new base model: *<strong>Bria FIBO 2.0</strong><br />
+- Major improvements to <strong>Prompt Enhance</strong> functionality to make it more versatile and cover usage in new structured/json based prompts<br />
+- New playground feature <strong>Story Mode</strong><br />
+- Updates to <strong>AI Coding</strong> instructions and skills: try your favorite model/tool on SD.Next, you might be surprised how quickly it adapts and performs<br />
+- And many more smaller improvements and fixes...</p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Python 3.10 is end-of-life as of October 2026!</p>
+</div>
+<h3 id="details-for-2026-10-24">Details for 2026-10-24</h3>
 <ul>
 <li><strong>Models</strong></li>
 <li><a href="https://huggingface.co/briaai/Fibo-2.0-dev">Bria FIBO 2.0</a> <em>Dev</em> base and <em>Edit Turbo</em> distilled variants<br />
@@ -9798,6 +9866,7 @@
 <em>note</em>: this is a <a href="https://vladmandic.github.io/sdnext-docs/Gated">gated model</a><br />
 <em>note</em>: BriaFIBO is designed to work with highly structured <a href="https://docs.bria.ai/vgl#5-schema-reference">JSON prompts</a><br />
     if you provide a simple string-based prompt, sdnext will convert it to naive JSON, but it will be sub-optimal  </li>
+<li><a href="https://huggingface.co/lodestones/Kromoss">lodestones Kromoss</a> fine-tune of MOSS-Image</li>
 <li><strong>Coding</strong><br />
   expand ai/ml instructions and skills<br />
   see <a href="https://github.com/vladmandic/sdnext/blob/dev/.github/copilot-instructions.md">instructions</a> and <a href="https://github.com/vladmandic/sdnext/blob/dev/.github/skills/README.md">skills readme</a> for details  </li>
@@ -9805,6 +9874,9 @@
 <li>add presets for different prompt styles: <em>Standard, Simple, Detailed, Creative, Structured, JSON, Tag</em><br />
     use different presets depending on the desired prompt style and model's preferred input format<br />
     added as more and more models require highly structured and/or json-based prompts  </li>
+<li>set <a href="https://huggingface.co/SD-Next/Qwen-3.5-4B-sdnq-uint8">Qwen-3.5-4B sdnq-uint8</a> as default model for all prompt enhance and caption tasks  </li>
+<li>improve all system prompts</li>
+<li>improve thinking mode</li>
 <li><strong>Story Mode</strong></li>
 <li>new story mode feature for generating multiple slides in a sequence<br />
     in <em>extras -&gt; story mode</em><br />
@@ -9825,15 +9897,22 @@
 <li>customizable logging theme<br />
     see <code>data/console.json</code> for defaults and specify custom file using env variable <code>SDNEXT_CONSOLE_THEME</code>  </li>
 <li><strong>Internal</strong></li>
+<li>end-of-life for <code>python==3.10</code><br />
+    see <a href="https://endoflife.ai/article-python-310-eol">Python 3.10 EOL</a> for details  </li>
+<li>update major requirements</li>
+<li>update <code>setuptools</code>, thanks @wbkearly</li>
 <li>expand <code>--test</code> behavior</li>
 <li>infer transformers <code>native_spec</code> everywhere where its not explicitly set</li>
 <li>remove <code>subseed</code> from codebase as its obsolete</li>
 <li>remove <code>seed resize</code> from codebase as its obsolete</li>
 <li><strong>Fixes</strong></li>
 <li>api: return complete set in GET /sdapi/v1/options, thanks @Jackmeson1</li>
+<li>caption: get/set attention fallbacks</li>
 <li>dlss: save once when running as extras</li>
+<li>krea2: use prequant text-encoder when loading pre-quant model</li>
 <li>launch: dont overwrite existing LD_LIBRARY_PATH</li>
 <li>lora: bias deltas no longer refused when the model is quantized or native fuse is off</li>
+<li>lora: resolve a/b peft keys, thanks @li-lizhe</li>
 <li>mageflow: load single-file transformers, including low-rank modulation checkpoints (MageTrail 0.3+)</li>
 <li>microdecoder: improve error handling</li>
 <li>moss: downloaded moss-image models appear in the model list</li>
@@ -9846,7 +9925,9 @@
 <li>offload: group offload recognizes vae encode and decode entry points with current diffusers</li>
 <li>prompt encode: expand simple str-to-json handling for models that require json</li>
 <li>prompt encode: invalidate cache on te or lora change, thanks @Jackmeson1</li>
+<li>prompt enhance: autodetext txt vs img llms</li>
 <li>rocm: add explicit support for gfx1030, thanks @resonantsky</li>
+<li>rocm: remove obsolete switches from rocm script, thanks @resonantsky</li>
 <li>scheduler: delete orphan records on record deletion</li>
 <li>sdnq: attention dtype and mask fixes</li>
 <li>seedvr: unblock usage on non-cuda devices</li>

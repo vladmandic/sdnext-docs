@@ -4429,8 +4429,7 @@ If you want to manage your own Python packages and versions, do not rely on the 
 <p>Many guides suggest Homebrew for Python. That is convenient, but it is still not ideal for project-pinned Python versions.
 Homebrew Python mainly exists to support Homebrew packages.</p>
 <p>Homebrew also removes old package versions over time.
-For example, you might need Python 3.10 for SD.Next while using 3.12 elsewhere.
-Homebrew can remove 3.10 because it does not track your SD.Next dependency.</p>
+For example, you might need Python 3.12/3.13 for SD.Next while using 3.14 elsewhere.</p>
 <p>Use a dedicated version manager for user-managed Python installs.
 This guide uses <a href="https://asdf-vm.com/">asdf</a> with the <a href="https://github.com/asdf-community/asdf-python">Python plugin</a>, but equivalent tools are fine.</p>
 <p>Sources / Further reading:
@@ -4466,7 +4465,7 @@ chmod<span class="w"> </span>-R<span class="w"> </span>go-w<span class="w"> </sp
 <div class="highlight"><pre><span></span><code>asdf<span class="w"> </span>plugin<span class="w"> </span>add<span class="w"> </span>python
 
 <span class="c1"># for SD.Next</span>
-asdf<span class="w"> </span>install<span class="w"> </span>python<span class="w"> </span><span class="m">3</span>.10.14
+asdf<span class="w"> </span>install<span class="w"> </span>python<span class="w"> </span><span class="m">3</span>.12.15
 
 <span class="c1"># you may want the latest version too; take note of which version is installed</span>
 asdf<span class="w"> </span>install<span class="w"> </span>python<span class="w"> </span>latest
@@ -4474,15 +4473,15 @@ asdf<span class="w"> </span>install<span class="w"> </span>python<span class="w"
 <ol>
 <li>Set the default global version of python:</li>
 </ol>
-<p>Since SD.Next needs 3.10, call that version explicitly for SD.Next.
+<p>Since SD.Next needs 3.12, call that version explicitly for SD.Next.
 For general use, keep your preferred default Python version.</p>
-<div class="highlight"><pre><span></span><code>asdf<span class="w"> </span>global<span class="w"> </span>python<span class="w"> </span><span class="m">3</span>.12.2<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>asdf<span class="w"> </span>global<span class="w"> </span>python<span class="w"> </span><span class="m">3</span>.12.15
 <span class="c1"># or whatever version you installed</span>
 </code></pre></div>
 <ol>
-<li>Run SD.Next using python3.10:</li>
+<li>Run SD.Next using python3.12:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>python3.10<span class="k">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHON</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>python3.12<span class="k">)</span>
 <span class="nb">cd</span><span class="w"> </span>/path/to/SD.Next
 ./webui.sh<span class="w"> </span>--debug
 </code></pre></div>
