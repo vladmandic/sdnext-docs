@@ -4761,7 +4761,8 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>LoRA must always match base model used for its training<br />
-For example, you cannot use SD1.5 LoRA with SD-XL model  </p>
+For example, you cannot use SD1.5 LoRA with SD-XL model<br />
+A LoRA whose weights do not fit the loaded model is refused as a whole and reported in the log as <code>not loaded</code>  </p>
 <p>[!WARNING]
 SD.Next attempts to automatically detect and apply the correct LoRA type.<br />
 However, new LoRA types appear regularly.
@@ -4799,7 +4800,8 @@ However, you can also specify which component to apply LoRA to by adding <code>:
 <blockquote>
 <p><code>&lt;lora:firstlora:1.0:low&gt;</code> and <code>&lt;lora:secondlora:1.0:high&gt;</code>  </p>
 </blockquote>
-<p><em>Note</em>: <code>low</code> is shorthand for <code>module=transformer_2</code> and <code>high</code> is shorthand for <code>module=transformer</code>.</p>
+<p><em>Note</em>: <code>low</code> is shorthand for <code>module=transformer_2</code>, <code>high</code> is shorthand for <code>module=transformer</code>, and <code>module=te</code> selects <code>text_encoder</code>.
+A requested component that the loaded model does not have is reported in the log as <code>missing</code>.</p>
 <h5 id="component-weights">Component weights</h5>
 <p>Typically <code>:strength</code> is applied uniformly for all components of the LoRA.<br />
 However, you can also specify individual component weights by adding <code>:comp=x.x</code> to the LoRA tag.  </p>
@@ -4807,6 +4809,7 @@ However, you can also specify individual component weights by adding <code>:comp
 <blockquote>
 <p><code>&lt;lora:test_lora:te=0.5:unet=1.5&gt;</code>  </p>
 </blockquote>
+<p><code>te</code> applies to the text encoders and <code>unet</code> to the denoiser, which is the UNet or the transformer depending on the model.  </p>
 <h5 id="block-weights">Block weights</h5>
 <p>Instead of using simple <code>:strength</code>, you can specify individual block weights for LoRA by adding <code>:in=x.x:mid=y.y:out=z.z</code> to the LoRA tag.<br />
 Example:</p>
@@ -4814,6 +4817,7 @@ Example:</p>
 <p><code>&lt;lora:test_lora:1.0:in=0:mid=1:out=0&gt;</code>  </p>
 </blockquote>
 <h5 id="troubleshooting">Troubleshooting</h5>
+<p>A log warning with <code>unmapped=N</code> means part of the LoRA targets layers the loaded model does not have, for example guidance layers of a FLUX.1-dev LoRA on FLUX.1-schnell; the rest of the LoRA is applied.</p>
 <p>For any LoRA related issues, please follow the below procedure:
 - set environment variable <code>SD_LORA_DEBUG=true</code>
 - start SD.Next as usual and run it until problem occurs
@@ -4826,6 +4830,11 @@ All settings are available in <em>Settings -&gt; Extra Networks -&gt; LoRA</em>.
 <p><strong>LoRA load using Diffusers method</strong> (<code>lora_force_diffusers</code>)
 - When <em>disabled</em> (default): Uses SD.Next's native LoRA implementation
 - When <em>enabled</em>: Uses HuggingFace Diffusers' built-in LoRA support</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A LoRA that loads only with this setting enabled points to a format the native loader does not read yet.
+Please report it in a <a href="https://github.com/vladmandic/sdnext/issues">GitHub issue</a> with a link to the file so native support can be added.</p>
+</div>
 <h3 id="fuse-options">Fuse Options</h3>
 <p>Fusing merges LoRA weights directly into the model instead of applying them on-the-fly.
 This reduces memory usage since no backup weights are stored.</p>
@@ -4839,8 +4848,8 @@ This reduces memory usage since no backup weights are stored.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Fused LoRA effects can persist after removal</strong>
-After removing or switching a LoRA while fusing is enabled, you may still see its style in generated images.
-To fully restore the original model, use <em>System -&gt; Reload Model</em>.</p>
+Fusing writes the LoRA into the model weights and removal subtracts it again; on a bf16 model the rounding of the two writes can leave a faint trace. A LoRA whose delta depends on the weight (DoRA, OFT, GLoRA, IA3) is restored from a stored copy and leaves none.
+To fully restore the original model, use <em>System -&gt; Reload Model</em>. A removed LoRA whose style stays clearly visible is worth a report, with the file and the model.</p>
 </div>
 <h3 id="other-settings">Other Settings</h3>
 <p><strong>LoRA force reload always</strong>

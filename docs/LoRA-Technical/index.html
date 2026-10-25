@@ -4646,15 +4646,15 @@
 <tbody>
 <tr>
 <td><code>extra_networks_lora.py</code></td>
-<td>Entry point. Parses <code>&lt;lora:name:weight&gt;</code> from the prompt and drives activate/deactivate. Registered as an <code>ExtraNetwork</code>.</td>
+<td>Entry point. Parses <code>&lt;lora:name:weight&gt;</code> from the prompt, including component tags, and drives activate/deactivate. Registered as an <code>ExtraNetwork</code>.</td>
 </tr>
 <tr>
 <td><code>lora_overrides.py</code></td>
-<td>Method selection (<code>get_method</code>), the <code>allow_native</code> arch list, and the force lists.</td>
+<td>Method selection (<code>get_method</code>), the <code>NATIVE_DISPATCH</code> registry, the <code>allow_native</code> arch list derived from it, and the force lists.</td>
 </tr>
 <tr>
 <td><code>lora_load.py</code></td>
-<td>Load orchestration: <code>network_load</code>, the native loader <code>load_safetensors</code>, the <code>_NATIVE_DISPATCH</code> registry, disk scanning, and <code>lora_cache</code>.</td>
+<td>Load orchestration: <code>network_load</code>, the native loader <code>load_safetensors</code>, disk scanning, the key dump, and <code>lora_cache</code>.</td>
 </tr>
 <tr>
 <td><code>lora_diffusers.py</code></td>
@@ -4670,11 +4670,11 @@
 </tr>
 <tr>
 <td><code>network.py</code></td>
-<td>Data model: <code>NetworkOnDisk</code>, <code>Network</code>, <code>NetworkModule</code>, <code>ModuleType</code>.</td>
+<td>Data model: <code>NetworkOnDisk</code>, <code>Network</code>, <code>NetworkModule</code>.</td>
 </tr>
 <tr>
 <td><code>network_*.py</code></td>
-<td>Per-family <code>ModuleType</code> and <code>NetworkModule</code> subclasses that implement <code>calc_updown</code> (lora, lokr, hada, oft, ia3, glora, norm, full, boft).</td>
+<td>Per-family <code>NetworkModule</code> subclasses that implement <code>calc_updown</code> (lora, lokr, hada, oft, ia3, glora, norm, full, boft).</td>
 </tr>
 <tr>
 <td><code>lora_apply.py</code></td>
@@ -4682,19 +4682,19 @@
 </tr>
 <tr>
 <td><code>networks.py</code></td>
-<td>Apply lifecycle: <code>network_activate</code>, <code>network_deactivate</code>, the <code>native_active</code> flag.</td>
+<td>Apply lifecycle: <code>network_activate</code>, <code>network_deactivate</code>, promotion of staged per-network settings, the <code>native_active</code> flag.</td>
 </tr>
 <tr>
 <td><code>lora_common.py</code></td>
-<td>Shared module-level state, imported everywhere as <code>l</code>: <code>loaded_networks</code>, <code>previously_loaded_networks</code>, <code>module_types</code>, <code>timer</code>, <code>debug</code>.</td>
+<td>Shared module-level state, imported everywhere as <code>l</code>: <code>loaded_networks</code>, <code>previously_loaded_networks</code>, <code>timer</code>, <code>debug</code>.</td>
 </tr>
 <tr>
 <td><code>lora_convert.py</code></td>
-<td>Key conversion: kohya to diffusers, compvis module-name assignment, <code>KeyConvert</code>.</td>
+<td>Network-name stamping on the loaded pipeline (<code>assign_network_names_to_compvis_modules</code>) and the CompVis-to-diffusers UNet name table.</td>
 </tr>
 <tr>
 <td><code>pipelines/&lt;arch&gt;/&lt;arch&gt;_lora.py</code></td>
-<td>Per-arch native loaders for the arches in <code>_NATIVE_DISPATCH</code>.</td>
+<td>Per-arch native loaders, one per arch in <code>NATIVE_DISPATCH</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -4721,7 +4721,7 @@
 <ul>
 <li><code>l.loaded_networks</code> is cleared and each name is resolved to a <code>NetworkOnDisk</code> through <code>gather_networks</code>.</li>
 <li>Per network, <code>get_method(shorthash)</code> is called again and the load is dispatched to <code>load_diffusers</code>, the nunchaku no-op (handled separately), or <code>load_safetensors</code>.</li>
-<li>Each loaded <code>Network</code> is appended to <code>l.loaded_networks</code> with its multipliers set.</li>
+<li>Each loaded <code>Network</code> is appended to <code>l.loaded_networks</code>. Its multipliers, block weights and requested components are staged in <code>pending_config</code>, since cached networks are shared objects, and <code>network_activate</code> promotes them after the removal pass.</li>
 <li><code>lora_cache</code> is trimmed to <code>lora_in_memory_limit</code>.</li>
 </ul>
 <p>The apply step differs by path:</p>
@@ -4745,80 +4745,106 @@
     FH --&gt;|yes| RD4["diffusers: hash-forced"]
     FH --&gt;|no| RNAT["native: default"]
 </code></pre></div>
-<p><code>allow_native</code> lists the arches eligible for native loading: <code>sd</code>, <code>sdxl</code>, <code>sd3</code>, <code>f1</code>, <code>f2</code>, <code>chroma</code>, <code>zimage</code>, <code>anima</code>, <code>ernieimage</code>. Any other arch always takes the diffusers path. <code>force_classes_diffusers</code> currently holds the FluxKontext pipeline classes.</p>
+<p><code>allow_native</code> is <code>list(NATIVE_DISPATCH)</code>, the arches with a per-arch native loader: <code>sd</code>, <code>sdxl</code>, <code>sd3</code>, <code>f1</code>, <code>zimage</code>, <code>chroma</code>, <code>ernieimage</code>, <code>f2</code>, <code>f3</code>, <code>anima</code>, <code>krea2</code>, <code>minimaxh3</code>, <code>qwen21</code>. Any other arch always takes the diffusers path. <code>force_classes_diffusers</code> is empty; a pipeline class listed there always takes the diffusers path.</p>
 <h2 id="native-path">Native path</h2>
-<p><code>load_safetensors</code> is the native loader. It splits on <code>shared.sd_model_type</code>.</p>
+<p><code>load_safetensors</code> is the native loader. It looks up <code>shared.sd_model_type</code> in <code>NATIVE_DISPATCH</code> and hands the file to that arch's module.</p>
 <div class="highlight"><pre><span></span><code>flowchart TD
     LS["load_safetensors(name, network_on_disk)"] --&gt; C{"name in lora_cache?"}
     C --&gt;|yes| RET["return cached Network"]
-    C --&gt;|no| D{"sd_model_type in _NATIVE_DISPATCH?"}
-    D --&gt;|yes| PA["import pipelines/&amp;lt;arch&amp;gt;/&amp;lt;arch&amp;gt;_lora.py"]
+    C --&gt;|no| D["NATIVE_DISPATCH[sd_model_type]"]
+    D --&gt; PA["import pipelines/&amp;lt;arch&amp;gt;/&amp;lt;arch&amp;gt;_lora.py"]
     PA --&gt; TL["mod.try_load -&gt; native_adapter.try_load_chain"]
-    TL --&gt; NET1["Network with NetworkModule per matched key"]
-    D --&gt;|no| GEN["generic key-parsing loop"]
-    GEN --&gt; KC["lora_convert.KeyConvert maps keys to model modules"]
-    KC --&gt; MT["l.module_types create_module per match"]
-    MT --&gt; NET2["Network with NetworkModule per matched key"]
+    TL --&gt; NET["Network with NetworkModule per matched key"]
 </code></pre></div>
-<p>Per-arch native adapters cover the arches in <code>_NATIVE_DISPATCH</code>: <code>zimage</code>, <code>chroma</code>, <code>ernieimage</code>, <code>f2</code>, <code>anima</code>. Each maps to a module exposing <code>try_load(name, network_on_disk, lora_scale)</code>.</p>
-<p>The generic loop covers the remaining native-eligible arches (<code>sd</code>, <code>sdxl</code>, <code>sd3</code>, <code>f1</code>):</p>
-<ul>
-<li>The state dict is read, and kohya to diffusers conversion is applied for <code>f1</code> and <code>sd3</code>.</li>
-<li>Keys are matched to model modules through <code>KeyConvert</code>.</li>
-<li><code>NetworkModule</code> instances are built using the factories in <code>l.module_types</code>.</li>
-</ul>
-<p>Both sub-paths return a <code>Network</code> whose <code>modules</code> dict is keyed by layer name. They share the same apply machinery. The diffusers path does not build modules, which is why an applied network is detected by <code>len(net.modules) &gt; 0</code>.</p>
+<p>Each module exposes <code>try_load(name, network_on_disk, lora_scale)</code>. The returned <code>Network</code> has a <code>modules</code> dict keyed by stamped layer name. The diffusers path does not build modules, which is why an applied network is detected by <code>len(net.modules) &gt; 0</code>.</p>
 <h3 id="native_adapter">native_adapter</h3>
 <p><code>native_adapter.py</code> holds the generic, arch-independent half of the per-arch loaders:</p>
 <ul>
 <li>Family loaders, one per adapter type: <code>try_load_lora</code> (with DoRA), <code>try_load_lokr</code>, <code>try_load_loha</code>, <code>try_load_oft</code>, <code>try_load_ia3</code>, <code>try_load_glora</code>, <code>try_load_norm</code>, <code>try_load_full</code>.</li>
-<li><code>try_load_chain(name, nod, scale, family_loaders)</code> runs each family loader in order and merges the non-empty results into one <code>Network</code>.</li>
+<li><code>try_load_chain(name, nod, scale, family_loaders)</code> runs each family loader in order and merges the non-empty results into one <code>Network</code>, binding every merged module to that network so the strength set on it reaches all families.</li>
 <li>Key-parsing helpers: <code>parse_key</code>, <code>group_by_suffixes</code>, prefix detection, marker checks, PEFT name stripping.</li>
+<li><code>ChunkSpec</code> slices a fused delta onto several targets: equal chunks (<code>idx</code>/<code>total</code>), explicit row ranges (<code>start</code>/<code>end</code>), or a row reorder. A per-output DoRA magnitude slices with the rows; a per-input one spans every chunk, so the chunks share one column norm through <code>network.DoraGroup</code>, computed once per activate pass from each chunk's pristine weight.</li>
+<li><code>TextEncoderRouter</code> maps text-encoder prefixes (<code>lora_te_</code>, <code>lora_te1_</code>/<code>2_</code>/<code>3_</code>, <code>text_encoder.</code>, <code>clip_l.</code>, <code>t5.</code> and the like) onto the loaded encoder that fills the role, read from the encoder's structure (CLIP-L, CLIP-G, CLIP-H or T5).</li>
+<li><code>delta_fits</code> checks each family's delta against the target module's shape before binding. <code>widen_input</code> (LoRA and DoRA) and <code>widen_full</code> (full-weight deltas) zero-pad a narrower input onto an input-widened target such as an inpaint <code>conv_in</code>, reported as <code>expanded=N</code>; the added channels stay unchanged. LoKr and LoHA deltas with a narrower input count as mismatches.</li>
+</ul>
+<p>Shared rules applied by every family loader:</p>
+<ul>
+<li>A key whose target the loaded model lacks counts as unmapped and is reported in one warning per file.</li>
+<li>A delta that does not fit its target counts as a mismatch, and a file with any mismatch is refused whole.</li>
+<li>An unreadable or truncated file is declined.</li>
 </ul>
 <p>A per-arch module is thin. In it:</p>
 <ul>
-<li>The arch's key prefixes and a <code>resolve_targets</code> remap are set.</li>
-<li>The needed family loaders are bound.</li>
+<li>The arch's key prefixes, a <code>network_prefix</code> and a <code>resolve_targets</code> remap are set.</li>
+<li>The family loaders are bound.</li>
 <li>A single <code>try_load</code> that calls <code>try_load_chain</code> is exposed.</li>
 </ul>
-<p>Coverage varies by arch:</p>
+<p>Every per-arch module binds the full family set: LoRA (with DoRA), LoKR, LoHA, OFT and BOFT, IA3, GLoRA, Norm and Full.</p>
 <table>
 <thead>
 <tr>
 <th>Arch</th>
 <th>Module</th>
-<th>Families</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>sd, sdxl</td>
+<td><code>pipelines/sd/sd_lora.py</code></td>
+</tr>
+<tr>
+<td>sd3</td>
+<td><code>pipelines/sd3/sd3_lora.py</code></td>
+</tr>
+<tr>
+<td>f1</td>
+<td><code>pipelines/flux/flux1_lora.py</code></td>
+</tr>
+<tr>
 <td>zimage</td>
 <td><code>pipelines/z_image/zimage_lora.py</code></td>
-<td>LoRA, LoKR, LoHA, OFT</td>
 </tr>
 <tr>
 <td>chroma</td>
 <td><code>pipelines/chroma/chroma_lora.py</code></td>
-<td>LoRA, LoKR, LoHA, OFT</td>
 </tr>
 <tr>
 <td>ernieimage</td>
 <td><code>pipelines/ernie/ernie_lora.py</code></td>
-<td>LoRA, LoKR, LoHA, OFT</td>
 </tr>
 <tr>
 <td>f2</td>
 <td><code>pipelines/flux/flux2_lora.py</code></td>
-<td>LoRA, LoKR, LoHA, OFT, IA3, GLoRA, Norm</td>
+</tr>
+<tr>
+<td>f3</td>
+<td><code>pipelines/flux3/flux3_lora.py</code></td>
 </tr>
 <tr>
 <td>anima</td>
 <td><code>pipelines/anima/anima_lora.py</code></td>
-<td>full set including Full</td>
+</tr>
+<tr>
+<td>krea2</td>
+<td><code>pipelines/krea2/krea2_lora.py</code></td>
+</tr>
+<tr>
+<td>minimaxh3</td>
+<td><code>pipelines/minimax/minimax_lora.py</code></td>
+</tr>
+<tr>
+<td>qwen21</td>
+<td><code>pipelines/qwen/qwen21_lora.py</code></td>
 </tr>
 </tbody>
 </table>
-<p><code>resolve_targets</code> is where an arch rewrites legacy or fused key layouts to the current diffusers module names. For example Z-Image rewrites fused <code>attention.qkv</code> and bare <code>attention.out</code> to <code>to_q</code>/<code>to_k</code>/<code>to_v</code> and <code>to_out.0</code>, chunking the fused up-weight at load time.</p>
+<p><code>resolve_targets</code> is where an arch rewrites trainer layouts to the current diffusers module names. Examples:</p>
+<ul>
+<li>Z-Image rewrites fused <code>attention.qkv</code> and bare <code>attention.out</code> to <code>to_q</code>/<code>to_k</code>/<code>to_v</code> and <code>to_out.0</code>, chunking the fused up-weight at load time.</li>
+<li>Flux.1 splits the BFL <code>qkv</code> and single-block <code>linear1</code> by the widths of the loaded block, renames XLabs processor keys, and swaps the halves of the final-layer modulation.</li>
+<li>SD3 routes the kohya <code>context_block</code> stream to <code>add_*_proj</code> and the <code>x_block</code> stream to <code>to_*</code>, including <code>attn2</code> on dual-attention blocks.</li>
+<li>SD and SDXL rename CompVis block names (<code>input_blocks_4_1_proj_in</code>) through the <code>lora_convert</code> table, with the loaded UNet deciding where SD 1.x holds an upsampler.</li>
+</ul>
 <h2 id="data-model">Data model</h2>
 <div class="highlight"><pre><span></span><code>classDiagram
     class NetworkOnDisk {
@@ -4834,6 +4860,9 @@
         network_on_disk
         te_multiplier
         unet_multiplier
+        block_spec
+        components
+        pending_config
         modules
         bundle_embeddings
     }
@@ -4847,12 +4876,8 @@
         calc_scale()
         multiplier()
     }
-    class ModuleType {
-        create_module()
-    }
     NetworkOnDisk "1" --&gt; "*" Network : loaded into
     Network "1" --&gt; "*" NetworkModule : modules
-    ModuleType ..&gt; NetworkModule : creates
     NetworkModule &lt;|-- NetworkModuleLora
     NetworkModule &lt;|-- NetworkModuleLokr
     NetworkModule &lt;|-- NetworkModuleHada
@@ -4864,12 +4889,18 @@
 </code></pre></div>
 <ul>
 <li><code>NetworkOnDisk</code> describes a file: name, hash, parsed safetensors metadata, and a <code>detect_version</code> heuristic over metadata and filename.</li>
-<li><code>Network</code> is one loaded adapter: its multipliers and a <code>modules</code> dict keyed by layer name.</li>
+<li><code>Network</code> is one loaded adapter: its multipliers, block weights (<code>block_spec</code>), requested components, and a <code>modules</code> dict keyed by layer name.</li>
 <li><code>NetworkModule</code> is one layer's weights inside one network. It owns the family math in <code>calc_updown</code>, plus alpha, scale, and DoRA handling.</li>
-<li><code>ModuleType</code> is the factory the generic path uses to turn matched weights into a <code>NetworkModule</code>. <code>l.module_types</code> lists the eight factories tried in order.</li>
+</ul>
+<p><code>NetworkModule.multiplier()</code> gives each layer its strength:</p>
+<ul>
+<li>Layers stamped <code>lora_te*</code> take <code>te_multiplier</code>; every other layer (UNet, transformer, <code>llm_adapter</code>) takes <code>unet_multiplier</code>, split into in, mid and out by the UNet's <code>down_blocks</code>, <code>mid_block</code> and <code>up_blocks</code>.</li>
+<li>The result is scaled by the per-block factor when <code>block_spec</code> is set (<code>lora_blocks</code>).</li>
+<li>A network given components (<code>module=</code>, <code>high</code>, <code>low</code>) takes strength 0 on every layer outside those components.</li>
 </ul>
 <h2 id="apply-and-restore">Apply and restore</h2>
-<p><code>network_activate</code> iterates every module of the active components (<code>text_encoder*</code>, <code>unet</code>, <code>transformer*</code>, <code>llm_adapter</code>). For each module that carries a <code>network_layer_name</code> and whose <code>network_current_names</code> differ from the wanted set, it backs up, computes the combined delta, and applies it.</p>
+<p>Layer names are stamped on the loaded pipeline by <code>lora_convert.assign_network_names_to_compvis_modules</code>: <code>lora_te_</code> (a lone encoder) or <code>lora_te1_</code>, <code>lora_te2_</code> and <code>lora_te3_</code>, <code>lora_unet_</code>, <code>lora_transformer_</code> and <code>lora_llm_adapter_</code>, each followed by the module path with dots as underscores.</p>
+<p><code>network_activate</code> iterates every module of the active components (<code>text_encoder*</code>, <code>unet</code>, <code>transformer*</code>, <code>llm_adapter</code>). For each module that carries a <code>network_layer_name</code> and whose stamp differs from the wanted set, it backs up, computes the combined delta, and applies it. The stamp covers the networks with their multipliers plus the stack, block-weight, component and SDNQ mechanism signatures, so changing any of them re-applies the layer.</p>
 <div class="highlight"><pre><span></span><code>flowchart TD
     NA["network_activate"] --&gt; IT["for each module with network_layer_name"]
     IT --&gt; SK{"current_names == wanted_names?"}
@@ -4882,11 +4913,12 @@
     AD --&gt; MARK["set network_current_names = wanted_names"]
     AW --&gt; MARK
 </code></pre></div>
-<p><code>network_calc_weights</code> walks <code>l.loaded_networks</code> (or <code>previously_loaded_networks</code> when <code>use_previous</code> is set), pulls each network's <code>NetworkModule</code> for this layer, calls <code>calc_updown</code>, scales by the module multiplier, and accumulates one combined delta. It dequantizes through the SDNQ backup when the target weight is quantized.</p>
+<p><code>network_calc_weights</code> walks <code>l.loaded_networks</code> (or <code>previously_loaded_networks</code> when <code>use_previous</code> is set), pulls each network's <code>NetworkModule</code> for this layer, calls <code>calc_updown</code> on the layer's pristine weight, scales by the module multiplier, and accumulates one combined delta. <code>pristine_weight</code> is the stored copy when the layer has one, dequantized with the stored SDNQ state, and the live weight otherwise.</p>
 <p>Fuse and backup are a tradeoff set by <code>lora_fuse_native</code>:</p>
 <ul>
-<li>Backup mode (default): <code>network_backup_weights</code> clones the original weight to CPU. <code>network_apply_weights</code> restores from that backup and adds the new delta, so switching or removing a LoRA just recomputes from the backup. <code>network_deactivate</code> is a no-op in this mode and returns early.</li>
-<li>Fuse mode: no tensor backup is kept, only the sentinel <code>True</code>. <code>network_apply_direct</code> writes the delta into the weight in place for lower peak VRAM. Removal needs an explicit subtract, so <code>network_deactivate</code> recomputes the previous delta with <code>use_previous=True</code> and applies it with <code>deactivate=True</code>.</li>
+<li>Backup mode: <code>network_backup_weights</code> clones the original weight to CPU. <code>network_apply_weights</code> restores from that backup and adds the new delta, so switching or removing a LoRA recomputes from the backup. <code>network_deactivate</code> is a no-op in this mode and returns early. A quantized model always runs in backup mode.</li>
+<li>Fuse mode (on by default): no tensor backup is kept, only the sentinel <code>True</code>. <code>network_apply_direct</code> writes the delta into the weight in place for lower peak VRAM. Removal needs an explicit subtract, so <code>network_deactivate</code> recomputes the previous delta with <code>use_previous=True</code> and applies it with <code>deactivate=True</code>.</li>
+<li>A set whose delta depends on the weight (DoRA, OFT, BOFT, GLoRA, IA3) keeps a tensor backup for the layers it touches in fuse mode too, because a delta recomputed on the fused weight is not the one that was applied; <code>network_deactivate</code> restores those layers from the copy. The unload log reports such a pass as <code>mode=backup</code>.</li>
 </ul>
 <p>Storing <code>True</code> versus a tensor also lets a mid-session toggle of the setting invalidate the stale backup. <code>networks.native_active</code> records whether native weights are currently applied and gates restoration when LoRAs are removed.</p>
 <h2 id="diffusers-path">Diffusers path</h2>
@@ -4894,16 +4926,19 @@
 <h2 id="adding-native-support-for-a-new-arch">Adding native support for a new arch</h2>
 <p>Native LoRA is the adapter step of the larger process of adding a new architecture. The LoRA-specific touchpoints are:</p>
 <ul>
-<li><code>pipelines/&lt;arch&gt;/&lt;arch&gt;_lora.py</code>: the arch's key prefixes and a <code>resolve_targets</code> remap are set, the needed <code>native_adapter</code> family loaders are bound, and a single <code>try_load</code> is exposed via <code>try_load_chain</code>.</li>
-<li><code>lora_overrides.allow_native</code>: the arch's <code>sd_model_type</code> is added so <code>get_method</code> returns <code>native</code>.</li>
-<li><code>lora_load._NATIVE_DISPATCH</code>: the type is mapped to the new module.</li>
+<li><code>pipelines/&lt;arch&gt;/&lt;arch&gt;_lora.py</code>: the arch's key prefixes, <code>network_prefix</code> and a <code>resolve_targets</code> remap are set, the <code>native_adapter</code> family loaders are bound, and a single <code>try_load</code> is exposed via <code>try_load_chain</code>.</li>
+<li><code>lora_overrides.NATIVE_DISPATCH</code>: the arch's <code>sd_model_type</code> is mapped to the new module, which also puts it in <code>allow_native</code>.</li>
+<li><code>lora_convert.assign_network_names_to_compvis_modules</code>: a component outside the stamped set gets its prefix here.</li>
 </ul>
-<p>Key fixups belong in <code>resolve_targets</code> or the family loader, not in <code>load_safetensors</code>. Arches not added to <code>allow_native</code> keep working through the diffusers path.</p>
+<p>Key fixups belong in <code>resolve_targets</code>, the arch's grouping hook or the family loader, not in <code>load_safetensors</code>. A format that every arch shares (a trainer's suffix spelling, a wrapper prefix) belongs in <code>native_adapter</code>. Arches without a dispatch entry keep working through the diffusers path.</p>
 <h2 id="debugging">Debugging</h2>
 <ul>
-<li><code>SD_LORA_DEBUG=1</code> enables verbose load, activate, and deactivate logs, including per-network names, applied layer counts, backup size, and timings.</li>
-<li><code>SD_LORA_DUMP=1</code> writes the sorted key list of each loaded file to a temp file, useful when keys fail to match.</li>
-<li>The single-line load log reports <code>load=method(reason)</code> and <code>method=actual</code>, where <code>actual</code> is <code>native</code> only if modules were built. A mismatch points to a silent fallback to the diffusers path.</li>
+<li><code>SD_LORA_DEBUG=1</code> enables verbose load, activate, and deactivate logs, including per-family module counts, the list of unmapped keys, per-key shape mismatches, applied layer counts, backup size, and timings.</li>
+<li><code>SD_LORA_DUMP=1</code> writes two sorted key lists to the temp directory for every arch: <code>LoRA-&lt;type&gt;-&lt;class&gt;-&lt;file&gt;.txt</code> with the file's keys and <code>Model-&lt;type&gt;-&lt;class&gt;.txt</code> with the stamped layer names, so the two can be diffed when keys fail to match.</li>
+<li><code>Network load: type=LoRA name="x" native modules=N unmapped=M</code> is a warning naming how many of a file's targets the loaded model lacks.</li>
+<li><code>Network load: type=LoRA name="x" modules=N mismatch=M shapes do not match the loaded model</code> is followed by <code>not loaded</code>: the file was trained for another base.</li>
+<li><code>Network load: type=LoRA name="x" requested=&lt;component&gt; missing</code> reports a <code>module=</code>, <code>high</code> or <code>low</code> tag naming a component the loaded pipeline lacks.</li>
+<li>The status line <code>Network status: type=LoRA ... method=actual(reason)</code> reports <code>native</code> only if modules were built.</li>
 <li>Relevant settings: <code>lora_force_diffusers</code>, <code>lora_fuse_native</code>, <code>lora_fuse_diffusers</code>, <code>lora_in_memory_limit</code>, <code>lora_force_reload</code>, <code>extra_networks_default_multiplier</code>.</li>
 </ul>
 

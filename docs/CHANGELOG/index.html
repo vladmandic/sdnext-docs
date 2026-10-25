@@ -9886,6 +9886,9 @@
     the system will use llm of choice to caption the image and define prompt for each slide of the story<br />
     works best with edit-models, but can be used in text-to-image and image-to-image modes as well<br />
 <em>note</em>: this is a playground thing, dont expect full cartoon level quality in a single shot  </li>
+<li><strong>LoRA</strong></li>
+<li>major cleanup of older lora code and full switch to <em>native-dispatcher</em> introduced last month</li>
+<li>native dispatcher: <em>sd, sdxl, sd3, f1, f2, f3, chroma, zimage, ernieimage, anima, krea2, minimaxh3, qwen21</em></li>
 <li><strong>Metadata</strong></li>
 <li>improve model hash info for all models</li>
 <li>add unet hash if using custom unet/dit</li>
@@ -9894,7 +9897,7 @@
 <li>use streaming for DLSS video processing<br />
     allows near-infinite video length without excessive memory usage  </li>
 <li><strong>Wiki</strong></li>
-<li>updates to: <code>Scheduler</code>, <code>Models</code>, <code>Model-Support</code>, <code>Docker</code>, <code>AMD-ROCm</code>, <code>AMD-MIOpen</code>, <code>Detailer</code>, <code>LoRA</code></li>
+<li>updates to: <code>Scheduler</code>, <code>Models</code>, <code>Model-Support</code>, <code>Docker</code>, <code>AMD-ROCm</code>, <code>AMD-MIOpen</code>, <code>Detailer</code>, <code>LoRA</code>, <code>LoRA-Technical</code></li>
 <li><strong>Docker</strong></li>
 <li>update <code>Dockerfile</code> for all supported platforms</li>
 <li><a href="https://hub.docker.com/repository/docker/vladmandic/sdnext-cuda">SD.Next CUDA docker image</a> rebuild and update</li>
