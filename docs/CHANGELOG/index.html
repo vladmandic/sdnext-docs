@@ -9904,7 +9904,7 @@
     allows near-infinite video length without excessive memory usage  </li>
 <li><strong>MicroDecoder</strong></li>
 <li>add support for additional vae families<br />
-    supported: <code>sd, sdxl, sd3, f1, f2, hy, dcae, mage, qwen, qwen21, wan21, minimaxh3</code>  </li>
+    supported: <em>sd, sdxl, sd3, f1, f2, hy, dcae, mage, qwen, qwen21, wan21, wan22, minimaxh3, cog, sefi</em>  </li>
 <li><strong>Wiki</strong></li>
 <li>updates to: <code>Scheduler</code>, <code>Models</code>, <code>Model-Support</code>, <code>Docker</code>, <code>AMD-ROCm</code>, <code>AMD-MIOpen</code>, <code>Detailer</code>, <code>LoRA</code>, <code>LoRA-Technical</code></li>
 <li><strong>Docker</strong></li>
@@ -9926,7 +9926,9 @@
 <li><strong>Fixes</strong></li>
 <li>api: return complete set in GET /sdapi/v1/options, thanks @Jackmeson1</li>
 <li>caption: get/set attention fallbacks</li>
+<li>cogview: support offloading</li>
 <li>dlss: save once when running as extras</li>
+<li>dlss: do not run other postprocess again</li>
 <li>krea2: use prequant text-encoder when loading pre-quant model</li>
 <li>launch: dont overwrite existing LD_LIBRARY_PATH</li>
 <li>lora: bias deltas no longer refused when the model is quantized or native fuse is off</li>

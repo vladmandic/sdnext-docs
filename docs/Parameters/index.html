@@ -5528,14 +5528,6 @@ It does not cover mostly static system settings.</p>
 <td style="text-align: left;">HiDiffusion</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>do_not_reload_embeddings</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;"><code>False</code></td>
-<td style="text-align: left;"><code>Syntax: do_not_reload_embeddings: True</code></td>
-<td style="text-align: left;">Skip reloading embeddings (performance optimization). Useful when running multiple generations with the same embeddings.</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
 <td style="text-align: left;"><code>enhance_prompt</code></td>
 <td style="text-align: left;"><code>bool</code></td>
 <td style="text-align: left;"><code>False</code></td>
@@ -6001,22 +5993,6 @@ It does not cover mostly static system settings.</p>
 <td style="text-align: left;"><code>Range: 0.0 to 1.0</code> <br> <code>Syntax: hr_denoising_strength: 0.4</code></td>
 <td style="text-align: left;">Denoising strength for hires pass. Lower values preserve more detail from upscale, higher values allow more creative changes.</td>
 <td style="text-align: left;">Denoising strength</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>firstphase_width</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;"><code>0</code></td>
-<td style="text-align: left;"><code>Values: 0 (disabled), or initial width</code> <br> <code>Syntax: firstphase_width: 512</code></td>
-<td style="text-align: left;">Override initial generation width. Useful for controlling the first pass resolution independently.</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>firstphase_height</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;"><code>0</code></td>
-<td style="text-align: left;"><code>Values: 0 (disabled), or initial height</code> <br> <code>Syntax: firstphase_height: 512</code></td>
-<td style="text-align: left;">Override initial generation height. Works with firstphase_width for custom initial dimensions.</td>
-<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
