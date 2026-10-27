@@ -9852,6 +9852,7 @@
 - One new base model: *<strong>Bria FIBO 2.0</strong> and improvements to <strong>MOSS-Image</strong> and <strong>Ming-Image</strong> workflows<br />
 - Major improvements to <strong>Prompt Enhance</strong> functionality to make it more versatile and cover usage in new structured/json based prompts<br />
 - New playground feature <strong>Story Mode</strong><br />
+- Expanded native <strong>LoRA</strong> support with compatibility for multiple model types<br />
 - Updates to <strong>AI Coding</strong> instructions and skills: try your favorite model/tool on SD.Next, you might be surprised how quickly it adapts and performs<br />
 - Codebase cleanup: removed deprecated options that were left as legacy remnants<br />
 - And many more smaller improvements and fixes...  </p>
@@ -9870,7 +9871,7 @@
 <em>note</em>: BriaFIBO is designed to work with highly structured <a href="https://docs.bria.ai/vgl#5-schema-reference">JSON prompts</a><br />
     if you provide a simple string-based prompt, sdnext will convert it to naive JSON, but it will be sub-optimal  </li>
 <li><a href="https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base">OpenMOSS MOSS-Image</a> add <em>sdnq-uint4</em> pre-quants and add <em>image2image</em> and <em>inpaint</em> workflows<br />
-<em>note</em>: model is trained with highly shifted sigma, so its not ideal for expected i2i results<br />
+<em>note</em>: model is trained with highly shifted sigma, so its not ideal for i2i workflows<br />
 <em>note</em>: this also unlocks use in hires/refine/detailer workflows  </li>
 <li><a href="https://huggingface.co/lodestones/Kromoss">lodestones Kromoss</a> fine-tune of MOSS-Image  </li>
 <li><a href="https://huggingface.co/OzzyGT/ming_image_0_1_design_diffusers">inclusionAI Ming-Image Design 0.1</a> add <em>ref-image</em> workflow<br />
