@@ -4704,12 +4704,13 @@
     P["prompt with &amp;lt;lora:name:weight&amp;gt;"] --&gt; A["ExtraNetworkLora.activate"]
     A --&gt; PA["parse: names, te/unet multipliers, dyn_dims, lora_modules"]
     PA --&gt; GM["lora_overrides.get_method"]
-    GM --&gt;|diffusers| ND1["network_load -&gt; load_diffusers per net"]
-    GM --&gt;|nunchaku| NK["lora_nunchaku.load_nunchaku"]
-    GM --&gt;|native| ND2["network_load -&gt; load_safetensors per net"]
+    GM --&gt; SW["switch_method: a changed method removes the previous method's sets"]
+    SW --&gt;|diffusers| ND1["network_load -&gt; load_diffusers per net"]
+    SW --&gt;|nunchaku| NK["lora_nunchaku.load_nunchaku"]
+    SW --&gt;|native| ND2["network_load -&gt; load_safetensors per net"]
     ND1 --&gt; SA["pipe.set_adapters, optional fuse_lora"]
     ND2 --&gt; CH{"changed?"}
-    CH --&gt;|yes| DE["network_deactivate (fuse mode only)"]
+    CH --&gt;|yes| DE["network_deactivate (when the applying pass or this request fuses)"]
     DE --&gt; AC["network_activate: patch module weights"]
     CH --&gt;|no| SKIP["skip, weights already applied"]
     SA --&gt; DONE["generation runs with adapters live"]
@@ -4745,7 +4746,7 @@
     FH --&gt;|yes| RD4["diffusers: hash-forced"]
     FH --&gt;|no| RNAT["native: default"]
 </code></pre></div>
-<p><code>allow_native</code> is <code>list(NATIVE_DISPATCH)</code>, the arches with a per-arch native loader: <code>sd</code>, <code>sdxl</code>, <code>sd3</code>, <code>f1</code>, <code>zimage</code>, <code>chroma</code>, <code>ernieimage</code>, <code>f2</code>, <code>f3</code>, <code>anima</code>, <code>krea2</code>, <code>minimaxh3</code>, <code>mossimage</code>, <code>boogu</code>, <code>qwen21</code>. Any other arch always takes the diffusers path. <code>force_classes_diffusers</code> is empty; a pipeline class listed there always takes the diffusers path.</p>
+<p><code>allow_native</code> is <code>list(NATIVE_DISPATCH)</code>, the arches with a per-arch native loader: <code>sd</code>, <code>sdxl</code>, <code>sd3</code>, <code>f1</code>, <code>zimage</code>, <code>chroma</code>, <code>ernieimage</code>, <code>f2</code>, <code>f3</code>, <code>anima</code>, <code>krea2</code>, <code>minimaxh3</code>, <code>mossimage</code>, <code>boogu</code>, <code>fibo2</code>, <code>qwen21</code>. Any other arch always takes the diffusers path. <code>force_classes_diffusers</code> is empty; a pipeline class listed there always takes the diffusers path.</p>
 <h2 id="native-path">Native path</h2>
 <p><code>load_safetensors</code> is the native loader. It looks up <code>shared.sd_model_type</code> in <code>NATIVE_DISPATCH</code> and hands the file to that arch's module.</p>
 <div class="highlight"><pre><span></span><code>flowchart TD
@@ -4765,7 +4766,7 @@
 <li>Key-parsing helpers: <code>parse_key</code>, <code>group_by_suffixes</code>, prefix detection, marker checks, PEFT name stripping.</li>
 <li><code>ChunkSpec</code> slices a fused delta onto several targets: equal chunks (<code>idx</code>/<code>total</code>), explicit row ranges (<code>start</code>/<code>end</code>), or a row reorder. A per-output DoRA magnitude slices with the rows; a per-input one spans every chunk, so the chunks share one column norm through <code>network.DoraGroup</code>, computed once per activate pass from each chunk's pristine weight.</li>
 <li><code>TextEncoderRouter</code> maps text-encoder prefixes (<code>lora_te_</code>, <code>lora_te1_</code>/<code>2_</code>/<code>3_</code>, <code>text_encoder.</code>, <code>clip_l.</code>, <code>t5.</code> and the like) onto the loaded encoder that fills the role, read from the encoder's structure (CLIP-L, CLIP-G, CLIP-H or T5).</li>
-<li><code>delta_fits</code> checks each family's delta against the target module's shape before binding. <code>widen_input</code> (LoRA and DoRA) and <code>widen_full</code> (full-weight deltas) zero-pad a narrower input onto an input-widened target such as an inpaint <code>conv_in</code>, reported as <code>expanded=N</code>; the added channels stay unchanged. LoKr and LoHA deltas with a narrower input count as mismatches.</li>
+<li><code>delta_fits</code> checks each family's delta against the target module's shape before binding. <code>widen_input</code> (LoRA and DoRA) and <code>widen_full</code> (full-weight deltas) zero-pad a narrower input onto an input-widened target such as an inpaint <code>conv_in</code>, reported as <code>expanded=N</code>; the added channels stay unchanged. <code>narrow_input</code> and <code>narrow_full</code> drop input columns past the target's width when every dropped column is zero, as in a fused save that padded a SwiGLU down projection (ComfyUI Fibo 2 <code>w2</code>, 9728 columns against 9536), reported as <code>trimmed=N</code>; a nonzero column past the width is a mismatch. LoKr and LoHA deltas with a different input width count as mismatches.</li>
 </ul>
 <p>Shared rules applied by every family loader:</p>
 <ul>
@@ -4841,6 +4842,10 @@
 <td><code>pipelines/boogu/boogu_lora.py</code></td>
 </tr>
 <tr>
+<td>fibo2</td>
+<td><code>pipelines/bria/fibo2_lora.py</code></td>
+</tr>
+<tr>
 <td>qwen21</td>
 <td><code>pipelines/qwen/qwen21_lora.py</code></td>
 </tr>
@@ -4850,6 +4855,7 @@
 <ul>
 <li>Z-Image rewrites fused <code>attention.qkv</code> and bare <code>attention.out</code> to <code>to_q</code>/<code>to_k</code>/<code>to_v</code> and <code>to_out.0</code>, chunking the fused up-weight at load time.</li>
 <li>Flux.1 splits the BFL <code>qkv</code> and single-block <code>linear1</code> by the widths of the loaded block, renames XLabs processor keys, and swaps the halves of the final-layer modulation.</li>
+<li>Fibo 2 chunks the ComfyUI fused <code>attention.qkv</code> and <code>to_kv</code> onto the split projections, slices the padded fused <code>w13</code> into <code>w1</code> and <code>w3</code>, and renames the original checkpoint names (<code>cross_q</code>, <code>self_out</code>, <code>all_x_embedder.2-1</code>).</li>
 <li>SD3 routes the kohya <code>context_block</code> stream to <code>add_*_proj</code> and the <code>x_block</code> stream to <code>to_*</code>, including <code>attn2</code> on dual-attention blocks.</li>
 <li>SD and SDXL rename CompVis block names (<code>input_blocks_4_1_proj_in</code>) through the <code>lora_convert</code> table, with the loaded UNet deciding where SD 1.x holds an upsampler.</li>
 </ul>
@@ -4924,9 +4930,11 @@
 <p><code>network_calc_weights</code> walks <code>l.loaded_networks</code> (or <code>previously_loaded_networks</code> when <code>use_previous</code> is set), pulls each network's <code>NetworkModule</code> for this layer, calls <code>calc_updown</code> on the layer's pristine weight, scales by the module multiplier, and accumulates one combined delta. <code>pristine_weight</code> is the stored copy when the layer has one, dequantized with the stored SDNQ state, and the live weight otherwise.</p>
 <p>Fuse and backup are a tradeoff set by <code>lora_fuse_native</code>:</p>
 <ul>
-<li>Backup mode: <code>network_backup_weights</code> clones the original weight to CPU. <code>network_apply_weights</code> restores from that backup and adds the new delta, so switching or removing a LoRA recomputes from the backup. <code>network_deactivate</code> is a no-op in this mode and returns early. A quantized model always runs in backup mode.</li>
+<li>Backup mode: <code>network_backup_weights</code> clones the original weight to CPU. <code>network_apply_weights</code> restores from that backup and adds the new delta, so switching or removing a LoRA recomputes from the backup. <code>network_deactivate</code> returns early when both the pass that applied the set and the current request run in this mode. A quantized model always runs in backup mode.</li>
 <li>Fuse mode (on by default): no tensor backup is kept, only the sentinel <code>True</code>. <code>network_apply_direct</code> writes the delta into the weight in place for lower peak VRAM. Removal needs an explicit subtract, so <code>network_deactivate</code> recomputes the previous delta with <code>use_previous=True</code> and applies it with <code>deactivate=True</code>.</li>
 <li>A set whose delta depends on the weight (DoRA, OFT, BOFT, GLoRA, IA3) keeps a tensor backup for the layers it touches in fuse mode too, because a delta recomputed on the fused weight is not the one that was applied; <code>network_deactivate</code> restores those layers from the copy. The unload log reports such a pass as <code>mode=backup</code>.</li>
+<li>Removal follows the mode a set was applied in. The activation pass records its fuse decision in <code>lora_common.last_fuse</code>, so a fused set is subtracted even when the next request runs with <code>lora_fuse_native</code> off (a per-request <code>override_settings</code> or the settings toggle), and backup-mode copies restore before a fuse-mode pass replaces them with markers.</li>
+<li>A request whose load method differs from the previous one on the same checkpoint (<code>lora_force_diffusers</code> toggled) first removes the previous method's sets in <code>ExtraNetworkLora.switch_method</code>: <code>networks.network_remove</code> for native sets, an adapter unload for diffusers ones. It also clears the change cache, so the same tags apply again under the new method.</li>
 </ul>
 <p>Storing <code>True</code> versus a tensor also lets a mid-session toggle of the setting invalidate the stale backup. <code>networks.native_active</code> records whether native weights are currently applied and gates restoration when LoRAs are removed.</p>
 <h2 id="diffusers-path">Diffusers path</h2>
