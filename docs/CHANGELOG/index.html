@@ -9868,7 +9868,9 @@
 <li><a href="https://huggingface.co/briaai/Fibo-2.0-dev">Bria FIBO 2.0</a> <em>Dev</em> base and <em>Edit Turbo</em> distilled variants<br />
 <em>architecture</em>: 8.1B flow-matching transformer with Qwen3-VL-4B text-encoder<br />
 <em>note</em>: this is a <a href="https://vladmandic.github.io/sdnext-docs/Gated">gated model</a><br />
-<em>note</em>: BriaFIBO is designed to work with highly structured <a href="https://docs.bria.ai/vgl#5-schema-reference">JSON prompts</a>  </li>
+<em>note</em>: BriaFIBO is designed to work with highly structured <a href="https://docs.bria.ai/vgl#5-schema-reference">JSON prompts</a><br />
+    a plain string prompt is read as a short description, a form the model was also trained on, but a structured caption gives far more control<br />
+<em>note</em>: single-file transformers in the ComfyUI layout load through the UNET selector and LoRAs load through the native loader  </li>
 <li><a href="https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base">OpenMOSS MOSS-Image</a> add <em>sdnq-uint4</em> pre-quants and add <em>image2image</em> and <em>inpaint</em> workflows<br />
 <em>note</em>: model is trained with highly shifted sigma, so its not ideal for i2i workflows<br />
 <em>note</em>: this also unlocks use in hires/refine/detailer workflows  </li>
@@ -9926,6 +9928,7 @@
     removed: <code>subseed, subseed_strength, seed_resize_from_h/w, do_not_reload_embeddings, nan_skip, inpainting_mask_weigtht, initial_noise_multiplier, inpainting_fill, te_complex_human_instruction, te_use_mask, firstphase_width, firstphase_height</code>  </li>
 <li><strong>Fixes</strong></li>
 <li>api: return complete set in GET /sdapi/v1/options, thanks @Jackmeson1</li>
+<li>bria: fibo 2 inpaint masks reach the pipeline, caption text draws with the repo fonts, the text encoder is shared with qwen3-vl-4b</li>
 <li>caption: get/set attention fallbacks</li>
 <li>cogview: support offloading</li>
 <li>dlss: save once when running as extras</li>
