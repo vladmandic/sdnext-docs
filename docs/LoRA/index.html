@@ -4802,6 +4802,15 @@ However, you can also specify which component to apply LoRA to by adding <code>:
 </blockquote>
 <p><em>Note</em>: <code>low</code> is shorthand for <code>module=transformer_2</code>, <code>high</code> is shorthand for <code>module=transformer</code>, and <code>module=te</code> selects <code>text_encoder</code>.
 A requested component that the loaded model does not have is reported in the log as <code>missing</code>.</p>
+<p>Ideogram 4 runs two transformers: the conditional one, and an unconditional one for the negative pass of its guidance.
+A LoRA is applied to the conditional transformer only, which is the one it was trained on.
+<code>:uncond</code> applies it to the unconditional transformer instead and <code>:cond:uncond</code> to both; <code>cond</code> is shorthand for <code>module=transformer</code> and <code>uncond</code> for <code>module=unconditional_transformer</code>.
+The same LoRA can be named twice at different strengths, one per transformer, and different LoRAs can be given to each:</p>
+<blockquote>
+<p><code>&lt;lora:mylora:0.9:cond&gt;</code> and <code>&lt;lora:mylora:0.4:uncond&gt;</code>  </p>
+</blockquote>
+<p>With conditioning guidance turned off in the model settings, the conditional transformer serves both passes and <code>uncond</code> is reported as <code>missing</code>.</p>
+<p>A LoRA named more than once in a prompt is applied once per reference, each with its own strength and components; references to the same components add up.</p>
 <h5 id="component-weights">Component weights</h5>
 <p>Typically <code>:strength</code> is applied uniformly for all components of the LoRA.<br />
 However, you can also specify individual component weights by adding <code>:comp=x.x</code> to the LoRA tag.  </p>
