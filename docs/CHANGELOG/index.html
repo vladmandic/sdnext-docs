@@ -9896,7 +9896,7 @@
 <em>note</em>: this is a playground thing, dont expect full cartoon level quality in a single shot  </li>
 <li><strong>LoRA</strong></li>
 <li>major cleanup of older lora code and full switch to <em>native-dispatcher</em> introduced last month</li>
-<li>native dispatcher: <em>sd, sdxl, sd3, f1, f2, f3, chroma, zimage, ernieimage, anima, krea2, minimaxh3, qwen21, moss, boogu, fibo2</em></li>
+<li>native dispatcher: <em>sd, sdxl, sd3, f1, f2, f3, chroma, zimage, ernieimage, anima, krea2, minimaxh3, qwen21, moss, boogu, fibo2, ideogram4</em></li>
 <li><strong>Metadata</strong></li>
 <li>improve model hash info for all models</li>
 <li>add unet hash if using custom unet/dit</li>
@@ -9904,10 +9904,15 @@
 <li><strong>DLSS</strong></li>
 <li>use streaming for DLSS video processing<br />
     allows near-infinite video length without excessive memory usage  </li>
+<li>allow custom video codecs and options</li>
 <li><strong>MicroDecoder</strong></li>
 <li>add support for additional vae families<br />
     supported: <em>sd, sdxl, sd3, f1, f2, hy, dcae, mage, qwen, qwen21, wan21, wan22, minimaxh3, cog, sefi</em><br />
     too see how different vae families map to different models, see <a href="https://huggingface.co/SD-Next/MicroDecoder">https://huggingface.co/SD-Next/MicroDecoder</a>  </li>
+<li><strong>Video</strong></li>
+<li>add option in <em>Settings -&gt; Media Options -&gt; Videos convert for UI playback</em><br />
+    depencing on choice of codec and settings some generated videos may not be playable in browser<br />
+    this allows sdnext to convert generated video to a temporary copy for ui playback  </li>
 <li><strong>Wiki</strong></li>
 <li>updates to: <code>Scheduler</code>, <code>Models</code>, <code>Model-Support</code>, <code>Docker</code>, <code>AMD-ROCm</code>, <code>AMD-MIOpen</code>, <code>Detailer</code>, <code>LoRA</code>, <code>LoRA-Technical</code></li>
 <li><strong>Docker</strong></li>
@@ -9962,6 +9967,7 @@
 <li>ui: fallback template load method when running on older server</li>
 <li>ui: autohide panels</li>
 <li>unet: hash on first load</li>
+<li>video: gradio do not recode video in-place</li>
 <li>wan: loading route changes video frame count, thanks @Jackmeson1</li>
 </ul>
 <h2 id="update-for-2026-10-18">Update for 2026-10-18</h2>
