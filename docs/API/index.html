@@ -4265,6 +4265,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#video-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4685,6 +4696,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#video-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4842,6 +4864,7 @@ You can also check that <code>job_count</code> is <code>0</code>, but note it ma
 <ul>
 <li><code>POST /sdapi/v1/video</code>: generate a video, or a single still frame, using a video model</li>
 <li><code>GET /sdapi/v1/video/models</code>: enumerate available video engines and models</li>
+<li><code>GET /sdapi/v1/video/codecs</code>: enumerate the video encoder presets</li>
 <li><code>GET /sdapi/v1/video/file</code>: download a saved video artifact</li>
 </ul>
 <p>Like <code>txt2img</code>, the generate endpoint is synchronous: the request blocks until generation finishes and the result is returned in the response. Progress is reported on <code>/sdapi/v1/progress</code>, and a running generation is cancelled with <code>/sdapi/v1/interrupt</code>.</p>
@@ -4860,6 +4883,8 @@ You can also check that <code>job_count</code> is <code>0</code>, but note it ma
 <li><code>send_video</code>, <code>send_frames</code>, and <code>send_thumbnail</code> select which artifacts are returned base64-encoded in the response.</li>
 </ul>
 <p>A video larger than the base64 size cap is returned with <code>video</code> empty and <code>video_path</code> set; the file is then downloaded with <code>GET /sdapi/v1/video/file?file={video_path}</code>. The file endpoint only serves paths inside the video output directory; anything else is rejected with <code>403 Forbidden</code>.</p>
+<h3 id="video-encoding">Video encoding</h3>
+<p>The encoder is chosen with <code>mp4_codec</code>, the container with <code>mp4_ext</code>, and encoder settings with <code>mp4_opt</code>. <code>GET /sdapi/v1/video/codecs</code> lists the accepted presets: for each, the default container and the containers it can be written to, the default options and pixel format, whether it is compiled into the installed <code>av</code> package (<code>available</code>), and whether it needs a GPU or other device (<code>hardware</code>). A hardware encoder that is <code>available</code> still opens only where that hardware and its driver are present; <code>available</code> and <code>hardware</code> are <code>null</code> when <code>av</code> is not installed. No encoder is opened to build the list.</p>
 <p>Switching checkpoints through <code>override_settings</code> is not supported on this endpoint and is rejected with <code>400</code>; the model is selected per-request through <code>engine</code> and <code>model</code>, or switched beforehand with <code>POST /sdapi/v1/checkpoint</code>.</p>
 <p>A minimal request:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>

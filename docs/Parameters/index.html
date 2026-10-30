@@ -6520,7 +6520,7 @@ It does not cover mostly static system settings.</p>
 <td style="text-align: left;"><code>mp4_codec</code></td>
 <td style="text-align: left;"><code>str</code></td>
 <td style="text-align: left;"><code>"libx264"</code></td>
-<td style="text-align: left;"><code>Values: "none", "libx264"</code></td>
+<td style="text-align: left;"><code>Values: "none" or a name from /sdapi/v1/video/codecs</code></td>
 <td style="text-align: left;">Video codec. <code>none</code> skips video encoding.</td>
 <td style="text-align: left;">Video codec</td>
 </tr>
@@ -6528,16 +6528,16 @@ It does not cover mostly static system settings.</p>
 <td style="text-align: left;"><code>mp4_ext</code></td>
 <td style="text-align: left;"><code>str</code></td>
 <td style="text-align: left;"><code>"mp4"</code></td>
-<td style="text-align: left;"><code>Syntax: mp4_ext: webm</code></td>
+<td style="text-align: left;"><code>Values: allowed_exts of the codec in /sdapi/v1/video/codecs</code></td>
 <td style="text-align: left;">Container extension; the muxer is inferred from it.</td>
 <td style="text-align: left;">Video format</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>mp4_opt</code></td>
 <td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;"><code>"crf:16"</code></td>
-<td style="text-align: left;"><code>Syntax: "key:value, key:value"</code></td>
-<td style="text-align: left;">Encoder options as comma-separated key:value pairs.</td>
+<td style="text-align: left;"><code>"crf=16"</code></td>
+<td style="text-align: left;"><code>Syntax: "key=value:key=value"</code></td>
+<td style="text-align: left;">Encoder options as key=value pairs separated by <code>:</code> or <code>,</code>; a key without <code>=</code> becomes a flag set to 1.</td>
 <td style="text-align: left;">Video options</td>
 </tr>
 <tr>
