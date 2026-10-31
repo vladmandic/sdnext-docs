@@ -9905,6 +9905,9 @@
 <li>hdr: the 16-bit hdr image saves on windows paths with non-ascii characters</li>
 <li>processing: hires on modular pipelines that take condition images (<em>FLUX.3 Klein</em>) runs at the hires size instead of the base size, with live previews at that size</li>
 <li>processing: a negative prompt the pipeline takes no input for is reported once per job instead of dropped silently</li>
+<li>models: gated repo access check sends the token stored by <em>hf auth login</em>, no more <em>401</em> error on each load while downloads authenticate</li>
+<li>preview: live previews of v-prediction models use the v-prediction estimate instead of the epsilon one</li>
+<li>samplers: <em>Euler SGM</em> and <em>DC Solver</em> use the model's prediction type instead of forcing <em>sample</em> and <em>epsilon</em>, <em>DPM++ Cosine</em> no longer fails on its first step</li>
 </ul>
 <h2 id="update-for-2026-10-29">Update for 2026-10-29</h2>
 <h3 id="highlights-for-2026-10-29">Highlights for 2026-10-29</h3>
