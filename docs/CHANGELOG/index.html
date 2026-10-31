@@ -9876,7 +9876,7 @@
     codec part of legacy <em>Video format</em> labels selects the encoder, api arguments keep working</li>
 <li>per-codec pixel format in codec presets, odd frame sizes cropped for 4:2:0 formats</li>
 <li>bt.709 colour conversion with colour tags, fractional frame rates kept</li>
-<li><em>Videos convert for UI playback</em> is on by default and converts through <em>pyav</em>, no ffmpeg binary needed</li>
+<li><em>Videos convert for UI playback</em> converts through <em>pyav</em>, no ffmpeg binary needed</li>
 <li><em>av</em> installs with the core requirements instead of on the first video save</li>
 <li>dlss: api and enso jobs use the ui codec defaults, slow-motion output plays slower</li>
 <li>remove <em>vaapi</em> codec presets, pypi <em>av</em> builds ship no vaapi encoders</li>
@@ -9886,6 +9886,7 @@
 <li><em>Video codec</em> in scripts, control and create video lists the codec presets, the container follows the codec<br />
     settings saved under the old <em>Video format</em> labels reset to the default</li>
 <li>ltx condition video: skipping frames keeps the first frame</li>
+<li>mkv and webm frame counts read from each track's duration tag instead of a pass over the file, faster gallery thumbnails of long clips</li>
 <li><strong>Fixes</strong></li>
 <li>process: show why a video run failed, report a missing input video</li>
 <li>save: configured output folder kept as given, only generated folder and file names are sanitized</li>
@@ -9894,6 +9895,16 @@
 <li>minimax: quantized <em>H3</em> repos decode again, their video vae loads through the diffusers class</li>
 <li>processing: a generation that fails reports <em>failed</em> with its error instead of <em>interrupted</em> and no longer returns or saves its last live preview, video api answers 500 with the error instead of 499</li>
 <li>offload: a job that fails inside the vae no longer leaves the vae on the gpu, after the job or after an unload</li>
+<li>gallery: thumbnails and previews for webm, mkv, mov, avi and ts videos, not only mp4, webm videos listed</li>
+<li>api: ts video files served as <em>video/mp2t</em></li>
+<li>minimax: webm, mkv and ts files accepted as reference videos</li>
+<li>save: <em>Save metadata to JSON file</em> appends one line per image to a json lines file instead of rewriting the whole log, an existing <em>.json</em> log is left as it is</li>
+<li>save: an image save that fails no longer stops every later save</li>
+<li>save: a generated folder or file name starting with a letter and a colon stays inside the output folder on windows</li>
+<li>save: <em>[datetime<format>]</em> and <em>[hasprompt&lt;...&gt;]</em> filename tokens apply their arguments again instead of being written as typed</li>
+<li>hdr: the 16-bit hdr image saves on windows paths with non-ascii characters</li>
+<li>processing: hires on modular pipelines that take condition images (<em>FLUX.3 Klein</em>) runs at the hires size instead of the base size, with live previews at that size</li>
+<li>processing: a negative prompt the pipeline takes no input for is reported once per job instead of dropped silently</li>
 </ul>
 <h2 id="update-for-2026-10-29">Update for 2026-10-29</h2>
 <h3 id="highlights-for-2026-10-29">Highlights for 2026-10-29</h3>
