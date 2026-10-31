@@ -6269,7 +6269,7 @@ The Control size menu allows you to manipulate the size of your input images bef
 </li>
 </ul>
 <h4 id="video">Video</h4>
-<p>The Video controls are quite exciting and fun to play with, with our tools now you can, if you wished, turn any video into an anime version for example, frame by frame. There are three output options, GIF, PNG, and MP4. You must select one of these to have video output.<br />
+<p>The Video controls are quite exciting and fun to play with, with our tools now you can, if you wished, turn any video into an anime version for example, frame by frame. The output is an animated GIF, an animated PNG, or a video encoded with one of the codec presets; <code>None</code> produces no video output.<br />
 With these simple controls, you can tweak your video output with surprising flexibility.<br />
 Some video output methods provide more controls, try them all.</p>
 <p><img alt="Video controls" src="https://github.com/vladmandic/sdnext/assets/108482020/a2ad0a15-1284-4bbf-87f7-b109011448c3" /></p>
@@ -6278,7 +6278,7 @@ Some video output methods provide more controls, try them all.</p>
 <p><code>Skip input frames</code>: This setting controls how many frames are processed from input instead of every frame. Setting it to 0 would mean processing every frame, a setting of 1 would process every other frame, a setting of 2 would process every third frame, cutting the number of total frames by 2/3rds, and so on.</p>
 </li>
 <li>
-<p><code>Video file</code>: You select the type of output you want here, animated GIF (not JIF!), animated PNG, or MP4 video, all provided via FFMPEG of course.  </p>
+<p><code>Video codec</code>: The output type: animated GIF, animated PNG, or a codec preset such as <code>libx264</code> (H.264, the default); the file container follows the codec.  </p>
 </li>
 <li>
 <p><code>Duration</code>: The length in seconds you want your output video to be.  </p>

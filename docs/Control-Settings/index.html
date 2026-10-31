@@ -4737,7 +4737,7 @@ This allows for multiple control units to use different inputs in the same workf
 </li>
 </ul>
 <h3 id="video">Video</h3>
-<p>Video controls let you process video frame by frame. Output formats are GIF, PNG, and MP4. You must select one to generate video output.</p>
+<p>Video controls let you process video frame by frame. The output is an animated GIF, an animated PNG, or a video encoded with one of the codec presets; <code>None</code> produces no video output.</p>
 <p>Some output modes expose additional options.</p>
 <p><img alt="Video controls" src="https://github.com/vladmandic/sdnext/assets/108482020/a2ad0a15-1284-4bbf-87f7-b109011448c3" /></p>
 <ul>
@@ -4745,7 +4745,7 @@ This allows for multiple control units to use different inputs in the same workf
 <p><code>Skip input frames</code>: Controls sampling interval. <code>0</code> processes every frame, <code>1</code> every other frame, <code>2</code> every third frame, and so on.</p>
 </li>
 <li>
-<p><code>Video file</code>: Select output type: animated GIF, animated PNG, or MP4 (via FFMPEG).</p>
+<p><code>Video codec</code>: Output type: animated GIF, animated PNG, or a codec preset such as <code>libx264</code> (H.264, the default); the file container follows the codec.</p>
 </li>
 <li>
 <p><code>Duration</code>: The length in seconds you want your output video to be.  </p>

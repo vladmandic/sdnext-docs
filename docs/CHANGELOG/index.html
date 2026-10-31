@@ -9873,7 +9873,7 @@
 <li><strong>Video</strong></li>
 <li>a video save whose encoder refuses to open fails with the reason instead of crashing the server</li>
 <li>legacy video default is <em>h264</em> with its codec preset instead of <em>mpeg4</em> without options<br />
-    codec part of <em>Video format</em> selects the encoder, saved values and api arguments keep working</li>
+    codec part of legacy <em>Video format</em> labels selects the encoder, api arguments keep working</li>
 <li>per-codec pixel format in codec presets, odd frame sizes cropped for 4:2:0 formats</li>
 <li>bt.709 colour conversion with colour tags, fractional frame rates kept</li>
 <li><em>Videos convert for UI playback</em> is on by default and converts through <em>pyav</em>, no ffmpeg binary needed</li>
@@ -9881,10 +9881,19 @@
 <li>dlss: api and enso jobs use the ui codec defaults, slow-motion output plays slower</li>
 <li>remove <em>vaapi</em> codec presets, pypi <em>av</em> builds ship no vaapi encoders</li>
 <li>new endpoint <code>GET /sdapi/v1/video/codecs</code></li>
+<li>one <em>pyav</em> path: both video writers share one encoder and every video reader decodes through <em>pyav</em> instead of <em>opencv</em><br />
+    bt.709 clips read with the right colours on windows, rotated clips read upright, frame rates exact, clips without a frame count read</li>
+<li><em>Video codec</em> in scripts, control and create video lists the codec presets, the container follows the codec<br />
+    settings saved under the old <em>Video format</em> labels reset to the default</li>
+<li>ltx condition video: skipping frames keeps the first frame</li>
 <li><strong>Fixes</strong></li>
 <li>process: show why a video run failed, report a missing input video</li>
 <li>save: configured output folder kept as given, only generated folder and file names are sanitized</li>
 <li>ui: refresh buttons call their method once per click</li>
+<li>video: output folder sanitized before numbering, video tab frames export writes on non-ascii paths on windows, xyz grid <em>Create video</em> saves again</li>
+<li>minimax: quantized <em>H3</em> repos decode again, their video vae loads through the diffusers class</li>
+<li>processing: a generation that fails reports <em>failed</em> with its error instead of <em>interrupted</em> and no longer returns or saves its last live preview, video api answers 500 with the error instead of 499</li>
+<li>offload: a job that fails inside the vae no longer leaves the vae on the gpu, after the job or after an unload</li>
 </ul>
 <h2 id="update-for-2026-10-29">Update for 2026-10-29</h2>
 <h3 id="highlights-for-2026-10-29">Highlights for 2026-10-29</h3>
