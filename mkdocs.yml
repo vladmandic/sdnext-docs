@@ -127,6 +127,7 @@ nav:
     - Detailer Guide: Detailer.md
     - LoRA Guide: LoRA.md
     - Task Scheduler: Scheduler.md
+    - Chat Interface: Chat.md
     - Control Guide: Control-HowTo.md
     - Control Settings: Control-Settings.md
     - Control Technicals: Control-Technical.md
