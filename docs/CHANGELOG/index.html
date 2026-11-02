@@ -4364,10 +4364,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-30" class="md-nav__link">
+  <a href="#update-for-2026-11-02" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-30
+        Update for 2026-11-02
       
     </span>
   </a>
@@ -7135,10 +7135,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-10-30" class="md-nav__link">
+  <a href="#update-for-2026-11-02" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-10-30
+        Update for 2026-11-02
       
     </span>
   </a>
@@ -9898,51 +9898,53 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-10-30">Update for 2026-10-30</h2>
+<h2 id="update-for-2026-11-02">Update for 2026-11-02</h2>
 <ul>
-<li><strong>Video</strong></li>
-<li>a video save whose encoder refuses to open fails with the reason instead of crashing the server</li>
-<li>legacy video default is <em>h264</em> with its codec preset instead of <em>mpeg4</em> without options<br />
-    codec part of legacy <em>Video format</em> labels selects the encoder, api arguments keep working</li>
-<li>per-codec pixel format in codec presets, odd frame sizes cropped for 4:2:0 formats</li>
-<li>bt.709 colour conversion with colour tags, fractional frame rates kept</li>
-<li><em>Videos convert for UI playback</em> converts through <em>pyav</em>, no ffmpeg binary needed</li>
-<li><em>av</em> installs with the core requirements instead of on the first video save</li>
-<li>dlss: api and enso jobs use the ui codec defaults, slow-motion output plays slower</li>
-<li>remove <em>vaapi</em> codec presets, pypi <em>av</em> builds ship no vaapi encoders</li>
+<li><strong>Chat</strong>:
+  New top-level interface: use chat to interact with SD.Next in a conversational manner<br />
+  See <a href="https://vladmandic.github.io/sdnext-docs/Chat/">chat docs</a> for more details  </li>
+<li><strong>Video</strong>: Major cleanup of video encoding end-to-end</li>
+<li><em>av</em> installs with the core requirements</li>
 <li>new endpoint <code>GET /sdapi/v1/video/codecs</code></li>
-<li>one <em>pyav</em> path: both video writers share one encoder and every video reader decodes through <em>pyav</em> instead of <em>opencv</em><br />
-    bt.709 clips read with the right colours on windows, rotated clips read upright, frame rates exact, clips without a frame count read</li>
-<li><em>Video codec</em> in scripts, control and create video lists the codec presets, the container follows the codec<br />
-    settings saved under the old <em>Video format</em> labels reset to the default</li>
+<li><em>Video codec</em> in scripts, control and create video lists the codec presets</li>
+<li>codec error results in error instead of crash</li>
+<li>legacy video defaults to <code>h264</code></li>
+<li>per-codec pixel format in codec presets, odd frame sizes cropped for <code>420</code> formats</li>
+<li><code>bt.709</code> colour conversion with colour tags, fractional frame rates kept</li>
+<li><em>Videos convert for UI playback</em> improved conversion</li>
+<li>remove <code>vaapi</code> codec presets</li>
+<li>unify video encoding and decoding paths through <em>pyav</em></li>
+<li><code>bt.709</code> colour conversion with colour tags, fractional frame, clip rotation</li>
+<li><code>mkv</code> and <code>webm</code> frame counts read from each track</li>
 <li>ltx condition video: skipping frames keeps the first frame</li>
-<li>mkv and webm frame counts read from each track's duration tag instead of a pass over the file, faster gallery thumbnails of long clips</li>
 <li><strong>Fixes</strong></li>
-<li>process: show why a video run failed, report a missing input video</li>
-<li>save: configured output folder kept as given, only generated folder and file names are sanitized</li>
-<li>ui: refresh buttons call their method once per click</li>
-<li>video: output folder sanitized before numbering, video tab frames export writes on non-ascii paths on windows, xyz grid <em>Create video</em> saves again</li>
-<li>minimax: quantized <em>H3</em> repos decode again, their video vae loads through the diffusers class</li>
-<li>processing: a generation that fails reports <em>failed</em> with its error instead of <em>interrupted</em> and no longer returns or saves its last live preview, video api answers 500 with the error instead of 499</li>
-<li>offload: a job that fails inside the vae no longer leaves the vae on the gpu, after the job or after an unload</li>
-<li>gallery: thumbnails and previews for webm, mkv, mov, avi and ts videos, not only mp4, webm videos listed</li>
+<li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> answer <em>500</em> with the error when the generation fails, instead of <em>200</em> with no images</li>
+<li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>
+<li>api: failed video return 500 with the error instead of 499</li>
 <li>api: ts video files served as <em>video/mp2t</em></li>
-<li>minimax: webm, mkv and ts files accepted as reference videos</li>
-<li>save: <em>Save metadata to JSON file</em> appends one line per image to a json lines file instead of rewriting the whole log, an existing <em>.json</em> log is left as it is</li>
-<li>save: an image save that fails no longer stops every later save</li>
-<li>save: a generated folder or file name starting with a letter and a colon stays inside the output folder on windows</li>
-<li>save: <em>[datetime<format>]</em> and <em>[hasprompt&lt;...&gt;]</em> filename tokens apply their arguments again instead of being written as typed</li>
+<li>dlss: use video codec defaults, slow-motion output plays slower</li>
+<li>gallery: thumbnails and previews for webm, mkv, mov, avi and ts videos</li>
 <li>hdr: the 16-bit hdr image saves on windows paths with non-ascii characters</li>
-<li>processing: hires on modular pipelines that take condition images (<em>FLUX.3 Klein</em>) runs at the hires size instead of the base size, with live previews at that size</li>
-<li>processing: a negative prompt the pipeline takes no input for is reported once per job instead of dropped silently</li>
-<li>models: gated repo access check sends the token stored by <em>hf auth login</em>, no more <em>401</em> error on each load while downloads authenticate</li>
-<li>preview: live previews of v-prediction models use the v-prediction estimate instead of the epsilon one</li>
-<li>samplers: <em>Euler SGM</em> and <em>DC Solver</em> use the model's prediction type instead of forcing <em>sample</em> and <em>epsilon</em>, <em>DPM++ Cosine</em> no longer fails on its first step</li>
-<li>preview: live previews of video and <em>Qwen-Image 2.1</em> latents no longer fail on a step read while the callback reduced the latent to one frame</li>
-<li>models: <em>FLUX.3</em>, <em>MiniMax-H3</em> and modular video models fail the load when a component the workflow requires does not load, instead of keeping the incomplete model until generation fails</li>
-<li>processing: a text encoder failure fails the job with its own error instead of a misleading <em>not enough values to unpack</em> from the pipeline</li>
-<li>api: v1 <em>txt2img</em>, <em>img2img</em> and <em>control</em> answer <em>500</em> with the error when the generation fails, instead of <em>200</em> with no images</li>
-<li>api: v1 <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>
+<li>minimax: quantized <em>H3</em> fix decode</li>
+<li>minimax: webm, mkv and ts files accepted as reference videos</li>
+<li>models: <em>FLUX.3</em>, <em>MiniMax-H3</em> and modular video models fail the load when a component the workflow requires does not load</li>
+<li>models: gated repo access check sends the token stored by <em>hf auth login</em></li>
+<li>namegen: prevent filename collisions</li>
+<li>namegen: sanitize and check length per path component</li>
+<li>namegen: add <code>opts</code>, <code>wildcards</code> as allowed templates</li>
+<li>offload: a job that fails inside the vae no longer leaves the vae on the gpu</li>
+<li>preview: live previews of v-prediction models use the v-prediction estimate</li>
+<li>preview: live previews of video and <em>Qwen-Image 2.1</em> latents</li>
+<li>process: show why a video run failed, report a missing input video</li>
+<li>processing: a generation that fails reports <em>failed</em> with its error instead of <em>interrupted</em></li>
+<li>processing: hires on modular pipelines that take condition images (<em>FLUX.3 Klein</em>) runs at the hires size instead of the base size</li>
+<li>processing: negative prompt the pipeline takes no input for is reported once per job</li>
+<li>processing: text encoder failure fails the job with its own error instead of a misleading <em>not enough values to unpack</em> from the pipeline</li>
+<li>samplers: <em>Euler SGM</em> and <em>DC Solver</em> use the model's prediction type</li>
+<li>save: <em>[datetime<format>]</em> and <em>[hasprompt&lt;...&gt;]</em> filename tokens apply args</li>
+<li>save: <em>Save metadata to JSON file</em> appends one line per image to a <code>jsonl</code></li>
+<li>save: an image save that fails no longer stops every later save</li>
+<li>ui: refresh buttons call their method once per click</li>
 </ul>
 <h2 id="update-for-2026-10-29">Update for 2026-10-29</h2>
 <h3 id="highlights-for-2026-10-29">Highlights for 2026-10-29</h3>
