@@ -9938,6 +9938,11 @@
 <li>models: gated repo access check sends the token stored by <em>hf auth login</em>, no more <em>401</em> error on each load while downloads authenticate</li>
 <li>preview: live previews of v-prediction models use the v-prediction estimate instead of the epsilon one</li>
 <li>samplers: <em>Euler SGM</em> and <em>DC Solver</em> use the model's prediction type instead of forcing <em>sample</em> and <em>epsilon</em>, <em>DPM++ Cosine</em> no longer fails on its first step</li>
+<li>preview: live previews of video and <em>Qwen-Image 2.1</em> latents no longer fail on a step read while the callback reduced the latent to one frame</li>
+<li>models: <em>FLUX.3</em>, <em>MiniMax-H3</em> and modular video models fail the load when a component the workflow requires does not load, instead of keeping the incomplete model until generation fails</li>
+<li>processing: a text encoder failure fails the job with its own error instead of a misleading <em>not enough values to unpack</em> from the pipeline</li>
+<li>api: v1 <em>txt2img</em>, <em>img2img</em> and <em>control</em> answer <em>500</em> with the error when the generation fails, instead of <em>200</em> with no images</li>
+<li>api: v1 <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>
 </ul>
 <h2 id="update-for-2026-10-29">Update for 2026-10-29</h2>
 <h3 id="highlights-for-2026-10-29">Highlights for 2026-10-29</h3>
