@@ -6344,9 +6344,7 @@ Some video output methods provide more controls, try them all.</p>
 <p>At the very bottom of the Control page, we have what you've all been waiting for, full ControlNet! I do mean full too, we have it all!
 This includes SD and SD-XL. at last! You won't ever need the ControlNet extension ever again.  </p>
 <p>This will take a bit more work to document example workflows, but there are tooltips, and if you've used ControlNet before, you shouldn't have any problems! However if you do, hop on by our Discord server and we're happy to help.</p>
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="processvisual-query">Process/Visual query</h2>
 <p>Visual query subsection of the Process tab contains tools to use Visual Question Answering interrogation of images using Vision Language Models.</p>
 <p>Currently supported models:</p>
@@ -6365,9 +6363,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <li>Base</li>
 <li>Large</li>
 </ul>
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="lcm">LCM</h2>
 <p>LCM (Latent Consistency Model) is a new feature that provides support for SD 1.5 and SD-XL models.</p>
 <h3 id="lcm-installation">LCM Installation</h3>
@@ -6393,9 +6389,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <li>LCM scheduler does not support steps higher than 50</li>
 <li>The <code>cli/lcm-convert.py</code> script can convert any SD 1.5 or SD-XL model to an LCM model by baking in the LoRA and uploading to Huggingface</li>
 </ul>
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="lora">LoRA</h2>
 <h3 id="lora-introduction">LoRA Introduction</h3>
 <p>LoRA models are small Stable Diffusion models that apply tiny changes to standard checkpoint models. They are usually 10 to 100 times smaller than checkpoint models. That makes them very attractive to people who have an extensive collection of models.</p>
@@ -6408,9 +6402,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <ul>
 <li>LoRAs are pipeline-specific. SD 1.5 LoRAs are not compatible with SDXL pipelines and vice versa; using the wrong type will produce an error.</li>
 </ul>
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="hidiffusion">HiDiffusion</h2>
 <h3 id="hidiffusion-introduction">HiDiffusion Introduction</h3>
 <p>Diffusion models are capable of high-resolution image synthesis but can struggle with object duplication and slow generation at larger resolutions. HiDiffusion addresses this with two key components:</p>
@@ -6433,9 +6425,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <p>Check the HiDiffusion checkbox in the SD.NEXT webUI in either the Text, Image or Control tab.</p>
 <!-- Add image here -->
 
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h3 id="detailer">Detailer</h3>
 <p>Face Hires is a feature that aims to improve the details of faces in generated images. It draws inspiration from the popular Adetailer extension, but simplifies the workflow to a single checkbox, making it easy to enable or disable.</p>
 <p>Here's what Face Hires does:</p>
@@ -6459,9 +6449,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <br></li>
 </ul>
 <!-- Add image here -->
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="second-pass">Second pass</h2>
 <h3 id="second-pass-introduction">Second pass Introduction</h3>
 <p>Second pass means that after an image finishes its first pass, it can run a second pass for refinement.</p>
@@ -6484,9 +6472,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <p>Refiner will only start if you have selected a refiner model in "Execution &amp; Models" tab in the settings:</p>
 <!-- Add image here -->
 
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="styles">Styles</h2>
 <h3 id="styles-introduction">Styles Introduction</h3>
 <p>Styles are prompt presets you can enable, it saves both headaches and time, because it adds a specific style to your prompt without you having to type it yourself.</p>
@@ -6496,9 +6482,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 
 <h3 id="adding-your-own-styles">Adding your own styles</h3>
 <p>You can add your own styles in <code>.\*Your SD.NEXT directory*\models\styles</code></p>
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="clip-skip">CLIP Skip</h2>
 <h3 id="clip-skip-introduction">CLIP Skip Introduction</h3>
 <p>CLIP Skip controls how many layers of the CLIP text encoder are skipped when processing your prompt. Skipping more layers makes the output less tied to specific prompt wording, which can improve image quality for certain models. Many models are trained with a particular CLIP Skip value; check the model's documentation for the recommended setting.</p>
@@ -6506,9 +6490,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 <p>You can enable clip skip in the advanced tab in the image generation settings. The default is 1, but also a very popular value is 2 and lots of models are compatible with it. <br></p>
 <!-- Add image here -->
 
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="embedding">Embedding</h2>
 <h3 id="embedding-introduction">Embedding Introduction</h3>
 <p>Embedding, also called textual inversion, is an alternative way to control the style of your images in Stable Diffusion. It defines new keywords in a model without modifying the model itself. The method gained attention because it can inject new styles or objects into a model with as few as 3-5 sample images.</p>
@@ -6519,9 +6501,7 @@ This includes SD and SD-XL. at last! You won't ever need the ControlNet extensio
 
 <h3 id="add-embeddings">Add embeddings</h3>
 <p>You can add your embeddings in <code>.\*Your SD.NEXT directory*\models\embeddings</code></p>
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="upscaling">Upscaling</h2>
 <h3 id="upscaling-introduction">Upscaling Introduction</h3>
 <p>Upscaling in Stable Diffusion analyzes an image's pixel values to determine the diffusion rate. That rate is then used to expand the image at higher resolution, resulting in a sharper and clearer output without heavily compromising quality.</p>
@@ -6555,9 +6535,7 @@ You can find these directories in <code>.\*Your SD.NEXT directory*\models</code>
 <li><strong>Animesharp 4x</strong></li>
 <li><strong>RealESRGAN 4x+ Anime6B</strong></li>
 </ul>
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="samplers">Samplers</h2>
 <h3 id="samplers-introduction">Samplers Introduction</h3>
 <p>To produce an image, Stable Diffusion first generates a completely random image in the latent space. The noise predictor then estimates the noise of the image. The predicted noise is subtracted from the image. This process is repeated a dozen times. In the end, you get a clean image.</p>
@@ -6571,9 +6549,7 @@ You can find these directories in <code>.\*Your SD.NEXT directory*\models</code>
 <p>Below is a screenshot of all the samplers SD.Next provides:</p>
 <!-- Add image here -->
 
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="pag">PAG</h2>
 <h3 id="pag-introduction">PAG Introduction</h3>
 <p>PAG, or Perturbed Attention Guidance, is a more modern alternative to CFG scale, although it is less universal and cannot be applied in all cases. If it is applied, it is added to image metadata and appears in the log as <code>StableDiffusionPAGPipeline</code>. <br></p>
@@ -6582,9 +6558,7 @@ You can find these directories in <code>.\*Your SD.NEXT directory*\models</code>
 <p>You can enable PAG by setting the attention guidance slider above 0. The attention guidance slider is located in the advanced tab of the image generation settings.  <br></p>
 <!-- Add image here -->
 
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="interrogate">Interrogate</h2>
 <h3 id="interrogate-introduction">Interrogate Introduction</h3>
 <p>Interrogation, or captioning helps us refine the prompts we use, enabling us to see how the AI system tags and classifies, and what terms it uses. By looking at these we can further refine our images to attain the concept we have in mind, or remove them via negative prompts.</p>
@@ -6593,9 +6567,7 @@ You can find these directories in <code>.\*Your SD.NEXT directory*\models</code>
 <br></p>
 <!-- Add image here -->
 
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="vae">VAE</h2>
 <h3 id="vae-introduction">VAE Introduction</h3>
 <p>VAE or Variational Auto Encoder encodes an image into a latent space, which is a lower-dimensional representation of the image. The latent space is then decoded into a new image, which is typically of higher quality than the original image.
@@ -6606,9 +6578,7 @@ There are two main types of VAEs that can be used with Stable Diffusion: exponen
 <p>You can change the VAE in the settings in "Execution &amp; Models". <br>
 <br>
 You can add the VAE's in <code>.\*Your SD.NEXT directory*\models\VAE</code>.</p>
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="cfg-scale">CFG scale</h2>
 <h3 id="cfg-scale-introduction">CFG scale Introduction</h3>
 <p>the CFG scale (classifier-free guidance scale) or guidance scale is a parameter that controls how much the image generation process follows the text prompt. The higher the value, the more the image sticks to a given text input.
@@ -6619,9 +6589,7 @@ But this does not mean that the value should always be set to maximum, as more g
 <p>Simply use the CFG scale slider in the image generation settings. <br></p>
 <!-- Add image here -->
 
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 <h2 id="live-preview">Live Preview</h2>
 <h3 id="live-preview-introduction">Live Preview Introduction</h3>
 <p>The live preview feature allows you to see the image before it is fully generated, so in other words you can see the progress of the image while it is generating.</p>
@@ -6640,9 +6608,7 @@ But this does not mean that the value should always be set to maximum, as more g
 <p>TAESD is very tiny autoencoder which uses the same "latent API" as Stable Diffusion's VAE*. TAESD can decode Stable Diffusion's latents into full-size images at (nearly) zero cost.</p>
 <h5 id="full-vae">Full VAE</h5>
 <p>Uses the entire VAE to decode the full resolution image as preview during the generation, this is by far the slowest of the other 3 options.</p>
-<p><br>
-<br>
-<br></p>
+<p><br></p>
 
 
 

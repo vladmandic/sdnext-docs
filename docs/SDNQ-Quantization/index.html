@@ -5299,19 +5299,21 @@ Default is <code>auto</code> which will use INT8 MatMul with INT and UINT types,
 <p>Quantized MatMul uses quantized INT8 or FP8 MatMul instead of BF16/FP16 during model execution.<br />
 Has significantly higher performance on GPUs, CPUs or NPUs with INT8 or FP8 support.<br />
 Having a working Triton or Inductor install is highly recommended.  </p>
-<p><strong>Supported GPUs</strong><br />
-- <strong>Nvidia</strong><br />
+<p><strong>Supported GPUs</strong>  </p>
+<ul>
+<li><strong>Nvidia</strong><br />
   Requires Turing (RTX 2000) or newer GPUs for INT8 matmul.<br />
-  Requires Ada (RTX 4000) or newer GPUs for FP8 matmul.<br />
-- <strong>AMD</strong><br />
+  Requires Ada (RTX 4000) or newer GPUs for FP8 matmul.  </li>
+<li><strong>AMD</strong><br />
   Requires RDNA2 (RX 6000) or newer GPUs for INT8 matmul.<br />
-  Requires MI300X or RDNA4 (RX 9000) for FP8 matmul.<br />
-  - RDNA3 (RX 7000) supports INT8 matmul but runs at the same speed as FP16.<br />
-  - RDNA2 (RX 6000) and older GPUs are supported via Triton with INT8 DP4A.<br />
-- <strong>Intel</strong><br />
+  Requires MI300X or RDNA4 (RX 9000) for FP8 matmul.  </li>
+<li>RDNA3 (RX 7000) supports INT8 matmul but runs at the same speed as FP16.  </li>
+<li>RDNA2 (RX 6000) and older GPUs are supported via Triton with INT8 DP4A.  </li>
+<li><strong>Intel</strong><br />
   Requires Alchemist (Arc A) or newer GPUs for INT8 matmul.<br />
   Intel doesn't support FP8 matmul.<br />
-  Intel can emulate FP8 matmul but it will be very slow.  </p>
+  Intel can emulate FP8 matmul but it will be very slow.  </li>
+</ul>
 <p><strong>Supported CPUs</strong><br />
 INT8 MatMul is supported on any CPU with AVX-512 support natively or any CPU with AVX2 support via OpenVINO.  </p>
 <p><strong>Supported NPUs</strong><br />
@@ -5319,14 +5321,16 @@ INT8 and FP16 MatMul is supported on Intel NPUs via OpenVINO.  </p>
 <p>Recommended quant type to use with this option is <code>int8</code> for quality and better hardware compatibility.<br />
 INT8 matmul is also significantly faster than FP8 matmul on consumer Nvidia GPUs.<br />
 Recommended quant type for FP8 matmul is <code>float8_e4m3fn</code>.  </p>
-<p>Notes:
-- <code>Dequantize using full precision</code> option might have too much performance hit if you don't have access to Triton.<br />
-  But it is better to keep it enabled if you have access to Triton as Triton eliminates the overhead from this option.<br />
-- NPUs and CPUs that doesn't support AVX-512 requires OpenVINO for Quantized MatMul.<br />
+<p>Notes:  </p>
+<ul>
+<li><code>Dequantize using full precision</code> option might have too much performance hit if you don't have access to Triton.<br />
+  But it is better to keep it enabled if you have access to Triton as Triton eliminates the overhead from this option.  </li>
+<li>NPUs and CPUs that doesn't support AVX-512 requires OpenVINO for Quantized MatMul.<br />
   Activate your venv and install OpenVINO with <code>pip install openvino</code><br />
   OpenVINO with NPU is auto used if OpenVINO is installed and no GPU is available.<br />
   This can be overridden with this environment variable: <code>SDNQ_USE_OPENVINO_MM</code><br />
-  And the OpenVINO device can be overridden with this environment variable: <code>SDNQ_OPENVINO_DEVICE</code>  </p>
+  And the OpenVINO device can be overridden with this environment variable: <code>SDNQ_OPENVINO_DEVICE</code>  </li>
+</ul>
 <h3 id="modules-to-not-convert">Modules to not convert</h3>
 <p>A comma separated list of module names to skip quantization.<br />
 Modules listed in this option will not be quantized and will be kept in full precision.<br />

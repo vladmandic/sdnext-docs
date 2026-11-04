@@ -4515,11 +4515,13 @@ See <a href="https://huggingface.co/docs/diffusers/modular_diffusers/overview">h
 <p>SD.Next implements modular pipelines in a way that allows for seamless integration with existing workflows  </p>
 <p><em>So why mention modular pipelines?</em><br />
 Because some of the new features are only available in modular pipelines, and some of the existing features are only available in standard pipelines  </p>
-<p>Some pipelines are modular-only, some are standard-only and some are available in both formats<br />
-Examples: 
-- Standard-only: <em>Krea-2, Anima</em>
-- Modular-only: <em>MiniMax</em>
-- Hybrid: <em>Z-Image</em></p>
+<p>Some pipelines are modular-only, some are standard-only and some are available in both formats  </p>
+<p>Examples: </p>
+<ul>
+<li>Standard-only: <em>Krea-2, Anima</em></li>
+<li>Modular-only: <em>MiniMax</em></li>
+<li>Hybrid: <em>Z-Image</em></li>
+</ul>
 <h2 id="hybrid-pipelines">Hybrid pipelines</h2>
 <p>If selected in <em>settings -&gt; model loading -&gt; model convert to modular</em>,<br />
 SD.Next will automatically attempt to convert standard pipelines to modular pipelines when loading models, if the model supports it. If the model does not support it, SD.Next will fall back to standard pipelines automatically.  </p>

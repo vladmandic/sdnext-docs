@@ -2505,6 +2505,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#prompt-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Writing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#global" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4705,6 +4716,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#prompt-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Writing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#global" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4864,13 +4886,15 @@ it also supports scripting for fully automated workflows<br />
 or monitoring and inspecting server state</p>
 </div>
 <h3 id="session-persistence">Session Persistence</h3>
-<p>Things that are stored per chat session include:
-- Active context
-- Server settings
-- Model selection
-- Process parameters
-- Uploaded images
-- Chat history</p>
+<p>Things that are stored per chat session include:</p>
+<ul>
+<li>Active context  </li>
+<li>Server settings  </li>
+<li>Model selection  </li>
+<li>Process parameters  </li>
+<li>Uploaded images  </li>
+<li>Chat history  </li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Chat parameters are maintained separately and do not rely on UI state</p>
@@ -4881,14 +4905,18 @@ or monitoring and inspecting server state</p>
 If you clear your chat storage location, the uploaded images may no longer be available</p>
 </div>
 <h2 id="chat-messages">Chat Messages</h2>
-<p>Chat messages represent individual interactions within a chat session:<br />
-- Messages are stored in the chat database and associated with their respective session<br />
-- Chat interface is a rich-media interface<br />
-  You can upload, drag&amp;drop or paste images directly into the chat messages<br />
-- Chat messages can also read a text file as a script<br />
-  Same commands work when scripted or entered interactively.</p>
+<p>Chat messages represent individual interactions within a chat session:  </p>
+<ul>
+<li>Messages are stored in the chat database and associated with their respective session  </li>
+<li>Chat interface is a rich-media interface<br />
+  You can upload, drag&amp;drop or paste images directly into the chat messages  </li>
+<li>Chat messages can also read a text file as a script<br />
+  Same commands work when scripted or entered interactively  </li>
+</ul>
 <h2 id="commands">Commands</h2>
-<p>Run <code>help</code> for a list of available chat commands and their usage.</p>
+<p>Run <code>help</code> for a list of available chat commands and their usage<br />
+Prefix a command with <code>/</code> to show composer suggestions, for example <code>/</code> or <code>/help</code> or <code>/set</code><br />
+After <code>set</code> or <code>get</code>, type a parameter prefix to complete a name available in the active context  </p>
 <h3 id="process">Process</h3>
 <p>Choose a context and control active work</p>
 <ul>
@@ -4910,7 +4938,8 @@ If you clear your chat storage location, the uploaded images may no longer be av
 <ul>
 <li>prompt <code>&lt;value&gt;</code>: Set the prompt  </li>
 <li>negative <code>&lt;value&gt;</code>: Set the negative prompt  </li>
-<li>set <code>[key] [value]</code>: Set a value or list session values  </li>
+<li>prefix <code>`</code>, <code>'</code>, <code>"</code> or <code>&gt;</code> to set the prompt directly; the leading marker is removed</li>
+<li>set <code>[key] [value]</code>: Set a value or list session values; choice values accept a unique partial match, while ambiguous matches list candidates</li>
 <li>get <code>[key]</code>: Get a value or list session values  </li>
 <li>params/args: List valid parameter keys for the current context  </li>
 <li>reset: Restore parameter defaults  </li>
@@ -4931,10 +4960,21 @@ If you clear your chat storage location, the uploaded images may no longer be av
 <ul>
 <li>list <code>key</code>: Show valid choices  </li>
 </ul>
+<h3 id="prompt-writing">Prompt Writing</h3>
+<p>Chat composer includes syntax highlighting to improve readability and organization of prompts
+Normally, prompt should be set using <code>set prompt ...</code>, but to quickly provide a prompt inline, you can prefix it with <code>`</code>, <code>'</code>, <code>"</code> or <code>&gt;</code>; the leading marker will be removed when processing the prompt</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>    ` A quick inline prompt example
+    ' Another inline prompt example
+    " Yet another inline prompt example
+    &gt; And one more inline prompt example
+</code></pre></div></p>
 <h3 id="global">Global</h3>
-<p>Read or change settings shared across sessions
-- model <code>[model] [unet]</code>: Show or change the model and optional UNet
-- opts <code>[key] [value]</code>: Read or update global options</p>
+<p>Read or change settings shared across sessions</p>
+<ul>
+<li>model <code>[model] [unet]</code>: Show or change the model and optional UNet  </li>
+<li>opts <code>[key] [value]</code>: Read or update global options  </li>
+</ul>
 <h3 id="server">Server</h3>
 <p>Query runtime, device, memory, and storage details</p>
 <ul>
@@ -5047,14 +5087,12 @@ Or simply type those commands directly into the chat in a conversational manner 
 </ul>
 <h2 id="roadmap">Roadmap</h2>
 <ul>
-<li>Prompt-vs-Command mode  </li>
 <li>Chat support for <strong>video</strong> workflow (<em>partially implemented</em>)  </li>
 <li>Chat support for <strong>Caption</strong> workflow  </li>
 <li>Chat support for <strong>Process</strong> workflow  </li>
 <li>Kanvas edit for images  </li>
 <li>Add <strong>OpenAI</strong> compatible API endpoints  </li>
 <li>Augment chat with <strong>LLM</strong> capabilities  </li>
-<li>Highlighting support for prompts  </li>
 </ul>
 
 

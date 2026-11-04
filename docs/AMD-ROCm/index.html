@@ -4974,9 +4974,10 @@ Especially if they experience performance issues from version to version.</p>
 ./venv/scripts/activate<span class="w"> </span>
 pip<span class="w"> </span>install<span class="w"> </span>triton-windows<span class="o">==</span><span class="m">3</span>.7.1.post27
 </code></pre></div>
-<blockquote>
-<p>[!IMPORTANT] 📌 Prior to running SD.Next, for Triton-Windows to work, The C++ runtime engine environment needs to be installed.</p>
-</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Prior to running SD.Next, for Triton-Windows to work, The C++ runtime engine environment needs to be installed.</p>
+</div>
 <p>Usually a full installation of the Microsoft Visual Studio  is required, instead here is a lightweight alternative that only installs the required C++ runtime engine and it's requirements, instead of the entire Visual Studio IDE.</p>
 <h3 id="step-1-install-lightweight-visual-studio-buildtools">Step 1: Install Lightweight Visual Studio Buildtools</h3>
 <p>You can download the official lightweight bootstrapper directly from Microsoft's short link:</p>

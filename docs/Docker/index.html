@@ -4829,11 +4829,13 @@
 
 
 <h1 id="docker">Docker</h1>
-<p>SD.Next includes base Dockerfiles for these platforms:<br />
-- <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.cuda">nVidia CUDA</a><br />
-- <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.rocm">AMD ROCm</a><br />
-- <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.ipex">Intel IPEX</a><br />
-- <a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.openvino">OpenVINO</a>  </p>
+<p>SD.Next includes base Dockerfiles for these platforms:  </p>
+<ul>
+<li><a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.cuda">nVidia CUDA</a>  </li>
+<li><a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.rocm">AMD ROCm</a>  </li>
+<li><a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.ipex">Intel IPEX</a>  </li>
+<li><a href="https://github.com/vladmandic/sdnext/blob/dev/configs/Dockerfile.openvino">OpenVINO</a>  </li>
+</ul>
 <p>Other systems may require different base images or configuration, but the overall approach is the same.  </p>
 <p>The goal of containerized <strong>SD.Next</strong> is a stateless environment that is easy to deploy and scale.  </p>
 <p>It is recommended to build your own image if you need custom extensions or local changes.</p>
@@ -4856,9 +4858,11 @@
 If you make changes to <code>Dockerfile</code> or update <strong>SD.Next</strong>, you will need to rebuild the image  </p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
-<p>Build process should be done on a system where <strong>SD.Next</strong> was started at least once to download all required submodules before docker copy process  </p>
-<p>[!TIP]
-If you want to include any extensions in the docker image, install/clone them into <code>/extensions</code> folder before building the image</p>
+<p>Build process should be done on a system where <strong>SD.Next</strong> was started at least once to download all required submodules before docker copy process</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to include any extensions in the docker image, install/clone them into <code>/extensions</code> folder before building the image</p>
 </div>
 <h3 id="cuda">CUDA</h3>
 <p>SD.Next docker template is based on <a href="https://hub.docker.com/r/pytorch/pytorch/tags">official base image</a> with <code>python==3.12.3</code>, <code>torch==2.14.1</code> and <code>cuda==13.2</code><br />
@@ -4990,9 +4994,11 @@ Remove the comment from the <code>HEALTHCHECK</code> line in <code>Dockerfile</c
 <p class="admonition-title">Warning</p>
 <p>Parameter <code>--gpus all</code> is required to expose nVidia CUDA GPU from parent host to the container<br />
 For other platforms, use refer to official documentation and use appropriate parameters<br />
-For example, AMD uses <code>--device /dev/dri</code> and <code>--device /dev/kfd</code>  </p>
-<p>[!TIP]
-Param <code>--detach</code> will run container in background<br />
+For example, AMD uses <code>--device /dev/dri</code> and <code>--device /dev/kfd</code></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Param <code>--detach</code> will run container in background<br />
 If you want troubleshoot startup and see logs in the console directly, remove <code>--detach</code> parameter</p>
 </div>
 <p>Typical SDNext container will start in ~6sec and will be ready to accept connections on port <code>7860</code>
@@ -5093,8 +5099,10 @@ docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> 
 <p class="admonition-title">Warning</p>
 <p>URLs below are examples for <strong>Ubuntu 24</strong>
 Check your Linux distribution and version and use appropriate packages instead</p>
-<p>Docker</p>
 </div>
+<blockquote>
+<p>Docker</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/oracular/pool/stable/amd64/containerd.io_1.7.25-1_amd64.deb
 wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/oracular/pool/stable/amd64/docker-ce_27.5.1-1~ubuntu.24.10~oracular_amd64.deb
 wget<span class="w"> </span>https://download.docker.com/linux/ubuntu/dists/oracular/pool/stable/amd64/docker-ce-cli_27.5.1-1~ubuntu.24.10~oracular_amd64.deb

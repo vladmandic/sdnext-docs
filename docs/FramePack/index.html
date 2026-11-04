@@ -4868,11 +4868,13 @@ with major differences and improvements:
 <li>Ratio of init and end strengths can be used to skew video towards init or end frame  </li>
 </ul>
 <h2 id="variants">Variants</h2>
-<p>Both FramePack variants are based on the HunyuanVideo model, but use different generation approaches:<br />
-- <strong>Bi-directional</strong> model: <em>default</em><br />
-  Runs generation in reverse order and assembles video<br />
-- <strong>Forward-only</strong> model: <em>F1</em><br />
-  Runs generation in forward order and assembles video  </p>
+<p>Both FramePack variants are based on the HunyuanVideo model, but use different generation approaches:  </p>
+<ul>
+<li><strong>Bi-directional</strong> model: <em>default</em><br />
+  Runs generation in reverse order and assembles video  </li>
+<li><strong>Forward-only</strong> model: <em>F1</em><br />
+  Runs generation in forward order and assembles video  </li>
+</ul>
 <h2 id="resolution-scaling">Resolution Scaling</h2>
 <p>The video model is trained at 640p, but can generate at other resolutions.<br />
 Resolution must still match a supported aspect ratio.<br />
@@ -4892,11 +4894,13 @@ Each video section can have its own prompt suffix, which can be used to change t
 Prompt suffix is a string that will be added to the end of the prompt<br />
 Each line in <strong>section prompts</strong> is used as a separate prompt suffix.<br />
 For example, with 3 sections and 3 lines, each section uses one different line.  </p>
-<p><em>Example</em>:<br />
-- main prompt: <em>astronaut on the moon</em><br />
-- section prompts:<br />
-  - line-1: <em>walking</em><br />
-  - line-2: <em>jumping</em>  </p>
+<p><em>Example</em>:  </p>
+<ul>
+<li>main prompt: <em>astronaut on the moon</em>  </li>
+<li>section prompts:  </li>
+<li>line-1: <em>walking</em>  </li>
+<li>line-2: <em>jumping</em>  </li>
+</ul>
 <p>The number of lines in section prompts does not need to match the number of sections.<br />
 If there are fewer lines than sections, prompts are interpolated to stretch across the full video duration.<br />
 For example, with 4 sections and 2 lines, the first line is used for sections 1-2 and the second line for sections 3-4.  </p>
@@ -4910,9 +4914,11 @@ By default, the model does not save image files, but this can be enabled in vide
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Hardware-accelerated codecs (e.g. <code>hevc_nvenc</code>) will be at the top of the list<br />
-Use hardware-accelerated codecs whenever possible  </p>
-<p>[!WARNING]
-Video encoding can be memory-intensive depending on codec and frame count.</p>
+Use hardware-accelerated codecs whenever possible</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Video encoding can be memory-intensive depending on codec and frame count.</p>
 </div>
 <h3 id="advanced-video-options">Advanced Video Options</h3>
 <p>Any specified video options are passed to <code>ffmpeg</code> as-is.<br />
@@ -4928,11 +4934,13 @@ In that case, you may want to save raw frames as a <code>safetensors</code> file
 <blockquote>
 <p><code>python encode-video.py</code></p>
 </blockquote>
-<p>Allows you to:<br />
-- Export frames from a <code>safetensors</code> file as individual images.<br />
-  These can be used for further processing or to manually create a video from an image sequence with <code>ffmpeg</code>.<br />
-- Encode frames from a <code>safetensors</code> file into video using <code>cv2</code>.<br />
-- Encode frames from a <code>safetensors</code> file into video using <code>torchvision/ffmpeg</code>.  </p>
+<p>Allows you to:  </p>
+<ul>
+<li>Export frames from a <code>safetensors</code> file as individual images.<br />
+  These can be used for further processing or to manually create a video from an image sequence with <code>ffmpeg</code>.  </li>
+<li>Encode frames from a <code>safetensors</code> file into video using <code>cv2</code>.  </li>
+<li>Encode frames from a <code>safetensors</code> file into video using <code>torchvision/ffmpeg</code>.  </li>
+</ul>
 <h3 id="lora">LoRA</h3>
 <p>Limited support for HunyuanVideo LoRAs.<br />
 Effects are limited unless the LoRA is trained on FramePack itself.<br />

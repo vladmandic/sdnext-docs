@@ -4571,9 +4571,11 @@
 </ul>
 <h2 id="variants">Variants</h2>
 <p>The original Ideogram-4 model was released in pre-quantized <strong>FP8</strong> and <strong>NF4</strong> variants only<br />
-SD.Next ships Ideogram-4 with 
-- <strong>BF16</strong> weights so users can experiment with any type of quantization using native quantization-during-load features.
-- <strong>SDNQ UINT4</strong> pre-quantized weights for users who want to use it immediately without experimenting with quantization.</p>
+SD.Next ships Ideogram-4 with </p>
+<ul>
+<li><strong>BF16</strong> weights so users can experiment with any type of quantization using native quantization-during-load features.</li>
+<li><strong>SDNQ UINT4</strong> pre-quantized weights for users who want to use it immediately without experimenting with quantization.</li>
+</ul>
 <p>Both variants are available in SD.Next networks -&gt; reference models for immediate use.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -4583,11 +4585,13 @@ Due to both RAM and VRAM requirements, it is not usable without quantization on 
 <h2 id="resolution">Resolution</h2>
 <p>Ideogram-4 is trained on 2MP images and can generate native 2k resolution without tiling or upscaling given the sufficient VRAM.</p>
 <h2 id="components">Components</h2>
-<p>Ideogram-4 consists of:
-- <code>text-encoder</code>: <em>qwen-3-vl-8b</em>
-- <code>transformer</code>: primary 9b transformer
-- <code>unconditional_transformer</code>: second 9b transformer
-- <code>vae</code>: <em>flux-2-vae</em></p>
+<p>Ideogram-4 consists of:</p>
+<ul>
+<li><code>text-encoder</code>: <em>qwen-3-vl-8b</em></li>
+<li><code>transformer</code>: primary 9b transformer</li>
+<li><code>unconditional_transformer</code>: second 9b transformer</li>
+<li><code>vae</code>: <em>flux-2-vae</em></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A typical model uses the same UNet or transformer for both positive and negative guidance.</p>

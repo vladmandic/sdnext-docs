@@ -4769,39 +4769,49 @@
 <p>LoRA (Low-Rank Adaptation) is a method for fine-tuning generative AI models with specific styles or concepts while keeping the process efficient and lightweight.</p>
 <p><strong>Here’s how it works in simple terms:</strong><br />
 - <strong>The problem</strong>: Fine-tuning a large model like Stable Diffusion to learn new styles or concepts usually needs significant compute and storage.</p>
-<p><strong>The LoRA Solution:</strong><br />
-- Instead of changing all model parameters, LoRA trains a small subset.
-- Think of it as a removable style layer that can be applied only when needed.
-- This keeps the base model behavior intact while enabling targeted customization.</p>
-<p><strong>Why it’s Cool:</strong>
-- Efficient: It uses way less memory and is faster than traditional fine-tuning methods.
-- Flexible: You can train multiple LoRA "filters" for different styles or concepts and swap them in and out without modifying the base model.
-- Compatible: LoRA modules can be shared or reused easily, so artists and developers can collaborate or try out others’ custom styles.</p>
-<p><strong>Example Use Case</strong><br />
-- Say you want to teach a model to draw in the style of a fictional artist.
-- You can train a LoRA on a small set of sample images in that style.
-- Once trained, load the LoRA module and the model can generate images in that style.</p>
+<p><strong>The LoRA Solution:</strong>  </p>
+<ul>
+<li>Instead of changing all model parameters, LoRA trains a small subset.  </li>
+<li>Think of it as a removable style layer that can be applied only when needed.  </li>
+<li>This keeps the base model behavior intact while enabling targeted customization.  </li>
+</ul>
+<p><strong>Why it’s Cool:</strong></p>
+<ul>
+<li>Efficient: It uses way less memory and is faster than traditional fine-tuning methods.  </li>
+<li>Flexible: You can train multiple LoRA "filters" for different styles or concepts and swap them in and out without modifying the base model.  </li>
+<li>Compatible: LoRA modules can be shared or reused easily, so artists and developers can collaborate or try out others’ custom styles.  </li>
+</ul>
+<p><strong>Example Use Case</strong>  </p>
+<ul>
+<li>Say you want to teach a model to draw in the style of a fictional artist.  </li>
+<li>You can train a LoRA on a small set of sample images in that style.  </li>
+<li>Once trained, load the LoRA module and the model can generate images in that style.  </li>
+</ul>
 <p>In short, LoRA helps you teach models new behavior without changing the original model or requiring heavy hardware.</p>
 <h2 id="lora-types">LoRA Types</h2>
 <p>There are many LoRA types. Common ones include LoRA, DoRA, LoCon, HaDa, gLoRA, LoKR, and LyCORIS.</p>
-<p>They differ in:
-- Which model components are trained (typically UNet, sometimes text encoder)
-- Which layers are trained
-- Which algorithm is used to extract LoRA weights</p>
+<p>They differ in:</p>
+<ul>
+<li>Which model components are trained (typically UNet, sometimes text encoder)  </li>
+<li>Which layers are trained  </li>
+<li>Which algorithm is used to extract LoRA weights  </li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>LoRA must always match base model used for its training<br />
 For example, you cannot use SD1.5 LoRA with SD-XL model<br />
-A LoRA whose weights do not fit the loaded model is refused as a whole and reported in the log as <code>not loaded</code>  </p>
-<p>[!WARNING]
-SD.Next attempts to automatically detect and apply the correct LoRA type.<br />
-However, new LoRA types appear regularly.
+A LoRA whose weights do not fit the loaded model is refused as a whole and reported in the log as <code>not loaded</code></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>SD.Next attempts to automatically detect and apply the correct LoRA type.<br />
+However, new LoRA types appear regularly.<br />
 If you find LoRA that is not compatible, please report it so we can add support for it.</p>
 </div>
 <h2 id="how-to-use">How to use?</h2>
 <ul>
-<li>UI: Open the Networks tab, select a LoRA, and it is added to the prompt.</li>
-<li>Manual: Add <code>&lt;lora:lora_name:strength&gt;</code> to the prompt, then select the LoRA to use.</li>
+<li>UI: Open the Networks tab, select a LoRA, and it is added to the prompt.  </li>
+<li>Manual: Add <code>&lt;lora:lora_name:strength&gt;</code> to the prompt, then select the LoRA to use.  </li>
 </ul>
 <h3 id="trigger-words">Trigger words</h3>
 <p>Some (not all) LoRAs associate specific words during training so same words can be used to trigger specific behavior from the LoRA.<br />
@@ -4809,11 +4819,15 @@ SD.Next displays these trigger words in the UI -&gt; Networks -&gt; LoRA, but th
 <p>You can combine any number of LoRAs in a single prompt to get the desired output.  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you want to automatically apply trigger words/tags to prompt, you can use <code>auto-apply</code> feature in <em>"Settings -&gt; Networks"</em>  </p>
-<p>[!TIP]
-You can change the strength of the lora by changing the number <code>&lt;lora:name:x.x&gt;</code> to the desired number  </p>
-<p>[!TIP]
-If you're combining multiple LoRAs, you can also "export" that as a single lora via <em>"Models -&gt; Extract LoRA"</em></p>
+<p>If you want to automatically apply trigger words/tags to prompt, you can use <code>auto-apply</code> feature in <em>"Settings -&gt; Networks"</em></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can change the strength of the lora by changing the number <code>&lt;lora:name:x.x&gt;</code> to the desired number</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you're combining multiple LoRAs, you can also "export" that as a single lora via <em>"Models -&gt; Extract LoRA"</em></p>
 </div>
 <h3 id="advanced">Advanced</h3>
 <p>Advanced options let you control where and how LoRA is applied.</p>
@@ -4857,18 +4871,22 @@ Example:</p>
 </blockquote>
 <h5 id="troubleshooting">Troubleshooting</h5>
 <p>A log warning with <code>unmapped=N</code> means part of the LoRA targets layers the loaded model does not have, for example guidance layers of a FLUX.1-dev LoRA on FLUX.1-schnell; the rest of the LoRA is applied.</p>
-<p>For any LoRA related issues, please follow the below procedure:
-- set environment variable <code>SD_LORA_DEBUG=true</code>
-- start SD.Next as usual and run it until problem occurs
-- create <a href="https://github.com/vladmandic/sdnext/issues">GitHub issue</a>
-- upload full <code>sdnext.log</code> as well as any console exception messages  </p>
+<p>For any LoRA related issues, please follow the below procedure:</p>
+<ul>
+<li>set environment variable <code>SD_LORA_DEBUG=true</code>  </li>
+<li>start SD.Next as usual and run it until problem occurs  </li>
+<li>create <a href="https://github.com/vladmandic/sdnext/issues">GitHub issue</a>  </li>
+<li>upload full <code>sdnext.log</code> as well as any console exception messages  </li>
+</ul>
 <h2 id="lora-loader-settings">LoRA Loader Settings</h2>
 <p>SD.Next provides several options for how LoRAs are loaded and applied.
 All settings are available in <em>Settings -&gt; Extra Networks -&gt; LoRA</em>.</p>
 <h3 id="loading-method">Loading Method</h3>
-<p><strong>LoRA load using Diffusers method</strong> (<code>lora_force_diffusers</code>)
-- When <em>disabled</em> (default): Uses SD.Next's native LoRA implementation
-- When <em>enabled</em>: Uses HuggingFace Diffusers' built-in LoRA support</p>
+<p><strong>LoRA load using Diffusers method</strong> (<code>lora_force_diffusers</code>)</p>
+<ul>
+<li>When <em>disabled</em> (default): Uses SD.Next's native LoRA implementation  </li>
+<li>When <em>enabled</em>: Uses HuggingFace Diffusers' built-in LoRA support  </li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A LoRA that loads only with this setting enabled points to a format the native loader does not read yet.
@@ -4877,18 +4895,25 @@ Please report it in a <a href="https://github.com/vladmandic/sdnext/issues">GitH
 <h3 id="fuse-options">Fuse Options</h3>
 <p>Fusing merges LoRA weights directly into the model instead of applying them on-the-fly.
 This reduces memory usage since no backup weights are stored.</p>
-<p><strong>LoRA native fuse with model</strong> (<code>lora_fuse_native</code>)
-- Applies when using the native loading method
-- Default: <em>enabled</em></p>
-<p><strong>LoRA diffusers fuse with model</strong> (<code>lora_fuse_diffusers</code>)
-- Applies when using the Diffusers loading method
-- Enables torch.compile compatibility
-- Default: <em>disabled</em></p>
+<p><strong>LoRA native fuse with model</strong> (<code>lora_fuse_native</code>)</p>
+<ul>
+<li>Applies when using the native loading method  </li>
+<li>Default: <em>enabled</em>  </li>
+</ul>
+<p><strong>LoRA diffusers fuse with model</strong> (<code>lora_fuse_diffusers</code>)</p>
+<ul>
+<li>Applies when using the Diffusers loading method  </li>
+<li>Enables torch.compile compatibility  </li>
+<li>Default: <em>disabled</em>  </li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>Fused LoRA effects can persist after removal</strong>
-Fusing writes the LoRA into the model weights and removal subtracts it again; on a bf16 model the rounding of the two writes can leave a faint trace. A LoRA whose delta depends on the weight (DoRA, OFT, GLoRA, IA3) is restored from a stored copy and leaves none.
-To fully restore the original model, use <em>System -&gt; Reload Model</em>. A removed LoRA whose style stays clearly visible is worth a report, with the file and the model.</p>
+<p><strong>Fused LoRA effects can persist after removal</strong><br />
+Fusing writes the LoRA into the model weights and removal subtracts it again;<br />
+on a bf16 model the rounding of the two writes can leave a faint trace.<br />
+A LoRA whose delta depends on the weight (DoRA, OFT, GLoRA, IA3) is restored from a stored copy and leaves none.<br />
+To fully restore the original model, use <em>System -&gt; Reload Model</em>.<br />
+A removed LoRA whose style stays clearly visible is worth a report, with the file and the model.</p>
 </div>
 <h3 id="other-settings">Other Settings</h3>
 <p><strong>LoRA force reload always</strong>

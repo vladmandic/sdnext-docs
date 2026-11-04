@@ -9920,6 +9920,9 @@
 <li><code>bt.709</code> colour conversion with colour tags, fractional frame, clip rotation</li>
 <li><code>mkv</code> and <code>webm</code> frame counts read from each track</li>
 <li>ltx condition video: skipping frames keeps the first frame</li>
+<li><strong>Other</strong></li>
+<li>add env var <code>SD_STRICT</code> which will enable strict mode<br />
+    in strict mode, read/parse/write errors will cause the application to exit immediately  </li>
 <li><strong>Fixes</strong></li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> answer <em>500</em> with the error when the generation fails, instead of <em>200</em> with no images</li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>

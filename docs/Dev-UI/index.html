@@ -4561,10 +4561,14 @@
 <p class="admonition-title">Note</p>
 <p>Depending on the scope of your changes, your contribution may involve one or more of these repositories.</p>
 </div>
-<blockquote>
-<p>[!IMPORTANT] Any changes to the code requires rebuild to be visible in the application.</p>
-<p>[!WARNING] Do not edit built files, always edit source files and run the build command to generate the built files.</p>
-</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Any changes to the code requires rebuild to be visible in the application.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not edit built files, always edit source files and run the build command to generate the built files.</p>
+</div>
 <h2 id="requirements">Requirements</h2>
 <p>All UI work requires that NodeJS is installed<br />
 Install requirements:  </p>
@@ -4577,15 +4581,19 @@ pnpm<span class="w"> </span>install
 </code></pre></div>
 <h2 id="building">Building</h2>
 <p>All build commands are defined in <code>package.json</code> and can be run with <code>pnpm run &lt;command&gt;</code>.</p>
-<p>To create production builds:
-- <code>build:core</code> - builds core UI components and StandardUI
-- <code>build:modernui</code> - builds ModernUI components
-- <code>build:kanvas</code> - builds Kanvas components
-- <code>build</code> - builds all UI components</p>
-<p>To run development builds with watch mode that automatically rebuilds on file changes:
-- <code>dev:ui</code> - builds ModernUI components with watch mode
-- <code>dev:modernui</code> - builds ModernUI components with watch mode
-- <code>dev:kanvas</code> - builds Kanvas components with watch mode</p>
+<p>To create production builds:</p>
+<ul>
+<li><code>build:core</code> - builds core UI components and StandardUI</li>
+<li><code>build:modernui</code> - builds ModernUI components</li>
+<li><code>build:kanvas</code> - builds Kanvas components</li>
+<li><code>build</code> - builds all UI components</li>
+</ul>
+<p>To run development builds with watch mode that automatically rebuilds on file changes:</p>
+<ul>
+<li><code>dev:ui</code> - builds core UI components with watch mode</li>
+<li><code>dev:modernui</code> - builds ModernUI components with watch mode</li>
+<li><code>dev:kanvas</code> - builds Kanvas components with watch mode</li>
+</ul>
 <h2 id="lint">Lint</h2>
 <p><a href="https://github.com/vladmandic/sdnext">SD.Next</a> uses both <code>ESLint, Precommit and Typescript</code> checks to maintain code quality and enforce coding standards.</p>
 <div class="admonition warning">
@@ -4617,9 +4625,11 @@ It is recommended before submitting a PR.</p>
 <h2 id="notes">Notes</h2>
 <p><em>Python-vs-TypeScript</em> UI method calls:</p>
 <p>When calling UI methods from <strong>Python</strong> using <strong>Gradio</strong> <code>_js=...</code> interface,<br />
-the method must be:
-1. Exposed in the <code>window</code> object
-2. Registered in <code>ui/globals.d.ts</code></p>
+the method must be:</p>
+<ol>
+<li>Exposed in the <code>window</code> object</li>
+<li>Registered in <code>ui/globals.d.ts</code></li>
+</ol>
 <p>When calling UI methods from <strong>TypeScript</strong> code,<br />
 do NOT use the <code>window</code> object as goal is to avoid global namespace pollution,<br />
 but import the method directly from the source file.</p>

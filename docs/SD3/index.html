@@ -4654,19 +4654,27 @@
 <p>Allow gated access<br />
 This is a gated model; you must accept terms and conditions to use it.<br />
 For more information see <a href="../Gated/">Gated Access Wiki</a></p>
-<p>[!IMPORTANT]
-Set offloading<br />
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Set offloading<br />
 Set an appropriate offloading mode before loading the model to avoid out-of-memory errors.<br />
-For more information see <a href="../Offload/">Offloading Wiki</a>  </p>
-<p>[!IMPORTANT]
-Choose quantization<br />
+For more information see <a href="../Offload/">Offloading Wiki</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Choose quantization<br />
 Check compatibility of different quantizations with your platform and GPU!<br />
-For more information see <a href="../Quantization/">Quantization Wiki</a>  </p>
-<p>[!WARNING]
-Regardless of offloading settings, the full model must load into RAM before use.
-Check total model size in the table and make sure your system has enough RAM.  </p>
-<p>[!TIP] Use reference models<br />
-Use of reference models is recommended over manually downloaded models.<br />
+For more information see <a href="../Quantization/">Quantization Wiki</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Regardless of offloading settings, the full model must load into RAM before use.
+Check total model size in the table and make sure your system has enough RAM.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Use reference models</p>
+<p>Use of reference models is recommended over manually downloaded models.<br />
 Simply select it from <em>Networks -&gt; Models -&gt; Reference</em><br />
 and model will be auto-downloaded on first use.</p>
 </div>
@@ -4686,12 +4694,16 @@ Note that most available downloads are not all-in-one models; they are individua
 <p class="admonition-title">Important</p>
 <p>Do not attempt to assemble a full model by loading all individual components<br />
 That may be how some other apps are designed to work, but it is not how SD.Next works.<br />
-Always load a full model first, then replace individual components as needed.  </p>
-<p>[!WARNING]
-If you're getting error message during model load: <code>file=xxx is not a complete model</code><br />
-It means exactly that: you are trying to load a model component instead of a full model.  </p>
-<p>[!TIP]
-For convenience, you can add settings that allow quick replacement of model components to your<br />
+Always load a full model first, then replace individual components as needed.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you're getting error message during model load: <code>file=xxx is not a complete model</code><br />
+It means exactly that: you are trying to load a model component instead of a full model.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For convenience, you can add settings that allow quick replacement of model components to your<br />
 <strong>quicksettings</strong> by adding <em>Settings -&gt; User Interface -&gt; Quicksettings list -&gt; sd_unet, sd_vae, sd_text_encoder</em>.</p>
 </div>
 <p><img alt="image" src="https://github.com/user-attachments/assets/37a6b28f-2b80-4981-bf98-29290352733e" /></p>
