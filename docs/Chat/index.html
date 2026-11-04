@@ -4917,6 +4917,10 @@ If you clear your chat storage location, the uploaded images may no longer be av
 <p>Run <code>help</code> for a list of available chat commands and their usage<br />
 Prefix a command with <code>/</code> to show composer suggestions, for example <code>/</code> or <code>/help</code> or <code>/set</code><br />
 After <code>set</code> or <code>get</code>, type a parameter prefix to complete a name available in the active context  </p>
+<p>All commands that expect a <code>&lt;value&gt;</code> support multiple input formats:<br />
+- <code>key value</code>, <code>key to value</code>, <code>key=value</code>, and <code>key: value</code>  </p>
+<p>When value is a choice, it accepts a unique partial match as long as the choice value can be uniquely identified<br />
+For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint4</code> if that is the only model that matches the string  </p>
 <h3 id="process">Process</h3>
 <p>Choose a context and control active work</p>
 <ul>
@@ -4939,7 +4943,7 @@ After <code>set</code> or <code>get</code>, type a parameter prefix to complete 
 <li>prompt <code>&lt;value&gt;</code>: Set the prompt  </li>
 <li>negative <code>&lt;value&gt;</code>: Set the negative prompt  </li>
 <li>prefix <code>`</code>, <code>'</code>, <code>"</code> or <code>&gt;</code> to set the prompt directly; the leading marker is removed</li>
-<li>set <code>[key] [value]</code>: Set a value or list session values; choice values accept a unique partial match, while ambiguous matches list candidates</li>
+<li>set <code>[key] [value]</code>: Set a value or list session values  </li>
 <li>get <code>[key]</code>: Get a value or list session values  </li>
 <li>params/args: List valid parameter keys for the current context  </li>
 <li>reset: Restore parameter defaults  </li>
@@ -4973,7 +4977,7 @@ Normally, prompt should be set using <code>set prompt ...</code>, but to quickly
 <p>Read or change settings shared across sessions</p>
 <ul>
 <li>model <code>[model] [unet]</code>: Show or change the model and optional UNet  </li>
-<li>opts <code>[key] [value]</code>: Read or update global options  </li>
+<li>opts <code>[key] [value]</code>: Read or update global options</li>
 </ul>
 <h3 id="server">Server</h3>
 <p>Query runtime, device, memory, and storage details</p>
