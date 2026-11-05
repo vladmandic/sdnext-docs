@@ -4364,10 +4364,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-03" class="md-nav__link">
+  <a href="#update-for-2026-11-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-03
+        Update for 2026-11-05
       
     </span>
   </a>
@@ -7135,10 +7135,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-03" class="md-nav__link">
+  <a href="#update-for-2026-11-05" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-03
+        Update for 2026-11-05
       
     </span>
   </a>
@@ -9898,7 +9898,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-11-03">Update for 2026-11-03</h2>
+<h2 id="update-for-2026-11-05">Update for 2026-11-05</h2>
 <ul>
 <li><strong>Chat</strong>:
   New top-level interface: use chat to interact with SD.Next in a conversational manner<br />
@@ -9920,6 +9920,9 @@
 <li><code>bt.709</code> colour conversion with colour tags, fractional frame, clip rotation</li>
 <li><code>mkv</code> and <code>webm</code> frame counts read from each track</li>
 <li>ltx condition video: skipping frames keeps the first frame</li>
+<li><strong>Torch</strong></li>
+<li>update cuda to <code>torch==2.15.0+cu132</code></li>
+<li>update rocm/linux to <code>torch==2.15.0+rocm10.0</code></li>
 <li><strong>Other</strong></li>
 <li>add env var <code>SD_STRICT</code> which will enable strict mode<br />
     in strict mode, read/parse/write errors will cause the application to exit immediately  </li>
@@ -9928,6 +9931,7 @@
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>
 <li>api: failed video return 500 with the error instead of 499</li>
 <li>api: ts video files served as <em>video/mp2t</em></li>
+<li>autocomplete: <em>Keep @ on artist insert</em> applies after a page reload</li>
 <li>dlss: use video codec defaults, slow-motion output plays slower</li>
 <li>gallery: thumbnails and previews for webm, mkv, mov, avi and ts videos</li>
 <li>hdr: the 16-bit hdr image saves on windows paths with non-ascii characters</li>
@@ -9950,6 +9954,9 @@
 <li>save: <em>[datetime<format>]</em> and <em>[hasprompt&lt;...&gt;]</em> filename tokens apply args</li>
 <li>save: <em>Save metadata to JSON file</em> appends one line per image to a <code>jsonl</code></li>
 <li>save: an image save that fails no longer stops every later save</li>
+<li>settings: extension settings are checked once extensions add them, instead of reported as unknown at startup</li>
+<li>settings: a new data folder receives <em>config.json</em> and <em>secrets.json</em> on the first save</li>
+<li>settings: improve settings parsing and validation to prevent corruption</li>
 <li>ui: refresh buttons call their method once per click</li>
 </ul>
 <h2 id="update-for-2026-10-29">Update for 2026-10-29</h2>
