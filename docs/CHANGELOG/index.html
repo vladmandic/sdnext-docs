@@ -4364,10 +4364,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-05" class="md-nav__link">
+  <a href="#update-for-2026-11-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-05
+        Update for 2026-11-06
       
     </span>
   </a>
@@ -7135,10 +7135,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-05" class="md-nav__link">
+  <a href="#update-for-2026-11-06" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-05
+        Update for 2026-11-06
       
     </span>
   </a>
@@ -9898,8 +9898,12 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-11-05">Update for 2026-11-05</h2>
+<h2 id="update-for-2026-11-06">Update for 2026-11-06</h2>
 <ul>
+<li><strong>Models</strong>:</li>
+<li><a href="https://huggingface.co/openvivo/BluePixel-Turbo">BluePixel-Turbo</a><br />
+    BluePixel is retrained FLUX.2-Klein-9B with DCAE-F64 autoencoder and then distilled with four-step SATP<br />
+    result is turbo-style 9B instruction-based image editing model with native 2K/4K outputs  </li>
 <li><strong>Chat</strong>:
   New top-level interface: use chat to interact with SD.Next in a conversational manner<br />
   See <a href="https://vladmandic.github.io/sdnext-docs/Chat/">chat docs</a> for more details  </li>
@@ -9926,6 +9930,7 @@
 <li><strong>Other</strong></li>
 <li>add env var <code>SD_STRICT</code> which will enable strict mode<br />
     in strict mode, read/parse/write errors will cause the application to exit immediately  </li>
+<li>improved handling of HuggingFace mirror settings</li>
 <li><strong>Fixes</strong></li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> answer <em>500</em> with the error when the generation fails, instead of <em>200</em> with no images</li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>
