@@ -2410,6 +2410,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#chat-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat Messages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#chat-session" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2432,19 +2443,19 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chat-messages" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#ui-vs-chat-and-import" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Chat Messages
+        UI vs Chat and Import
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2498,6 +2509,17 @@
     <span class="md-ellipsis">
       
         Helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extras-and-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extras and Scripts
       
     </span>
   </a>
@@ -2589,6 +2611,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-settings-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Settings Snapshots
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4621,6 +4660,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#chat-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat Messages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#chat-session" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4643,19 +4693,19 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chat-messages" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#ui-vs-chat-and-import" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Chat Messages
+        UI vs Chat and Import
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4709,6 +4759,17 @@
     <span class="md-ellipsis">
       
         Helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extras-and-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extras and Scripts
       
     </span>
   </a>
@@ -4801,6 +4862,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-settings-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Settings Snapshots
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4869,6 +4947,15 @@
 <p class="admonition-title">Note</p>
 <p>Chat is currently implemented for image generation workflows</p>
 </div>
+<h2 id="chat-messages">Chat Messages</h2>
+<p>Chat messages represent individual interactions within a chat session:  </p>
+<ul>
+<li>Messages are stored in the chat database and associated with their respective session  </li>
+<li>Chat interface is a rich-media interface<br />
+  You can upload, drag&amp;drop or paste images directly into the chat messages  </li>
+<li>Chat messages can also read a text file as a script<br />
+  Same commands work when scripted or entered interactively  </li>
+</ul>
 <h2 id="chat-session">Chat Session</h2>
 <p>Chat session represents a single conversation with the system:
 - You can <em>list, activate, create, delete, rename</em> chat sessions
@@ -4896,27 +4983,34 @@ or monitoring and inspecting server state</p>
 <li>Chat history  </li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Chat parameters are maintained separately and do not rely on UI state</p>
-</div>
-<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Uploaded images are stored as references<br />
 If you clear your chat storage location, the uploaded images may no longer be available</p>
 </div>
-<h2 id="chat-messages">Chat Messages</h2>
-<p>Chat messages represent individual interactions within a chat session:  </p>
-<ul>
-<li>Messages are stored in the chat database and associated with their respective session  </li>
-<li>Chat interface is a rich-media interface<br />
-  You can upload, drag&amp;drop or paste images directly into the chat messages  </li>
-<li>Chat messages can also read a text file as a script<br />
-  Same commands work when scripted or entered interactively  </li>
-</ul>
+<p>Additionally, each chat session can have multiple <strong>snapshots</strong> (or bookmarks or versions)<br />
+What is a snapshot? A point-in-time capture of all params and settings at specific point in time  </p>
+<p>For example, you can set parameters of your choice, save a snapshot, run experiments with some different parameters and restore a snapshot  </p>
+<h3 id="ui-vs-chat-and-import">UI vs Chat and Import</h3>
+<p>Parameters and settings in chat session are independent of the UI state and are maintained separately for each session<br />
+But you can import settings from the UI into a chat session or export chat session settings to the UI as needed  </p>
+<p>For example, use UI to change params in Control interface, then switch to Chat and click the <strong>Import button</strong> to bring those settings into the active chat session  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Import will only import settings that are set to non-default values in the UI</p>
+</div>
+<p>Run <code>set</code> to see exact values of all parameters that were imported from the UI</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>    context=image
+    model=mine/tempestByVlad_hyperV01 [4104fc6601]
+    image.cfg_scale=2.0
+    image.steps=6
+    image.styles=['Fixed Astronaut']
+    image.nvidia_dlss:dlss_operations=['NeuralRender']
+</code></pre></div></p>
 <h2 id="commands">Commands</h2>
 <p>Run <code>help</code> for a list of available chat commands and their usage<br />
 Prefix a command with <code>/</code> to show composer suggestions, for example <code>/</code> or <code>/help</code> or <code>/set</code><br />
-After <code>set</code> or <code>get</code>, type a parameter prefix to complete a name available in the active context  </p>
+After <code>get</code>, <code>set</code> or <code>clear</code>, type a parameter prefix to complete a name available in the active context  </p>
 <p>All commands that expect a <code>&lt;value&gt;</code> support multiple input formats:<br />
 - <code>key value</code>, <code>key to value</code>, <code>key=value</code>, and <code>key: value</code>  </p>
 <p>When value is a choice, it accepts a unique partial match as long as the choice value can be uniquely identified<br />
@@ -4935,8 +5029,12 @@ For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint
 <li>resume: Resume a paused process  </li>
 <li>skip: Skip the current item  </li>
 <li>history [limit]: Show recent process history  </li>
-<li>last/details: Show active parameters from the last processing run  </li>
+<li>snapshot (alias: snap): List saved settings snapshots</li>
+<li>snapshot save: Save the current settings as a snapshot and list saved snapshots</li>
+<li>snapshot <code>&lt;id&gt;</code>: Restore a saved settings snapshot by ID</li>
 </ul>
+<p>Settings import and revisions are currently implemented only for the image context. In other contexts, these actions report that they are not yet implemented.
+- last/details: Show active parameters from the last processing run  </p>
 <h3 id="params">Params</h3>
 <p>Set, inspect, and reset context parameters</p>
 <ul>
@@ -4945,6 +5043,7 @@ For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint
 <li>prefix <code>`</code>, <code>'</code>, <code>"</code> or <code>&gt;</code> to set the prompt directly; the leading marker is removed</li>
 <li>set <code>[key] [value]</code>: Set a value or list session values  </li>
 <li>get <code>[key]</code>: Get a value or list session values  </li>
+<li>clear <code>&lt;key&gt;</code>: Reset one parameter or setting to its default</li>
 <li>params/args: List valid parameter keys for the current context  </li>
 <li>reset: Restore parameter defaults  </li>
 </ul>
@@ -4964,6 +5063,10 @@ For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint
 <ul>
 <li>list <code>key</code>: Show valid choices  </li>
 </ul>
+<h3 id="extras-and-scripts">Extras and Scripts</h3>
+<p>Image Control Extras appear in <code>params</code> as <code>&lt;script&gt;:&lt;field&gt;</code> keys  </p>
+<p>For example, <code>list nvidia_dlss:dlss_operations</code> shows valid choices for the <code>dlss_operations</code> field of the <code>nvidia_dlss</code> script<br />
+And <code>set nvidia_dlss:dlss_operations=NeuralRender, SuperRes</code> sets it to <code>NeuralRender</code> and <code>SuperRes</code></p>
 <h3 id="prompt-writing">Prompt Writing</h3>
 <p>Chat composer includes syntax highlighting to improve readability and organization of prompts
 Normally, prompt should be set using <code>set prompt ...</code>, but to quickly provide a prompt inline, you can prefix it with <code>`</code>, <code>'</code>, <code>"</code> or <code>&gt;</code>; the leading marker will be removed when processing the prompt</p>
@@ -5018,6 +5121,7 @@ Or simply type those commands directly into the chat in a conversational manner 
     set width 960
     set height 1280
     set styles "Cycle Style"
+    set nvidia_dlss:dlss_operations=NeuralRender, SuperRes
 
     # print active parameters
     set
@@ -5073,6 +5177,9 @@ Or simply type those commands directly into the chat in a conversational manner 
 <li>Chat upload directory: specify the folder for chat artifacts; leave empty for default temporary location  </li>
 <li>Chat database directory: specify the folder for chat database; leave empty for default location <code>models/chat</code>  </li>
 </ul>
+<h3 id="control-settings-snapshots">Control Settings Snapshots</h3>
+<p>Use <strong>Import Control</strong> in the Control interface while an image Chat session is active to capture non-default generation parameters and always-on script Extras. Control-unit settings and input images are not included.</p>
+<p>Each import creates an immutable snapshot. <code>snapshot</code> (or <code>snap</code>) lists snapshots newest first and marks the active snapshot; the listing is transient and is not added to chat history. <code>snapshot &lt;id&gt;</code> restores that snapshot and is recorded as a normal Chat exchange. Restore replaces the parameters and Extras owned by the active imported snapshot while preserving unrelated draft values. Chat edits take precedence until the next import or restore. <code>snapshot save</code> captures the current image draft as another immutable snapshot.</p>
 <h2 id="technical">Technical</h2>
 <ul>
 <li>Uses SQLite as its underlying database for storing chat history and metadata  </li>
@@ -5091,7 +5198,8 @@ Or simply type those commands directly into the chat in a conversational manner 
 </ul>
 <h2 id="roadmap">Roadmap</h2>
 <ul>
-<li>Chat support for <strong>video</strong> workflow (<em>partially implemented</em>)  </li>
+<li>Chat support for <strong>Scripts</strong> (extras)</li>
+<li>Chat support for <strong>Video</strong> workflow (<em>partially implemented</em>)  </li>
 <li>Chat support for <strong>Caption</strong> workflow  </li>
 <li>Chat support for <strong>Process</strong> workflow  </li>
 <li>Kanvas edit for images  </li>
