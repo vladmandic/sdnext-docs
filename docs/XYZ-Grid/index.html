@@ -2797,6 +2797,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#search-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search term
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searched-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searched text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#commas-in-replacement-values" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4489,6 +4511,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#search-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search term
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searched-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searched text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#commas-in-replacement-values" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4563,22 +4607,39 @@ X/Y/Z Values define the actual values to test.
 For some types, values are selected from a dropdown. For others, values are comma-separated.</p>
 <p>Most options are self-explanatory, such as Model, Seed, VAE, and CLiP Skip.</p>
 <h2 id="prompt-sr">Prompt S/R</h2>
-<p>"Prompt S/R" means Prompt Search and Replace.
-After selecting this type, enter a word already present in your prompt, followed by comma-separated replacements.</p>
-<p>For example, if your prompt is "a lazy cat" and Prompt S/R is <code>cat,dog,monkey</code>, the script creates three images:
-<code>a lazy cat</code>, <code>a lazy dog</code>, and <code>a lazy monkey</code>.</p>
-<p>You are not limited to single words. You can replace phrases, for example <code>lazy cat,boisterous dog,mischievous monkey</code>, or even the full prompt, for example <code>a lazy cat,three blind mice,an astronaut on the moon</code>.</p>
+<p>"Prompt S/R" means Prompt Search and Replace, the <code>[Prompt] Search &amp; replace</code> type. Its values are a comma-separated list that normally starts with text already present in the prompt, followed by the replacements. One image is created per value.</p>
+<p>For example, with the prompt <code>a lazy cat</code> and Prompt S/R <code>cat,dog,monkey</code>, three images are created: <code>a lazy cat</code>, <code>a lazy dog</code>, and <code>a lazy monkey</code>.</p>
+<p>Values are not limited to single words. Phrases work, for example <code>lazy cat,boisterous dog,mischievous monkey</code>, and so does the full prompt, for example <code>a lazy cat,three blind mice,an astronaut on the moon</code>.</p>
 <p>Embeddings and LoRAs are also valid search-and-replace terms, for example <code>&lt;lora:FirstLora:1&gt;,&lt;lora:SecondLora:1&gt;,&lt;lora:ThirdLora:1&gt;</code>.</p>
-<p>You could also change the strength of a lora; <code>&lt;lora:FirstLora:1&gt;,&lt;lora:FirstLora:0.75&gt;,&lt;lora:FirstLora:0.5&gt;,&lt;lora:FirstLora:0.25&gt;</code>.<br />
-(Note: You could strip this down to <code>FirstLora:1,FirstLora:0.75,FirstLora:0.5,FirstLora:0.25</code>.)</p>
+<p>LoRA strength is varied the same way, for example <code>&lt;lora:FirstLora:1&gt;,&lt;lora:FirstLora:0.75&gt;,&lt;lora:FirstLora:0.5&gt;,&lt;lora:FirstLora:1.5&gt;</code>, or shortened to <code>FirstLora:1,FirstLora:0.75,FirstLora:0.5,FirstLora:1.5</code>.</p>
+<h3 id="search-term">Search term</h3>
+<p>Each image replaces a single search term:</p>
+<ul>
+<li>the first value, when it occurs in the searched text</li>
+<li>otherwise, the longest value that occurs there</li>
+</ul>
+<p>The search term is replaced by the image's value wherever it occurs, in the prompt and the negative prompt alike. No other value is searched for, so values that contain one another produce exactly the listed prompts: <code>woman,man,child</code> on <code>photo of a woman</code> gives <code>photo of a woman</code>, <code>photo of a man</code> and <code>photo of a child</code>, and <code>0.8,1,1.2</code> on <code>(red hair:0.8)</code> gives <code>(red hair:0.8)</code>, <code>(red hair:1)</code> and <code>(red hair:1.2)</code>.</p>
+<p>The first value does not have to be in the prompt. With the prompt <code>a lazy dog</code> and Prompt S/R <code>cat,dog,monkey</code>, <code>dog</code> is the search term and the images are <code>a lazy cat</code>, <code>a lazy dog</code>, and <code>a lazy monkey</code>. A term found only in the negative prompt works the same way: the negative prompt <code>blurry</code> with Prompt S/R <code>blurry,lowres,jpeg artifacts</code> varies the negative prompt alone.</p>
+<p>When several values occur in the prompt, only the search term changes: <code>a cat and a dog</code> with <code>cat,dog</code> gives <code>a cat and a dog</code> and <code>a dog and a dog</code>.</p>
+<p>When no value occurs in the searched text, every image shows the unchanged prompt and the server log shows the warning <code>XYZ grid: search values=[...] not found fields=[...]</code>.</p>
+<h3 id="searched-text">Searched text</h3>
+<p>The search runs on the text entered in the prompt boxes, before styles and wildcards are applied. A term that only a selected style adds, or that a wildcard expands to, is not found.</p>
+<p>Each Prompt S/R type searches its own boxes:</p>
+<ul>
+<li><code>[Prompt] Search &amp; replace</code>: Prompt and Negative prompt</li>
+<li><code>[Prompt] Search &amp; replace refine</code>: Refine prompt and Refine negative prompt</li>
+<li><code>[Prompt] Search &amp; replace detailer</code>: Detailer prompt and Detailer negative prompt</li>
+<li><code>[Prompt] Search &amp; replace all</code>: all six, with one search term shared by them</li>
+</ul>
+<p>An empty box is not searched, even where its pass falls back to the main prompt, so the refine and detailer types find nothing until their boxes are filled in.</p>
 <h3 id="commas-in-replacement-values">Commas in replacement values</h3>
-<p>Replacement values are separated by commas, so every comma in the field is treated as a separator. Quotation marks are not special and do not group a value; wrapping a replacement in <code>"..."</code> only adds literal quote characters to the prompt.</p>
+<p>Replacement values are separated by commas, so every comma in the field is treated as a separator. Quotation marks are not special and do not group a value; wrapping a replacement in <code>"..."</code> only adds literal quote characters to the prompt. Spaces around each value are trimmed, and an empty value, such as the one after a trailing comma, is skipped.</p>
 <p>A comma that belongs inside a single replacement is escaped with a backslash, written as <code>\,</code>. The backslash is stripped before the prompt is used, leaving an ordinary comma. This matters most when the whole prompt is replaced with alternatives that themselves contain commas.</p>
 <p>For example, the prompt is <code>a lazy cat</code> and the goal is to swap the whole prompt for two alternatives that contain commas.</p>
 <p>Without escaping, the value <code>a lazy cat,a happy dog, wearing a hat,a wise owl, perched on a branch</code> is split on every comma into five values: <code>a lazy cat</code>, <code>a happy dog</code>, <code>wearing a hat</code>, <code>a wise owl</code>, and <code>perched on a branch</code>. The result is five images with broken prompts.</p>
 <p>With escaping, the value <code>a lazy cat,a happy dog\, wearing a hat,a wise owl\, perched on a branch</code> is split into three values. Because the search term <code>a lazy cat</code> is the full prompt, each value becomes a complete prompt, producing the three intended images: <code>a lazy cat</code>, <code>a happy dog, wearing a hat</code>, and <code>a wise owl, perched on a branch</code>.</p>
 <h3 id="search-terms-match-anywhere-in-the-prompt">Search terms match anywhere in the prompt</h3>
-<p>Search and replace acts on every value in the field, and each is a plain text replacement with no word boundaries. A term is replaced wherever it occurs, including inside longer words. With the prompt <code>a cat, intricate details</code> and Prompt S/R <code>cat,dog,owl</code>, the <code>cat</code> inside <code>intricate</code> is replaced along with the standalone word: the second image becomes <code>a dog, intridoge details</code> and the third becomes <code>a owl, intriowle details</code>.</p>
+<p>The search term is a plain text replacement with no word boundaries, so it is replaced wherever it occurs, including inside longer words. With the prompt <code>a cat, intricate details</code> and Prompt S/R <code>cat,dog,owl</code>, the <code>cat</code> inside <code>intricate</code> is replaced along with the standalone word: the second image becomes <code>a dog, intridoge details</code> and the third becomes <code>a owl, intriowle details</code>.</p>
 <p>Distinctive terms avoid this. With Prompt S/R <code>a cat,a fox,a wolf</code>, none of the values occur inside <code>intricate</code>, so only the subject changes, giving <code>a cat, intricate details</code>, <code>a fox, intricate details</code>, and <code>a wolf, intricate details</code>.</p>
 <h3 id="placeholder-tokens">Placeholder tokens</h3>
 <p>A placeholder token marks a fixed insertion point in the prompt and can be reused to fill several positions from a single value. The token works best when it is distinctive, so it does not match inside other words, and it avoids the <code>__name__</code> form, which is reserved for wildcards.</p>

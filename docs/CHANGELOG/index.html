@@ -9940,6 +9940,8 @@
 <li>dlss: use video codec defaults, slow-motion output plays slower</li>
 <li>gallery: thumbnails and previews for webm, mkv, mov, avi and ts videos</li>
 <li>hdr: the 16-bit hdr image saves on windows paths with non-ascii characters</li>
+<li>ltx: <em>Tiny</em> live previews show the video instead of a placeholder</li>
+<li>ltx: tab passes no longer run with the previous job's guidance end, sigma adjust and correction settings</li>
 <li>minimax: quantized <em>H3</em> fix decode</li>
 <li>minimax: webm, mkv and ts files accepted as reference videos</li>
 <li>models: <em>FLUX.3</em>, <em>MiniMax-H3</em> and modular video models fail the load when a component the workflow requires does not load</li>
@@ -9956,13 +9958,18 @@
 <li>processing: negative prompt the pipeline takes no input for is reported once per job</li>
 <li>processing: text encoder failure fails the job with its own error instead of a misleading <em>not enough values to unpack</em> from the pipeline</li>
 <li>samplers: <em>Euler SGM</em> and <em>DC Solver</em> use the model's prediction type</li>
-<li>save: <em>[datetime<format>]</em> and <em>[hasprompt&lt;...&gt;]</em> filename tokens apply args</li>
+<li>save: <code>[datetime&lt;format&gt;]</code> and <code>[hasprompt&lt;...&gt;]</code> filename tokens apply args</li>
 <li>save: <em>Save metadata to JSON file</em> appends one line per image to a <code>jsonl</code></li>
 <li>save: an image save that fails no longer stops every later save</li>
 <li>settings: extension settings are checked once extensions add them, instead of reported as unknown at startup</li>
 <li>settings: a new data folder receives <em>config.json</em> and <em>secrets.json</em> on the first save</li>
 <li>settings: improve settings parsing and validation to prevent corruption</li>
 <li>ui: refresh buttons call their method once per click</li>
+<li>xyz: a blank value after a trailing comma is dropped instead of <em>Search &amp; replace</em> inserting the replacement between every character of the prompt</li>
+<li>xyz: <em>Search &amp; replace</em> warns when none of its values occurs in the prompts it searches</li>
+<li>xyz: restoring a grid image sets dropdown axes, such as sampler, model or lora, to the values the grid used</li>
+<li>xyz: in the always-on grid, <em>Search &amp; replace all</em>, <em>Prompt order</em> and <em>Styles</em> change the prompt of each cell, and lora tags no longer pile up across cells</li>
+<li>xyz: <em>Search &amp; replace</em> replaces one value per cell, the first value or, when it is absent, the longest one found, so <code>woman,man</code> no longer renders <code>wowoman</code> and <code>0.8,1,1.2</code> no longer renders <code>1.2.2</code></li>
 </ul>
 <h2 id="update-for-2026-10-29">Update for 2026-10-29</h2>
 <h3 id="highlights-for-2026-10-29">Highlights for 2026-10-29</h3>
@@ -11218,7 +11225,7 @@ In addition, to jump on a bandwagon, we're now fully <strong>AI agent</strong> r
 <li>update <code>vlad-neomorph</code> theme</li>
 <li>a lot of small performance optimizations that add up to faster load times and more responsive ui</li>
 <li><strong>Caption &amp; Prompt Enhance</strong></li>
-<li>[Google Gemma 4] in <em>E2B</em> and <em>E4B</em> variants as well as <em>heretic</em> fine-tune</li>
+<li><a href="https://huggingface.co/google/gemma-4-E4B-it">Google Gemma 4</a> in <em>E2B</em> and <em>E4B</em> variants as well as <em>heretic</em> fine-tune</li>
 <li><strong>Agents</strong>
   framework for AI agent based work in <code>.github/</code><br />
 <em>note</em>: all skills are agent-model agnostic  </li>
@@ -13573,7 +13580,7 @@ Models...And support for new models: <strong>CogView-4</strong>, <strong>SANA 1.
 <li><a href="https://huggingface.co/posts/elismasilva/251775641926329">Mixture-of-Diffusers</a><br />
     Regional tiling type of a solution for SDXL models<br />
     select from <em>scripts -&gt; mixture of diffusers</em>  </li>
-<li>[Automatic Color Inpaint]<br />
+<li>Automatic Color Inpaint<br />
     Automatically creates mask based on selected color and triggers inpaint<br />
     simply select in <em>scripts -&gt; automatic color inpaint</em> when in img2img mode  </li>
 <li><a href="https://github.com/microsoft/RAS">RAS: Region-Adaptive Sampling</a> <em>experimental</em><br />
@@ -16843,10 +16850,10 @@ Upgrades are still possible and supported, but clean install is recommended for 
     as well as resume aborted/incomplete downloads  </li>
 <li>civitai integration in <em>models -&gt; civitai</em> can now find most<br />
     previews AND metadata for most models (checkpoints, loras, embeddings)<br />
-    metadata is now parsed and saved in <em>[model].json</em><br />
+    metadata is now parsed and saved in <code>[model].json</code><br />
     typical hit rate is &gt;95% for models, loras and embeddings  </li>
 <li>description from parsed model metadata is used as model description if there is no manual<br />
-    description file present in format of <em>[model].txt</em>  </li>
+    description file present in format of <code>[model].txt</code>  </li>
 <li>to enable search for models, make sure all models have set hash values<br />
 <em>Models -&gt; Valida -&gt; Calculate hashes</em>  </li>
 <li><strong>LoRA</strong></li>
@@ -16923,7 +16930,7 @@ Upgrades are still possible and supported, but clean install is recommended for 
 <li><a href="https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111">MultiDiffusion</a><br />
     has been removed from list of built-in extensions<br />
     you can still install it manually if desired  </li>
-<li>[LyCORIS]<a href="https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris">https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris</a><br />
+<li><a href="https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris">LyCORIS</a><br />
     has been removed from list of built-in extensions<br />
     it is considered obsolete given that all functionality is now built-in  </li>
 <li><strong>General</strong>  </li>
@@ -17457,7 +17464,7 @@ But even if not, it still includes bunch of cumulative fixes since last release 
 <ul>
 <li>simplify token merging  </li>
 <li>reorganize some settings  </li>
-<li>all updates from upstream: <strong>A1111</strong> v1.3.2 [df004be] <em>(latest release)</em><br />
+<li>all updates from upstream: <strong>A1111</strong> v1.3.2 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/df004be">df004be</a> <em>(latest release)</em><br />
   pretty much nothing major that i havent released in previous versions, but its still a long list of tiny changes  </li>
 <li>skipped/did-not-port:<br />
     add separate hires prompt: unnecessarily complicated and spread over large number of commits due to many regressions<br />

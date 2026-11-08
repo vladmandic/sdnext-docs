@@ -4850,17 +4850,17 @@ Detailer prompt:
 <p>The same rule applies to negative prompts.</p>
 <h2 id="per-class-prompts">Per-class prompts</h2>
 <p>When using a multi-class model (or several models with different classes), prompt lines can be assigned to detections by class name instead of by line position<br />
-Prefix a line with [CLASS=name] to route that line's prompt to any detection whose class matches name:  </p>
+Prefix a line with <code>[CLASS=name]</code> to route that line's prompt to any detection whose class matches name:  </p>
 <blockquote>
-<p>[CLASS=face] detailed eyes, sharp iris<br />
-[CLASS=hand] five fingers, correct anatomy  </p>
+<p><code>[CLASS=face]</code> detailed eyes, sharp iris<br />
+<code>[CLASS=hand]</code> five fingers, correct anatomy  </p>
 </blockquote>
 <p>Notes:
 - Class names are matched case-insensitively against the classes listed in logs when the model loads<br />
-- Multiple classes can share one line: [CLASS=head,face] ....<br />
-- Lines without a [CLASS=...] tag are used as before — assigned by position to any detection with no matching class tag<br />
-- If there are no lines without a [CLASS=...] tag, detections with no matching class tag use the primary prompt, as if a [prompt] line had been added<br />
-- If a [CLASS=name] tag never matches a detection, a warning is logged in case it's a typo  </p>
+- Multiple classes can share one line: <code>[CLASS=head,face]</code> ....<br />
+- Lines without a <code>[CLASS=...]</code> tag are used as before — assigned by position to any detection with no matching class tag<br />
+- If there are no lines without a <code>[CLASS=...]</code> tag, detections with no matching class tag use the primary prompt, as if a <code>[prompt]</code> line had been added<br />
+- If a <code>[CLASS=name]</code> tag never matches a detection, a warning is logged in case it's a typo  </p>
 <p>The same syntax applies to negative prompts.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -4868,17 +4868,19 @@ Prefix a line with [CLASS=name] to route that line's prompt to any detection who
 </div>
 <h3 id="skipping-classes">Skipping classes</h3>
 <p>With a multi-class model (or several models with different classes), detections of some classes can be excluded from detailing
-Add a line with [SKIP=name] to the detailer prompt or the detailer negative prompt: those detections are still detected, but not processed</p>
-<p>[SKIP=eyes]
-[CLASS=face] detailed skin</p>
+Add a line with <code>[SKIP=name]</code> to the detailer prompt or the detailer negative prompt: those detections are still detected, but not processed</p>
+<blockquote>
+<p><code>[SKIP=eyes]</code><br />
+<code>[CLASS=face]</code> detailed skin  </p>
+</blockquote>
 <p>Notes:
 - Class names are matched case-insensitively against the classes listed in logs when the model loads<br />
-- Multiple classes can share one line: [SKIP=eyes,hand]<br />
+- Multiple classes can share one line: <code>[SKIP=eyes,hand]</code><br />
 - Skip lines are not used as prompt text, and a detailer prompt that only contains skip lines still uses the primary prompt<br />
 - Skipped detections don't count towards Max detected and don't use up positional prompt lines  </p>
-<p>If a class has both [SKIP=name] and a [CLASS=name] line, the [CLASS] line wins: the detection is processed with its prompt and a warning is logged
-If a [SKIP=name] tag never matches a detection, a warning is logged in case it's a typo</p>
-<p>With Include detections enabled, skipped detections are shown in yellow and detections where the skip was overridden by a [CLASS] line in red</p>
+<p>If a class has both <code>[SKIP=name]</code> and a <code>[CLASS=name]</code> line, the <code>[CLASS]</code> line wins: the detection is processed with its prompt and a warning is logged
+If a <code>[SKIP=name]</code> tag never matches a detection, a warning is logged in case it's a typo</p>
+<p>With Include detections enabled, skipped detections are shown in yellow and detections where the skip was overridden by a <code>[CLASS]</code> line in red</p>
 <h3 id="segmentation">Segmentation</h3>
 <p>Some Detailer models can output segmentation masks, not just bounding boxes.
 To use segmentation masks, enable <strong>Use segmentation</strong>.

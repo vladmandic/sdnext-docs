@@ -4550,7 +4550,7 @@ Offload mode can be:
 - <strong>Sequential</strong>: offload model parts one by one, layer by layer
 - <strong>Model</strong>: offload model parts marked as offload-compatible (deprecated)
 - <strong>None</strong>: no offloading, all model parts remain in VRAM (not recommended)</p>
-<h3 id="balanced">Balanced</h3>
+<h2 id="balanced">Balanced</h2>
 <p>Balanced offload is the default mode for most environments.
 Balanced offload works differently than all other offloading methods as it performs offloading only when the VRAM usage exceeds the user-specified threshold.</p>
 <ul>
@@ -4567,7 +4567,7 @@ Balanced offload works differently than all other offloading methods as it perfo
 - <strong>4-12 GB</strong>: balanced, low watermark 0.0, large text encoders always offloaded<br />
 - <strong>4 GB or less</strong>: balanced, low watermark 0.0, plus the <code>--lowvram</code> low-memory optimizations (VAE tiling, aggressive garbage collection)<br />
 - <strong>24 GB or more</strong>: balanced, high watermark 0.8, large text encoders always offloaded, CLIP and VAE never offloaded  </p>
-<h3 id="group">Group</h3>
+<h2 id="group">Group</h2>
 <p>Group offloading partitions a sub-model’s layers into smaller clusters, dynamically loading one group into GPU memory for execution while offloading the inactive groups back to CPU RAM.<br />
 Unlike standard balanced offloading—which swaps entire sub-networks like the text encoder, UNet, or VAE sequentially—group offloading operates at a finer granularity within the transformer or attention blocks themselves.<br />
 This provides a middle ground between full model offloading and ultra-granular sequential layer offloading.  </p>
@@ -4575,7 +4575,7 @@ This provides a middle ground between full model offloading and ultra-granular s
 - <strong>block-level</strong> offloading swaps entire transformer layers or module groups in larger bulk transfers to balance low VRAM usage with fast asynchronous streaming
 - <strong>leaf-level</strong> offloading swaps parameters down to individual primitive layers (like single linear or convolution weights) for absolute minimum VRAM footprint at the cost of significantly higher overhead</p>
 <p>Group offloading performance can be improved by enabling streams usage, both prefetch and overlap, but at the cost of increased VRAM usage</p>
-<h3 id="sequential">Sequential</h3>
+<h2 id="sequential">Sequential</h2>
 <p>Works layer by layer for each model component marked as offload-compatible.</p>
 <ul>
 <li>Recommended for very low VRAM, around 4 GB or less</li>
@@ -4586,10 +4586,10 @@ This provides a middle ground between full model offloading and ultra-granular s
 <p class="admonition-title">Note</p>
 <p>Using <code>--lowvram</code> automatically enables sequential offload</p>
 </div>
-<h3 id="model">Model</h3>
+<h2 id="model">Model</h2>
 <p>Works at the model-component level by offloading components marked as offload-compatible.
 Obsolete as balanced offload can cover all use cases historically covered by model offload.</p>
-<h3 id="none">None</h3>
+<h2 id="none">None</h2>
 <p>No offloading, all model parts remain in VRAM.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

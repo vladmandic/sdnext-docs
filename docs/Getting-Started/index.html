@@ -4588,19 +4588,19 @@
 <p>This guide covers the basics of generating images with SD.Next, assuming the application is already installed.</p>
 <p>Open the web interface by running <code>webui.bat</code> (Windows) or <code>./webui.sh</code> (Linux/Mac). The main page loads with the <strong>Text</strong> tab active by default.</p>
 <p>The following settings are required before generating an image:</p>
-<h3 id="base-model">Base Model</h3>
+<h2 id="base-model">Base Model</h2>
 <p>The base model (also called a checkpoint) determines the visual style and capabilities of image generation. Models are available on <a href="https://civitai.com">CivitAI</a> and <a href="https://huggingface.co">Hugging Face</a>, and typically range from 2 GB to 30 GB. Place downloaded models in the <code>models/stable-diffusion/</code> folder inside your SD.Next directory.</p>
-<h3 id="positive-prompt">Positive Prompt</h3>
+<h2 id="positive-prompt">Positive Prompt</h2>
 <p>Describe what you want in the image. Be specific about subjects, style, lighting, and composition.</p>
-<h3 id="negative-prompt">Negative Prompt</h3>
+<h2 id="negative-prompt">Negative Prompt</h2>
 <p>Describe what you do <em>not</em> want in the image. Common entries include anatomy issues (e.g., extra limbs, distorted faces) and style elements to avoid. Negative embeddings such as <code>bad-hands-5</code> can also be placed here.</p>
-<h3 id="width-and-height">Width and Height</h3>
+<h2 id="width-and-height">Width and Height</h2>
 <p>Set the output image dimensions. For SD 1.5 models, start with 512×512 or 512×768. Generating at sizes significantly larger than a model's training resolution often degrades quality.</p>
-<h3 id="sampler">Sampler</h3>
+<h2 id="sampler">Sampler</h2>
 <p>The sampler controls the algorithm and number of steps used during generation. More steps do not always improve quality and always increase generation time. <code>Euler A</code> typically produces good results in around 24 steps. See the <a href="../Schedulers/">Samplers</a> page for details.</p>
-<h3 id="cfg-scale">CFG Scale</h3>
+<h2 id="cfg-scale">CFG Scale</h2>
 <p>Controls how closely the output follows your prompt. Values between 6 and 9 are typical. Too low gives the model more creative freedom; too high can produce over-saturated or distorted results.</p>
-<h3 id="seed">Seed</h3>
+<h2 id="seed">Seed</h2>
 <p>A unique number assigned to each generated image. Set to <code>-1</code> for a random seed on every run. To reproduce settings from an image found online, use the <strong>Process</strong> tab to import its metadata — the seed will be included.</p>
 
 
