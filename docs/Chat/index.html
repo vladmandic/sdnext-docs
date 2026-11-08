@@ -2472,6 +2472,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#process" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4722,6 +4733,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#process" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5015,10 +5037,20 @@ After <code>get</code>, <code>set</code> or <code>clear</code>, type a parameter
 - <code>key value</code>, <code>key to value</code>, <code>key=value</code>, and <code>key: value</code>  </p>
 <p>When value is a choice, it accepts a unique partial match as long as the choice value can be uniquely identified<br />
 For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint4</code> if that is the only model that matches the string  </p>
+<h3 id="session">Session</h3>
+<ul>
+<li>session/list: List existing sessions</li>
+<li>session <code>&lt;number&gt;</code> or <code>&lt;name&gt;</code>: Activate a session by its list number or exact name</li>
+<li>session del/rm: Delete the current session</li>
+<li>session create/add <code>[name]</code>: Create a session and switch to it</li>
+<li>title <code>[name]</code>: Read or set the current session name  </li>
+<li>snapshot (alias: snap): List saved settings snapshots</li>
+<li>snapshot save: Save the current settings as a snapshot and list saved snapshots</li>
+<li>snapshot <code>&lt;id&gt;</code>: Restore a saved settings snapshot by ID</li>
+</ul>
 <h3 id="process">Process</h3>
 <p>Choose a context and control active work</p>
 <ul>
-<li>title <code>[name]</code>: Read or set the current session name  </li>
 <li>context <code>&lt;value&gt;</code>: Select the active context  </li>
 <li>clear: Clear displayed messages without changing session history  </li>
 <li>run <code>[count]</code>: Run image generation 1-10 times (default: 1)  </li>
@@ -5029,9 +5061,6 @@ For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint
 <li>resume: Resume a paused process  </li>
 <li>skip: Skip the current item  </li>
 <li>history <code>[limit]</code>: Show recent process history  </li>
-<li>snapshot (alias: snap): List saved settings snapshots</li>
-<li>snapshot save: Save the current settings as a snapshot and list saved snapshots</li>
-<li>snapshot <code>&lt;id&gt;</code>: Restore a saved settings snapshot by ID</li>
 </ul>
 <p>Settings import and revisions are currently implemented only for the image context. In other contexts, these actions report that they are not yet implemented.
 - last/details: Show active parameters from the last processing run  </p>
@@ -5045,6 +5074,7 @@ For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint
 <li>get <code>[key]</code>: Get a value or list session values  </li>
 <li>clear <code>&lt;key&gt;</code>: Reset one parameter or setting to its default</li>
 <li>params/args: List valid parameter keys for the current context  </li>
+<li>import: Import non-default settings from current UI controls  </li>
 <li>reset: Restore parameter defaults  </li>
 </ul>
 <h3 id="references">References</h3>

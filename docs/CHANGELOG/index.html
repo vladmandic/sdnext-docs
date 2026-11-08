@@ -4364,10 +4364,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-06" class="md-nav__link">
+  <a href="#update-for-2026-11-08" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-06
+        Update for 2026-11-08
       
     </span>
   </a>
@@ -7135,10 +7135,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-06" class="md-nav__link">
+  <a href="#update-for-2026-11-08" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-06
+        Update for 2026-11-08
       
     </span>
   </a>
@@ -9898,15 +9898,18 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-11-06">Update for 2026-11-06</h2>
+<h2 id="update-for-2026-11-08">Update for 2026-11-08</h2>
 <ul>
+<li><strong>Chat</strong>: New top-level interface<br />
+  See <a href="https://vladmandic.github.io/sdnext-docs/Chat/">chat docs</a> for more details  </li>
+<li>Can be used as an interactive interface for generating and editing images through conversational prompts  </li>
+<li>Can also be used for advanced scripting and automation within SD.Next  </li>
+<li>Allows for full control of SD.Next generation parameters and settings  </li>
+<li>Allows for persistent context across interactions  </li>
 <li><strong>Models</strong>:</li>
 <li><a href="https://huggingface.co/openvivo/BluePixel-Turbo">BluePixel-Turbo</a><br />
     BluePixel is retrained FLUX.2-Klein-9B with DCAE-F64 autoencoder and then distilled with four-step SATP<br />
     result is turbo-style 9B instruction-based image editing model with native 2K/4K outputs  </li>
-<li><strong>Chat</strong>:
-  New top-level interface: use chat to interact with SD.Next in a conversational manner<br />
-  See <a href="https://vladmandic.github.io/sdnext-docs/Chat/">chat docs</a> for more details  </li>
 <li><strong>Coding</strong><br />
   expand ai/ml instructions and skills<br />
   see <a href="https://github.com/vladmandic/sdnext/blob/dev/AGENTS.md">instructions</a> and <a href="https://github.com/vladmandic/sdnext/blob/dev/.github/skills/README.md">skills</a> for details  </li>
@@ -9930,7 +9933,11 @@
 <li><strong>Other</strong></li>
 <li>add env var <code>SD_STRICT</code> which will enable strict mode<br />
     in strict mode, read/parse/write errors will cause the application to exit immediately  </li>
-<li>improved handling of HuggingFace mirror settings</li>
+<li>improved handling of HuggingFace mirror settings
+    <em>note</em>: <code>hf-mirror.com</code> does not actually mirror entire huggingface, only some<br />
+    the rest are redirected back to <code>huggingface.co</code> which is still under standard access control operations  </li>
+<li><strong>Internal</strong></li>
+<li>modernui css: use a build process for <code>/css</code> instead of monolithic single <code>style.css</code></li>
 <li><strong>Fixes</strong></li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> answer <em>500</em> with the error when the generation fails, instead of <em>200</em> with no images</li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>
@@ -9970,6 +9977,7 @@
 <li>xyz: restoring a grid image sets dropdown axes, such as sampler, model or lora, to the values the grid used</li>
 <li>xyz: in the always-on grid, <em>Search &amp; replace all</em>, <em>Prompt order</em> and <em>Styles</em> change the prompt of each cell, and lora tags no longer pile up across cells</li>
 <li>xyz: <em>Search &amp; replace</em> replaces one value per cell, the first value or, when it is absent, the longest one found, so <code>woman,man</code> no longer renders <code>wowoman</code> and <code>0.8,1,1.2</code> no longer renders <code>1.2.2</code></li>
+<li>qwen-image-2.1: use correct shared te</li>
 </ul>
 <h2 id="update-for-2026-10-29">Update for 2026-10-29</h2>
 <h3 id="highlights-for-2026-10-29">Highlights for 2026-10-29</h3>
