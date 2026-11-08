@@ -2444,6 +2444,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#session-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ui-vs-chat-and-import" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2538,6 +2549,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#process_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#prompt-writing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2603,6 +2625,17 @@
     <span class="md-ellipsis">
       
         Example: Image Editing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-image-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Image Post-processing
       
     </span>
   </a>
@@ -4705,6 +4738,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#session-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ui-vs-chat-and-import" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4799,6 +4843,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#process_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#prompt-writing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4864,6 +4919,17 @@
     <span class="md-ellipsis">
       
         Example: Image Editing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-image-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Image Post-processing
       
     </span>
   </a>
@@ -4967,7 +5033,7 @@
 <p><img alt="ChatInterfaceScreenshot" src="https://github.com/user-attachments/assets/c1396b5c-b1f4-47b6-a14a-49ec76080fad" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Chat is currently implemented for image generation workflows</p>
+<p>Chat supports image generation and post-processing workflows; video support is partial</p>
 </div>
 <h2 id="chat-messages">Chat Messages</h2>
 <p>Chat messages represent individual interactions within a chat session:  </p>
@@ -5012,6 +5078,15 @@ If you clear your chat storage location, the uploaded images may no longer be av
 <p>Additionally, each chat session can have multiple <strong>snapshots</strong> (or bookmarks or versions)<br />
 What is a snapshot? A point-in-time capture of all params and settings at specific point in time  </p>
 <p>For example, you can set parameters of your choice, save a snapshot, run experiments with some different parameters and restore a snapshot  </p>
+<h3 id="session-context">Session Context</h3>
+<p>Session context refers to main areas of SD.Next.
+Setting context impacts all subsequent commands and operations</p>
+<p>Available contexts:
+- <code>context image</code>: used for all image generation tasks
+- <code>context process</code>: used for all image post-processing tasks
+- <code>context video</code>: used for all video generation tasks
+- <code>context caption</code>: used for all caption generation tasks</p>
+<p>Note that commands such as <code>list</code>, <code>get</code>, <code>set</code> will operate within the currently active context and have different set of params to manage depending on the context.</p>
 <h3 id="ui-vs-chat-and-import">UI vs Chat and Import</h3>
 <p>Parameters and settings in chat session are independent of the UI state and are maintained separately for each session<br />
 But you can import settings from the UI into a chat session or export chat session settings to the UI as needed  </p>
@@ -5027,7 +5102,7 @@ But you can import settings from the UI into a chat session or export chat sessi
     image.cfg_scale=2.0
     image.steps=6
     image.styles=['Fixed Astronaut']
-    image.nvidia_dlss:dlss_operations=['NeuralRender']
+    image.nvidia_dlss:dlss_enabled=['NeuralRender']
 </code></pre></div></p>
 <h2 id="commands">Commands</h2>
 <p>Run <code>help</code> for a list of available chat commands and their usage<br />
@@ -5053,8 +5128,8 @@ For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint
 <ul>
 <li>context <code>&lt;value&gt;</code>: Select the active context  </li>
 <li>clear: Clear displayed messages without changing session history  </li>
-<li>run <code>[count]</code>: Run image generation 1-10 times (default: 1)  </li>
-<li>generate/start: Start the current process once  </li>
+<li>run <code>[count]</code>: Run the current context; image generation accepts a count from 1-10</li>
+<li>generate/start: Start the current context once</li>
 <li>schedule: Add the current image or video generation to the scheduler  </li>
 <li>cancel/abort/stop/interrupt: Stop the current process  </li>
 <li>pause: Pause the current process  </li>
@@ -5094,9 +5169,19 @@ For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint
 <li>list <code>key</code>: Show valid choices  </li>
 </ul>
 <h3 id="extras-and-scripts">Extras and Scripts</h3>
-<p>Image Control Extras appear in <code>params</code> as <code>&lt;script&gt;:&lt;field&gt;</code> keys  </p>
-<p>For example, <code>list nvidia_dlss:dlss_operations</code> shows valid choices for the <code>dlss_operations</code> field of the <code>nvidia_dlss</code> script<br />
-And <code>set nvidia_dlss:dlss_operations=NeuralRender, SuperRes</code> sets it to <code>NeuralRender</code> and <code>SuperRes</code></p>
+<p>Extras appear in <code>params</code> as <code>&lt;script&gt;:&lt;field&gt;</code> keys.</p>
+<p>For example, <code>list nvidia_dlss:dlss_enabled</code> shows valid choices for the <code>dlss_enabled</code> field of the <code>nvidia_dlss</code> script<br />
+And <code>set nvidia_dlss:dlss_enabled=NeuralRender, SuperRes</code> sets it to <code>NeuralRender</code> and <code>SuperRes</code></p>
+<p>The main and refine upscalers are also available as <code>upscale:upscaler</code> and <code>upscale:refiner</code> in process context. For example, use <code>list upscale:upscaler</code> to see valid choices and <code>set upscale:upscaler &lt;value&gt;</code> to choose one.</p>
+<h3 id="process_1">Process</h3>
+<p>Enabled with <code>context: process</code></p>
+<p>In process context, bare <code>list</code> shows available post-processing scripts. Use <code>list &lt;script&gt;</code> to show that script's arguments, defaults, and choices.<br />
+Script names match case-insensitively; spaces and underscores are interchangeable, for example <code>list nvidia_dlss</code>.<br />
+Use <code>set &lt;script&gt;:&lt;argument&gt; &lt;value&gt;</code>, <code>get &lt;script&gt;:&lt;argument&gt;</code>, and <code>clear &lt;script&gt;:&lt;argument&gt;</code> to manage script options.</p>
+<p>Commands <code>run</code>, <code>generate</code>, and <code>again</code> post-process selected images.<br />
+If no image is selected, process uses the latest available result image.<br />
+Uploaded images are selected when imported.<br />
+Use <code>image &lt;number[,number...]&gt;</code> to select one or more session images.  </p>
 <h3 id="prompt-writing">Prompt Writing</h3>
 <p>Chat composer includes syntax highlighting to improve readability and organization of prompts
 Normally, prompt should be set using <code>set prompt ...</code>, but to quickly provide a prompt inline, you can prefix it with <code>`</code>, <code>'</code>, <code>"</code> or <code>&gt;</code>; the leading marker will be removed when processing the prompt</p>
@@ -5151,7 +5236,7 @@ Or simply type those commands directly into the chat in a conversational manner 
     set width 960
     set height 1280
     set styles "Cycle Style"
-    set nvidia_dlss:dlss_operations=NeuralRender, SuperRes
+    set nvidia_dlss:dlss_enabled=NeuralRender, SuperRes
 
     # print active parameters
     set
@@ -5200,6 +5285,16 @@ Or simply type those commands directly into the chat in a conversational manner 
     prompt "change hair color to blonde"
     generate
 </code></pre></div>
+<h3 id="example-image-post-processing">Example: Image Post-processing</h3>
+<div class="highlight"><pre><span></span><code>    context process
+    image list
+    image 1,2
+    list
+    list upscale:upscaler
+    set upscale:upscaler "Spandrel 2x RealPLKSR AnimeSharpV2"
+    set nvidia_dlss:dlss_enabled NeuralRender
+    run
+</code></pre></div>
 <h2 id="settings">Settings</h2>
 <p>Chat has only the following settings:</p>
 <ul>
@@ -5228,10 +5323,8 @@ Or simply type those commands directly into the chat in a conversational manner 
 </ul>
 <h2 id="roadmap">Roadmap</h2>
 <ul>
-<li>Chat support for <strong>Scripts</strong> (extras)</li>
 <li>Chat support for <strong>Video</strong> workflow (<em>partially implemented</em>)  </li>
 <li>Chat support for <strong>Caption</strong> workflow  </li>
-<li>Chat support for <strong>Process</strong> workflow  </li>
 <li>Kanvas edit for images  </li>
 <li>Add <strong>OpenAI</strong> compatible API endpoints  </li>
 <li>Augment chat with <strong>LLM</strong> capabilities  </li>

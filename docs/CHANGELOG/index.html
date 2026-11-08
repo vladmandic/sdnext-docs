@@ -9901,9 +9901,10 @@
 <h2 id="update-for-2026-11-08">Update for 2026-11-08</h2>
 <ul>
 <li><strong>Chat</strong>: New top-level interface<br />
-  See <a href="https://vladmandic.github.io/sdnext-docs/Chat/">chat docs</a> for more details  </li>
-<li>Can be used as an interactive interface for generating and editing images through conversational prompts  </li>
-<li>Can also be used for advanced scripting and automation within SD.Next  </li>
+  See <a href="https://vladmandic.github.io/sdnext-docs/Chat/">chat docs</a> for more details as this is quite an extensive module  </li>
+<li>Can be used as an interactive interface for generating, editing and processing images and videos through conversational prompts  </li>
+<li>Can be used for advanced scripting and automation within SD.Next  </li>
+<li>Chat supports all <em>text2image, image2image, image-edit, processing workflows</em></li>
 <li>Allows for full control of SD.Next generation parameters and settings  </li>
 <li>Allows for persistent context across interactions  </li>
 <li><strong>Models</strong>:</li>
@@ -9947,29 +9948,36 @@
 <li>dlss: use video codec defaults, slow-motion output plays slower</li>
 <li>gallery: thumbnails and previews for webm, mkv, mov, avi and ts videos</li>
 <li>hdr: the 16-bit hdr image saves on windows paths with non-ascii characters</li>
+<li>ideogram: a text encoder that fails to move to the gpu goes back to the cpu instead of staying partly on the gpu</li>
 <li>ltx: <em>Tiny</em> live previews show the video instead of a placeholder</li>
 <li>ltx: tab passes no longer run with the previous job's guidance end, sigma adjust and correction settings</li>
 <li>minimax: quantized <em>H3</em> fix decode</li>
 <li>minimax: webm, mkv and ts files accepted as reference videos</li>
 <li>models: <em>FLUX.3</em>, <em>MiniMax-H3</em> and modular video models fail the load when a component the workflow requires does not load</li>
 <li>models: gated repo access check sends the token stored by <em>hf auth login</em></li>
+<li>models: unloading a model returns the host memory it freed to the system on linux</li>
 <li>namegen: prevent filename collisions</li>
 <li>namegen: sanitize and check length per path component</li>
 <li>namegen: add <code>opts</code>, <code>wildcards</code> as allowed templates</li>
 <li>offload: a job that fails inside the vae no longer leaves the vae on the gpu</li>
+<li>offload: <em>TeaCache</em> runs under block level group offload, <em>FramePack</em>'s first job after a load no longer fails with tensors on two devices</li>
 <li>preview: live previews of v-prediction models use the v-prediction estimate</li>
 <li>preview: live previews of video and <em>Qwen-Image 2.1</em> latents</li>
+<li>preview: remove <em>Tiny: decode layers</em>, which no longer changed the decoder and only enlarged <em>Tiny</em> previews; use <em>Micro</em> when <em>Tiny</em> is too heavy</li>
 <li>process: show why a video run failed, report a missing input video</li>
 <li>processing: a generation that fails reports <em>failed</em> with its error instead of <em>interrupted</em></li>
 <li>processing: hires on modular pipelines that take condition images (<em>FLUX.3 Klein</em>) runs at the hires size instead of the base size</li>
 <li>processing: negative prompt the pipeline takes no input for is reported once per job</li>
 <li>processing: text encoder failure fails the job with its own error instead of a misleading <em>not enough values to unpack</em> from the pipeline</li>
+<li>prompt: the prompt cache keys on every encode argument and skips calls with images, <em>Ideogram 4</em> no longer fails at a new size with the same prompt and edit models encode each new input image</li>
+<li>prompt: cached prompt encodings stay in system memory and follow <em>Text encoder cache size</em>, <em>Ideogram 4</em> no longer fills the gpu with one 1.2 GB entry per prompt until its text encoder fails to load</li>
 <li>samplers: <em>Euler SGM</em> and <em>DC Solver</em> use the model's prediction type</li>
 <li>save: <code>[datetime&lt;format&gt;]</code> and <code>[hasprompt&lt;...&gt;]</code> filename tokens apply args</li>
 <li>save: <em>Save metadata to JSON file</em> appends one line per image to a <code>jsonl</code></li>
 <li>save: an image save that fails no longer stops every later save</li>
 <li>settings: extension settings are checked once extensions add them, instead of reported as unknown at startup</li>
 <li>settings: a new data folder receives <em>config.json</em> and <em>secrets.json</em> on the first save</li>
+<li>settings: <em>Expandable segments</em> sets the allocator to expandable segments alone, large vae decodes no longer run out of memory or fail an allocator assert</li>
 <li>settings: improve settings parsing and validation to prevent corruption</li>
 <li>ui: refresh buttons call their method once per click</li>
 <li>xyz: a blank value after a trailing comma is dropped instead of <em>Search &amp; replace</em> inserting the replacement between every character of the prompt</li>
