@@ -9931,9 +9931,15 @@
 <li><code>bt.709</code> colour conversion with colour tags, fractional frame, clip rotation</li>
 <li><code>mkv</code> and <code>webm</code> frame counts read from each track</li>
 <li>ltx condition video: skipping frames keeps the first frame</li>
+<li><strong>Image</strong></li>
+<li>add support for AVIF and EXR image formats</li>
+<li>add HDR conversion support<br />
+<em>note</em>: HDR conversion requires compatible image format: <em>settings -&gt; media options -&gt; image file format</em><br />
+    supported: JPEG Gain Map, TIFF 16-bit, PNG with cICP, OpenEXR, AVIF, JPEG XL  </li>
 <li><strong>Torch</strong></li>
 <li>update cuda to <code>torch==2.15.0+cu132</code></li>
 <li>update rocm/linux to <code>torch==2.15.0+rocm10.0</code></li>
+<li>update rocm/windows to <code>torch==2.16.0a0+rocm10.3.0a20261109</code></li>
 <li><strong>Other</strong></li>
 <li>add env var <code>SD_STRICT</code> which will enable strict mode<br />
     in strict mode, read/parse/write errors will cause the application to exit immediately  </li>
@@ -9951,10 +9957,11 @@
 <li>api: ts video files served as <em>video/mp2t</em></li>
 <li>autocomplete: <em>Keep @ on artist insert</em> applies after a page reload</li>
 <li>dlss: use video codec defaults, slow-motion output plays slower</li>
+<li>dlss: re-apply original audio after video processing, thanks @resonantsky</li>
 <li>gallery: thumbnails and previews for webm, mkv, mov, avi and ts videos</li>
 <li>hdr: the 16-bit hdr image saves on windows paths with non-ascii characters</li>
 <li>ideogram: a text encoder that fails to move to the gpu goes back to the cpu instead of staying partly on the gpu</li>
-<li>lora: <em>LoRA auto-apply tags</em> reach the first batch, keep their metadata order and are added when a tag is part of the lora file name; a lora without tags adds nothing, and later batches no longer append a bare comma</li>
+<li>lora: <em>LoRA auto-apply tags</em> reach the first batch, keep their metadata order and are added when a tag is part of the lora file name</li>
 <li>ltx: <em>Tiny</em> live previews show the video instead of a placeholder</li>
 <li>ltx: tab passes no longer run with the previous job's guidance end, sigma adjust and correction settings</li>
 <li>minimax: quantized <em>H3</em> fix decode</li>
