@@ -2494,10 +2494,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#process" class="md-nav__link">
+  <a href="#context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Process
+        Context
       
     </span>
   </a>
@@ -2549,7 +2549,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#process_1" class="md-nav__link">
+  <a href="#process" class="md-nav__link">
     <span class="md-ellipsis">
       
         Process
@@ -2601,12 +2601,12 @@
   <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example:
+        Example
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Example:">
+    <nav class="md-nav" aria-label="Example">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4788,10 +4788,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#process" class="md-nav__link">
+  <a href="#context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Process
+        Context
       
     </span>
   </a>
@@ -4843,7 +4843,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#process_1" class="md-nav__link">
+  <a href="#process" class="md-nav__link">
     <span class="md-ellipsis">
       
         Process
@@ -4895,12 +4895,12 @@
   <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example:
+        Example
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Example:">
+    <nav class="md-nav" aria-label="Example">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5096,14 +5096,14 @@ But you can import settings from the UI into a chat session or export chat sessi
 <p>Import will only import settings that are set to non-default values in the UI</p>
 </div>
 <p>Run <code>set</code> to see exact values of all parameters that were imported from the UI</p>
-<p>For example:
+<p>For example:</p>
 <div class="highlight"><pre><span></span><code>    context=image
     model=mine/tempestByVlad_hyperV01 [4104fc6601]
     image.cfg_scale=2.0
     image.steps=6
     image.styles=['Fixed Astronaut']
     image.nvidia_dlss:dlss_enabled=['NeuralRender']
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="commands">Commands</h2>
 <p>Run <code>help</code> for a list of available chat commands and their usage<br />
 Prefix a command with <code>/</code> to show composer suggestions, for example <code>/</code> or <code>/help</code> or <code>/set</code><br />
@@ -5123,7 +5123,7 @@ For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint
 <li>snapshot save: Save the current settings as a snapshot and list saved snapshots</li>
 <li>snapshot <code>&lt;id&gt;</code>: Restore a saved settings snapshot by ID</li>
 </ul>
-<h3 id="process">Process</h3>
+<h3 id="context">Context</h3>
 <p>Choose a context and control active work</p>
 <ul>
 <li>context <code>&lt;value&gt;</code>: Select the active context  </li>
@@ -5173,7 +5173,7 @@ For example, <em>"model klein-9b"</em> will load <code>Flux.2-Klein-9B-sdnq-uint
 <p>For example, <code>list nvidia_dlss:dlss_enabled</code> shows valid choices for the <code>dlss_enabled</code> field of the <code>nvidia_dlss</code> script<br />
 And <code>set nvidia_dlss:dlss_enabled=NeuralRender, SuperRes</code> sets it to <code>NeuralRender</code> and <code>SuperRes</code></p>
 <p>The main and refine upscalers are also available as <code>upscale:upscaler</code> and <code>upscale:refiner</code> in process context. For example, use <code>list upscale:upscaler</code> to see valid choices and <code>set upscale:upscaler &lt;value&gt;</code> to choose one.</p>
-<h3 id="process_1">Process</h3>
+<h3 id="process">Process</h3>
 <p>Enabled with <code>context: process</code></p>
 <p>In process context, bare <code>list</code> shows available post-processing scripts. Use <code>list &lt;script&gt;</code> to show that script's arguments, defaults, and choices.<br />
 Script names match case-insensitively; spaces and underscores are interchangeable, for example <code>list nvidia_dlss</code>.<br />
@@ -5185,12 +5185,12 @@ Use <code>image &lt;number[,number...]&gt;</code> to select one or more session 
 <h3 id="prompt-writing">Prompt Writing</h3>
 <p>Chat composer includes syntax highlighting to improve readability and organization of prompts
 Normally, prompt should be set using <code>set prompt ...</code>, but to quickly provide a prompt inline, you can prefix it with <code>`</code>, <code>'</code>, <code>"</code> or <code>&gt;</code>; the leading marker will be removed when processing the prompt</p>
-<p>For example:
+<p>For example:</p>
 <div class="highlight"><pre><span></span><code>    ` A quick inline prompt example
     ' Another inline prompt example
     " Yet another inline prompt example
     &gt; And one more inline prompt example
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="global">Global</h3>
 <p>Read or change settings shared across sessions</p>
 <ul>
@@ -5207,7 +5207,7 @@ Normally, prompt should be set using <code>set prompt ...</code>, but to quickly
 <li>storage: Show storage usage  </li>
 <li>db: Compact the Chat database and show database statistics  </li>
 </ul>
-<h2 id="example">Example:</h2>
+<h2 id="example">Example</h2>
 <p><em>Example session commands</em></p>
 <p>Upload it to chat using "Attach file", drag &amp; drop, copy &amp; paste<br />
 Or Refer to the file by path for example: <code>file tmp/chat.txt</code><br />
@@ -5325,6 +5325,7 @@ Or simply type those commands directly into the chat in a conversational manner 
 <ul>
 <li>Chat support for <strong>Video</strong> workflow (<em>partially implemented</em>)  </li>
 <li>Chat support for <strong>Caption</strong> workflow  </li>
+<li>Chat support for <strong>Inpainting</strong> workflow</li>
 <li>Kanvas edit for images  </li>
 <li>Add <strong>OpenAI</strong> compatible API endpoints  </li>
 <li>Augment chat with <strong>LLM</strong> capabilities  </li>

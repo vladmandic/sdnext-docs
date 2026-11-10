@@ -4397,10 +4397,10 @@
 Expose <code>data</code> and <code>models</code> folder to the container for persistent storage</p>
 </div>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>sdnext<span class="w"> </span>--rm<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-p<span class="w"> </span><span class="m">7860</span>:7860<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-v<span class="w"> </span>sdnext-data:/mnt/data<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-v<span class="w"> </span>sdnext-models:/mnt/models<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>vladmandic/sdnext-cuda:latest
+<span class="w"> </span>-p<span class="w"> </span><span class="m">7860</span>:7860<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>-v<span class="w"> </span>sdnext-data:/mnt/data<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>-v<span class="w"> </span>sdnext-models:/mnt/models<span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>vladmandic/sdnext-cuda:latest
 </code></pre></div>
 <p>Open <a href="http://localhost:7860">http://localhost:7860</a>  </p>
 <p>See <a href="https://vladmandic.github.io/sdnext-docs/">Documentation</a>, <a href="https://github.com/vladmandic/sdnext/wiki/Docker">Docker guide</a>, <a href="https://vladmandic.github.io/sdnext-docs/Model-Support/">Supported models</a>, and the <a href="https://github.com/vladmandic/sdnext">Source Repository</a></p>
