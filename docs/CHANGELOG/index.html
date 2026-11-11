@@ -4364,10 +4364,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-10" class="md-nav__link">
+  <a href="#update-for-2026-11-11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-10
+        Update for 2026-11-11
       
     </span>
   </a>
@@ -7135,10 +7135,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-10" class="md-nav__link">
+  <a href="#update-for-2026-11-11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-10
+        Update for 2026-11-11
       
     </span>
   </a>
@@ -9898,7 +9898,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-11-10">Update for 2026-11-10</h2>
+<h2 id="update-for-2026-11-11">Update for 2026-11-11</h2>
 <ul>
 <li><strong>Chat</strong>: New top-level interface<br />
   See <a href="https://vladmandic.github.io/sdnext-docs/Chat/">chat docs</a> for more details as this is quite an extensive module  </li>
@@ -9908,6 +9908,10 @@
 <li>Allows for full control of SD.Next generation parameters and settings  </li>
 <li>Allows for persistent context across interactions  </li>
 <li><strong>Models</strong>:</li>
+<li><a href="https://huggingface.co/MiniMaxAI/MiniMax-H3-Image">MiniMax-H3-Image</a><br />
+    MiniMax-H3 33B transformer without audio layers, distilled to 6 steps without guidance, sharing the MiniMax-H3 text encoder<br />
+    text-to-image and editing with up to 16 reference images at 4 to 20 megapixels<br />
+    pre-quantized <a href="https://huggingface.co/SD-Next/MiniMax-H3-Image-SDNQ-uint4-svd-hadamard-dynamic">SDNQ uint4</a> variant available in quantized references  </li>
 <li><a href="https://huggingface.co/openvivo/BluePixel-Turbo">BluePixel-Turbo</a><br />
     BluePixel is retrained FLUX.2-Klein-9B with DCAE-F64 autoencoder and then distilled with four-step SATP<br />
     result is turbo-style 9B instruction-based image editing model with native 2K/4K outputs  </li>
@@ -9950,11 +9954,14 @@
     example: <code>{'t2i': True, 'i2i': False, 'inpaint': False, 'edit': True, 'video': False}</code>  </li>
 <li><strong>Internal</strong></li>
 <li>modernui css: use a build process for <code>/css</code> instead of monolithic single <code>style.css</code></li>
+<li>restructure <code>lint</code> workflows</li>
 <li><strong>Fixes</strong></li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> answer <em>500</em> with the error when the generation fails, instead of <em>200</em> with no images</li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>
 <li>api: failed video return 500 with the error instead of 499</li>
 <li>api: ts video files served as <em>video/mp2t</em></li>
+<li>live preview: <em>MiniMax-H3-Image</em> previews decode instead of logging an error per step</li>
+<li>live preview: <em>Full</em> preview no longer aborts a modular pipeline generation by offloading the transformer mid-denoise</li>
 <li>autocomplete: <em>Keep @ on artist insert</em> applies after a page reload</li>
 <li>dlss: use video codec defaults, slow-motion output plays slower</li>
 <li>dlss: re-apply original audio after video processing, thanks @resonantsky</li>
