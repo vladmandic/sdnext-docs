@@ -4364,10 +4364,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-11" class="md-nav__link">
+  <a href="#update-for-2026-11-13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-11
+        Update for 2026-11-13
       
     </span>
   </a>
@@ -7135,10 +7135,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-11" class="md-nav__link">
+  <a href="#update-for-2026-11-13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-11
+        Update for 2026-11-13
       
     </span>
   </a>
@@ -9898,7 +9898,7 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-11-11">Update for 2026-11-11</h2>
+<h2 id="update-for-2026-11-13">Update for 2026-11-13</h2>
 <ul>
 <li><strong>Chat</strong>: New top-level interface<br />
   See <a href="https://vladmandic.github.io/sdnext-docs/Chat/">chat docs</a> for more details as this is quite an extensive module  </li>
@@ -9943,7 +9943,7 @@
 <li><strong>Torch</strong></li>
 <li>update cuda to <code>torch==2.15.0+cu132</code></li>
 <li>update rocm/linux to <code>torch==2.15.0+rocm10.0</code></li>
-<li>update rocm/windows to <code>torch==2.16.0a0+rocm10.3.0a20261109</code></li>
+<li>lock rocm/windows to <code>2.12.0+rocm10.0.0</code> as newer versions have compatibility issues and/or missing components  </li>
 <li><strong>Other</strong></li>
 <li>add env var <code>SD_STRICT</code> which will enable strict mode<br />
     in strict mode, read/parse/write errors will cause the application to exit immediately  </li>
@@ -9960,6 +9960,7 @@
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>
 <li>api: failed video return 500 with the error instead of 499</li>
 <li>api: ts video files served as <em>video/mp2t</em></li>
+<li>installer: check minimum git version</li>
 <li>live preview: <em>MiniMax-H3-Image</em> previews decode instead of logging an error per step</li>
 <li>live preview: <em>Full</em> preview no longer aborts a modular pipeline generation by offloading the transformer mid-denoise</li>
 <li>autocomplete: <em>Keep @ on artist insert</em> applies after a page reload</li>
