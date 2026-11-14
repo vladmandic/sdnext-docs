@@ -9943,7 +9943,7 @@
 <li><strong>Torch</strong></li>
 <li>update cuda to <code>torch==2.15.0+cu132</code></li>
 <li>update rocm/linux to <code>torch==2.15.0+rocm10.0</code></li>
-<li>lock rocm/windows to <code>2.12.0+rocm10.0.0</code> as newer versions have compatibility issues and/or missing components  </li>
+<li>update rocm/windows to <code>torch==2.14.0+rocm10.1.0</code>  </li>
 <li><strong>Other</strong></li>
 <li>add env var <code>SD_STRICT</code> which will enable strict mode<br />
     in strict mode, read/parse/write errors will cause the application to exit immediately  </li>
@@ -9955,6 +9955,7 @@
 <li><strong>Internal</strong></li>
 <li>modernui css: use a build process for <code>/css</code> instead of monolithic single <code>style.css</code></li>
 <li>restructure <code>lint</code> workflows</li>
+<li>unify image save and metadata parsing between ui/cli/api  </li>
 <li><strong>Fixes</strong></li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> answer <em>500</em> with the error when the generation fails, instead of <em>200</em> with no images</li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>
