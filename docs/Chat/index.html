@@ -943,6 +943,8 @@
       
         
       
+        
+      
     
     
     
@@ -1115,6 +1117,34 @@
     
   
     HuggingFace Tokens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Model-Storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Storage
   
 
     
@@ -1504,6 +1534,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1591,7 +1627,7 @@
   <span class="md-ellipsis">
     
   
-    nVidia-CUDA
+    nVidia CUDA
   
 
     
@@ -1647,7 +1683,7 @@
   <span class="md-ellipsis">
     
   
-    Intel-ARC
+    Intel ARC
   
 
     
@@ -1675,7 +1711,63 @@
   <span class="md-ellipsis">
     
   
-    AMD-ROCm
+    AMD ROCm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AMD-ROCm-Linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD ROCm for Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AMD-ROCm-Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD ROCm for Windows
   
 
     
@@ -1703,7 +1795,7 @@
   <span class="md-ellipsis">
     
   
-    AMD-MIOpen
+    AMD MIOpen
   
 
     
@@ -1864,6 +1956,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Docker-CUDA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker-CUDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DirectML/" class="md-nav__link">
         
   
@@ -1902,6 +2022,8 @@
   
     
     
+      
+        
       
         
       
@@ -2302,6 +2424,34 @@
     
   
     LoRA Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Image-Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Formats
   
 
     
@@ -5101,8 +5251,8 @@ But you can import settings from the UI into a chat session or export chat sessi
     model=mine/tempestByVlad_hyperV01 [4104fc6601]
     image.cfg_scale=2.0
     image.steps=6
-    image.styles=['Fixed Astronaut']
-    image.nvidia_dlss:dlss_enabled=['NeuralRender']
+    image.styles=[&#39;Fixed Astronaut&#39;]
+    image.nvidia_dlss:dlss_enabled=[&#39;NeuralRender&#39;]
 </code></pre></div>
 <h2 id="commands">Commands</h2>
 <p>Run <code>help</code> for a list of available chat commands and their usage<br />
@@ -5187,8 +5337,8 @@ Use <code>image &lt;number[,number...]&gt;</code> to select one or more session 
 Normally, prompt should be set using <code>set prompt ...</code>, but to quickly provide a prompt inline, you can prefix it with <code>`</code>, <code>'</code>, <code>"</code> or <code>&gt;</code>; the leading marker will be removed when processing the prompt</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code>    ` A quick inline prompt example
-    ' Another inline prompt example
-    " Yet another inline prompt example
+    &#39; Another inline prompt example
+    &quot; Yet another inline prompt example
     &gt; And one more inline prompt example
 </code></pre></div>
 <h3 id="global">Global</h3>
@@ -5235,14 +5385,14 @@ Or simply type those commands directly into the chat in a conversational manner 
     set detailer_enabled true
     set width 960
     set height 1280
-    set styles "Cycle Style"
+    set styles &quot;Cycle Style&quot;
     set nvidia_dlss:dlss_enabled=NeuralRender, SuperRes
 
     # print active parameters
     set
 
     # set prompt
-    prompt "cute android on a futuristic city rooftop at sunset"
+    prompt &quot;cute android on a futuristic city rooftop at sunset&quot;
 
     # run generate
     run
@@ -5275,14 +5425,14 @@ Or simply type those commands directly into the chat in a conversational manner 
     image 1,2
 
     # set prompt
-    prompt "change the background in the first image to match the second image"
+    prompt &quot;change the background in the first image to match the second image&quot;
 
     # run generate
     generate
 
     # set result image as input image for further edits
     image reuse
-    prompt "change hair color to blonde"
+    prompt &quot;change hair color to blonde&quot;
     generate
 </code></pre></div>
 <h3 id="example-image-post-processing">Example: Image Post-processing</h3>
@@ -5291,7 +5441,7 @@ Or simply type those commands directly into the chat in a conversational manner 
     image 1,2
     list
     list upscale:upscaler
-    set upscale:upscaler "Spandrel 2x RealPLKSR AnimeSharpV2"
+    set upscale:upscaler &quot;Spandrel 2x RealPLKSR AnimeSharpV2&quot;
     set nvidia_dlss:dlss_enabled NeuralRender
     run
 </code></pre></div>

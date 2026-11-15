@@ -89,6 +89,7 @@ nav:
     - Model Specs: Models.md
     - Gated Access: Gated.md
     - HuggingFace Tokens: HuggingFace.md
+    - Model Storage: Model-Storage.md
     - StableDiffusion XL: SD-XL.md
     - StableDiffusion 3.x: SD3.md
     - StableCascade: Stable-Cascade.md
@@ -103,16 +104,19 @@ nav:
     - Google-GenAI: Google-GenAI.md
   - Platforms:
     - Overview: Platforms.md
-    - nVidia-CUDA: nVidia.md
+    - nVidia CUDA: nVidia.md
     - WSL: WSL.md
-    - Intel-ARC: Intel-ARC.md
-    - AMD-ROCm: AMD-ROCm.md
-    - AMD-MIOpen: AMD-MIOpen.md
+    - Intel ARC: Intel-ARC.md
+    - AMD ROCm: AMD-ROCm.md
+    - AMD ROCm for Linux: AMD-ROCm-Linux.md
+    - AMD ROCm for Windows: AMD-ROCm-Windows.md
+    - AMD MIOpen: AMD-MIOpen.md
     - ZLUDA: ZLUDA.md
     - OpenVINO: OpenVINO.md
     - ONNX & Olive: ONNX-Runtime.md
     - MacOS-Python: MacOS-Python.md
     - Docker: Docker.md
+    - Docker-CUDA: Docker-CUDA.md
     - DirectML: DirectML.md
   - Guides:
     - Getting Started: Getting-Started.md
@@ -126,6 +130,7 @@ nav:
     - Schedulers: Schedulers.md
     - Detailer Guide: Detailer.md
     - LoRA Guide: LoRA.md
+    - Image Formats: Image-Formats.md
     - Task Scheduler: Scheduler.md
     - Chat Interface: Chat.md
     - Control Guide: Control-HowTo.md

@@ -54,6 +54,6 @@ cd ..
 
 # build docs
 echo "Build"
-mkdocs build
+NO_MKDOCS_2_WARNING=1 PYTHONWARNINGS="ignore::DeprecationWarning" mkdocs build
 
 echo "Done"

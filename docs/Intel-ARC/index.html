@@ -27,7 +27,7 @@
     
     
       
-        <title>Intel-ARC - SD.Next Documentation</title>
+        <title>Intel ARC - SD.Next Documentation</title>
       
     
     
@@ -63,7 +63,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Intel-ARC - SD.Next Documentation" />
+<meta property="og:title" content="Intel ARC - SD.Next Documentation" />
 <meta property="og:description" content="SD.Next Documentation" />
 <meta property="og:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Intel-ARC.png" />
 <meta property="og:image:type" content="image/png" />
@@ -71,7 +71,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://vladmandic.github.io/sdnext-docs/Intel-ARC/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Intel-ARC - SD.Next Documentation" />
+<meta property="twitter:title" content="Intel ARC - SD.Next Documentation" />
 <meta property="twitter:description" content="SD.Next Documentation" />
 <meta property="twitter:image" content="https://vladmandic.github.io/sdnext-docs/assets/images/social/Intel-ARC.png" />
 </head>
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intel-ARC
+              Intel ARC
             
           </span>
         </div>
@@ -943,6 +943,8 @@
       
         
       
+        
+      
     
     
     
@@ -1115,6 +1117,34 @@
     
   
     HuggingFace Tokens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Model-Storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Storage
   
 
     
@@ -1506,6 +1536,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1596,7 +1632,7 @@
   <span class="md-ellipsis">
     
   
-    nVidia-CUDA
+    nVidia CUDA
   
 
     
@@ -1661,7 +1697,7 @@
   <span class="md-ellipsis">
     
   
-    Intel-ARC
+    Intel ARC
   
 
     
@@ -1679,7 +1715,7 @@
   <span class="md-ellipsis">
     
   
-    Intel-ARC
+    Intel ARC
   
 
     
@@ -1838,7 +1874,63 @@
   <span class="md-ellipsis">
     
   
-    AMD-ROCm
+    AMD ROCm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AMD-ROCm-Linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD ROCm for Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AMD-ROCm-Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD ROCm for Windows
   
 
     
@@ -1866,7 +1958,7 @@
   <span class="md-ellipsis">
     
   
-    AMD-MIOpen
+    AMD MIOpen
   
 
     
@@ -2027,6 +2119,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Docker-CUDA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker-CUDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DirectML/" class="md-nav__link">
         
   
@@ -2063,6 +2183,8 @@
   
     
     
+      
+        
       
         
       
@@ -2460,6 +2582,34 @@
     
   
     LoRA Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Image-Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Formats
   
 
     
@@ -4684,7 +4834,7 @@ Install the base packages:</p>
 </code></pre></div>
 <p>Add the package lists for Intel Level Zero Drivers:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO<span class="w"> </span>-<span class="w"> </span>https://repositories.intel.com/gpu/intel-graphics.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--yes<span class="w"> </span>--dearmor<span class="w"> </span>--output<span class="w"> </span>/usr/share/keyrings/intel-graphics.gpg
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu noble client"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/intel-gpu-noble.list
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=amd64,i386 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu noble client&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/intel-gpu-noble.list
 sudo<span class="w"> </span>apt<span class="w"> </span>update
 </code></pre></div>
 <p>Install the Intel Level Zero Drivers and the packages needed for PyTorch:</p>
@@ -4810,13 +4960,13 @@ Resulting docker image will use 1.1 GB disk space (uncompressed) for the docker 
         
         
           
-          <a href="../AMD-ROCm/" class="md-footer__link md-footer__link--next" aria-label="Next: AMD-ROCm">
+          <a href="../AMD-ROCm/" class="md-footer__link md-footer__link--next" aria-label="Next: AMD ROCm">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                AMD-ROCm
+                AMD ROCm
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -943,6 +943,8 @@
       
         
       
+        
+      
     
     
     
@@ -1115,6 +1117,34 @@
     
   
     HuggingFace Tokens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Model-Storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Storage
   
 
     
@@ -1504,6 +1534,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1591,7 +1627,7 @@
   <span class="md-ellipsis">
     
   
-    nVidia-CUDA
+    nVidia CUDA
   
 
     
@@ -1647,7 +1683,7 @@
   <span class="md-ellipsis">
     
   
-    Intel-ARC
+    Intel ARC
   
 
     
@@ -1675,7 +1711,63 @@
   <span class="md-ellipsis">
     
   
-    AMD-ROCm
+    AMD ROCm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AMD-ROCm-Linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD ROCm for Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AMD-ROCm-Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD ROCm for Windows
   
 
     
@@ -1703,7 +1795,7 @@
   <span class="md-ellipsis">
     
   
-    AMD-MIOpen
+    AMD MIOpen
   
 
     
@@ -1864,6 +1956,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Docker-CUDA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker-CUDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DirectML/" class="md-nav__link">
         
   
@@ -1902,6 +2022,8 @@
   
     
     
+      
+        
       
         
       
@@ -2302,6 +2424,34 @@
     
   
     LoRA Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Image-Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Formats
   
 
     
@@ -4644,20 +4794,20 @@
 <h3 id="language-check">Language Check</h3>
 <p>If <strong>Check language</strong> is enabled, NudeNet uses <code>facebook/fasttext-language-identification</code> to check whether a prompt uses an allowed language and alphabet.
 For example:</p>
-<div class="highlight"><pre><span></span><code>LangDetect: ['eng_latn:0.83']
+<div class="highlight"><pre><span></span><code>LangDetect: [&#39;eng_latn:0.83&#39;]
 </code></pre></div>
 <p>This means the detected language is English using the Latin alphabet with 83% confidence.</p>
 <h3 id="image-guard">Image-Guard</h3>
 <p>If <strong>Policy check</strong> is enabled, NudeNet uses <code>LlavaGuard</code> VLM to check whether an image violates policy and why.
 For example:</p>
-<div class="highlight"><pre><span></span><code>'rating': 'Unsafe',
-'category': 'O3: Sexual Content',
-'rationale': 'The image contains a woman with her body covered in paint splatters, which is considered sexually explicit content. This type of content is not allowed on our platform as it violates our policy against sexually explicit content. The image is not educational in nature and does not provide information on sexuality or sexual education. It is simply a depiction of a woman in a provocative pose, which is not appropriate for our platform.'
+<div class="highlight"><pre><span></span><code>&#39;rating&#39;: &#39;Unsafe&#39;,
+&#39;category&#39;: &#39;O3: Sexual Content&#39;,
+&#39;rationale&#39;: &#39;The image contains a woman with her body covered in paint splatters, which is considered sexually explicit content. This type of content is not allowed on our platform as it violates our policy against sexually explicit content. The image is not educational in nature and does not provide information on sexuality or sexual education. It is simply a depiction of a woman in a provocative pose, which is not appropriate for our platform.&#39;
 </code></pre></div>
 <h3 id="banned-words">Banned Words</h3>
 <p>If <strong>Banned words</strong> check is enabled, NudeNet uses <code>regex</code> to check prompt variations for banned words or expressions.
 For example:</p>
-<div class="highlight"><pre><span></span><code>BannedWords: ['naked']
+<div class="highlight"><pre><span></span><code>BannedWords: [&#39;naked&#39;]
 </code></pre></div>
 <h2 id="settings">Settings</h2>
 <p>Settings are straightforward and self-explanatory.</p>
