@@ -5251,8 +5251,8 @@ But you can import settings from the UI into a chat session or export chat sessi
     model=mine/tempestByVlad_hyperV01 [4104fc6601]
     image.cfg_scale=2.0
     image.steps=6
-    image.styles=[&#39;Fixed Astronaut&#39;]
-    image.nvidia_dlss:dlss_enabled=[&#39;NeuralRender&#39;]
+    image.styles=['Fixed Astronaut']
+    image.nvidia_dlss:dlss_enabled=['NeuralRender']
 </code></pre></div>
 <h2 id="commands">Commands</h2>
 <p>Run <code>help</code> for a list of available chat commands and their usage<br />
@@ -5337,8 +5337,8 @@ Use <code>image &lt;number[,number...]&gt;</code> to select one or more session 
 Normally, prompt should be set using <code>set prompt ...</code>, but to quickly provide a prompt inline, you can prefix it with <code>`</code>, <code>'</code>, <code>"</code> or <code>&gt;</code>; the leading marker will be removed when processing the prompt</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code>    ` A quick inline prompt example
-    &#39; Another inline prompt example
-    &quot; Yet another inline prompt example
+    ' Another inline prompt example
+    " Yet another inline prompt example
     &gt; And one more inline prompt example
 </code></pre></div>
 <h3 id="global">Global</h3>
@@ -5385,14 +5385,14 @@ Or simply type those commands directly into the chat in a conversational manner 
     set detailer_enabled true
     set width 960
     set height 1280
-    set styles &quot;Cycle Style&quot;
+    set styles "Cycle Style"
     set nvidia_dlss:dlss_enabled=NeuralRender, SuperRes
 
     # print active parameters
     set
 
     # set prompt
-    prompt &quot;cute android on a futuristic city rooftop at sunset&quot;
+    prompt "cute android on a futuristic city rooftop at sunset"
 
     # run generate
     run
@@ -5425,14 +5425,14 @@ Or simply type those commands directly into the chat in a conversational manner 
     image 1,2
 
     # set prompt
-    prompt &quot;change the background in the first image to match the second image&quot;
+    prompt "change the background in the first image to match the second image"
 
     # run generate
     generate
 
     # set result image as input image for further edits
     image reuse
-    prompt &quot;change hair color to blonde&quot;
+    prompt "change hair color to blonde"
     generate
 </code></pre></div>
 <h3 id="example-image-post-processing">Example: Image Post-processing</h3>
@@ -5441,7 +5441,7 @@ Or simply type those commands directly into the chat in a conversational manner 
     image 1,2
     list
     list upscale:upscaler
-    set upscale:upscaler &quot;Spandrel 2x RealPLKSR AnimeSharpV2&quot;
+    set upscale:upscaler "Spandrel 2x RealPLKSR AnimeSharpV2"
     set nvidia_dlss:dlss_enabled NeuralRender
     run
 </code></pre></div>
