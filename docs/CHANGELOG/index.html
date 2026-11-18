@@ -4514,13 +4514,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-16" class="md-nav__link">
+  <a href="#update-for-2026-11-18" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-16
+        Update for 2026-11-18
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2026-11-18">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2026-11-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2026-11-18
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2026-11-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details for 2026-11-18
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7285,13 +7313,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-16" class="md-nav__link">
+  <a href="#update-for-2026-11-18" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-16
+        Update for 2026-11-18
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Update for 2026-11-18">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights-for-2026-11-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights for 2026-11-18
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-for-2026-11-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details for 2026-11-18
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -10048,13 +10104,30 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-11-16">Update for 2026-11-16</h2>
+<h2 id="update-for-2026-11-18">Update for 2026-11-18</h2>
+<h3 id="highlights-for-2026-11-18">Highlights for 2026-11-18</h3>
+<p>Slightly longer release cycle resulted in quite large set of updates:
+- New top-level interface: <a href="https://vladmandic.github.io/sdnext-docs/Chat/">Chat</a>!<br />
+  Allows both interactive and automated conversational workflows for generating, editing, and processing images and videos<br />
+- New models: <strong>MiniMax-H3-Image</strong>, <strong>BluePixel-Turbo</strong>
+- Larger updates to:
+  - <a href="https://github.com/vladmandic/sdnext-launcher">SD.Next Launcher</a>
+  - <strong>Detailer</strong> (add <em>LocateAnything</em> model), <strong>Prompt-Enhance</strong> and <strong>Script-Mode</strong> (improvements plus add <em>Granite</em> model)
+  - <strong>Video encoding</strong>, including codec improvements, color-space handling and overall quality
+- Plus tons of minor improvements and bug fixes<br />
+  For example, improved <em>offline</em> mode, <em>hf mirror</em> handling, <em>model storage</em> consolidation, new <em>strict mode</em>, <em>image metadata</em> handling, new <em>image formats</em>, etc.  </p>
+<p>From <strong>user docs</strong> side, check out rewritten <a href="https://vladmandic.github.io/sdnext-docs/AMD-ROCm">AMD ROCm</a> guide, new <a href="https://vladmandic.github.io/sdnext-docs/Model-Storage">Model Storage</a> notes<br />
+And for <strong>AI docs</strong>, see <a href="https://github.com/vladmandic/sdnext/blob/dev/AGENTS.md">instructions</a> and <a href="https://github.com/vladmandic/sdnext/blob/dev/.github/skills/README.md">skills</a>  </p>
+<p>Plus <a href="https://github.com/vladmandic/sdnext/blob/dev/CHANGELOG.md">changelog</a> below for full details...</p>
+<p><a href="https://vladmandic.github.io/sdnext/">Home</a> | <a href="https://github.com/vladmandic/sdnext/blob/dev/CHANGELOG.md">ChangeLog</a> | <a href="https://vladmandic.github.io/sdnext-docs/">Docs</a> | <a href="https://discord.com/invite/sd-next-federal-batch-inspectors-1101998836328697867">Discord</a> | <a href="https://github.com/sponsors/vladmandic">Sponsor</a>  </p>
+<h3 id="details-for-2026-11-18">Details for 2026-11-18</h3>
 <ul>
 <li><a href="https://vladmandic.github.io/sdnext-docs/Chat/">Chat</a>: New top-level interface<br />
   See <a href="https://vladmandic.github.io/sdnext-docs/Chat/">chat docs</a> for more details as this is quite an extensive module  </li>
 <li>Can be used as an interactive interface for generating, editing and processing images and videos through conversational prompts  </li>
 <li>Can be used for advanced scripting and automation within SD.Next  </li>
-<li>Chat supports all <em>text2image, image2image, image-edit, processing workflows</em></li>
+<li>Chat supports all <em>text2image, image2image, image-edit, processing</em> workflows  </li>
+<li>Chat supports limited <em>video</em> workflows  </li>
 <li>Allows for full control of SD.Next generation parameters and settings  </li>
 <li>Allows for persistent context across interactions  </li>
 <li><strong>Models</strong>:</li>
@@ -10098,6 +10171,7 @@
 <li>add HDR conversion support<br />
 <em>note</em>: HDR conversion requires compatible image format: <em>settings -&gt; media options -&gt; image file format</em><br />
     supported: JPEG Gain Map, TIFF 16-bit, PNG with cICP, OpenEXR, AVIF, JPEG XL  </li>
+<li>hdr: conversion step for callers that save their own outputs, returns the written file or the reason nothing is written  </li>
 <li><strong>Torch</strong></li>
 <li>update cuda to <code>torch==2.15.0+cu132</code></li>
 <li>update rocm/linux to <code>torch==2.15.0+rocm10.0</code></li>
@@ -10109,15 +10183,22 @@
 <li>rewritten <a href="https://vladmandic.github.io/sdnext-docs/AMD-ROCm-Windows">AMD ROCm for Windows</a></li>
 <li>rewritten <a href="https://vladmandic.github.io/sdnext-docs/AMD-ROCm-Linux">AMD ROCm for Linux</a></li>
 <li><strong>Other</strong></li>
-<li>updates to <em>prompt enhance</em> and <em>story mode</em><br />
+<li>stricter <strong>offline mode</strong> enforcement<br />
+    set via <em>settings -&gt; model loading</em> or via cmd arg <code>--offline</code><br />
+    offline mode now disables <em>reference</em> models and also applies to <em>auxiliary</em> models  </li>
+<li>updates to <strong>prompt enhance</strong> and <strong>story mode</strong><br />
     including new <a href="https://huggingface.co/ibm-granite/granite-4.2-3b">ibm-granite-4.2</a> model support  </li>
-<li>improved handling of HuggingFace mirror settings
+<li>updates to <strong>detailer</strong><br />
+    add support for <a href="https://huggingface.co/nvidia/LocateAnything-3B">https://huggingface.co/nvidia/LocateAnything-3B</a><br />
+<em>hint</em>: add <em>locate</em> or <em>detect</em> before specifying object(s) to find  </li>
+<li>improved handling of <strong>HuggingFace mirror</strong> settings
     <em>note</em>: <code>hf-mirror.com</code> does not actually mirror entire huggingface, only some<br />
     the rest are redirected back to <code>huggingface.co</code> which is still under standard access control operations  </li>
-<li>log model capabilities on load<br />
+<li>log <strong>model capabilities</strong> on load<br />
     example: <code>{'t2i': True, 'i2i': False, 'inpaint': False, 'edit': True, 'video': False}</code>  </li>
 <li>add env var <code>SD_STRICT</code> which will enable strict mode<br />
     in strict mode, read/parse/write errors will cause the application to exit immediately  </li>
+<li>networks <strong>UNet/DiT</strong> has been renamed to <strong>Finetune</strong></li>
 <li><strong>Internal</strong></li>
 <li>modernui css: use a build process for <code>/css</code> instead of monolithic single <code>style.css</code></li>
 <li>restructure <code>lint</code> workflows</li>
@@ -10138,6 +10219,7 @@
 <li>hdr: the 16-bit hdr image saves on windows paths with non-ascii characters</li>
 <li>ideogram: a text encoder that fails to move to the gpu goes back to the cpu instead of staying partly on the gpu</li>
 <li>lora: <em>LoRA auto-apply tags</em> reach the first batch, keep their metadata order and are added when a tag is part of the lora file name</li>
+<li>lora: <em>LoRA force reload always</em> with native fuse no longer removes the lora twice per batch, which pushed every later image further from the lora</li>
 <li>ltx: <em>Tiny</em> live previews show the video instead of a placeholder</li>
 <li>ltx: tab passes no longer run with the previous job's guidance end, sigma adjust and correction settings</li>
 <li>minimax: quantized <em>H3</em> fix decode</li>
@@ -11589,7 +11671,7 @@ Just how big? Some stats: <em>~530 commits over 880 files</em>  </p>
     you can re-enable them in <em>settings -&gt; ui -&gt; hide legacy tabs</em>  </li>
 <li>new panel: <strong>Server Info</strong> with detailed runtime information  </li>
 <li>rename <strong>Scripts</strong> to <strong>Extras</strong> and reorganize to split internal functionality vs external extensions  </li>
-<li><strong>Networks</strong> add <strong>UNet/DiT</strong>  </li>
+<li><strong>Networks</strong> add <strong>Finetune</strong>  </li>
 <li><strong>Localization</strong> improved translation quality and new translations locales:<br />
 <em>en, en1, en2, en3, en4, hr, es, it, fr, de, pt, ru, zh, ja, ko, hi, ar, bn, ur, id, vi, tr, sr, po, he, xx, yy, qq, tlh</em><br />
     yes, this now includes stuff like <em>latin, esperanto, arabic, hebrew, klingon</em> and a lot more!<br />

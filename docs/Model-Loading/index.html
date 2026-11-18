@@ -4851,11 +4851,12 @@ You can change this path in <strong>Settings → Paths</strong></p>
 <p>Always load the reference base model first, then load the finetune on top of it</p>
 </div>
 <p>A finetune is usually NOT a complete standalone model<br />
-It modifies a single component of the base model (typically, the <em>transformer</em> component), so the full base model and its standard components (for example, the <em>VAE</em> and <em>text encoder</em>) must be loaded first  </p>
+It modifies a single component of the base model (typically, the <em>transformer</em> component),<br />
+so the full base model and its standard components (for example, the <em>VAE</em> and <em>text encoder</em>) must be loaded first  </p>
 <p>To load a finetune:</p>
 <ol>
 <li>Load the reference base model from the <strong>Networks → Model</strong> panel  </li>
-<li>Select the finetune model in <strong>Networks → UNET</strong> panel  </li>
+<li>Select the finetune model in <strong>Networks → Finetune</strong> panel  </li>
 </ol>
 <h3 id="loading-via-settings">Loading via Settings</h3>
 <p>You can also configure base and finetune models in <strong>Settings → Model Loading</strong>.</p>
