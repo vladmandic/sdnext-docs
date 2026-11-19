@@ -10220,6 +10220,12 @@ And for <strong>AI docs</strong>, see <a href="https://github.com/vladmandic/sdn
 <li>ideogram: a text encoder that fails to move to the gpu goes back to the cpu instead of staying partly on the gpu</li>
 <li>lora: <em>LoRA auto-apply tags</em> reach the first batch, keep their metadata order and are added when a tag is part of the lora file name</li>
 <li>lora: <em>LoRA force reload always</em> with native fuse no longer removes the lora twice per batch, which pushed every later image further from the lora</li>
+<li>lora: <em>LoRA force reload always</em> with native fuse off keeps the auto-apply tags and the lora metadata on every job, not only the first</li>
+<li>lora: a lora used with <em>LoRA force reload always</em> is applied again when the next job runs without the option, instead of only being reported</li>
+<li>dlss: batch images keep their own seed and prompt in saved metadata, resize and grading are no longer applied twice, the grid is not saved as an extra image</li>
+<li>scripts: <em>Prompt matrix</em> runs again instead of failing with an index error before generating</li>
+<li>control: image metadata is no longer shifted by one when a grid leads the returned images</li>
+<li>dlss: the returned grid is no longer enhanced as an extra frame and matches the saved grid</li>
 <li>ltx: <em>Tiny</em> live previews show the video instead of a placeholder</li>
 <li>ltx: tab passes no longer run with the previous job's guidance end, sigma adjust and correction settings</li>
 <li>minimax: quantized <em>H3</em> fix decode</li>
