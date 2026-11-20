@@ -4514,22 +4514,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-19" class="md-nav__link">
+  <a href="#update-for-2026-11-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-19
+        Update for 2026-11-20
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-11-19">
+    <nav class="md-nav" aria-label="Update for 2026-11-20">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-11-19" class="md-nav__link">
+  <a href="#highlights-for-2026-11-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-11-19
+        Highlights for 2026-11-20
       
     </span>
   </a>
@@ -7313,22 +7313,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-19" class="md-nav__link">
+  <a href="#update-for-2026-11-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-19
+        Update for 2026-11-20
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-11-19">
+    <nav class="md-nav" aria-label="Update for 2026-11-20">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-11-19" class="md-nav__link">
+  <a href="#highlights-for-2026-11-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-11-19
+        Highlights for 2026-11-20
       
     </span>
   </a>
@@ -10104,15 +10104,16 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-11-19">Update for 2026-11-19</h2>
-<h3 id="highlights-for-2026-11-19">Highlights for 2026-11-19</h3>
+<h2 id="update-for-2026-11-20">Update for 2026-11-20</h2>
+<h3 id="highlights-for-2026-11-20">Highlights for 2026-11-20</h3>
 <p>Slightly longer release cycle resulted in quite large set of updates:
 - New top-level interface: <a href="https://vladmandic.github.io/sdnext-docs/Chat/">Chat</a>!<br />
   Allows both interactive and automated (scripted) conversational workflows for generating, editing, and processing images and videos<br />
 - New models: <strong>MiniMax-H3-Image</strong>, <strong>BluePixel-Turbo</strong>
 - Larger updates to:
   - <a href="https://github.com/vladmandic/sdnext-launcher">SD.Next Launcher</a>
-  - <strong>Detailer</strong> (add <em>LocateAnything</em> model), <strong>Prompt-Enhance</strong> and <strong>Script-Mode</strong> (improvements plus add <em>Granite</em> model)
+  - New <strong>Watermark</strong> module
+  - <strong>Detailer</strong> (add <em>LocateAnything</em> model), <strong>Prompt-Enhance</strong> and <strong>Script-Mode</strong> (improvements plus add <em>Granite</em> model), <strong>Remove Background</strong> (postprocessing mode)
   - <strong>Video encoding</strong>, including codec improvements, color-space handling and overall quality
 - Plus tons of minor improvements and bug fixes<br />
   For example, improved <em>offline</em> mode, <em>hf mirror</em> handling, <em>model storage</em> consolidation, new <em>strict mode</em>, <em>image metadata</em> handling, new <em>image formats</em>, etc.  </p>
@@ -10168,10 +10169,17 @@ And for <strong>AI docs</strong>, see <a href="https://github.com/vladmandic/sdn
 <li><strong>Image</strong></li>
 <li>add support for <code>AVIF</code> and <code>EXR</code> image formats</li>
 <li>improve metadata handling for all advanced image formats</li>
-<li>add HDR conversion support<br />
+<li>hdr: conversion step for callers that save their own outputs, returns the written file or the reason nothing is written  </li>
+<li><strong>Scripts/Postprocessing</strong></li>
+<li>new <strong>Watermark</strong> processing and post-processing workflow<br />
+    adds <em>mask, scale, opacity, padding</em> options, compatible with both images and videos<br />
+    add <code>cli/api-watermark.py</code> as command-line interface and example for watermark processing using api  </li>
+<li>updates to <strong>Prompt enhance</strong> and <strong>Story mode</strong><br />
+    including new <a href="https://huggingface.co/ibm-granite/granite-4.2-3b">ibm-granite-4.2</a> model support  </li>
+<li>allow <strong>Remove background</strong> as post-processing task</li>
+<li>add <strong>HDR convert</strong> process-task which converts regular SDR image to HDR<br />
 <em>note</em>: HDR conversion requires compatible image format: <em>settings -&gt; media options -&gt; image file format</em><br />
     supported: JPEG Gain Map, TIFF 16-bit, PNG with cICP, OpenEXR, AVIF, JPEG XL  </li>
-<li>hdr: conversion step for callers that save their own outputs, returns the written file or the reason nothing is written  </li>
 <li><strong>Torch</strong></li>
 <li>update cuda to <code>torch==2.15.0+cu132</code></li>
 <li>update rocm/linux to <code>torch==2.15.0+rocm10.0</code></li>
@@ -10186,8 +10194,6 @@ And for <strong>AI docs</strong>, see <a href="https://github.com/vladmandic/sdn
 <li>stricter <strong>offline mode</strong> enforcement<br />
     set via <em>settings -&gt; model loading</em> or via cmd arg <code>--offline</code><br />
     offline mode now disables <em>reference</em> models and also applies to <em>auxiliary</em> models  </li>
-<li>updates to <strong>prompt enhance</strong> and <strong>story mode</strong><br />
-    including new <a href="https://huggingface.co/ibm-granite/granite-4.2-3b">ibm-granite-4.2</a> model support  </li>
 <li>updates to <strong>detailer</strong><br />
     add support for <a href="https://huggingface.co/nvidia/LocateAnything-3B">https://huggingface.co/nvidia/LocateAnything-3B</a><br />
 <em>hint</em>: add <em>locate</em> or <em>detect</em> before specifying object(s) to find  </li>
@@ -10213,6 +10219,7 @@ And for <strong>AI docs</strong>, see <a href="https://github.com/vladmandic/sdn
 <li>live preview: <em>MiniMax-H3-Image</em> previews decode instead of logging an error per step</li>
 <li>live preview: <em>Full</em> preview no longer aborts a modular pipeline generation by offloading the transformer mid-denoise</li>
 <li>autocomplete: <em>Keep @ on artist insert</em> applies after a page reload</li>
+<li>cloud: update google veo and omni endpoints</li>
 <li>dlss: use video codec defaults, slow-motion output plays slower</li>
 <li>dlss: re-apply original audio after video processing, thanks @resonantsky</li>
 <li>gallery: thumbnails and previews for webm, mkv, mov, avi and ts videos</li>
