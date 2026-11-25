@@ -4514,22 +4514,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-23" class="md-nav__link">
+  <a href="#update-for-2026-11-25" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-23
+        Update for 2026-11-25
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-11-23">
+    <nav class="md-nav" aria-label="Update for 2026-11-25">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-11-23" class="md-nav__link">
+  <a href="#highlights-for-2026-11-25" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-11-23
+        Highlights for 2026-11-25
       
     </span>
   </a>
@@ -7313,22 +7313,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#update-for-2026-11-23" class="md-nav__link">
+  <a href="#update-for-2026-11-25" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update for 2026-11-23
+        Update for 2026-11-25
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Update for 2026-11-23">
+    <nav class="md-nav" aria-label="Update for 2026-11-25">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#highlights-for-2026-11-23" class="md-nav__link">
+  <a href="#highlights-for-2026-11-25" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights for 2026-11-23
+        Highlights for 2026-11-25
       
     </span>
   </a>
@@ -10104,8 +10104,8 @@
 
 
 <h1 id="change-log-for-sdnext">Change Log for SD.Next</h1>
-<h2 id="update-for-2026-11-23">Update for 2026-11-23</h2>
-<h3 id="highlights-for-2026-11-23">Highlights for 2026-11-23</h3>
+<h2 id="update-for-2026-11-25">Update for 2026-11-25</h2>
+<h3 id="highlights-for-2026-11-25">Highlights for 2026-11-25</h3>
 <p>Slightly longer release cycle resulted in quite large set of updates:
 - New top-level interface: <a href="https://vladmandic.github.io/sdnext-docs/Chat/">Chat</a>!<br />
   Allows both interactive and automated (scripted) conversational workflows for generating, editing, and processing images and videos<br />
@@ -10115,8 +10115,9 @@
   - New <strong>Watermark</strong> module for both images and videos
   - <strong>Detailer</strong> (add <em>LocateAnything</em> model), <strong>Story-Mode</strong> (story style guidance, per-frame prompting), <strong>Remove Background</strong> (postprocessing mode)
   - <strong>Video encoding</strong>, including codec improvements, color-space handling and overall quality
+  - <strong>Offloading</strong> improvements (pinning, streams, etc.)<br />
 - Plus tons of minor improvements and bug fixes<br />
-  For example, improved <em>offline</em> mode, <em>hf mirror</em> handling, <em>model storage</em> consolidation, new <em>strict mode</em>, <em>image metadata</em> handling, new <em>image formats</em>, additional <em>prompt enhance</em> models, etc.  </p>
+  For example, faster server startup, improved <em>offline</em> mode, <em>hf mirror</em> handling, <em>model storage</em> consolidation, new <em>strict mode</em>, <em>image metadata</em> handling, new <em>image formats</em>, additional <em>prompt enhance</em> models, etc.  </p>
 <p>From <strong>user docs</strong> side, check out rewritten <a href="https://vladmandic.github.io/sdnext-docs/AMD-ROCm">AMD ROCm</a> guide, new <a href="https://vladmandic.github.io/sdnext-docs/Model-Storage">Model Storage</a> notes<br />
 And for <strong>AI docs</strong>, see <a href="https://github.com/vladmandic/sdnext/blob/dev/AGENTS.md">instructions</a> and <a href="https://github.com/vladmandic/sdnext/blob/dev/.github/skills/README.md">skills</a>  </p>
 <p>Plus <a href="https://github.com/vladmandic/sdnext/blob/dev/CHANGELOG.md">changelog</a> below for full details...</p>
@@ -10195,6 +10196,17 @@ And for <strong>AI docs</strong>, see <a href="https://github.com/vladmandic/sdn
 <li>rewritten <a href="https://vladmandic.github.io/sdnext-docs/AMD-ROCm">AMD ROCm</a></li>
 <li>rewritten <a href="https://vladmandic.github.io/sdnext-docs/AMD-ROCm-Windows">AMD ROCm for Windows</a></li>
 <li>rewritten <a href="https://vladmandic.github.io/sdnext-docs/AMD-ROCm-Linux">AMD ROCm for Linux</a></li>
+<li><strong>Model Offloading</strong></li>
+<li>balanced offload now considers vram available to sdnext, not total gpu vram</li>
+<li>new pinned offload option<br />
+    instead of running onload (cpu-to-gpu) and offload (gpu-to-cpu),<br />
+    it keeps cpu-resident tensors and runs onload-only with gpu-copy dispose instead of offload<br />
+    uses slightly more system ram (e.g. 1gb on krea2), but eliminates the need for offload operations<br />
+<em>settings -&gt; model offloading -&gt; pin offload memory</em>  </li>
+<li>configurable use of non-blocking moves<br />
+<em>settings -&gt; model offloading -&gt; non-blocking move operations</em>  </li>
+<li>improved use of torch-streams<br />
+<em>settings -&gt; model offloading -&gt; Offload using streams</em>  </li>
 <li><strong>Other</strong></li>
 <li>stricter <strong>offline mode</strong> enforcement<br />
     set via <em>settings -&gt; model loading</em> or via cmd arg <code>--offline</code><br />
@@ -10215,7 +10227,8 @@ And for <strong>AI docs</strong>, see <a href="https://github.com/vladmandic/sdn
 <li>restructure <code>lint</code> workflows</li>
 <li>unify image save and metadata parsing between ui/cli/api  </li>
 <li>remove <em>xyz-grid</em> selectable-script (always-on is primary choice)</li>
-<li>remove </li>
+<li>faster server startup</li>
+<li>unified threading for scan operations</li>
 <li><strong>Fixes</strong></li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> answer <em>500</em> with the error when the generation fails, instead of <em>200</em> with no images</li>
 <li>api: <em>txt2img</em>, <em>img2img</em> and <em>control</em> responses carry an <em>error</em> field when a later batch fails after earlier batches returned images</li>
