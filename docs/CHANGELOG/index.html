@@ -10280,6 +10280,7 @@ And for <strong>AI docs</strong>, see <a href="https://github.com/vladmandic/sdn
 <li>processing: hires on modular pipelines that take condition images (<em>FLUX.3 Klein</em>) runs at the hires size instead of the base size</li>
 <li>processing: negative prompt the pipeline takes no input for is reported once per job</li>
 <li>processing: text encoder failure fails the job with its own error instead of a misleading <em>not enough values to unpack</em> from the pipeline</li>
+<li>progress: ui separate active vs queued task, thanks @ryanmeador</li>
 <li>prompt: cached prompt encodings stay in system memory and follow <em>Text encoder cache size</em></li>
 <li>prompt: the prompt cache keys on every encode argument and skips calls with images</li>
 <li>samplers: <em>Euler SGM</em> and <em>DC Solver</em> use the model's prediction type</li>
@@ -10294,6 +10295,7 @@ And for <strong>AI docs</strong>, see <a href="https://github.com/vladmandic/sdn
 <li>story: allow per-frame lora overrides</li>
 <li>ui: refresh buttons call their method once per click</li>
 <li>upscale: fix seedvr2 shape throughout the pipeline, thanks @ryanmeador</li>
+<li>upscale: handle missing <code>basicsr</code> inside realesrgan models gracefully</li>
 <li>vae: improve requested vae upcast handling, thanks @ryanmeador</li>
 <li>xyz grid: lora metadata of one cell no longer appears in the images of later cells</li>
 <li>xyz: <em>Search &amp; replace</em> replaces one value per cell, the first value or, when it is absent, the longest one found</li>
